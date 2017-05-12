@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { SharedModule } from './shared/shared.module';
 
+import { CoreModule } from './core';
+import { SettingsModule } from './settings';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -14,7 +17,11 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    SharedModule
+
+    CoreModule,
+    SharedModule,
+
+    SettingsModule
   ],
   declarations: [
     AppComponent

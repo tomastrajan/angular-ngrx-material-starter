@@ -5,6 +5,7 @@ import {
   MdButtonModule,
   MdToolbarModule,
   MdMenuModule,
+  MdSelectModule,
   MdIconModule
 } from '@angular/material';
 
@@ -15,6 +16,7 @@ import {
 
     MdButtonModule,
     MdToolbarModule,
+    MdSelectModule,
     MdMenuModule,
     MdIconModule
   ],
@@ -25,6 +27,7 @@ import {
 
     MdButtonModule,
     MdMenuModule,
+    MdSelectModule,
     MdToolbarModule,
     MdIconModule
   ]

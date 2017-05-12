@@ -1,3 +1,4 @@
+<div [class]="themeClass">
 <md-toolbar color="primary" class="toolbar">
   <span>Angular NGrx Material Starter</span>
   <span class="spacer"></span>
@@ -12,7 +13,7 @@
       <md-icon>person</md-icon>
       <span>Manage account</span>
     </button>
-    <button md-menu-item>
+    <button md-menu-item routerLink="settings">
       <md-icon>settings</md-icon>
       <span>Settings</span>
     </button>
@@ -25,4 +26,6 @@
 <h1>
   {{title}}
 </h1>
+
 <router-outlet></router-outlet>
+</div>
