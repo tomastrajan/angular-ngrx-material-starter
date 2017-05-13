@@ -3,7 +3,7 @@ import { Action } from '@ngrx/store';
 export const SETTINGS_THEME = 'SETTINGS_THEME';
 
 export const initialState = {
-  theme: 'default'
+  theme: 'DEFAULT-THEME'
 };
 
 export function settingsReducer(state = initialState, action: Action) {

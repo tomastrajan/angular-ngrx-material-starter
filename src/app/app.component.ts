@@ -3,11 +3,12 @@ import { OverlayContainer } from '@angular/material';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'anms-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss', './app.component.scss-theme.scss']
 })
 export class AppComponent implements OnDestroy {
 
@@ -15,18 +16,17 @@ export class AppComponent implements OnDestroy {
 
   themeClass: string;
 
-  title = 'anms works!';
-
   constructor(
     overlayContainer: OverlayContainer,
     private store: Store<any>
   ) {
-    store.select('settings')
+    store
+      .select('settings')
       .takeUntil(this.unsubscribe$)
-      .subscribe(({ theme }) => {
-        const themeClass = theme.toLowerCase();
-        overlayContainer.themeClass = themeClass;
-        this.themeClass = themeClass;
+      .map(({ theme }) => theme.toLowerCase())
+      .subscribe(theme => {
+        this.themeClass = theme;
+        overlayContainer.themeClass = theme;
       });
   }
 

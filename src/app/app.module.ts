@@ -7,21 +7,28 @@ import { SharedModule } from './shared/shared.module';
 
 import { CoreModule } from './core';
 import { SettingsModule } from './settings';
+import { StaticModule } from './static';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
+    // angular
     BrowserAnimationsModule,
     BrowserModule,
     HttpModule,
-    AppRoutingModule,
 
+    // core & shared
     CoreModule,
     SharedModule,
 
-    SettingsModule
+    // features
+    StaticModule,
+    SettingsModule,
+
+    // app
+    AppRoutingModule
   ],
   declarations: [
     AppComponent

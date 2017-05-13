@@ -16,7 +16,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
 
   themes = [
     { value: 'DEFAULT-THEME', label: 'Default' },
-    { value: 'DARK-THEME', label: 'Dark' }
+    { value: 'ALTERNATIVE-THEME', label: 'Alternative' }
   ];
 
   constructor(private store: Store<any>) {

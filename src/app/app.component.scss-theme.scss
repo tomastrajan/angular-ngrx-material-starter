@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+@import 'default-theme.scss';
+@import 'alternative-theme.scss';
+
+@mixin app-component-theme($theme) {
+  $accent: map-get($theme, accent);
+
+  .toolbar{
+    button {
+      &.active {
+        background-color: mat-color($accent);
+      }
+    }
+  }
+}
+
+.default-theme {
+  @include app-component-theme($anms-theme);
+}
+
+.alternative-theme {
+  @include app-component-theme($anms-alternative-theme);
+}
+

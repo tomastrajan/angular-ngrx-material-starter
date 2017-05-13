@@ -1,14 +1,23 @@
-@import 'reset.scss';
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+
+* {
+  &:active, :focus {
+    outline: none !important;
+  }
+}
 
 @import '~@angular/material/theming';
 
 @include mat-core();
 
-@import 'styles-theme-default.scss';
-@import 'styles-theme-dark.scss';
+@import 'default-theme.scss';
+@import 'alternative-theme.scss';
 
-@include angular-material-theme($anms-theme);
+.default-theme {
+  @include angular-material-theme($anms-theme);
+}
 
-.dark-theme {
-  @include angular-material-theme($anms-dark-theme);
+.alternative-theme {
+  @include angular-material-theme($anms-alternative-theme);
 }
