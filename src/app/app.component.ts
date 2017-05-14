@@ -12,9 +12,16 @@ import 'rxjs/add/operator/map';
 })
 export class AppComponent implements OnDestroy {
 
+  themeClass: string;
+
   private unsubscribe$: Subject<void> = new Subject<void>();
 
-  themeClass: string;
+  logo = require('../assets/logo.png');
+  navigation = [
+    { link: 'about', label: 'About' },
+    { link: 'features', label: 'Features' },
+    { link: 'examples', label: 'Examples' },
+  ];
 
   constructor(
     overlayContainer: OverlayContainer,

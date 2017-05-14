@@ -1,33 +1,59 @@
-<div [class]="themeClass">
-  <md-toolbar color="primary" class="toolbar">
-    <span>Angular NGrx Material Starter</span>
-    <span class="spacer"></span>
-    <button md-button routerLink="about" routerLinkActive="active">About</button>
-    <button md-button routerLink="features" routerLinkActive="active">Features</button>
-    <button md-button>Examples</button>
-    <button md-icon-button [mdMenuTriggerFor]="toolbarMenu">
-      <md-icon>more_vert</md-icon>
-    </button>
-    <md-menu #toolbarMenu="mdMenu">
-      <button md-menu-item disabled>
-        <md-icon>person</md-icon>
-        <span>Manage account</span>
+<div [class]="'holder ' + themeClass">
+
+  <md-sidenav-container class="sidenav-container">
+
+    <md-sidenav #sidenav class="sidenav" mode="push">
+      <div class="branding"><img [src]="logo" /> <span>Angular Starter</span></div>
+      <md-nav-list>
+        <a md-list-item *ngFor="let item of navigation" (click)="sidenav.close()"
+           [routerLink]="[item.link]" routerLinkActive="active">
+          {{item.label}}
+        </a>
+      </md-nav-list>
+    </md-sidenav>
+
+    <md-toolbar color="primary" class="toolbar">
+      <button md-icon-button class="hidden-md-up" (click)="sidenav.open()">
+        <md-icon>menu</md-icon>
       </button>
-      <button md-menu-item routerLink="settings">
-        <md-icon>settings</md-icon>
-        <span>Settings</span>
+
+      <span routerLink="" class="branding spacer hidden-md-up text-center"><img [src]="logo" /> Angular NGrx Material Starter</span>
+      <span routerLink="" class="branding spacer hidden-sm-down"><img [src]="logo" /> Angular NGrx Material Starter</span>
+
+      <span class="hidden-sm-down">
+        <button md-button *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="active">
+          {{item.label}}
+        </button>
+      </span>
+
+      <button md-icon-button [mdMenuTriggerFor]="toolbarMenu">
+        <md-icon>more_vert</md-icon>
       </button>
-      <button md-menu-item disabled>
-        <md-icon>power_settings_new</md-icon>
-        <span>Logout</span>
-      </button>
-    </md-menu>
-  </md-toolbar>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12">
-        <router-outlet></router-outlet>
+      <md-menu #toolbarMenu="mdMenu">
+        <button md-menu-item disabled>
+          <md-icon>person</md-icon>
+          <span>Manage account</span>
+        </button>
+        <button md-menu-item routerLink="settings">
+          <md-icon>settings</md-icon>
+          <span>Settings</span>
+        </button>
+        <button md-menu-item disabled>
+          <md-icon>power_settings_new</md-icon>
+          <span>Logout</span>
+        </button>
+      </md-menu>
+
+    </md-toolbar>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <router-outlet></router-outlet>
+        </div>
       </div>
     </div>
-  </div>
+
+  </md-sidenav-container>
+
 </div>

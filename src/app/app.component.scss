@@ -1,10 +1,42 @@
-.toolbar{
+.holder, .sidenav-container {
+  height: 100%;
+}
+
+.toolbar {
 
   button {
     margin: 0 10px 0 0;
   }
 
+  .branding {
+    cursor: pointer;
+  }
+
   .spacer {
     flex: 1 1 auto;
+  }
+}
+
+.sidenav {
+  width: 250px;
+
+  .branding {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid;
+
+    img {
+      margin: 0 10px 0 0;
+    }
+
+    span {
+      position: relative;
+      top: 3px;
+    }
+  }
+
+  .mat-nav-list {
+    padding-top: 0px;
   }
 }

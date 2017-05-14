@@ -1,10 +1,15 @@
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/utilities';
 
 * {
   &:active, :focus {
     outline: none !important;
   }
+}
+
+html, body {
+  height: 100%;
 }
 
 @import '~@angular/material/theming';
