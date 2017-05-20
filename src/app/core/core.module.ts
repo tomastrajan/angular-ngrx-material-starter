@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StoreModule, combineReducers } from '@ngrx/store';
+import { StoreModule, combineReducers, ActionReducer } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { settingsReducer, SettingsEffects } from '../settings';
@@ -10,18 +10,25 @@ import {
   localStorageInitStateMiddleware
 } from './local-storage/local-storage.middleware';
 
-const rootReducer = localStorageInitStateMiddleware(
-  combineReducers({
-    settings: settingsReducer
-  })
-);
 
-export function reducer(state, action) { return rootReducer(state, action); }
+export function createReducer(asyncReducers = {}): ActionReducer<any> {
+  return localStorageInitStateMiddleware(
+    combineReducers(Object.assign({
+      settings: settingsReducer
+    }, asyncReducers))
+  );
+}
+
+const reducer = createReducer();
+
+export function reducerAoT(state, action) {
+  return reducer(state, action);
+}
 
 @NgModule({
   imports: [
     CommonModule,
-    StoreModule.provideStore((reducer)),
+    StoreModule.provideStore(reducerAoT),
     EffectsModule.run(SettingsEffects)
   ],
   declarations: [],

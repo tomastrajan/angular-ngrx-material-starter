@@ -1,3 +1,42 @@
-<p>
-  todos works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="offset-md-2 col-md-8 entry">
+      <anms-big-input placeholder="I want to do..."
+                      [value]="newTodo"
+                      (keyup)="onNewTodoChange($event.target.value)"
+                      (keyup.enter)="onAddTodo()">
+        <anms-big-input-action icon="add" color="accent"
+                               (click)="onAddTodo()"
+                               [disabled]="newTodo.length < 4">
+        </anms-big-input-action>
+        <anms-big-input-action icon="delete_forever" disabled></anms-big-input-action>
+      </anms-big-input>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Todo List</h2>
+      <md-card *ngFor="let todo of todos.items" class="todo">
+        {{todo.name}}
+      </md-card>
+      <br>
+    </div>
+    <div class="offset-md-1  col-md-5">
+      <h2>Todo Example</h2>
+      <p>
+        This is a classic <code>todo</code> example with support for
+        adding, toggling, removing and filtering of the todo items.
+      </p>
+      <p>
+        State handling is implemented using <code>ngrx</code> module
+        and support for lazy loaded reducers (this is a lazy loaded feature module).
+      </p>
+      <p>
+        Todos are persisted into local storage so you should see your todos
+        also on later visits when using the same browser.
+      </p>
+      <br>
+    </div>
+  </div>
+
+</div>

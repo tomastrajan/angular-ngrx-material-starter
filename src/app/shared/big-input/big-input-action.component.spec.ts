@@ -1,28 +1,24 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoreModule } from '../../core';
 import { SharedModule } from '../../shared';
-import { ExamplesModule } from '../examples.module';
 
-import { TodosComponent } from './todos.component';
+import { BigInputActionComponent } from './big-input-action.component';
 
-describe('TodosComponent', () => {
-  let component: TodosComponent;
-  let fixture: ComponentFixture<TodosComponent>;
+describe('BigInputActionComponent', () => {
+  let component: BigInputActionComponent;
+  let fixture: ComponentFixture<BigInputActionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CoreModule,
         SharedModule,
-        ExamplesModule
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodosComponent);
+    fixture = TestBed.createComponent(BigInputActionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

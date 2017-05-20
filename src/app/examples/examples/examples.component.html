@@ -1,0 +1,10 @@
+<nav md-tab-nav-bar>
+  <a md-tab-link
+     *ngFor="let e of examples"
+     [routerLink]="e.link"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{e.label}}
+  </a>
+</nav>
+<router-outlet></router-outlet>

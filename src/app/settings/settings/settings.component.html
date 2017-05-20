@@ -1,12 +1,14 @@
-<div class="row">
-  <div class="col-sm-12"><h1>Settings</h1></div>
-</div>
-<br>
-<div class="row">
-  <md-select class="col-md-6" placeholder="Select theme" name="theme"
-             [ngModel]="theme" (change)="onThemeSelect($event)">
-    <md-option *ngFor="let t of themes" [value]="t.value">
-      {{t.label}}
-    </md-option>
-  </md-select>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12"><h1>Settings</h1></div>
+  </div>
+  <br>
+  <div class="row">
+    <md-select class="col-md-6" placeholder="Select theme" name="theme"
+               [ngModel]="theme" (change)="onThemeSelect($event)">
+      <md-option *ngFor="let t of themes" [value]="t.value">
+        {{t.label}}
+      </md-option>
+    </md-select>
+  </div>
 </div>

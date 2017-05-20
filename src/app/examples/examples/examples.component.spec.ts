@@ -1,28 +1,29 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { CoreModule } from '../../core';
 import { SharedModule } from '../../shared';
-import { ExamplesModule } from '../examples.module';
+import { CoreModule } from '../../core';
 
-import { TodosComponent } from './todos.component';
+import { ExamplesComponent } from './examples.component';
 
-describe('TodosComponent', () => {
-  let component: TodosComponent;
-  let fixture: ComponentFixture<TodosComponent>;
+describe('ExamplesComponent', () => {
+  let component: ExamplesComponent;
+  let fixture: ComponentFixture<ExamplesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        CoreModule,
+        RouterTestingModule,
         SharedModule,
-        ExamplesModule
-      ]
+        CoreModule
+      ],
+      declarations: [ ExamplesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodosComponent);
+    fixture = TestBed.createComponent(ExamplesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

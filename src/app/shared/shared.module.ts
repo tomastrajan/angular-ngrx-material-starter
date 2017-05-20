@@ -6,10 +6,15 @@ import {
   MdToolbarModule,
   MdMenuModule,
   MdSelectModule,
+  MdTabsModule,
   MdSidenavModule,
+  MdCardModule,
   MdListModule,
   MdIconModule
 } from '@angular/material';
+
+import { BigInputComponent } from './big-input/big-input.component';
+import { BigInputActionComponent } from './big-input/big-input-action.component';
 
 @NgModule({
   imports: [
@@ -19,23 +24,33 @@ import {
     MdButtonModule,
     MdToolbarModule,
     MdSelectModule,
+    MdTabsModule,
+    MdCardModule,
     MdSidenavModule,
     MdListModule,
     MdMenuModule,
     MdIconModule
   ],
-  declarations: [],
+  declarations: [
+    BigInputComponent,
+    BigInputActionComponent
+  ],
   exports: [
     CommonModule,
     FormsModule,
 
     MdButtonModule,
     MdMenuModule,
+    MdTabsModule,
+    MdCardModule,
     MdSidenavModule,
     MdListModule,
     MdSelectModule,
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+
+    BigInputComponent,
+    BigInputActionComponent
   ]
 })
 export class SharedModule { }
