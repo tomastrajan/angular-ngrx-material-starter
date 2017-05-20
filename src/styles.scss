@@ -1,3 +1,5 @@
+@import 'styles-variables';
+
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
 @import '~bootstrap/scss/utilities';
@@ -17,12 +19,22 @@ html, body {
 @include mat-core();
 
 @import 'default-theme.scss';
-@import 'alternative-theme.scss';
+@import 'light-theme.scss';
+@import 'black-theme.scss';
+
+@import 'app/app.component.scss-theme';
 
 .default-theme {
   @include angular-material-theme($anms-theme);
+  @include app-component-theme($anms-theme);
 }
 
-.alternative-theme {
-  @include angular-material-theme($anms-alternative-theme);
+.light-theme {
+  @include angular-material-theme($anms-light-theme);
+  @include app-component-theme($anms-light-theme);
+}
+
+.black-theme {
+  @include angular-material-theme($anms-black-theme);
+  @include app-component-theme($anms-black-theme);
 }

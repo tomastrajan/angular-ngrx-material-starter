@@ -1,0 +1,9 @@
+$anms-black-primary: mat-palette($mat-grey, 900);
+$anms-black-accent: mat-palette($mat-green, A200);
+$anms-black-warn: mat-palette($mat-red);
+
+$anms-black-theme: mat-light-theme(
+    $anms-black-primary,
+    $anms-black-accent,
+    $anms-black-warn
+);

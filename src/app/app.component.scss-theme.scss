@@ -1,13 +1,13 @@
 @import '~@angular/material/theming';
-@import 'default-theme.scss';
-@import 'alternative-theme.scss';
 
 @mixin app-component-theme($theme) {
+  $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
 
   .toolbar{
     button {
       &.active {
+        color: mat-color($accent, default-contrast);
         background-color: mat-color($accent);
       }
     }
@@ -20,13 +20,18 @@
       }
     }
   }
-}
+  .footer {
+    color: mat-color($primary, A700);
+    background-color: mat-color($primary);
 
-.default-theme {
-  @include app-component-theme($anms-theme);
-}
-
-.alternative-theme {
-  @include app-component-theme($anms-alternative-theme);
+    .links {
+      a {
+        color: mat-color($primary, A700);
+        &:hover {
+          color: mat-color($accent);
+        }
+      }
+    }
+  }
 }
 

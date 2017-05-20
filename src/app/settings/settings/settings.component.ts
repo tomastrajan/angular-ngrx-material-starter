@@ -2,7 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
-import { SETTINGS_THEME } from '../settings.reducer';
+
+import { changeThemeAction } from '../settings.reducer';
 
 @Component({
   selector: 'anms-settings',
@@ -16,7 +17,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
 
   themes = [
     { value: 'DEFAULT-THEME', label: 'Default' },
-    { value: 'ALTERNATIVE-THEME', label: 'Alternative' }
+    { value: 'LIGHT-THEME', label: 'Light' },
+    { value: 'BLACK-THEME', label: 'Black' },
   ];
 
   constructor(private store: Store<any>) {
@@ -34,7 +36,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
   }
 
   onThemeSelect({ value }) {
-    this.store.dispatch({ type: SETTINGS_THEME, payload: value });
+    this.store.dispatch(changeThemeAction(value));
   }
 
 }

@@ -8,11 +8,12 @@ import 'rxjs/add/operator/map';
 @Component({
   selector: 'anms-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss', './app.component.scss-theme.scss']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnDestroy {
 
   themeClass: string;
+  year = new Date().getFullYear();
 
   private unsubscribe$: Subject<void> = new Subject<void>();
 

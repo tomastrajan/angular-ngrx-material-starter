@@ -12,47 +12,90 @@
       </md-nav-list>
     </md-sidenav>
 
-    <md-toolbar color="primary" class="toolbar">
-      <button md-icon-button class="hidden-md-up" (click)="sidenav.open()">
-        <md-icon>menu</md-icon>
-      </button>
+    <div class="wrapper">
 
-      <span routerLink="" class="branding spacer hidden-md-up text-center"><img [src]="logo" /> Angular NGrx Material Starter</span>
-      <span routerLink="" class="branding spacer hidden-sm-down"><img [src]="logo" /> Angular NGrx Material Starter</span>
-
-      <span class="hidden-sm-down">
-        <button md-button *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="active">
-          {{item.label}}
+      <md-toolbar color="primary" class="toolbar">
+        <button md-icon-button class="hidden-md-up" (click)="sidenav.open()">
+          <md-icon>menu</md-icon>
         </button>
-      </span>
 
-      <button md-icon-button [mdMenuTriggerFor]="toolbarMenu">
-        <md-icon>more_vert</md-icon>
-      </button>
-      <md-menu #toolbarMenu="mdMenu">
-        <button md-menu-item disabled>
-          <md-icon>person</md-icon>
-          <span>Manage account</span>
-        </button>
-        <button md-menu-item routerLink="settings">
-          <md-icon>settings</md-icon>
-          <span>Settings</span>
-        </button>
-        <button md-menu-item disabled>
-          <md-icon>power_settings_new</md-icon>
-          <span>Logout</span>
-        </button>
-      </md-menu>
+        <span routerLink="" class="branding spacer hidden-md-up text-center"><img [src]="logo" /> Angular Starter</span>
+        <span routerLink="" class="branding spacer hidden-sm-down"><img [src]="logo" /> Angular NGrx Material Starter</span>
 
-    </md-toolbar>
+        <span class="hidden-sm-down">
+          <button md-button *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="active">
+            {{item.label}}
+          </button>
+        </span>
 
-    <div class="container-fluid">
+        <button md-icon-button [mdMenuTriggerFor]="toolbarMenu">
+          <md-icon>more_vert</md-icon>
+        </button>
+        <md-menu #toolbarMenu="mdMenu">
+          <button md-menu-item disabled>
+            <md-icon>person</md-icon>
+            <span>Manage account</span>
+          </button>
+          <button md-menu-item routerLink="settings">
+            <md-icon>settings</md-icon>
+            <span>Settings</span>
+          </button>
+          <button md-menu-item disabled>
+            <md-icon>power_settings_new</md-icon>
+            <span>Logout</span>
+          </button>
+        </md-menu>
+
+      </md-toolbar>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+
+      <div class="push"></div>
+
+    </div>
+
+    <div class="footer container-fluid">
+      <div class="row">
+        <div class="col-sm-12 links">
+           <a href="https://www.github.com/tomastrajan" target="_blank">
+             <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+             <span>Github</span>
+           </a>
+           <a href="https://www.medium.com/@tomastrajan" target="_blank">
+             <i class="fa fa-medium fa-2x" aria-hidden="true"></i>
+             <span>Medium</span>
+           </a>
+           <a href="https://www.twitter.com/tomastrajan" target="_blank">
+             <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+             <span>Twitter</span>
+           </a>
+           <a href="https://www.youtube.com/channel/UC7XgRHIVoqnh3U5Vmly9ofQ" target="_blank">
+             <i class="fa fa-youtube fa-2x" aria-hidden="true"></i>
+             <span>Youtube</span>
+           </a>
+           <a href="https://www.instagram.com/tomastrajan" target="_blank">
+             <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+             <span>Instagram</span>
+           </a>
+           <a href="https://www.slides.com/tomastrajan" target="_blank">
+             <i class="fa fa-desktop fa-2x" aria-hidden="true"></i>
+             <span>Slides</span>
+           </a>
+        </div>
+      </div>
       <div class="row">
         <div class="col-sm-12">
-          <router-outlet></router-outlet>
+          &#169; {{year}} - Tomas Trajan
         </div>
       </div>
     </div>
+
 
   </md-sidenav-container>
 

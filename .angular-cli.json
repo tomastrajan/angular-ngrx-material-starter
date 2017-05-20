@@ -22,7 +22,7 @@
         "styles.scss"
       ],
       "stylePreprocessorOptions": {
-        "includePaths": ["./themes"]
+        "includePaths": ["./", "./themes"]
       },
       "scripts": [],
       "environmentSource": "environments/environment.ts",

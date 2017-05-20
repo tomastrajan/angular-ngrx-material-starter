@@ -1,9 +1,0 @@
-$anms-alternative-primary: mat-palette($mat-grey, 900);
-$anms-alternative-accent: mat-palette($mat-pink);
-$anms-alternative-warn: mat-palette($mat-red);
-
-$anms-alternative-theme: mat-light-theme(
-    $anms-alternative-primary,
-    $anms-alternative-accent,
-    $anms-alternative-warn
-);
