@@ -63,6 +63,10 @@ export class TodosComponent implements OnInit, OnDestroy {
     this.newTodo = newTodo;
   }
 
+  onNewTodoClear() {
+    this.newTodo = '';
+  }
+
   onAddTodo() {
     this.store.dispatch(addTodo(this.newTodo));
     this.newTodo = '';

@@ -4,7 +4,8 @@
       <anms-big-input placeholder="I am going to do..."
                       [value]="newTodo"
                       (keyup)="onNewTodoChange($event.target.value)"
-                      (keyup.enter)="!isAddTodoDisabled && onAddTodo()">
+                      (keyup.enter)="!isAddTodoDisabled && onAddTodo()"
+                      (keyup.escape)="onNewTodoClear()">
         <anms-big-input-action icon="add" color="accent"
                                (action)="onAddTodo()"
                                [disabled]="isAddTodoDisabled">

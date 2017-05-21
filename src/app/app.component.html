@@ -23,7 +23,7 @@
         <span routerLink="" class="branding spacer hidden-sm-down"><img [src]="logo" /> Angular NGrx Material Starter</span>
 
         <span class="hidden-sm-down">
-          <button md-button *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="active">
+          <button md-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="active">
             {{item.label}}
           </button>
         </span>
@@ -45,6 +45,10 @@
             <span>Logout</span>
           </button>
         </md-menu>
+
+        <button md-icon-button (click)="onGithubClick()">
+          <i class="fa fa-github fa-2x"></i>
+        </button>
 
       </md-toolbar>
 
