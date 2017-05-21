@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'anms-big-input-action',
@@ -12,6 +12,12 @@ export class BigInputActionComponent {
   @Input() label = '';
   @Input() color = '';
 
+  @Output() action = new EventEmitter<void>();
+
   hasFocus = false;
+
+  onClick() {
+    this.action.emit();
+  }
 
 }

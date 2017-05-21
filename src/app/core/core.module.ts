@@ -28,8 +28,7 @@ export function reducerAoT(state, action) {
 @NgModule({
   imports: [
     CommonModule,
-    StoreModule.provideStore(reducerAoT),
-    EffectsModule.run(SettingsEffects)
+    StoreModule.provideStore(reducerAoT)
   ],
   declarations: [],
   providers: [LocalStorageService]

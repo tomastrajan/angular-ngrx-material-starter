@@ -3,6 +3,30 @@
   margin-bottom: 40px;
 }
 
+.todos-filter-info {
+  float: right;
+  font-weight: normal;
+}
+
+.todos-filter {
+  float: right;
+  position: relative;
+  left: 10px;
+  top: -5px;
+  margin-left: -10px;
+}
+
 .todo {
+  display: flex;
   margin-bottom: 10px;
+
+  .todo-done {
+    margin: 0 20px 0 0;
+  }
+
+  .todo-label {
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+  }
 }

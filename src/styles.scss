@@ -4,19 +4,7 @@
 @import '~bootstrap/scss/bootstrap-grid';
 @import '~bootstrap/scss/utilities';
 
-* {
-  a:hover, a:active, a:focus {
-    text-decoration: none;
-  }
-
-  &:active, :focus {
-    outline: none !important;
-  }
-}
-
-html, body {
-  height: 100%;
-}
+@import 'styles-reset';
 
 @import '~@angular/material/theming';
 
@@ -28,21 +16,25 @@ html, body {
 
 @import 'app/app.component.scss-theme';
 @import 'app/shared/big-input/big-input.component.scss-theme';
+@import 'app/examples/todos/todos.component.scss-theme';
 
 .default-theme {
   @include angular-material-theme($anms-theme);
   @include app-component-theme($anms-theme);
   @include big-input-component-theme($anms-theme);
+  @include todos-component-theme($anms-theme);
 }
 
 .light-theme {
   @include angular-material-theme($anms-light-theme);
   @include app-component-theme($anms-light-theme);
   @include big-input-component-theme($anms-light-theme);
+  @include todos-component-theme($anms-light-theme);
 }
 
 .black-theme {
   @include angular-material-theme($anms-black-theme);
   @include app-component-theme($anms-black-theme);
   @include big-input-component-theme($anms-black-theme);
+  @include todos-component-theme($anms-black-theme);
 }

@@ -3,7 +3,9 @@ import { v4 as uuid } from 'node-uuid';
 
 export const initialState = {
   items: [
-    { id: uuid(), name: 'Check the other example', done: false }
+    { id: uuid(), name: 'Open Todo list example', done: true },
+    { id: uuid(), name: 'Check the other examples', done: false },
+    { id: uuid(), name: 'Use Angular ngRx Material Starter in your project', done: false }
   ],
   filter: 'ALL'
 };
@@ -15,10 +17,12 @@ export const TODOS_ADD = 'TODOS_ADD';
 export const TODOS_TOGGLE = 'TODOS_TOGGLE';
 export const TODOS_REMOVE_DONE = 'TODOS_REMOVE_DONE';
 export const TODOS_FILTER = 'TODOS_FILTER';
+export const TODOS_PERSIST = 'TODOS_PERSIST';
 
 export const addTodo = (name: string) => ({ type: TODOS_ADD, payload: name });
 export const toggleTodo = (id: string) => ({ type: TODOS_TOGGLE, payload: id });
 export const removeDoneTodos = () => ({ type: TODOS_REMOVE_DONE });
+export const persistTodos = (todos) => ({ type: TODOS_PERSIST, payload: todos });
 export const filterTodos = (filter: TodoFilter) =>
   ({ type: TODOS_FILTER, payload: filter });
 
@@ -31,7 +35,7 @@ export function todosReducer(state = initialState, action: Action) {
       });
 
     case TODOS_TOGGLE:
-      state.items.some((item: any) => {
+      state.items.some((item: Todo) => {
         if (item.id === action.payload) {
           item.done = !item.done;
           return true;
@@ -43,7 +47,7 @@ export function todosReducer(state = initialState, action: Action) {
 
     case TODOS_REMOVE_DONE:
       return Object.assign({}, state,
-        { items: state.items.filter((item: any) => !item.done) });
+        { items: state.items.filter((item: Todo) => !item.done) });
 
     case TODOS_FILTER:
       return Object.assign({}, state, { filter: action.payload });
@@ -53,3 +57,8 @@ export function todosReducer(state = initialState, action: Action) {
   }
 }
 
+export interface Todo {
+  id: string;
+  name: string;
+  done: boolean;
+}

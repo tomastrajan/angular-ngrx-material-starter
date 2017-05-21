@@ -1,24 +1,56 @@
 <div class="container">
   <div class="row">
     <div class="offset-md-2 col-md-8 entry">
-      <anms-big-input placeholder="I want to do..."
+      <anms-big-input placeholder="I am going to do..."
                       [value]="newTodo"
                       (keyup)="onNewTodoChange($event.target.value)"
-                      (keyup.enter)="onAddTodo()">
+                      (keyup.enter)="!isAddTodoDisabled && onAddTodo()">
         <anms-big-input-action icon="add" color="accent"
-                               (click)="onAddTodo()"
-                               [disabled]="newTodo.length < 4">
+                               (action)="onAddTodo()"
+                               [disabled]="isAddTodoDisabled">
         </anms-big-input-action>
-        <anms-big-input-action icon="delete_forever" disabled></anms-big-input-action>
+        <anms-big-input-action icon="delete_forever"
+                               (action)="onRemoveDoneTodos()"
+                               [disabled]="isRemoveDoneTodosDisabled">
+        </anms-big-input-action>
       </anms-big-input>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
-      <h2>Todo List</h2>
-      <md-card *ngFor="let todo of todos.items" class="todo">
-        {{todo.name}}
+      <h2>
+        Todo List
+        <button class="todos-filter" md-icon-button [mdMenuTriggerFor]="todosFilter">
+          <md-icon>filter_list</md-icon>
+        </button>
+        <md-menu class="todos-filter-menu" #todosFilter="mdMenu" xPosition="before">
+          <button md-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }">
+            <md-icon>assignment</md-icon>
+            <span>All</span>
+          </button>
+          <button md-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }">
+            <md-icon>done</md-icon>
+            <span>Done</span>
+          </button>
+          <button md-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }">
+            <md-icon>check_box_outline_blank</md-icon>
+            <span>Active</span>
+          </button>
+        </md-menu>
+        <md-chip-list class="todos-filter-info">
+          <md-chip>
+            Displaying {{todos.filter !== 'ALL' ? filteredTodos.length : ''}}
+            {{todos.filter.toLowerCase()}}
+            {{todos.filter === 'ALL' ? filteredTodos.length : ''}}
+            todo{{filteredTodos.length > 1 ? 's' : ''}}
+          </md-chip>
+        </md-chip-list>
+      </h2>
+      <md-card *ngFor="let todo of filteredTodos" class="todo">
+        <md-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></md-checkbox>
+        <span class="todo-label" (click)="onToggleTodo(todo)">{{todo.name}}</span>
       </md-card>
+      <br>
       <br>
     </div>
     <div class="offset-md-1  col-md-5">

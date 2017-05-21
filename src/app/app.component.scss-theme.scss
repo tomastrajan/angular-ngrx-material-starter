@@ -20,13 +20,14 @@
       }
     }
   }
+
   .footer {
-    color: mat-color($primary, A700);
+    color: mat-color($primary, lighter);
     background-color: mat-color($primary);
 
     .links {
       a {
-        color: mat-color($primary, A700);
+        color: mat-color($primary, lighter);
         &:hover {
           color: mat-color($accent);
         }

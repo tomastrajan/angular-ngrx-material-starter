@@ -1,0 +1,18 @@
+@import '~@angular/material/theming';
+
+@mixin todos-component-theme($theme) {
+  $accent: map-get($theme, accent);
+
+  .todos-filter-menu {
+    .active {
+      color: mat-color($accent, default-contrast);
+      background-color: mat-color($accent);
+
+      &:hover {
+        color: mat-color($accent, default-contrast);
+        background-color: mat-color($accent, darker);
+      }
+    }
+  }
+}
+

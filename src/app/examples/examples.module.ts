@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { CoreModule, createReducer } from '../core';
 import { SharedModule } from '../shared';
@@ -11,6 +12,7 @@ import { StockMarketComponent } from './stock-market/stock-market.component';
 import { StockMarketService } from './stock-market/stock-market.service';
 
 import { todosReducer } from './todos/todos.reducer';
+import { TodosEffects } from './todos/todos.effects';
 
 export const appReducerWithExamples = createReducer({
   todos: todosReducer
@@ -20,7 +22,8 @@ export const appReducerWithExamples = createReducer({
   imports: [
     CoreModule,
     SharedModule,
-    ExamplesRoutingModule
+    ExamplesRoutingModule,
+    EffectsModule.run(TodosEffects)
   ],
   declarations: [TodosComponent, ExamplesComponent, StockMarketComponent],
   providers: [StockMarketService]
