@@ -1,0 +1,33 @@
+@import 'styles-variables';
+
+.container {
+  margin-top: 20px;
+}
+
+
+.main-heading {
+  text-transform: uppercase;
+  margin: 0 0 20px 0
+}
+
+md-card {
+  margin: 0 0 20px 0;
+
+  md-card-subtitle {
+    min-height: 60px;
+  }
+
+  @media (max-width: map-get($grid-breakpoints, sm)) {
+    md-card-subtitle {
+      min-height: auto;
+    }
+  }
+
+  a {
+    i {
+      position: relative;
+      top: -1px;
+      left: -3px;
+    }
+  }
+}

@@ -12,4 +12,8 @@ export class FeaturesComponent implements OnInit {
   ngOnInit() {
   }
 
+  openLink(link: string) {
+    window.open(link, '_blank');
+  }
+
 }
