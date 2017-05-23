@@ -11,6 +11,10 @@
         background-color: mat-color($accent);
       }
     }
+
+    .link {
+      color: mat-color($primary, default-contrast);
+    }
   }
   .sidenav {
     a {

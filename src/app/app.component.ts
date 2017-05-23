@@ -43,9 +43,4 @@ export class AppComponent implements OnDestroy {
     this.unsubscribe$.complete();
   }
 
-  onGithubClick() {
-    window.open('https://github.com/tomastrajan/angular-ngrx-material-starter',
-      '_blank');
-  }
-
 }
