@@ -1,0 +1,35 @@
+.main-heading {
+  text-transform: uppercase;
+  margin: 0 0 20px 0
+}
+
+md-input-container {
+  width: 100%
+}
+
+md-card {
+  span {
+    float: right;
+
+    i {
+      margin: 0 5px 0 0
+    }
+  }
+}
+
+
+md-spinner {
+  margin: auto;
+}
+
+.error {
+  text-align: center;
+  padding: 20px;
+
+  >span {
+    opacity: 0.4;
+  }
+  .symbol {
+    font-weight: bold;
+  }
+}

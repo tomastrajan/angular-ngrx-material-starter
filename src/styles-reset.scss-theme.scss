@@ -12,5 +12,9 @@
       color: mat-color($accent);
     }
   }
+
+  code {
+    background-color: mat-color($accent, lighter);
+  }
 }
 

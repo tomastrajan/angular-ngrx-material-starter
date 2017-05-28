@@ -1,11 +1,18 @@
 import { TestBed, inject } from '@angular/core/testing';
 
+import { CoreModule } from '../../core';
+
 import { StockMarketService } from './stock-market.service';
 
 describe('StockMarketService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [StockMarketService]
+      imports: [
+        CoreModule,
+      ],
+      providers: [
+        StockMarketService
+      ]
     });
   });
 

@@ -1,4 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { CoreModule } from '../../core';
+import { SharedModule } from '../../shared';
+import { ExamplesModule } from '../examples.module';
 
 import { StockMarketComponent } from './stock-market.component';
 
@@ -8,7 +13,12 @@ describe('StockMarketComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StockMarketComponent ]
+      imports: [
+        NoopAnimationsModule,
+        CoreModule,
+        SharedModule,
+        ExamplesModule
+      ]
     })
     .compileComponents();
   }));

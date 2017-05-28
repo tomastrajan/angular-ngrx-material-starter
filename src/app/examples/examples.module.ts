@@ -6,16 +6,18 @@ import { CoreModule, createReducer } from '../core';
 import { SharedModule } from '../shared';
 
 import { ExamplesRoutingModule } from './examples-routing.module';
-import { TodosComponent } from './todos/todos.component';
 import { ExamplesComponent } from './examples/examples.component';
-import { StockMarketComponent } from './stock-market/stock-market.component';
-import { StockMarketService } from './stock-market/stock-market.service';
-
+import { TodosComponent } from './todos/todos.component';
 import { todosReducer } from './todos/todos.reducer';
 import { TodosEffects } from './todos/todos.effects';
+import { StockMarketComponent } from './stock-market/stock-market.component';
+import { stockMarketReducer } from './stock-market/stock-market.reducer';
+import { StockMarketEffects } from './stock-market/stock-market.effects';
+import { StockMarketService } from './stock-market/stock-market.service';
 
 export const appReducerWithExamples = createReducer({
-  todos: todosReducer
+  todos: todosReducer,
+  stocks: stockMarketReducer
 });
 
 @NgModule({
@@ -23,10 +25,17 @@ export const appReducerWithExamples = createReducer({
     CoreModule,
     SharedModule,
     ExamplesRoutingModule,
-    EffectsModule.run(TodosEffects)
+    EffectsModule.run(TodosEffects),
+    EffectsModule.run(StockMarketEffects)
   ],
-  declarations: [TodosComponent, ExamplesComponent, StockMarketComponent],
-  providers: [StockMarketService]
+  declarations: [
+    ExamplesComponent,
+    TodosComponent,
+    StockMarketComponent
+  ],
+  providers: [
+    StockMarketService
+  ]
 })
 export class ExamplesModule {
 

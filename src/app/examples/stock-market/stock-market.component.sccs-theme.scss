@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+
+@mixin todos-component-theme($theme) {
+  $warn: map-get($theme, warn);
+
+  md-card {
+    span {
+      &.negative {
+        color: mat-color($warn);
+      }
+    }
+  }
+  .error {
+    i {
+      color: mat-color($warn);
+    }
+  }
+}
+

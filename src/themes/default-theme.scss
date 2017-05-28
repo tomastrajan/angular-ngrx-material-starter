@@ -1,6 +1,6 @@
 $anms-primary: mat-palette($mat-indigo, 700, 300, 900);
 $anms-accent: mat-palette($mat-light-blue);
-$anms-warn: mat-palette($mat-deep-orange);
+$anms-warn: mat-palette($mat-deep-orange, A200);
 
 $anms-theme: mat-light-theme(
     $anms-primary,

@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 import { StoreModule, combineReducers, ActionReducer } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
 
-import { settingsReducer, SettingsEffects } from '../settings';
+import { settingsReducer } from '../settings';
 
 import { LocalStorageService } from './local-storage/local-storage.service';
 import {
   localStorageInitStateMiddleware
 } from './local-storage/local-storage.middleware';
-
 
 export function createReducer(asyncReducers = {}): ActionReducer<any> {
   return localStorageInitStateMiddleware(
@@ -28,6 +27,7 @@ export function reducerAoT(state, action) {
 @NgModule({
   imports: [
     CommonModule,
+    HttpModule,
     StoreModule.provideStore(reducerAoT)
   ],
   declarations: [],
