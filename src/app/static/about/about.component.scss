@@ -8,8 +8,11 @@
   right: 0;
   overflow-y: auto;
 
-  .container {
+  h1 {
     margin-top: 100px;
+    text-align: center;
+    font-size: 3em;
+    text-transform: uppercase;
   }
 
   .actions {
@@ -31,14 +34,21 @@
     }
   }
 
-  h1 {
-    text-align: center;
-    font-size: 3em;
-    text-transform: uppercase;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url('../../../assets/intro.jpg') no-repeat center top;
+    background-size: cover;
+    opacity: .6;
+    content: "";
+    z-index: 0;
   }
 }
 
-@media (max-width: map-get($grid-breakpoints, toolbar)) {
+@media (max-width: $toolbar-breakpoint) {
   .background {
     top: 56px;
   }
@@ -52,15 +62,15 @@
   }
 }
 
-.background::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: url('../../../assets/intro.jpg') no-repeat center top;
-  background-size: cover;
-  opacity: .6;
-  content: "";
-  z-index: 0;
+@media (max-width: map-get($grid-breakpoints, sm)) {
+  .background {
+    h1 {
+      margin-top: 40px;
+      line-height: 1em;
+    }
+    .get-started {
+      width: auto;
+      margin: 40px auto 0 auto;
+    }
+  }
 }
