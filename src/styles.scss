@@ -17,14 +17,17 @@
 @import 'styles-reset.scss-theme';
 @import 'app/app.component.scss-theme';
 @import 'app/shared/big-input/big-input.component.scss-theme';
+@import 'app/static/about/about.component.scss-theme';
 @import 'app/examples/todos/todos.component.scss-theme';
 @import 'app/examples/stock-market/stock-market.component.sccs-theme.scss';
 
 @mixin custom-components-theme($theme) {
   @include styles-reset-theme($theme);
   @include app-component-theme($theme);
+  @include about-component-theme($theme);
   @include big-input-component-theme($theme);
   @include todos-component-theme($theme);
+  @include examples-component-theme($theme);
 }
 
 .default-theme {

@@ -26,6 +26,7 @@ $footer-height: 140px;
 }
 
 .wrapper {
+  z-index: -2;
   min-height: 100%;
   margin-bottom: -$footer-height;
 }

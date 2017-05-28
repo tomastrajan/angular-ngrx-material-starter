@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+
+@mixin about-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+
+  .background {
+    color: mat-color($background, background);
+    background-color: mat-color($foreground, text);
+  }
+
+  .get-started {
+    //border: 1px solid mat-color($background, background);
+  }
+}
+

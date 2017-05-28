@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 
-@mixin todos-component-theme($theme) {
+@mixin examples-component-theme($theme) {
   $warn: map-get($theme, warn);
 
   md-card {

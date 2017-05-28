@@ -1,0 +1,66 @@
+@import 'styles-variables';
+
+.background {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  bottom: 140px;
+  right: 0;
+  overflow-y: auto;
+
+  .container {
+    margin-top: 100px;
+  }
+
+  .actions {
+    text-align: center;
+    margin: 50px;
+
+  }
+
+  .get-started {
+    width: 625px;
+    margin: 50px auto;
+    font-size: 0.8em;
+    letter-spacing: .01px;
+    overflow-wrap: break-word;
+
+    code {
+      word-wrap: break-word;
+      white-space: normal;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 3em;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, toolbar)) {
+  .background {
+    top: 56px;
+  }
+}
+
+@media (max-width: map-get($grid-breakpoints, md)) {
+  .background {
+    .get-started {
+      width: auto;
+    }
+  }
+}
+
+.background::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url('../../../assets/intro.jpg') no-repeat center top;
+  background-size: cover;
+  opacity: .6;
+  content: "";
+  z-index: 0;
+}
