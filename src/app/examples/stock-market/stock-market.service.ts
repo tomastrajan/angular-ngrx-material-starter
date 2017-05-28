@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { Stock } from './stock-market.reducer';
 
+const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 const API_URL = 'http://finance.google.com/finance/info?client=ig&q=NYSE:';
 
 @Injectable()
@@ -14,7 +15,7 @@ export class StockMarketService {
   ) {}
 
   retrieveStock(symbol: string): Observable<Stock> {
-    return this.http.get(API_URL + symbol)
+    return this.http.get(PROXY_URL + API_URL + symbol)
       .map((res: Response) => JSON.parse(res.text().replace('//', ''))[0])
       .map((stock: any) => ({
         symbol: stock.t,
