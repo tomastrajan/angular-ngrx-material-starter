@@ -4,6 +4,16 @@ Check out [Demo & Documentation](http://tomastrajan.github.io/angular-ngrx-mater
  
 ## Features
 
+* custom themes support (3 themes included)
+* lazy-loading of feature modules
+* lazy reducers
+* localStorage ui state persistence
+* `@ngrx/effects` for API requests
+* fully responsive design
+* angular-material and custom components in `SharedModule`
+ 
+## Stack
+
 * Angular
 * ngrx
 * Angular Material
