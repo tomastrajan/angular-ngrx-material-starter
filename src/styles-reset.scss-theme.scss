@@ -14,7 +14,7 @@
   }
 
   code {
-    color: mat-color($foreground, text);
+    color: mat-color($accent, lighter-contrast);
     background-color: mat-color($accent, lighter);
   }
 }

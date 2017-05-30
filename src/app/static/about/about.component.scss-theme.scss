@@ -8,8 +8,8 @@
 
 
   .background {
-    color: mat-color($background, background);
-    background-color: mat-color($foreground, text);
+    color: mat-color($foreground, text);
+    background-color: mat-color($background, background);
   }
 
 }
