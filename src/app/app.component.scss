@@ -42,7 +42,7 @@ $footer-height: 140px;
     padding: 10px 0;
 
     a {
-      transition: all 0.5s;
+      transition: padding 0.5s;
       display: inline-block;
       padding: 20px 5px;
 
@@ -57,7 +57,7 @@ $footer-height: 140px;
         overflow: hidden;
         text-align: left;
         white-space: nowrap;
-        transition: all 0.5s;
+        transition: width 0.5s;
       }
     }
 

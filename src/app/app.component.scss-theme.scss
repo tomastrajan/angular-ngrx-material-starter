@@ -27,7 +27,7 @@
 
   .footer {
     color: mat-color($primary, lighter);
-    background-color: mat-color($primary);
+    background-color: mat-color($primary, darker);
 
     .links {
       a {
