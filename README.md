@@ -1,6 +1,8 @@
 # Angular, ngrx and Angular Material Starter by [@tomastrajan](https://twitter.com/tomastrajan) [![Build Status](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter.svg?branch=master)](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter)
                            
 Check out [Demo & Documentation](http://tomastrajan.github.io/angular-ngrx-material-starter/)
+
+Check out [Blog post](https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1)
  
 ## Features
 
