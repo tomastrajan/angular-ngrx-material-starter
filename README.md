@@ -3,6 +3,11 @@
 Check out [Demo & Documentation](http://tomastrajan.github.io/angular-ngrx-material-starter/)
 
 Check out [Blog post](https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1)
+
+
+![into](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/intro.png)
+![themes](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/themes.png)
+
  
 ## Features
 
