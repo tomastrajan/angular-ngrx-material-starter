@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { environment as env } from '@env/environment';
+
 @Component({
   selector: 'anms-features',
   templateUrl: './features.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeaturesComponent implements OnInit {
 
-  constructor() { }
+  versions = env.versions;
 
   ngOnInit() {
   }
