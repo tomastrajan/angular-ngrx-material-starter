@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
 import { SharedModule } from '../shared';
 
-import { SettingsComponent } from './settings/settings.component';
+import { settingsReducer } from './settings.reducer';
 import { SettingsEffects } from './settings.effects';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   imports: [
-    CommonModule,
     SharedModule,
-    EffectsModule.run(SettingsEffects)
+    StoreModule.forFeature('settings', settingsReducer),
+    EffectsModule.forFeature([SettingsEffects])
   ],
   declarations: [SettingsComponent]
 })

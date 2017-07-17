@@ -46,7 +46,9 @@
           </button>
         </md-menu>
 
-        <a md-icon-button class="link" href="https://github.com/tomastrajan/angular-ngrx-material-starter" target="_blank">
+        <a mdTooltip="Project Github Repository"
+           mdTooltipPosition="before"
+           md-icon-button class="link" href="https://github.com/tomastrajan/angular-ngrx-material-starter" target="_blank">
           <i class="fa fa-github fa-2x"></i>
         </a>
 
@@ -88,8 +90,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12">
+        <div class="col-12 signature">
           &#169; {{year}} - Tomas Trajan
+          <a mdTooltip="Show changelog"
+             mdTooltipPosition="before"
+             href="https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md">
+            <i class="fa fa-rocket"></i> {{version}}
+          </a>
         </div>
       </div>
     </div>

@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from '@app/shared';
+import { CoreModule } from '@app/core';
 
-import { CoreModule } from './core';
 import { SettingsModule } from './settings';
 import { StaticModule } from './static';
 
@@ -17,7 +18,6 @@ import { AppComponent } from './app.component';
     // angular
     BrowserAnimationsModule,
     BrowserModule,
-    HttpModule,
 
     // core & shared
     CoreModule,
@@ -28,7 +28,7 @@ import { AppComponent } from './app.component';
     SettingsModule,
 
     // app
-    AppRoutingModule
+    AppRoutingModule,
   ],
   declarations: [
     AppComponent

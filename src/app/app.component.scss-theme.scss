@@ -29,7 +29,7 @@
     color: mat-color($primary, lighter);
     background-color: mat-color($primary, darker);
 
-    .links {
+    .links, .signature {
       a {
         color: mat-color($primary, lighter);
         &:hover {

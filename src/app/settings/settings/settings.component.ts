@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
 
-import { changeThemeAction } from '../settings.reducer';
+import { selectorSettings, actionChangeTheme } from '../settings.reducer';
 
 @Component({
   selector: 'anms-settings',
@@ -22,7 +22,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
   ];
 
   constructor(private store: Store<any>) {
-    store.select('settings')
+    store.select(selectorSettings)
       .takeUntil(this.unsubscribe$)
       .subscribe(({ theme }) => this.theme = theme);
   }
@@ -36,7 +36,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
   }
 
   onThemeSelect({ value }) {
-    this.store.dispatch(changeThemeAction(value));
+    this.store.dispatch(actionChangeTheme(value));
   }
 
 }

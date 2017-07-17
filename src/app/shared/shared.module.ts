@@ -14,7 +14,8 @@ import {
   MdCheckboxModule,
   MdCardModule,
   MdListModule,
-  MdIconModule
+  MdIconModule,
+  MdTooltipModule
 } from '@angular/material';
 
 import { BigInputComponent } from './big-input/big-input.component';
@@ -37,7 +38,8 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MdCheckboxModule,
     MdListModule,
     MdMenuModule,
-    MdIconModule
+    MdIconModule,
+    MdTooltipModule
   ],
   declarations: [
     BigInputComponent,
@@ -60,6 +62,7 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MdSelectModule,
     MdToolbarModule,
     MdIconModule,
+    MdTooltipModule,
 
     BigInputComponent,
     BigInputActionComponent

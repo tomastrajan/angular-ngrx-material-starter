@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/do';
 
-import { LocalStorageService } from '../core';
+import { LocalStorageService, Action } from '@app/core';
 
 import {
   SETTINGS_KEY,
@@ -14,7 +14,7 @@ import {
 export class SettingsEffects {
 
   constructor(
-    private actions$: Actions,
+    private actions$: Actions<Action>,
     private localStorageService: LocalStorageService
   ) {}
 

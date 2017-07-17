@@ -4,6 +4,11 @@ import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/filter';
+
+import { environment as env } from '@env/environment';
+
+import { selectorSettings } from './settings';
 
 @Component({
   selector: 'anms-root',
@@ -13,6 +18,7 @@ import 'rxjs/add/operator/map';
 export class AppComponent implements OnDestroy {
 
   themeClass: string;
+  version = env.versions.app;
   year = new Date().getFullYear();
 
   private unsubscribe$: Subject<void> = new Subject<void>();
@@ -29,7 +35,7 @@ export class AppComponent implements OnDestroy {
     private store: Store<any>
   ) {
     store
-      .select('settings')
+      .select(selectorSettings)
       .takeUntil(this.unsubscribe$)
       .map(({ theme }) => theme.toLowerCase())
       .subscribe(theme => {

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/of';
 
-import { LocalStorageService } from '../../core';
+import { LocalStorageService, Action } from '@app/core';
 
 import {
   STOCK_MARKET_KEY,
@@ -21,7 +22,7 @@ import { StockMarketService } from './stock-market.service';
 export class StockMarketEffects {
 
   constructor(
-    private actions$: Actions,
+    private actions$: Actions<Action>,
     private localStorageService: LocalStorageService,
     private service: StockMarketService
   ) {}

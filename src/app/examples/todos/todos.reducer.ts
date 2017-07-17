@@ -1,5 +1,6 @@
-import { Action } from '@ngrx/store';
 import { v4 as uuid } from 'node-uuid';
+
+import { Action } from '@app/core';
 
 export const initialState = {
   items: [
@@ -12,19 +13,24 @@ export const initialState = {
 
 export type TodoFilter = 'ALL' | 'DONE' | 'ACTIVE';
 
-export const TODOS_KEY = 'TODOS';
+export const TODOS_KEY = 'EXAMPLES.TODOS';
 export const TODOS_ADD = 'TODOS_ADD';
 export const TODOS_TOGGLE = 'TODOS_TOGGLE';
 export const TODOS_REMOVE_DONE = 'TODOS_REMOVE_DONE';
 export const TODOS_FILTER = 'TODOS_FILTER';
 export const TODOS_PERSIST = 'TODOS_PERSIST';
 
-export const addTodo = (name: string) => ({ type: TODOS_ADD, payload: name });
-export const toggleTodo = (id: string) => ({ type: TODOS_TOGGLE, payload: id });
-export const removeDoneTodos = () => ({ type: TODOS_REMOVE_DONE });
-export const persistTodos = (todos) => ({ type: TODOS_PERSIST, payload: todos });
-export const filterTodos = (filter: TodoFilter) =>
+export const actionRemoveDoneTodos = () => ({ type: TODOS_REMOVE_DONE });
+export const actionAddTodo = (name: string) =>
+  ({ type: TODOS_ADD, payload: name });
+export const actionToggleTodo = (id: string) =>
+  ({ type: TODOS_TOGGLE, payload: id });
+export const actionPersistTodos = (todos) =>
+  ({ type: TODOS_PERSIST, payload: todos });
+export const actionFilterTodos = (filter: TodoFilter) =>
   ({ type: TODOS_FILTER, payload: filter });
+
+export const selectorTodos = state => state.examples.todos;
 
 export function todosReducer(state = initialState, action: Action) {
   switch (action.type) {

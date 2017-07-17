@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SharedModule } from '../../shared';
+import { SharedModule } from '@app/shared';
 
 import { BigInputActionComponent } from './big-input-action.component';
 

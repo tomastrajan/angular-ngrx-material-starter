@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoreModule } from '../../core';
-import { SharedModule } from '../../shared';
+import { CoreModule } from '@app/core';
+import { SharedModule } from '@app/shared';
+
 import { ExamplesModule } from '../examples.module';
 
 import { TodosComponent } from './todos.component';

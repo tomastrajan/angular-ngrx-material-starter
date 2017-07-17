@@ -4,7 +4,7 @@ import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/map';
 
-import { retrieveStock } from './stock-market.reducer';
+import { actionRetrieveStock, selectorStocks } from './stock-market.reducer';
 
 @Component({
   selector: 'anms-stock-market',
@@ -25,14 +25,14 @@ export class StockMarketComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.initialized = false;
     this.store
-      .select('stocks')
+      .select(selectorStocks)
       .takeUntil(this.unsubscribe$)
       .subscribe((stocks: any) => {
         this.stocks = stocks;
 
         if (!this.initialized) {
           this.initialized = true;
-          this.store.dispatch(retrieveStock(stocks.symbol));
+          this.store.dispatch(actionRetrieveStock(stocks.symbol));
         }
       });
   }
@@ -43,7 +43,7 @@ export class StockMarketComponent implements OnInit, OnDestroy {
   }
 
   onSymbolChange(symbol: string) {
-    this.store.dispatch(retrieveStock(symbol));
+    this.store.dispatch(actionRetrieveStock(symbol));
   }
 
 }

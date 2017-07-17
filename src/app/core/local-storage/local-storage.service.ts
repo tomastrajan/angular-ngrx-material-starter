@@ -17,11 +17,21 @@ export class LocalStorageService {
 
   static loadInitialState() {
     return Object.keys(localStorage)
-      .reduce((state: any, key) => {
-        if (key.includes(APP_PREFIX)) {
+      .reduce((state: any, storageKey) => {
+        if (storageKey.includes(APP_PREFIX)) {
           state = state || {};
-          const stateKey = key.replace(APP_PREFIX, '').toLowerCase();
-          state[stateKey] = JSON.parse(localStorage.getItem(key));
+          const stateKey = storageKey.replace(APP_PREFIX, '').toLowerCase()
+            .split('.');
+          let currentStateRef = state;
+          stateKey.forEach((key, index) => {
+            if (index === stateKey.length - 1) {
+              currentStateRef[key] = JSON
+                .parse(localStorage.getItem(storageKey));
+              return;
+            }
+            currentStateRef[key] = currentStateRef[key] || {};
+            currentStateRef = currentStateRef[key];
+          });
         }
         return state;
       }, undefined);

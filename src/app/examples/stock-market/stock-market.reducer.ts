@@ -1,16 +1,18 @@
-import { Action } from '@ngrx/store';
+import { Action } from '@app/core';
 
 export const initialState = {
   symbol: 'GOOGL'
 };
 
-export const STOCK_MARKET_KEY = 'STOCKS';
+export const STOCK_MARKET_KEY = 'EXAMPLES.STOCKS';
 export const STOCK_MARKET_RETRIEVE = 'STOCK_MARKET_RETRIEVE';
 export const STOCK_MARKET_RETRIEVE_SUCCESS = 'STOCK_MARKET_RETRIEVE_SUCCESS';
 export const STOCK_MARKET_RETRIEVE_ERROR = 'STOCK_MARKET_RETRIEVE_ERROR';
 
-export const retrieveStock = (symbol: string) =>
+export const actionRetrieveStock = (symbol: string) =>
   ({ type: STOCK_MARKET_RETRIEVE, payload: symbol });
+
+export const selectorStocks = state => state.examples.stocks;
 
 export function stockMarketReducer(state = initialState, action: Action) {
   switch (action.type) {

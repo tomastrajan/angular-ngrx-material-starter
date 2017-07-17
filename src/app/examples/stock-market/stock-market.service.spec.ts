@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { CoreModule } from '../../core';
+import { CoreModule } from '@app/core';
 
 import { StockMarketService } from './stock-market.service';
 

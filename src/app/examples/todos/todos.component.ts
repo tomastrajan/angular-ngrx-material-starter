@@ -5,7 +5,13 @@ import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/map';
 
 import {
-  addTodo, persistTodos, toggleTodo, removeDoneTodos, Todo, filterTodos,
+  actionAddTodo,
+  actionPersistTodos,
+  actionToggleTodo,
+  actionRemoveDoneTodos,
+  actionFilterTodos,
+  selectorTodos,
+  Todo,
   TodoFilter
 } from './todos.reducer';
 
@@ -27,11 +33,11 @@ export class TodosComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store
-      .select('todos')
+      .select(selectorTodos)
       .takeUntil(this.unsubscribe$)
       .subscribe(todos => {
         this.todos = todos;
-        this.store.dispatch(persistTodos(todos));
+        this.store.dispatch(actionPersistTodos(todos));
       });
   }
 
@@ -68,20 +74,20 @@ export class TodosComponent implements OnInit, OnDestroy {
   }
 
   onAddTodo() {
-    this.store.dispatch(addTodo(this.newTodo));
+    this.store.dispatch(actionAddTodo(this.newTodo));
     this.newTodo = '';
   }
 
   onToggleTodo(todo: Todo) {
-    this.store.dispatch(toggleTodo(todo.id));
+    this.store.dispatch(actionToggleTodo(todo.id));
   }
 
   onRemoveDoneTodos() {
-    this.store.dispatch(removeDoneTodos());
+    this.store.dispatch(actionRemoveDoneTodos());
   }
 
   onFilterTodos(filter: TodoFilter) {
-    this.store.dispatch(filterTodos(filter));
+    this.store.dispatch(actionFilterTodos(filter));
   }
 
 }

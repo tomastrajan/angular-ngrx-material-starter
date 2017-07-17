@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CoreModule } from '../../core';
-import { SharedModule } from '../../shared';
+import { CoreModule } from '@app/core';
+import { SharedModule } from '@app/shared';
 
 import { SettingsComponent } from './settings.component';
 

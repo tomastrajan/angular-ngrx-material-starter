@@ -41,42 +41,52 @@ $footer-height: 140px;
   .row {
     padding: 10px 0;
 
-    a {
-      transition: padding 0.5s;
-      display: inline-block;
-      padding: 20px 5px;
 
-      &:hover {
-        text-decoration: none;
-      }
-
-      span {
-        display: inline-block;
-        width: 70px;
-        padding: 0 0 0 5px;
-        overflow: hidden;
-        text-align: left;
-        white-space: nowrap;
-        transition: width 0.5s;
-      }
-    }
-
-    @media (max-width: map-get($grid-breakpoints, md)) {
+    .links {
       a {
-        padding: 20px;
+        transition: padding 0.5s;
+        display: inline-block;
+        padding: 20px 5px;
+
+        &:hover {
+          text-decoration: none;
+        }
 
         span {
-          width: 0;
-          padding: 0;
+          display: inline-block;
+          width: 70px;
+          padding: 0 0 0 5px;
+          overflow: hidden;
+          text-align: left;
+          white-space: nowrap;
+          transition: width 0.5s;
+        }
+      }
+
+      @media (max-width: map-get($grid-breakpoints, md)) {
+        a {
+          padding: 20px;
+
+          span {
+            width: 0;
+            padding: 0;
+          }
+        }
+      }
+
+      @media (max-width: map-get($grid-breakpoints, sm)) {
+        a {
+          padding: 20px 5px;
         }
       }
     }
 
-    @media (max-width: map-get($grid-breakpoints, sm)) {
+    .signature {
       a {
-        padding: 20px 5px;
+        float: right;
       }
     }
+
   }
 }
 
