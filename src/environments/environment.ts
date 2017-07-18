@@ -13,6 +13,7 @@ export const environment = {
     ngrx: packageJson.dependencies['@ngrx/store'],
     material: packageJson.dependencies['@angular/material'],
     bootstrap: packageJson.dependencies.bootstrap,
-    rxjs: packageJson.dependencies.rxjs
+    rxjs: packageJson.dependencies.rxjs,
+    angularCli: packageJson.devDependencies['@angular/cli']
   }
 };
