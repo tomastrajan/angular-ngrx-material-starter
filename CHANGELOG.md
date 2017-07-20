@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.1.0...v1.2.0) (2017-07-20)
+
+
+### Features
+
+* add new features ([6054191](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6054191))
+* update ngrx version ([ec5f6f3](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ec5f6f3))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.0.0...v1.1.0) (2017-07-17)
 
