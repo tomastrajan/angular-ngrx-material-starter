@@ -18,25 +18,26 @@
   .actions {
     text-align: center;
     margin: 50px;
-
   }
 
   .get-started {
-    width: 625px;
+    width: 700px;
     margin: 50px auto;
-    font-size: 0.8em;
+    font-size: 0.9em;
     letter-spacing: .01px;
     overflow-wrap: break-word;
 
     code {
+      display: inline-block;
       word-wrap: break-word;
       white-space: normal;
+      margin: 0 0 10px 0;
     }
   }
 
   &::before {
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 64px;
     left: 0;
     bottom: 0;
     right: 0;
@@ -44,18 +45,22 @@
     background-size: cover;
     opacity: .8;
     content: "";
-    z-index: 0;
   }
 }
 
 @media (max-width: $toolbar-breakpoint) {
   .background {
     top: 56px;
+
+    &::before {
+      top: 56px;
+    }
   }
 }
 
 @media (max-width: map-get($grid-breakpoints, md)) {
   .background {
+
     .get-started {
       width: auto;
     }
@@ -68,9 +73,19 @@
       margin-top: 40px;
       line-height: 1em;
     }
+
+    .actions {
+      margin: 40px 0 0 0;
+
+      a {
+        width: 100%;
+        margin: 0 0 10px 0;
+      }
+    }
+
     .get-started {
       width: auto;
-      margin: 40px auto 0 auto;
+      margin: 40px auto;
     }
   }
 }
