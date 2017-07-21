@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.2.0...v1.3.0) (2017-07-21)
+
+
+### Bug Fixes
+
+* about screen responsive layout ([9be673e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9be673e))
+
+
+### Features
+
+* add tooltips to todo example ([e5168f3](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e5168f3))
+* adjust theme colors ([4bc6760](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4bc6760))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.1.0...v1.2.0) (2017-07-20)
 
