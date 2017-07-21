@@ -4,36 +4,40 @@
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
 
-  .toolbar{
-    button {
-      &.active {
-        color: mat-color($accent, default-contrast);
-        background-color: mat-color($accent);
+  md-sidenav-container {
+
+    md-toolbar {
+      button {
+        &.active {
+          color: mat-color($accent, default-contrast);
+          background-color: mat-color($accent);
+        }
+      }
+
+      .link {
+        color: mat-color($primary, default-contrast);
       }
     }
 
-    .link {
-      color: mat-color($primary, default-contrast);
-    }
-  }
-  .sidenav {
-    a {
-      &.active {
-        color: mat-color($accent, default-contrast);
-        background-color: mat-color($accent);
-      }
-    }
-  }
-
-  .footer {
-    color: mat-color($primary, lighter);
-    background-color: mat-color($primary, darker);
-
-    .links, .signature {
+    md-sidenav {
       a {
-        color: mat-color($primary, lighter);
-        &:hover {
-          color: mat-color($accent);
+        &.active {
+          color: mat-color($accent, default-contrast);
+          background-color: mat-color($accent);
+        }
+      }
+    }
+
+    .footer {
+      color: mat-color($primary, lighter);
+      background-color: mat-color($primary, darker);
+
+      .links, .signature {
+        a {
+          color: mat-color($primary, lighter);
+          &:hover {
+            color: mat-color($accent);
+          }
         }
       }
     }

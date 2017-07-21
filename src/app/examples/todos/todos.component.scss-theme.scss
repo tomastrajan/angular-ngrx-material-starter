@@ -3,18 +3,22 @@
 @mixin todos-component-theme($theme) {
   $accent: map-get($theme, accent);
 
-  .todos-filter-menu {
-    .active {
-      color: mat-color($accent, default-contrast);
-      background-color: mat-color($accent);
-
-      .mat-icon {
-        color: mat-color($accent, default-contrast);
-      }
-
-      &:hover {
+  // angular material overlay class
+  .cdk-overlay-container {
+    
+    .todos-filter-menu {
+      .active {
         color: mat-color($accent, default-contrast);
         background-color: mat-color($accent);
+
+        .mat-icon {
+          color: mat-color($accent, default-contrast);
+        }
+
+        &:hover {
+          color: mat-color($accent, default-contrast);
+          background-color: mat-color($accent);
+        }
       }
     }
   }

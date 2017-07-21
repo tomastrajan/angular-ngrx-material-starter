@@ -1,12 +1,10 @@
 @import 'styles-variables';
 
-$footer-height: 140px;
-
-.holder, .sidenav-container {
+md-sidenav-container {
   height: 100%;
 }
 
-.toolbar {
+md-toolbar {
 
   .nav-button {
     margin: 0 10px 0 0;
@@ -21,76 +19,7 @@ $footer-height: 140px;
   }
 }
 
-.container {
-  margin-top: 20px;
-}
-
-.wrapper {
-  z-index: -2;
-  min-height: 100%;
-  margin-bottom: -$footer-height;
-}
-.footer,
-.push {
-  height: $footer-height;
-}
-
-.footer {
-  text-align: center;
-
-  .row {
-    padding: 10px 0;
-
-
-    .links {
-      a {
-        transition: padding 0.5s;
-        display: inline-block;
-        padding: 20px 5px;
-
-        &:hover {
-          text-decoration: none;
-        }
-
-        span {
-          display: inline-block;
-          width: 70px;
-          padding: 0 0 0 5px;
-          overflow: hidden;
-          text-align: left;
-          white-space: nowrap;
-          transition: width 0.5s;
-        }
-      }
-
-      @media (max-width: map-get($grid-breakpoints, md)) {
-        a {
-          padding: 20px;
-
-          span {
-            width: 0;
-            padding: 0;
-          }
-        }
-      }
-
-      @media (max-width: map-get($grid-breakpoints, sm)) {
-        a {
-          padding: 20px 5px;
-        }
-      }
-    }
-
-    .signature {
-      a {
-        float: right;
-      }
-    }
-
-  }
-}
-
-.sidenav {
+md-sidenav {
   width: 250px;
 
   .branding {
@@ -110,6 +39,72 @@ $footer-height: 140px;
   }
 
   .mat-nav-list {
-    padding-top: 0px;
+    padding-top: 0;
+  }
+}
+
+.wrapper {
+  z-index: -2;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .content {
+    flex: 1 0 auto;
+  }
+
+  .footer {
+    padding: 0 15px;
+    text-align: center;
+    z-index: 1;
+
+    .row {
+      padding: 10px 0;
+
+      .links {
+        a {
+          transition: padding 0.5s;
+          display: inline-block;
+          padding: 20px 5px;
+
+          &:hover {
+            text-decoration: none;
+          }
+
+          span {
+            display: inline-block;
+            width: 70px;
+            padding: 0 0 0 5px;
+            overflow: hidden;
+            text-align: left;
+            white-space: nowrap;
+            transition: width 0.5s;
+          }
+        }
+
+        @media (max-width: map-get($grid-breakpoints, md)) {
+          a {
+            padding: 20px;
+
+            span {
+              width: 0;
+              padding: 0;
+            }
+          }
+        }
+
+        @media (max-width: map-get($grid-breakpoints, sm)) {
+          a {
+            padding: 20px 5px;
+          }
+        }
+      }
+
+      .signature {
+        a {
+          float: right;
+        }
+      }
+    }
   }
 }

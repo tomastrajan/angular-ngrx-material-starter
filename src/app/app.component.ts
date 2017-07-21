@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, HostBinding } from '@angular/core';
 import { OverlayContainer } from '@angular/material';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
@@ -17,12 +17,12 @@ import { selectorSettings } from './settings';
 })
 export class AppComponent implements OnDestroy {
 
-  themeClass: string;
-  version = env.versions.app;
-  year = new Date().getFullYear();
-
   private unsubscribe$: Subject<void> = new Subject<void>();
 
+  @HostBinding('class') componentCssClass;
+
+  version = env.versions.app;
+  year = new Date().getFullYear();
   logo = require('../assets/logo.png');
   navigation = [
     { link: 'about', label: 'About' },
@@ -39,7 +39,7 @@ export class AppComponent implements OnDestroy {
       .takeUntil(this.unsubscribe$)
       .map(({ theme }) => theme.toLowerCase())
       .subscribe(theme => {
-        this.themeClass = theme;
+        this.componentCssClass = theme;
         overlayContainer.themeClass = theme;
       });
   }

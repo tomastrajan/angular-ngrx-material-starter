@@ -1,92 +1,94 @@
-<div [class]="'holder ' + themeClass">
+<md-sidenav-container>
 
-  <md-sidenav-container class="sidenav-container">
+  <md-sidenav #sidenav mode="push">
+    <div class="branding"><img [src]="logo"/> <span>Angular Starter</span></div>
+    <md-nav-list>
+      <a md-list-item *ngFor="let item of navigation" (click)="sidenav.close()"
+         [routerLink]="[item.link]" routerLinkActive="active">
+        {{item.label}}
+      </a>
+    </md-nav-list>
+  </md-sidenav>
 
-    <md-sidenav #sidenav class="sidenav" mode="push">
-      <div class="branding"><img [src]="logo" /> <span>Angular Starter</span></div>
-      <md-nav-list>
-        <a md-list-item *ngFor="let item of navigation" (click)="sidenav.close()"
-           [routerLink]="[item.link]" routerLinkActive="active">
-          {{item.label}}
-        </a>
-      </md-nav-list>
-    </md-sidenav>
+  <div class="wrapper">
 
-    <div class="wrapper">
+    <md-toolbar color="primary">
+      <button md-icon-button class="hidden-md-up" (click)="sidenav.open()">
+        <md-icon>menu</md-icon>
+      </button>
 
-      <md-toolbar color="primary" class="toolbar">
-        <button md-icon-button class="hidden-md-up" (click)="sidenav.open()">
-          <md-icon>menu</md-icon>
-        </button>
+      <span routerLink="" class="branding spacer hidden-md-up text-center"><img
+        [src]="logo"/> Angular Starter</span>
+      <span routerLink="" class="branding spacer hidden-sm-down"><img
+        [src]="logo"/> Angular ngRx Material Starter</span>
 
-        <span routerLink="" class="branding spacer hidden-md-up text-center"><img [src]="logo" /> Angular Starter</span>
-        <span routerLink="" class="branding spacer hidden-sm-down"><img [src]="logo" /> Angular ngRx Material Starter</span>
-
-        <span class="hidden-sm-down">
-          <button md-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]" routerLinkActive="active">
+      <span class="hidden-sm-down">
+          <button md-button class="nav-button" *ngFor="let item of navigation"
+                  [routerLink]="[item.link]" routerLinkActive="active">
             {{item.label}}
           </button>
         </span>
 
-        <button md-icon-button [mdMenuTriggerFor]="toolbarMenu">
-          <md-icon>more_vert</md-icon>
+      <button md-icon-button [mdMenuTriggerFor]="toolbarMenu">
+        <md-icon>more_vert</md-icon>
+      </button>
+      <md-menu #toolbarMenu="mdMenu">
+        <button md-menu-item disabled>
+          <md-icon>person</md-icon>
+          <span>Manage account</span>
         </button>
-        <md-menu #toolbarMenu="mdMenu">
-          <button md-menu-item disabled>
-            <md-icon>person</md-icon>
-            <span>Manage account</span>
-          </button>
-          <button md-menu-item routerLink="settings">
-            <md-icon>settings</md-icon>
-            <span>Settings</span>
-          </button>
-          <button md-menu-item disabled>
-            <md-icon>power_settings_new</md-icon>
-            <span>Logout</span>
-          </button>
-        </md-menu>
+        <button md-menu-item routerLink="settings">
+          <md-icon>settings</md-icon>
+          <span>Settings</span>
+        </button>
+        <button md-menu-item disabled>
+          <md-icon>power_settings_new</md-icon>
+          <span>Logout</span>
+        </button>
+      </md-menu>
 
-        <a mdTooltip="Project Github Repository"
-           mdTooltipPosition="before"
-           md-icon-button class="link" href="https://github.com/tomastrajan/angular-ngrx-material-starter" target="_blank">
-          <i class="fa fa-github fa-2x"></i>
-        </a>
+      <a mdTooltip="Project Github Repository"
+         mdTooltipPosition="before"
+         md-icon-button class="link"
+         href="https://github.com/tomastrajan/angular-ngrx-material-starter"
+         target="_blank">
+        <i class="fa fa-github fa-2x"></i>
+      </a>
 
-      </md-toolbar>
+    </md-toolbar>
 
+    <div class="content">
       <router-outlet></router-outlet>
-
-      <div class="push"></div>
-
     </div>
 
-    <div class="footer container-fluid">
+    <div class="footer">
       <div class="row">
         <div class="col-sm-12 links">
-           <a href="https://www.github.com/tomastrajan" target="_blank">
-             <i class="fa fa-github fa-2x" aria-hidden="true"></i>
-             <span>Github</span>
-           </a>
-           <a href="https://www.medium.com/@tomastrajan" target="_blank">
-             <i class="fa fa-medium fa-2x" aria-hidden="true"></i>
-             <span>Medium</span>
-           </a>
-           <a href="https://www.twitter.com/tomastrajan" target="_blank">
-             <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
-             <span>Twitter</span>
-           </a>
-           <a href="https://www.youtube.com/channel/UC7XgRHIVoqnh3U5Vmly9ofQ" target="_blank">
-             <i class="fa fa-youtube fa-2x" aria-hidden="true"></i>
-             <span>Youtube</span>
-           </a>
-           <a href="https://www.instagram.com/tomastrajan" target="_blank">
-             <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
-             <span>Instagram</span>
-           </a>
-           <a href="https://www.slides.com/tomastrajan" target="_blank">
-             <i class="fa fa-desktop fa-2x" aria-hidden="true"></i>
-             <span>Slides</span>
-           </a>
+          <a href="https://www.github.com/tomastrajan" target="_blank">
+            <i class="fa fa-github fa-2x" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+          <a href="https://www.medium.com/@tomastrajan" target="_blank">
+            <i class="fa fa-medium fa-2x" aria-hidden="true"></i>
+            <span>Medium</span>
+          </a>
+          <a href="https://www.twitter.com/tomastrajan" target="_blank">
+            <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+            <span>Twitter</span>
+          </a>
+          <a href="https://www.youtube.com/channel/UC7XgRHIVoqnh3U5Vmly9ofQ"
+             target="_blank">
+            <i class="fa fa-youtube fa-2x" aria-hidden="true"></i>
+            <span>Youtube</span>
+          </a>
+          <a href="https://www.instagram.com/tomastrajan" target="_blank">
+            <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.slides.com/tomastrajan" target="_blank">
+            <i class="fa fa-desktop fa-2x" aria-hidden="true"></i>
+            <span>Slides</span>
+          </a>
         </div>
       </div>
       <div class="row">
@@ -101,7 +103,6 @@
       </div>
     </div>
 
+  </div>
 
-  </md-sidenav-container>
-
-</div>
+</md-sidenav-container>
