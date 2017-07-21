@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 
-@mixin about-component-theme($theme) {
+@mixin anms-about-component-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $foreground: map-get($theme, foreground);

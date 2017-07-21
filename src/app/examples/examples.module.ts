@@ -14,6 +14,8 @@ import { StockMarketComponent } from './stock-market/stock-market.component';
 import { stockMarketReducer } from './stock-market/stock-market.reducer';
 import { StockMarketEffects } from './stock-market/stock-market.effects';
 import { StockMarketService } from './stock-market/stock-market.service';
+import { ParentComponent } from './theming/parent/parent.component';
+import { ChildComponent } from './theming/child/child.component';
 
 @NgModule({
   imports: [
@@ -32,7 +34,9 @@ import { StockMarketService } from './stock-market/stock-market.service';
   declarations: [
     ExamplesComponent,
     TodosComponent,
-    StockMarketComponent
+    StockMarketComponent,
+    ParentComponent,
+    ChildComponent
   ],
   providers: [
     StockMarketService

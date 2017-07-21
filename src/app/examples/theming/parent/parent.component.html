@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Theme scoping with nested components</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <p>
+        Theme styles are not imported in component's <code>stylesUrls</code>
+        property of <code>@Component</code> decorator but in the main
+        <code>styles.scss</code> file. Because of this, theme styles are
+        <strong>NOT</strong> scoped to the component automatically.
+      </p>
+      <p>
+        We have to use <strong>specific</strong> selectors to prevent styles
+        from leaking into child components. This can be achieved by using
+        <code>> (child selectors)</code> in css rules to enhance their
+        specificity. For example checkout theme file of this component:
+      </p>
+      <pre>
+{{themeSrc}}
+      </pre>
+    </div>
+    <div class="col-md-6">
+      <div class="example">
+        <h1>parent works!</h1>
+        <anms-child></anms-child>
+      </div>
+    </div>
+  </div>
+</div>

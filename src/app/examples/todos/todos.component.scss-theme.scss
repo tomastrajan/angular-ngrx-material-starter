@@ -1,11 +1,11 @@
 @import '~@angular/material/theming';
 
-@mixin todos-component-theme($theme) {
+@mixin anms-todos-component-theme($theme) {
   $accent: map-get($theme, accent);
 
   // angular material overlay class
   .cdk-overlay-container {
-    
+
     .todos-filter-menu {
       .active {
         color: mat-color($accent, default-contrast);
