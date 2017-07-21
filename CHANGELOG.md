@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.4.0...v1.5.0) (2017-07-21)
+
+
+### Features
+
+* add blog link ([3483898](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3483898))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.3.0...v1.4.0) (2017-07-21)
 
