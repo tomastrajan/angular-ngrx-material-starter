@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.5.0...v1.6.0) (2017-07-22)
+
+
+### Bug Fixes
+
+* styling inconsistencies ([38b12ca](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/38b12ca))
+
+
+### Features
+
+* stub auth functionality ([7d3a098](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7d3a098))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.4.0...v1.5.0) (2017-07-21)
 
