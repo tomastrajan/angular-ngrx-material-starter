@@ -1,4 +1,4 @@
-import { Component, OnDestroy, HostBinding } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostBinding } from '@angular/core';
 import { OverlayContainer } from '@angular/material';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
@@ -6,6 +6,7 @@ import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 
+import { selectorAuth, login, logout } from '@app/core';
 import { environment as env } from '@env/environment';
 
 import { selectorSettings } from './settings';
@@ -15,7 +16,7 @@ import { selectorSettings } from './settings';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
 
   private unsubscribe$: Subject<void> = new Subject<void>();
 
@@ -29,24 +30,39 @@ export class AppComponent implements OnDestroy {
     { link: 'features', label: 'Features' },
     { link: 'examples', label: 'Examples' },
   ];
+  isAuthenticated;
 
   constructor(
-    overlayContainer: OverlayContainer,
+    public overlayContainer: OverlayContainer,
     private store: Store<any>
-  ) {
-    store
+  ) {}
+
+  ngOnInit(): void {
+    this.store
       .select(selectorSettings)
       .takeUntil(this.unsubscribe$)
       .map(({ theme }) => theme.toLowerCase())
       .subscribe(theme => {
         this.componentCssClass = theme;
-        overlayContainer.themeClass = theme;
+        this.overlayContainer.themeClass = theme;
       });
+    this.store
+      .select(selectorAuth)
+      .takeUntil(this.unsubscribe$)
+      .subscribe(auth => this.isAuthenticated = auth.isAuthenticated);
   }
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+  }
+
+  onLoginClick() {
+    this.store.dispatch(login());
+  }
+
+  onLogoutClick() {
+    this.store.dispatch(logout());
   }
 
 }

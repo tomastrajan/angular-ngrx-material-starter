@@ -23,29 +23,33 @@
         [src]="logo"/> Angular ngRx Material Starter</span>
 
       <span class="hidden-sm-down">
-          <button md-button class="nav-button" *ngFor="let item of navigation"
-                  [routerLink]="[item.link]" routerLinkActive="active">
-            {{item.label}}
-          </button>
-        </span>
+        <button md-button class="nav-button" *ngFor="let item of navigation"
+            [routerLink]="[item.link]" routerLinkActive="active">
+          {{item.label}}
+        </button>
+      </span>
 
-      <button md-icon-button [mdMenuTriggerFor]="toolbarMenu">
-        <md-icon>more_vert</md-icon>
+      <button md-button class="sign-in-button"
+              *ngIf="!isAuthenticated"
+              (click)="onLoginClick()">
+        Sign in
       </button>
-      <md-menu #toolbarMenu="mdMenu">
-        <button md-menu-item disabled>
-          <md-icon>person</md-icon>
-          <span>Manage account</span>
-        </button>
-        <button md-menu-item routerLink="settings">
-          <md-icon>settings</md-icon>
-          <span>Settings</span>
-        </button>
-        <button md-menu-item disabled>
+
+      <button *ngIf="isAuthenticated"
+              md-icon-button
+              [mdMenuTriggerFor]="toolbarUserMenu">
+        <md-icon>person</md-icon>
+      </button>
+      <md-menu #toolbarUserMenu="mdMenu">
+        <button md-menu-item (click)="onLogoutClick()">
           <md-icon>power_settings_new</md-icon>
           <span>Logout</span>
         </button>
       </md-menu>
+
+      <button md-icon-button routerLink="settings">
+        <md-icon>settings</md-icon>
+      </button>
 
       <a mdTooltip="Project Github Repository"
          mdTooltipPosition="before"

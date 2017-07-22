@@ -2,22 +2,28 @@
 
 md-sidenav-container {
   height: 100%;
+
+  md-toolbar {
+
+    .nav-button {
+      margin: 0 10px 0 0;
+    }
+
+    .branding {
+      cursor: pointer;
+    }
+
+    .sign-in-button {
+      line-height: 35px;
+      margin-right: 10px;
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+  }
 }
 
-md-toolbar {
-
-  .nav-button {
-    margin: 0 10px 0 0;
-  }
-
-  .branding {
-    cursor: pointer;
-  }
-
-  .spacer {
-    flex: 1 1 auto;
-  }
-}
 
 md-sidenav {
   width: 250px;
