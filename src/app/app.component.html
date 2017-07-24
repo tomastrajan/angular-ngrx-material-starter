@@ -3,7 +3,7 @@
   <md-sidenav #sidenav mode="push">
     <div class="branding"><img [src]="logo"/> <span>Angular Starter</span></div>
     <md-nav-list>
-      <a md-list-item *ngFor="let item of navigation" (click)="sidenav.close()"
+      <a md-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()"
          [routerLink]="[item.link]" routerLinkActive="active">
         {{item.label}}
       </a>
@@ -47,7 +47,7 @@
         </button>
       </md-menu>
 
-      <button md-icon-button routerLink="settings">
+      <button md-icon-button routerLink="settings" class="hidden-sm-down">
         <md-icon>settings</md-icon>
       </button>
 
@@ -61,8 +61,9 @@
 
     </md-toolbar>
 
-    <div class="content">
-      <router-outlet></router-outlet>
+    <div class="content"
+         [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
+      <router-outlet #o="outlet"></router-outlet>
     </div>
 
     <div class="footer">

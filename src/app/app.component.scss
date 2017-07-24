@@ -4,6 +4,7 @@ md-sidenav-container {
   height: 100%;
 
   md-toolbar {
+    z-index: 1;
 
     .nav-button {
       margin: 0 10px 0 0;
@@ -20,6 +21,18 @@ md-sidenav-container {
 
     .spacer {
       flex: 1 1 auto;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, lg)) {
+      .nav-button {
+        min-width: 0;
+        padding: 0 10px;
+      }
+      .sign-in-button {
+        min-width: 0;
+        padding: 0 10px;
+        margin: 0 5px 0 0;
+      }
     }
   }
 }
@@ -57,6 +70,7 @@ md-sidenav {
 
   .content {
     flex: 1 0 auto;
+    position: relative;
   }
 
   .footer {

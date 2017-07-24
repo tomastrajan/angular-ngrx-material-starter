@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { OverlayContainer } from '@angular/material';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
@@ -6,15 +6,17 @@ import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/filter';
 
-import { selectorAuth, login, logout } from '@app/core';
+import { login, logout, selectorAuth, routerTransition } from '@app/core';
 import { environment as env } from '@env/environment';
 
 import { selectorSettings } from './settings';
 
+
 @Component({
   selector: 'anms-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [routerTransition]
 })
 export class AppComponent implements OnInit, OnDestroy {
 
@@ -28,14 +30,17 @@ export class AppComponent implements OnInit, OnDestroy {
   navigation = [
     { link: 'about', label: 'About' },
     { link: 'features', label: 'Features' },
-    { link: 'examples', label: 'Examples' },
+    { link: 'examples', label: 'Examples' }
+  ];
+  navigationSideMenu = [
+    ...this.navigation,
+    { link: 'settings', label: 'Settings' }
   ];
   isAuthenticated;
 
-  constructor(
-    public overlayContainer: OverlayContainer,
-    private store: Store<any>
-  ) {}
+  constructor(public overlayContainer: OverlayContainer,
+              private store: Store<any>) {
+  }
 
   ngOnInit(): void {
     this.store
