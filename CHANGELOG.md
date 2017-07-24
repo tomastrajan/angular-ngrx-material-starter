@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.6.0...v1.7.0) (2017-07-24)
+
+
+### Bug Fixes
+
+* responsive layout ([27db236](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/27db236))
+
+
+### Features
+
+* add route transitions ([df94736](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/df94736))
+* use route transitions ([224c44d](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/224c44d))
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.5.0...v1.6.0) (2017-07-22)
 
