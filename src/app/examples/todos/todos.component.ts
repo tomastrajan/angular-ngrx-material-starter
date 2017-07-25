@@ -4,6 +4,8 @@ import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
 import 'rxjs/add/operator/map';
 
+import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
+
 import {
   actionAddTodo,
   actionPersistTodos,
@@ -24,6 +26,7 @@ export class TodosComponent implements OnInit, OnDestroy {
 
   private unsubscribe$: Subject<void> = new Subject<void>();
 
+  animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
   todos: any;
   newTodo = '';
 

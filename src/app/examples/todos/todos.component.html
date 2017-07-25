@@ -49,7 +49,7 @@
           </md-chip>
         </md-chip-list>
       </h2>
-      <md-card *ngFor="let todo of filteredTodos" class="todo">
+      <md-card *ngFor="let todo of filteredTodos" class="todo" [ngClass]="animateOnRouteEnter">
         <md-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></md-checkbox>
         <span class="todo-label" (click)="onToggleTodo(todo)">{{todo.name}}</span>
       </md-card>

@@ -3,27 +3,27 @@
     <div class="container">
       <h1>Angular ngRx Material Starter</h1>
       <div class="actions">
-        <a md-raised-button color="primary" routerLink="../features"
-           class="route-enter-staggered">
+        <a [ngClass]="animateOnRouteEnter"
+           md-raised-button color="primary" routerLink="../features">
           Check Features
         </a>
         <a md-raised-button color="accent" routerLink="../examples"
-           class="route-enter-staggered">
+           [ngClass]="animateOnRouteEnter">
           Check Examples
         </a>
         <a md-raised-button routerLink="../settings"
-           class="route-enter-staggered">
+           [ngClass]="animateOnRouteEnter">
           Change Theme
         </a>
-        <span class="route-enter-staggered">or</span>
+        <span [ngClass]="animateOnRouteEnter">or</span>
         <a md-raised-button
-           class="route-enter-staggered"
+           [ngClass]="animateOnRouteEnter"
            target="_blank"
            href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1">
           <i class="fa fa-medium"></i> Check Blog Post
         </a>
       </div>
-      <div class="get-started route-enter-staggered">
+      <div class="get-started" [ngClass]="animateOnRouteEnter">
         <h2>Getting started</h2>
         <code>git clone
           https://github.com/tomastrajan/angular-ngrx-material-starter.git

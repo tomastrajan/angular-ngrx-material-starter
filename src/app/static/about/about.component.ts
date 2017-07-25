@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
+
 @Component({
   selector: 'anms-about',
   templateUrl: './about.component.html',
@@ -7,11 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  intro = require('../../../assets/intro.jpg');
+  animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

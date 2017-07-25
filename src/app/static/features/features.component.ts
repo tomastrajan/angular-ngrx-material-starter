@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { environment as env } from '@env/environment';
+import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
 
 @Component({
   selector: 'anms-features',
@@ -9,10 +10,10 @@ import { environment as env } from '@env/environment';
 })
 export class FeaturesComponent implements OnInit {
 
+  animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
   versions = env.versions;
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   openLink(link: string) {
     window.open(link, '_blank');
