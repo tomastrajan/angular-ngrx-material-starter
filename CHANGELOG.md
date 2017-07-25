@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.7.1...v1.8.0) (2017-07-25)
+
+
+### Features
+
+* sub navigation animations ([be7a040](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/be7a040))
+
+
+
 <a name="1.7.1"></a>
 ## [1.7.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.7.0...v1.7.1) (2017-07-24)
 
