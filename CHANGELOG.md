@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.10.0"></a>
+# [1.10.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.9.0...v1.10.0) (2017-08-10)
+
+
+### Features
+
+* bump [@angular](https://github.com/angular)/cli to 1.3.0 and use --build-optimizer (smaller bundles) ([f0ec1c0](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f0ec1c0))
+
+
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.8.0...v1.9.0) (2017-07-25)
 
