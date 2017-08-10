@@ -10,8 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "watch": "ng test --browsers PhantomJS --reporters spec",
-    "build:prod": "ng build --target production --aot --vendor-chunk --extract-css --output-hashing all --stats-json",
-    "build:travisci": "ng build --target production --aot --vendor-chunk --extract-css --output-hashing all --stats-json --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
+    "build:prod": "ng build --target production --aot --build-optimizer --vendor-chunk --extract-css --output-hashing all --stats-json",
+    "build:travisci": "ng build --target production --aot --build-optimizer --vendor-chunk --extract-css --output-hashing all --stats-json --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
     "clean": "rm -rf ./dist/",
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
@@ -46,7 +46,7 @@
     "zone.js": "0.8.12"
   },
   "devDependencies": {
-    "@angular/cli": "1.3.0-rc.0",
+    "@angular/cli": "~1.3.0",
     "@angular/compiler-cli": "^4.3.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
