@@ -6,6 +6,8 @@ Check out [Blog post](https://medium.com/@tomastrajan/the-complete-guide-to-angu
 
 Check out [Presentation (Slides)](http://slides.com/tomastrajan/angular-material-themes-guide#/)
 
+Check out [Live coding Video Tutorial](https://www.youtube.com/watch?v=PsgZjFTAleI)
+
 ![into](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/intro.png)
 ![themes](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/themes.png)
 
