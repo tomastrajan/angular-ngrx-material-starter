@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.11.0"></a>
+# [1.11.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.9.0...v1.11.0) (2017-08-25)
+
+
+### Features
+
+* add license file ([4def862](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4def862)), closes [#4](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/4)
+* add video link to README.md ([be2e4e4](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/be2e4e4))
+* bump [@angular](https://github.com/angular) to 5.0.0-beta.4 and [@angular](https://github.com/angular)/cli to 1.4.0-beta.21 ([7f1ae65](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7f1ae65))
+* bump [@angular](https://github.com/angular)/cli to 1.3.0 and use --build-optimizer (smaller bundles) ([f0ec1c0](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f0ec1c0))
+* update README.md ([42655a4](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/42655a4))
+
+
+
 <a name="1.10.0"></a>
 # [1.10.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.9.0...v1.10.0) (2017-08-10)
 
