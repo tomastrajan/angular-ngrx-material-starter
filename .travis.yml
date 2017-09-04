@@ -1,4 +1,7 @@
 language: node_js
+dist: trusty
+addons:
+  chrome: stable
 node_js:
   - "6"
 script:
