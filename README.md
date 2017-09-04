@@ -8,6 +8,8 @@ Check out [Presentation (Slides)](http://slides.com/tomastrajan/angular-material
 
 Check out [Live coding Video Tutorial](https://www.youtube.com/watch?v=PsgZjFTAleI)
 
+Check out [Meetup Presentation & Live coding Video](https://www.youtube.com/watch?v=7auj9RfCNrE)
+
 ![into](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/intro.png)
 ![themes](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/themes.png)
 
