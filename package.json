@@ -15,7 +15,7 @@
     "clean": "rm -rf ./dist/",
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
-    "ci": "npm run clean && ng lint && ng test --single-run --reporters spec && npm run build:travisci",
+    "ci": "npm run clean && ng lint && ng test --browser ChromeTravisCi --single-run --reporters spec && npm run build:travisci",
     "release": "standard-version && git push --follow-tags origin master"
   },
   "private": true,
