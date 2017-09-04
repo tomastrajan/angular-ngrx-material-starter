@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.12.0"></a>
+# [1.12.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.11.0...v1.12.0) (2017-09-04)
+
+
+### Bug Fixes
+
+* travis ci chrome env ([415bdc9](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/415bdc9))
+* travis ci chrome env ([4e56415](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4e56415))
+* travis ci chrome env ([94e571b](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/94e571b))
+
+
+### Features
+
+* add meetup video link to README.md ([ae85ec0](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ae85ec0))
+* bump angular, material and cli versions, use chrome on travis ci, remove intl dependency ([0b65ae5](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0b65ae5))
+* use headless chrome for local watch mode testing ([70df03d](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/70df03d))
+
+
+
 <a name="1.11.0"></a>
 # [1.11.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.9.0...v1.11.0) (2017-08-25)
 
