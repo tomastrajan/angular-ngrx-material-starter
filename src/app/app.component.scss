@@ -1,5 +1,3 @@
-@import 'styles-variables';
-
 md-sidenav-container {
   height: 100%;
 
@@ -23,17 +21,17 @@ md-sidenav-container {
       flex: 1 1 auto;
     }
 
-    @media (max-width: map-get($grid-breakpoints, lg)) {
-      .nav-button {
-        min-width: 0;
-        padding: 0 10px;
-      }
-      .sign-in-button {
-        min-width: 0;
-        padding: 0 10px;
-        margin: 0 5px 0 0;
-      }
-    }
+    //@media (max-width: map-get($grid-breakpoints, lg)) {
+    //  .nav-button {
+    //    min-width: 0;
+    //    padding: 0 10px;
+    //  }
+    //  .sign-in-button {
+    //    min-width: 0;
+    //    padding: 0 10px;
+    //    margin: 0 5px 0 0;
+    //  }
+    //}
   }
 }
 
@@ -86,10 +84,7 @@ md-sidenav {
           transition: padding 0.5s;
           display: inline-block;
           padding: 20px 5px;
-
-          &:hover {
-            text-decoration: none;
-          }
+          text-decoration: none;
 
           span {
             display: inline-block;
@@ -102,7 +97,7 @@ md-sidenav {
           }
         }
 
-        @media (max-width: map-get($grid-breakpoints, md)) {
+        &.md {
           a {
             padding: 20px;
 
@@ -113,7 +108,7 @@ md-sidenav {
           }
         }
 
-        @media (max-width: map-get($grid-breakpoints, sm)) {
+        &.sm {
           a {
             padding: 20px 5px;
           }

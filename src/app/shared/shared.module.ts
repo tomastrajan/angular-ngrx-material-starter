@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule  } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {
   MdButtonModule,
   MdToolbarModule,
@@ -25,6 +26,7 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
   imports: [
     CommonModule,
     FormsModule,
+    FlexLayoutModule,
 
     MdButtonModule,
     MdToolbarModule,
@@ -48,6 +50,7 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
   exports: [
     CommonModule,
     FormsModule,
+    FlexLayoutModule,
 
     MdButtonModule,
     MdMenuModule,

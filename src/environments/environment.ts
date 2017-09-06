@@ -12,7 +12,7 @@ export const environment = {
     angular: packageJson.dependencies['@angular/core'],
     ngrx: packageJson.dependencies['@ngrx/store'],
     material: packageJson.dependencies['@angular/material'],
-    bootstrap: packageJson.dependencies.bootstrap,
+    flexLayout: packageJson.dependencies['@angular/flex-layout'],
     rxjs: packageJson.dependencies.rxjs,
     angularCli: packageJson.devDependencies['@angular/cli']
   }
