@@ -9,6 +9,7 @@ export const environment = {
     material: packageJson.dependencies['@angular/material'],
     bootstrap: packageJson.dependencies.bootstrap,
     rxjs: packageJson.dependencies.rxjs,
-    angularCli: packageJson.devDependencies['@angular/cli']
+    angularCli: packageJson.devDependencies['@angular/cli'],
+    typescript: packageJson.devDependencies['typescript']
   }
 };
