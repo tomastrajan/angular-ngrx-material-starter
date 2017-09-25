@@ -49,7 +49,7 @@ export class AppComponent implements OnInit, OnDestroy {
       .map(({ theme }) => theme.toLowerCase())
       .subscribe(theme => {
         this.componentCssClass = theme;
-        this.overlayContainer.themeClass = theme;
+        this.overlayContainer.getContainerElement().classList.add(theme);
       });
     this.store
       .select(selectorAuth)
