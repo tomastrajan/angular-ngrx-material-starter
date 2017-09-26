@@ -27,7 +27,7 @@ Check out [Meetup Presentation & Live coding Video](https://www.youtube.com/watc
 ## Stack
 
 * Angular
-* ngrx
+* ngrx (or try [ngx-model](https://github.com/tomastrajan/ngx-model) if you prefer less boilerplate)
 * Angular Material
 * Bootstrap 4 (only reset and grids)
 
