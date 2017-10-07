@@ -9,12 +9,12 @@
         <anms-big-input-action icon="add" color="accent"
                                (action)="onAddTodo()"
                                [disabled]="isAddTodoDisabled"
-                               mdTooltip="Add new todo" mdTooltipPosition="before">
+                               matTooltip="Add new todo" matTooltipPosition="before">
         </anms-big-input-action>
         <anms-big-input-action icon="delete_forever" color="warn"
                                (action)="onRemoveDoneTodos()"
                                [disabled]="isRemoveDoneTodosDisabled"
-                               mdTooltip="Remove done todos" mdTooltipPosition="after">
+                               matTooltip="Remove done todos" matTooltipPosition="after">
         </anms-big-input-action>
       </anms-big-input>
     </div>
@@ -23,36 +23,36 @@
     <div class="col-md-6">
       <h2>
         Todo List
-        <button class="todos-filter" md-icon-button [mdMenuTriggerFor]="todosFilter">
-          <md-icon>filter_list</md-icon>
+        <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter">
+          <mat-icon>filter_list</mat-icon>
         </button>
-        <md-menu class="todos-filter-menu" #todosFilter="mdMenu" xPosition="before">
-          <button md-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }">
-            <md-icon>assignment</md-icon>
+        <mat-menu class="todos-filter-menu" #todosFilter="matMenu" xPosition="before">
+          <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }">
+            <mat-icon>assignment</mat-icon>
             <span>All</span>
           </button>
-          <button md-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }">
-            <md-icon>done</md-icon>
+          <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }">
+            <mat-icon>done</mat-icon>
             <span>Done</span>
           </button>
-          <button md-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }">
-            <md-icon>check_box_outline_blank</md-icon>
+          <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }">
+            <mat-icon>check_box_outline_blank</mat-icon>
             <span>Active</span>
           </button>
-        </md-menu>
-        <md-chip-list class="todos-filter-info">
-          <md-chip>
+        </mat-menu>
+        <mat-chip-list class="todos-filter-info">
+          <mat-chip>
             Displaying {{todos.filter !== 'ALL' ? filteredTodos.length : ''}}
             {{todos.filter.toLowerCase()}}
             {{todos.filter === 'ALL' ? filteredTodos.length : ''}}
             todo{{filteredTodos.length > 1 ? 's' : ''}}
-          </md-chip>
-        </md-chip-list>
+          </mat-chip>
+        </mat-chip-list>
       </h2>
-      <md-card *ngFor="let todo of filteredTodos" class="todo" [ngClass]="animateOnRouteEnter">
-        <md-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></md-checkbox>
+      <mat-card *ngFor="let todo of filteredTodos" class="todo" [ngClass]="animateOnRouteEnter">
+        <mat-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></mat-checkbox>
         <span class="todo-label" (click)="onToggleTodo(todo)">{{todo.name}}</span>
-      </md-card>
+      </mat-card>
       <br>
       <br>
     </div>

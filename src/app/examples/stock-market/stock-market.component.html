@@ -7,11 +7,11 @@
   <div class="row">
     <div class="col-md-6 col-lg-3">
       <form autocomplete="false">
-        <md-input-container>
-          <input mdInput placeholder="Stock symbol"
+        <mat-input-container>
+          <input matInput placeholder="Stock symbol"
                  [value]="stocks.symbol"
                  (keyup)="onSymbolChange($event.target.value)">
-        </md-input-container>
+        </mat-input-container>
       </form>
       <p>
         Please provide some valid stock market symbol like: GOOGL, FB, AAPL, NVDA, AMZN, TWTR, SNAP, TSLA...
@@ -19,18 +19,18 @@
       <br>
     </div>
     <div class="col-md-6 col-lg-4 offset-lg-1">
-      <md-spinner *ngIf="stocks.loading"></md-spinner>
-      <md-card *ngIf="stocks.stock">
-        <md-card-title>{{stocks.stock.symbol}} <span>{{stocks.stock.last}} {{stocks.stock.ccy}}</span></md-card-title>
-        <md-card-subtitle>
+      <mat-spinner *ngIf="stocks.loading"></mat-spinner>
+      <mat-card *ngIf="stocks.stock">
+        <mat-card-title>{{stocks.stock.symbol}} <span>{{stocks.stock.last}} {{stocks.stock.ccy}}</span></mat-card-title>
+        <mat-card-subtitle>
           {{stocks.stock.exchange}}
           <span [ngClass]="{ negative: stocks.stock.changeNegative }">
             <i class="fa fa-caret-up" *ngIf="stocks.stock.changePositive"></i>
             <i class="fa fa-caret-down" *ngIf="stocks.stock.changeNegative"></i>
             {{stocks.stock.change}} ({{stocks.stock.changePercent}})
           </span>
-        </md-card-subtitle>
-      </md-card>
+        </mat-card-subtitle>
+      </mat-card>
       <p *ngIf="stocks.error" class="error">
         <i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i><br><br>
         <span>Stock <span class="symbol">{{stocks.symbol}}</span> not found</span>

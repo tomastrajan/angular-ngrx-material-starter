@@ -1,4 +1,4 @@
-<button md-raised-button [color]="color" [disabled]="disabled" (click)="onClick()">
-  <md-icon *ngIf="icon">{{icon}}</md-icon>
+<button mat-raised-button color="color" [disabled]="disabled" (click)="onClick()">
+  <mat-icon *ngIf="icon">{{icon}}</mat-icon>
   <span *ngIf="label">{{label}}</span>
 </button>

@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
-import { OverlayContainer } from '@angular/material';
+import { OverlayContainer } from '@angular/cdk/overlay';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
@@ -38,9 +38,10 @@ export class AppComponent implements OnInit, OnDestroy {
   ];
   isAuthenticated;
 
-  constructor(public overlayContainer: OverlayContainer,
-              private store: Store<any>) {
-  }
+  constructor(
+    public overlayContainer: OverlayContainer,
+    private store: Store<any>
+  ) {}
 
   ngOnInit(): void {
     this.store

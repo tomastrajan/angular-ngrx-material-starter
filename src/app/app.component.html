@@ -1,20 +1,20 @@
-<md-sidenav-container>
+<mat-sidenav-container>
 
-  <md-sidenav #sidenav mode="push">
+  <mat-sidenav #sidenav mode="push">
     <div class="branding"><img [src]="logo"/> <span>Angular Starter</span></div>
-    <md-nav-list>
-      <a md-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()"
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()"
          [routerLink]="[item.link]" routerLinkActive="active">
         {{item.label}}
       </a>
-    </md-nav-list>
-  </md-sidenav>
+    </mat-nav-list>
+  </mat-sidenav>
 
   <div class="wrapper">
 
-    <md-toolbar color="primary">
-      <button md-icon-button class="hidden-md-up" (click)="sidenav.open()">
-        <md-icon>menu</md-icon>
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="hidden-md-up" (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
       </button>
 
       <span routerLink="" class="branding spacer hidden-md-up text-center"><img
@@ -23,43 +23,43 @@
         [src]="logo"/> Angular ngRx Material Starter</span>
 
       <span class="hidden-sm-down">
-        <button md-button class="nav-button" *ngFor="let item of navigation"
+        <button mat-button class="nav-button" *ngFor="let item of navigation"
             [routerLink]="[item.link]" routerLinkActive="active">
           {{item.label}}
         </button>
       </span>
 
-      <button md-button class="sign-in-button"
+      <button mat-button class="sign-in-button"
               *ngIf="!isAuthenticated"
               (click)="onLoginClick()">
         Sign in
       </button>
 
       <button *ngIf="isAuthenticated"
-              md-icon-button
-              [mdMenuTriggerFor]="toolbarUserMenu">
-        <md-icon>person</md-icon>
+              mat-icon-button
+              [matMenuTriggerFor]="toolbarUserMenu">
+        <mat-icon>person</mat-icon>
       </button>
-      <md-menu #toolbarUserMenu="mdMenu">
-        <button md-menu-item (click)="onLogoutClick()">
-          <md-icon>power_settings_new</md-icon>
+      <mat-menu #toolbarUserMenu="matMenu">
+        <button mat-menu-item (click)="onLogoutClick()">
+          <mat-icon>power_settings_new</mat-icon>
           <span>Logout</span>
         </button>
-      </md-menu>
+      </mat-menu>
 
-      <button md-icon-button routerLink="settings" class="hidden-sm-down">
-        <md-icon>settings</md-icon>
+      <button mat-icon-button routerLink="settings" class="hidden-sm-down">
+        <mat-icon>settings</mat-icon>
       </button>
 
-      <a mdTooltip="Project Github Repository"
-         mdTooltipPosition="before"
-         md-icon-button class="link"
+      <a matTooltip="Project Github Repository"
+         matdTooltipPosition="before"
+         mat-icon-button class="link"
          href="https://github.com/tomastrajan/angular-ngrx-material-starter"
          target="_blank">
         <i class="fa fa-github fa-2x"></i>
       </a>
 
-    </md-toolbar>
+    </mat-toolbar>
 
     <div class="content"
          [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
@@ -99,8 +99,8 @@
       <div class="row">
         <div class="col-12 signature">
           &#169; {{year}} - Tomas Trajan
-          <a mdTooltip="Show changelog"
-             mdTooltipPosition="before"
+          <a matTooltip="Show changelog"
+             matTooltipPosition="before"
              href="https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md">
             <i class="fa fa-rocket"></i> {{version}}
           </a>
@@ -110,4 +110,4 @@
 
   </div>
 
-</md-sidenav-container>
+</mat-sidenav-container>
