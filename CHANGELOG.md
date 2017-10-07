@@ -15,6 +15,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **core:** core module single import check ([4da5b85](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4da5b85))
 
+* **material:** migrate from md to mat prefixes, bump version of angular to rc.1 and material to beta.12 ([41c10f9](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/41c10f9))
+
 
 
 <a name="1.14.0"></a>
