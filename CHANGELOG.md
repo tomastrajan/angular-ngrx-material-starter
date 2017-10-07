@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.15.0"></a>
+# [1.15.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.14.0...v1.15.0) (2017-10-07)
+
+
+### Bug Fixes
+
+* **dependency:** remove core module import ([084a9f7](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/084a9f7))
+
+
+### Features
+
+* **core:** core module single import check ([4da5b85](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4da5b85))
+
+
+
 <a name="1.14.0"></a>
 # [1.14.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.13.0...v1.14.0) (2017-09-26)
 
