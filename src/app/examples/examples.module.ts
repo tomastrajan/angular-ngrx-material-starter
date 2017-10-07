@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 
 import { ExamplesRoutingModule } from './examples-routing.module';
@@ -19,7 +18,6 @@ import { ChildComponent } from './theming/child/child.component';
 
 @NgModule({
   imports: [
-    CoreModule,
     SharedModule,
     ExamplesRoutingModule,
     StoreModule.forFeature('examples', {
