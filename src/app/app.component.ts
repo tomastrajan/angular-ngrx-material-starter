@@ -1,4 +1,6 @@
-import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { Component, HostBinding, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
@@ -39,19 +41,22 @@ export class AppComponent implements OnInit, OnDestroy {
   isAuthenticated;
 
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     public overlayContainer: OverlayContainer,
     private store: Store<any>
   ) {}
 
   ngOnInit(): void {
-    this.store
-      .select(selectorSettings)
-      .takeUntil(this.unsubscribe$)
-      .map(({ theme }) => theme.toLowerCase())
-      .subscribe(theme => {
-        this.componentCssClass = theme;
-        this.overlayContainer.getContainerElement().classList.add(theme);
-      });
+    if (isPlatformBrowser(this.platformId)) {
+      this.store
+        .select(selectorSettings)
+        .takeUntil(this.unsubscribe$)
+        .map(({ theme }) => theme.toLowerCase())
+        .subscribe(theme => {
+          this.componentCssClass = theme;
+          this.overlayContainer.getContainerElement().classList.add(theme);
+        });
+    }
     this.store
       .select(selectorAuth)
       .takeUntil(this.unsubscribe$)
