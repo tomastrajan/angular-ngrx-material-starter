@@ -1,9 +1,9 @@
 @import 'styles-variables';
 
-md-sidenav-container {
+mat-sidenav-container {
   height: 100%;
 
-  md-toolbar {
+  mat-toolbar {
     z-index: 1;
 
     .nav-button {
@@ -38,7 +38,7 @@ md-sidenav-container {
 }
 
 
-md-sidenav {
+mat-sidenav {
   width: 250px;
 
   .branding {

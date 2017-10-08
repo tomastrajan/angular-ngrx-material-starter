@@ -4,9 +4,9 @@
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
 
-  md-sidenav-container {
+  mat-sidenav-container {
 
-    md-toolbar {
+    mat-toolbar {
       button {
         &.active {
           color: mat-color($accent, default-contrast);
@@ -24,7 +24,7 @@
       }
     }
 
-    md-sidenav {
+    mat-sidenav {
       a {
         &.active {
           color: mat-color($accent, default-contrast);

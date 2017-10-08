@@ -10,10 +10,10 @@
   margin: 0 0 20px 0
 }
 
-md-card {
+mat-card {
   margin: 0 0 20px 0;
 
-  md-card-title {
+  mat-card-title {
     position: relative;
 
     code {
@@ -24,12 +24,12 @@ md-card {
       font-size: 10px;
     }
   }
-  md-card-subtitle {
+  mat-card-subtitle {
     min-height: 60px;
   }
 
   @media (max-width: map-get($grid-breakpoints, sm)) {
-    md-card-subtitle {
+    mat-card-subtitle {
       min-height: auto;
     }
   }

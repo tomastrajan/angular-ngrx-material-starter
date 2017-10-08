@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
-import { OverlayContainer } from '@angular/material';
+import { OverlayContainer } from '@angular/cdk/overlay';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
