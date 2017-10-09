@@ -18,13 +18,17 @@ import {
 } from './stock-market.reducer';
 import { StockMarketService } from './stock-market.service';
 
+import { Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+
 @Injectable()
 export class StockMarketEffects {
 
   constructor(
     private actions$: Actions<Action>,
     private localStorageService: LocalStorageService,
-    private service: StockMarketService
+    private service: StockMarketService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   @Effect() retrieveStock(): Observable<Action> {

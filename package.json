@@ -16,7 +16,11 @@
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
     "ci": "npm run clean && ng lint && ng test --browser ChromeTravisCi --single-run --reporters spec && npm run build:travisci",
-    "release": "standard-version && git push --follow-tags origin master"
+    "release": "standard-version && git push --follow-tags origin master",
+    "build:dynamic": "npm run build:client-and-server-bundles && npm run webpack:server",
+    "serve:dynamic": "node dist/server.js",
+    "build:client-and-server-bundles": "ng build --prod && ng build --prod --app 1 --output-hashing=false",
+    "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },
   "private": true,
   "dependencies": {
@@ -30,10 +34,12 @@
     "@angular/material": "^2.0.0-beta.12",
     "@angular/platform-browser": "^5.0.0-rc.1",
     "@angular/platform-browser-dynamic": "^5.0.0-rc.1",
+    "@angular/platform-server": "^5.0.0-rc.1",
     "@angular/router": "^5.0.0-rc.1",
     "@ngrx/effects": "^4.0.0",
     "@ngrx/router-store": "^4.0.0",
     "@ngrx/store": "^4.0.0",
+    "@nguniversal/module-map-ngfactory-loader": "^1.0.0-beta.3",
     "bootstrap": "4.0.0-alpha.6",
     "classlist.js": "^1.1",
     "core-js": "^2.4.1",
@@ -62,6 +68,7 @@
     "karma-spec-reporter": "0.0.31",
     "protractor": "~5.1.0",
     "standard-version": "^4.2.0",
+    "ts-loader": "^2.3.7",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
     "typescript": "~2.5.0"
