@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.16.0"></a>
+# [1.16.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.15.0...v1.16.0) (2017-10-10)
+
+
+### Features
+
+* **dependency:** use angular-cli 1.5.0-beta.4, remove unused types ([ebccc76](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ebccc76))
+* **prettier:** add prettier support ([7409bc6](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7409bc6))
+
+
+
 <a name="1.15.0"></a>
 # [1.15.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.14.0...v1.15.0) (2017-10-07)
 
