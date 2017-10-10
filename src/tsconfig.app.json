@@ -5,8 +5,7 @@
     "module": "es2015",
     "baseUrl": "",
     "types": [
-      "node",
-      "node-uuid"
+      "node"
     ]
   },
   "exclude": [

@@ -7,8 +7,7 @@
     "baseUrl": "",
     "types": [
       "jasmine",
-      "node",
-      "node-uuid"
+      "node"
     ]
   },
   "files": [
