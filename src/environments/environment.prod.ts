@@ -1,6 +1,7 @@
 const packageJson = require('../../package.json');
 
 export const environment = {
+  envName: 'PROD',
   production: true,
   versions: {
     app: packageJson.version,

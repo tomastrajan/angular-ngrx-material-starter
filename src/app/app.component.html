@@ -102,7 +102,7 @@
           <a matTooltip="Show changelog"
              matTooltipPosition="before"
              href="https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md">
-            <i class="fa fa-rocket"></i> {{version}}
+            <i class="fa fa-rocket"></i> {{version}} <span *ngIf="!isProd">[{{envName}}]</span>
           </a>
         </div>
       </div>

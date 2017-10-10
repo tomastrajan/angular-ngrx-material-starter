@@ -22,6 +22,8 @@ export class AppComponent implements OnInit, OnDestroy {
 
   @HostBinding('class') componentCssClass;
 
+  isProd = env.production;
+  envName = env.envName;
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = require('../assets/logo.png');
