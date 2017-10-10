@@ -8,11 +8,9 @@ import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
   animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }

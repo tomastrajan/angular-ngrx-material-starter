@@ -20,27 +20,33 @@ import { StockMarketService } from './stock-market.service';
 
 @Injectable()
 export class StockMarketEffects {
-
   constructor(
     private actions$: Actions<Action>,
     private localStorageService: LocalStorageService,
     private service: StockMarketService
   ) {}
 
-  @Effect() retrieveStock(): Observable<Action> {
+  @Effect()
+  retrieveStock(): Observable<Action> {
     return this.actions$
       .ofType(STOCK_MARKET_RETRIEVE)
-      .do(action => this.localStorageService
-        .setItem(STOCK_MARKET_KEY, { symbol: action.payload }))
+      .do(action =>
+        this.localStorageService.setItem(STOCK_MARKET_KEY, {
+          symbol: action.payload
+        })
+      )
       .distinctUntilChanged()
       .debounceTime(500)
       .switchMap(action =>
-        this.service.retrieveStock(action.payload)
-          .map(stock =>
-            ({ type: STOCK_MARKET_RETRIEVE_SUCCESS, payload: stock }))
+        this.service
+          .retrieveStock(action.payload)
+          .map(stock => ({
+            type: STOCK_MARKET_RETRIEVE_SUCCESS,
+            payload: stock
+          }))
           .catch(err =>
-            Observable.of({ type: STOCK_MARKET_RETRIEVE_ERROR, payload: err }))
+            Observable.of({ type: STOCK_MARKET_RETRIEVE_ERROR, payload: err })
+          )
       );
   }
-
 }

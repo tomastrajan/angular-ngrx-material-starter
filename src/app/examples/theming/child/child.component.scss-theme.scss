@@ -4,11 +4,11 @@
   $warn: map-get($theme, warn);
 
   anms-child {
-    >div {
+    > div {
       border-color: mat-color($warn);
 
-      >h2 {
-        color: mat-color($warn)
+      > h2 {
+        color: mat-color($warn);
       }
     }
   }

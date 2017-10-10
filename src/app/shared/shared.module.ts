@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule  } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatToolbarModule,
@@ -41,10 +41,7 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatIconModule,
     MatTooltipModule
   ],
-  declarations: [
-    BigInputComponent,
-    BigInputActionComponent
-  ],
+  declarations: [BigInputComponent, BigInputActionComponent],
   exports: [
     CommonModule,
     FormsModule,
@@ -68,4 +65,4 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     BigInputActionComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {}

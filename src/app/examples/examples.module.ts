@@ -24,10 +24,7 @@ import { ChildComponent } from './theming/child/child.component';
       todos: todosReducer,
       stocks: stockMarketReducer
     }),
-    EffectsModule.forFeature([
-      TodosEffects,
-      StockMarketEffects
-    ])
+    EffectsModule.forFeature([TodosEffects, StockMarketEffects])
   ],
   declarations: [
     ExamplesComponent,
@@ -36,12 +33,8 @@ import { ChildComponent } from './theming/child/child.component';
     ParentComponent,
     ChildComponent
   ],
-  providers: [
-    StockMarketService
-  ]
+  providers: [StockMarketService]
 })
 export class ExamplesModule {
-
   constructor() {}
-
 }

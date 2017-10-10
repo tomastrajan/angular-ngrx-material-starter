@@ -3,7 +3,7 @@ $anms-light-accent: mat-palette($mat-brown, 200);
 $anms-light-warn: mat-palette($mat-deep-orange, 200);
 
 $anms-light-theme: mat-light-theme(
-    $anms-light-primary,
-    $anms-light-accent,
-    $anms-light-warn
+  $anms-light-primary,
+  $anms-light-accent,
+  $anms-light-warn
 );

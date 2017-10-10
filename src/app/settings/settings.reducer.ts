@@ -7,8 +7,10 @@ export const initialState = {
 export const SETTINGS_KEY = 'SETTINGS';
 export const SETTINGS_CHANGE_THEME = 'SETTINGS_CHANGE_THEME';
 
-export const actionChangeTheme = (theme: string) =>
-  ({ type: SETTINGS_CHANGE_THEME, payload: theme });
+export const actionChangeTheme = (theme: string) => ({
+  type: SETTINGS_CHANGE_THEME,
+  payload: theme
+});
 
 export const selectorSettings = state => state.settings || { theme: '' };
 

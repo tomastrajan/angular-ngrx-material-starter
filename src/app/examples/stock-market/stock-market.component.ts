@@ -12,15 +12,12 @@ import { actionRetrieveStock, selectorStocks } from './stock-market.reducer';
   styleUrls: ['./stock-market.component.scss']
 })
 export class StockMarketComponent implements OnInit, OnDestroy {
-
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   initialized;
   stocks;
 
-  constructor(
-    public store: Store<any>
-  ) {}
+  constructor(public store: Store<any>) {}
 
   ngOnInit() {
     this.initialized = false;
@@ -45,5 +42,4 @@ export class StockMarketComponent implements OnInit, OnDestroy {
   onSymbolChange(symbol: string) {
     this.store.dispatch(actionRetrieveStock(symbol));
   }
-
 }

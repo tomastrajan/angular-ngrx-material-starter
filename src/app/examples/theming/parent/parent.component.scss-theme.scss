@@ -4,14 +4,14 @@
   $accent: map-get($theme, accent);
 
   anms-parent {
-    >.container {
-      >.row {
-        >.col-md-6 {
-          >.example {
+    > .container {
+      > .row {
+        > .col-md-6 {
+          > .example {
             border-color: mat-color($accent);
 
-            >h1 {
-              color: mat-color($accent)
+            > h1 {
+              color: mat-color($accent);
             }
           }
         }

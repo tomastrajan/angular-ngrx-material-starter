@@ -11,18 +11,19 @@ describe('ExamplesComponent', () => {
   let component: ExamplesComponent;
   let fixture: ComponentFixture<ExamplesComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-        RouterTestingModule,
-        SharedModule,
-        CoreModule
-      ],
-      declarations: [ ExamplesComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          NoopAnimationsModule,
+          RouterTestingModule,
+          SharedModule,
+          CoreModule
+        ],
+        declarations: [ExamplesComponent]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ExamplesComponent);

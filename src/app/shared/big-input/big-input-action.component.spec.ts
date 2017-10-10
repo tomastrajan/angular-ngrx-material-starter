@@ -8,14 +8,13 @@ describe('BigInputActionComponent', () => {
   let component: BigInputActionComponent;
   let fixture: ComponentFixture<BigInputActionComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        SharedModule,
-      ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        imports: [SharedModule]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(BigInputActionComponent);

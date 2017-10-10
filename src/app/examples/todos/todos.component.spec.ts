@@ -11,16 +11,13 @@ describe('TodosComponent', () => {
   let component: TodosComponent;
   let fixture: ComponentFixture<TodosComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        CoreModule,
-        SharedModule,
-        ExamplesModule
-      ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        imports: [CoreModule, SharedModule, ExamplesModule]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TodosComponent);

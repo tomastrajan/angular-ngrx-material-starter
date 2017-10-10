@@ -4,7 +4,6 @@
   $warn: map-get($theme, warn);
 
   anms-stock-market {
-
     mat-card {
       span {
         &.negative {
@@ -20,4 +19,3 @@
     }
   }
 }
-

@@ -4,7 +4,6 @@ const APP_PREFIX = 'ANMS-';
 
 @Injectable()
 export class LocalStorageService {
-
   constructor() {}
 
   setItem(key: string, value: any) {
@@ -16,25 +15,24 @@ export class LocalStorageService {
   }
 
   static loadInitialState() {
-    return Object.keys(localStorage)
-      .reduce((state: any, storageKey) => {
-        if (storageKey.includes(APP_PREFIX)) {
-          state = state || {};
-          const stateKey = storageKey.replace(APP_PREFIX, '').toLowerCase()
-            .split('.');
-          let currentStateRef = state;
-          stateKey.forEach((key, index) => {
-            if (index === stateKey.length - 1) {
-              currentStateRef[key] = JSON
-                .parse(localStorage.getItem(storageKey));
-              return;
-            }
-            currentStateRef[key] = currentStateRef[key] || {};
-            currentStateRef = currentStateRef[key];
-          });
-        }
-        return state;
-      }, undefined);
+    return Object.keys(localStorage).reduce((state: any, storageKey) => {
+      if (storageKey.includes(APP_PREFIX)) {
+        state = state || {};
+        const stateKey = storageKey
+          .replace(APP_PREFIX, '')
+          .toLowerCase()
+          .split('.');
+        let currentStateRef = state;
+        stateKey.forEach((key, index) => {
+          if (index === stateKey.length - 1) {
+            currentStateRef[key] = JSON.parse(localStorage.getItem(storageKey));
+            return;
+          }
+          currentStateRef[key] = currentStateRef[key] || {};
+          currentStateRef = currentStateRef[key];
+        });
+      }
+      return state;
+    }, undefined);
   }
-
 }

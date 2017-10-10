@@ -7,7 +7,6 @@
   $background: map-get($theme, background);
 
   anms-about {
-
     .background {
       color: mat-color($foreground, text);
       background-color: mat-color($background, background);
@@ -15,13 +14,12 @@
       .gradient {
         &::before {
           background: linear-gradient(
-              to bottom,
-              mat-color($background, background, 0) 0%,
-              mat-color($background, background, 1) 100%
+            to bottom,
+            mat-color($background, background, 0) 0%,
+            mat-color($background, background, 1) 100%
           );
         }
       }
     }
   }
 }
-

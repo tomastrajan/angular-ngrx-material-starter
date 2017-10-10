@@ -10,17 +10,14 @@ describe('SettingsComponent', () => {
   let component: SettingsComponent;
   let fixture: ComponentFixture<SettingsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-        CoreModule,
-        SharedModule
-      ],
-      declarations: [ SettingsComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        imports: [NoopAnimationsModule, CoreModule, SharedModule],
+        declarations: [SettingsComponent]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(SettingsComponent);

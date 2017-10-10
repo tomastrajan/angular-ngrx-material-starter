@@ -23,16 +23,13 @@ import {
   styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements OnInit, OnDestroy {
-
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
   todos: any;
   newTodo = '';
 
-  constructor(
-    public store: Store<any>
-  ) {}
+  constructor(public store: Store<any>) {}
 
   ngOnInit() {
     this.store
@@ -43,7 +40,6 @@ export class TodosComponent implements OnInit, OnDestroy {
         this.store.dispatch(actionPersistTodos(todos));
       });
   }
-
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
@@ -92,5 +88,4 @@ export class TodosComponent implements OnInit, OnDestroy {
   onFilterTodos(filter: TodoFilter) {
     this.store.dispatch(actionFilterTodos(filter));
   }
-
 }

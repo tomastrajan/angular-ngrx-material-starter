@@ -9,16 +9,14 @@ describe('FeaturesComponent', () => {
   let component: FeaturesComponent;
   let fixture: ComponentFixture<FeaturesComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        SharedModule,
-        CoreModule
-      ],
-      declarations: [ FeaturesComponent ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        imports: [SharedModule, CoreModule],
+        declarations: [FeaturesComponent]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(FeaturesComponent);

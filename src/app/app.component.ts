@@ -11,7 +11,6 @@ import { environment as env } from '@env/environment';
 
 import { selectorSettings } from './settings';
 
-
 @Component({
   selector: 'anms-root',
   templateUrl: './app.component.html',
@@ -19,7 +18,6 @@ import { selectorSettings } from './settings';
   animations: [routerTransition]
 })
 export class AppComponent implements OnInit, OnDestroy {
-
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   @HostBinding('class') componentCssClass;
@@ -55,7 +53,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.store
       .select(selectorAuth)
       .takeUntil(this.unsubscribe$)
-      .subscribe(auth => this.isAuthenticated = auth.isAuthenticated);
+      .subscribe(auth => (this.isAuthenticated = auth.isAuthenticated));
   }
 
   ngOnDestroy(): void {
@@ -70,5 +68,4 @@ export class AppComponent implements OnInit, OnDestroy {
   onLogoutClick() {
     this.store.dispatch(logout());
   }
-
 }

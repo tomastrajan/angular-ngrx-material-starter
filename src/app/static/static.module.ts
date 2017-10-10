@@ -7,13 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { FeaturesComponent } from './features/features.component';
 
 @NgModule({
-  imports: [
-    SharedModule,
-    StaticRoutingModule
-  ],
-  declarations: [
-    AboutComponent,
-    FeaturesComponent
-  ]
+  imports: [SharedModule, StaticRoutingModule],
+  declarations: [AboutComponent, FeaturesComponent]
 })
-export class StaticModule { }
+export class StaticModule {}

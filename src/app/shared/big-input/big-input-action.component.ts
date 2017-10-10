@@ -6,7 +6,6 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./big-input-action.component.scss']
 })
 export class BigInputActionComponent {
-
   @Input() disabled = false;
   @Input() icon = '';
   @Input() label = '';
@@ -19,5 +18,4 @@ export class BigInputActionComponent {
   onClick() {
     this.action.emit();
   }
-
 }

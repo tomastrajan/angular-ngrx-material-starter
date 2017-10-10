@@ -15,13 +15,16 @@ const routes: Routes = [
         path: '',
         redirectTo: 'todos',
         pathMatch: 'full'
-      }, {
+      },
+      {
         path: 'todos',
         component: TodosComponent
-      }, {
+      },
+      {
         path: 'stock-market',
         component: StockMarketComponent
-      }, {
+      },
+      {
         path: 'theming',
         component: ParentComponent
       }
@@ -33,4 +36,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ExamplesRoutingModule { }
+export class ExamplesRoutingModule {}

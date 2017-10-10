@@ -8,13 +8,16 @@ const routes: Routes = [
     path: '',
     redirectTo: 'about',
     pathMatch: 'full'
-  }, {
+  },
+  {
     path: 'settings',
     component: SettingsComponent
-  }, {
+  },
+  {
     path: 'examples',
-    loadChildren: 'app/examples/examples.module#ExamplesModule',
-  }, {
+    loadChildren: 'app/examples/examples.module#ExamplesModule'
+  },
+  {
     path: '**',
     redirectTo: 'about'
   }
@@ -25,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

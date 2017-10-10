@@ -5,7 +5,6 @@
   $accent: map-get($theme, accent);
 
   mat-sidenav-container {
-
     mat-toolbar {
       button {
         &.active {
@@ -37,7 +36,8 @@
       color: mat-color($primary, lighter);
       background-color: mat-color($primary, darker);
 
-      .links, .signature {
+      .links,
+      .signature {
         a {
           color: mat-color($primary, lighter);
           &:hover {
@@ -48,4 +48,3 @@
     }
   }
 }
-

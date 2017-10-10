@@ -12,17 +12,18 @@ describe('StockMarketComponent', () => {
   let component: StockMarketComponent;
   let fixture: ComponentFixture<StockMarketComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        NoopAnimationsModule,
-        CoreModule,
-        SharedModule,
-        ExamplesModule
-      ]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          NoopAnimationsModule,
+          CoreModule,
+          SharedModule,
+          ExamplesModule
+        ]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(StockMarketComponent);

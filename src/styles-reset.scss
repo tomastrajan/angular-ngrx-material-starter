@@ -1,9 +1,12 @@
 * {
-  a:hover, a:active, a:focus {
+  a:hover,
+  a:active,
+  a:focus {
     text-decoration: none;
   }
 
-  &:active, :focus {
+  &:active,
+  :focus {
     outline: none !important;
   }
 }
@@ -12,7 +15,8 @@ label {
   margin: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 

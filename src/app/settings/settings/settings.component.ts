@@ -11,24 +11,23 @@ import { selectorSettings, actionChangeTheme } from '../settings.reducer';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit, OnDestroy {
-
   private unsubscribe$: Subject<void> = new Subject<void>();
   theme: string;
 
   themes = [
     { value: 'DEFAULT-THEME', label: 'Default' },
     { value: 'LIGHT-THEME', label: 'Light' },
-    { value: 'BLACK-THEME', label: 'Black' },
+    { value: 'BLACK-THEME', label: 'Black' }
   ];
 
   constructor(private store: Store<any>) {
-    store.select(selectorSettings)
+    store
+      .select(selectorSettings)
       .takeUntil(this.unsubscribe$)
-      .subscribe(({ theme }) => this.theme = theme);
+      .subscribe(({ theme }) => (this.theme = theme));
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
@@ -38,5 +37,4 @@ export class SettingsComponent implements OnInit, OnDestroy {
   onThemeSelect({ value }) {
     this.store.dispatch(actionChangeTheme(value));
   }
-
 }

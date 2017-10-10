@@ -19,17 +19,22 @@ export function getInitialState() {
     HttpClientModule,
 
     // ngrx
-    StoreModule.forRoot({
-      auth: authReducer
-    }, { initialState: getInitialState }),
-    EffectsModule.forRoot([AuthEffects]),
+    StoreModule.forRoot(
+      {
+        auth: authReducer
+      },
+      { initialState: getInitialState }
+    ),
+    EffectsModule.forRoot([AuthEffects])
   ],
   declarations: [],
   providers: [LocalStorageService]
 })
 export class CoreModule {
-  constructor (
-    @Optional() @SkipSelf() parentModule: CoreModule
+  constructor(
+    @Optional()
+    @SkipSelf()
+    parentModule: CoreModule
   ) {
     if (parentModule) {
       throw new Error('CoreModule is already loaded. Import only in AppModule');

@@ -10,10 +10,7 @@ const API_URL = 'https://finance.google.com/finance?output=json&q=NYSE:';
 
 @Injectable()
 export class StockMarketService {
-
-  constructor(
-    private httpClient: HttpClient
-  ) {}
+  constructor(private httpClient: HttpClient) {}
 
   retrieveStock(symbol: string): Observable<Stock> {
     return this.httpClient
@@ -27,9 +24,10 @@ export class StockMarketService {
         change: stock.c.substr(1),
         changePositive: stock.c.indexOf('+') === 0,
         changeNegative: stock.c.indexOf('-') === 0,
-        changePercent: (parseFloat(stock.c) / parseFloat(stock.l) * 100)
-          .toFixed(2)
+        changePercent: (parseFloat(stock.c) /
+          parseFloat(stock.l) *
+          100
+        ).toFixed(2)
       }));
   }
-
 }

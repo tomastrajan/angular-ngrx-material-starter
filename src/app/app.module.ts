@@ -26,12 +26,10 @@ import { AppComponent } from './app.component';
     SettingsModule,
 
     // app
-    AppRoutingModule,
+    AppRoutingModule
   ],
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
