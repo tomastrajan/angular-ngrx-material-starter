@@ -15,8 +15,10 @@
     "clean": "rm -rf ./dist/",
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
-    "ci": "npm run clean && ng lint && ng test --browser ChromeTravisCi --single-run --reporters spec && npm run build:travisci",
-    "release": "standard-version && git push --follow-tags origin master"
+    "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --browser ChromeTravisCi --single-run --reporters spec && npm run build:travisci",
+    "release": "standard-version && git push --follow-tags origin master",
+    "prettier": "prettier --single-quote --parser typescript --write \"./src/**/*.ts\" && prettier --single-quote --parser scss --write \"./src/**/*.scss\"",
+    "prettier:ci": "prettier --single-quote --parser typescript --list-different \"./src/**/*.ts\" && prettier --single-quote --parser scss --list-different \"./src/**/*.scss\""
   },
   "private": true,
   "dependencies": {
@@ -60,6 +62,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-spec-reporter": "0.0.31",
+    "prettier": "^1.7.4",
     "protractor": "~5.1.0",
     "standard-version": "^4.2.0",
     "ts-node": "~2.0.0",
