@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.17.0"></a>
+# [1.17.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.16.0...v1.17.0) (2017-10-16)
+
+
+### Features
+
+* **environment:** show current environment name next to version (besides prod) ([3322b41](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3322b41))
+* **loading:** show logo and spinner during initial app loading (slow connection) ([6609ee6](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6609ee6))
+
+
+
 <a name="1.16.0"></a>
 # [1.16.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.15.0...v1.16.0) (2017-10-10)
 
