@@ -19,6 +19,7 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "anms",
       "styles": [
+        "styles-app-loading.scss",
         "styles.scss"
       ],
       "stylePreprocessorOptions": {
