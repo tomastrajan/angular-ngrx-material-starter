@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.18.0"></a>
+# [1.18.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.17.0...v1.18.0) (2017-10-19)
+
+
+### Bug Fixes
+
+* **dependency:** remove redundant font awesome reference ([4f2be5e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4f2be5e))
+* **dependency:** use font-awesome from npm ([94ddb50](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/94ddb50))
+
+
+### Features
+
+* **loading:** load logo as asset not inline ([b03541f](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b03541f))
+* **title:** add route title data support and display title when found ([7ab617f](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7ab617f))
+
+
+
 <a name="1.17.0"></a>
 # [1.17.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.16.0...v1.17.0) (2017-10-16)
 
