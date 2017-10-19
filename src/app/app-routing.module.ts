@@ -11,7 +11,10 @@ const routes: Routes = [
   },
   {
     path: 'settings',
-    component: SettingsComponent
+    component: SettingsComponent,
+    data: {
+      title: 'Settings'
+    }
   },
   {
     path: 'examples',

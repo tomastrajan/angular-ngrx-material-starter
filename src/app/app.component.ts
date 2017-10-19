@@ -1,5 +1,7 @@
-import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { OverlayContainer } from '@angular/cdk/overlay';
+import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
+import { ActivationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/takeUntil';
@@ -40,7 +42,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     public overlayContainer: OverlayContainer,
-    private store: Store<any>
+    private store: Store<any>,
+    private router: Router,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
@@ -56,6 +60,18 @@ export class AppComponent implements OnInit, OnDestroy {
       .select(selectorAuth)
       .takeUntil(this.unsubscribe$)
       .subscribe(auth => (this.isAuthenticated = auth.isAuthenticated));
+    this.router.events
+      .filter(event => event instanceof ActivationEnd)
+      .subscribe((event: ActivationEnd) => {
+        let lastChild = event.snapshot;
+        while (lastChild.children.length) {
+          lastChild = lastChild.children[0];
+        }
+        const { title } = lastChild.data;
+        this.titleService.setTitle(
+          title ? `${title} - ${env.appName}` : env.appName
+        );
+      });
   }
 
   ngOnDestroy(): void {
