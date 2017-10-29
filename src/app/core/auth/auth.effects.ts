@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
+import { tap } from 'rxjs/operators/tap';
 
 import { LocalStorageService } from '../local-storage/local-storage.service';
 import { Action } from '../core.interfaces';
@@ -19,8 +19,10 @@ export class AuthEffects {
   login(): Observable<Action> {
     return this.actions$
       .ofType(AUTH_LOGIN)
-      .do(action =>
-        this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: true })
+      .pipe(
+        tap(action =>
+          this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: true })
+        )
       );
   }
 
@@ -28,8 +30,10 @@ export class AuthEffects {
   logout(): Observable<Action> {
     return this.actions$
       .ofType(AUTH_LOGOUT)
-      .do(action =>
-        this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: false })
+      .pipe(
+        tap(action =>
+          this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: false })
+        )
       );
   }
 }

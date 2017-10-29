@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/takeUntil';
-import 'rxjs/add/operator/map';
+import { takeUntil } from 'rxjs/operators/takeUntil';
 
 import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
 
@@ -34,7 +33,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.store
       .select(selectorTodos)
-      .takeUntil(this.unsubscribe$)
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe(todos => {
         this.todos = todos;
         this.store.dispatch(actionPersistTodos(todos));
