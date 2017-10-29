@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.19.0"></a>
+# [1.19.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.18.0...v1.19.0) (2017-10-29)
+
+
+### Features
+
+* **build:** add webpack-bundle-analyzer and analyze build script ([16159a8](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/16159a8))
+* **perf:** explicitly import angular material components to achieve smaller bundle size, remove unnecessary polyfills, bump rxjs version ([801757a](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/801757a))
+
+
+
 <a name="1.18.0"></a>
 # [1.18.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.17.0...v1.18.0) (2017-10-19)
 
