@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.19.0"></a>
+# [1.19.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.18.0...v1.19.0) (2017-10-29)
+
+
+### Features
+
+* **build:** add webpack-bundle-analyzer and analyze build script ([16159a8](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/16159a8))
+* **perf:** explicitly import angular material components to achieve smaller bundle size, remove unnecessary polyfills, bump rxjs version ([801757a](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/801757a))
+
+
+
+<a name="1.18.0"></a>
+# [1.18.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.17.0...v1.18.0) (2017-10-19)
+
+
+### Bug Fixes
+
+* **dependency:** remove redundant font awesome reference ([4f2be5e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4f2be5e))
+* **dependency:** use font-awesome from npm ([94ddb50](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/94ddb50))
+
+
+### Features
+
+* **loading:** load logo as asset not inline ([b03541f](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b03541f))
+* **title:** add route title data support and display title when found ([7ab617f](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7ab617f))
+
+
+
+<a name="1.17.0"></a>
+# [1.17.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.16.0...v1.17.0) (2017-10-16)
+
+
+### Features
+
+* **environment:** show current environment name next to version (besides prod) ([3322b41](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3322b41))
+* **loading:** show logo and spinner during initial app loading (slow connection) ([6609ee6](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6609ee6))
+
+
+
 <a name="1.16.0"></a>
 # [1.16.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.15.0...v1.16.0) (2017-10-10)
 

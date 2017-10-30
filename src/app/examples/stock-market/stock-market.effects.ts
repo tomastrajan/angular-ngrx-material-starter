@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/of';
+import { of } from 'rxjs/observable/of';
+import { tap } from 'rxjs/operators/tap';
+import { map } from 'rxjs/operators/map';
+import { debounceTime } from 'rxjs/operators/debounceTime';
+import { distinctUntilChanged } from 'rxjs/operators/distinctUntilChanged';
+import { switchMap } from 'rxjs/operators/switchMap';
+import { catchError } from 'rxjs/operators/catchError';
 
 import { LocalStorageService, Action } from '@app/core';
 
@@ -28,25 +29,25 @@ export class StockMarketEffects {
 
   @Effect()
   retrieveStock(): Observable<Action> {
-    return this.actions$
-      .ofType(STOCK_MARKET_RETRIEVE)
-      .do(action =>
+    return this.actions$.ofType(STOCK_MARKET_RETRIEVE).pipe(
+      tap(action =>
         this.localStorageService.setItem(STOCK_MARKET_KEY, {
           symbol: action.payload
         })
-      )
-      .distinctUntilChanged()
-      .debounceTime(500)
-      .switchMap(action =>
-        this.service
-          .retrieveStock(action.payload)
-          .map(stock => ({
+      ),
+      distinctUntilChanged(),
+      debounceTime(500),
+      switchMap(action =>
+        this.service.retrieveStock(action.payload).pipe(
+          map(stock => ({
             type: STOCK_MARKET_RETRIEVE_SUCCESS,
             payload: stock
-          }))
-          .catch(err =>
-            Observable.of({ type: STOCK_MARKET_RETRIEVE_ERROR, payload: err })
+          })),
+          catchError(err =>
+            of({ type: STOCK_MARKET_RETRIEVE_ERROR, payload: err })
           )
-      );
+        )
+      )
+    );
   }
 }

@@ -18,15 +18,24 @@ const routes: Routes = [
       },
       {
         path: 'todos',
-        component: TodosComponent
+        component: TodosComponent,
+        data: {
+          title: 'Todos'
+        }
       },
       {
         path: 'stock-market',
-        component: StockMarketComponent
+        component: StockMarketComponent,
+        data: {
+          title: 'Stock Market'
+        }
       },
       {
         path: 'theming',
-        component: ParentComponent
+        component: ParentComponent,
+        data: {
+          title: 'Theming'
+        }
       }
     ]
   }

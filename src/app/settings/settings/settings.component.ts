@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/takeUntil';
+import { takeUntil } from 'rxjs/operators/takeUntil';
 
 import { selectorSettings, actionChangeTheme } from '../settings.reducer';
 
@@ -23,7 +23,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
   constructor(private store: Store<any>) {
     store
       .select(selectorSettings)
-      .takeUntil(this.unsubscribe$)
+      .pipe(takeUntil(this.unsubscribe$))
       .subscribe(({ theme }) => (this.theme = theme));
   }
 

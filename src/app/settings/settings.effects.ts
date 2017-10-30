@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/do';
+import { tap } from 'rxjs/operators/tap';
 
 import { LocalStorageService, Action } from '@app/core';
 
@@ -16,10 +16,12 @@ export class SettingsEffects {
 
   @Effect({ dispatch: false })
   persistThemeSettings(): Observable<Action> {
-    return this.actions$.ofType(SETTINGS_CHANGE_THEME).do(action =>
-      this.localStorageService.setItem(SETTINGS_KEY, {
-        theme: action.payload
-      })
+    return this.actions$.ofType(SETTINGS_CHANGE_THEME).pipe(
+      tap(action =>
+        this.localStorageService.setItem(SETTINGS_KEY, {
+          theme: action.payload
+        })
+      )
     );
   }
 }
