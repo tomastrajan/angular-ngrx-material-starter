@@ -5,6 +5,10 @@ echo Deploy to GitHub Pages
 # deploy only master branch
 if [ -z "$TRAVIS_TAG" ]; then
 
+  echo Deploy to GitHub Pages - Skip deployment
+
+else
+
   echo Deploy to GitHub Pages - Start
 
   # go to the directory which contains build artifacts and create a *new* Git repo
@@ -27,9 +31,9 @@ if [ -z "$TRAVIS_TAG" ]; then
   # /dev/null to hide any sensitive credential data that might otherwise be exposed.
   # tokens GH_TOKEN and GH_REF will be provided as Travis CI environment variables
   git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
+
   echo Deploy to GitHub Pages - Success
-else
-  echo Deploy to GitHub Pages - Skip deployment
+
 fi
 
 echo Deploy to GitHub Pages - Finish
