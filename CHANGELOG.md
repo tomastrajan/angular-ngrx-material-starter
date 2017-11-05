@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.20.0"></a>
+# [1.20.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.19.0...v1.20.0) (2017-11-05)
+
+
+### Features
+
+* **dependency:** use angular 5 and angular cli 1.5, use correct typescript version ([33abbb6](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/33abbb6))
+
+
+
 <a name="1.19.0"></a>
 # [1.19.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.18.0...v1.19.0) (2017-10-29)
 
