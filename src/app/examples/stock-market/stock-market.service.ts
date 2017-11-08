@@ -25,7 +25,8 @@ export class StockMarketService {
           change: stock.c.substr(1),
           changePositive: stock.c.indexOf('+') === 0,
           changeNegative: stock.c.indexOf('-') === 0,
-          changePercent: (parseFloat(stock.c) /
+          changePercent: (
+            parseFloat(stock.c) /
             parseFloat(stock.l) *
             100
           ).toFixed(2)
