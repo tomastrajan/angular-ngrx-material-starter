@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.21.1"></a>
+## [1.21.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.21.0...v1.21.1) (2017-11-08)
+
+
+### Bug Fixes
+
+* **codestyle:** new prettier version formats code differently ([a775b7f](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a775b7f))
+
+
+
 <a name="1.21.0"></a>
 # [1.21.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.20.0...v1.21.0) (2017-11-08)
 
