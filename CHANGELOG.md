@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.22.0"></a>
+# [1.22.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.21.1...v1.22.0) (2017-12-06)
+
+
+### Features
+
+* **dependency:** use angular 5.1, material 5.0 and CLI 1.6, standardize paths in styles ([8758cb3](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/8758cb3))
+
+
+
 <a name="1.21.1"></a>
 ## [1.21.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.21.0...v1.21.1) (2017-11-08)
 
