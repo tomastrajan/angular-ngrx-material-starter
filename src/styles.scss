@@ -1,14 +1,14 @@
 @import 'styles-variables';
 
-@import '~bootstrap/scss/bootstrap-reboot';
-@import '~bootstrap/scss/bootstrap-grid';
-@import '~bootstrap/scss/utilities';
+@import '../node_modules/bootstrap/scss/bootstrap-reboot';
+@import '../node_modules/bootstrap/scss/bootstrap-grid';
+@import '../node_modules/bootstrap/scss/utilities';
 
-@import '~font-awesome/scss/font-awesome';
+@import '../node_modules/font-awesome/scss/font-awesome';
 
 @import 'styles-reset';
 
-@import '~@angular/material/theming';
+@import '../node_modules/@angular/material/theming';
 
 @include mat-core();
 
