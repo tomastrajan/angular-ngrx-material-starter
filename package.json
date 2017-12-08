@@ -53,7 +53,7 @@
     "codelyzer": "~2.0.0",
     "enhanced-resolve": "3.3.0",
     "jasmine-core": "~2.5.2",
-    "jasmine-spec-reporter": "~3.2.0",
+    "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
     "karma-chrome-launcher": "~2.2.0",
     "karma-cli": "~1.0.1",
