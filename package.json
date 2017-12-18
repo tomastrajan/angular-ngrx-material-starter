@@ -50,7 +50,7 @@
     "@angular/compiler-cli": "^5.1.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
-    "codelyzer": "~2.0.0",
+    "codelyzer": "~4.0.2",
     "enhanced-resolve": "3.4.1",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
