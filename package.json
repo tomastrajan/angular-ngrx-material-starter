@@ -65,7 +65,7 @@
     "prettier": "^1.7.4",
     "protractor": "~5.2.1",
     "standard-version": "^4.2.0",
-    "ts-node": "~4.0.2",
+    "ts-node": "~4.1.0",
     "tslint": "~5.8.0",
     "typescript": "~2.4.0",
     "webpack-bundle-analyzer": "^2.9.0"
