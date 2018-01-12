@@ -6,14 +6,14 @@ import { takeUntil } from 'rxjs/operators/takeUntil';
 import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
 
 import {
-  actionAddTodo,
-  actionPersistTodos,
-  actionToggleTodo,
-  actionRemoveDoneTodos,
-  actionFilterTodos,
+  ActionTodosAdd,
+  ActionTodosPersist,
+  ActionTodosFilter,
+  ActionTodosRemoveDone,
+  ActionTodosToggle,
   selectorTodos,
   Todo,
-  TodoFilter
+  TodosFilter
 } from './todos.reducer';
 
 @Component({
@@ -36,7 +36,7 @@ export class TodosComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(todos => {
         this.todos = todos;
-        this.store.dispatch(actionPersistTodos(todos));
+        this.store.dispatch(new ActionTodosPersist({ todos }));
       });
   }
 
@@ -72,19 +72,19 @@ export class TodosComponent implements OnInit, OnDestroy {
   }
 
   onAddTodo() {
-    this.store.dispatch(actionAddTodo(this.newTodo));
+    this.store.dispatch(new ActionTodosAdd({ name: this.newTodo }));
     this.newTodo = '';
   }
 
   onToggleTodo(todo: Todo) {
-    this.store.dispatch(actionToggleTodo(todo.id));
+    this.store.dispatch(new ActionTodosToggle({ id: todo.id }));
   }
 
   onRemoveDoneTodos() {
-    this.store.dispatch(actionRemoveDoneTodos());
+    this.store.dispatch(new ActionTodosRemoveDone());
   }
 
-  onFilterTodos(filter: TodoFilter) {
-    this.store.dispatch(actionFilterTodos(filter));
+  onFilterTodos(filter: TodosFilter) {
+    this.store.dispatch(new ActionTodosFilter({ filter }));
   }
 }

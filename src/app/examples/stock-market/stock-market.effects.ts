@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
@@ -9,13 +10,14 @@ import { distinctUntilChanged } from 'rxjs/operators/distinctUntilChanged';
 import { switchMap } from 'rxjs/operators/switchMap';
 import { catchError } from 'rxjs/operators/catchError';
 
-import { LocalStorageService, Action } from '@app/core';
+import { LocalStorageService } from '@app/core';
 
 import {
+  ActionStockMarketRetrieve,
+  ActionStockMarketRetrieveError,
+  ActionStockMarketRetrieveSuccess,
   STOCK_MARKET_KEY,
-  STOCK_MARKET_RETRIEVE,
-  STOCK_MARKET_RETRIEVE_SUCCESS,
-  STOCK_MARKET_RETRIEVE_ERROR
+  StockMarketActionTypes
 } from './stock-market.reducer';
 import { StockMarketService } from './stock-market.service';
 
@@ -29,24 +31,23 @@ export class StockMarketEffects {
 
   @Effect()
   retrieveStock(): Observable<Action> {
-    return this.actions$.ofType(STOCK_MARKET_RETRIEVE).pipe(
-      tap(action =>
+    return this.actions$.ofType(StockMarketActionTypes.RETRIEVE).pipe(
+      tap((action: ActionStockMarketRetrieve) =>
         this.localStorageService.setItem(STOCK_MARKET_KEY, {
-          symbol: action.payload
+          symbol: action.payload.symbol
         })
       ),
       distinctUntilChanged(),
       debounceTime(500),
-      switchMap(action =>
-        this.service.retrieveStock(action.payload).pipe(
-          map(stock => ({
-            type: STOCK_MARKET_RETRIEVE_SUCCESS,
-            payload: stock
-          })),
-          catchError(err =>
-            of({ type: STOCK_MARKET_RETRIEVE_ERROR, payload: err })
+      switchMap((action: ActionStockMarketRetrieve) =>
+        this.service
+          .retrieveStock(action.payload.symbol)
+          .pipe(
+            map(stock => new ActionStockMarketRetrieveSuccess({ stock })),
+            catchError(error =>
+              of(new ActionStockMarketRetrieveError({ error }))
+            )
           )
-        )
       )
     );
   }

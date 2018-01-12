@@ -1,43 +1,65 @@
-import { Action } from '@app/core';
+import { Action } from '@ngrx/store';
+import { HttpErrorResponse } from '@angular/common/http';
+
+export const STOCK_MARKET_KEY = 'EXAMPLES.STOCKS';
+
+export enum StockMarketActionTypes {
+  RETRIEVE = '[Todos] Retrieve',
+  RETRIEVE_SUCCESS = '[Todos] Retrieve Success',
+  RETRIEVE_ERROR = '[Todos] Retrieve Error'
+}
+
+export class ActionStockMarketRetrieve implements Action {
+  readonly type = StockMarketActionTypes.RETRIEVE;
+  constructor(public payload: { symbol: string }) {}
+}
+
+export class ActionStockMarketRetrieveSuccess implements Action {
+  readonly type = StockMarketActionTypes.RETRIEVE_SUCCESS;
+  constructor(public payload: { stock: Stock }) {}
+}
+
+export class ActionStockMarketRetrieveError implements Action {
+  readonly type = StockMarketActionTypes.RETRIEVE_ERROR;
+  constructor(public payload: { error: HttpErrorResponse }) {}
+}
+
+export type StockMarketActions =
+  | ActionStockMarketRetrieve
+  | ActionStockMarketRetrieveSuccess
+  | ActionStockMarketRetrieveError;
 
 export const initialState = {
   symbol: 'GOOGL'
 };
 
-export const STOCK_MARKET_KEY = 'EXAMPLES.STOCKS';
-export const STOCK_MARKET_RETRIEVE = 'STOCK_MARKET_RETRIEVE';
-export const STOCK_MARKET_RETRIEVE_SUCCESS = 'STOCK_MARKET_RETRIEVE_SUCCESS';
-export const STOCK_MARKET_RETRIEVE_ERROR = 'STOCK_MARKET_RETRIEVE_ERROR';
-
-export const actionRetrieveStock = (symbol: string) => ({
-  type: STOCK_MARKET_RETRIEVE,
-  payload: symbol
-});
-
 export const selectorStocks = state => state.examples.stocks;
 
-export function stockMarketReducer(state = initialState, action: Action) {
+export function stockMarketReducer(
+  state = initialState,
+  action: StockMarketActions
+) {
   switch (action.type) {
-    case STOCK_MARKET_RETRIEVE:
+    case StockMarketActionTypes.RETRIEVE:
       return Object.assign({}, state, {
         loading: true,
         stock: null,
         error: null,
-        symbol: action.payload
+        symbol: action.payload.symbol
       });
 
-    case STOCK_MARKET_RETRIEVE_SUCCESS:
+    case StockMarketActionTypes.RETRIEVE_SUCCESS:
       return Object.assign({}, state, {
         loading: false,
-        stock: action.payload,
+        stock: action.payload.stock,
         error: null
       });
 
-    case STOCK_MARKET_RETRIEVE_ERROR:
+    case StockMarketActionTypes.RETRIEVE_ERROR:
       return Object.assign({}, state, {
         loading: false,
         stock: null,
-        error: action.payload
+        error: action.payload.error
       });
 
     default:

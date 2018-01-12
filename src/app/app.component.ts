@@ -8,7 +8,12 @@ import { takeUntil } from 'rxjs/operators/takeUntil';
 import { map } from 'rxjs/operators/map';
 import { filter } from 'rxjs/operators/filter';
 
-import { login, logout, selectorAuth, routerTransition } from '@app/core';
+import {
+  ActionAuthLogin,
+  ActionAuthLogout,
+  selectorAuth,
+  routerTransition
+} from '@app/core';
 import { environment as env } from '@env/environment';
 
 import { selectorSettings } from './settings';
@@ -82,10 +87,10 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   onLoginClick() {
-    this.store.dispatch(login());
+    this.store.dispatch(new ActionAuthLogin());
   }
 
   onLogoutClick() {
-    this.store.dispatch(logout());
+    this.store.dispatch(new ActionAuthLogout());
   }
 }

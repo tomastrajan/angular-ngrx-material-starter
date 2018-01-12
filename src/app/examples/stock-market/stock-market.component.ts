@@ -3,7 +3,10 @@ import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators/takeUntil';
 
-import { actionRetrieveStock, selectorStocks } from './stock-market.reducer';
+import {
+  ActionStockMarketRetrieve,
+  selectorStocks
+} from './stock-market.reducer';
 
 @Component({
   selector: 'anms-stock-market',
@@ -28,7 +31,9 @@ export class StockMarketComponent implements OnInit, OnDestroy {
 
         if (!this.initialized) {
           this.initialized = true;
-          this.store.dispatch(actionRetrieveStock(stocks.symbol));
+          this.store.dispatch(
+            new ActionStockMarketRetrieve({ symbol: stocks.symbol })
+          );
         }
       });
   }
@@ -39,6 +44,6 @@ export class StockMarketComponent implements OnInit, OnDestroy {
   }
 
   onSymbolChange(symbol: string) {
-    this.store.dispatch(actionRetrieveStock(symbol));
+    this.store.dispatch(new ActionStockMarketRetrieve({ symbol }));
   }
 }

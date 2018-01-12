@@ -1,26 +1,36 @@
-import { Action } from '../core.interfaces';
+import { Action } from '@ngrx/store';
+
+export const AUTH_KEY = 'AUTH';
+
+export enum AuthActionTypes {
+  LOGIN = '[Auth] Login',
+  LOGOUT = '[Auth] Logout'
+}
+
+export class ActionAuthLogin implements Action {
+  readonly type = AuthActionTypes.LOGIN;
+}
+
+export class ActionAuthLogout implements Action {
+  readonly type = AuthActionTypes.LOGOUT;
+}
+
+export type AuthActions = ActionAuthLogin | ActionAuthLogout;
 
 export const initialState = {
   isAuthenticated: false
 };
 
-export const AUTH_KEY = 'AUTH';
-export const AUTH_LOGIN = 'AUTH_LOGIN';
-export const AUTH_LOGOUT = 'AUTH_LOGOUT';
-
-export const login = () => ({ type: AUTH_LOGIN });
-export const logout = () => ({ type: AUTH_LOGOUT });
-
 export const selectorAuth = state => state.auth;
 
-export function authReducer(state = initialState, action: Action) {
+export function authReducer(state = initialState, action: AuthActions) {
   switch (action.type) {
-    case AUTH_LOGIN:
+    case AuthActionTypes.LOGIN:
       return Object.assign({}, state, {
         isAuthenticated: true
       });
 
-    case AUTH_LOGOUT:
+    case AuthActionTypes.LOGOUT:
       return Object.assign({}, state, {
         isAuthenticated: false
       });
