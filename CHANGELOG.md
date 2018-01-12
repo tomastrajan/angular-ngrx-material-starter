@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.23.0"></a>
+# [1.23.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.22.1...v1.23.0) (2018-01-12)
+
+
+### Features
+
+* **codestyle:** use action types for ngrx actions instead of factory functions ([98435ed](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/98435ed)), closes [#25](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/25)
+
+
+
 <a name="1.22.1"></a>
 ## [1.22.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.22.0...v1.22.1) (2017-12-30)
 
