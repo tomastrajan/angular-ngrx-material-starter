@@ -1,15 +1,21 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
+import { MetaReducer, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
+import { environment } from '@env/environment';
+
+import { debug } from './meta-reducers/debug.reducer';
+import { initStateFromLocalStorage } from './meta-reducers/init-state-from-local-storage.reducer';
 import { LocalStorageService } from './local-storage/local-storage.service';
 import { authReducer } from './auth/auth.reducer';
 import { AuthEffects } from './auth/auth.effects';
 
-export function getInitialState() {
-  return LocalStorageService.loadInitialState();
+export const metaReducers: MetaReducer<any>[] = [initStateFromLocalStorage];
+
+if (!environment.production) {
+  metaReducers.unshift(debug);
 }
 
 @NgModule({
@@ -23,7 +29,7 @@ export function getInitialState() {
       {
         auth: authReducer
       },
-      { initialState: getInitialState }
+      { metaReducers }
     ),
     EffectsModule.forRoot([AuthEffects])
   ],

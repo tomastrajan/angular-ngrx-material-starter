@@ -15,7 +15,7 @@
     "clean": "rm -rf ./dist/",
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
-    "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --browser ChromeTravisCi --single-run --reporters spec && npm run build:travisci",
+    "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --browser ChromeTravisCi --single-run --reporters spec --environment prod && npm run build:travisci",
     "release": "standard-version && git push --follow-tags origin master",
     "prettier": "prettier --single-quote --parser typescript --write \"./src/**/*.ts\" && prettier --single-quote --parser scss --write \"./src/**/*.scss\"",
     "prettier:ci": "prettier --single-quote --parser typescript --list-different \"./src/**/*.ts\" && prettier --single-quote --parser scss --list-different \"./src/**/*.scss\"",
