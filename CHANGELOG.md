@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.23.1"></a>
+## [1.23.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.23.0...v1.23.1) (2018-01-13)
+
+
+### Bug Fixes
+
+* **core:** rework local-storage initial state hydratation ([42a37d9](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/42a37d9)), closes [#3](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/3) [#34](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/34)
+
+
+
 <a name="1.23.0"></a>
 # [1.23.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.22.1...v1.23.0) (2018-01-12)
 
