@@ -71,14 +71,11 @@ export function todosReducer(state = initialState, action: TodosActions) {
       });
 
     case TodosActionTypes.TOGGLE:
-      state.items.some((item: Todo) => {
-        if (item.id === action.payload.id) {
-          item.done = !item.done;
-          return true;
-        }
-      });
       return Object.assign({}, state, {
-        items: [...state.items]
+        items: state.items.map(
+          (item: Todo) =>
+            item.id === action.payload.id ? { ...item, done: !item.done } : item
+        )
       });
 
     case TodosActionTypes.REMOVE_DONE:
