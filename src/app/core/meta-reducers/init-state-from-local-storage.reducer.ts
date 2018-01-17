@@ -8,11 +8,7 @@ export function initStateFromLocalStorage(
   return function(state, action) {
     const newState = reducer(state, action);
     if ([INIT.toString(), UPDATE.toString()].includes(action.type)) {
-      return Object.assign(
-        {},
-        newState,
-        LocalStorageService.loadInitialState()
-      );
+      return { ...newState, ...LocalStorageService.loadInitialState() };
     }
     return newState;
   };

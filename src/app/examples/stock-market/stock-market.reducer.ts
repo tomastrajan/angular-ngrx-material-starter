@@ -29,38 +29,42 @@ export type StockMarketActions =
   | ActionStockMarketRetrieveSuccess
   | ActionStockMarketRetrieveError;
 
-export const initialState = {
-  symbol: 'GOOGL'
+export const initialState: StockMarketState = {
+  symbol: 'GOOGL',
+  loading: false
 };
 
 export const selectorStocks = state => state.examples.stocks;
 
 export function stockMarketReducer(
-  state = initialState,
+  state: StockMarketState = initialState,
   action: StockMarketActions
-) {
+): StockMarketState {
   switch (action.type) {
     case StockMarketActionTypes.RETRIEVE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         loading: true,
         stock: null,
         error: null,
         symbol: action.payload.symbol
-      });
+      };
 
     case StockMarketActionTypes.RETRIEVE_SUCCESS:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         loading: false,
         stock: action.payload.stock,
         error: null
-      });
+      };
 
     case StockMarketActionTypes.RETRIEVE_ERROR:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         loading: false,
         stock: null,
         error: action.payload.error
-      });
+      };
 
     default:
       return state;
@@ -73,4 +77,11 @@ export interface Stock {
   last: string;
   ccy: string;
   change: string;
+}
+
+export interface StockMarketState {
+  symbol: string;
+  loading: boolean;
+  stock?: Stock;
+  error?: HttpErrorResponse;
 }

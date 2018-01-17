@@ -13,18 +13,25 @@ export class ActionSettingsChangeTheme implements Action {
 
 export type SettingsActions = ActionSettingsChangeTheme;
 
-export const initialState = {
+export const initialState: SettingsState = {
   theme: 'DEFAULT-THEME'
 };
 
 export const selectorSettings = state => state.settings || { theme: '' };
 
-export function settingsReducer(state = initialState, action: SettingsActions) {
+export function settingsReducer(
+  state: SettingsState = initialState,
+  action: SettingsActions
+): SettingsState {
   switch (action.type) {
     case SettingsActionTypes.CHANGE_THEME:
-      return { theme: action.payload.theme };
+      return { ...state, theme: action.payload.theme };
 
     default:
       return state;
   }
+}
+
+export interface SettingsState {
+  theme: string;
 }

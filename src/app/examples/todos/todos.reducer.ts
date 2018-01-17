@@ -42,9 +42,7 @@ export type TodosActions =
   | ActionTodosFilter
   | ActionTodosPersist;
 
-export type TodosFilter = 'ALL' | 'DONE' | 'ACTIVE';
-
-export const initialState = {
+export const initialState: TodosState = {
   items: [
     { id: uuid(), name: 'Open Todo list example', done: true },
     { id: uuid(), name: 'Check the other examples', done: false },
@@ -59,32 +57,38 @@ export const initialState = {
 
 export const selectorTodos = state => state.examples.todos;
 
-export function todosReducer(state = initialState, action: TodosActions) {
+export function todosReducer(
+  state: TodosState = initialState,
+  action: TodosActions
+): TodosState {
   switch (action.type) {
     case TodosActionTypes.ADD:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         items: state.items.concat({
           id: uuid(),
           name: action.payload.name,
           done: false
         })
-      });
+      };
 
     case TodosActionTypes.TOGGLE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         items: state.items.map(
           (item: Todo) =>
             item.id === action.payload.id ? { ...item, done: !item.done } : item
         )
-      });
+      };
 
     case TodosActionTypes.REMOVE_DONE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         items: state.items.filter((item: Todo) => !item.done)
-      });
+      };
 
     case TodosActionTypes.FILTER:
-      return Object.assign({}, state, { filter: action.payload.filter });
+      return { ...state, filter: action.payload.filter };
 
     default:
       return state;
@@ -95,4 +99,11 @@ export interface Todo {
   id: string;
   name: string;
   done: boolean;
+}
+
+export type TodosFilter = 'ALL' | 'DONE' | 'ACTIVE';
+
+export interface TodosState {
+  items: Todo[];
+  filter: TodosFilter;
 }

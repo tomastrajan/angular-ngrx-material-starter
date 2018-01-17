@@ -17,25 +17,28 @@ export class ActionAuthLogout implements Action {
 
 export type AuthActions = ActionAuthLogin | ActionAuthLogout;
 
-export const initialState = {
+export const initialState: AuthState = {
   isAuthenticated: false
 };
 
 export const selectorAuth = state => state.auth;
 
-export function authReducer(state = initialState, action: AuthActions) {
+export function authReducer(
+  state: AuthState = initialState,
+  action: AuthActions
+): AuthState {
   switch (action.type) {
     case AuthActionTypes.LOGIN:
-      return Object.assign({}, state, {
-        isAuthenticated: true
-      });
+      return { ...state, isAuthenticated: true };
 
     case AuthActionTypes.LOGOUT:
-      return Object.assign({}, state, {
-        isAuthenticated: false
-      });
+      return { ...state, isAuthenticated: false };
 
     default:
       return state;
   }
+}
+
+export interface AuthState {
+  isAuthenticated: boolean;
 }
