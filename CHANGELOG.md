@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.23.2"></a>
+## [1.23.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.23.1...v1.23.2) (2018-01-17)
+
+
+### Bug Fixes
+
+* **dependencies:** add missing polyfill for array includes (IE11), fixes [#39](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/39) ([d432735](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d432735))
+
+
+
 <a name="1.23.1"></a>
 ## [1.23.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.23.0...v1.23.1) (2018-01-13)
 
