@@ -1,37 +1,112 @@
 @import 'styles-variables';
 
+:host {
+  height: 100%;
+}
+
 mat-sidenav-container {
   height: 100%;
 
-  mat-toolbar {
-    z-index: 1;
+  .wrapper {
+    z-index: -2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-y: auto;
 
-    .nav-button {
-      margin: 0 10px 0 0;
-    }
+    .toolbar {
+      z-index: 1;
+      flex: 0 0 auto;
 
-    .branding {
-      cursor: pointer;
-    }
-
-    .sign-in-button {
-      line-height: 35px;
-      margin-right: 10px;
-    }
-
-    .spacer {
-      flex: 1 1 auto;
-    }
-
-    @media (max-width: map-get($grid-breakpoints, lg)) {
       .nav-button {
-        min-width: 0;
-        padding: 0 10px;
+        margin: 0 10px 0 0;
       }
+
+      .branding {
+        cursor: pointer;
+      }
+
       .sign-in-button {
-        min-width: 0;
-        padding: 0 10px;
-        margin: 0 5px 0 0;
+        line-height: 35px;
+        margin-right: 10px;
+      }
+
+      .spacer {
+        flex: 1 1 auto;
+      }
+
+      @media (max-width: map-get($grid-breakpoints, lg)) {
+        .nav-button {
+          min-width: 0;
+          padding: 0 10px;
+        }
+        .sign-in-button {
+          min-width: 0;
+          padding: 0 10px;
+          margin: 0 5px 0 0;
+        }
+      }
+    }
+
+    .content {
+      flex: 1 0 auto;
+      position: relative;
+    }
+
+    .footer {
+      flex: 0 0 auto;
+      padding: 0 15px;
+      text-align: center;
+      z-index: 1;
+
+      .row {
+        padding: 10px 0;
+
+        .links {
+          a {
+            transition: padding 0.5s;
+            display: inline-block;
+            padding: 20px 5px;
+
+            &:hover {
+              text-decoration: none;
+            }
+
+            span {
+              display: inline-block;
+              width: 70px;
+              padding: 0 0 0 5px;
+              overflow: hidden;
+              text-align: left;
+              white-space: nowrap;
+              transition: width 0.5s;
+            }
+          }
+
+          @media (max-width: map-get($grid-breakpoints, md)) {
+            a {
+              padding: 20px;
+
+              span {
+                width: 0;
+                padding: 0;
+              }
+            }
+          }
+
+          @media (max-width: map-get($grid-breakpoints, sm)) {
+            a {
+              padding: 20px 5px;
+            }
+          }
+        }
+
+        .signature {
+          a {
+            float: right;
+          }
+        }
       }
     }
   }
@@ -58,72 +133,5 @@ mat-sidenav {
 
   .mat-nav-list {
     padding-top: 0;
-  }
-}
-
-.wrapper {
-  z-index: -2;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-
-  .content {
-    flex: 1 0 auto;
-    position: relative;
-  }
-
-  .footer {
-    padding: 0 15px;
-    text-align: center;
-    z-index: 1;
-
-    .row {
-      padding: 10px 0;
-
-      .links {
-        a {
-          transition: padding 0.5s;
-          display: inline-block;
-          padding: 20px 5px;
-
-          &:hover {
-            text-decoration: none;
-          }
-
-          span {
-            display: inline-block;
-            width: 70px;
-            padding: 0 0 0 5px;
-            overflow: hidden;
-            text-align: left;
-            white-space: nowrap;
-            transition: width 0.5s;
-          }
-        }
-
-        @media (max-width: map-get($grid-breakpoints, md)) {
-          a {
-            padding: 20px;
-
-            span {
-              width: 0;
-              padding: 0;
-            }
-          }
-        }
-
-        @media (max-width: map-get($grid-breakpoints, sm)) {
-          a {
-            padding: 20px 5px;
-          }
-        }
-      }
-
-      .signature {
-        a {
-          float: right;
-        }
-      }
-    }
   }
 }

@@ -12,56 +12,58 @@
 
   <div class="wrapper">
 
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
-        <mat-icon>menu</mat-icon>
-      </button>
-
-      <span routerLink="" class="branding spacer d-inline d-sm-none text-center"><img
-        [src]="logo"/></span>
-      <span routerLink="" class="branding spacer d-none d-sm-inline d-md-none text-center"><img
-        [src]="logo"/> Angular Starter</span>
-      <span routerLink="" class="branding spacer d-none d-md-inline"><img
-        [src]="logo"/> Angular ngRx Material Starter</span>
-
-      <span class="d-none d-md-inline">
-        <button mat-button class="nav-button" *ngFor="let item of navigation"
-            [routerLink]="[item.link]" routerLinkActive="active">
-          {{item.label}}
+    <div class="toolbar">
+      <mat-toolbar color="primary">
+        <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
+          <mat-icon>menu</mat-icon>
         </button>
-      </span>
 
-      <button mat-button class="sign-in-button "
-              *ngIf="!isAuthenticated"
-              (click)="onLoginClick()">
-        Sign in
-      </button>
+        <span routerLink="" class="branding spacer d-inline d-sm-none text-center"><img
+          [src]="logo"/></span>
+        <span routerLink="" class="branding spacer d-none d-sm-inline d-md-none text-center"><img
+          [src]="logo"/> Angular Starter</span>
+        <span routerLink="" class="branding spacer d-none d-md-inline"><img
+          [src]="logo"/> Angular ngRx Material Starter</span>
 
-      <button *ngIf="isAuthenticated"
-              mat-icon-button
-              [matMenuTriggerFor]="toolbarUserMenu">
-        <mat-icon>person</mat-icon>
-      </button>
-      <mat-menu #toolbarUserMenu="matMenu">
-        <button mat-menu-item (click)="onLogoutClick()">
-          <mat-icon>power_settings_new</mat-icon>
-          <span>Logout</span>
+        <span class="d-none d-md-inline">
+          <button mat-button class="nav-button" *ngFor="let item of navigation"
+              [routerLink]="[item.link]" routerLinkActive="active">
+            {{item.label}}
+          </button>
+        </span>
+
+        <button mat-button class="sign-in-button "
+                *ngIf="!isAuthenticated"
+                (click)="onLoginClick()">
+          Sign in
         </button>
-      </mat-menu>
 
-      <button mat-icon-button routerLink="settings" class="d-none d-sm-inline">
-        <mat-icon>settings</mat-icon>
-      </button>
+        <button *ngIf="isAuthenticated"
+                mat-icon-button
+                [matMenuTriggerFor]="toolbarUserMenu">
+          <mat-icon>person</mat-icon>
+        </button>
+        <mat-menu #toolbarUserMenu="matMenu">
+          <button mat-menu-item (click)="onLogoutClick()">
+            <mat-icon>power_settings_new</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
 
-      <a matTooltip="Project Github Repository"
-         matdTooltipPosition="before"
-         mat-icon-button class="link"
-         href="https://github.com/tomastrajan/angular-ngrx-material-starter"
-         target="_blank">
-        <i class="fa fa-github fa-2x"></i>
-      </a>
+        <button mat-icon-button routerLink="settings" class="d-none d-sm-inline">
+          <mat-icon>settings</mat-icon>
+        </button>
 
-    </mat-toolbar>
+        <a matTooltip="Project Github Repository"
+           matdTooltipPosition="before"
+           mat-icon-button class="link"
+           href="https://github.com/tomastrajan/angular-ngrx-material-starter"
+           target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+
+      </mat-toolbar>
+    </div>
 
     <div class="content"
          [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
