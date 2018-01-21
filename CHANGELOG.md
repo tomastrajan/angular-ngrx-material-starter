@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.24.0"></a>
+# [1.24.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.23.2...v1.24.0) (2018-01-21)
+
+
+### Bug Fixes
+
+* **build:** extend angular cli version to include fix releases ([82a700c](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/82a700c))
+* **build:** remove deprecated tslint rules ([7577653](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7577653))
+* **styles:** sticky footer animation flicker (IE11), fixes [#39](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/39) ([9209ca2](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9209ca2))
+
+
+### Features
+
+* **codestyle:** add state interfaces and use object spread instead of object assign to type check new state creation in reducers ([2adb6e9](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2adb6e9))
+* **dependencies:** use bootstrap 4, adjust responsive classes ([03292f7](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/03292f7))
+* **docs:** enhance README.md and add BUILT_WITH.md ([4bdfdfa](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4bdfdfa))
+
+
+
 <a name="1.23.2"></a>
 ## [1.23.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.23.1...v1.23.2) (2018-01-17)
 
