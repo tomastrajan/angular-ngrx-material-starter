@@ -13,23 +13,25 @@
   <div class="wrapper">
 
     <mat-toolbar color="primary">
-      <button mat-icon-button class="hidden-md-up" (click)="sidenav.open()">
+      <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
         <mat-icon>menu</mat-icon>
       </button>
 
-      <span routerLink="" class="branding spacer hidden-md-up text-center"><img
+      <span routerLink="" class="branding spacer d-inline d-sm-none text-center"><img
+        [src]="logo"/></span>
+      <span routerLink="" class="branding spacer d-none d-sm-inline d-md-none text-center"><img
         [src]="logo"/> Angular Starter</span>
-      <span routerLink="" class="branding spacer hidden-sm-down"><img
+      <span routerLink="" class="branding spacer d-none d-md-inline"><img
         [src]="logo"/> Angular ngRx Material Starter</span>
 
-      <span class="hidden-sm-down">
+      <span class="d-none d-md-inline">
         <button mat-button class="nav-button" *ngFor="let item of navigation"
             [routerLink]="[item.link]" routerLinkActive="active">
           {{item.label}}
         </button>
       </span>
 
-      <button mat-button class="sign-in-button"
+      <button mat-button class="sign-in-button "
               *ngIf="!isAuthenticated"
               (click)="onLoginClick()">
         Sign in
@@ -47,7 +49,7 @@
         </button>
       </mat-menu>
 
-      <button mat-icon-button routerLink="settings" class="hidden-sm-down">
+      <button mat-icon-button routerLink="settings" class="d-none d-sm-inline">
         <mat-icon>settings</mat-icon>
       </button>
 
