@@ -97,14 +97,19 @@ mat-sidenav-container {
 
           @media (max-width: map-get($grid-breakpoints, sm)) {
             a {
-              padding: 20px 5px;
+              padding: 20px 3px;
             }
           }
         }
 
-        .signature {
-          a {
-            float: right;
+        @media (min-width: map-get($grid-breakpoints, sm)) {
+          .signature {
+            position: relative;
+
+            a {
+              position: absolute;
+              right: 15px;
+            }
           }
         }
       }
