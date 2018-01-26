@@ -10,8 +10,9 @@ by [@tomastrajan](https://twitter.com/tomastrajan)
 ## Table of Content
 
   * [Getting Started](#getting-started)
+  * [Useful Commands](#useful-commands)
   * [Learning Materials](#learning-materials)
-  * [List of Projects Built With This Starter](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md)
+  * [List of Projects Built Using This Starter](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md)
   * [Features](#features)
   * [Stack](#stack)
   * [Code of Conduct](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CODE_OF_CONDUCT.md)
@@ -26,9 +27,10 @@ npm install
 npm start
 ```
 
-## Useful Commands (run, test, build, ...) 
+## Useful Commands
   * `npm start` - starts a dev server and opens browser with running app
   * `npm run test` - runs lint and tests
+  * `npm run watch` - runs tests in watch mode
   * `npm run prod` - runs full prod build and serves prod bundle
   * `npm run prettier` - runs prettier to format whole code base (`.ts` and `.scss`) 
   * `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application) 
@@ -36,15 +38,15 @@ npm start
 
 ## Learning Materials
 
-Check out [Demo & Documentation](http://tomastrajan.github.io/angular-ngrx-material-starter/)
+  * [Demo & Documentation](http://tomastrajan.github.io/angular-ngrx-material-starter/)
+  * [Blog post about Best Practices for Angular CLI](https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81) used in this starter project
 
-Check out [Blog post](https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1)
+#### Theming 
 
-Check out [Presentation (Slides)](http://slides.com/tomastrajan/angular-material-themes-guide#/)
-
-Check out [Live coding Video Tutorial](https://www.youtube.com/watch?v=PsgZjFTAleI)
-
-Check out [Meetup Presentation & Live coding Video](https://www.youtube.com/watch?v=7auj9RfCNrE)
+  * [Blog post](https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1)
+  * [Presentation (Slides)](http://slides.com/tomastrajan/angular-material-themes-guide#/)
+  * [Live coding Video Tutorial](https://www.youtube.com/watch?v=PsgZjFTAleI)
+  * [Meetup Presentation & Live coding Video](https://www.youtube.com/watch?v=7auj9RfCNrE)
 
  
 ## Features
@@ -62,7 +64,7 @@ Check out [Meetup Presentation & Live coding Video](https://www.youtube.com/watc
 * Angular
 * ngrx (or try [ngx-model](https://github.com/tomastrajan/ngx-model) if you prefer less boilerplate)
 * Angular Material
-* Bootstrap 4 (only reset and grids)
+* Bootstrap 4 (only reset, utils and grids)
 
 
 ### Acknowledgements
