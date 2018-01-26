@@ -73,7 +73,10 @@ export class AppComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(auth => (this.isAuthenticated = auth.isAuthenticated));
     this.router.events
-      .pipe(filter(event => event instanceof ActivationEnd))
+      .pipe(
+        takeUntil(this.unsubscribe$),
+        filter(event => event instanceof ActivationEnd)
+      )
       .subscribe((event: ActivationEnd) => {
         let lastChild = event.snapshot;
         while (lastChild.children.length) {
