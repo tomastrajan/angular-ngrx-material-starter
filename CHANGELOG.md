@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.25.0"></a>
+# [1.25.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.24.0...v1.25.0) (2018-01-29)
+
+
+### Bug Fixes
+
+* **app:** add missing declarative unsubscribe for title handling ([9418e37](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9418e37))
+* **app:** remove old theme class from overlay container before setting of new one ([4358ac5](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4358ac5))
+* **codestyle:** prettier ([1bceff3](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/1bceff3))
+* **core:** correctly expand content section on route animation, fixes [#39](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/39) ([2442f72](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2442f72))
+
+
+### Features
+
+* **app:** enhance responsive footer layout ([422a097](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/422a097))
+* **app:** fixed header toolbar ([b3b1b1c](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b3b1b1c))
+* **docs:** enhance documentation ([4e71253](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4e71253))
+
+
+
 <a name="1.24.0"></a>
 # [1.24.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.23.2...v1.24.0) (2018-01-21)
 
