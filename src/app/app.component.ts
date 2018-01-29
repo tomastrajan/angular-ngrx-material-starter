@@ -5,7 +5,6 @@ import { ActivationEnd, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators/takeUntil';
-import { map } from 'rxjs/operators/map';
 import { filter } from 'rxjs/operators/filter';
 
 import {
@@ -16,7 +15,7 @@ import {
 } from '@app/core';
 import { environment as env } from '@env/environment';
 
-import { selectorSettings } from './settings';
+import { NIGHT_MODE_THEME, selectorSettings } from './settings';
 
 @Component({
   selector: 'anms-root',
@@ -55,18 +54,21 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.store
       .select(selectorSettings)
-      .pipe(
-        takeUntil(this.unsubscribe$),
-        map(({ theme }) => theme.toLowerCase())
-      )
-      .subscribe(theme => {
-        this.componentCssClass = theme;
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe(settings => {
+        const { theme, autoNightMode } = settings;
+        const hours = new Date().getHours();
+        const effectiveTheme = (autoNightMode && (hours >= 20 || hours <= 6)
+          ? NIGHT_MODE_THEME
+          : theme
+        ).toLowerCase();
+        this.componentCssClass = effectiveTheme;
         const classList = this.overlayContainer.getContainerElement().classList;
         const toRemove = Array.from(classList).filter((item: string) =>
           item.includes('-theme')
         );
         classList.remove(...toRemove);
-        classList.add(theme);
+        classList.add(effectiveTheme);
       });
     this.store
       .select(selectorAuth)

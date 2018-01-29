@@ -9,7 +9,7 @@ import { LocalStorageService } from '@app/core';
 import {
   SETTINGS_KEY,
   SettingsActionTypes,
-  ActionSettingsChangeTheme
+  ActionSettingsPersist
 } from './settings.reducer';
 
 @Injectable()
@@ -20,13 +20,16 @@ export class SettingsEffects {
   ) {}
 
   @Effect({ dispatch: false })
-  persistThemeSettings(): Observable<Action> {
-    return this.actions$.ofType(SettingsActionTypes.CHANGE_THEME).pipe(
-      tap((action: ActionSettingsChangeTheme) =>
-        this.localStorageService.setItem(SETTINGS_KEY, {
-          theme: action.payload.theme
-        })
-      )
-    );
+  persistSettings(): Observable<Action> {
+    return this.actions$
+      .ofType(SettingsActionTypes.PERSIST)
+      .pipe(
+        tap((action: ActionSettingsPersist) =>
+          this.localStorageService.setItem(
+            SETTINGS_KEY,
+            action.payload.settings
+          )
+        )
+      );
   }
 }

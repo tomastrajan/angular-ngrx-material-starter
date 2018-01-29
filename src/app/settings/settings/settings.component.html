@@ -4,11 +4,28 @@
   </div>
   <br>
   <div class="row">
-    <mat-select class="col-md-6" placeholder="Select theme" name="theme"
-               [ngModel]="theme" (change)="onThemeSelect($event)">
-      <mat-option *ngFor="let t of themes" [value]="t.value">
-        {{t.label}}
-      </mat-option>
-    </mat-select>
+    <div class="col-md-6 icon-form-field">
+      <mat-icon color="accent">color_lens</mat-icon>
+      <mat-form-field>
+        <mat-select placeholder="Color theme" name="theme"
+                    [ngModel]="settings?.theme" (change)="onThemeSelect($event)">
+          <mat-option *ngFor="let t of themes" [value]="t.value">
+            {{t.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6 icon-form-field">
+      <mat-icon color="accent">lightbulb_outline</mat-icon>
+      <mat-form-field>
+        <mat-select placeholder="Auto night mode (from 21:00 to 7:00)"
+                    name="auto-night-mode"
+                    [ngModel]="settings?.autoNightMode?.toString()"
+                    (change)="onAutoNightModeSelect($event)">
+          <mat-option value="false">Off</mat-option>
+          <mat-option value="true">On</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
 </div>

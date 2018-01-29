@@ -6,3 +6,16 @@ h1 {
   margin: 0 0 20px 0;
   text-transform: uppercase;
 }
+
+.icon-form-field {
+  display: flex;
+  align-items: center;
+}
+
+mat-icon {
+  margin: 0 10px 0 0;
+}
+
+mat-form-field {
+  flex: 1 0 auto;
+}

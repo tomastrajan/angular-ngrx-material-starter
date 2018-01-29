@@ -5,7 +5,10 @@ import { takeUntil } from 'rxjs/operators/takeUntil';
 
 import {
   selectorSettings,
-  ActionSettingsChangeTheme
+  ActionSettingsChangeTheme,
+  ActionSettingsChangeAutoNightMode,
+  SettingsState,
+  ActionSettingsPersist
 } from '../settings.reducer';
 
 @Component({
@@ -15,19 +18,19 @@ import {
 })
 export class SettingsComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
-  theme: string;
+  settings: SettingsState;
 
   themes = [
-    { value: 'DEFAULT-THEME', label: 'Default' },
+    { value: 'DEFAULT-THEME', label: 'Blue' },
     { value: 'LIGHT-THEME', label: 'Light' },
-    { value: 'BLACK-THEME', label: 'Black' }
+    { value: 'BLACK-THEME', label: 'Dark' }
   ];
 
   constructor(private store: Store<any>) {
     store
       .select(selectorSettings)
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(({ theme }) => (this.theme = theme));
+      .subscribe(settings => (this.settings = settings));
   }
 
   ngOnInit() {}
@@ -39,5 +42,15 @@ export class SettingsComponent implements OnInit, OnDestroy {
 
   onThemeSelect({ value: theme }) {
     this.store.dispatch(new ActionSettingsChangeTheme({ theme }));
+    this.store.dispatch(new ActionSettingsPersist({ settings: this.settings }));
+  }
+
+  onAutoNightModeSelect({ value: autoNightMode }) {
+    this.store.dispatch(
+      new ActionSettingsChangeAutoNightMode({
+        autoNightMode: autoNightMode === 'true'
+      })
+    );
+    this.store.dispatch(new ActionSettingsPersist({ settings: this.settings }));
   }
 }
