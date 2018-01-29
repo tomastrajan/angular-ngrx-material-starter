@@ -16,6 +16,8 @@ mat-sidenav-container {
     overflow-y: auto;
 
     .toolbar {
+      position: fixed;
+      width: 100%;
       z-index: 1;
       flex: 0 0 auto;
 
@@ -50,6 +52,7 @@ mat-sidenav-container {
     }
 
     .content {
+      padding-top: 64px;
       flex: 1 0 auto;
       position: relative;
     }
