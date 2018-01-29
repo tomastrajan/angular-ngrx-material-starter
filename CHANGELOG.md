@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.26.0"></a>
+# [1.26.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.25.0...v1.26.0) (2018-01-29)
+
+
+### Bug Fixes
+
+* **build:** prevent deceiving error messages ([894f7ca](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/894f7ca))
+
+
+### Features
+
+* **settings:** auto night mode, settings persistence, layout enhancements ([982f6c8](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/982f6c8))
+
+
+
 <a name="1.25.0"></a>
 # [1.25.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.24.0...v1.25.0) (2018-01-29)
 
