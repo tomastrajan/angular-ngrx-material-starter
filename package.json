@@ -36,7 +36,7 @@
     "@angular/router": "^5.1.0",
     "@ngrx/effects": "^5.0.1",
     "@ngrx/router-store": "^4.0.0",
-    "@ngrx/store": "^4.0.0",
+    "@ngrx/store": "^5.0.0",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
