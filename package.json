@@ -63,7 +63,7 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-spec-reporter": "0.0.31",
     "prettier": "^1.7.4",
-    "protractor": "~5.2.1",
+    "protractor": "~5.3.0",
     "standard-version": "^4.2.0",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
