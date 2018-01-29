@@ -9,7 +9,7 @@
     "test": "npm run lint && ng test --single-run",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "watch": "ng test --browsers ChromeHeadless --reporters spec",
+    "watch": "ng test --browsers ChromeHeadless --reporters spec --sourcemaps=false",
     "build:prod": "ng build --target production --build-optimizer --vendor-chunk --stats-json",
     "build:travisci": "ng build --target production --build-optimizer --vendor-chunk --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
     "clean": "rm -rf ./dist/",
