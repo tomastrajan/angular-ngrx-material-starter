@@ -5,7 +5,7 @@ import {
   transition,
   trigger,
   stagger,
-  sequence,
+  sequence
 } from '@angular/animations';
 
 export const ANIMATE_ON_ROUTE_ENTER = 'route-enter-staggered';
@@ -34,7 +34,11 @@ export const routerTransition = trigger('routerTransition', [
       query(
         ':enter > *',
         [
-          style({ transform: 'translateY(-3%)', opacity: 0, position: 'static' }),
+          style({
+            transform: 'translateY(-3%)',
+            opacity: 0,
+            position: 'static'
+          }),
           animate(
             '0.5s ease-in-out',
             style({ transform: 'translateY(0%)', opacity: 1 })
