@@ -1,42 +1,43 @@
 import {
   animate,
-  group,
   query,
   style,
   transition,
   trigger,
-  stagger
+  stagger,
+  sequence,
 } from '@angular/animations';
 
 export const ANIMATE_ON_ROUTE_ENTER = 'route-enter-staggered';
 
 export const routerTransition = trigger('routerTransition', [
   transition('* <=> *', [
-    query(':enter, :leave', style({ position: 'fixed', width: '100%' }), {
+    query(':enter > *', style({ opacity: 0, position: 'fixed' }), {
       optional: true
     }),
     query(':enter .' + ANIMATE_ON_ROUTE_ENTER, style({ opacity: 0 }), {
       optional: true
     }),
-    group([
+    sequence([
       query(
-        ':enter',
-        [
-          style({ transform: 'translateY(-3%)', opacity: 0 }),
-          animate(
-            '0.5s 0.5s ease-in-out',
-            style({ transform: 'translateY(0%)', opacity: 1 })
-          )
-        ],
-        { optional: true }
-      ),
-      query(
-        ':leave',
+        ':leave > *',
         [
           style({ transform: 'translateY(0%)', opacity: 1 }),
           animate(
             '0.2s ease-in-out',
             style({ transform: 'translateY(-3%)', opacity: 0 })
+          ),
+          style({ position: 'fixed' })
+        ],
+        { optional: true }
+      ),
+      query(
+        ':enter > *',
+        [
+          style({ transform: 'translateY(-3%)', opacity: 0, position: 'static' }),
+          animate(
+            '0.5s ease-in-out',
+            style({ transform: 'translateY(0%)', opacity: 1 })
           )
         ],
         { optional: true }
