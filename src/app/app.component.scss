@@ -57,6 +57,12 @@ mat-sidenav-container {
       position: relative;
     }
 
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+      .content {
+        padding-top: 54px;
+      }
+    }
+
     .footer {
       flex: 0 0 auto;
       padding: 0 15px;
