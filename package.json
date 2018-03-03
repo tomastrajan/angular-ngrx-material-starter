@@ -18,7 +18,7 @@
     "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --browser ChromeTravisCi --single-run --reporters spec --environment prod && ng e2e && npm run build:travisci",
     "release": "standard-version && git push --follow-tags origin master",
     "prettier": "prettier {src,e2e}/**/*.{ts,json,md,scss} --write",
-    "prettier:ci": "prettier {src,e2e}/**/*.{ts,json,md,scss} --list-differences",
+    "prettier:ci": "prettier {src,e2e}/**/*.{ts,json,md,scss} --list-different",
     "analyze": "npm run clean && npm run build:prod && webpack-bundle-analyzer ./dist/stats.json"
   },
   "private": true,
