@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.27.0"></a>
+# [1.27.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.26.0...v1.27.0) (2018-03-03)
+
+
+### Bug Fixes
+
+* **app:** responsive styles on small screens (content padding) ([15862d8](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/15862d8))
+* **build:** prettier list diferent flag ([d489132](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d489132))
+* **build:** run e2e tests in CI environment ([9026ff6](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9026ff6))
+* **e2e:** correct message and selector ([27955e9](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/27955e9))
+
+
+### Features
+
+* **build:** run e2e tests in CI environment ([3d65d8b](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3d65d8b))
+* **dependecies:** bump to angular 6 betas, add package-lock.json ([ffc0177](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ffc0177))
+* **examples:** add authenticated route example ([2aab9a6](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2aab9a6))
+
+
+
 <a name="1.26.0"></a>
 # [1.26.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.25.0...v1.26.0) (2018-01-29)
 
