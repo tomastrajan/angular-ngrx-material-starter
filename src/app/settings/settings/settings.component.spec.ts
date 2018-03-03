@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
@@ -13,7 +14,12 @@ describe('SettingsComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, CoreModule, SharedModule],
+        imports: [
+          NoopAnimationsModule,
+          RouterTestingModule,
+          CoreModule,
+          SharedModule
+        ],
         declarations: [SettingsComponent]
       }).compileComponents();
     })

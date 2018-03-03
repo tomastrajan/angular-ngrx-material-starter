@@ -12,7 +12,8 @@ export class ExamplesComponent implements OnInit {
   examples = [
     { link: 'todos', label: 'Todos' },
     { link: 'stock-market', label: 'Stock Market' },
-    { link: 'theming', label: 'Theming' }
+    { link: 'theming', label: 'Theming' },
+    { link: 'authenticated', label: 'Authenticated' }
   ];
 
   constructor() {}

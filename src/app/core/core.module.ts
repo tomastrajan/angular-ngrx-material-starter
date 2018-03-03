@@ -11,6 +11,7 @@ import { initStateFromLocalStorage } from './meta-reducers/init-state-from-local
 import { LocalStorageService } from './local-storage/local-storage.service';
 import { authReducer } from './auth/auth.reducer';
 import { AuthEffects } from './auth/auth.effects';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 export const metaReducers: MetaReducer<any>[] = [initStateFromLocalStorage];
 
@@ -34,7 +35,7 @@ if (!environment.production) {
     EffectsModule.forRoot([AuthEffects])
   ],
   declarations: [],
-  providers: [LocalStorageService]
+  providers: [LocalStorageService, AuthGuardService]
 })
 export class CoreModule {
   constructor(
