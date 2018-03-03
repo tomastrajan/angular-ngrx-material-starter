@@ -17,6 +17,7 @@ by [@tomastrajan](https://twitter.com/tomastrajan)
   * [Stack](#stack)
   * [Code of Conduct](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CODE_OF_CONDUCT.md)
   * [Contributors Guide](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CONTRIBUTING.md)
+  * [Changelog](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md)
 
 
 ## Getting started
