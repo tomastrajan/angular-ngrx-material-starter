@@ -4,22 +4,21 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --open",
+    "start": "ng serve",
     "build": "ng build",
     "test": "npm run lint && ng test --single-run",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "watch": "ng test --browsers ChromeHeadless --reporters spec --sourcemaps=false",
-    "build:prod": "ng build --target production --build-optimizer --vendor-chunk --stats-json",
-    "build:travisci": "ng build --target production --build-optimizer --vendor-chunk --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
+    "build:prod": "ng build --target production --build-optimizer --vendor-chunk --common-chunk",
     "clean": "rm -rf ./dist/",
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
-    "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --browser ChromeTravisCi --single-run --reporters spec --environment prod && ng e2e && npm run build:travisci",
+    "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --browser ChromeTravisCi --single-run --reporters spec --environment prod && ng e2e && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
     "release": "standard-version && git push --follow-tags origin master",
     "prettier": "prettier {src,e2e}/**/*.{ts,json,md,scss} --write",
     "prettier:ci": "prettier {src,e2e}/**/*.{ts,json,md,scss} --list-different",
-    "analyze": "npm run clean && npm run build:prod && webpack-bundle-analyzer ./dist/stats.json"
+    "analyze": "npm run clean && npm run build:prod -- --stats-json && webpack-bundle-analyzer ./dist/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -34,8 +33,8 @@
     "@angular/platform-browser": "^6.0.0-beta.6",
     "@angular/platform-browser-dynamic": "6.0.0-beta.6",
     "@angular/router": "6.0.0-beta.6",
-    "@ngrx/effects": "^5.0.1",
-    "@ngrx/store": "^5.0.0",
+    "@ngrx/effects": "^5.1.0",
+    "@ngrx/store": "^5.1.0",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
@@ -67,6 +66,6 @@
     "ts-node": "~5.0.0",
     "tslint": "~5.9.1",
     "typescript": "2.6.2",
-    "webpack-bundle-analyzer": "^2.9.0"
+    "webpack-bundle-analyzer": "^2.11.1"
   }
 }
