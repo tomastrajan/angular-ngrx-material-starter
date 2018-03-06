@@ -7,6 +7,11 @@
          [routerLink]="[item.link]" routerLinkActive="active">
         {{item.label}}
       </a>
+      <a mat-list-item
+         href="https://github.com/tomastrajan/angular-ngrx-material-starter"
+         target="_blank">
+        Github
+      </a>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -56,7 +61,8 @@
 
         <a matTooltip="Project Github Repository"
            matdTooltipPosition="before"
-           mat-icon-button class="link"
+           mat-icon-button
+           class="link d-none d-sm-inline"
            href="https://github.com/tomastrajan/angular-ngrx-material-starter"
            target="_blank">
           <i class="fa fa-github fa-2x"></i>
