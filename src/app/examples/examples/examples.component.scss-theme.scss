@@ -1,0 +1,19 @@
+@import '~@angular/material/theming';
+
+@mixin anms-examples-component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  anms-examples {
+    .nav-responsive {
+      border-bottom: 2px solid mat-color($primary);
+    }
+  }
+
+  .nav-responsive-overlay {
+    .active {
+      color: mat-color($accent, default-contrast);
+      background-color: mat-color($accent);
+    }
+  }
+}

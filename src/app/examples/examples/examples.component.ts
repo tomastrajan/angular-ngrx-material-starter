@@ -11,9 +11,10 @@ import { routerTransition } from '@app/core';
 export class ExamplesComponent implements OnInit {
   examples = [
     { link: 'todos', label: 'Todos' },
-    { link: 'stock-market', label: 'Stock Market' },
+    { link: 'stock-market', label: 'Stocks' },
     { link: 'theming', label: 'Theming' },
-    { link: 'authenticated', label: 'Authenticated' }
+    { link: 'notifications', label: 'Notifications' },
+    { link: 'authenticated', label: 'Auth' }
   ];
 
   constructor() {}

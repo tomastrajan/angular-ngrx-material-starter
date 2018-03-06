@@ -1,17 +1,23 @@
 nav {
   margin-bottom: 20px;
+
+  .mat-tab-link {
+    min-width: 130px;
+  }
 }
 
 .nav-responsive {
-  margin: 14px;
+  padding: 0 0 24px 0;
 
-  button {
+  a {
     width: 100%;
+    display: inline-block;
+    padding-top: 14px;
 
     mat-icon {
       float: left;
       position: relative;
-      top: 7px;
+      top: -1px;
     }
   }
 }

@@ -26,7 +26,7 @@
         <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter">
           <mat-icon>filter_list</mat-icon>
         </button>
-        <mat-menu class="todos-filter-menu" #todosFilter="matMenu" xPosition="before">
+        <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">
           <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }">
             <mat-icon>assignment</mat-icon>
             <span>All</span>

@@ -1,33 +1,31 @@
-<nav mat-tab-nav-bar class="d-none d-md-block">
+<nav mat-tab-nav-bar >
   <a mat-tab-link
+     class="d-none d-md-inline-flex"
      *ngFor="let e of examples"
      [routerLink]="e.link"
      routerLinkActive #rla="routerLinkActive"
      [active]="rla.isActive">
     {{e.label}}
   </a>
-</nav>
-
-<div class="nav-responsive d-md-none">
-  <span *ngFor="let e of examples"
-     [routerLink]="e.link"
-     routerLinkActive #rla="routerLinkActive">
-    <button *ngIf="rla.isActive" mat-raised-button
-            color="primary"
-            [matMenuTriggerFor]="examplesMenu">
-      <span><mat-icon>menu</mat-icon> {{e.label}}</span>
-  </button>
+  <span class="nav-responsive d-md-none"
+        *ngFor="let e of examples"
+        [routerLink]="e.link"
+        routerLinkActive #rla="routerLinkActive"
+        [matMenuTriggerFor]="examplesMenu">
+    <a *ngIf="rla.isActive"
+        mat-tab-link>
+      <mat-icon>menu</mat-icon> {{e.label}}
+    </a>
   </span>
-  <mat-menu #examplesMenu="matMenu">
-    <button mat-menu-item
-            *ngFor="let e of examples"
-            [routerLink]="e.link"
-            routerLinkActive #rla="routerLinkActive"
-            ngClass="{ active: rla.isActive }">
-      {{e.label}}
-    </button>
-  </mat-menu>
-</div>
+</nav>
+<mat-menu #examplesMenu="matMenu" [overlapTrigger]="false" class="nav-responsive-overlay">
+  <button mat-menu-item
+          *ngFor="let e of examples"
+          [routerLink]="e.link"
+          routerLinkActive="active">
+    {{e.label}}
+  </button>
+</mat-menu>
 
 
 <div [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">

@@ -1,6 +1,6 @@
 @import '~@angular/material/theming';
 
-@mixin anms-examples-component-theme($theme) {
+@mixin anms-stock-market-component-theme($theme) {
   $warn: map-get($theme, warn);
 
   anms-stock-market {
