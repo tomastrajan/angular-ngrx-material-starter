@@ -4,23 +4,43 @@
       <h1>Angular ngRx Material Starter</h1>
       <div class="actions">
         <a [ngClass]="animateOnRouteEnter"
-           mat-raised-button color="primary" routerLink="../features">
-          Check Features
+           mat-raised-button class="actions-main" color="primary" routerLink="../features">
+          Features
         </a>
-        <a mat-raised-button color="accent" routerLink="../examples"
+        <a mat-raised-button class="actions-main" color="accent" routerLink="../examples"
            [ngClass]="animateOnRouteEnter">
-          Check Examples
+          Examples
         </a>
-        <a mat-raised-button routerLink="../settings"
+        <a mat-raised-button class="actions-main" color="warn" routerLink="../settings"
            [ngClass]="animateOnRouteEnter">
-          Change Theme
+          <i class="fa fa-gear"></i> Change Theme
         </a>
-        <span [ngClass]="animateOnRouteEnter">or</span>
+        <br>
+        <span [ngClass]="animateOnRouteEnter">or check blogs about</span>
+        <br>
         <a mat-raised-button
            [ngClass]="animateOnRouteEnter"
            target="_blank"
            href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1">
-          <i class="fa fa-medium"></i> Check Blog Post
+          <i class="fa fa-medium"></i> Material Theming
+        </a>
+        <a mat-raised-button
+           [ngClass]="animateOnRouteEnter"
+           target="_blank"
+           href="https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81">
+          <i class="fa fa-medium"></i> Angular Cli Tips
+        </a>
+        <a mat-raised-button
+           [ngClass]="animateOnRouteEnter"
+           target="_blank"
+           href="https://medium.com/@tomastrajan/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0">
+          <i class="fa fa-medium"></i> Ngrx Typescript Tips
+        </a>
+        <a mat-raised-button
+           [ngClass]="animateOnRouteEnter"
+           target="_blank"
+           href="https://medium.com/@tomastrajan/how-to-style-angular-application-loading-with-angular-cli-like-a-boss-cdd4f5358554">
+          <i class="fa fa-medium"></i> App Loading Style
         </a>
       </div>
       <div class="get-started" [ngClass]="animateOnRouteEnter">
