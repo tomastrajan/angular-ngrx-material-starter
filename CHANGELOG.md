@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.28.0"></a>
+# [1.28.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.27.1...v1.28.0) (2018-03-06)
+
+
+### Bug Fixes
+
+* **build:** remove --open flag which currently opens new window on every code change ([f991231](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f991231))
+
+
+### Features
+
+* **app:** enhance responsive layout ([2af20d2](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2af20d2))
+* **examples:** enhance responsivenes of submenu ([a22cd8e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a22cd8e))
+* **static:** adjust about page content ([ead970c](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ead970c))
+
+
+
 <a name="1.27.1"></a>
 ## [1.27.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.27.0...v1.27.1) (2018-03-03)
 
