@@ -1,3 +1,17 @@
 nav {
   margin-bottom: 20px;
 }
+
+.nav-responsive {
+  margin: 14px;
+
+  button {
+    width: 100%;
+
+    mat-icon {
+      float: left;
+      position: relative;
+      top: 7px;
+    }
+  }
+}

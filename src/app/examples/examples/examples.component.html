@@ -1,4 +1,4 @@
-<nav mat-tab-nav-bar>
+<nav mat-tab-nav-bar class="d-none d-md-block">
   <a mat-tab-link
      *ngFor="let e of examples"
      [routerLink]="e.link"
@@ -7,6 +7,29 @@
     {{e.label}}
   </a>
 </nav>
+
+<div class="nav-responsive d-md-none">
+  <span *ngFor="let e of examples"
+     [routerLink]="e.link"
+     routerLinkActive #rla="routerLinkActive">
+    <button *ngIf="rla.isActive" mat-raised-button
+            color="primary"
+            [matMenuTriggerFor]="examplesMenu">
+      <span><mat-icon>menu</mat-icon> {{e.label}}</span>
+  </button>
+  </span>
+  <mat-menu #examplesMenu="matMenu">
+    <button mat-menu-item
+            *ngFor="let e of examples"
+            [routerLink]="e.link"
+            routerLinkActive #rla="routerLinkActive"
+            ngClass="{ active: rla.isActive }">
+      {{e.label}}
+    </button>
+  </mat-menu>
+</div>
+
+
 <div [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
   <router-outlet #o="outlet"></router-outlet>
 </div>
