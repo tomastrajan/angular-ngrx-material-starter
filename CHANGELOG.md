@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.29.1"></a>
+## [1.29.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.29.0...v1.29.1) (2018-03-08)
+
+
+### Bug Fixes
+
+* **dependencies:** update package-lock.json ([7332a68](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7332a68))
+
+
+
 <a name="1.29.0"></a>
 # [1.29.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.28.0...v1.29.0) (2018-03-08)
 
