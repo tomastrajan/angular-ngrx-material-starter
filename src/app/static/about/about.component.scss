@@ -18,7 +18,7 @@
     span {
       display: inline-block;
       font-weight: bold;
-      padding: 10px 10px 20px 10px;
+      padding: 20px 10px 30px 10px;
     }
 
     a {
@@ -37,13 +37,14 @@
   }
 
   .get-started {
-    width: 700px;
+    max-width: 700px;
     margin: 50px auto 0 auto;
     padding-bottom: 50px;
     font-size: 0.9em;
     letter-spacing: 0.01px;
     overflow-wrap: break-word;
     z-index: 1;
+    overflow: hidden;
 
     code {
       display: inline-block;
@@ -103,7 +104,7 @@
       margin: 40px 0 0 0;
 
       span {
-        padding: 0 0 10px 0;
+        padding: 10px 0 20px 0;
       }
 
       a {
