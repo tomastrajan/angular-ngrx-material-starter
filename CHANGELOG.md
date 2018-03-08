@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.29.0"></a>
+# [1.29.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.28.0...v1.29.0) (2018-03-08)
+
+
+### Bug Fixes
+
+* **app:** responsive styles ([f45f498](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f45f498))
+* **build:** code style (prettier) ([e9cb3c9](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e9cb3c9))
+* **static:** responsive styles ([d6568b1](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d6568b1))
+* **styles:** remove unnecessary bootstrap import ([fba978c](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/fba978c))
+
+
+### Features
+
+* **examples:** enhance responsivenes of submenu (and related styles fixes) ([4975389](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4975389))
+* **styles:** add nature theme ([b0324cb](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b0324cb))
+
+
+
 <a name="1.28.0"></a>
 # [1.28.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.27.1...v1.28.0) (2018-03-06)
 
