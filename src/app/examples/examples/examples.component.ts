@@ -13,7 +13,6 @@ export class ExamplesComponent implements OnInit {
     { link: 'todos', label: 'Todos' },
     { link: 'stock-market', label: 'Stocks' },
     { link: 'theming', label: 'Theming' },
-    { link: 'notifications', label: 'Notifications' },
     { link: 'authenticated', label: 'Auth' }
   ];
 

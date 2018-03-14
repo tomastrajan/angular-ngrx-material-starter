@@ -1,4 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  MatSnackBar,
+  MatSnackBarRef,
+  SimpleSnackBar
+} from '@angular/material/snack-bar';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators/takeUntil';
@@ -27,8 +32,9 @@ export class TodosComponent implements OnInit, OnDestroy {
   animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
   todos: any;
   newTodo = '';
+  notification: MatSnackBarRef<SimpleSnackBar>;
 
-  constructor(public store: Store<any>) {}
+  constructor(public store: Store<any>, public snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.store
@@ -73,18 +79,30 @@ export class TodosComponent implements OnInit, OnDestroy {
 
   onAddTodo() {
     this.store.dispatch(new ActionTodosAdd({ name: this.newTodo }));
+    this.showNotification(`Todo "${this.newTodo}" added`);
     this.newTodo = '';
   }
 
   onToggleTodo(todo: Todo) {
     this.store.dispatch(new ActionTodosToggle({ id: todo.id }));
+    this.showNotification(`Todo "${todo.name}" toggled`, 'Undo')
+      .onAction()
+      .subscribe(() => this.onToggleTodo(todo));
   }
 
   onRemoveDoneTodos() {
     this.store.dispatch(new ActionTodosRemoveDone());
+    this.showNotification('Done todos removed');
   }
 
   onFilterTodos(filter: TodosFilter) {
     this.store.dispatch(new ActionTodosFilter({ filter }));
+    this.showNotification(`Filtering todos "${filter}"`);
+  }
+
+  private showNotification(message: string, action?: string) {
+    return this.notification = this.snackBar.open(message, action, {
+      duration: 3000
+    });
   }
 }
