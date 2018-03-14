@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.30.0"></a>
+# [1.30.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.29.1...v1.30.0) (2018-03-14)
+
+
+### Bug Fixes
+
+* **examples:** remove unused code ([0ff88e8](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0ff88e8))
+* **examples:** return snack-bar instance ([91efbb4](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/91efbb4))
+
+
+### Features
+
+* **examples:** add notifications to todos example ([71d0f2a](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/71d0f2a)), closes [#65](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/65)
+
+
+
 <a name="1.29.1"></a>
 ## [1.29.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.29.0...v1.29.1) (2018-03-08)
 
