@@ -1,9 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {
-  MatSnackBar,
-  MatSnackBarRef,
-  SimpleSnackBar
-} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators/takeUntil';
@@ -32,7 +28,6 @@ export class TodosComponent implements OnInit, OnDestroy {
   animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
   todos: any;
   newTodo = '';
-  notification: MatSnackBarRef<SimpleSnackBar>;
 
   constructor(public store: Store<any>, public snackBar: MatSnackBar) {}
 
@@ -101,7 +96,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   }
 
   private showNotification(message: string, action?: string) {
-    return this.notification = this.snackBar.open(message, action, {
+    this.snackBar.open(message, action, {
       duration: 3000
     });
   }
