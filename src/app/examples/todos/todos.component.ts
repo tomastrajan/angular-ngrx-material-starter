@@ -96,7 +96,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   }
 
   private showNotification(message: string, action?: string) {
-    this.snackBar.open(message, action, {
+    return this.snackBar.open(message, action, {
       duration: 3000
     });
   }
