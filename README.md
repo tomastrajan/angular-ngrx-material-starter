@@ -11,6 +11,7 @@ by [@tomastrajan](https://twitter.com/tomastrajan)
 
   * [Getting Started](#getting-started)
   * [Useful Commands](#useful-commands)
+  * [Make It Your Own](#make-it-your-own)
   * [Learning Materials](#learning-materials)
   * [List of Projects Built Using This Starter](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md)
   * [Features](#features)
@@ -36,6 +37,28 @@ npm start
   * `npm run prettier` - runs prettier to format whole code base (`.ts` and `.scss`) 
   * `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application) 
 
+
+## Make It Your Own
+When using this starter project to build your own app you might consider some of the following steps:
+  
+  * use `search and replace` functionality of your favourite IDE to replace `anms` with `<your-app-prefix>`
+  * rename project in `package.json` `name` property and set appropriate version (eg `0.0.0` or `1.0.0`)
+  * rename app in `src/environments/` files (will be shown in browser tab)
+  * delete pre-existing `CHANGELOG.md` (you will generate your own with future releases of your features)
+  * delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILD_WITH.md` files as they are relevant only if project is open sourced on Github
+  * remove or adjust links in the [footer](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/src/app/app.component.html#L79)
+  * replace logo in `src/assets` folder ( currently 45 x 48 pixel `png` file )
+  * adjust colors in `src/themes/default-theme.scss`
+  * create a pull request in the [original repository](https://github.com/tomastrajan/angular-ngrx-material-starter/) to update `BUILD_WITH.md` [file](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md) with a link and short description of your project
+  
+#### Continuous Integration
+Starter project is using [Travis CI](https://travis-ci.org/) for running linters and tests on every commit.
+Based on your preferences and needs you can either:
+
+  * not use / use other CI server and delete both `.travis.yml` and `.travis-deploy.sh`
+  * create Travis CI account and link it to your projects Github repo and [configure build](https://medium.com/@tomastrajan/continuous-deployment-of-client-side-apps-with-github-pages-travis-ci-10e9d641a889) 
+    with `GH_REF` and `GH_TOKEN` environment variables for automatic deployment of releases to Github Pages
+  
 
 ## Learning Materials
 
