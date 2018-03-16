@@ -1,6 +1,6 @@
 {
   "name": "angular-ngrx-material-starter",
-  "version": "1.30.0",
+  "version": "1.31.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -44,7 +44,7 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
-    "@angular/cli": "6.0.0-beta.4",
+    "@angular/cli": "6.0.0-beta.5",
     "@angular/compiler-cli": "6.0.0-beta.7",
     "@types/jasmine": "2.8.3",
     "@types/node": "~9.4.0",

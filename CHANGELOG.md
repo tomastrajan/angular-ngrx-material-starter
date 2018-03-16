@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.31.0"></a>
+# [1.31.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.30.0...v1.31.0) (2018-03-16)
+
+
+### Bug Fixes
+
+* **app:** remove remaining bootstrap util css classes, fix branding positioning ([5899a25](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/5899a25))
+* **themes:** input focus color for dark theme, color inconsistencies ([14721a3](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/14721a3)), closes [#70](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/70)
+
+
+### Features
+
+* **docs:** add "make it your own" section to README.md ([363b7c3](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/363b7c3))
+
+
+
 <a name="1.30.0"></a>
 # [1.30.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.29.1...v1.30.0) (2018-03-14)
 
