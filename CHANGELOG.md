@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.31.1"></a>
+## [1.31.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.31.0...v1.31.1) (2018-03-16)
+
+
+### Bug Fixes
+
+* **build:** sudo mode for travis ci ([2500f90](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2500f90))
+
+
+
 <a name="1.31.0"></a>
 # [1.31.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.30.0...v1.31.0) (2018-03-16)
 
