@@ -27,6 +27,16 @@ mat-sidenav-container {
 
       .branding {
         cursor: pointer;
+        padding-top: 4px;
+
+        &.center {
+          text-align: center;
+        }
+
+        img {
+          position: relative;
+          top: -2px;
+        }
       }
 
       .sign-in-button {
