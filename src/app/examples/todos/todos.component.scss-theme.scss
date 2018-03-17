@@ -18,4 +18,17 @@
       }
     }
   }
+
+  .todos-notification-overlay {
+    .mat-simple-snackbar {
+      align-items: center;
+
+      button {
+        padding: 10px 20px;
+        border-radius: 2px;
+        background-color: mat-color($accent);
+        color: mat-color($accent, default-contrast);
+      }
+    }
+  }
 }
