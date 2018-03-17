@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.32.0"></a>
+# [1.32.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.31.1...v1.32.0) (2018-03-17)
+
+
+### Bug Fixes
+
+* **app:** footer styles ([358d7e6](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/358d7e6))
+
+
+### Features
+
+* **core:** add ngrx store freeze lib for development mode ([80a81fe](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/80a81fe))
+* **examples:** enhance todo notification messages, adjust done todo styles ([0e34d7e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0e34d7e))
+* **examples:** theme todo notifications ([075bef9](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/075bef9)), closes [#72](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/72)
+
+
+
 <a name="1.31.1"></a>
 ## [1.31.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.31.0...v1.31.1) (2018-03-16)
 
