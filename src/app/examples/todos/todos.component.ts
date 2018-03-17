@@ -74,25 +74,26 @@ export class TodosComponent implements OnInit, OnDestroy {
 
   onAddTodo() {
     this.store.dispatch(new ActionTodosAdd({ name: this.newTodo }));
-    this.showNotification(`Todo "${this.newTodo}" added`);
+    this.showNotification(`"${this.newTodo}" added`);
     this.newTodo = '';
   }
 
   onToggleTodo(todo: Todo) {
+    const newStatus = todo.done ? 'active' : 'done';
     this.store.dispatch(new ActionTodosToggle({ id: todo.id }));
-    this.showNotification(`Todo "${todo.name}" toggled`, 'Undo')
+    this.showNotification(`Toggled "${todo.name}" to ${newStatus}`, 'Undo')
       .onAction()
-      .subscribe(() => this.onToggleTodo(todo));
+      .subscribe(() => this.onToggleTodo({ ...todo, done: !todo.done }));
   }
 
   onRemoveDoneTodos() {
     this.store.dispatch(new ActionTodosRemoveDone());
-    this.showNotification('Done todos removed');
+    this.showNotification('Removed done todos');
   }
 
   onFilterTodos(filter: TodosFilter) {
     this.store.dispatch(new ActionTodosFilter({ filter }));
-    this.showNotification(`Filtering todos "${filter}"`);
+    this.showNotification(`Filtered to ${filter.toLowerCase()}`);
   }
 
   private showNotification(message: string, action?: string) {

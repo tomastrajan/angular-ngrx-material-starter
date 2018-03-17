@@ -28,5 +28,10 @@
     position: relative;
     top: 2px;
     cursor: pointer;
+
+    &.todo-label-done {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
   }
 }
