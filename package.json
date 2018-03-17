@@ -60,6 +60,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-spec-reporter": "0.0.31",
+    "ngrx-store-freeze": "^0.2.1",
     "prettier": "^1.7.4",
     "protractor": "~5.3.0",
     "standard-version": "^4.2.0",

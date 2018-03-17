@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { MetaReducer, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { storeFreeze } from 'ngrx-store-freeze';
 
 import { environment } from '@env/environment';
 
@@ -16,7 +17,7 @@ import { AuthGuardService } from './auth/auth-guard.service';
 export const metaReducers: MetaReducer<any>[] = [initStateFromLocalStorage];
 
 if (!environment.production) {
-  metaReducers.unshift(debug);
+  metaReducers.unshift(debug, storeFreeze);
 }
 
 @NgModule({
