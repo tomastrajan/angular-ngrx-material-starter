@@ -38,10 +38,8 @@
   @include anms-examples-component-theme($theme);
 }
 
-.default-theme {
-  @include angular-material-theme($anms-theme);
-  @include custom-components-theme($anms-theme);
-}
+@include angular-material-theme($anms-theme);
+@include custom-components-theme($anms-theme);
 
 .light-theme {
   @include angular-material-theme($anms-light-theme);
