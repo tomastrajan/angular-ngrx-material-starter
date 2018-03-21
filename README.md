@@ -9,6 +9,7 @@ by [@tomastrajan](https://twitter.com/tomastrajan)
 
 ## Table of Content
 
+  * [Live Demo](https://tomastrajan.github.io/angular-ngrx-material-starter)
   * [Getting Started](#getting-started)
   * [Useful Commands](#useful-commands)
   * [Make It Your Own](#make-it-your-own)
