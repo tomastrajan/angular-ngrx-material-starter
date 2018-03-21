@@ -11,10 +11,10 @@
 
 @include mat-core();
 
-@import 'default-theme.scss';
-@import 'light-theme.scss';
-@import 'black-theme.scss';
-@import 'nature-theme.scss';
+@import 'themes/default-theme.scss';
+@import 'themes/light-theme.scss';
+@import 'themes/black-theme.scss';
+@import 'themes/nature-theme.scss';
 
 @import 'styles-reset.scss-theme';
 @import 'app/app.component.scss-theme';
