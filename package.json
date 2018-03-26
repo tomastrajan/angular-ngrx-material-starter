@@ -34,7 +34,7 @@
     "@angular/platform-browser-dynamic": "6.0.0-beta.7",
     "@angular/router": "6.0.0-beta.7",
     "@ngrx/effects": "^5.1.0",
-    "@ngrx/store": "^5.1.0",
+    "@ngrx/store": "^5.2.0",
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
