@@ -27,7 +27,7 @@
     "@angular/common": "^6.0.0-beta.7",
     "@angular/compiler": "^6.0.0-beta.7",
     "@angular/core": "^6.0.0-beta.7",
-    "@angular/forms": "6.0.0-beta.7",
+    "@angular/forms": "6.0.0-rc.0",
     "@angular/http": "6.0.0-beta.7",
     "@angular/material": "^6.0.0-beta.4",
     "@angular/platform-browser": "^6.0.0-beta.7",
