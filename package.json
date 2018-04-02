@@ -23,7 +23,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "6.0.0-beta.7",
-    "@angular/cdk": "^6.0.0-beta.4",
+    "@angular/cdk": "^6.0.0-rc.0",
     "@angular/common": "^6.0.0-beta.7",
     "@angular/compiler": "^6.0.0-beta.7",
     "@angular/core": "^6.0.0-beta.7",
