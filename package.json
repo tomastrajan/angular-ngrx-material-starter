@@ -36,7 +36,7 @@
     "@ngrx/effects": "^5.1.0",
     "@ngrx/store": "^5.1.0",
     "bootstrap": "^4.0.0",
-    "core-js": "^2.4.1",
+    "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "rxjs": "^5.5.0",
     "uuid": "^3.1.0",
