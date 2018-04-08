@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.0-rc.1"></a>
+# [6.0.0-rc.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.0...v6.0.0-rc.1) (2018-04-08)
+
+
+### Bug Fixes
+
+* **e2e:** re-add protractor.conf.js, adjust .gitignore rules ([f04f994](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f04f994))
+
+
+
 <a name="6.0.0-rc.0"></a>
 # [6.0.0-rc.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.33.0...v6.0.0-rc.0) (2018-04-08)
 
