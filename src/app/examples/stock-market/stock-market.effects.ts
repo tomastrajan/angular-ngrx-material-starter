@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect } from '@ngrx/effects';
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import { tap } from 'rxjs/operators/tap';
-import { map } from 'rxjs/operators/map';
-import { debounceTime } from 'rxjs/operators/debounceTime';
-import { distinctUntilChanged } from 'rxjs/operators/distinctUntilChanged';
-import { switchMap } from 'rxjs/operators/switchMap';
-import { catchError } from 'rxjs/operators/catchError';
+import { Observable, of } from 'rxjs';
+import {
+  tap,
+  map,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
+  catchError
+} from 'rxjs/operators';
 
 import { LocalStorageService } from '@app/core';
 

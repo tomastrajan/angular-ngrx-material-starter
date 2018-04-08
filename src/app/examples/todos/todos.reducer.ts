@@ -65,11 +65,13 @@ export function todosReducer(
     case TodosActionTypes.ADD:
       return {
         ...state,
-        items: state.items.concat({
-          id: uuid(),
-          name: action.payload.name,
-          done: false
-        })
+        items: [
+          {
+            id: uuid(),
+            name: action.payload.name,
+            done: false
+          }
+        ].concat(state.items)
       };
 
     case TodosActionTypes.TOGGLE:
