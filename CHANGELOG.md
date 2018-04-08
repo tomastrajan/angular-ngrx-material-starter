@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.0-rc.0"></a>
+# [6.0.0-rc.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.33.0...v6.0.0-rc.0) (2018-04-08)
+
+
+### Bug Fixes
+
+* **codestyle:** prettier ([978d490](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/978d490))
+
+
+### Features
+
+* **dependencies:** migrate to release candidates of 6 of Angular, CLI, Material, RxJS... ([9a41534](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9a41534)), closes [#125](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/125)
+* **docs:** add live demo url ([3e7a621](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3e7a621))
+
+
+
 <a name="1.33.0"></a>
 # [1.33.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.32.0...v1.33.0) (2018-03-20)
 
