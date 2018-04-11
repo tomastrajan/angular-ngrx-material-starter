@@ -1,9 +1,16 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy
+} from '@angular/core';
 
 @Component({
   selector: 'anms-big-input-action',
   templateUrl: './big-input-action.component.html',
-  styleUrls: ['./big-input-action.component.scss']
+  styleUrls: ['./big-input-action.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BigInputActionComponent {
   @Input() disabled = false;
