@@ -11,7 +11,7 @@
     "e2e": "ng e2e",
     "watch": "ng test --browsers ChromeHeadless --watch",
     "build:prod": "ng build --prod --build-optimizer --vendor-chunk --common-chunk",
-    "clean": "rm -rf ./dist/",
+    "clean": "rimraf ./dist/",
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
     "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --browsers ChromeTravisCi && ng e2e && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
@@ -44,10 +44,10 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.5.0",
     "@angular/cli": "^6.0.0-rc.2",
     "@angular/compiler-cli": "6.0.0-rc.3",
     "@angular/language-service": "6.0.0-rc.1",
-    "@angular-devkit/build-angular": "~0.5.0",
     "@types/jasmine": "~2.8.3",
     "@types/node": "~9.4.0",
     "codelyzer": "~4.1.0",
@@ -63,6 +63,7 @@
     "ngrx-store-freeze": "^0.2.1",
     "prettier": "^1.7.4",
     "protractor": "~5.3.0",
+    "rimraf": "^2.6.2",
     "standard-version": "^4.2.0",
     "ts-node": "~5.0.0",
     "tslint": "~5.9.1",
