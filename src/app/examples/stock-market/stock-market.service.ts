@@ -21,8 +21,10 @@ export class StockMarketService {
           last: stock.latestEPS,
           ccy: 'USD',
           change: stock.c,
-          changePositive: stock.day30ChangePercent.toString().indexOf('+') === 0,
-          changeNegative: stock.day30ChangePercent.toString().indexOf('-') === 0,
+          changePositive:
+            stock.day30ChangePercent.toString().indexOf('+') === 0,
+          changeNegative:
+            stock.day30ChangePercent.toString().indexOf('-') === 0,
           changePercent: stock.day30ChangePercent.toFixed(2)
         }))
       );
