@@ -27,7 +27,7 @@
     "@angular/common": "^6.0.0-rc.3",
     "@angular/compiler": "^6.0.0-rc.3",
     "@angular/core": "^6.0.0-rc.3",
-    "@angular/forms": "6.0.0-rc.3",
+    "@angular/forms": "6.0.0-rc.5",
     "@angular/http": "6.0.0-rc.3",
     "@angular/material": "^6.0.0-rc.1",
     "@angular/platform-browser": "^6.0.0-rc.3",
