@@ -29,7 +29,7 @@
     "@angular/core": "^6.0.0-rc.3",
     "@angular/forms": "6.0.0-rc.3",
     "@angular/http": "6.0.0-rc.3",
-    "@angular/material": "^6.0.0-rc.1",
+    "@angular/material": "^6.0.0-rc.11",
     "@angular/platform-browser": "^6.0.0-rc.3",
     "@angular/platform-browser-dynamic": "6.0.0-rc.3",
     "@angular/router": "6.0.0-rc.3",
