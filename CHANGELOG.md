@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.0-rc.2"></a>
+# [6.0.0-rc.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.1...v6.0.0-rc.2) (2018-04-22)
+
+
+### Bug Fixes
+
+* **examples:** fix stock market API source ([d486f10](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d486f10))
+* **styles:** prevent blue labels in menus ([45327b4](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/45327b4)), closes [#93](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/93)
+
+
+### Features
+
+* **app:** Changed change detection strategy to OnPush in two components ([8e8fc49](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/8e8fc49)), closes [tomastrajan/angular-ngrx-material-starter/#126](https://github.com/tomastrajan/angular-ngrx-material-starter//issues/126)
+* **build:** use rimraf to clean dist to support building in windows environments ([f883013](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f883013))
+
+
+
 <a name="6.0.0-rc.1"></a>
 # [6.0.0-rc.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.0...v6.0.0-rc.1) (2018-04-08)
 
