@@ -167,7 +167,7 @@
   version "6.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-6.0.0-rc.1.tgz#02781601e4b55688b9f083c647fd86a566380d71"
 
-"@angular/material@^6.0.0-rc.1":
+"@angular/material@^6.0.0-rc.12":
   version "6.0.0-rc.12"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-6.0.0-rc.12.tgz#2342b0e6c7a9ad5cd18d046ee444cd6f1b5482bc"
   dependencies:
