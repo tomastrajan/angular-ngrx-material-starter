@@ -98,7 +98,7 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/cdk@^6.0.0-rc.1":
+"@angular/cdk@^6.0.0-rc.12":
   version "6.0.0-rc.12"
   resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-6.0.0-rc.12.tgz#b239bd34d68475ac4595260d89c806350ab78dca"
   dependencies:
