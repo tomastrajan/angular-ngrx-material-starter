@@ -101,19 +101,22 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private subscribeToRouterEvents() {
     this.router.events
-    .pipe(
-      takeUntil(this.unsubscribe$),
-      filter(event => event instanceof ActivationEnd || event instanceof NavigationEnd)
-    )
-    .subscribe((event: ActivationEnd) => {
-      if (event instanceof ActivationEnd) {
-        this.setPageTitle(event);
-      }
+      .pipe(
+        takeUntil(this.unsubscribe$),
+        filter(
+          event =>
+            event instanceof ActivationEnd || event instanceof NavigationEnd
+        )
+      )
+      .subscribe((event) => {
+        if (event instanceof ActivationEnd) {
+          this.setPageTitle(event);
+        }
 
-      if (event instanceof NavigationEnd) {
-        this.trackPageView(event);
-      }
-    });
+        if (event instanceof NavigationEnd) {
+          this.trackPageView(event);
+        }
+      });
   }
 
   private setPageTitle(event: ActivationEnd) {
