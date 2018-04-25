@@ -108,7 +108,7 @@ export class AppComponent implements OnInit, OnDestroy {
             event instanceof ActivationEnd || event instanceof NavigationEnd
         )
       )
-      .subscribe((event) => {
+      .subscribe(event => {
         if (event instanceof ActivationEnd) {
           this.setPageTitle(event);
         }
