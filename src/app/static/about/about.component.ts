@@ -9,6 +9,7 @@ import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
 })
 export class AboutComponent implements OnInit {
   animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
+  releaseButler = require('../../../assets/release-butler.png');
 
   constructor() {}
 
