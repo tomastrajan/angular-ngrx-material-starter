@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.0-rc.4"></a>
+# [6.0.0-rc.4](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.3...v6.0.0-rc.4) (2018-04-28)
+
+
+### Features
+
+* **about:** improve responsive layout and add release butler section ([3622801](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3622801))
+* **dependencies:** bump angular, cli, material and rxjs versions, update angular.json ([1d363dd](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/1d363dd))
+
+
+
 <a name="6.0.0-rc.3"></a>
 # [6.0.0-rc.3](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.2...v6.0.0-rc.3) (2018-04-25)
 
