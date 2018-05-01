@@ -5,7 +5,20 @@ export class AngularNgrxMaterialStarterPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('anms-root h1')).getText();
+  getCurrentYear() {
+    return element(by.css('.signature'))
+      .getText()
+      .then(txt => txt.match(/[0-9]{4}/g)[0]);
+  }
+
+  getAllMenus() {
+    return element
+      .all(by.css('mat-toolbar button.nav-button'))
+      .map(elm => {
+        return elm.getText();
+      })
+      .then(texts => {
+        return texts;
+      });
   }
 }
