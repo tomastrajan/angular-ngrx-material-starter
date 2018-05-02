@@ -1,13 +1,11 @@
-import { AngularNgrxMaterialStarterPage } from './app.po';
+import { AppPage } from './app.po';
 
 import { getCurrentRouteUrl } from './utils';
 
-describe('angular-ngrx-material-starter App', () => {
-  let page: AngularNgrxMaterialStarterPage;
+describe('App', () => {
+  let page: AppPage;
 
-  beforeEach(() => {
-    page = new AngularNgrxMaterialStarterPage();
-  });
+  beforeEach(() => (page = new AppPage()));
 
   it('should redirect to "about" route', () => {
     page.navigateTo();
@@ -21,8 +19,8 @@ describe('angular-ngrx-material-starter App', () => {
 
   it('should have "About", "Features", "Examples" menus', () => {
     page.navigateTo();
-    page.getAllMenus().then(menus => {
-      expect(menus).toEqual(['About', 'Features', 'Examples']);
-    });
+    page
+      .getAllMenus()
+      .then(menus => expect(menus).toEqual(['About', 'Features', 'Examples']));
   });
 });
