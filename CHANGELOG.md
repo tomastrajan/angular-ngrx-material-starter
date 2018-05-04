@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.0"></a>
+# [6.0.0](https://github.com/mumairofficial/angular-ngrx-material-starter/compare/v6.0.0-rc.4...v6.0.0) (2018-05-04)
+
+
+### Features
+
+* **build:** lint e2e tests ([fe55a82](https://github.com/mumairofficial/angular-ngrx-material-starter/commit/fe55a82))
+* **dependencies:** migrated to stable release of Angular 6.0.0 ([cb2d0ae](https://github.com/mumairofficial/angular-ngrx-material-starter/commit/cb2d0ae))
+* **e2e:** [#178](https://github.com/mumairofficial/angular-ngrx-material-starter/issues/178) add tests for app and about page ([31565c0](https://github.com/mumairofficial/angular-ngrx-material-starter/commit/31565c0))
+
+
+
 <a name="6.0.0-rc.4"></a>
 # [6.0.0-rc.4](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.3...v6.0.0-rc.4) (2018-04-28)
 
