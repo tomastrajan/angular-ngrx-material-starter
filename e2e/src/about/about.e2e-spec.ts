@@ -4,18 +4,19 @@ import { getCurrentRouteUrl } from '../utils';
 describe('About Page', () => {
   let page: AboutPage;
 
-  beforeEach(() => {
-    page = new AboutPage();
-  });
+  beforeEach(() => (page = new AboutPage()));
 
-  it('should display message saying app works', () => {
+  it('should display main heading', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('ANGULAR NGRX MATERIAL STARTER');
   });
 
   it('should display "Geting Started" section', () => {
     page.navigateTo();
-    expect(page.getGettingStarted().isPresent()).toBe(true);
+    page
+      .getGettingStarted()
+      .isPresent()
+      .then(isPresent => expect(isPresent).toBe(true));
   });
 
   it('first action button should lead to "Features" route', () => {
@@ -23,8 +24,6 @@ describe('About Page', () => {
     page
       .getActionButton(0)
       .click()
-      .then(() => {
-        expect(getCurrentRouteUrl()).toBe('features');
-      });
+      .then(() => expect(getCurrentRouteUrl()).toBe('features'));
   });
 });
