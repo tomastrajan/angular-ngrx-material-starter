@@ -7,20 +7,20 @@ describe('App', () => {
 
   beforeEach(() => (page = new AppPage()));
 
-  it('should redirect to "about" route', () => {
-    page.navigateTo();
-    expect(getCurrentRouteUrl()).toEqual('about');
+  it('should redirect to "about" route', async () => {
+    await page.navigateTo();
+    expect(await getCurrentRouteUrl()).toEqual('about');
   });
 
-  it('should display current year in the footer', () => {
-    page.navigateTo();
-    expect(page.getCurrentYear()).toEqual(new Date().getFullYear().toString());
+  it('should display current year in the footer', async () => {
+    await page.navigateTo();
+    expect(await page.getCurrentYear()).toEqual(
+      new Date().getFullYear().toString()
+    );
   });
 
-  it('should have "About", "Features", "Examples" menus', () => {
-    page.navigateTo();
-    page
-      .getAllMenus()
-      .then(menus => expect(menus).toEqual(['About', 'Features', 'Examples']));
+  it('should have "About", "Features", "Examples" menus', async () => {
+    await page.navigateTo();
+    expect(await page.getAllMenus()).toEqual(['About', 'Features', 'Examples']);
   });
 });
