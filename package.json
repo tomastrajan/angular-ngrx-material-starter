@@ -49,7 +49,7 @@
     "@angular/compiler-cli": "6.0.0",
     "@angular/language-service": "6.0.0",
     "@types/jasmine": "~2.8.3",
-    "@types/node": "~9.4.0",
+    "@types/node": "~10.0.4",
     "codelyzer": "~4.1.0",
     "enhanced-resolve": "~3.4.1",
     "jasmine-core": "~2.99.1",
