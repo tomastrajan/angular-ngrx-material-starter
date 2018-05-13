@@ -44,7 +44,7 @@ describe('BigInputActionComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('initially should not show icon, label and should not be disabled', () => {
+  it('should initially not be disabled nad no show icon and label', () => {
     const hostElement: HTMLElement = fixture.nativeElement;
     const button = hostElement.querySelector('button');
     const icon = hostElement.querySelector('mat-icon');
@@ -54,7 +54,7 @@ describe('BigInputActionComponent', () => {
     expect(label).toBeNull();
   });
 
-  it('if "disabled" input set to "true", button should be disabled', () => {
+  it('should disable button if disabled property is set', () => {
     component.disabled = true;
     fixture.detectChanges();
     const button = fixture.nativeElement.querySelector('button');
@@ -62,7 +62,7 @@ describe('BigInputActionComponent', () => {
     expect(button.disabled).toBeTruthy();
   });
 
-  it('if "icon" input set with some value - icon element should be added to markup', () => {
+  it('should display icon if icon property is set', () => {
     component.icon = 'delete';
     fixture.detectChanges();
     const icon = fixture.nativeElement.querySelector('mat-icon');
@@ -70,7 +70,7 @@ describe('BigInputActionComponent', () => {
     expect(icon).toBeTruthy();
   });
 
-  it('if label input set with some value - span element should be added to markup with proper text', () => {
+  it('should display label with provided text when label property is set', () => {
     component.label = 'delete';
     fixture.detectChanges();
     const label = fixture.nativeElement.querySelector(
