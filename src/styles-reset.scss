@@ -1,10 +1,4 @@
 * {
-  a:hover,
-  a:active,
-  a:focus {
-    text-decoration: none;
-  }
-
   &:active,
   :focus {
     outline: none !important;
@@ -12,7 +6,7 @@
 }
 
 label {
-  margin: 0;
+  margin-bottom: 0;
 }
 
 html,
