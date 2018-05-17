@@ -46,11 +46,11 @@ When using this starter project to build your own app you might consider some of
   * rename project in `package.json` `name` property and set appropriate version (eg `0.0.0` or `1.0.0`)
   * rename app in `src/environments/` files (will be shown in browser tab)
   * delete pre-existing `CHANGELOG.md` (you will generate your own with future releases of your features)
-  * delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILD_WITH.md` files as they are relevant only if project is open sourced on Github
+  * delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILT_WITH.md` files as they are relevant only if project is open sourced on Github
   * remove or adjust links in the [footer](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/src/app/app.component.html#L79)
   * replace logo in `src/assets` folder ( currently 45 x 48 pixel `png` file )
   * adjust colors in `src/themes/default-theme.scss`
-  * create a pull request in the [original repository](https://github.com/tomastrajan/angular-ngrx-material-starter/) to update `BUILD_WITH.md` [file](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md) with a link and short description of your project
+  * create a pull request in the [original repository](https://github.com/tomastrajan/angular-ngrx-material-starter/) to update `BUILT_WITH.md` [file](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md) with a link and short description of your project
   
 #### Continuous Integration
 Starter project is using [Travis CI](https://travis-ci.org/) for running linters and tests on every commit.
