@@ -1,83 +1,114 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
 import { SharedModule } from '@app/shared';
 
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'host-for-test',
-  template: `
-    <anms-big-input-action
-     color="warn"
-     [icon]="icon"
-     [label]="label"
-    [disabled]="disabled"
-    >
-    </anms-big-input-action>
-`
+  template: ``
 })
+
 class HostComponent {
   disabled;
   icon;
   label;
+  actionHandler;
 }
+
 describe('BigInputActionComponent', () => {
   let component: HostComponent;
   let fixture: ComponentFixture<HostComponent>;
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        declarations: [HostComponent],
-        imports: [SharedModule]
-      }).compileComponents();
-    })
-  );
+  const getButton = () => fixture.debugElement.query(By.css('button'));
+  const getButtonElement = () => getButton().nativeElement;
+  const getIconElement = () => fixture.debugElement.query(By.css('mat-icon')) ?
+  fixture.debugElement.query(By.css('mat-icon')).nativeElement: null;
+  const getLabelElement = () => fixture.debugElement.query(By.css('.mat-button-wrapper > span')) ?
+  fixture.debugElement.query(By.css('.mat-button-wrapper > span')).nativeElement: null;
 
-  beforeEach(() => {
+  function createHostComponent( template: string ): ComponentFixture<HostComponent> {
+    TestBed.overrideComponent(HostComponent, { set: { template: template } });
     fixture = TestBed.createComponent(HostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
+    return fixture as ComponentFixture<HostComponent>;
+  }
+
+  beforeEach(() =>
+      TestBed.configureTestingModule({
+        declarations: [HostComponent],
+        imports: [SharedModule]
+      })
+  );
 
   it('should be created', () => {
+    const template = `<anms-big-input-action></anms-big-input-action>`;
+    fixture = createHostComponent(template);
     expect(component).toBeTruthy();
   });
 
   it('should initially not be disabled nad no show icon and label', () => {
-    const hostElement: HTMLElement = fixture.nativeElement;
-    const button = hostElement.querySelector('button');
-    const icon = hostElement.querySelector('mat-icon');
-    const label = hostElement.querySelector('.mat-button-wrapper > span');
+    const template = `<anms-big-input-action ></anms-big-input-action>`;
+    fixture = createHostComponent(template);
+    const button = getButtonElement();
+    const label = getLabelElement();
     expect(button.disabled).toBeFalsy();
-    expect(icon).toBeNull();
+    expect(getIconElement()).toBeNull();
     expect(label).toBeNull();
   });
 
   it('should disable button if disabled property is set', () => {
+    const template = `<anms-big-input-action [disabled]="disabled"></anms-big-input-action>`;
+
+    fixture = createHostComponent(template);
     component.disabled = true;
     fixture.detectChanges();
-    const button = fixture.nativeElement.querySelector('button');
-
+    const button = getButtonElement();
     expect(button.disabled).toBeTruthy();
   });
 
   it('should display icon if icon property is set', () => {
+    const template = `
+    <anms-big-input-action
+     [icon]="icon"
+    ></anms-big-input-action>
+    `;
+    fixture = createHostComponent(template);
     component.icon = 'delete';
     fixture.detectChanges();
-    const icon = fixture.nativeElement.querySelector('mat-icon');
+    const icon = getIconElement();
 
     expect(icon).toBeTruthy();
   });
 
   it('should display label with provided text when label property is set', () => {
+    const template = `
+    <anms-big-input-action
+      [label]="label"
+    ></anms-big-input-action>
+    `;
+    fixture = createHostComponent(template);
     component.label = 'delete';
     fixture.detectChanges();
-    const label = fixture.nativeElement.querySelector(
-      '.mat-button-wrapper > span'
-    );
+    const label =  getLabelElement();
 
     expect(label).toBeTruthy();
     expect(label.textContent).toBe('delete');
+  });
+
+  it('should trigger action bound when button clicked', () => {
+    const template = `
+    <anms-big-input-action
+     (action)="actionHandler()"
+    ></anms-big-input-action>
+    `;
+    fixture = createHostComponent(template);
+    const button = getButton();
+    component.actionHandler = () => {};
+    fixture.detectChanges();
+    spyOn(component, 'actionHandler').and.callThrough();
+    button.triggerEventHandler('click', <Event>{});
+    expect(component.actionHandler).toHaveBeenCalled();
   });
 });
