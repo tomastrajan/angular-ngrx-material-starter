@@ -9,8 +9,7 @@ import { SharedModule } from '@app/shared';
   template: ''
 })
 class HostComponent {
-  actionHandler = () => {
-  };
+  actionHandler = () => {};
 }
 
 describe('BigInputActionComponent', () => {
