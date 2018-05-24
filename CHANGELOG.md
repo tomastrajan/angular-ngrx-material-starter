@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.1"></a>
+## [6.0.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0...v6.0.1) (2018-05-24)
+
+
+### Bug Fixes
+
+* **app:** only remove existing theme classes ([692edfc](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/692edfc))
+
+
+### Features
+
+* **unit-test:** add test for action [#177](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/177) ([24f8145](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/24f8145))
+
+
+
 <a name="6.0.0"></a>
 # [6.0.0](https://github.com/mumairofficial/angular-ngrx-material-starter/compare/v6.0.0-rc.4...v6.0.0) (2018-05-04)
 
