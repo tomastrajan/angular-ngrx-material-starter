@@ -95,7 +95,9 @@ export class AppComponent implements OnInit, OnDestroy {
     const toRemove = Array.from(classList).filter((item: string) =>
       item.includes('-theme')
     );
-    classList.remove(...toRemove);
+    if (toRemove.length) {
+      classList.remove(...toRemove);
+    }
     classList.add(effectiveTheme);
   }
 
