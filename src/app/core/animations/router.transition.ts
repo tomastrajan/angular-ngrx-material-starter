@@ -11,7 +11,7 @@ import {
 
 export const ANIMATE_ON_ROUTE_ENTER = 'route-enter-staggered';
 
-const ROUTE_TRANSITION_STEPS: any[] = [
+const ROUTE_TRANSITION: any[] = [
   query(':enter > *', style({ opacity: 0, position: 'fixed' }), {
     optional: true
   }),
@@ -60,12 +60,17 @@ const ROUTE_TRANSITION_STEPS: any[] = [
   )
 ];
 
-// disable whole page slide-in animation in IE and EDGE
-if (['ie', 'edge'].includes(browser().name)) {
-  ROUTE_TRANSITION_STEPS.splice(0, 1);
-  ROUTE_TRANSITION_STEPS.splice(1, 1);
-}
+export const ROUTE_TRANSITION_IE = [ROUTE_TRANSITION[1], ROUTE_TRANSITION[3]];
 
 export const routerTransition = trigger('routerTransition', [
-  transition('* <=> *', ROUTE_TRANSITION_STEPS)
+  transition(isNotIEorEdge, ROUTE_TRANSITION),
+  transition(isIEorEdge, ROUTE_TRANSITION_IE)
 ]);
+
+export function isNotIEorEdge() {
+  return !isIEorEdge();
+}
+
+export function isIEorEdge() {
+  return ['ie', 'edge'].includes(browser().name);
+}
