@@ -92,6 +92,9 @@ Based on your preferences and needs you can either:
 * Angular Material
 * Bootstrap 4 (only reset, utils and grids)
 
+## Troubleshooting
+
+* **Blocking at emitting LicenseWebpackPlugin when npm start** - try using [cnpm](Blocking at emitting LicenseWebpackPlugin when npm start) instead of npm
 
 ### Acknowledgements
 
