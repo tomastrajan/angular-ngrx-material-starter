@@ -94,7 +94,7 @@ Based on your preferences and needs you can either:
 
 ## Troubleshooting
 
-* **Blocking at emitting LicenseWebpackPlugin when npm start** - try using [cnpm](Blocking at emitting LicenseWebpackPlugin when npm start) instead of npm
+* **Blocking at emitting LicenseWebpackPlugin when npm start** - try using [cnpm](https://github.com/cnpm/cnpm) instead of npm
 
 ### Acknowledgements
 
