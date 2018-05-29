@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.3"></a>
+## [6.0.3](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.2...v6.0.3) (2018-05-29)
+
+
+### Bug Fixes
+
+* **animations:** disable whole page slide-in animation in IE & EDGE, adjust styles, fixes [#71](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/71) ([d2c4b8a](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d2c4b8a))
+* **app:** takeUntil should be always used as the last operator to prevent potential leaks ([80773bd](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/80773bd))
+
+
+
 <a name="6.0.2"></a>
 ## [6.0.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.1...v6.0.2) (2018-05-26)
 
