@@ -104,11 +104,11 @@ export class AppComponent implements OnInit, OnDestroy {
   private subscribeToRouterEvents() {
     this.router.events
       .pipe(
-        takeUntil(this.unsubscribe$),
         filter(
           event =>
             event instanceof ActivationEnd || event instanceof NavigationEnd
-        )
+        ),
+        takeUntil(this.unsubscribe$)
       )
       .subscribe(event => {
         if (event instanceof ActivationEnd) {
