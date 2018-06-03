@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.4...v6.1.0) (2018-06-03)
+
+
+### Features
+
+* **settings:** add runtime animations toggles ([91131b4](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/91131b4))
+
+
+
 <a name="6.0.4"></a>
 ## [6.0.4](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.3...v6.0.4) (2018-05-29)
 
