@@ -23,23 +23,17 @@ export class ActionSettingsChangeAutoNightMode implements Action {
 
 export class ActionSettingsChangeAnimationsPage implements Action {
   readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_PAGE;
-
-  constructor(public payload: { pageAnimations: boolean }) {
-  }
+  constructor(public payload: { pageAnimations: boolean }) {}
 }
 
 export class ActionSettingsChangeAnimationsPageDisabled implements Action {
   readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED;
-
-  constructor(public payload: { pageAnimationsDisabled: boolean }) {
-  }
+  constructor(public payload: { pageAnimationsDisabled: boolean }) {}
 }
 
 export class ActionSettingsChangeAnimationsElements implements Action {
   readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS;
-
-  constructor(public payload: { elementsAnimations: boolean }) {
-  }
+  constructor(public payload: { elementsAnimations: boolean }) {}
 }
 
 export class ActionSettingsPersist implements Action {
