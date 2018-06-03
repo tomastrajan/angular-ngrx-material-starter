@@ -1,3 +1,4 @@
+import browser from 'browser-detect';
 import { Title } from '@angular/platform-browser';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
@@ -9,12 +10,18 @@ import { takeUntil, filter } from 'rxjs/operators';
 import {
   ActionAuthLogin,
   ActionAuthLogout,
+  AnimationsService,
   selectorAuth,
   routerTransition
 } from '@app/core';
 import { environment as env } from '@env/environment';
 
-import { NIGHT_MODE_THEME, selectorSettings, SettingsState } from './settings';
+import {
+  NIGHT_MODE_THEME,
+  selectorSettings,
+  SettingsState,
+  ActionSettingsChangeAnimationsPageDisabled
+} from './settings';
 
 @Component({
   selector: 'anms-root',
@@ -47,8 +54,18 @@ export class AppComponent implements OnInit, OnDestroy {
     public overlayContainer: OverlayContainer,
     private store: Store<any>,
     private router: Router,
-    private titleService: Title
+    private titleService: Title,
+    private animationService: AnimationsService
   ) {}
+
+  private static trackPageView(event: NavigationEnd) {
+    (<any>window).ga('set', 'page', event.urlAfterRedirects);
+    (<any>window).ga('send', 'pageview');
+  }
+
+  private static isIEorEdge() {
+    return ['ie', 'edge'].includes(browser().name);
+  }
 
   ngOnInit(): void {
     this.subscribeToSettings();
@@ -77,18 +94,31 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private subscribeToSettings() {
+    if (AppComponent.isIEorEdge()) {
+      this.store.dispatch(
+        new ActionSettingsChangeAnimationsPageDisabled({
+          pageAnimationsDisabled: true
+        })
+      );
+    }
     this.store
       .select(selectorSettings)
       .pipe(takeUntil(this.unsubscribe$))
-      .subscribe(settings => this.setTheme(settings));
+      .subscribe(settings => {
+        this.setTheme(settings);
+        this.animationService.updateRouteAnimationType(
+          settings.pageAnimations,
+          settings.elementsAnimations
+        );
+      });
   }
 
   private setTheme(settings: SettingsState) {
     const { theme, autoNightMode } = settings;
     const hours = new Date().getHours();
     const effectiveTheme = (autoNightMode && (hours >= 20 || hours <= 6)
-      ? NIGHT_MODE_THEME
-      : theme
+        ? NIGHT_MODE_THEME
+        : theme
     ).toLowerCase();
     this.componentCssClass = effectiveTheme;
     const classList = this.overlayContainer.getContainerElement().classList;
@@ -116,7 +146,7 @@ export class AppComponent implements OnInit, OnDestroy {
         }
 
         if (event instanceof NavigationEnd) {
-          this.trackPageView(event);
+          AppComponent.trackPageView(event);
         }
       });
   }
@@ -130,10 +160,5 @@ export class AppComponent implements OnInit, OnDestroy {
     this.titleService.setTitle(
       title ? `${title} - ${env.appName}` : env.appName
     );
-  }
-
-  private trackPageView(event: NavigationEnd) {
-    (<any>window).ga('set', 'page', event.urlAfterRedirects);
-    (<any>window).ga('send', 'pageview');
   }
 }

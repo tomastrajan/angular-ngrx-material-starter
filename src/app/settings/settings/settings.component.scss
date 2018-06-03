@@ -7,9 +7,24 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+}
+
+.group {
+  margin: 0 0 40px 0;
+}
+
 .icon-form-field {
+  position: relative;
   display: flex;
+  height: 65.5px;
   align-items: center;
+
+  mat-placeholder {
+    flex: 2 1 auto;
+  }
 }
 
 mat-icon {

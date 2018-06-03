@@ -1,4 +1,3 @@
-import browser from 'browser-detect';
 import {
   animate,
   query,
@@ -8,10 +7,11 @@ import {
   stagger,
   sequence
 } from '@angular/animations';
+import { AnimationsService } from './animations.service';
 
 export const ANIMATE_ON_ROUTE_ENTER = 'route-enter-staggered';
 
-const ROUTE_TRANSITION: any[] = [
+const STEPS_ALL: any[] = [
   query(':enter > *', style({ opacity: 0, position: 'fixed' }), {
     optional: true
   }),
@@ -59,18 +59,29 @@ const ROUTE_TRANSITION: any[] = [
     { optional: true }
   )
 ];
-
-export const ROUTE_TRANSITION_IE = [ROUTE_TRANSITION[1], ROUTE_TRANSITION[3]];
+const STEPS_NONE = [];
+const STEPS_PAGE = [STEPS_ALL[0], STEPS_ALL[2]];
+const STEPS_ELEMENTS = [STEPS_ALL[1], STEPS_ALL[3]];
 
 export const routerTransition = trigger('routerTransition', [
-  transition(isNotIEorEdge, ROUTE_TRANSITION),
-  transition(isIEorEdge, ROUTE_TRANSITION_IE)
+  transition(isRouteAnimationAll, STEPS_ALL),
+  transition(isRouteAnimationNone, STEPS_NONE),
+  transition(isRouteAnimationPage, STEPS_PAGE),
+  transition(isRouteAnimationElements, STEPS_ELEMENTS)
 ]);
 
-export function isNotIEorEdge() {
-  return !isIEorEdge();
+export function isRouteAnimationAll() {
+  return AnimationsService.isRouteAnimationType('ALL');
 }
 
-export function isIEorEdge() {
-  return ['ie', 'edge'].includes(browser().name);
+export function isRouteAnimationNone() {
+  return AnimationsService.isRouteAnimationType('NONE');
+}
+
+export function isRouteAnimationPage() {
+  return AnimationsService.isRouteAnimationType('PAGE');
+}
+
+export function isRouteAnimationElements() {
+  return AnimationsService.isRouteAnimationType('ELEMENTS');
 }
