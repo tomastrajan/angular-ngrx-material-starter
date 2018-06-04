@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 
 import {
   ActionTodosAdd,
@@ -25,7 +25,7 @@ import {
 export class TodosComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
-  animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
+  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   todos: any;
   newTodo = '';
 

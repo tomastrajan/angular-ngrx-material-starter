@@ -12,7 +12,7 @@ import {
   ActionAuthLogout,
   AnimationsService,
   selectorAuth,
-  routerTransition
+  routeAnimations
 } from '@app/core';
 import { environment as env } from '@env/environment';
 
@@ -27,7 +27,7 @@ import {
   selector: 'anms-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [routerTransition]
+  animations: [routeAnimations]
 })
 export class AppComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();

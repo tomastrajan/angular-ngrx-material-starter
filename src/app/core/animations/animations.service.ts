@@ -6,7 +6,7 @@ export class AnimationsService {
 
   private static routeAnimationType: RouteAnimationType = 'NONE';
 
-  static isRouteAnimationType(type: RouteAnimationType) {
+  static isRouteAnimationsType(type: RouteAnimationType) {
     return AnimationsService.routeAnimationType === type;
   }
 
