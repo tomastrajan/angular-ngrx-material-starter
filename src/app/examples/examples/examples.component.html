@@ -27,7 +27,6 @@
   </button>
 </mat-menu>
 
-
-<div [@routerTransition]="o.isActivated && o.activatedRoute.routeConfig.path">
+<div [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
   <router-outlet #o="outlet"></router-outlet>
 </div>
