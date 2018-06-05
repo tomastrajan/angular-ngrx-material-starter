@@ -49,7 +49,8 @@
           </mat-chip>
         </mat-chip-list>
       </h2>
-      <mat-card *ngFor="let todo of filteredTodos" class="todo" [ngClass]="animateOnRouteEnter">
+      <mat-card *ngFor="let todo of filteredTodos" class="todo"
+                [ngClass]="routeAnimationsElements">
         <mat-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></mat-checkbox>
         <span class="todo-label"
               [ngClass]="{ 'todo-label-done': todo.done }"
