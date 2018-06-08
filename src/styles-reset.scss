@@ -20,3 +20,11 @@ code {
   border-radius: 10px;
   padding: 0 8px 1px 8px;
 }
+
+.mat-menu-content {
+  mat-icon {
+    position: relative;
+    top: 2px;
+    left: 4px;
+  }
+}

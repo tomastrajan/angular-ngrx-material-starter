@@ -17,6 +17,7 @@ mat-sidenav-container {
     flex-direction: column;
     position: relative;
     overflow-y: auto;
+    overflow-x: hidden;
 
     .toolbar {
       position: fixed;
@@ -26,6 +27,10 @@ mat-sidenav-container {
 
       .nav-button {
         margin: 0 10px 0 0;
+      }
+
+      mat-icon {
+        font-size: 24px;
       }
 
       .branding {
@@ -91,10 +96,15 @@ mat-sidenav-container {
           a {
             transition: padding 0.5s;
             display: inline-block;
-            padding: 20px 0;
+            padding: 20px 5px;
 
             &:hover {
               text-decoration: none;
+            }
+
+            mat-icon {
+              font-size: 30px;
+              width: 35px;
             }
 
             span {
@@ -157,7 +167,8 @@ mat-sidenav {
     font-weight: 500;
 
     img {
-      margin: 0 10px 0 0;
+      height: 48px;
+      margin: 2px 10px 0 0;
     }
 
     span {

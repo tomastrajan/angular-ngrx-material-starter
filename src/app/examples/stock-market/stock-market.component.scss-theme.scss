@@ -5,15 +5,13 @@
 
   anms-stock-market {
     mat-card {
-      span {
-        &.negative {
-          color: mat-color($warn);
-        }
+      .negative {
+        color: mat-color($warn);
       }
     }
 
     .error {
-      i {
+      mat-icon {
         color: mat-color($warn);
       }
     }

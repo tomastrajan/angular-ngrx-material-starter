@@ -7,7 +7,7 @@
     <div class="col-md-6 group">
       <h2>Themes</h2>
       <div class="icon-form-field">
-        <mat-icon color="accent">color_lens</mat-icon>
+        <mat-icon fontSet="fas" fontIcon="fa-paint-brush" color="accent"></mat-icon>
         <mat-form-field>
           <mat-select placeholder="Color theme"
                       [ngModel]="settings?.theme"
@@ -19,7 +19,7 @@
         </mat-form-field>
       </div>
       <div class="icon-form-field">
-        <mat-icon color="accent">lightbulb_outline</mat-icon>
+        <mat-icon fontSet="fas" fontIcon="fa-lightbulb" color="accent"></mat-icon>
         <mat-placeholder>Auto night mode (from 21:00 to 7:00)</mat-placeholder>
         <mat-slide-toggle
           [checked]="settings?.autoNightMode"
@@ -30,7 +30,7 @@
     <div class="col-md-6 group">
       <h2>Animations</h2>
       <div class="icon-form-field">
-        <mat-icon color="accent">panorama</mat-icon>
+        <mat-icon fontSet="fas" fontIcon="fa-window-maximize" color="accent"></mat-icon>
         <mat-placeholder>Navigation whole page transition</mat-placeholder>
         <mat-slide-toggle
           matTooltip="Sorry, this feature is disabled in IE and EDGE"
@@ -45,7 +45,7 @@
         </mat-slide-toggle>
       </div>
       <div class="icon-form-field">
-        <mat-icon color="accent">dashboard</mat-icon>
+        <mat-icon fontSet="fas" fontIcon="fa-stream" color="accent"></mat-icon>
         <mat-placeholder>Navigation page elements slide up</mat-placeholder>
         <mat-slide-toggle
           [checked]="settings?.elementsAnimations"

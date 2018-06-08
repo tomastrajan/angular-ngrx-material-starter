@@ -20,7 +20,7 @@
     <div class="toolbar">
       <mat-toolbar color="primary">
         <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
-          <mat-icon>menu</mat-icon>
+          <mat-icon fontSet="fas" fontIcon="fa-bars"></mat-icon>
         </button>
 
         <span routerLink="" class="branding spacer center d-inline d-sm-none">
@@ -47,17 +47,17 @@
         <button *ngIf="isAuthenticated"
                 mat-icon-button
                 [matMenuTriggerFor]="toolbarUserMenu">
-          <mat-icon>person</mat-icon>
+          <mat-icon fontSet="fas" fontIcon="fa-user-circle"></mat-icon>
         </button>
         <mat-menu #toolbarUserMenu="matMenu">
           <button mat-menu-item (click)="onLogoutClick()">
-            <mat-icon>power_settings_new</mat-icon>
+            <mat-icon fontSet="fas" fontIcon="fa-power-off"></mat-icon>
             <span>Logout</span>
           </button>
         </mat-menu>
 
         <button mat-icon-button routerLink="settings" class="d-none d-sm-inline">
-          <mat-icon>settings</mat-icon>
+          <mat-icon fontSet="fas" fontIcon="fa-cog"></mat-icon>
         </button>
 
         <a matTooltip="Project Github Repository"
@@ -66,7 +66,7 @@
            class="link d-none d-sm-inline"
            href="https://github.com/tomastrajan/angular-ngrx-material-starter"
            target="_blank">
-          <i class="fab fa-github fa-2x"></i>
+          <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
         </a>
       </mat-toolbar>
     </div>
@@ -80,28 +80,28 @@
       <div class="row">
         <div class="col-sm-12 links">
           <a href="https://www.github.com/tomastrajan" target="_blank">
-            <i class="fab fa-fw fa-github fa-2x" aria-hidden="true"></i>
+            <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
             <span>Github</span>
           </a>
           <a href="https://www.medium.com/@tomastrajan" target="_blank">
-            <i class="fab fa-fw fa-medium-m fa-2x" aria-hidden="true"></i>
+            <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
             <span>Medium</span>
           </a>
           <a href="https://www.twitter.com/tomastrajan" target="_blank">
-            <i class="fab fa-fw fa-twitter fa-2x" aria-hidden="true"></i>
+            <mat-icon fontSet="fab" fontIcon="fa-twitter"></mat-icon>
             <span>Twitter</span>
           </a>
           <a href="https://www.youtube.com/channel/UC7XgRHIVoqnh3U5Vmly9ofQ"
              target="_blank">
-            <i class="fab fa-fw fa-youtube fa-2x" aria-hidden="true"></i>
+            <mat-icon fontSet="fab" fontIcon="fa-youtube"></mat-icon>
             <span>Youtube</span>
           </a>
           <a href="https://www.instagram.com/tomastrajan" target="_blank">
-            <i class="fab fa-fw fa-instagram fa-2x" aria-hidden="true"></i>
+            <mat-icon fontSet="fab" fontIcon="fa-instagram"></mat-icon>
             <span>Instagram</span>
           </a>
           <a href="https://www.slides.com/tomastrajan" target="_blank">
-            <i class="fas fa-fw fa-play-circle fa-2x" aria-hidden="true"></i>
+            <mat-icon fontSet="fas" fontIcon="fa-play-circle"></mat-icon>
             <span>Slides</span>
           </a>
         </div>
@@ -113,8 +113,8 @@
           <a matTooltip="Show changelog"
              matTooltipPosition="before"
              href="https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md">
-            <i class="fas fa-rocket"></i> {{version}} <span
-            *ngIf="!isProd">[{{envName}}]</span>
+            <mat-icon fontSet="fas" fontIcon="fa-rocket"></mat-icon>
+            {{version}} <span *ngIf="!isProd">[{{envName}}]</span>
           </a>
         </div>
       </div>

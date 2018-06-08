@@ -1,31 +1,12 @@
 <nav mat-tab-nav-bar >
   <a mat-tab-link
-     class="d-none d-md-inline-flex"
      *ngFor="let e of examples"
      [routerLink]="e.link"
      routerLinkActive #rla="routerLinkActive"
      [active]="rla.isActive">
     {{e.label}}
   </a>
-  <span class="nav-responsive d-md-none"
-        *ngFor="let e of examples"
-        [routerLink]="e.link"
-        routerLinkActive #rla="routerLinkActive"
-        [matMenuTriggerFor]="examplesMenu">
-    <a *ngIf="rla.isActive"
-        mat-tab-link>
-      <mat-icon>menu</mat-icon> {{e.label}}
-    </a>
-  </span>
 </nav>
-<mat-menu #examplesMenu="matMenu" [overlapTrigger]="false" class="nav-responsive-overlay">
-  <button mat-menu-item
-          *ngFor="let e of examples"
-          [routerLink]="e.link"
-          routerLinkActive="active">
-    {{e.label}}
-  </button>
-</mat-menu>
 
 <div [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
   <router-outlet #o="outlet"></router-outlet>

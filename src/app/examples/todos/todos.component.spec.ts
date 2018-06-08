@@ -6,12 +6,12 @@ import {
   tick
 } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Store, StoreModule } from '@ngrx/store';
 
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 
 import { TodosComponent } from './todos.component';
-import { Store, StoreModule } from '@ngrx/store';
 
 import {
   todosReducer,
@@ -31,11 +31,11 @@ describe('TodosComponent', () => {
   const getTodos = () => fixture.debugElement.queryAll(By.css('.todo'));
   const deleteDoneTodosBtn = () =>
     fixture.debugElement.query(
-      By.css('anms-big-input-action[icon="delete_forever"] > button')
+      By.css('anms-big-input-action[fontIcon="fa-trash"] > button')
     );
   const addTodoBtn = () =>
     fixture.debugElement.query(
-      By.css('anms-big-input-action[icon="add"] > button')
+      By.css('anms-big-input-action[fontIcon="fa-plus"] > button')
     );
 
   const setTodosFromArray = function(
