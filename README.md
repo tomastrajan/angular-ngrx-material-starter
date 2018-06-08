@@ -1,6 +1,4 @@
-<div style="text-align:center"><img alt="logo" src="https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/src/assets/logo.png" /></div>
-
-# Angular, ngrx and Angular Material Starter 
+# Angular, NgRx and Angular Material Starter 
 by [@tomastrajan](https://twitter.com/tomastrajan)
 
 [![license](https://img.shields.io/github/license/tomastrajan/angular-ngrx-material-starter.svg)](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/LICENSE) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter.svg?branch=master)](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter) [![Twitter Follow](https://img.shields.io/twitter/follow/tomastrajan.svg?style=social&label=Follow)](https://twitter.com/tomastrajan)
