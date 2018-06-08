@@ -25,14 +25,14 @@
         <mat-card-subtitle>
           {{stocks.stock.exchange}}
           <span [ngClass]="{ negative: stocks.stock.changeNegative }">
-            <i class="fa fa-caret-up" *ngIf="stocks.stock.changePositive"></i>
-            <i class="fa fa-caret-down" *ngIf="stocks.stock.changeNegative"></i>
+            <i class="fas fa-caret-up" *ngIf="stocks.stock.changePositive"></i>
+            <i class="fas fa-caret-down" *ngIf="stocks.stock.changeNegative"></i>
             {{stocks.stock.change}} ({{stocks.stock.changePercent}})
           </span>
         </mat-card-subtitle>
       </mat-card>
       <p *ngIf="stocks.error" class="error">
-        <i class="fa fa-exclamation-triangle fa-3x" aria-hidden="true"></i><br><br>
+        <i class="fas fa-exclamation-triangle fa-3x" aria-hidden="true"></i><br><br>
         <span>Stock <span class="symbol">{{stocks.symbol}}</span> not found</span>
       </p>
       <br>

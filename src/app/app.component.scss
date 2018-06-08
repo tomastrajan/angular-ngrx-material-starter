@@ -91,7 +91,7 @@ mat-sidenav-container {
           a {
             transition: padding 0.5s;
             display: inline-block;
-            padding: 20px 5px;
+            padding: 20px 0;
 
             &:hover {
               text-decoration: none;
@@ -100,11 +100,17 @@ mat-sidenav-container {
             span {
               display: inline-block;
               width: 75px;
-              padding: 0 0 0 5px;
+              padding: 0 0 0 3px;
               overflow: hidden;
               text-align: left;
               white-space: nowrap;
               transition: width 0.5s;
+            }
+          }
+
+          @media (min-width: map-get($grid-breakpoints, lg)) {
+            a {
+              padding: 20px 10px;
             }
           }
 
