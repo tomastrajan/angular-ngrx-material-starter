@@ -62,10 +62,13 @@ Based on your preferences and needs you can either:
   
 
 ## Learning Materials
+Articles with content that explains various approaches used to build this starter project.
 
-  * [Demo & Documentation](http://tomastrajan.github.io/angular-ngrx-material-starter/)
+
   * [Blog post about Best Practices for Angular CLI](https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81) used in this starter project
   * [Blog post about Typescript tips for Ngrx reducer code](https://medium.com/@tomastrajan/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0)
+  * [Blog post about building responsive layouts with Bootstrap 4 in Angular apps](https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b)
+  * [Blog post about displaying loading indicator before app startup](https://medium.com/@tomastrajan/how-to-style-angular-application-loading-with-angular-cli-like-a-boss-cdd4f5358554)
 
 #### Theming 
 
