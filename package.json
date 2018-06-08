@@ -1,6 +1,6 @@
 {
   "name": "angular-ngrx-material-starter",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

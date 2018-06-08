@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.1.0...v6.2.0) (2018-06-08)
+
+
+### Features
+
+* **assets:** rework logo and add logo source ([33282cc](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/33282cc))
+* **icons:** migrate to font awesome 5 ([983e532](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/983e532))
+* **icons:** standardize icon usage with mat-icon component and font awesome icon set ([26b0cf2](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/26b0cf2))
+* **todos:** create tests for todos container ([04b0846](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/04b0846))
+
+
+
 <a name="6.1.0"></a>
 # [6.1.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.4...v6.1.0) (2018-06-03)
 
