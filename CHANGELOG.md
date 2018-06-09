@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.3.0"></a>
+# [6.3.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.2.0...v6.3.0) (2018-06-09)
+
+
+### Bug Fixes
+
+* **app:** rework main layout to prevent scrollbar issues, closes [#221](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/221), closes [#240](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/240) ([0d08ade](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0d08ade))
+* **environments:** use test environment for unit tests on ci ([6cfec6e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6cfec6e))
+* **index:** favicon url ([b862590](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b862590))
+
+
+### Features
+
+* **environments:** add test environment, skip debug meta-reducer in tests ([7205db2](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7205db2))
+* **static:** add font awesome feature card, update docs / github links, add guide links ([a5bf758](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a5bf758))
+
+
+
 <a name="6.2.0"></a>
 # [6.2.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.1.0...v6.2.0) (2018-06-08)
 
