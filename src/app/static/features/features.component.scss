@@ -40,4 +40,10 @@ mat-card {
       font-size: 16px;
     }
   }
+
+  a[mat-icon-button] {
+    position: relative;
+    top: -4px;
+    left: 5px;
+  }
 }

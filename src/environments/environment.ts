@@ -16,6 +16,8 @@ export const environment = {
     material: packageJson.dependencies['@angular/material'],
     bootstrap: packageJson.dependencies.bootstrap,
     rxjs: packageJson.dependencies.rxjs,
+    fontAwesome:
+      packageJson.dependencies['@fortawesome/fontawesome-free-webfonts'],
     angularCli: packageJson.devDependencies['@angular/cli'],
     typescript: packageJson.devDependencies['typescript']
   }
