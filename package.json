@@ -14,7 +14,7 @@
     "clean": "rimraf ./dist/",
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
-    "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --browsers ChromeTravisCi && ng e2e && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
+    "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --configuration=test --browsers ChromeTravisCi && ng e2e && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
     "release": "standard-version && git push --follow-tags origin master",
     "prettier": "prettier {src,e2e}/**/*.{ts,json,md,scss} --write",
     "prettier:ci": "prettier {src,e2e}/**/*.{ts,json,md,scss} --list-different",
