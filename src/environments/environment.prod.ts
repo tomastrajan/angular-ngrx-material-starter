@@ -4,6 +4,7 @@ export const environment = {
   appName: 'Angular Ngrx Material Starter',
   envName: 'PROD',
   production: true,
+  test: false,
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],
