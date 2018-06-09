@@ -15,61 +15,61 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <div class="wrapper">
+  <div class="toolbar">
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
+        <mat-icon fontSet="fas" fontIcon="fa-bars"></mat-icon>
+      </button>
 
-    <div class="toolbar">
-      <mat-toolbar color="primary">
-        <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
-          <mat-icon fontSet="fas" fontIcon="fa-bars"></mat-icon>
-        </button>
-
-        <span routerLink="" class="branding spacer center d-inline d-sm-none">
+      <span routerLink="" class="branding spacer center d-inline d-sm-none">
           <img [src]="logo"/></span>
-        <span routerLink=""
-              class="branding spacer center d-none d-sm-inline d-md-none"><img
-          [src]="logo"/> Angular Starter</span>
-        <span routerLink="" class="branding spacer d-none d-md-inline"><img
-          [src]="logo"/> Angular NgRx Material Starter</span>
+      <span routerLink=""
+            class="branding spacer center d-none d-sm-inline d-md-none"><img
+        [src]="logo"/> Angular Starter</span>
+      <span routerLink="" class="branding spacer d-none d-md-inline"><img
+        [src]="logo"/> Angular NgRx Material Starter</span>
 
-        <span class="d-none d-md-inline">
+      <span class="d-none d-md-inline">
           <button mat-button class="nav-button" *ngFor="let item of navigation"
-              [routerLink]="[item.link]" routerLinkActive="active">
+                  [routerLink]="[item.link]" routerLinkActive="active">
             {{item.label}}
           </button>
         </span>
 
-        <button mat-button class="sign-in-button "
-                *ngIf="!isAuthenticated"
-                (click)="onLoginClick()">
-          Sign in
-        </button>
+      <button mat-button class="sign-in-button "
+              *ngIf="!isAuthenticated"
+              (click)="onLoginClick()">
+        Sign in
+      </button>
 
-        <button *ngIf="isAuthenticated"
-                mat-icon-button
-                [matMenuTriggerFor]="toolbarUserMenu">
-          <mat-icon fontSet="fas" fontIcon="fa-user-circle"></mat-icon>
+      <button *ngIf="isAuthenticated"
+              mat-icon-button
+              [matMenuTriggerFor]="toolbarUserMenu">
+        <mat-icon fontSet="fas" fontIcon="fa-user-circle"></mat-icon>
+      </button>
+      <mat-menu #toolbarUserMenu="matMenu">
+        <button mat-menu-item (click)="onLogoutClick()">
+          <mat-icon fontSet="fas" fontIcon="fa-power-off"></mat-icon>
+          <span>Logout</span>
         </button>
-        <mat-menu #toolbarUserMenu="matMenu">
-          <button mat-menu-item (click)="onLogoutClick()">
-            <mat-icon fontSet="fas" fontIcon="fa-power-off"></mat-icon>
-            <span>Logout</span>
-          </button>
-        </mat-menu>
+      </mat-menu>
 
-        <button mat-icon-button routerLink="settings" class="d-none d-sm-inline">
-          <mat-icon fontSet="fas" fontIcon="fa-cog"></mat-icon>
-        </button>
+      <button mat-icon-button routerLink="settings" class="d-none d-sm-inline">
+        <mat-icon fontSet="fas" fontIcon="fa-cog"></mat-icon>
+      </button>
 
-        <a matTooltip="Project Github Repository"
-           matdTooltipPosition="before"
-           mat-icon-button
-           class="link d-none d-sm-inline"
-           href="https://github.com/tomastrajan/angular-ngrx-material-starter"
-           target="_blank">
-          <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
-        </a>
-      </mat-toolbar>
-    </div>
+      <a matTooltip="Project Github Repository"
+         matdTooltipPosition="before"
+         mat-icon-button
+         class="link d-none d-sm-inline"
+         href="https://github.com/tomastrajan/angular-ngrx-material-starter"
+         target="_blank">
+        <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
+      </a>
+    </mat-toolbar>
+  </div>
+
+  <div class="wrapper">
 
     <div class="content"
          [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">

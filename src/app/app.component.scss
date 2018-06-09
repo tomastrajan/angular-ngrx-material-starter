@@ -1,93 +1,80 @@
 @import '../styles-variables';
 
-:host {
-  height: 100%;
-  width: 100%;
-}
-
 mat-sidenav-container {
   height: 100%;
   width: 100%;
 
-  .wrapper {
-    z-index: -2;
-    height: 100%;
+  .toolbar {
+    position: fixed;
     width: 100%;
     display: flex;
+
+    .nav-button {
+      margin: 0 10px 0 0;
+    }
+
+    mat-icon {
+      font-size: 24px;
+    }
+
+    .branding {
+      cursor: pointer;
+      padding-top: 4px;
+
+      &.center {
+        text-align: center;
+      }
+
+      img {
+        position: relative;
+        top: -2px;
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .sign-in-button {
+      line-height: 35px;
+      margin-right: 10px;
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, lg)) {
+      .nav-button {
+        min-width: 0;
+        padding: 0 10px;
+      }
+      .sign-in-button {
+        min-width: 0;
+        padding: 0 10px;
+        margin: 0 5px 0 0;
+      }
+    }
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
     flex-direction: column;
-    position: relative;
     overflow-y: auto;
     overflow-x: hidden;
 
-    .toolbar {
-      position: fixed;
-      width: 100%;
-      z-index: 1;
-      flex: 0 0 auto;
-
-      .nav-button {
-        margin: 0 10px 0 0;
-      }
-
-      mat-icon {
-        font-size: 24px;
-      }
-
-      .branding {
-        cursor: pointer;
-        padding-top: 4px;
-
-        &.center {
-          text-align: center;
-        }
-
-        img {
-          position: relative;
-          top: -2px;
-          width: 48px;
-          height: 48px;
-        }
-      }
-
-      .sign-in-button {
-        line-height: 35px;
-        margin-right: 10px;
-      }
-
-      .spacer {
-        flex: 1 1 auto;
-      }
-
-      @media (max-width: map-get($grid-breakpoints, lg)) {
-        .nav-button {
-          min-width: 0;
-          padding: 0 10px;
-        }
-        .sign-in-button {
-          min-width: 0;
-          padding: 0 10px;
-          margin: 0 5px 0 0;
-        }
-      }
-    }
-
     .content {
-      padding-top: 64px;
-      flex: 1 0 auto;
       position: relative;
-    }
-
-    @media (max-width: map-get($grid-breakpoints, sm)) {
-      .content {
-        padding-top: 56px;
-      }
+      flex: 1 0 auto;
     }
 
     .footer {
       flex: 0 0 auto;
       padding: 0 15px;
       text-align: center;
-      z-index: 1;
 
       .row {
         padding: 10px 0;
@@ -153,6 +140,12 @@ mat-sidenav-container {
           }
         }
       }
+    }
+  }
+
+  @media (max-width: map-get($grid-breakpoints, sm)) {
+    .wrapper {
+      top: 56px;
     }
   }
 }
