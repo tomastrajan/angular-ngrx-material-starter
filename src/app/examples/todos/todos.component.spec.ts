@@ -48,7 +48,6 @@ describe('TodosComponent', () => {
     inject([Store], (testStore: TestStore<TodosState>) => {
       store = testStore;
       store.setState({ items: [], filter: 'ALL' });
-      dispatchSpy = spyOn(store, 'dispatch');
       fixture = TestBed.createComponent(TodosComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
@@ -96,7 +95,7 @@ describe('TodosComponent', () => {
     });
 
     fixture.detectChanges();
-    dispatchSpy.calls.reset();
+    dispatchSpy = spyOn(store, 'dispatch');
     deleteDoneTodosBtn().triggerEventHandler('click', {});
 
     fixture.detectChanges();
@@ -105,7 +104,7 @@ describe('TodosComponent', () => {
   });
 
   it('should dispatch add todo action', () => {
-    dispatchSpy.calls.reset();
+    dispatchSpy = spyOn(store, 'dispatch');
     component.newTodo = 'test';
     addTodoBtn().triggerEventHandler('click', {});
 
