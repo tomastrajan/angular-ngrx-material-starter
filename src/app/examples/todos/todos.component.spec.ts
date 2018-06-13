@@ -12,9 +12,10 @@ import { SharedModule } from '@app/shared';
 import { TestStore } from '@testing/utils';
 
 import { TodosComponent } from './todos.component';
-import { ActionTodosToggle } from './todos.reducer';
 import {
   ActionTodosAdd,
+  ActionTodosFilter,
+  ActionTodosToggle,
   ActionTodosRemoveDone,
   TodosState
 } from './todos.reducer';
@@ -32,6 +33,13 @@ describe('TodosComponent', () => {
 
   const getBigInputValue = () =>
     getBigInput().query(By.css('input')).nativeElement.value;
+
+  const getTodosFilter = () =>
+    fixture.debugElement.query(By.css('.todos-filter'));
+  const getTodosFilterOptions = () =>
+    fixture.debugElement.queryAll(
+      By.css('.todos-filter-menu-overlay .mat-menu-item')
+    );
 
   const deleteDoneTodosBtn = () =>
     fixture.debugElement.query(
@@ -123,13 +131,20 @@ describe('TodosComponent', () => {
     );
   });
 
-  // TODO: should dispatch filter todo action (triggered by clicks in filter menu)
+  it('should dispatch filter todo action', () => {
+    dispatchSpy = spyOn(store, 'dispatch');
+    getTodosFilter().triggerEventHandler('click', {});
+    getTodosFilterOptions()[2].triggerEventHandler('click', {});
+
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    expect(dispatchSpy).toHaveBeenCalledWith(
+      new ActionTodosFilter({ filter: 'ACTIVE' })
+    );
+  });
+
   it('should dispatch toggle todo action', () => {
     store.setState({
-      items: [
-        { id: '1', name: 'test 1', done: true },
-        { id: '2', name: 'test 2', done: false }
-      ],
+      items: [{ id: '1', name: 'test 1', done: true }],
       filter: 'ALL'
     });
 
@@ -140,28 +155,33 @@ describe('TodosComponent', () => {
       .triggerEventHandler('click', {});
 
     fixture.detectChanges();
-
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionTodosToggle({ id: component.todos.items[0].id })
+      new ActionTodosToggle({ id: '1' })
     );
   });
 
   it('should disable remove done todos button if no todo is done', () => {
     store.setState({
-      items: [
-        { id: '1', name: 'test 1', done: false },
-        { id: '2', name: 'test 2', done: false }
-      ],
+      items: [{ id: '1', name: 'test 1', done: true }],
       filter: 'ALL'
     });
 
     fixture.detectChanges();
+    expect(deleteDoneTodosBtn().nativeElement.disabled).toBeFalsy();
 
+    component.todos.items[0].done = false;
+
+    fixture.detectChanges();
     expect(deleteDoneTodosBtn().nativeElement.disabled).toBeTruthy();
   });
 
   it('should disable add new todo button if input length is less than 4', () => {
+    component.newTodo = 'test';
+
+    fixture.detectChanges();
+    expect(addTodoBtn().nativeElement.disabled).toBeFalsy();
+
     component.newTodo = 'tes';
 
     fixture.detectChanges();
@@ -171,6 +191,7 @@ describe('TodosComponent', () => {
   it('should clear new todo input value on ESC key press', () => {
     component.newTodo = 'tes';
     getBigInput().triggerEventHandler('keyup.escape', {});
+
     fixture.detectChanges();
     expect(getBigInputValue()).toBe('');
   });
