@@ -6,12 +6,12 @@
                       (keyup)="onNewTodoChange($event.target.value)"
                       (keyup.enter)="!isAddTodoDisabled && onAddTodo()"
                       (keyup.escape)="onNewTodoClear()">
-        <anms-big-input-action icon="add" color="accent"
+        <anms-big-input-action fontSet="fas" fontIcon="fa-plus" color="accent"
                                (action)="onAddTodo()"
                                [disabled]="isAddTodoDisabled"
                                matTooltip="Add new todo" matTooltipPosition="before">
         </anms-big-input-action>
-        <anms-big-input-action icon="delete_forever" color="warn"
+        <anms-big-input-action fontSet="fas" fontIcon="fa-trash" color="warn"
                                (action)="onRemoveDoneTodos()"
                                [disabled]="isRemoveDoneTodosDisabled"
                                matTooltip="Remove done todos" matTooltipPosition="after">
@@ -24,19 +24,19 @@
       <h2>
         Todo List
         <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter">
-          <mat-icon>filter_list</mat-icon>
+          <mat-icon fontSet="fas" fontIcon="fa-filter"></mat-icon>
         </button>
         <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">
           <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }">
-            <mat-icon>assignment</mat-icon>
+            <mat-icon fontSet="fas" fontIcon="fa-tasks"></mat-icon>
             <span>All</span>
           </button>
           <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }">
-            <mat-icon>done</mat-icon>
+            <mat-icon fontSet="fas" fontIcon="fa-check"></mat-icon>
             <span>Done</span>
           </button>
           <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }">
-            <mat-icon>check_box_outline_blank</mat-icon>
+            <mat-icon fontSet="fas" fontIcon="fa-square"></mat-icon>
             <span>Active</span>
           </button>
         </mat-menu>

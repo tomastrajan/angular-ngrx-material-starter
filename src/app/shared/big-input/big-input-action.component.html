@@ -1,4 +1,5 @@
 <button mat-raised-button color="color" [disabled]="disabled" (click)="onClick()">
-  <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+  <mat-icon *ngIf="fontSet && fontIcon" [fontSet]="fontSet"
+            [fontIcon]="fontIcon"></mat-icon>
   <span *ngIf="label">{{label}}</span>
 </button>

@@ -59,15 +59,16 @@ describe('BigInputActionComponent', () => {
     expect(getButton().nativeElement.disabled).toBeTruthy();
   });
 
-  it('should display icon if icon property is set', () => {
-    const template = `<anms-big-input-action [icon]="'delete'"></anms-big-input-action>`;
+  it('should display icon if fontSet and fontIcon properties are set', () => {
+    const template = `<anms-big-input-action fontSet="fas" fontIcon="fa-trash"></anms-big-input-action>`;
     fixture = createHostComponent(template);
     expect(getIcon()).toBeTruthy();
-    expect(getIcon().nativeElement.textContent).toBe('delete');
+    expect(getIcon().nativeElement.classList.contains('fa-trash')).toBeTruthy();
+    expect(getIcon().nativeElement.classList.contains('fas')).toBeTruthy();
   });
 
   it('should display label with provided text when label property is set', () => {
-    const template = `<anms-big-input-action [label]="'delete'"></anms-big-input-action>`;
+    const template = `<anms-big-input-action label="delete"></anms-big-input-action>`;
     fixture = createHostComponent(template);
     expect(getLabel()).toBeTruthy();
     expect(getLabel().nativeElement.textContent).toBe('delete');

@@ -18,7 +18,10 @@ import { AnimationsService } from './animations/animations.service';
 export const metaReducers: MetaReducer<any>[] = [initStateFromLocalStorage];
 
 if (!environment.production) {
-  metaReducers.unshift(debug, storeFreeze);
+  metaReducers.unshift(storeFreeze);
+  if (!environment.test) {
+    metaReducers.unshift(debug);
+  }
 }
 
 @NgModule({
