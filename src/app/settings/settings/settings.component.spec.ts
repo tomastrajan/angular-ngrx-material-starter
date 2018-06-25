@@ -1,23 +1,18 @@
-// angular
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { By } from '@angular/platform-browser';
-
-// 3D
 import { Store } from '@ngrx/store';
 import { MatSlideToggle } from '@angular/material';
-
-// angular testing stuff
+import { RouterTestingModule } from '@angular/router/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   async,
   ComponentFixture,
   TestBed,
   inject
 } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 
 import { SharedModule } from '@app/shared';
+import { TestStore } from '@testing/utils';
 
-// relativr stuff
 import { SettingsComponent } from './settings.component';
 import {
   SettingsState,
@@ -25,7 +20,6 @@ import {
   ActionSettingsChangeAutoNightMode
 } from '../settings.reducer';
 
-import { TestStore } from '@testing/utils';
 describe('SettingsComponent', () => {
   let component: SettingsComponent;
   let fixture: ComponentFixture<SettingsComponent>;
