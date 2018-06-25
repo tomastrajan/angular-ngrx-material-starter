@@ -30,7 +30,7 @@
     "@angular/forms": "6.0.0",
     "@angular/http": "6.0.0",
     "@angular/material": "^6.2.0",
-    "@angular/platform-browser": "^6.0.0",
+    "@angular/platform-browser": "^6.0.4",
     "@angular/platform-browser-dynamic": "6.0.0",
     "@angular/router": "6.0.0",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
