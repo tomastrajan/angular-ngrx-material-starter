@@ -52,7 +52,7 @@
     "@angular/language-service": "^6.0.0",
     "@types/jasmine": "~2.8.3",
     "@types/node": "~9.4.0",
-    "codelyzer": "~4.1.0",
+    "codelyzer": "~4.3.0",
     "enhanced-resolve": "~3.4.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
