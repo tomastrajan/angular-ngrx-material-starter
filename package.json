@@ -68,7 +68,7 @@
     "karma-spec-reporter": "~0.0.31",
     "ngrx-store-freeze": "^0.2.1",
     "prettier": "^1.7.4",
-    "protractor": "~5.3.0",
+    "protractor": "~5.3.2",
     "rimraf": "^2.6.2",
     "standard-version": "^4.2.0",
     "ts-node": "~5.0.0",
