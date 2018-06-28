@@ -18,7 +18,10 @@
     "release": "standard-version && git push --follow-tags origin master",
     "prettier": "prettier {src,e2e}/**/*.{ts,json,md,scss} --write",
     "prettier:ci": "prettier {src,e2e}/**/*.{ts,json,md,scss} --list-different",
-    "analyze": "npm run clean && npm run build:prod -- --stats-json && webpack-bundle-analyzer ./dist/stats.json"
+    "analyze": "npm run clean && npm run build:prod -- --stats-json && webpack-bundle-analyzer ./dist/stats.json",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
+    "contributors:check": "all-contributors check"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +55,7 @@
     "@angular/language-service": "^6.0.0",
     "@types/jasmine": "~2.8.3",
     "@types/node": "~9.4.0",
+    "all-contributors-cli": "^5.2.1",
     "codelyzer": "~4.1.0",
     "enhanced-resolve": "~3.4.1",
     "jasmine-core": "~2.99.1",
