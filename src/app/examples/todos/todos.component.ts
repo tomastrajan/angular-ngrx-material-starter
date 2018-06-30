@@ -14,7 +14,8 @@ import {
   ActionTodosToggle,
   selectorTodos,
   Todo,
-  TodosFilter
+  TodosFilter,
+  TodosState
 } from './todos.reducer';
 
 @Component({
@@ -26,7 +27,7 @@ export class TodosComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  todos: any;
+  todos: TodosState;
   newTodo = '';
 
   constructor(public store: Store<any>, public snackBar: MatSnackBar) {}

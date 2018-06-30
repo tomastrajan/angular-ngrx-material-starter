@@ -125,6 +125,7 @@ describe('TodosComponent', () => {
     addTodoBtn().triggerEventHandler('click', {});
 
     fixture.detectChanges();
+    expect(component.newTodo).toBe('');
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
       new ActionTodosAdd({ name: 'test' })
