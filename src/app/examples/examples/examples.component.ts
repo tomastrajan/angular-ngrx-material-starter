@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { routerTransition } from '@app/core';
+import { routeAnimations } from '@app/core';
 
 @Component({
   selector: 'anms-examples',
   templateUrl: './examples.component.html',
   styleUrls: ['./examples.component.scss'],
-  animations: [routerTransition]
+  animations: [routeAnimations]
 })
 export class ExamplesComponent implements OnInit {
   examples = [

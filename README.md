@@ -1,10 +1,10 @@
-# Angular, ngrx and Angular Material Starter 
+# Angular, NgRx and Angular Material Starter 
 by [@tomastrajan](https://twitter.com/tomastrajan)
 
-[![license](https://img.shields.io/github/license/tomastrajan/angular-ngrx-material-starter.svg)](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/LICENSE) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter.svg?branch=master)](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter) [![Twitter Follow](https://img.shields.io/twitter/follow/tomastrajan.svg?style=social&label=Follow)](https://twitter.com/tomastrajan)
+[![license](https://img.shields.io/github/license/tomastrajan/angular-ngrx-material-starter.svg)](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/LICENSE) [![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg)](#contributors) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![Build Status](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter.svg?branch=master)](https://travis-ci.org/tomastrajan/angular-ngrx-material-starter) [![Twitter Follow](https://img.shields.io/twitter/follow/tomastrajan.svg?style=social&label=Follow)](https://twitter.com/tomastrajan)
 
 
-![into](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/intro.png)
+![intro](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/intro.png)
 ![themes](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/themes.png)
 
 ## Table of Content
@@ -19,7 +19,7 @@ by [@tomastrajan](https://twitter.com/tomastrajan)
   * [Stack](#stack)
   * [Code of Conduct](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CODE_OF_CONDUCT.md)
   * [Contributors Guide](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CONTRIBUTING.md)
-  * [Changelog](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md)
+  * [Changelog](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md) ( get notified about the newest releases, [follow Release Butler](https://twitter.com/releasebutler) on Twitter )
 
 
 ## Getting started
@@ -46,11 +46,11 @@ When using this starter project to build your own app you might consider some of
   * rename project in `package.json` `name` property and set appropriate version (eg `0.0.0` or `1.0.0`)
   * rename app in `src/environments/` files (will be shown in browser tab)
   * delete pre-existing `CHANGELOG.md` (you will generate your own with future releases of your features)
-  * delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILD_WITH.md` files as they are relevant only if project is open sourced on Github
+  * delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILT_WITH.md` files as they are relevant only if project is open sourced on Github
   * remove or adjust links in the [footer](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/src/app/app.component.html#L79)
-  * replace logo in `src/assets` folder ( currently 45 x 48 pixel `png` file )
+  * replace logo in `src/assets` folder ( currently 128 x 128 pixel `png` file )
   * adjust colors in `src/themes/default-theme.scss`
-  * create a pull request in the [original repository](https://github.com/tomastrajan/angular-ngrx-material-starter/) to update `BUILD_WITH.md` [file](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md) with a link and short description of your project
+  * create a pull request in the [original repository](https://github.com/tomastrajan/angular-ngrx-material-starter/) to update `BUILT_WITH.md` [file](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md) with a link and short description of your project
   
 #### Continuous Integration
 Starter project is using [Travis CI](https://travis-ci.org/) for running linters and tests on every commit.
@@ -62,10 +62,12 @@ Based on your preferences and needs you can either:
   
 
 ## Learning Materials
+Articles with content that explains various approaches used to build this starter project.
 
-  * [Demo & Documentation](http://tomastrajan.github.io/angular-ngrx-material-starter/)
   * [Blog post about Best Practices for Angular CLI](https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81) used in this starter project
   * [Blog post about Typescript tips for Ngrx reducer code](https://medium.com/@tomastrajan/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0)
+  * [Blog post about building responsive layouts with Bootstrap 4 in Angular apps](https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b)
+  * [Blog post about displaying loading indicator before app startup](https://medium.com/@tomastrajan/how-to-style-angular-application-loading-with-angular-cli-like-a-boss-cdd4f5358554)
 
 #### Theming 
 
@@ -92,7 +94,19 @@ Based on your preferences and needs you can either:
 * Angular Material
 * Bootstrap 4 (only reset, utils and grids)
 
+## Troubleshooting
 
-### Acknowledgements
+* **Blocking at emitting LicenseWebpackPlugin when npm start** - try using [cnpm](https://github.com/cnpm/cnpm) instead of npm
 
-Built with and uses [Angular CLI](https://github.com/angular/angular-cli)
+## Contributors
+Want to start contributing to open source with Angular? 
+
+Leave your mark and join the growing team of contributors!
+
+Get started by checking out list of open [issues](https://github.com/tomastrajan/angular-ngrx-material-starter/issues) and reading [Contributor Guide](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CONTRIBUTING.md)
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars0.githubusercontent.com/u/1336862?v=4" width="100px;"/><br /><sub><b>Moshe</b></sub>](http://gs500coder.blogspot.com)<br />[💻](https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=shootermv "Code") [⚠️](https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=shootermv "Tests") | [<img src="https://avatars2.githubusercontent.com/u/6498132?v=4" width="100px;"/><br /><sub><b>Muhammad Umair</b></sub>](https://github.com/mumairofficial)<br />[💻](https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=mumairofficial "Code") | [<img src="https://avatars2.githubusercontent.com/u/2514268?v=4" width="100px;"/><br /><sub><b>Phil Merrell</b></sub>](https://github.com/philmerrell)<br />[💻](https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=philmerrell "Code") | [<img src="https://avatars3.githubusercontent.com/u/1059539?v=4" width="100px;"/><br /><sub><b>Valery Kharshats</b></sub>](https://www.linkedin.com/in/kharshats)<br />[💻](https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=Arelav "Code") [🐛](https://github.com/tomastrajan/angular-ngrx-material-starter/issues?q=author%3AArelav "Bug reports") | [<img src="https://avatars1.githubusercontent.com/u/3885804?v=4" width="100px;"/><br /><sub><b>Neil Pathare</b></sub>](https://1nv1n.GitHub.io/)<br />[📖](https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=1nv1n "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/7385488?v=4" width="100px;"/><br /><sub><b>Peter Krieg</b></sub>](http://peterkrieg.com)<br />[💻](https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=peterkrieg "Code") [🐛](https://github.com/tomastrajan/angular-ngrx-material-starter/issues?q=author%3Apeterkrieg "Bug reports") | [<img src="https://avatars1.githubusercontent.com/u/11887873?v=4" width="100px;"/><br /><sub><b>Alex</b></sub>](https://github.com/alexkonovalov)<br />[💻](https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=alexkonovalov "Code") [🐛](https://github.com/tomastrajan/angular-ngrx-material-starter/issues?q=author%3Aalexkonovalov "Bug reports") |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->

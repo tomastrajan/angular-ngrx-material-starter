@@ -1,11 +1,14 @@
 {
-  "$schema": "./node_modules/@angular-devkit/core/src/workspace/workspace-schema.json",
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-ngrx-materail-starter": {
+    "angular-ngrx-material-starter": {
       "root": "",
+      "sourceRoot": "/src",
       "projectType": "application",
+      "prefix": "anms",
+      "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -38,8 +41,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "src": "src/environments/environment.ts",
-                  "replaceWith": "src/environments/environment.prod.ts"
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -57,18 +60,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-ngrx-materail-starter:build"
+            "browserTarget": "angular-ngrx-material-starter:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-ngrx-materail-starter:build:production"
+              "browserTarget": "angular-ngrx-material-starter:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-ngrx-materail-starter:build"
+            "browserTarget": "angular-ngrx-material-starter:build"
           }
         },
         "test": {
@@ -96,6 +99,16 @@
                 "output": "/assets"
               }
             ]
+          },
+          "configurations": {
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ]
+            }
           }
         },
         "lint": {
@@ -103,7 +116,8 @@
           "options": {
             "tsConfig": [
               "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
+              "src/tsconfig.spec.json",
+              "e2e/tsconfig.e2e.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -112,7 +126,7 @@
         }
       }
     },
-    "angular-ngrx-materail-starter-e2e": {
+    "angular-ngrx-material-starter-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -120,7 +134,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-ngrx-materail-starter:serve"
+            "devServerTarget": "angular-ngrx-material-starter:serve"
           }
         },
         "lint": {
@@ -134,5 +148,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "angular-ngrx-material-starter"
 }

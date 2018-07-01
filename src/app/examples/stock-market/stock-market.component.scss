@@ -10,10 +10,22 @@ mat-form-field {
 mat-card {
   span {
     float: right;
+  }
 
-    i {
-      margin: 0 5px 0 0;
+  mat-card-title {
+    margin-bottom: 5px;
+  }
+
+  mat-card-subtitle {
+    text-align: right;
+
+    mat-icon {
+      width: 8px;
     }
+  }
+
+  mat-card-content {
+    text-align: center;
   }
 }
 
@@ -24,6 +36,11 @@ mat-spinner {
 .error {
   text-align: center;
   padding: 20px;
+
+  mat-icon {
+    width: 54px;
+    font-size: 48px;
+  }
 
   > span {
     opacity: 0.4;

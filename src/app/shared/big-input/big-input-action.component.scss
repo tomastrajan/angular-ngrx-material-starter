@@ -2,4 +2,10 @@ button {
   padding: 0;
   min-width: 36px;
   margin-left: 10px;
+
+  mat-icon {
+    position: relative;
+    top: 2px;
+    font-size: 18px;
+  }
 }

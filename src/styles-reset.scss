@@ -1,10 +1,4 @@
 * {
-  a:hover,
-  a:active,
-  a:focus {
-    text-decoration: none;
-  }
-
   &:active,
   :focus {
     outline: none !important;
@@ -12,16 +6,19 @@
 }
 
 label {
-  margin: 0;
-}
-
-html,
-body {
-  height: 100%;
+  margin-bottom: 0;
 }
 
 code {
   white-space: nowrap;
   border-radius: 10px;
   padding: 0 8px 1px 8px;
+}
+
+.mat-menu-content {
+  mat-icon {
+    position: relative;
+    top: 2px;
+    left: 4px;
+  }
 }

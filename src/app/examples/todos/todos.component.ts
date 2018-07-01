@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 
 import {
   ActionTodosAdd,
@@ -14,7 +14,8 @@ import {
   ActionTodosToggle,
   selectorTodos,
   Todo,
-  TodosFilter
+  TodosFilter,
+  TodosState
 } from './todos.reducer';
 
 @Component({
@@ -25,8 +26,8 @@ import {
 export class TodosComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
-  animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
-  todos: any;
+  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
+  todos: TodosState;
   newTodo = '';
 
   constructor(public store: Store<any>, public snackBar: MatSnackBar) {}

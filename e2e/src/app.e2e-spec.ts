@@ -1,14 +1,26 @@
-import { AngularNgrxMaterialStarterPage } from './app.po';
+import { AppPage } from './app.po';
 
-describe('angular-ngrx-material-starter App', () => {
-  let page: AngularNgrxMaterialStarterPage;
+import { getCurrentRouteUrl } from './utils';
 
-  beforeEach(() => {
-    page = new AngularNgrxMaterialStarterPage();
+describe('App', () => {
+  let page: AppPage;
+
+  beforeEach(() => (page = new AppPage()));
+
+  it('should redirect to "about" route', () => {
+    page.navigateTo();
+    expect(getCurrentRouteUrl()).toEqual('about');
   });
 
-  it('should display message saying app works', () => {
+  it('should display current year in the footer', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('ANGULAR NGRX MATERIAL STARTER');
+    expect(page.getCurrentYear()).toEqual(new Date().getFullYear().toString());
+  });
+
+  it('should have "About", "Features", "Examples" menus', () => {
+    page.navigateTo();
+    page
+      .getAllMenus()
+      .then(menus => expect(menus).toEqual(['About', 'Features', 'Examples']));
   });
 });

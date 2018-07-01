@@ -5,137 +5,185 @@
     </div>
   </div>
   <div class="row align-items-end">
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title><code>{{versions.angular}}</code>Angular</mat-card-title>
         <mat-card-subtitle>
           Modern powerful framework
         </mat-card-subtitle>
         <mat-card-actions>
-          <a mat-button href="https://angular.io/docs/ts/latest/" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
+          <a mat-icon-button href="https://github.com/angular/angular" target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
           </a>
-          <a mat-button href="https://github.com/angular/angular" target="_blank">
-            <i class="fa fa-github fa-lg"></i> Github
+          <a mat-button href="https://angular.io/docs/ts/latest/" target="_blank">
+            <mat-icon fontSet="fas" fontIcon="fa-book"></mat-icon>
+            Docs
           </a>
         </mat-card-actions>
       </mat-card>
     </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title><code>{{versions.material}}</code>Angular Material</mat-card-title>
         <mat-card-subtitle>
           Material design component library
         </mat-card-subtitle>
         <mat-card-actions>
-          <a mat-button href="https://material.angular.io/" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
+          <a mat-icon-button href="https://github.com/angular/material2/" target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
           </a>
-          <a mat-button href="https://github.com/angular/material2/" target="_blank">
-            <i class="fa fa-github fa-lg"></i> Github
+          <a mat-button href="https://material.angular.io/" target="_blank">
+            <mat-icon fontSet="fas" fontIcon="fa-book"></mat-icon>
+            Docs
           </a>
         </mat-card-actions>
       </mat-card>
     </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title><code>{{versions.angularCli}}</code>Angular Cli</mat-card-title>
         <mat-card-subtitle>
           Responsive layout from battle tested, world most famous UI library
         </mat-card-subtitle>
         <mat-card-actions>
-          <a mat-button href="https://github.com/angular/angular-cli/wiki/generate" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
+          <a mat-icon-button href="https://github.com/angular/angular-cli"
+             target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
           </a>
-          <a mat-button href="https://github.com/angular/angular-cli" target="_blank">
-            <i class="fa fa-github fa-lg"></i> Github
+          <a mat-button href="https://cli.angular.io/" target="_blank">
+            <mat-icon fontSet="fas" fontIcon="fa-book"></mat-icon>
+            Docs
           </a>
         </mat-card-actions>
       </mat-card>
     </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
-        <mat-card-title><code>{{versions.ngrx}}</code>ngRx</mat-card-title>
+        <mat-card-title><code>{{versions.ngrx}}</code>NgRx</mat-card-title>
         <mat-card-subtitle>
           One way data flow powered by RxJS Observables
         </mat-card-subtitle>
         <mat-card-actions>
-          <a mat-button href="https://github.com/ngrx/platform" target="_blank">
-            <i class="fa fa-github fa-lg"></i> Github
+          <a mat-icon-button href="https://github.com/ngrx/platform" target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
           </a>
-          <a mat-button href="https://github.com/ngrx/effects/blob/master/docs/testing.md" target="_blank">
-            <i class="fa fa-code fa-lg"></i> Testing
+          <a mat-button href="http://ngrx.github.io/" target="_blank">
+            <mat-icon fontSet="fas" fontIcon="fa-book"></mat-icon>
+            Docs
+          </a>
+          <a mat-button
+             href="https://medium.com/@tomastrajan/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0"
+             target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
+            Guide
           </a>
         </mat-card-actions>
       </mat-card>
     </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title><code>{{versions.rxjs}}</code>RxJS</mat-card-title>
         <mat-card-subtitle>
           Reactive programming with async collections using Observables.
         </mat-card-subtitle>
         <mat-card-actions>
-          <a mat-button href="http://reactivex.io/rxjs/" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
+          <a mat-icon-button href="https://github.com/ReactiveX/RxJS" target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
           </a>
-          <a mat-button href="https://github.com/ReactiveX/RxJS" target="_blank">
-            <i class="fa fa-github fa-lg"></i> Github
+          <a mat-button href="http://reactivex.io/rxjs/" target="_blank">
+            <mat-icon fontSet="fas" fontIcon="fa-book"></mat-icon>
+            Docs
+          </a>
+          <a mat-button
+             href="https://medium.com/@tomastrajan/practical-rxjs-in-the-wild-requests-with-concatmap-vs-mergemap-vs-forkjoin-11e5b2efe293"
+             target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
+            Guide
           </a>
         </mat-card-actions>
       </mat-card>
     </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title><code>{{versions.bootstrap}}</code>Bootstrap</mat-card-title>
         <mat-card-subtitle>
           Responsive layout from battle tested, world most famous UI library
         </mat-card-subtitle>
         <mat-card-actions>
-          <a mat-button href="https://v4-alpha.getbootstrap.com/layout/grid/" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
+          <a mat-icon-button href="https://github.com/twbs/bootstrap" target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
           </a>
-          <a mat-button href="https://github.com/twbs/bootstrap" target="_blank">
-            <i class="fa fa-github fa-lg"></i> Github
+          <a mat-button href="https://getbootstrap.com/docs/4.0/layout/grid/"
+             target="_blank">
+            <mat-icon fontSet="fas" fontIcon="fa-book"></mat-icon>
+            Docs
+          </a>
+          <a mat-button
+             href="https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b"
+             target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
+            Guide
           </a>
         </mat-card-actions>
       </mat-card>
     </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title><code>{{versions.typescript}}</code> Typescript</mat-card-title>
         <mat-card-subtitle>Superior developer experience, code completion, refactoring and less bugs</mat-card-subtitle>
         <mat-card-actions>
-          <a mat-button href="https://github.com/Microsoft/TypeScript" target="_blank">
-            <i class="fa fa-github fa-lg"></i> Github
+          <a mat-icon-button href="https://github.com/Microsoft/TypeScript"
+             target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
           </a>
           <a mat-button href="https://www.typescriptlang.org/docs/home.html" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
+            <mat-icon fontSet="fas" fontIcon="fa-book"></mat-icon>
+            Docs
           </a>
         </mat-card-actions>
       </mat-card>
     </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
+      <mat-card>
+        <mat-card-title><code>{{versions.fontAwesome}}</code> Font Awesome 5
+        </mat-card-title>
+        <mat-card-subtitle>Easy to use vector icons and social logos</mat-card-subtitle>
+        <mat-card-actions>
+          <a mat-icon-button href="https://github.com/FortAwesome/Font-Awesome"
+             target="_blank">
+            <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
+          </a>
+          <a mat-button href="https://fontawesome.com/icons" target="_blank">
+            <mat-icon fontSet="fas" fontIcon="fa-book"></mat-icon>
+            Docs
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title>Themes</mat-card-title>
         <mat-card-subtitle>Flexible theming support for provided and custom components</mat-card-subtitle>
         <mat-card-actions>
           <a mat-button href="https://material.angular.io/guide/theming" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
+            <mat-icon fontSet="fas" fontIcon="fa-book"></mat-icon>
+            Docs
           </a>
           <a mat-button href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1" target="_blank">
-            <i class="fa fa-medium fa-lg"></i> Blog
+            <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
+            Guide
           </a>
         </mat-card-actions>
       </mat-card>
     </div>
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title>Lazy loading</mat-card-title>
         <mat-card-subtitle>Faster startup time with lazy loaded feature modules</mat-card-subtitle>
         <mat-card-actions>
           <a mat-button href="https://angular.io/docs/ts/latest/guide/router.html#!#lazy-loading-route-config" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
+            <mat-icon fontSet="fas" fontIcon="fa-book"></mat-icon>
+            Docs
           </a>
         </mat-card-actions>
       </mat-card>

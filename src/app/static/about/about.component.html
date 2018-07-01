@@ -3,47 +3,51 @@
     <div class="container">
       <h1>Angular ngRx Material Starter</h1>
       <div class="actions">
-        <a [ngClass]="animateOnRouteEnter"
+        <a [ngClass]="routeAnimationsElements"
            mat-raised-button class="actions-main" color="primary" routerLink="../features">
           Features
         </a>
         <a mat-raised-button class="actions-main" color="accent" routerLink="../examples"
-           [ngClass]="animateOnRouteEnter">
+           [ngClass]="routeAnimationsElements">
           Examples
         </a>
         <a mat-raised-button class="actions-main" color="warn" routerLink="../settings"
-           [ngClass]="animateOnRouteEnter">
-          <i class="fa fa-gear"></i> Change Theme
+           [ngClass]="routeAnimationsElements">
+          Change Theme
         </a>
         <br>
-        <span [ngClass]="animateOnRouteEnter">or check blogs about</span>
+        <span [ngClass]="routeAnimationsElements">or check blogs about</span>
         <br>
         <a mat-raised-button
-           [ngClass]="animateOnRouteEnter"
+           [ngClass]="routeAnimationsElements"
            target="_blank"
            href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1">
-          <i class="fa fa-medium"></i> Material Theming
+          <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
+          Material Theming
         </a>
         <a mat-raised-button
-           [ngClass]="animateOnRouteEnter"
+           [ngClass]="routeAnimationsElements"
            target="_blank"
            href="https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81">
-          <i class="fa fa-medium"></i> Angular Cli Tips
+          <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
+          Angular Cli Tips
         </a>
         <a mat-raised-button
-           [ngClass]="animateOnRouteEnter"
+           [ngClass]="routeAnimationsElements"
            target="_blank"
            href="https://medium.com/@tomastrajan/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0">
-          <i class="fa fa-medium"></i> Ngrx Typescript Tips
+          <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
+          Ngrx Typescript Tips
         </a>
         <a mat-raised-button
-           [ngClass]="animateOnRouteEnter"
+           [ngClass]="routeAnimationsElements"
            target="_blank"
            href="https://medium.com/@tomastrajan/how-to-style-angular-application-loading-with-angular-cli-like-a-boss-cdd4f5358554">
-          <i class="fa fa-medium"></i> App Loading Style
+          <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
+          App Loading Style
         </a>
       </div>
-      <div class="get-started" [ngClass]="animateOnRouteEnter">
+      <div class="get-started" [ngClass]="routeAnimationsElements">
         <h2>Getting started</h2>
         <code>git clone
           https://github.com/tomastrajan/angular-ngrx-material-starter.git
@@ -53,5 +57,18 @@
         <code>npm start</code>
       </div>
     </div>
+  </div>
+</div>
+<div class="container">
+  <div class="follow-releases" [ngClass]="routeAnimationsElements">
+    <h2>Get notified about new releases</h2>
+    <p>
+      Follow <a href="https://www.twitter.com/releasebutler" target="_blank">Release
+      Butler</a>
+      a Twitter bot that helps you to stay up to date with releases of popular frontend
+      frameworks & libraries!
+    </p>
+
+    <img [src]="releaseButler" alt="Release Butler tweet example">
   </div>
 </div>

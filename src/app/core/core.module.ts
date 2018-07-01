@@ -13,11 +13,15 @@ import { LocalStorageService } from './local-storage/local-storage.service';
 import { authReducer } from './auth/auth.reducer';
 import { AuthEffects } from './auth/auth.effects';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { AnimationsService } from './animations/animations.service';
 
 export const metaReducers: MetaReducer<any>[] = [initStateFromLocalStorage];
 
 if (!environment.production) {
-  metaReducers.unshift(debug, storeFreeze);
+  metaReducers.unshift(storeFreeze);
+  if (!environment.test) {
+    metaReducers.unshift(debug);
+  }
 }
 
 @NgModule({
@@ -36,7 +40,7 @@ if (!environment.production) {
     EffectsModule.forRoot([AuthEffects])
   ],
   declarations: [],
-  providers: [LocalStorageService, AuthGuardService]
+  providers: [LocalStorageService, AuthGuardService, AnimationsService]
 })
 export class CoreModule {
   constructor(

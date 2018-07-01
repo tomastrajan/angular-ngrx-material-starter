@@ -2,6 +2,144 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.3.0"></a>
+# [6.3.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.2.0...v6.3.0) (2018-06-09)
+
+
+### Bug Fixes
+
+* **app:** rework main layout to prevent scrollbar issues, closes [#221](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/221), closes [#240](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/240) ([0d08ade](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0d08ade))
+* **environments:** use test environment for unit tests on ci ([6cfec6e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6cfec6e))
+* **index:** favicon url ([b862590](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b862590))
+
+
+### Features
+
+* **environments:** add test environment, skip debug meta-reducer in tests ([7205db2](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7205db2))
+* **static:** add font awesome feature card, update docs / github links, add guide links ([a5bf758](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a5bf758))
+
+
+
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.1.0...v6.2.0) (2018-06-08)
+
+
+### Features
+
+* **assets:** rework logo and add logo source ([33282cc](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/33282cc))
+* **icons:** migrate to font awesome 5 ([983e532](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/983e532))
+* **icons:** standardize icon usage with mat-icon component and font awesome icon set ([26b0cf2](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/26b0cf2))
+* **todos:** create tests for todos container ([04b0846](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/04b0846))
+
+
+
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.4...v6.1.0) (2018-06-03)
+
+
+### Features
+
+* **settings:** add runtime animations toggles ([91131b4](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/91131b4))
+
+
+
+<a name="6.0.4"></a>
+## [6.0.4](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.3...v6.0.4) (2018-05-29)
+
+
+### Bug Fixes
+
+* **animations:** fix dynamic animations in prod build, fixes [#71](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/71) ([ca281f2](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ca281f2))
+
+
+
+<a name="6.0.3"></a>
+## [6.0.3](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.2...v6.0.3) (2018-05-29)
+
+
+### Bug Fixes
+
+* **animations:** disable whole page slide-in animation in IE & EDGE, adjust styles, fixes [#71](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/71) ([d2c4b8a](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d2c4b8a))
+* **app:** takeUntil should be always used as the last operator to prevent potential leaks ([80773bd](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/80773bd))
+
+
+
+<a name="6.0.2"></a>
+## [6.0.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.1...v6.0.2) (2018-05-26)
+
+
+### Bug Fixes
+
+* angular.json project name typo ([5bd6115](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/5bd6115))
+
+
+
+<a name="6.0.1"></a>
+## [6.0.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0...v6.0.1) (2018-05-24)
+
+
+### Bug Fixes
+
+* **app:** only remove existing theme classes ([692edfc](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/692edfc))
+
+
+### Features
+
+* **unit-test:** add test for action [#177](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/177) ([24f8145](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/24f8145))
+
+
+
+<a name="6.0.0"></a>
+# [6.0.0](https://github.com/mumairofficial/angular-ngrx-material-starter/compare/v6.0.0-rc.4...v6.0.0) (2018-05-04)
+
+
+### Features
+
+* **build:** lint e2e tests ([fe55a82](https://github.com/mumairofficial/angular-ngrx-material-starter/commit/fe55a82))
+* **dependencies:** migrated to stable release of Angular 6.0.0 ([cb2d0ae](https://github.com/mumairofficial/angular-ngrx-material-starter/commit/cb2d0ae))
+* **e2e:** [#178](https://github.com/mumairofficial/angular-ngrx-material-starter/issues/178) add tests for app and about page ([31565c0](https://github.com/mumairofficial/angular-ngrx-material-starter/commit/31565c0))
+
+
+
+<a name="6.0.0-rc.4"></a>
+# [6.0.0-rc.4](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.3...v6.0.0-rc.4) (2018-04-28)
+
+
+### Features
+
+* **about:** improve responsive layout and add release butler section ([3622801](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3622801))
+* **dependencies:** bump angular, cli, material and rxjs versions, update angular.json ([1d363dd](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/1d363dd))
+
+
+
+<a name="6.0.0-rc.3"></a>
+# [6.0.0-rc.3](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.2...v6.0.0-rc.3) (2018-04-25)
+
+
+### Bug Fixes
+
+* **app:** track pageviews in Google Analytics ([3eb484a](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3eb484a))
+* **codestyle:** prettier ([9168685](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9168685))
+
+
+
+<a name="6.0.0-rc.2"></a>
+# [6.0.0-rc.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.1...v6.0.0-rc.2) (2018-04-22)
+
+
+### Bug Fixes
+
+* **examples:** fix stock market API source ([d486f10](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d486f10))
+* **styles:** prevent blue labels in menus ([45327b4](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/45327b4)), closes [#93](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/93)
+
+
+### Features
+
+* **app:** Changed change detection strategy to OnPush in two components ([8e8fc49](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/8e8fc49)), closes [tomastrajan/angular-ngrx-material-starter/#126](https://github.com/tomastrajan/angular-ngrx-material-starter//issues/126)
+* **build:** use rimraf to clean dist to support building in windows environments ([f883013](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f883013))
+
+
+
 <a name="6.0.0-rc.1"></a>
 # [6.0.0-rc.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.0...v6.0.0-rc.1) (2018-04-08)
 
