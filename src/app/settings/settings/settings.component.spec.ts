@@ -17,7 +17,9 @@ import { SettingsComponent } from './settings.component';
 import {
   SettingsState,
   ActionSettingsChangeTheme,
-  ActionSettingsChangeAutoNightMode
+  ActionSettingsChangeAutoNightMode,
+  ActionSettingsChangeAnimationsPage,
+  ActionSettingsChangeAnimationsElements
 } from '../settings.reducer';
 
 describe('SettingsComponent', () => {
@@ -47,7 +49,7 @@ describe('SettingsComponent', () => {
         theme: 'DEFAULT-THEME',
         autoNightMode: true,
         pageAnimations: true,
-        pageAnimationsDisabled: true,
+        pageAnimationsDisabled: false,
         elementsAnimations: true
       });
       fixture = TestBed.createComponent(SettingsComponent);
@@ -60,6 +62,7 @@ describe('SettingsComponent', () => {
     expect(component).toBeTruthy();
     expect(component.settings.theme).toBe('DEFAULT-THEME');
     expect(component.settings.autoNightMode).toBeTruthy();
+    expect(component.settings.pageAnimations).toBeTruthy();
   });
 
   it('should dispatch change theme action on theme selection', () => {
@@ -90,5 +93,53 @@ describe('SettingsComponent', () => {
     expect(dispatchSpy).toHaveBeenCalledWith(
       new ActionSettingsChangeAutoNightMode({ autoNightMode: false })
     );
+  });
+
+  it('should dispatch change animations page', () => {
+    dispatchSpy = spyOn(store, 'dispatch');
+    const componentDebug = fixture.debugElement;
+    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[1];
+
+    slider.triggerEventHandler('change', { checked: false });
+    fixture.detectChanges();
+
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith(
+      new ActionSettingsChangeAnimationsPage({ pageAnimations: false })
+    );
+  });
+
+  it('should dispatch change animations elements', () => {
+    dispatchSpy = spyOn(store, 'dispatch');
+    const componentDebug = fixture.debugElement;
+    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[2];
+
+    slider.triggerEventHandler('change', { checked: false });
+    fixture.detectChanges();
+
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith(
+      new ActionSettingsChangeAnimationsElements({ elementsAnimations: false })
+    );
+  });
+
+  it('should disable change animations page when disabled is set in state', () => {
+    store.setState({
+      theme: 'DEFAULT-THEME',
+      autoNightMode: true,
+      pageAnimations: true,
+      pageAnimationsDisabled: true, // change animations disabled
+      elementsAnimations: true
+    });
+    fixture.detectChanges();
+
+    dispatchSpy = spyOn(store, 'dispatch');
+    const componentDebug = fixture.debugElement;
+    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[1];
+
+    slider.triggerEventHandler('change', { checked: false });
+    fixture.detectChanges();
+
+    expect(dispatchSpy).toHaveBeenCalledTimes(0);
   });
 });
