@@ -57,6 +57,16 @@ Other types that will not appear in changelog:
 Any line of the commit message should not be longer 100 characters! This allows the message to be easier
 to read on GitHub as well as in various git tools.
 
+### Scope
+The commit scope is specified inside of the parentheses. Scope can be omitted when changed
+relates to multiple modules or even whole project. If possible, scope should refer to a module where change was performed.
+Approximate steps to specify scope:
+
+ 1. change belongs to a well defined module like `core`, `shared`, `app`, ...
+ 2. change belongs to a "separated" bigger chung of a module (eg: `todos` from the `examples` module)
+ 3. change belongs to a unique cross-cutting concern like `animations`, `logging` or `build`
+ 4. change belongs to a unique entity like `readme` or `contributing`
+
 
 ### Examples
 
