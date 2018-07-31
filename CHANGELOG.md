@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.4.3"></a>
+## [6.4.3](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.4.2...v6.4.3) (2018-07-31)
+
+
+
 <a name="6.4.2"></a>
 ## [6.4.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.4.1...v6.4.2) (2018-07-31)
 
