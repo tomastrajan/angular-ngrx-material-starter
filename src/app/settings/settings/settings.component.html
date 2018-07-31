@@ -11,7 +11,8 @@
         <mat-form-field>
           <mat-select [placeholder]="'anms.settings.general.placeholder' | translate"
                       [ngModel]="settings?.language"
-                      (selectionChange)="onLanguageSelect($event)">
+                      (selectionChange)="onLanguageSelect($event)"
+                      name="language">
             <mat-option *ngFor="let l of languages" [value]="l.value">
               {{ 'anms.settings.general.language.' + l.label | translate }}
             </mat-option>
@@ -30,7 +31,8 @@
         <mat-form-field>
           <mat-select [placeholder]="'anms.settings.themes.placeholder' | translate"
                       [ngModel]="settings?.theme"
-                      (selectionChange)="onThemeSelect($event)">
+                      (selectionChange)="onThemeSelect($event)"
+                      name="themes">
             <mat-option *ngFor="let t of themes" [value]="t.value">
               {{ 'anms.settings.themes.' + t.label | translate }}
             </mat-option>

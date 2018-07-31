@@ -1,8 +1,6 @@
 import { By } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { MatSlideToggle } from '@angular/material';
-import { RouterTestingModule } from '@angular/router/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   async,
   ComponentFixture,
@@ -10,8 +8,7 @@ import {
   inject
 } from '@angular/core/testing';
 
-import { SharedModule } from '@app/shared';
-import { TestStore } from '@testing/utils';
+import { TestingModule, TestStore } from '@testing/utils';
 
 import { SettingsComponent } from './settings.component';
 import {
@@ -28,16 +25,16 @@ describe('SettingsComponent', () => {
   let store: TestStore<SettingsState>;
   let dispatchSpy;
 
-  const getSelectArrow = () =>
-    fixture.debugElement.query(By.css('.mat-select-trigger'));
-  const getOptions = () => fixture.debugElement.queryAll(By.css('mat-option'));
+  const getThemeSelectArrow = () =>
+    fixture.debugElement.queryAll(By.css('.mat-select-trigger'))[1];
+  const getSelectOptions = () =>
+    fixture.debugElement.queryAll(By.css('mat-option'));
 
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        imports: [NoopAnimationsModule, RouterTestingModule, SharedModule],
         declarations: [SettingsComponent],
-        providers: [{ provide: Store, useClass: TestStore }]
+        imports: [TestingModule]
       }).compileComponents();
     })
   );
@@ -50,7 +47,8 @@ describe('SettingsComponent', () => {
         autoNightMode: true,
         pageAnimations: true,
         pageAnimationsDisabled: false,
-        elementsAnimations: true
+        elementsAnimations: true,
+        language: 'en'
       });
       fixture = TestBed.createComponent(SettingsComponent);
       component = fixture.componentInstance;
@@ -67,11 +65,11 @@ describe('SettingsComponent', () => {
 
   it('should dispatch change theme action on theme selection', () => {
     dispatchSpy = spyOn(store, 'dispatch');
-    getSelectArrow().triggerEventHandler('click', {});
+    getThemeSelectArrow().triggerEventHandler('click', {});
 
     fixture.detectChanges();
 
-    getOptions()[1].triggerEventHandler('click', {});
+    getSelectOptions()[1].triggerEventHandler('click', {});
 
     fixture.detectChanges();
 
@@ -129,7 +127,8 @@ describe('SettingsComponent', () => {
       autoNightMode: true,
       pageAnimations: true,
       pageAnimationsDisabled: true, // change animations disabled
-      elementsAnimations: true
+      elementsAnimations: true,
+      language: 'en'
     });
     fixture.detectChanges();
 
