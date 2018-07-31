@@ -1,22 +1,22 @@
 <div class="background">
   <div class="gradient">
     <div class="container">
-      <h1>Angular ngRx Material Starter</h1>
+      <h1>{{ 'anms.title' | translate }}</h1>
       <div class="actions">
         <a [ngClass]="routeAnimationsElements"
            mat-raised-button class="actions-main" color="primary" routerLink="../features">
-          Features
+          {{ 'anms.menu.features' | translate }}
         </a>
         <a mat-raised-button class="actions-main" color="accent" routerLink="../examples"
            [ngClass]="routeAnimationsElements">
-          Examples
+          {{ 'anms.menu.examples' | translate }}
         </a>
         <a mat-raised-button class="actions-main" color="warn" routerLink="../settings"
            [ngClass]="routeAnimationsElements">
-          Change Theme
+          {{ 'anms.about.change-theme' | translate }}
         </a>
         <br>
-        <span [ngClass]="routeAnimationsElements">or check blogs about</span>
+        <span [ngClass]="routeAnimationsElements">{{ 'anms.about.check-blogs' | translate }}</span>
         <br>
         <a mat-raised-button
            [ngClass]="routeAnimationsElements"
@@ -48,7 +48,7 @@
         </a>
       </div>
       <div class="get-started" [ngClass]="routeAnimationsElements">
-        <h2>Getting started</h2>
+        <h2>{{ 'anms.about.get-started' | translate }}</h2>
         <code>git clone
           https://github.com/tomastrajan/angular-ngrx-material-starter.git
           new-project</code><br>
@@ -61,12 +61,12 @@
 </div>
 <div class="container">
   <div class="follow-releases" [ngClass]="routeAnimationsElements">
-    <h2>Get notified about new releases</h2>
+    <h2>{{ 'anms.about.get-notified' | translate }}</h2>
     <p>
-      Follow <a href="https://www.twitter.com/releasebutler" target="_blank">Release
+      {{ 'anms.about.get-notified.follow' | translate }} <a
+      href="https://www.twitter.com/releasebutler" target="_blank">Release
       Butler</a>
-      a Twitter bot that helps you to stay up to date with releases of popular frontend
-      frameworks & libraries!
+      {{ 'anms.about.get-notified.description' | translate }}
     </p>
 
     <img [src]="releaseButler" alt="Release Butler tweet example">

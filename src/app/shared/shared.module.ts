@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
@@ -27,6 +29,8 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     CommonModule,
     FormsModule,
 
+    TranslateModule,
+
     MatButtonModule,
     MatToolbarModule,
     MatSelectModule,
@@ -48,6 +52,8 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
   exports: [
     CommonModule,
     FormsModule,
+
+    TranslateModule,
 
     MatButtonModule,
     MatMenuModule,

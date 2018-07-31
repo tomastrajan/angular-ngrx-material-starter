@@ -42,6 +42,12 @@ mat-sidenav-container {
       flex: 1 1 auto;
     }
 
+    mat-select {
+      margin: 0 0 0 20px;
+      width: 40px;
+      font-size: 14px;
+    }
+
     @media (max-width: map-get($grid-breakpoints, lg)) {
       .nav-button {
         min-width: 0;

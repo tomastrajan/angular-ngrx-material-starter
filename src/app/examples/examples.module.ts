@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { SharedModule } from '@app/shared';
 
@@ -16,6 +18,7 @@ import { StockMarketService } from './stock-market/stock-market.service';
 import { ParentComponent } from './theming/parent/parent.component';
 import { ChildComponent } from './theming/child/child.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -24,6 +27,14 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
     StoreModule.forFeature('examples', {
       todos: todosReducer,
       stocks: stockMarketReducer
+    }),
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      isolate: true
     }),
     EffectsModule.forFeature([TodosEffects, StockMarketEffects])
   ],
@@ -39,4 +50,8 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
 })
 export class ExamplesModule {
   constructor() {}
+}
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/examples/', '.json');
 }

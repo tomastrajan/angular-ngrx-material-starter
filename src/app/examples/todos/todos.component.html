@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="offset-md-2 col-md-8 entry">
-      <anms-big-input placeholder="I am going to do..."
+      <anms-big-input [placeholder]="'anms.examples.todos.input' | translate"
                       [value]="newTodo"
                       (keyup)="onNewTodoChange($event.target.value)"
                       (keyup.enter)="!isAddTodoDisabled && onAddTodo()"
@@ -9,12 +9,15 @@
         <anms-big-input-action fontSet="fas" fontIcon="fa-plus" color="accent"
                                (action)="onAddTodo()"
                                [disabled]="isAddTodoDisabled"
-                               matTooltip="Add new todo" matTooltipPosition="before">
+                               [matTooltip]="'anms.examples.todos.tooltip.add' | translate"
+                               matTooltipPosition="before">
         </anms-big-input-action>
         <anms-big-input-action fontSet="fas" fontIcon="fa-trash" color="warn"
                                (action)="onRemoveDoneTodos()"
                                [disabled]="isRemoveDoneTodosDisabled"
-                               matTooltip="Remove done todos" matTooltipPosition="after">
+                               matTooltip="Remove done todos"
+                               [matTooltip]="'anms.examples.todos.tooltip.remove' | translate"
+                               matTooltipPosition="after">
         </anms-big-input-action>
       </anms-big-input>
     </div>
@@ -22,30 +25,32 @@
   <div class="row">
     <div class="col-md-6">
       <h2>
-        Todo List
+        {{ 'anms.examples.todos.list' | translate }}
         <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter">
           <mat-icon fontSet="fas" fontIcon="fa-filter"></mat-icon>
         </button>
         <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">
           <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }">
             <mat-icon fontSet="fas" fontIcon="fa-tasks"></mat-icon>
-            <span>All</span>
+            <span>{{ 'anms.examples.todos.filter.all' | translate }}</span>
           </button>
           <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }">
             <mat-icon fontSet="fas" fontIcon="fa-check"></mat-icon>
-            <span>Done</span>
+            <span>{{ 'anms.examples.todos.filter.done' | translate }}</span>
           </button>
           <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }">
             <mat-icon fontSet="fas" fontIcon="fa-square"></mat-icon>
-            <span>Active</span>
+            <span>{{ 'anms.examples.todos.filter.active' | translate }}</span>
           </button>
         </mat-menu>
         <mat-chip-list class="todos-filter-info d-none d-sm-block">
           <mat-chip>
-            Displaying {{todos.filter !== 'ALL' ? filteredTodos.length : ''}}
-            {{todos.filter.toLowerCase()}}
+            {{ 'anms.examples.todos.filter.description' | translate }} {{todos.filter !==
+            'ALL' ? filteredTodos.length : ''}}
+            {{ ('anms.examples.todos.filter.' + todos.filter.toLowerCase() |
+            translate).toLowerCase() }}
             {{todos.filter === 'ALL' ? filteredTodos.length : ''}}
-            todo{{filteredTodos.length > 1 ? 's' : ''}}
+            {{ 'anms.examples.todos.filter.items' | translate }}
           </mat-chip>
         </mat-chip-list>
       </h2>
@@ -62,19 +67,17 @@
       <br>
     </div>
     <div class="offset-md-1  col-md-5">
-      <h2>Todo Example</h2>
+      <h2>{{ 'anms.examples.todos.example' | translate }}</h2>
       <p>
-        This is a classic <code>todo</code> example with support for
-        adding, toggling, removing and filtering of the todo items.
+        {{ 'anms.examples.todos.text1' | translate }}
+        <code>{{ 'anms.examples.todos.text2' | translate }}</code>
+        {{ 'anms.examples.todos.text3' | translate }}
       </p>
       <p>
-        State handling is implemented using <code>ngrx</code> module
-        and support for lazy loaded reducers (this is a lazy loaded feature module).
+        {{ 'anms.examples.todos.text4' | translate }} <code>ngrx</code>
+        {{ 'anms.examples.todos.text5' | translate }}
       </p>
-      <p>
-        Todos are persisted into local storage so you should see your todos
-        also on later visits when using the same browser.
-      </p>
+      <p>{{ 'anms.examples.todos.text6' | translate }}</p>
       <br>
     </div>
   </div>

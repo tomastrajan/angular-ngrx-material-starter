@@ -1,20 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1 class="main-heading">Stock Market</h1>
+      <h1 class="main-heading">{{ 'anms.examples.stocks.title' | translate }}</h1>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6 col-lg-3">
       <form autocomplete="false">
         <mat-form-field>
-          <input matInput placeholder="Stock symbol"
+          <input matInput [placeholder]="'anms.examples.stocks.symbol' | translate"
                  [value]="stocks.symbol"
                  (keyup)="onSymbolChange($event.target.value)">
         </mat-form-field>
       </form>
       <p>
-        Please provide some valid stock market symbol like: GOOGL, FB, AAPL, NVDA, AMZN, TWTR, SNAP, TSLA...
+        {{ 'anms.examples.stocks.description' | translate }} GOOGL, FB, AAPL, NVDA, AMZN,
+        TWTR, SNAP, TSLA...
       </p>
       <br>
     </div>
@@ -36,29 +37,26 @@
       <p *ngIf="stocks.error" class="error">
         <mat-icon fontSet="fas" fontIcon="fa-exclamation-triangle"></mat-icon>
         <br><br>
-        <span>Stock <span class="symbol">{{stocks.symbol}}</span> not found</span>
+        <span>
+          {{ 'anms.examples.stocks.error1' | translate }}
+          <span class="symbol">{{stocks.symbol}}</span>
+          {{ 'anms.examples.stocks.error2' | translate }}
+        </span>
       </p>
       <br>
       <br>
     </div>
     <div class="col-md-12 col-lg-4">
       <p>
-        Stock market example shows how to implement <code>HTTP</code>
-        requests using <code>@ngrx/effects</code> module.
+        {{ 'anms.examples.stocks.text1' | translate }} <code>HTTP</code>
+        {{ 'anms.examples.stocks.text2' | translate }} <code>@ngrx/effects</code>
+        {{ 'anms.examples.stocks.text3' | translate }}
       </p>
+      <p>{{ 'anms.examples.stocks.text4' | translate }}</p>
       <p>
-        Updating symbol query with different symbol will emit action
-        which updates state with loading flag (reducer) and triggers effect for retrieving
-        of selected stock.
+        {{ 'anms.examples.stocks.text5' | translate }} <code>.switchMap</code>.
       </p>
-      <p>
-        Actions are debounced and every subsequent request will
-        cancel previous one using <code>.switchMap</code>.
-      </p>
-      <p>
-        Success or error actions are emitted on request completion.
-        Loading spinner is removed and stock info or error message is displayed.
-      </p>
+      <p>{{ 'anms.examples.stocks.text6' | translate }}</p>
     </div>
   </div>
 </div>

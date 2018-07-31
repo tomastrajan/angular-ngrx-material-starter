@@ -39,6 +39,8 @@
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@ngrx/effects": "^6.0.1",
     "@ngrx/store": "^6.0.1",
+    "@ngx-translate/core": "^10.0.2",
+    "@ngx-translate/http-loader": "^3.0.1",
     "bootstrap": "^4.1.1",
     "browser-detect": "^0.2.27",
     "core-js": "^2.4.1",

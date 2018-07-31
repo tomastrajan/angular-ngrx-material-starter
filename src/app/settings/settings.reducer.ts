@@ -3,12 +3,22 @@ import { Action } from '@ngrx/store';
 export const SETTINGS_KEY = 'SETTINGS';
 
 export enum SettingsActionTypes {
+  CHANGE_LANGUAGE = '[Settings] Change Language',
   CHANGE_THEME = '[Settings] Change Theme',
   CHANGE_AUTO_NIGHT_AUTO_MODE = '[Settings] Change Auto Night Mode',
   CHANGE_ANIMATIONS_PAGE = '[Settings] Change Animations Page',
   CHANGE_ANIMATIONS_PAGE_DISABLED = '[Settings] Change Animations Page Disabled',
   CHANGE_ANIMATIONS_ELEMENTS = '[Settings] Change Animations Elements',
   PERSIST = '[Settings] Persist'
+}
+
+export type Language = 'en' | 'sk';
+
+export class ActionSettingsChangeLanguage implements Action {
+  readonly type = SettingsActionTypes.CHANGE_LANGUAGE;
+
+  constructor(public payload: { language: Language }) {
+  }
 }
 
 export class ActionSettingsChangeTheme implements Action {
@@ -43,6 +53,7 @@ export class ActionSettingsPersist implements Action {
 
 export type SettingsActions =
   | ActionSettingsPersist
+  | ActionSettingsChangeLanguage
   | ActionSettingsChangeTheme
   | ActionSettingsChangeAnimationsPage
   | ActionSettingsChangeAnimationsPageDisabled
@@ -52,6 +63,7 @@ export type SettingsActions =
 export const NIGHT_MODE_THEME = 'BLACK-THEME';
 
 export const initialState: SettingsState = {
+  language: 'en',
   theme: 'DEFAULT-THEME',
   autoNightMode: false,
   pageAnimations: true,
@@ -67,6 +79,9 @@ export function settingsReducer(
   action: SettingsActions
 ): SettingsState {
   switch (action.type) {
+    case SettingsActionTypes.CHANGE_LANGUAGE:
+      return { ...state, language: action.payload.language };
+
     case SettingsActionTypes.CHANGE_THEME:
       return { ...state, theme: action.payload.theme };
 
@@ -95,6 +110,7 @@ export function settingsReducer(
 }
 
 export interface SettingsState {
+  language: string;
   theme: string;
   autoNightMode: boolean;
   pageAnimations: boolean;

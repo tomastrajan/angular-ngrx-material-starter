@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { ActivationEnd, Router, NavigationEnd } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil, filter } from 'rxjs/operators';
@@ -20,6 +21,8 @@ import {
   NIGHT_MODE_THEME,
   selectorSettings,
   SettingsState,
+  ActionSettingsPersist,
+  ActionSettingsChangeLanguage,
   ActionSettingsChangeAnimationsPageDisabled
 } from './settings';
 
@@ -39,23 +42,27 @@ export class AppComponent implements OnInit, OnDestroy {
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = require('../assets/logo.png');
+  languages = ['en', 'sk'];
   navigation = [
-    { link: 'about', label: 'About' },
-    { link: 'features', label: 'Features' },
-    { link: 'examples', label: 'Examples' }
+    { link: 'about', label: 'anms.menu.about' },
+    { link: 'features', label: 'anms.menu.features' },
+    { link: 'examples', label: 'anms.menu.examples' }
   ];
   navigationSideMenu = [
     ...this.navigation,
-    { link: 'settings', label: 'Settings' }
+    { link: 'settings', label: 'anms.menu.settings' }
   ];
-  isAuthenticated;
+
+  settings: SettingsState;
+  isAuthenticated: boolean;
 
   constructor(
     public overlayContainer: OverlayContainer,
     private store: Store<any>,
     private router: Router,
     private titleService: Title,
-    private animationService: AnimationsService
+    private animationService: AnimationsService,
+    private translate: TranslateService
   ) {}
 
   private static trackPageView(event: NavigationEnd) {
@@ -68,6 +75,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.translate.setDefaultLang('en');
     this.subscribeToSettings();
     this.subscribeToIsAuthenticated();
     this.subscribeToRouterEvents();
@@ -84,6 +92,11 @@ export class AppComponent implements OnInit, OnDestroy {
 
   onLogoutClick() {
     this.store.dispatch(new ActionAuthLogout());
+  }
+
+  onLanguageSelect({ value: language }) {
+    this.store.dispatch(new ActionSettingsChangeLanguage({ language }));
+    this.store.dispatch(new ActionSettingsPersist({ settings: this.settings }));
   }
 
   private subscribeToIsAuthenticated() {
@@ -105,7 +118,9 @@ export class AppComponent implements OnInit, OnDestroy {
       .select(selectorSettings)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe(settings => {
+        this.settings = settings;
         this.setTheme(settings);
+        this.setLanguage(settings);
         this.animationService.updateRouteAnimationType(
           settings.pageAnimations,
           settings.elementsAnimations
@@ -129,6 +144,13 @@ export class AppComponent implements OnInit, OnDestroy {
       classList.remove(...toRemove);
     }
     classList.add(effectiveTheme);
+  }
+
+  private setLanguage(settings: SettingsState) {
+    const { language } = settings;
+    if (language) {
+      this.translate.use(language);
+    }
   }
 
   private subscribeToRouterEvents() {

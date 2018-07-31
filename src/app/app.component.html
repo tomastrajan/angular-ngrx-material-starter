@@ -1,11 +1,12 @@
 <mat-sidenav-container>
 
   <mat-sidenav #sidenav mode="push">
-    <div class="branding"><img [src]="logo"/> <span>Angular Starter</span></div>
+    <div class="branding"><img [src]="logo"/>
+      <span>{{ 'anms.title.short' | translate}}</span></div>
     <mat-nav-list>
       <a mat-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()"
          [routerLink]="[item.link]" routerLinkActive="active">
-        {{item.label}}
+        {{item.label | translate}}
       </a>
       <a mat-list-item
          href="https://github.com/tomastrajan/angular-ngrx-material-starter"
@@ -25,21 +26,21 @@
           <img [src]="logo"/></span>
       <span routerLink=""
             class="branding spacer center d-none d-sm-inline d-md-none"><img
-        [src]="logo"/> Angular Starter</span>
+        [src]="logo"/> {{ 'anms.title.short' | translate }}</span>
       <span routerLink="" class="branding spacer d-none d-md-inline"><img
-        [src]="logo"/> Angular NgRx Material Starter</span>
+        [src]="logo"/> {{ 'anms.title' | translate }}</span>
 
       <span class="d-none d-md-inline">
           <button mat-button class="nav-button" *ngFor="let item of navigation"
                   [routerLink]="[item.link]" routerLinkActive="active">
-            {{item.label}}
+            {{item.label | translate}}
           </button>
         </span>
 
       <button mat-button class="sign-in-button "
               *ngIf="!isAuthenticated"
               (click)="onLoginClick()">
-        Sign in
+        {{ 'anms.menu.login' | translate }}
       </button>
 
       <button *ngIf="isAuthenticated"
@@ -50,7 +51,7 @@
       <mat-menu #toolbarUserMenu="matMenu">
         <button mat-menu-item (click)="onLogoutClick()">
           <mat-icon fontSet="fas" fontIcon="fa-power-off"></mat-icon>
-          <span>Logout</span>
+          <span>{{ 'anms.menu.logout' | translate }}</span>
         </button>
       </mat-menu>
 
@@ -58,7 +59,7 @@
         <mat-icon fontSet="fas" fontIcon="fa-cog"></mat-icon>
       </button>
 
-      <a matTooltip="Project Github Repository"
+      <a [matTooltip]="'anms.header.github' | translate"
          matdTooltipPosition="before"
          mat-icon-button
          class="link d-none d-sm-inline"
@@ -66,6 +67,15 @@
          target="_blank">
         <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
       </a>
+
+      <span>
+        <mat-select [ngModel]="settings?.language"
+                    (selectionChange)="onLanguageSelect($event)">
+          <mat-option *ngFor="let l of languages" [value]="l">
+            {{ l.toUpperCase() }}
+          </mat-option>
+        </mat-select>
+      </span>
     </mat-toolbar>
   </div>
 
@@ -110,7 +120,7 @@
         <div class="col-12 signature">
           &#169; <span class="year">{{year}}</span> - Tomas Trajan
           <br class="d-block d-sm-none">
-          <a matTooltip="Show changelog"
+          <a [matTooltip]="'anms.footer.changelog' | translate"
              matTooltipPosition="before"
              href="https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md">
             <mat-icon fontSet="fas" fontIcon="fa-rocket"></mat-icon>
