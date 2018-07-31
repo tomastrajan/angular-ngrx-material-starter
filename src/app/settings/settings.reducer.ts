@@ -17,8 +17,7 @@ export type Language = 'en' | 'sk';
 export class ActionSettingsChangeLanguage implements Action {
   readonly type = SettingsActionTypes.CHANGE_LANGUAGE;
 
-  constructor(public payload: { language: Language }) {
-  }
+  constructor(public payload: { language: Language }) {}
 }
 
 export class ActionSettingsChangeTheme implements Action {

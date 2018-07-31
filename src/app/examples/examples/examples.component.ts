@@ -23,8 +23,7 @@ export class ExamplesComponent implements OnInit {
     { link: 'authenticated', label: 'anms.examples.menu.auth' }
   ];
 
-  constructor(private store: Store<any>, private translate: TranslateService) {
-  }
+  constructor(private store: Store<any>, private translate: TranslateService) {}
 
   ngOnInit(): void {
     this.translate.setDefaultLang('en');

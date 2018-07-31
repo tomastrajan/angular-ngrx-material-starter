@@ -14,7 +14,8 @@
   "anms.about.get-started": "Get stared",
   "anms.about.get-notified": "Get notified about new releases",
   "anms.about.get-notified.follow": "Follow",
-  "anms.about.get-notified.description": "a Twitter bot that helps you to stay up to date with releases of popular frontend frameworks & libraries!",
+  "anms.about.get-notified.description":
+    "a Twitter bot that helps you to stay up to date with releases of popular frontend frameworks & libraries!",
   "anms.features.title": "Features",
   "anms.features.documentation": "Docs",
   "anms.features.guide": "Guide",
@@ -23,13 +24,18 @@
   "anms.features.angular-cli": "A command line interface for Angular",
   "anms.features.ngrx": "One way data flow powered by RxJS Observables",
   "anms.features.ngxtranslate": "An internationalization library for Angular",
-  "anms.features.rxjs": "Reactive programming with async collections using Observables",
-  "anms.features.bootstrap": "Responsive layout from battle tested, world most famous UI library",
-  "anms.features.typescript": "Superior developer experience, code completion, refactoring and less bugs",
+  "anms.features.rxjs":
+    "Reactive programming with async collections using Observables",
+  "anms.features.bootstrap":
+    "Responsive layout from battle tested, world most famous UI library",
+  "anms.features.typescript":
+    "Superior developer experience, code completion, refactoring and less bugs",
   "anms.features.fontawesome": "Easy to use vector icons and social logos",
-  "anms.features.themes": "Flexible theming support for provided and custom components",
+  "anms.features.themes":
+    "Flexible theming support for provided and custom components",
   "anms.features.themes.title": "Themes",
-  "anms.features.lazyloading": "Faster startup time with lazy loaded feature modules",
+  "anms.features.lazyloading":
+    "Faster startup time with lazy loaded feature modules",
   "anms.features.lazyloading.title": "Lazy loading",
   "anms.settings.title": "Settings",
   "anms.settings.general": "General",

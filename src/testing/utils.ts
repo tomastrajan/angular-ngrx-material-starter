@@ -36,6 +36,5 @@ export class TestStore<T> {
   providers: [{ provide: Store, useClass: TestStore }]
 })
 export class TestingModule {
-  constructor() {
-  }
+  constructor() {}
 }
