@@ -19,6 +19,7 @@ import { ParentComponent } from './theming/parent/parent.component';
 import { ChildComponent } from './theming/child/child.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '@env/environment';
 
 @NgModule({
   imports: [
@@ -53,5 +54,5 @@ export class ExamplesModule {
 }
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/examples/', '.json');
+  return new TranslateHttpLoader(http, `${environment.i18nPrefix}/assets/i18n/examples/`, '.json');
 }
