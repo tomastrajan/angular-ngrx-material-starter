@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.4.1"></a>
+## [6.4.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.4.0...v6.4.1) (2018-07-31)
+
+
+### Bug Fixes
+
+* **i18n:** assets url for github pages deployment ([e0d0e76](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e0d0e76))
+
+
+
 <a name="6.4.0"></a>
 # [6.4.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.3.0...v6.4.0) (2018-07-31)
 
