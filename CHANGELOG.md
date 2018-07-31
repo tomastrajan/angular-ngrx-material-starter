@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.4.0"></a>
+# [6.4.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.3.0...v6.4.0) (2018-07-31)
+
+
+### Bug Fixes
+
+* **polyfills:** add missing hammerjs, fixes [#247](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/247) ([27cc797](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/27cc797))
+* **tsconfig:** adjust baseUrl, fixes [#220](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/220) ([04c80f3](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/04c80f3))
+* code formatting, tslint errors, i18n test dependencies ([7c8c8f5](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7c8c8f5))
+* prettier ([144c566](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/144c566))
+
+
+### Features
+
+* **dependencies:** migrate to the latest version of Angular, Ngrx, Material, CLI ([3f7a310](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3f7a310))
+* **i18n:** add i18n support, closes [#287](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/287) ([527f5f1](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/527f5f1))
+* **tests:** for settings component [#244](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/244) ([e5d65ed](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e5d65ed))
+* **tests:** setting page [#244](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/244) ([3631a0c](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3631a0c))
+* **todo:** create tests for todos container [added more TODOS] ([#219](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/219)) ([b4c49f6](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b4c49f6))
+
+
+
 <a name="6.3.0"></a>
 # [6.3.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.2.0...v6.3.0) (2018-06-09)
 
