@@ -38,6 +38,7 @@ npm start
   * `npm run prettier` - runs prettier to format whole code base (`.ts` and `.scss`) 
   * `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application) 
 
+![analzye](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/analyze.png)
 
 ## Make It Your Own
 When using this starter project to build your own app you might consider some of the following steps:
