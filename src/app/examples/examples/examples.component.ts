@@ -29,8 +29,7 @@ export class ExamplesComponent implements OnInit, OnDestroy {
     private router: Router,
     private titleService: TitleService,
     private translate: TranslateService
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.translate.setDefaultLang('en');

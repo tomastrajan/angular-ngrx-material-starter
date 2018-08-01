@@ -11,8 +11,7 @@ export class TitleService {
   constructor(
     private translateService: TranslateService,
     private title: Title
-  ) {
-  }
+  ) {}
 
   setTitle(
     snapshot: ActivatedRouteSnapshot,
