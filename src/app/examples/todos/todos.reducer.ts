@@ -13,12 +13,16 @@ export enum TodosActionTypes {
 
 export class ActionTodosAdd implements Action {
   readonly type = TodosActionTypes.ADD;
-  constructor(public payload: { name: string }) {}
+
+  constructor(readonly payload: { name: string }) {
+  }
 }
 
 export class ActionTodosToggle implements Action {
   readonly type = TodosActionTypes.TOGGLE;
-  constructor(public payload: { id: string }) {}
+
+  constructor(readonly payload: { id: string }) {
+  }
 }
 
 export class ActionTodosRemoveDone implements Action {
@@ -27,12 +31,16 @@ export class ActionTodosRemoveDone implements Action {
 
 export class ActionTodosFilter implements Action {
   readonly type = TodosActionTypes.FILTER;
-  constructor(public payload: { filter: TodosFilter }) {}
+
+  constructor(readonly payload: { filter: TodosFilter }) {
+  }
 }
 
 export class ActionTodosPersist implements Action {
   readonly type = TodosActionTypes.PERSIST;
-  constructor(public payload: { todos: Todo[] }) {}
+
+  constructor(readonly payload: { todos: Todo[] }) {
+  }
 }
 
 export type TodosActions =
