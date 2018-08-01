@@ -17,50 +17,43 @@ export type Language = 'en' | 'sk';
 export class ActionSettingsChangeLanguage implements Action {
   readonly type = SettingsActionTypes.CHANGE_LANGUAGE;
 
-  constructor(readonly payload: { language: Language }) {
-  }
+  constructor(readonly payload: { language: Language }) {}
 }
 
 export class ActionSettingsChangeTheme implements Action {
   readonly type = SettingsActionTypes.CHANGE_THEME;
 
-  constructor(readonly payload: { theme: string }) {
-  }
+  constructor(readonly payload: { theme: string }) {}
 }
 
 export class ActionSettingsChangeAutoNightMode implements Action {
   readonly type = SettingsActionTypes.CHANGE_AUTO_NIGHT_AUTO_MODE;
 
-  constructor(readonly payload: { autoNightMode: boolean }) {
-  }
+  constructor(readonly payload: { autoNightMode: boolean }) {}
 }
 
 export class ActionSettingsChangeAnimationsPage implements Action {
   readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_PAGE;
 
-  constructor(readonly payload: { pageAnimations: boolean }) {
-  }
+  constructor(readonly payload: { pageAnimations: boolean }) {}
 }
 
 export class ActionSettingsChangeAnimationsPageDisabled implements Action {
   readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED;
 
-  constructor(readonly payload: { pageAnimationsDisabled: boolean }) {
-  }
+  constructor(readonly payload: { pageAnimationsDisabled: boolean }) {}
 }
 
 export class ActionSettingsChangeAnimationsElements implements Action {
   readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS;
 
-  constructor(readonly payload: { elementsAnimations: boolean }) {
-  }
+  constructor(readonly payload: { elementsAnimations: boolean }) {}
 }
 
 export class ActionSettingsPersist implements Action {
   readonly type = SettingsActionTypes.PERSIST;
 
-  constructor(readonly payload: { settings: SettingsState }) {
-  }
+  constructor(readonly payload: { settings: SettingsState }) {}
 }
 
 export type SettingsActions =

@@ -12,22 +12,19 @@ export enum StockMarketActionTypes {
 export class ActionStockMarketRetrieve implements Action {
   readonly type = StockMarketActionTypes.RETRIEVE;
 
-  constructor(readonly payload: { symbol: string }) {
-  }
+  constructor(readonly payload: { symbol: string }) {}
 }
 
 export class ActionStockMarketRetrieveSuccess implements Action {
   readonly type = StockMarketActionTypes.RETRIEVE_SUCCESS;
 
-  constructor(readonly payload: { stock: Stock }) {
-  }
+  constructor(readonly payload: { stock: Stock }) {}
 }
 
 export class ActionStockMarketRetrieveError implements Action {
   readonly type = StockMarketActionTypes.RETRIEVE_ERROR;
 
-  constructor(readonly payload: { error: HttpErrorResponse }) {
-  }
+  constructor(readonly payload: { error: HttpErrorResponse }) {}
 }
 
 export type StockMarketActions =
