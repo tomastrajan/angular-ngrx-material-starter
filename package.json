@@ -1,6 +1,6 @@
 {
   "name": "angular-ngrx-material-starter",
-  "version": "6.4.3",
+  "version": "6.5.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -22,6 +22,11 @@
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate",
     "contributors:check": "all-contributors check"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier && ng lint"
+    }
   },
   "private": true,
   "dependencies": {
@@ -61,6 +66,7 @@
     "@types/node": "~9.4.0",
     "all-contributors-cli": "^5.2.1",
     "codelyzer": "~4.4.2",
+    "husky": "^1.0.0-rc.13",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.5",
