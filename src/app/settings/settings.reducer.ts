@@ -85,22 +85,11 @@ export function settingsReducer(
 ): SettingsState {
   switch (action.type) {
     case SettingsActionTypes.CHANGE_LANGUAGE:
-      return { ...state, language: action.payload.language };
-
     case SettingsActionTypes.CHANGE_THEME:
-      return { ...state, theme: action.payload.theme };
-
     case SettingsActionTypes.CHANGE_AUTO_NIGHT_AUTO_MODE:
-      return { ...state, autoNightMode: action.payload.autoNightMode };
-
     case SettingsActionTypes.CHANGE_ANIMATIONS_PAGE:
-      return { ...state, pageAnimations: action.payload.pageAnimations };
-
     case SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS:
-      return {
-        ...state,
-        elementsAnimations: action.payload.elementsAnimations
-      };
+      return { ...state, ...action.payload };
 
     case SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED:
       return {
