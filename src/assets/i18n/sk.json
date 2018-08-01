@@ -1,0 +1,60 @@
+{
+  "anms.title": "Angular NgRx Material Štartér",
+  "anms.title.short": "Angular Štartér",
+  "anms.header.github": "Github Repotitár Projektu",
+  "anms.footer.changelog": "Zobraziť list zmien",
+  "anms.menu.about": "Domov",
+  "anms.menu.features": "Vlastnosti",
+  "anms.menu.examples": "Príklady",
+  "anms.menu.settings": "Nastavenia",
+  "anms.menu.login": "Prihlásenie",
+  "anms.menu.logout": "Odhlásenie",
+  "anms.about.change-theme": "Zmeniť Tému",
+  "anms.about.check-blogs": "alebo si pozri blogy o",
+  "anms.about.get-started": "Ako začať",
+  "anms.about.get-notified": "Upozornenia na nové vydania",
+  "anms.about.get-notified.follow": "Sleduj",
+  "anms.about.get-notified.description":
+    ", Twitter bota ktorý ti pomôže zostať aktuálnym s vydaniami populárnych frontend frameworkov a knižníc!",
+  "anms.features.title": "Vlastnosti",
+  "anms.features.documentation": "Dok.",
+  "anms.features.guide": "Návod",
+  "anms.features.angular": "Moderný výkonný framework",
+  "anms.features.angular-material":
+    "Knižnica komponentov implementujúcich Material Dizajn",
+  "anms.features.angular-cli": "Rozhranie príkazového riadka pre Angular",
+  "anms.features.ngrx": "Jednosmerný tok dát s pomocou RxJS Observables",
+  "anms.features.rxjs":
+    "Reaktívne programovanie s asynchrónymi kolekciami s pomocou Observables",
+  "anms.features.ngxtranslate":
+    "Knižnica pre internacionalizáciu Angular applikácií",
+  "anms.features.bootstrap":
+    "Responzívny dizajn od ostrielanej, svetoznámej UI knižnice",
+  "anms.features.typescript":
+    "Vynikajúca podpora developerov, automatické dokončovanie kódu, refaktorovanie a menej chýb",
+  "anms.features.fontawesome":
+    "Ľahko použiteľné vektorové ikony a sociálne logá",
+  "anms.features.themes":
+    "Flexibilná podpora tém pre vstavané a vlastné komponenty",
+  "anms.features.themes.title": "Témy",
+  "anms.features.lazyloading":
+    "Rýchlejší štartovací čas s lenivým nahrávaním modulov",
+  "anms.features.lazyloading.title": "Lenivé nahrávanie",
+  "anms.settings.title": "Nastavenia",
+  "anms.settings.general": "Hlavné",
+  "anms.settings.general.placeholder": "Jazyk",
+  "anms.settings.general.language.en": "Angličtina",
+  "anms.settings.general.language.sk": "Slovenčina",
+  "anms.settings.themes": "Témy",
+  "anms.settings.themes.placeholder": "Téma",
+  "anms.settings.themes.blue": "Modrá",
+  "anms.settings.themes.light": "Svetlá",
+  "anms.settings.themes.nature": "Prírodná",
+  "anms.settings.themes.dark": "Tmavá",
+  "anms.settings.themes.night-mode":
+    "Automatický nočný režim (od 21:00 do 7:00)",
+  "anms.settings.animations": "Animácie",
+  "anms.settings.animations.page": "Animácia celej stránky pri navigácii",
+  "anms.settings.animations.elements":
+    "Animácia elementov stránky pri navigácii"
+}

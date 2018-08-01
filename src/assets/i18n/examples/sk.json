@@ -1,0 +1,66 @@
+{
+  "anms.examples.menu.todos": "Zoznam úloh",
+  "anms.examples.menu.stocks": "Akcie",
+  "anms.examples.menu.theming": "Témy",
+  "anms.examples.menu.auth": "Pre prihlásených",
+  "anms.examples.todos.input": "Plánujem urobiť...",
+  "anms.examples.todos.tooltip.add": "Pridaj novú úlohu",
+  "anms.examples.todos.tooltip.remove": "Odstráň dokončené úlohy",
+  "anms.examples.todos.list": "List úloh",
+  "anms.examples.todos.example": "Príklad listu úloh",
+  "anms.examples.todos.text1": "Toto je klasický príklad",
+  "anms.examples.todos.text2": "listu úloh",
+  "anms.examples.todos.text3":
+    "s podporou pre pridávanie, dokončovanie, odstraňovanie a filtrovanie úloh.",
+  "anms.examples.todos.text4":
+    "Spravovanie stavu aplikácie je implementované s pomocou",
+  "anms.examples.todos.text5":
+    "modulu a s podporou pre lenivo načítané reducery (toto je lenivo načítaný modul).",
+  "anms.examples.todos.text6":
+    "Úlohy sú uložené aj v lokálnom úložisku prehliadača čiže Vaše úlohy budú dostupné aj pri ďalších návštevách aplikácie pri použití toho istého prehliadača.",
+  "anms.examples.todos.filter.all": "Všetky",
+  "anms.examples.todos.filter.done": "Hotové",
+  "anms.examples.todos.filter.active": "Aktívne",
+  "anms.examples.todos.filter.description": "Zobrazené",
+  "anms.examples.todos.filter.items": "úlohy",
+  "anms.examples.stocks.title": "Akciový trh",
+  "anms.examples.stocks.symbol": "Symbol akcie",
+  "anms.examples.stocks.description":
+    "Prosím, poskytnite existujúci symbol akciového trhu ako:",
+  "anms.examples.stocks.text1":
+    "Príklad akciového trhu ukazuje ako implementovať",
+  "anms.examples.stocks.text2": "volania pomocou",
+  "anms.examples.stocks.text3": "modulu.",
+  "anms.examples.stocks.text4":
+    "Zmena symbolu v zadávacom poli bude viesť k vytvoreniu akcie, ktorá zmení stav aplikácie, nastaví nahrávanie (v reduceri) a spustí efekt na načítanie ceny zvolených akcií.",
+  "anms.examples.stocks.text5":
+    "Každé nasledujúce volanie zruší to predošlé na zlepšenie výkonu pomocou",
+  "anms.examples.stocks.text6":
+    "'Úspech' alebo 'chyba' akcie sú vytvorené na konci každého volania. Načítavací indikátor je odstránený a aplikácia zobrazí informácie o cene akcií alebo chybovú správu v prípade zlyhania volania.",
+  "anms.examples.stocks.error1": "Akcie so symbolom",
+  "anms.examples.stocks.error2": "neboli nájdené",
+  "anms.examples.theming.parent.title":
+    "Určovanie rozsahu tém s vnorenými komponentami",
+  "anms.examples.theming.parent.description": "rodič funguje!",
+  "anms.examples.theming.parent.text1":
+    "Témy niesú importované pomocou komponentovej",
+  "anms.examples.theming.parent.text2": "vlastnosti definovanej v",
+  "anms.examples.theming.parent.text3": "dekorátore, ale v hlavnom",
+  "anms.examples.theming.parent.text4": "súbore. Toto je dôvod prečo témy ",
+  "anms.examples.theming.parent.text5": "NIE SÚ",
+  "anms.examples.theming.parent.text6": "obmedzené len pre šablónu komponentu.",
+  "anms.examples.theming.parent.text7": "Toto je dôvod prečo musíme použiť",
+  "anms.examples.theming.parent.text8": "špecifický",
+  "anms.examples.theming.parent.text9":
+    "selektor, aby sme predišli situácii, keď rodičové štýly presiaknu do dieťaťa. Toto sa dá dosiahnuť použitím",
+  "anms.examples.theming.parent.text10":
+    "v css na zvýšenie ich špecifity. Napríklad, v témovom súbore tohto komponentu:",
+  "anms.examples.theming.child.title": "h1 dieťaťa",
+  "anms.examples.theming.child.subtitle": "by malo byť bez štýlov",
+  "anms.examples.theming.child.description": "dieťa funguje!",
+  "anms.examples.auth.title": "Komponent pre prihlásených používateľov",
+  "anms.examples.auth.description1":
+    "Tento komponent je dostupný len pre prihlásených používateľov",
+  "anms.examples.auth.description2":
+    "Odhlásenie sa zo systému spôsobí presmerovanie použávateľa na domovskú stránku"
+}

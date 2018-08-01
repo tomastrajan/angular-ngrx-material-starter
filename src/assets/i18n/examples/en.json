@@ -1,0 +1,66 @@
+{
+  "anms.examples.menu.todos": "Todos",
+  "anms.examples.menu.stocks": "Stocks",
+  "anms.examples.menu.theming": "Theming",
+  "anms.examples.menu.auth": "Auth",
+  "anms.examples.todos.input": "I am going to...",
+  "anms.examples.todos.tooltip.add": "Add new todo",
+  "anms.examples.todos.tooltip.remove": "Remove done todos",
+  "anms.examples.todos.list": "Todo list",
+  "anms.examples.todos.example": "Todo example",
+  "anms.examples.todos.text1": "This is a classic",
+  "anms.examples.todos.text2": "todo",
+  "anms.examples.todos.text3":
+    "example with support for adding, toggling, removing and filtering of the todo items.",
+  "anms.examples.todos.text4": "State handling is implemented using",
+  "anms.examples.todos.text5":
+    "module and support for lazy loaded reducers (this is a lazy loaded feature module).",
+  "anms.examples.todos.text6":
+    "Todos are persisted into local storage so you should see your todos also on later visits when using the same browser.",
+  "anms.examples.todos.filter.all": "All",
+  "anms.examples.todos.filter.done": "Done",
+  "anms.examples.todos.filter.active": "Active",
+  "anms.examples.todos.filter.description": "Displaying",
+  "anms.examples.todos.filter.items": "todos",
+  "anms.examples.todos.filter.item": "todo",
+  "anms.examples.stocks.title": "Stock market",
+  "anms.examples.stocks.symbol": "Stock symbol",
+  "anms.examples.stocks.description":
+    "Please provide some valid stock market symbol like:",
+  "anms.examples.stocks.text1": "Stock market example shows how to implement",
+  "anms.examples.stocks.text2": "requests using",
+  "anms.examples.stocks.text3": "module.",
+  "anms.examples.stocks.text4":
+    "Updating symbol query with different symbol will emit action which updates state with loading flag (reducer) and triggers effect for retrieving of selected stock.",
+  "anms.examples.stocks.text5":
+    "Actions are debounced and every subsequent request will cancel previous one using",
+  "anms.examples.stocks.text6":
+    "Success or error actions are emitted on request completion. Loading spinner is removed and stock info or error message is displayed.",
+  "anms.examples.stocks.error1": "Stock",
+  "anms.examples.stocks.error2": "not found",
+  "anms.examples.theming.parent.title": "Theme scoping with nested components",
+  "anms.examples.theming.parent.description": "parent works!",
+  "anms.examples.theming.parent.text1":
+    "Theme styles are not imported in component's",
+  "anms.examples.theming.parent.text2": "property of",
+  "anms.examples.theming.parent.text3": "decorator but in the main",
+  "anms.examples.theming.parent.text4":
+    "file. Because of this, theme styles are",
+  "anms.examples.theming.parent.text5": "NOT",
+  "anms.examples.theming.parent.text6":
+    "scoped to the component automatically.",
+  "anms.examples.theming.parent.text7": "We have to use",
+  "anms.examples.theming.parent.text8": "specific",
+  "anms.examples.theming.parent.text9":
+    "selectors to prevent styles from leaking into child components. This can be achieved by using",
+  "anms.examples.theming.parent.text10":
+    "in css rules to enhance their specificity. For example checkout theme file of this component:",
+  "anms.examples.theming.child.title": "child's h1",
+  "anms.examples.theming.child.subtitle": "should be without style",
+  "anms.examples.theming.child.description": "child works!",
+  "anms.examples.auth.title": "Authenticated component",
+  "anms.examples.auth.description1":
+    "This component is only accessible for authenticated users",
+  "anms.examples.auth.description2":
+    "Logging out will cause user to be redirected to home screen if visiting route accessible only to authenticated users"
+}

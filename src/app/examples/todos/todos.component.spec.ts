@@ -5,11 +5,9 @@ import {
   inject
 } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Store } from '@ngrx/store';
 
-import { SharedModule } from '@app/shared';
-import { TestStore } from '@testing/utils';
+import { TestStore, TestingModule } from '@testing/utils';
 
 import { TodosComponent } from './todos.component';
 import {
@@ -54,8 +52,7 @@ describe('TodosComponent', () => {
     async(() => {
       TestBed.configureTestingModule({
         declarations: [TodosComponent],
-        imports: [NoopAnimationsModule, SharedModule],
-        providers: [{ provide: Store, useClass: TestStore }]
+        imports: [TestingModule]
       }).compileComponents();
     })
   );

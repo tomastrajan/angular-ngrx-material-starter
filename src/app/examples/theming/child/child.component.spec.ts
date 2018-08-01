@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { TestingModule } from '@testing/utils';
+
 import { ChildComponent } from './child.component';
 
 describe('ChildComponent', () => {
@@ -9,6 +11,7 @@ describe('ChildComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
+        imports: [TestingModule],
         declarations: [ChildComponent]
       }).compileComponents();
     })

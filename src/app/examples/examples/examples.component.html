@@ -4,7 +4,7 @@
      [routerLink]="e.link"
      routerLinkActive #rla="routerLinkActive"
      [active]="rla.isActive">
-    {{e.label}}
+    {{e.label | translate}}
   </a>
 </nav>
 
