@@ -1,17 +1,17 @@
 import browser from 'browser-detect';
-import { Title } from '@angular/platform-browser';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { ActivationEnd, Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs';
-import { takeUntil, filter } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 
 import {
   ActionAuthLogin,
   ActionAuthLogout,
   AnimationsService,
+  TitleService,
   selectorAuth,
   routeAnimations
 } from '@app/core';
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit, OnDestroy {
     public overlayContainer: OverlayContainer,
     private store: Store<any>,
     private router: Router,
-    private titleService: Title,
+    private titleService: TitleService,
     private animationService: AnimationsService,
     private translate: TranslateService
   ) {}
@@ -154,33 +154,14 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   private subscribeToRouterEvents() {
-    this.router.events
-      .pipe(
-        filter(
-          event =>
-            event instanceof ActivationEnd || event instanceof NavigationEnd
-        ),
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe(event => {
-        if (event instanceof ActivationEnd) {
-          this.setPageTitle(event);
-        }
+    this.router.events.pipe(takeUntil(this.unsubscribe$)).subscribe(event => {
+      if (event instanceof ActivationEnd) {
+        this.titleService.setTitle(event.snapshot);
+      }
 
-        if (event instanceof NavigationEnd) {
-          AppComponent.trackPageView(event);
-        }
-      });
-  }
-
-  private setPageTitle(event: ActivationEnd) {
-    let lastChild = event.snapshot;
-    while (lastChild.children.length) {
-      lastChild = lastChild.children[0];
-    }
-    const { title } = lastChild.data;
-    this.titleService.setTitle(
-      title ? `${title} - ${env.appName}` : env.appName
-    );
+      if (event instanceof NavigationEnd) {
+        AppComponent.trackPageView(event);
+      }
+    });
   }
 }

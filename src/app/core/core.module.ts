@@ -16,6 +16,7 @@ import { authReducer } from './auth/auth.reducer';
 import { AuthEffects } from './auth/auth.effects';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AnimationsService } from './animations/animations.service';
+import { TitleService } from './title/title.service';
 
 export const metaReducers: MetaReducer<any>[] = [initStateFromLocalStorage];
 
@@ -51,7 +52,12 @@ if (!environment.production) {
     })
   ],
   declarations: [],
-  providers: [LocalStorageService, AuthGuardService, AnimationsService],
+  providers: [
+    LocalStorageService,
+    AuthGuardService,
+    AnimationsService,
+    TitleService
+  ],
   exports: [TranslateModule]
 })
 export class CoreModule {
