@@ -31,10 +31,10 @@ export class StockMarketEffects {
   ) {}
 
   @Effect()
-  retrieveStock(): Observable<Action> {
+  retrieveStock() {
     return this.actions$.pipe(
-      ofType(StockMarketActionTypes.RETRIEVE),
-      tap((action: ActionStockMarketRetrieve) =>
+      ofType<ActionStockMarketRetrieve>(StockMarketActionTypes.RETRIEVE),
+      tap(action =>
         this.localStorageService.setItem(STOCK_MARKET_KEY, {
           symbol: action.payload.symbol
         })
