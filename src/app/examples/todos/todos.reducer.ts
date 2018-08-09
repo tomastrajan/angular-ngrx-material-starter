@@ -13,8 +13,11 @@ export enum TodosActionTypes {
 
 export class ActionTodosAdd implements Action {
   readonly type = TodosActionTypes.ADD;
+  readonly payload: { id: string; name: string };
 
-  constructor(readonly payload: { name: string }) {}
+  constructor({ id = uuid(), name = '' }: { id?: string; name: string }) {
+    this.payload = { id, name };
+  }
 }
 
 export class ActionTodosToggle implements Action {
@@ -71,11 +74,12 @@ export function todosReducer(
         ...state,
         items: [
           {
-            id: uuid(),
+            id: action.payload.id,
             name: action.payload.name,
             done: false
-          }
-        ].concat(state.items)
+          },
+          ...state.items
+        ]
       };
 
     case TodosActionTypes.TOGGLE:
