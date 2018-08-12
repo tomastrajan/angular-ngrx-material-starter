@@ -16,16 +16,23 @@
         "profile": "https://medium.com/@tomastrajan",
         "contributions": [
           "code",
-          "review",
-          "ideas",
           "doc",
           "test",
           "design",
-          "talk",
-          "translation",
-          "tutorial",
           "blog"
         ]
+    },
+    {
+          "login": "timdeschryver",
+          "name": "Tim Deschryver",
+          "avatar_url": "https://avatars1.githubusercontent.com/u/28659384?v=4",
+          "profile": "https://twitter.com/tim_deschryver",
+          "contributions": [
+            "code",
+            "review",
+            "ideas",
+            "doc"
+          ]
     },
     {
       "login": "shootermv",
@@ -102,18 +109,6 @@
       "profile": "https://github.com/hhubik",
       "contributions": [
         "code",
-        "doc"
-      ]
-    },
-    {
-      "login": "timdeschryver",
-      "name": "Tim Deschryver",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/28659384?v=4",
-      "profile": "https://twitter.com/tim_deschryver",
-      "contributions": [
-        "code",
-        "review",
-        "ideas",
         "doc"
       ]
     }
