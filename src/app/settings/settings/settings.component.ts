@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -32,10 +32,9 @@ export class SettingsComponent implements OnInit, OnDestroy {
 
   languages = [{ value: 'en', label: 'en' }, { value: 'sk', label: 'sk' }];
 
-  constructor(private store: Store<any>) {
+  constructor(private store: Store<{}>) {
     store
-      .select(selectorSettings)
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(select(selectorSettings), takeUntil(this.unsubscribe$))
       .subscribe(settings => (this.settings = settings));
   }
 

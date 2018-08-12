@@ -3,7 +3,7 @@ import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
 import { ActivationEnd, Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -101,8 +101,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private subscribeToIsAuthenticated() {
     this.store
-      .select(selectorAuth)
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(select(selectorAuth), takeUntil(this.unsubscribe$))
       .subscribe(auth => (this.isAuthenticated = auth.isAuthenticated));
   }
 
@@ -115,8 +114,7 @@ export class AppComponent implements OnInit, OnDestroy {
       );
     }
     this.store
-      .select(selectorSettings)
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(select(selectorSettings), takeUntil(this.unsubscribe$))
       .subscribe(settings => {
         this.settings = settings;
         this.setTheme(settings);
