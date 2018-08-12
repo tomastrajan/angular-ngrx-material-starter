@@ -1,14 +1,9 @@
 import { By } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { MatSlideToggle } from '@angular/material';
-import {
-  async,
-  ComponentFixture,
-  TestBed,
-  inject
-} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TestingModule, TestStore } from '@testing/utils';
+import { TestingModule, MockStore } from '@testing/utils';
 
 import { SettingsComponent } from './settings.component';
 import {
@@ -22,7 +17,7 @@ import {
 describe('SettingsComponent', () => {
   let component: SettingsComponent;
   let fixture: ComponentFixture<SettingsComponent>;
-  let store: TestStore<SettingsState>;
+  let store: MockStore<any>;
   let dispatchSpy;
 
   const getThemeSelectArrow = () =>
@@ -36,19 +31,17 @@ describe('SettingsComponent', () => {
         declarations: [SettingsComponent],
         imports: [TestingModule]
       }).compileComponents();
-    })
-  );
 
-  beforeEach(
-    inject([Store], (testStore: TestStore<SettingsState>) => {
-      store = testStore;
+      store = TestBed.get(Store);
       store.setState({
-        theme: 'DEFAULT-THEME',
-        autoNightMode: true,
-        pageAnimations: true,
-        pageAnimationsDisabled: false,
-        elementsAnimations: true,
-        language: 'en'
+        settings: {
+          theme: 'DEFAULT-THEME',
+          autoNightMode: true,
+          pageAnimations: true,
+          pageAnimationsDisabled: false,
+          elementsAnimations: true,
+          language: 'en'
+        }
       });
       fixture = TestBed.createComponent(SettingsComponent);
       component = fixture.componentInstance;
@@ -123,12 +116,14 @@ describe('SettingsComponent', () => {
 
   it('should disable change animations page when disabled is set in state', () => {
     store.setState({
-      theme: 'DEFAULT-THEME',
-      autoNightMode: true,
-      pageAnimations: true,
-      pageAnimationsDisabled: true, // change animations disabled
-      elementsAnimations: true,
-      language: 'en'
+      settings: {
+        theme: 'DEFAULT-THEME',
+        autoNightMode: true,
+        pageAnimations: true,
+        pageAnimationsDisabled: true, // change animations disabled
+        elementsAnimations: true,
+        language: 'en'
+      }
     });
     fixture.detectChanges();
 

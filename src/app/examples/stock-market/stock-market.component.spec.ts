@@ -1,16 +1,9 @@
-import {
-  async,
-  ComponentFixture,
-  inject,
-  TestBed
-} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { HttpErrorResponse } from '@angular/common/http';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
 
 import { Store } from '@ngrx/store';
-import { TestingModule, TestStore } from '@testing/utils';
+import { TestingModule, MockStore } from '@testing/utils';
 import { CoreModule } from '@app/core';
 
 import { ExamplesModule } from '../examples.module';
@@ -24,7 +17,7 @@ import {
 describe('StockMarketComponent', () => {
   let component: StockMarketComponent;
   let fixture: ComponentFixture<StockMarketComponent>;
-  let store: TestStore<StockMarketState>;
+  let store: MockStore<any>;
 
   const getSpinner = () => fixture.debugElement.query(By.css('mat-spinner'));
 
@@ -51,15 +44,11 @@ describe('StockMarketComponent', () => {
       async(() => {
         TestBed.configureTestingModule({
           imports: [TestingModule, CoreModule, ExamplesModule],
-          providers: [{ provide: Store, useClass: TestStore }]
+          providers: [{ provide: Store, useClass: MockStore }]
         }).compileComponents();
-      })
-    );
 
-    beforeEach(
-      inject([Store], (testStore: TestStore<StockMarketState>) => {
-        store = testStore;
-        store.setState({ symbol: '', loading: true });
+        store = TestBed.get(Store);
+        store.setState(createState({ symbol: '', loading: true }));
         fixture = TestBed.createComponent(StockMarketComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
@@ -90,7 +79,7 @@ describe('StockMarketComponent', () => {
 
     describe('and stocks are loading', () => {
       beforeEach(() => {
-        store.setState({ symbol: 'TDD', loading: true });
+        store.setState(createState({ symbol: 'TDD', loading: true }));
         fixture.detectChanges();
       });
 
@@ -101,7 +90,7 @@ describe('StockMarketComponent', () => {
 
     describe('and stocks are not loading', () => {
       beforeEach(() => {
-        store.setState({ symbol: 'TDD', loading: false });
+        store.setState(createState({ symbol: 'TDD', loading: false }));
         fixture.detectChanges();
       });
 
@@ -112,11 +101,13 @@ describe('StockMarketComponent', () => {
 
     describe('and the error happened on stock retrieval', () => {
       beforeEach(() => {
-        store.setState({
-          symbol: 'TDD',
-          loading: false,
-          error: new HttpErrorResponse({})
-        });
+        store.setState(
+          createState({
+            symbol: 'TDD',
+            loading: false,
+            error: new HttpErrorResponse({})
+          })
+        );
         fixture.detectChanges();
       });
 
@@ -134,20 +125,22 @@ describe('StockMarketComponent', () => {
       const changePercent = '11';
 
       beforeEach(() => {
-        store.setState({
-          symbol,
-          loading: false,
-          stock: {
+        store.setState(
+          createState({
             symbol,
-            exchange,
-            last,
-            ccy,
-            change,
-            changePercent,
-            changeNegative: true,
-            changePositive: false
-          }
-        });
+            loading: false,
+            stock: {
+              symbol,
+              exchange,
+              last,
+              ccy,
+              change,
+              changePercent,
+              changeNegative: true,
+              changePositive: false
+            }
+          })
+        );
 
         fixture.detectChanges();
       });
@@ -176,3 +169,11 @@ describe('StockMarketComponent', () => {
     });
   });
 });
+
+function createState(stockState: StockMarketState) {
+  return {
+    examples: {
+      stocks: stockState
+    }
+  };
+}
