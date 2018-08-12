@@ -9,6 +9,31 @@
   "imageSize": 100,
   "commit": false,
   "contributors": [
+      {
+        "login": "tomastrajan",
+        "name": "Tomas Trajan",
+        "avatar_url": "https://avatars0.githubusercontent.com/u/3764868?v=4",
+        "profile": "https://medium.com/@tomastrajan",
+        "contributions": [
+          "code",
+          "doc",
+          "test",
+          "design",
+          "blog"
+        ]
+    },
+    {
+          "login": "timdeschryver",
+          "name": "Tim Deschryver",
+          "avatar_url": "https://avatars1.githubusercontent.com/u/28659384?v=4",
+          "profile": "https://twitter.com/tim_deschryver",
+          "contributions": [
+            "code",
+            "review",
+            "ideas",
+            "doc"
+          ]
+    },
     {
       "login": "shootermv",
       "name": "Moshe",
@@ -16,7 +41,8 @@
       "profile": "http://gs500coder.blogspot.com",
       "contributions": [
         "code",
-        "test"
+        "test",
+        "bug"
       ]
     },
     {
@@ -82,6 +108,7 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/14813201?v=4",
       "profile": "https://github.com/hhubik",
       "contributions": [
+        "code",
         "doc"
       ]
     }

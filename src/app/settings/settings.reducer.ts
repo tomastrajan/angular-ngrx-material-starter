@@ -17,37 +17,43 @@ export type Language = 'en' | 'sk';
 export class ActionSettingsChangeLanguage implements Action {
   readonly type = SettingsActionTypes.CHANGE_LANGUAGE;
 
-  constructor(public payload: { language: Language }) {}
+  constructor(readonly payload: { language: Language }) {}
 }
 
 export class ActionSettingsChangeTheme implements Action {
   readonly type = SettingsActionTypes.CHANGE_THEME;
-  constructor(public payload: { theme: string }) {}
+
+  constructor(readonly payload: { theme: string }) {}
 }
 
 export class ActionSettingsChangeAutoNightMode implements Action {
   readonly type = SettingsActionTypes.CHANGE_AUTO_NIGHT_AUTO_MODE;
-  constructor(public payload: { autoNightMode: boolean }) {}
+
+  constructor(readonly payload: { autoNightMode: boolean }) {}
 }
 
 export class ActionSettingsChangeAnimationsPage implements Action {
   readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_PAGE;
-  constructor(public payload: { pageAnimations: boolean }) {}
+
+  constructor(readonly payload: { pageAnimations: boolean }) {}
 }
 
 export class ActionSettingsChangeAnimationsPageDisabled implements Action {
   readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED;
-  constructor(public payload: { pageAnimationsDisabled: boolean }) {}
+
+  constructor(readonly payload: { pageAnimationsDisabled: boolean }) {}
 }
 
 export class ActionSettingsChangeAnimationsElements implements Action {
   readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS;
-  constructor(public payload: { elementsAnimations: boolean }) {}
+
+  constructor(readonly payload: { elementsAnimations: boolean }) {}
 }
 
 export class ActionSettingsPersist implements Action {
   readonly type = SettingsActionTypes.PERSIST;
-  constructor(public payload: { settings: SettingsState }) {}
+
+  constructor(readonly payload: { settings: SettingsState }) {}
 }
 
 export type SettingsActions =
@@ -79,22 +85,11 @@ export function settingsReducer(
 ): SettingsState {
   switch (action.type) {
     case SettingsActionTypes.CHANGE_LANGUAGE:
-      return { ...state, language: action.payload.language };
-
     case SettingsActionTypes.CHANGE_THEME:
-      return { ...state, theme: action.payload.theme };
-
     case SettingsActionTypes.CHANGE_AUTO_NIGHT_AUTO_MODE:
-      return { ...state, autoNightMode: action.payload.autoNightMode };
-
     case SettingsActionTypes.CHANGE_ANIMATIONS_PAGE:
-      return { ...state, pageAnimations: action.payload.pageAnimations };
-
     case SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS:
-      return {
-        ...state,
-        elementsAnimations: action.payload.elementsAnimations
-      };
+      return { ...state, ...action.payload };
 
     case SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED:
       return {

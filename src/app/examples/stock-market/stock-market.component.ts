@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -24,8 +24,7 @@ export class StockMarketComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.initialized = false;
     this.store
-      .select(selectorStocks)
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(select(selectorStocks), takeUntil(this.unsubscribe$))
       .subscribe((stocks: any) => {
         this.stocks = stocks;
 

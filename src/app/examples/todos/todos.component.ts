@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -34,8 +34,7 @@ export class TodosComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store
-      .select(selectorTodos)
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(select(selectorTodos), takeUntil(this.unsubscribe$))
       .subscribe(todos => {
         this.todos = todos;
         this.store.dispatch(new ActionTodosPersist({ todos }));

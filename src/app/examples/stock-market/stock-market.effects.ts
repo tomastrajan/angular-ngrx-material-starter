@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
-import { Actions, Effect } from '@ngrx/effects';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Observable, of } from 'rxjs';
 import {
   tap,
@@ -31,9 +31,10 @@ export class StockMarketEffects {
   ) {}
 
   @Effect()
-  retrieveStock(): Observable<Action> {
-    return this.actions$.ofType(StockMarketActionTypes.RETRIEVE).pipe(
-      tap((action: ActionStockMarketRetrieve) =>
+  retrieveStock() {
+    return this.actions$.pipe(
+      ofType<ActionStockMarketRetrieve>(StockMarketActionTypes.RETRIEVE),
+      tap(action =>
         this.localStorageService.setItem(STOCK_MARKET_KEY, {
           symbol: action.payload.symbol
         })
