@@ -1,4 +1,4 @@
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivationEnd, Router } from '@angular/router';
@@ -44,8 +44,7 @@ export class ExamplesComponent implements OnInit, OnDestroy {
 
   private subscribeToSettings() {
     this.store
-      .select(selectorSettings)
-      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(select(selectorSettings), takeUntil(this.unsubscribe$))
       .subscribe((settings: SettingsState) =>
         this.translate.use(settings.language)
       );

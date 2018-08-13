@@ -1,23 +1,40 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable } from '@angular/core';
 import { SharedModule } from '@app/shared';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
-import { Store } from '@ngrx/store';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {
+  Store,
+  StateObservable,
+  ActionsSubject,
+  ReducerManager,
+  StoreModule
+} from '@ngrx/store';
+import { BehaviorSubject } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
 
-export class TestStore<T> {
-  private state: BehaviorSubject<T> = new BehaviorSubject(undefined);
+@Injectable()
+export class MockStore<T> extends Store<T> {
+  private stateSubject = new BehaviorSubject<T>({} as T);
 
-  setState(data: T) {
-    this.state.next(data);
+  constructor(
+    state$: StateObservable,
+    actionsObserver: ActionsSubject,
+    reducerManager: ReducerManager
+  ) {
+    super(state$, actionsObserver, reducerManager);
+    this.source = this.stateSubject.asObservable();
   }
 
-  select(selector?: any): Observable<T> {
-    return this.state.asObservable();
+  setState(nextState: T) {
+    this.stateSubject.next(nextState);
   }
+}
 
-  dispatch(action: any) {}
+export function provideMockStore() {
+  return {
+    provide: Store,
+    useClass: MockStore
+  };
 }
 
 @NgModule({
@@ -25,7 +42,8 @@ export class TestStore<T> {
     NoopAnimationsModule,
     RouterTestingModule,
     SharedModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot(),
+    StoreModule.forRoot({})
   ],
   exports: [
     NoopAnimationsModule,
@@ -33,7 +51,7 @@ export class TestStore<T> {
     SharedModule,
     TranslateModule
   ],
-  providers: [{ provide: Store, useClass: TestStore }]
+  providers: [provideMockStore()]
 })
 export class TestingModule {
   constructor() {}

@@ -22,7 +22,8 @@
       }
     }
 
-    .follow-releases {
+    .follow-releases,
+    .contributors {
       p {
         background-color: mat-color($background, background);
 
@@ -33,6 +34,12 @@
             color: mat-color($accent, darker);
           }
         }
+      }
+    }
+
+    .contributors {
+      img {
+        border-color: mat-color($background, background) !important;
       }
     }
   }

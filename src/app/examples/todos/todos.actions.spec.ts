@@ -4,11 +4,13 @@ describe('Todos Actions', () => {
   describe('TodosAdd', () => {
     it('should create an action', () => {
       const action = new fromTodos.ActionTodosAdd({ name: 'test' });
-
-      expect({ ...action }).toEqual({
-        type: fromTodos.TodosActionTypes.ADD,
-        payload: { name: 'test' }
-      });
+      expect(action.payload).toEqual(
+        jasmine.objectContaining({
+          name: 'test'
+        })
+      );
+      expect(action.type).toEqual(fromTodos.TodosActionTypes.ADD);
+      expect(action.payload.id).toBeDefined();
     });
   });
 

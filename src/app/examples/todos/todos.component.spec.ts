@@ -1,17 +1,13 @@
-import {
-  async,
-  ComponentFixture,
-  TestBed,
-  inject
-} from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 
-import { TestStore, TestingModule } from '@testing/utils';
+import { MockStore, TestingModule } from '@testing/utils';
 
 import { TodosComponent } from './todos.component';
 import {
   ActionTodosAdd,
+  TodosActionTypes,
   ActionTodosFilter,
   ActionTodosToggle,
   ActionTodosRemoveDone,
@@ -21,7 +17,7 @@ import {
 describe('TodosComponent', () => {
   let component: TodosComponent;
   let fixture: ComponentFixture<TodosComponent>;
-  let store: TestStore<TodosState>;
+  let store: MockStore<any>;
   let dispatchSpy;
 
   const getTodos = () => fixture.debugElement.queryAll(By.css('.todo'));
@@ -34,6 +30,7 @@ describe('TodosComponent', () => {
 
   const getTodosFilter = () =>
     fixture.debugElement.query(By.css('.todos-filter'));
+
   const getTodosFilterOptions = () =>
     fixture.debugElement.queryAll(
       By.css('.todos-filter-menu-overlay .mat-menu-item')
@@ -43,6 +40,7 @@ describe('TodosComponent', () => {
     fixture.debugElement.query(
       By.css('anms-big-input-action[fontIcon="fa-trash"] > button')
     );
+
   const addTodoBtn = () =>
     fixture.debugElement.query(
       By.css('anms-big-input-action[fontIcon="fa-plus"] > button')
@@ -54,13 +52,9 @@ describe('TodosComponent', () => {
         declarations: [TodosComponent],
         imports: [TestingModule]
       }).compileComponents();
-    })
-  );
 
-  beforeEach(
-    inject([Store], (testStore: TestStore<TodosState>) => {
-      store = testStore;
-      store.setState({ items: [], filter: 'ALL' });
+      store = TestBed.get(Store);
+      store.setState(createState({ items: [], filter: 'ALL' }));
       fixture = TestBed.createComponent(TodosComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
@@ -74,10 +68,12 @@ describe('TodosComponent', () => {
   });
 
   it('should display todos', () => {
-    store.setState({
-      items: [{ id: '1', name: 'test', done: false }],
-      filter: 'ALL'
-    });
+    store.setState(
+      createState({
+        items: [{ id: '1', name: 'test', done: false }],
+        filter: 'ALL'
+      })
+    );
 
     fixture.detectChanges();
     expect(getTodos().length).toBe(1);
@@ -85,13 +81,15 @@ describe('TodosComponent', () => {
   });
 
   it('should filter and show "DONE" todos', () => {
-    store.setState({
-      items: [
-        { id: '1', name: 'test 1', done: true },
-        { id: '2', name: 'test 2', done: false }
-      ],
-      filter: 'DONE'
-    });
+    store.setState(
+      createState({
+        items: [
+          { id: '1', name: 'test 1', done: true },
+          { id: '2', name: 'test 2', done: false }
+        ],
+        filter: 'DONE'
+      })
+    );
 
     fixture.detectChanges();
     expect(getTodos().length).toBe(1);
@@ -99,13 +97,15 @@ describe('TodosComponent', () => {
   });
 
   it('should dispatch remove "DONE" todos action', () => {
-    store.setState({
-      items: [
-        { id: '1', name: 'test 1', done: true },
-        { id: '2', name: 'test 2', done: false }
-      ],
-      filter: 'DONE'
-    });
+    store.setState(
+      createState({
+        items: [
+          { id: '1', name: 'test 1', done: true },
+          { id: '2', name: 'test 2', done: false }
+        ],
+        filter: 'DONE'
+      })
+    );
 
     fixture.detectChanges();
     dispatchSpy = spyOn(store, 'dispatch');
@@ -124,9 +124,7 @@ describe('TodosComponent', () => {
     fixture.detectChanges();
     expect(component.newTodo).toBe('');
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionTodosAdd({ name: 'test' })
-    );
+    expect(dispatchSpy.calls.mostRecent().args[0].payload.name).toBe('test');
   });
 
   it('should dispatch filter todo action', () => {
@@ -141,10 +139,12 @@ describe('TodosComponent', () => {
   });
 
   it('should dispatch toggle todo action', () => {
-    store.setState({
-      items: [{ id: '1', name: 'test 1', done: true }],
-      filter: 'ALL'
-    });
+    store.setState(
+      createState({
+        items: [{ id: '1', name: 'test 1', done: true }],
+        filter: 'ALL'
+      })
+    );
 
     fixture.detectChanges();
     dispatchSpy = spyOn(store, 'dispatch');
@@ -160,10 +160,12 @@ describe('TodosComponent', () => {
   });
 
   it('should disable remove done todos button if no todo is done', () => {
-    store.setState({
-      items: [{ id: '1', name: 'test 1', done: true }],
-      filter: 'ALL'
-    });
+    store.setState(
+      createState({
+        items: [{ id: '1', name: 'test 1', done: true }],
+        filter: 'ALL'
+      })
+    );
 
     fixture.detectChanges();
     expect(deleteDoneTodosBtn().nativeElement.disabled).toBeFalsy();
@@ -194,3 +196,11 @@ describe('TodosComponent', () => {
     expect(getBigInputValue()).toBe('');
   });
 });
+
+function createState(todoState: TodosState) {
+  return {
+    examples: {
+      todos: todoState
+    }
+  };
+}
