@@ -1,0 +1,67 @@
+{
+  "anms.examples.menu.todos": "Aufgabenliste",
+  "anms.examples.menu.stocks": "Börse",
+  "anms.examples.menu.theming": "Theming",
+  "anms.examples.menu.auth": "Auth.",
+  "anms.examples.todos.input": "Ich werde...",
+  "anms.examples.todos.tooltip.add": "Eine neue Aufgabe hinzufügen",
+  "anms.examples.todos.tooltip.remove": "Erledigte Aufgaben entfernen",
+  "anms.examples.todos.list": "Aufgabenliste",
+  "anms.examples.todos.example": "Aufgabenbeispiel",
+  "anms.examples.todos.text1": "Das ist eine klassische",
+  "anms.examples.todos.text2": "Aufgabenliste.",
+  "anms.examples.todos.text3":
+    "Beispiel zum Hinzufügen, Umschalten, Entfernen und Filtern einer Aufgabenliste.",
+  "anms.examples.todos.text4": "Die Statusbehandlung wir mithilfe von",
+  "anms.examples.todos.text5":
+    "Modulen und mit Unterstützung von Lazy Loaded Reducer implementiert (das ist ein Lazy Loaded Feature-Modul).",
+  "anms.examples.todos.text6":
+    "Aufgaben bleiben im lokalen Speicher erhalten, so dass du deine Aufgaben auch bei späteren Besuchen sehen solltest, ...vorausgesetzt du verwendest denselben Browser.",
+  "anms.examples.todos.filter.all": "Alle",
+  "anms.examples.todos.filter.done": "Erledigt",
+  "anms.examples.todos.filter.active": "Aktiv",
+  "anms.examples.todos.filter.description": "Anzeigen",
+  "anms.examples.todos.filter.items": "Aufgaben",
+  "anms.examples.todos.filter.item": "Aufgabe",
+  "anms.examples.stocks.title": "Börse",
+  "anms.examples.stocks.symbol": "Aktiensymbol",
+  "anms.examples.stocks.description":
+    "Hier ist ein gültiges Aktiensymbol anzugeben:",
+  "anms.examples.stocks.text1": "Das Börsenbeispiel zeigt, wie",
+  "anms.examples.stocks.text2": "Aufrufe mithilfe eines",
+  "anms.examples.stocks.text3": "Modules implementiert werden.",
+  "anms.examples.stocks.text4":
+    "Durch die Aktualisierung der Symbolabfrage mit einem anderen Symbol wird eine Aktion ausgelöst, die den Status mit Ladekennzeichen (Reduzierer) aktualisiert und den Effekt zum Abrufen des ausgewählten Aktienbestands auslöst.",
+  "anms.examples.stocks.text5":
+    "Aktionen werden entprellt und jede nachfolgende Anfrage wird die Vorherige löschen",
+  "anms.examples.stocks.text6":
+    "Nach Abschluss des Aufrufs werden Erfolgs- oder Fehleraktionen ausgegeben. Das Lade-Spinner wird entfernt und die Aktieninfo oder die Fehlermeldung wird angezeigt.",
+  "anms.examples.stocks.error1": "Aktienbestand",
+  "anms.examples.stocks.error2": "nicht gefunden",
+  "anms.examples.theming.parent.title":
+    "Thema beschränken mit verschachtelten Komponenten",
+  "anms.examples.theming.parent.description": "Eltern funktionieren!",
+  "anms.examples.theming.parent.text1":
+    "Themenstile werden nicht in der Eigenschaft",
+  "anms.examples.theming.parent.text2": "des Dekorators",
+  "anms.examples.theming.parent.text3": "sondern in der Hauptdatei",
+  "anms.examples.theming.parent.text4":
+    "der Komponente importiert. Aus diesem Grund werden Designstile",
+  "anms.examples.theming.parent.text5": "NICHT",
+  "anms.examples.theming.parent.text6":
+    "automatisch auf die Komponente beschränkt.",
+  "anms.examples.theming.parent.text7": "Wir müssen",
+  "anms.examples.theming.parent.text8": "spezifische",
+  "anms.examples.theming.parent.text9":
+    "Selektoren verwenden um zu verhindern, dass Stile ins Kind gelangen. Dies kann durch Verwendung von",
+  "anms.examples.theming.parent.text10":
+    "in CSS-Regeln erreicht werden, um ihre Spezifität zu erhöhen. Schau dir zum Beispiel die Themendatei dieser Komponente an:",
+  "anms.examples.theming.child.title": "h1 des Kindes",
+  "anms.examples.theming.child.subtitle": "sollte ohne Stil sein",
+  "anms.examples.theming.child.description": "Kind funktioniert!",
+  "anms.examples.auth.title": "Authentifizierte Komponente",
+  "anms.examples.auth.description1":
+    "Diese Komponente ist nur für authentifizierte Benutzer zugänglich",
+  "anms.examples.auth.description2":
+    "Das Abmelden führt dazu, dass der Benutzer zum Startbildschirm weitergeleitet wird, wenn die Route nur für authentifizierte Benutzer zugänglich ist"
+}
