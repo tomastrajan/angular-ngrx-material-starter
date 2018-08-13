@@ -7,6 +7,7 @@ import { MockStore, TestingModule } from '@testing/utils';
 import { TodosComponent } from './todos.component';
 import {
   ActionTodosAdd,
+  TodosActionTypes,
   ActionTodosFilter,
   ActionTodosToggle,
   ActionTodosRemoveDone,
@@ -123,9 +124,7 @@ describe('TodosComponent', () => {
     fixture.detectChanges();
     expect(component.newTodo).toBe('');
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionTodosAdd({ name: 'test' })
-    );
+    expect(dispatchSpy.calls.mostRecent().args[0].payload.name).toBe('test');
   });
 
   it('should dispatch filter todo action', () => {
