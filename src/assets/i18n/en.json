@@ -17,8 +17,10 @@
   "anms.about.get-notified.description":
     "a Twitter bot that helps you to stay up to date with releases of popular frontend frameworks & libraries!",
   "anms.about.contributors": "Contributors",
-  "anms.about.contributors.description1": "Want to start contributing to open source with Angular?",
-  "anms.about.contributors.description2": "Leave your mark and join the growing team of contributors!",
+  "anms.about.contributors.description1":
+    "Want to start contributing to open source with Angular?",
+  "anms.about.contributors.description2":
+    "Leave your mark and join the growing team of contributors!",
   "anms.about.contributors.description3": "Get started by having a look on ",
   "anms.about.contributors.description4": " and ",
   "anms.about.contributors.issues": "open issues",
