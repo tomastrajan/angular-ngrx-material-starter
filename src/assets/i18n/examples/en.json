@@ -55,7 +55,7 @@
     "selectors to prevent styles from leaking into child components. This can be achieved by using",
   "anms.examples.theming.parent.text10":
     "in css rules to enhance their specificity. For example checkout theme file of this component:",
-  "anms.examples.theming.child.title": "child's h1",
+  "anms.examples.theming.child.title": "childs h1",
   "anms.examples.theming.child.subtitle": "should be without style",
   "anms.examples.theming.child.description": "child works!",
   "anms.examples.auth.title": "Authenticated component",

@@ -51,6 +51,7 @@
   "anms.settings.general.placeholder": "Language",
   "anms.settings.general.language.en": "English",
   "anms.settings.general.language.sk": "Slovak",
+  "anms.settings.general.language.de": "German",
   "anms.settings.themes": "Themes",
   "anms.settings.themes.placeholder": "Color Theme",
   "anms.settings.themes.blue": "Blue",
