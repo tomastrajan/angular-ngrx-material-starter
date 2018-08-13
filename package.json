@@ -20,7 +20,7 @@
     "prettier:ci": "prettier {src,e2e}/**/*.{ts,json,md,scss} --list-different",
     "analyze": "npm run clean && npm run build:prod -- --stats-json && webpack-bundle-analyzer ./dist/stats.json",
     "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate",
+    "contributors:generate": "all-contributors generate && node .all-contributors-html.js",
     "contributors:check": "all-contributors check"
   },
   "husky": {

@@ -9,18 +9,18 @@
   "imageSize": 100,
   "commit": false,
   "contributors": [
-      {
-        "login": "tomastrajan",
-        "name": "Tomas Trajan",
-        "avatar_url": "https://avatars0.githubusercontent.com/u/3764868?v=4",
-        "profile": "https://medium.com/@tomastrajan",
-        "contributions": [
-          "code",
-          "doc",
-          "test",
-          "design",
-          "blog"
-        ]
+    {
+      "login": "tomastrajan",
+      "name": "Tomas Trajan",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/3764868?v=4",
+      "profile": "https://medium.com/@tomastrajan",
+      "contributions": [
+        "code",
+        "doc",
+        "test",
+        "design",
+        "blog"
+      ]
     },
     {
           "login": "timdeschryver",
@@ -43,6 +43,16 @@
         "code",
         "test",
         "bug"
+      ]
+    },
+    {
+      "login": "hhubik",
+      "name": "hhubik",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/14813201?v=4",
+      "profile": "https://github.com/hhubik",
+      "contributions": [
+        "code",
+        "doc"
       ]
     },
     {
@@ -100,16 +110,6 @@
       "contributions": [
         "code",
         "bug"
-      ]
-    },
-    {
-      "login": "hhubik",
-      "name": "hhubik",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/14813201?v=4",
-      "profile": "https://github.com/hhubik",
-      "contributions": [
-        "code",
-        "doc"
       ]
     }
   ]

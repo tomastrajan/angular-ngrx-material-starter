@@ -16,6 +16,13 @@
   "anms.about.get-notified.follow": "Sleduj",
   "anms.about.get-notified.description":
     ", Twitter bota ktorý ti pomôže zostať aktuálnym s vydaniami populárnych frontend frameworkov a knižníc!",
+  "anms.about.contributors": "Prispievatelia",
+  "anms.about.contributors.description1": "Chceš začať prispievať do open source s Angularom?",
+  "anms.about.contributors.description2": "Zanechaj svoju stopu a pridaj sa do rastúceho tímu prispievateľov!",
+  "anms.about.contributors.description3": "Začni tým že si pozrieš ",
+  "anms.about.contributors.description4": " a ",
+  "anms.about.contributors.issues": "list otvorených problémov ",
+  "anms.about.contributors.guide": "prispievateľskú príručku",
   "anms.features.title": "Vlastnosti",
   "anms.features.documentation": "Dok.",
   "anms.features.guide": "Návod",
