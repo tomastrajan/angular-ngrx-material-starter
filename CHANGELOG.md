@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.6.0"></a>
+# [6.6.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.5.1...v6.6.0) (2018-08-13)
+
+
+### Features
+
+* upgrade angular and ngrx deps ([211e041](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/211e041))
+* **about:** add contributors section ([35d67a6](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/35d67a6))
+
+
+
 <a name="6.5.1"></a>
 ## [6.5.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.5.0...v6.5.1) (2018-08-01)
 
