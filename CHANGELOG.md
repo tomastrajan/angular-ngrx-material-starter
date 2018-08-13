@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.7.0"></a>
+# [6.7.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.6.1...v6.7.0) (2018-08-13)
+
+
+### Features
+
+* **contributors:** add contributor fiona ([7ae05b7](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7ae05b7))
+* **i18n:** add german language ([c6e27f9](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c6e27f9))
+
+
+
 <a name="6.6.1"></a>
 ## [6.6.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.6.0...v6.6.1) (2018-08-13)
 
