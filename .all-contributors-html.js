@@ -11,7 +11,7 @@ const content = fs.readFileSync(TARGET, 'utf8');
 
 const data = contributors.map(c => `
   <a class="contributor" href="${c.profile}" target="_blank">
-    <img src="${c.avatar_url}">  
+    <img src="${c.avatar_url}">
     <span>${c.name}</span>
   </a>
 `).join('\n');
