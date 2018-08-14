@@ -76,8 +76,7 @@ export const initialState: SettingsState = {
   elementsAnimations: true
 };
 
-export const selectorSettings = state =>
-  <SettingsState>(state.settings || { theme: '' });
+export const selectorSettings = state => state.settings;
 
 export function settingsReducer(
   state: SettingsState = initialState,
