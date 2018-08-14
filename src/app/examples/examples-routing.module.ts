@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from '@app/core';
 
 import { ExamplesComponent } from './examples/examples.component';
-import { TodosComponent } from './todos/todos.component';
+import { TodosComponent } from './todos/todos/todos.component';
 import { StockMarketComponent } from './stock-market/stock-market.component';
 import { ParentComponent } from './theming/parent/parent.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';

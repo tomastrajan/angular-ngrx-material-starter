@@ -1,12 +1,11 @@
+import { todosReducer, initialState } from './todos.reducer';
+import { TodosState } from './todos.model';
 import {
+  ActionTodosAdd,
   ActionTodosFilter,
   ActionTodosRemoveDone,
-  ActionTodosAdd,
-  ActionTodosToggle,
-  TodosState,
-  todosReducer,
-  initialState
-} from './todos.reducer';
+  ActionTodosToggle
+} from './todos.actions';
 
 describe('TodoReducer', () => {
   it('should return the default state', () => {

@@ -6,13 +6,11 @@ import { MockStore, TestingModule } from '@testing/utils';
 
 import { TodosComponent } from './todos.component';
 import {
-  ActionTodosAdd,
-  TodosActionTypes,
   ActionTodosFilter,
-  ActionTodosToggle,
   ActionTodosRemoveDone,
-  TodosState
-} from './todos.reducer';
+  ActionTodosToggle
+} from '@app/examples/todos/todos.actions';
+import { TodosState } from '@app/examples/todos/todos.model';
 
 describe('TodosComponent', () => {
   let component: TodosComponent;
