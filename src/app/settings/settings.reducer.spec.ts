@@ -5,7 +5,8 @@ import {
   ActionSettingsChangeAnimationsPage,
   ActionSettingsChangeAnimationsPageDisabled,
   ActionSettingsChangeAnimationsElements,
-  ActionSettingsChangeAutoNightMode
+  ActionSettingsChangeAutoNightMode,
+  ActionSettingsChangeLanguage
 } from './settings.reducer';
 
 describe('SettingsReducer', () => {
@@ -13,6 +14,12 @@ describe('SettingsReducer', () => {
     const action = {} as any;
     const state = settingsReducer(undefined, action);
     expect(state).toBe(initialState);
+  });
+
+  it('should update language', () => {
+    const action = new ActionSettingsChangeLanguage({ language: 'sk' });
+    const state = settingsReducer(undefined, action);
+    expect(state.language).toEqual('sk');
   });
 
   it('should update theme', () => {
