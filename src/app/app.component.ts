@@ -13,7 +13,8 @@ import {
   AnimationsService,
   TitleService,
   selectAuth,
-  routeAnimations
+  routeAnimations,
+  AppState
 } from '@app/core';
 import { environment as env } from '@env/environment';
 
@@ -58,7 +59,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   constructor(
     public overlayContainer: OverlayContainer,
-    private store: Store<any>,
+    private store: Store<AppState>,
     private router: Router,
     private titleService: TitleService,
     private animationService: AnimationsService,

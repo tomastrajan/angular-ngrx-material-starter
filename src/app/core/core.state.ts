@@ -4,30 +4,32 @@ import {
   createFeatureSelector
 } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
+
+import { environment } from '@env/environment';
+
 import { initStateFromLocalStorage } from './meta-reducers/init-state-from-local-storage.reducer';
 import { debug } from './meta-reducers/debug.reducer';
 import { AuthState } from './auth/auth.models';
 import { authReducer } from './auth/auth.reducer';
-import { environment } from '@env/environment';
 
-export const reducers: ActionReducerMap<State> = {
+export const reducers: ActionReducerMap<AppState> = {
   auth: authReducer
 };
 
-export const metaReducers = (): MetaReducer<State>[] => {
-  // tslint:disable-next-line:prefer-const
-  let metas = [initStateFromLocalStorage];
-  if (!environment.production) {
-    metas.unshift(storeFreeze);
-    if (!environment.test) {
-      metas.unshift(debug);
-    }
+export const metaReducers: MetaReducer<AppState>[] = [
+  initStateFromLocalStorage
+];
+if (!environment.production) {
+  metaReducers.unshift(storeFreeze);
+  if (!environment.test) {
+    metaReducers.unshift(debug);
   }
-  return metas;
-};
+}
 
-export const selectAuthState = createFeatureSelector<State, AuthState>('auth');
+export const selectAuthState = createFeatureSelector<AppState, AuthState>(
+  'auth'
+);
 
-export interface State {
+export interface AppState {
   auth: AuthState;
 }

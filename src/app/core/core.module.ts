@@ -22,7 +22,7 @@ import { reducers, metaReducers } from './core.state';
     HttpClientModule,
 
     // ngrx
-    StoreModule.forRoot(reducers, { metaReducers: metaReducers() }),
+    StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([AuthEffects]),
 
     // 3rd party

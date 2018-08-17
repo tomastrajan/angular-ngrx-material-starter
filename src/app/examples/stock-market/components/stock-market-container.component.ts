@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { selectStockMarket } from '../stock-market.selectors';
 import { ActionStockMarketRetrieve } from '../stock-market.actions';
+import { State } from '../../examples.state';
 
 @Component({
   selector: 'anms-stock-market',
@@ -17,7 +18,7 @@ export class StockMarketContainerComponent implements OnInit, OnDestroy {
   initialized;
   stocks;
 
-  constructor(public store: Store<any>) {}
+  constructor(public store: Store<State>) {}
 
   ngOnInit() {
     this.initialized = false;
