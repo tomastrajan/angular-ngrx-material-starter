@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 
-import { selectorAuth } from './auth.reducer';
+import { selectAuth } from './auth.selectors';
 
 @Injectable()
 export class AuthGuardService implements CanActivate {
@@ -10,7 +10,7 @@ export class AuthGuardService implements CanActivate {
 
   constructor(private store: Store<any>) {
     this.store
-      .pipe(select(selectorAuth))
+      .pipe(select(selectAuth))
       .subscribe(auth => (this.isAuthenticated = auth.isAuthenticated));
   }
   canActivate(): boolean {

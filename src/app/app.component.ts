@@ -12,7 +12,7 @@ import {
   ActionAuthLogout,
   AnimationsService,
   TitleService,
-  selectorAuth,
+  selectAuth,
   routeAnimations
 } from '@app/core';
 import { environment as env } from '@env/environment';
@@ -101,7 +101,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private subscribeToIsAuthenticated() {
     this.store
-      .pipe(select(selectorAuth), takeUntil(this.unsubscribe$))
+      .pipe(select(selectAuth), takeUntil(this.unsubscribe$))
       .subscribe(auth => (this.isAuthenticated = auth.isAuthenticated));
   }
 
