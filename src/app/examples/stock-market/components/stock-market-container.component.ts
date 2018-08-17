@@ -3,17 +3,15 @@ import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import {
-  ActionStockMarketRetrieve,
-  selectorStocks
-} from './stock-market.reducer';
+import { selectStockMarket } from '../stock-market.selectors';
+import { ActionStockMarketRetrieve } from '../stock-market.actions';
 
 @Component({
   selector: 'anms-stock-market',
-  templateUrl: './stock-market.component.html',
-  styleUrls: ['./stock-market.component.scss']
+  templateUrl: './stock-market-container.component.html',
+  styleUrls: ['./stock-market-container.component.scss']
 })
-export class StockMarketComponent implements OnInit, OnDestroy {
+export class StockMarketContainerComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   initialized;
@@ -24,7 +22,7 @@ export class StockMarketComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.initialized = false;
     this.store
-      .pipe(select(selectorStocks), takeUntil(this.unsubscribe$))
+      .pipe(select(selectStockMarket), takeUntil(this.unsubscribe$))
       .subscribe((stocks: any) => {
         this.stocks = stocks;
 

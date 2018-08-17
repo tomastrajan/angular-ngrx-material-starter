@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Stock } from './stock-market.reducer';
+import { Stock } from './stock-market.model';
 
 const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 

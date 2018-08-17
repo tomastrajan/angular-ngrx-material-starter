@@ -4,19 +4,17 @@ import { Store } from '@ngrx/store';
 
 import { MockStore, TestingModule } from '@testing/utils';
 
-import { TodosComponent } from './todos.component';
 import {
-  ActionTodosAdd,
-  TodosActionTypes,
   ActionTodosFilter,
-  ActionTodosToggle,
   ActionTodosRemoveDone,
-  TodosState
-} from './todos.reducer';
+  ActionTodosToggle
+} from '../todos.actions';
+import { TodosState } from '../todos.model';
+import { TodosContainerComponent } from './todos-container.component';
 
 describe('TodosComponent', () => {
-  let component: TodosComponent;
-  let fixture: ComponentFixture<TodosComponent>;
+  let component: TodosContainerComponent;
+  let fixture: ComponentFixture<TodosContainerComponent>;
   let store: MockStore<any>;
   let dispatchSpy;
 
@@ -49,13 +47,13 @@ describe('TodosComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [TodosComponent],
+        declarations: [TodosContainerComponent],
         imports: [TestingModule]
       }).compileComponents();
 
       store = TestBed.get(Store);
       store.setState(createState({ items: [], filter: 'ALL' }));
-      fixture = TestBed.createComponent(TodosComponent);
+      fixture = TestBed.createComponent(TodosContainerComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
     })
