@@ -11,7 +11,7 @@ import { environment } from '@env/environment';
 import { FEATURE_NAME, reducers } from './examples.state';
 import { ExamplesRoutingModule } from './examples-routing.module';
 import { ExamplesComponent } from './examples/examples.component';
-import { TodosComponent } from './todos/todos/todos.component';
+import { TodosContainerComponent } from './todos/components/todos-container.component';
 import { TodosEffects } from './todos/todos.effects';
 import { StockMarketComponent } from './stock-market/stock-market.component';
 import { StockMarketEffects } from './stock-market/stock-market.effects';
@@ -37,7 +37,7 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
   ],
   declarations: [
     ExamplesComponent,
-    TodosComponent,
+    TodosContainerComponent,
     StockMarketComponent,
     ParentComponent,
     ChildComponent,

@@ -5,7 +5,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TestingModule, MockStore } from '@testing/utils';
 
-import { SettingsComponent } from './settings.component';
+import { SettingsContainerComponent } from './settings-container.component';
 import {
   SettingsState,
   ActionSettingsChangeTheme,
@@ -15,8 +15,8 @@ import {
 } from '../settings.reducer';
 
 describe('SettingsComponent', () => {
-  let component: SettingsComponent;
-  let fixture: ComponentFixture<SettingsComponent>;
+  let component: SettingsContainerComponent;
+  let fixture: ComponentFixture<SettingsContainerComponent>;
   let store: MockStore<any>;
   let dispatchSpy;
 
@@ -28,7 +28,7 @@ describe('SettingsComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [SettingsComponent],
+        declarations: [SettingsContainerComponent],
         imports: [TestingModule]
       }).compileComponents();
 
@@ -43,7 +43,7 @@ describe('SettingsComponent', () => {
           language: 'en'
         }
       });
-      fixture = TestBed.createComponent(SettingsComponent);
+      fixture = TestBed.createComponent(SettingsContainerComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();
     })

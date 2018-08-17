@@ -18,10 +18,10 @@ import { Todo, TodosFilter, TodosState } from '../todos.model';
 
 @Component({
   selector: 'anms-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.scss']
+  templateUrl: './todos-container.component.html',
+  styleUrls: ['./todos-container.component.scss']
 })
-export class TodosComponent implements OnInit, OnDestroy {
+export class TodosContainerComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;

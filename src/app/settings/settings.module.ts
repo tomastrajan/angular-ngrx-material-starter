@@ -6,7 +6,7 @@ import { SharedModule } from '../shared';
 
 import { settingsReducer } from './settings.reducer';
 import { SettingsEffects } from './settings.effects';
-import { SettingsComponent } from './settings/settings.component';
+import { SettingsContainerComponent } from './components/settings-container.component';
 
 @NgModule({
   imports: [
@@ -14,6 +14,6 @@ import { SettingsComponent } from './settings/settings.component';
     StoreModule.forFeature('settings', settingsReducer),
     EffectsModule.forFeature([SettingsEffects])
   ],
-  declarations: [SettingsComponent]
+  declarations: [SettingsContainerComponent]
 })
 export class SettingsModule {}

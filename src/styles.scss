@@ -21,7 +21,7 @@
 @import 'app/app.component.scss-theme';
 @import 'app/shared/big-input/big-input.component.scss-theme';
 @import 'app/static/about/about.component.scss-theme';
-@import 'app/examples/todos/todos/todos.component.scss-theme';
+@import 'app/examples/todos/components/todos-container.component.scss-theme';
 @import 'app/examples/stock-market/stock-market.component.scss-theme';
 @import 'app/examples/theming/parent/parent.component.scss-theme';
 @import 'app/examples/theming/child/child.component.scss-theme';
@@ -32,7 +32,7 @@
   @include anms-app-component-theme($theme);
   @include anms-about-component-theme($theme);
   @include anms-big-input-component-theme($theme);
-  @include anms-todos-component-theme($theme);
+  @include anms-todos-container-component-theme($theme);
   @include anms-stock-market-component-theme($theme);
   @include anms-parent-component-theme($theme);
   @include anms-child-component-theme($theme);

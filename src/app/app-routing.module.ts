@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SettingsComponent } from './settings';
+import { SettingsContainerComponent } from './settings';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'settings',
-    component: SettingsComponent,
+    component: SettingsContainerComponent,
     data: { title: 'anms.menu.settings' }
   },
   {

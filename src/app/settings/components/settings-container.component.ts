@@ -16,10 +16,10 @@ import {
 
 @Component({
   selector: 'anms-settings',
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.scss']
+  templateUrl: './settings-container.component.html',
+  styleUrls: ['./settings-container.component.scss']
 })
-export class SettingsComponent implements OnInit, OnDestroy {
+export class SettingsContainerComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
   settings: SettingsState;
 
