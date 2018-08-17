@@ -8,15 +8,13 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 
 import {
   ActionTodosAdd,
-  ActionTodosPersist,
   ActionTodosFilter,
+  ActionTodosPersist,
   ActionTodosRemoveDone,
-  ActionTodosToggle,
-  selectorTodos,
-  Todo,
-  TodosFilter,
-  TodosState
-} from './todos.reducer';
+  ActionTodosToggle
+} from '../todos.actions';
+import { selectTodos } from '../todos.selectors';
+import { Todo, TodosFilter, TodosState } from '../todos.model';
 
 @Component({
   selector: 'anms-todos',
@@ -34,7 +32,7 @@ export class TodosComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store
-      .pipe(select(selectorTodos), takeUntil(this.unsubscribe$))
+      .pipe(select(selectTodos), takeUntil(this.unsubscribe$))
       .subscribe(todos => {
         this.todos = todos;
         this.store.dispatch(new ActionTodosPersist({ todos }));
