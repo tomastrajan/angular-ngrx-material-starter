@@ -4,13 +4,13 @@ import { Store } from '@ngrx/store';
 
 import { MockStore, TestingModule } from '@testing/utils';
 
-import { TodosContainerComponent } from './todos-container.component';
 import {
   ActionTodosFilter,
   ActionTodosRemoveDone,
   ActionTodosToggle
-} from '@app/examples/todos/todos.actions';
-import { TodosState } from '@app/examples/todos/todos.model';
+} from '../todos.actions';
+import { TodosState } from '../todos.model';
+import { TodosContainerComponent } from './todos-container.component';
 
 describe('TodosComponent', () => {
   let component: TodosContainerComponent;

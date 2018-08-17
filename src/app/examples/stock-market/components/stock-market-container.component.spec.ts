@@ -1,22 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { Store } from '@ngrx/store';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import { Store } from '@ngrx/store';
 import { TestingModule, MockStore } from '@testing/utils';
 import { CoreModule } from '@app/core';
 
-import { ExamplesModule } from '../examples.module';
+import { ExamplesModule } from '../../examples.module';
+import { ActionStockMarketRetrieve } from '../stock-market.actions';
+import { StockMarketState } from '../stock-market.model';
+import { StockMarketContainerComponent } from './stock-market-container.component';
 
-import { StockMarketComponent } from './stock-market.component';
-import {
-  StockMarketState,
-  ActionStockMarketRetrieve
-} from './stock-market.reducer';
-
-describe('StockMarketComponent', () => {
-  let component: StockMarketComponent;
-  let fixture: ComponentFixture<StockMarketComponent>;
+describe('StockMarketContainerComponent', () => {
+  let component: StockMarketContainerComponent;
+  let fixture: ComponentFixture<StockMarketContainerComponent>;
   let store: MockStore<any>;
 
   const getSpinner = () => fixture.debugElement.query(By.css('mat-spinner'));
@@ -49,7 +46,7 @@ describe('StockMarketComponent', () => {
 
         store = TestBed.get(Store);
         store.setState(createState({ symbol: '', loading: true }));
-        fixture = TestBed.createComponent(StockMarketComponent);
+        fixture = TestBed.createComponent(StockMarketContainerComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
       })
@@ -173,7 +170,7 @@ describe('StockMarketComponent', () => {
 function createState(stockState: StockMarketState) {
   return {
     examples: {
-      stocks: stockState
+      stockMarket: stockState
     }
   };
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { Observable, of } from 'rxjs';
+import { of } from 'rxjs';
 import {
   tap,
   map,
@@ -13,14 +13,15 @@ import {
 
 import { LocalStorageService } from '@app/core';
 
+import { StockMarketService } from './stock-market.service';
 import {
   ActionStockMarketRetrieve,
   ActionStockMarketRetrieveError,
   ActionStockMarketRetrieveSuccess,
-  STOCK_MARKET_KEY,
   StockMarketActionTypes
-} from './stock-market.reducer';
-import { StockMarketService } from './stock-market.service';
+} from './stock-market.actions';
+
+export const STOCK_MARKET_KEY = 'EXAMPLES.STOCKS';
 
 @Injectable()
 export class StockMarketEffects {
