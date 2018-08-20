@@ -34,7 +34,7 @@ module.exports = function (config) {
         flags: ['--no-sandbox']
       }
     },
-    browserNoActivityTimeout: 30000,
+    browserNoActivityTimeout: 50000,
     singleRun: !isWatch
   });
 };
