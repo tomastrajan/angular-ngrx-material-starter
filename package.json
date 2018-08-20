@@ -25,8 +25,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier && ng lint"
+      "pre-commit": "lint-staged && ng lint"
     }
+  },
+  "lint-staged": {
+    "{src,e2e}/**/*.{ts,json,md,scss}": ["prettier --write", "git add"]
   },
   "private": true,
   "dependencies": {
@@ -74,6 +77,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "~0.2.2",
     "karma-spec-reporter": "~0.0.31",
+    "lint-staged": "^7.2.2",
     "ngrx-store-freeze": "^0.2.4",
     "prettier": "^1.7.4",
     "protractor": "^5.3.2",
