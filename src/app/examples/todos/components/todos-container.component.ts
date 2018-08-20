@@ -15,6 +15,7 @@ import {
 } from '../todos.actions';
 import { selectTodos } from '../todos.selectors';
 import { Todo, TodosFilter, TodosState } from '../todos.model';
+import { State } from '../../examples.state';
 
 @Component({
   selector: 'anms-todos',
@@ -28,7 +29,7 @@ export class TodosContainerComponent implements OnInit, OnDestroy {
   todos: TodosState;
   newTodo = '';
 
-  constructor(public store: Store<any>, public snackBar: MatSnackBar) {}
+  constructor(public store: Store<State>, public snackBar: MatSnackBar) {}
 
   ngOnInit() {
     this.store
