@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 
 import { routeAnimations, TitleService } from '@app/core';
 import { selectorSettings, SettingsState } from '@app/settings';
+import { State } from '../examples.state';
 
 @Component({
   selector: 'anms-examples',
@@ -25,7 +26,7 @@ export class ExamplesComponent implements OnInit, OnDestroy {
   ];
 
   constructor(
-    private store: Store<any>,
+    private store: Store<State>,
     private router: Router,
     private titleService: TitleService,
     private translate: TranslateService

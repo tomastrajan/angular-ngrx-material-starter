@@ -10,11 +10,12 @@ import { ExamplesModule } from '../../examples.module';
 import { ActionStockMarketRetrieve } from '../stock-market.actions';
 import { StockMarketState } from '../stock-market.model';
 import { StockMarketContainerComponent } from './stock-market-container.component';
+import { State } from '../../examples.state';
 
 describe('StockMarketContainerComponent', () => {
   let component: StockMarketContainerComponent;
   let fixture: ComponentFixture<StockMarketContainerComponent>;
-  let store: MockStore<any>;
+  let store: MockStore<State>;
 
   const getSpinner = () => fixture.debugElement.query(By.css('mat-spinner'));
 
@@ -172,5 +173,5 @@ function createState(stockState: StockMarketState) {
     examples: {
       stockMarket: stockState
     }
-  };
+  } as State;
 }

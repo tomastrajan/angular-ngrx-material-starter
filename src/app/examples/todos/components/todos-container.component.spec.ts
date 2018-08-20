@@ -11,11 +11,12 @@ import {
 } from '../todos.actions';
 import { TodosState } from '../todos.model';
 import { TodosContainerComponent } from './todos-container.component';
+import { State } from '../../examples.state';
 
 describe('TodosComponent', () => {
   let component: TodosContainerComponent;
   let fixture: ComponentFixture<TodosContainerComponent>;
-  let store: MockStore<any>;
+  let store: MockStore<State>;
   let dispatchSpy;
 
   const getTodos = () => fixture.debugElement.queryAll(By.css('.todo'));
@@ -200,5 +201,5 @@ function createState(todoState: TodosState) {
     examples: {
       todos: todoState
     }
-  };
+  } as State;
 }
