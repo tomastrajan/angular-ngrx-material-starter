@@ -5,17 +5,14 @@ import { EffectsMetadata, getEffectsMetadata } from '@ngrx/effects';
 import { Observable } from 'rxjs';
 import { cold } from 'jasmine-marbles';
 
-import { SettingsEffects } from './settings.effects';
 import { AnimationsService, LocalStorageService } from '@app/core';
+
 import {
-  SettingsActionTypes,
-  SETTINGS_KEY
-} from '@app/settings/settings.reducer';
-import {
-  ActionSettingsPersist,
-  SettingsState,
-  ActionSettingsChangeLanguage
-} from '@app/settings';
+  ActionSettingsChangeLanguage,
+  ActionSettingsPersist
+} from './settings.actions';
+import { SETTINGS_KEY, SettingsEffects } from './settings.effects';
+import { SettingsState } from './settings.model';
 
 describe('SettingsEffects', () => {
   let actions$: Observable<Action>;

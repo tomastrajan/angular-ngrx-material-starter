@@ -5,11 +5,9 @@ import { tap } from 'rxjs/operators';
 
 import { LocalStorageService, AnimationsService } from '@app/core';
 
-import {
-  SETTINGS_KEY,
-  SettingsActionTypes,
-  ActionSettingsPersist
-} from './settings.reducer';
+import { ActionSettingsPersist, SettingsActionTypes } from './settings.actions';
+
+export const SETTINGS_KEY = 'SETTINGS';
 
 @Injectable()
 export class SettingsEffects {
