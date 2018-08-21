@@ -1,13 +1,13 @@
+import { initialState, settingsReducer } from './settings.reducer';
+
 import {
-  initialState,
-  settingsReducer,
-  ActionSettingsChangeTheme,
+  ActionSettingsChangeAnimationsElements,
   ActionSettingsChangeAnimationsPage,
   ActionSettingsChangeAnimationsPageDisabled,
-  ActionSettingsChangeAnimationsElements,
   ActionSettingsChangeAutoNightMode,
-  ActionSettingsChangeLanguage
-} from './settings.reducer';
+  ActionSettingsChangeLanguage,
+  ActionSettingsChangeTheme
+} from './settings.actions';
 
 describe('SettingsReducer', () => {
   it('should return default state', () => {

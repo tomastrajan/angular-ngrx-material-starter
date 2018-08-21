@@ -7,12 +7,11 @@ import { TestingModule, MockStore } from '@testing/utils';
 
 import { SettingsContainerComponent } from './settings-container.component';
 import {
-  SettingsState,
-  ActionSettingsChangeTheme,
-  ActionSettingsChangeAutoNightMode,
+  ActionSettingsChangeAnimationsElements,
   ActionSettingsChangeAnimationsPage,
-  ActionSettingsChangeAnimationsElements
-} from '../settings.reducer';
+  ActionSettingsChangeAutoNightMode,
+  ActionSettingsChangeTheme
+} from '../settings.actions';
 
 describe('SettingsComponent', () => {
   let component: SettingsContainerComponent;

@@ -6,7 +6,8 @@ import { filter, takeUntil, map } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 import { routeAnimations, TitleService } from '@app/core';
-import { selectorSettings, SettingsState } from '@app/settings';
+import { selectSettings, SettingsState } from '@app/settings';
+
 import { State } from '../examples.state';
 
 @Component({
@@ -45,7 +46,7 @@ export class ExamplesComponent implements OnInit, OnDestroy {
 
   private subscribeToSettings() {
     this.store
-      .pipe(select(selectorSettings), takeUntil(this.unsubscribe$))
+      .pipe(select(selectSettings), takeUntil(this.unsubscribe$))
       .subscribe((settings: SettingsState) =>
         this.translate.use(settings.language)
       );

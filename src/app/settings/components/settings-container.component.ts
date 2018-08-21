@@ -4,15 +4,15 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import {
-  selectorSettings,
-  ActionSettingsChangeTheme,
-  ActionSettingsChangeLanguage,
-  ActionSettingsChangeAutoNightMode,
-  ActionSettingsChangeAnimationsPage,
   ActionSettingsChangeAnimationsElements,
-  SettingsState,
+  ActionSettingsChangeAnimationsPage,
+  ActionSettingsChangeAutoNightMode,
+  ActionSettingsChangeLanguage,
+  ActionSettingsChangeTheme,
   ActionSettingsPersist
-} from '../settings.reducer';
+} from '../settings.actions';
+import { SettingsState } from '../settings.model';
+import { selectSettings } from '../settings.selectors';
 
 @Component({
   selector: 'anms-settings',
@@ -38,7 +38,7 @@ export class SettingsContainerComponent implements OnInit, OnDestroy {
 
   constructor(private store: Store<{}>) {
     store
-      .pipe(select(selectorSettings), takeUntil(this.unsubscribe$))
+      .pipe(select(selectSettings), takeUntil(this.unsubscribe$))
       .subscribe(settings => (this.settings = settings));
   }
 
