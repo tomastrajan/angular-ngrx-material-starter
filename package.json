@@ -1,6 +1,6 @@
 {
   "name": "angular-ngrx-material-starter",
-  "version": "6.7.0",
+  "version": "6.8.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -29,7 +29,10 @@
     }
   },
   "lint-staged": {
-    "{src,e2e}/**/*.{ts,json,md,scss}": ["prettier --write", "git add"]
+    "{src,e2e}/**/*.{ts,json,md,scss}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "private": true,
   "dependencies": {

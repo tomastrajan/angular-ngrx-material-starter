@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.8.0"></a>
+# [6.8.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.7.0...v6.8.0) (2018-08-22)
+
+
+### Bug Fixes
+
+* **about:** contributors layout ([5a9c78d](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/5a9c78d))
+
+
+### Features
+
+* **about:** add contributor FabienDehopre ([96dd59f](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/96dd59f))
+* **i18n:** add french translations ([ad53353](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ad53353))
+
+
+
 <a name="6.7.0"></a>
 # [6.7.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.6.1...v6.7.0) (2018-08-13)
 
