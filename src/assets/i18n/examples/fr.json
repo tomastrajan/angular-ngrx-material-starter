@@ -1,0 +1,69 @@
+{
+  "anms.examples.menu.todos": "Tâches",
+  "anms.examples.menu.stocks": "Stocks",
+  "anms.examples.menu.theming": "Theming",
+  "anms.examples.menu.auth": "Authentification",
+  "anms.examples.todos.input": "Je vais...",
+  "anms.examples.todos.tooltip.add": "Ajouter une nouvelle tâche",
+  "anms.examples.todos.tooltip.remove": "Supprimer les tâches terminées",
+  "anms.examples.todos.list": "Liste des tâches",
+  "anms.examples.todos.example": "Exemple de tâches",
+  "anms.examples.todos.text1": "Ceci est un exemple classique de",
+  "anms.examples.todos.text2": "tâches",
+  "anms.examples.todos.text3":
+    "avec prise en charge de l'ajout, du basculement, de la suppression et du filtrage des éléments à faire.",
+  "anms.examples.todos.text4":
+    "La gestion des états est implémentée à l'aide du module",
+  "anms.examples.todos.text5":
+    "et prend en charge les réducteurs chargés à la demande (il s'agit d'un module de fonctions chargé à la demande).",
+  "anms.examples.todos.text6":
+    "Toutes les tâches sont conservées dans le stockage local, vous devriez donc voir vos tâches lors de visites ultérieures lorsque vous utilisez le même navigateur.",
+  "anms.examples.todos.filter.all": "Toutes",
+  "anms.examples.todos.filter.done": "Terminées",
+  "anms.examples.todos.filter.active": "Actives",
+  "anms.examples.todos.filter.description": "Affiche",
+  "anms.examples.todos.filter.items": "tâches",
+  "anms.examples.todos.filter.item": "tâche",
+  "anms.examples.stocks.title": "Bourse",
+  "anms.examples.stocks.symbol": "Symbole boursier",
+  "anms.examples.stocks.description":
+    "Veuillez fournir un symbole boursier valide tel que:",
+  "anms.examples.stocks.text1":
+    "L'exemple boursier montre comment implémenter les requêtes",
+  "anms.examples.stocks.text2": "à l'aide du module",
+  "anms.examples.stocks.text3": ".",
+  "anms.examples.stocks.text4":
+    "La mise à jour de la requête de symbole avec un symbole différent émet une action qui met à jour l'état avec l'indicateur de chargement (réducteur) et déclenche un effet pour la récupération du symbole boursier sélectionné.",
+  "anms.examples.stocks.text5":
+    "Les actions sont temporisées et chaque demande ultérieure annulera la précédente en utilisant",
+  "anms.examples.stocks.text6":
+    "Les actions de réussite ou d'erreur sont émises à la fin de la demande. Le chargement de spinner est supprimé et les informations stockées ou le message d'erreur s'affiche.",
+  "anms.examples.stocks.error1": "Symbole boursier",
+  "anms.examples.stocks.error2": "introuvable",
+  "anms.examples.theming.parent.title":
+    "Portée du thème avec des composants imbriqués",
+  "anms.examples.theming.parent.description": "Le parent fonctionne!",
+  "anms.examples.theming.parent.text1":
+    "Les styles de thème ne sont pas importés dans la propriété du composant",
+  "anms.examples.theming.parent.text2": "du décorateur",
+  "anms.examples.theming.parent.text3": "mais dans le fichier",
+  "anms.examples.theming.parent.text4":
+    "principal. De ce fait, les styles de thème ne sont",
+  "anms.examples.theming.parent.text5": "PAS",
+  "anms.examples.theming.parent.text6":
+    "automatiquement dans la portée du composant.",
+  "anms.examples.theming.parent.text7": "Nous devons utiliser des sélecteurs",
+  "anms.examples.theming.parent.text8": "spécifiques",
+  "anms.examples.theming.parent.text9":
+    "pour empêcher les styles de s'infiltrer dans les composants enfant. Cela peut être réalisé en utilisant",
+  "anms.examples.theming.parent.text10":
+    "dans les règles CSS pour améliorer leur spécificité. Par exemple, regardez le fichier de thème de ce composant:",
+  "anms.examples.theming.child.title": "enfant h1",
+  "anms.examples.theming.child.subtitle": "devrait être non stylé",
+  "anms.examples.theming.child.description": "L'enfant fonctionne!",
+  "anms.examples.auth.title": "Composant authentifié",
+  "anms.examples.auth.description1":
+    "Ce composant est uniquement accessible aux utilisateurs authentifiés",
+  "anms.examples.auth.description2":
+    "La déconnexion provoque la redirection de l'utilisateur vers l'écran d'accueil si la visite de la page n'est accessible qu'aux utilisateurs authentifiés"
+}
