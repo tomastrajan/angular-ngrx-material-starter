@@ -33,7 +33,8 @@ export class SettingsContainerComponent implements OnInit, OnDestroy {
   languages = [
     { value: 'en', label: 'en' },
     { value: 'de', label: 'de' },
-    { value: 'sk', label: 'sk' }
+    { value: 'sk', label: 'sk' },
+    { value: 'fr', label: 'fr' }
   ];
 
   constructor(private store: Store<{}>) {
