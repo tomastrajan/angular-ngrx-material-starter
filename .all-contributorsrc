@@ -121,6 +121,16 @@
         "code",
         "translation"
       ]
+    },
+    {
+      "login": "FabienDehopre",
+      "name": "Fabien Dehopré",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/97023?v=4",
+      "profile": "https://www.dehopre.com",
+      "contributions": [
+        "code",
+        "translation"
+      ]
     }
   ]
 }
