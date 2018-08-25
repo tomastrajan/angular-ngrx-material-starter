@@ -149,7 +149,7 @@ mat-sidenav-container {
     }
   }
 
-  @media (max-width: map-get($grid-breakpoints, sm)) {
+  @media (max-width: $toolbar-breakpoint) {
     .wrapper {
       top: 56px;
     }
