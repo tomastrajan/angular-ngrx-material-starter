@@ -5,7 +5,7 @@ import { ActivationEnd, Router } from '@angular/router';
 import { filter, takeUntil, map } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
-import { routeAnimations, TitleService } from '@app/core';
+import { routeAnimations, TitleService, AuthGuardService } from '@app/core';
 import { selectSettings, SettingsState } from '@app/settings';
 
 import { State } from '../examples.state';
@@ -30,7 +30,8 @@ export class ExamplesComponent implements OnInit, OnDestroy {
     private store: Store<State>,
     private router: Router,
     private titleService: TitleService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private auth: AuthGuardService
   ) {}
 
   ngOnInit(): void {
