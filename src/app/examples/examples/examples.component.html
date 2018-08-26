@@ -4,7 +4,7 @@
      [routerLink]="e.link"
      routerLinkActive #rla="routerLinkActive"
      [active]="rla.isActive"
-     [disabled]="e.link == 'authenticated' && !auth.isAuthenticated">
+     [disabled]="e.auth && !(isAuthenticated$ | async)">
     {{e.label | translate}}
   </a>
 </nav>
