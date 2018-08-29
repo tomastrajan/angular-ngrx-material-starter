@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient } from '@angular/common/http';
 
 import { SharedModule } from '@app/shared';
 import { environment } from '@env/environment';
@@ -21,6 +22,15 @@ import { ChildComponent } from './theming/child/child.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { CrudComponent } from './crud/components/crud.component';
 import { BooksEffects } from './crud/books.effects';
+import { FormComponent } from './form/components/form.component';
+
+import {
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatSliderModule
+} from '@angular/material';
+
+import { FormEffects } from '@app/examples/form/form.effects';
 
 @NgModule({
   imports: [
@@ -35,7 +45,16 @@ import { BooksEffects } from './crud/books.effects';
       },
       isolate: true
     }),
-    EffectsModule.forFeature([TodosEffects, StockMarketEffects, BooksEffects])
+    EffectsModule.forFeature([
+      TodosEffects,
+      StockMarketEffects,
+      BooksEffects,
+      FormEffects
+    ]),
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSliderModule
   ],
   declarations: [
     ExamplesComponent,
@@ -44,7 +63,8 @@ import { BooksEffects } from './crud/books.effects';
     ParentComponent,
     ChildComponent,
     AuthenticatedComponent,
-    CrudComponent
+    CrudComponent,
+    FormComponent
   ],
   providers: [StockMarketService]
 })

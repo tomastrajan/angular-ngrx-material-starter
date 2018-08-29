@@ -141,26 +141,6 @@
         "code",
         "translation"
       ]
-    },
-    {
-      "login": "Jeykairis",
-      "name": "Jeremy Kairis",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/10895934?v=4",
-      "profile": "https://github.com/Jeykairis",
-      "contributions": [
-        "code",
-        "bug"
-      ]
-    },
-    {
-      "login": "Zuiago",
-      "name": "Iago Andrade",
-      "avatar_url": "https://avatars0.githubusercontent.com/u/8050831?v=4",
-      "profile": "https://github.com/Zuiago",
-      "contributions": [
-        "code",
-        "translation"
-      ]
     }
   ]
 }

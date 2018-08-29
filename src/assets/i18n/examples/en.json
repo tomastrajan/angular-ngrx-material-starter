@@ -4,6 +4,7 @@
   "anms.examples.menu.theming": "Theming",
   "anms.examples.menu.crud": "CRUD",
   "anms.examples.menu.auth": "Auth",
+  "anms.examples.menu.form": "Form",
   "anms.examples.todos.input": "I am going to...",
   "anms.examples.todos.tooltip.add": "Add new todo",
   "anms.examples.todos.tooltip.remove": "Remove done todos",
@@ -79,6 +80,7 @@
   "anms.examples.auth.title": "Authenticated component",
   "anms.examples.auth.description1":
     "This component is only accessible for authenticated users",
+  "anms.examples.form.title": "Complex reactive form using a form builder",
   "anms.examples.auth.description2":
     "Logging out will cause user to be redirected to home screen if visiting route accessible only to authenticated users"
 }
