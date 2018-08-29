@@ -19,6 +19,16 @@ import { StockMarketService } from './stock-market/stock-market.service';
 import { ParentComponent } from './theming/parent/parent.component';
 import { ChildComponent } from './theming/child/child.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
+import { FormComponent } from './form/components/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import {
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatSliderModule
+} from '@angular/material';
+
+import { FormEffects } from '@app/examples/form/form.effects';
 
 @NgModule({
   imports: [
@@ -33,7 +43,11 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
       },
       isolate: true
     }),
-    EffectsModule.forFeature([TodosEffects, StockMarketEffects])
+    EffectsModule.forFeature([TodosEffects, StockMarketEffects, FormEffects]),
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSliderModule
   ],
   declarations: [
     ExamplesComponent,
@@ -41,7 +55,8 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
     StockMarketContainerComponent,
     ParentComponent,
     ChildComponent,
-    AuthenticatedComponent
+    AuthenticatedComponent,
+    FormComponent
   ],
   providers: [StockMarketService]
 })

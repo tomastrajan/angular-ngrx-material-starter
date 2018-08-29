@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.9.0"></a>
+# [6.9.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.8.0...v6.9.0) (2018-08-27)
+
+
+### Bug Fixes
+
+* **app:** Apply $toolbar-breakpoint to remove top white space on resize ([14e0507](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/14e0507))
+
+
+### Features
+
+* **examples:** Disable authenticated link when not authenticated ([cafa041](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/cafa041))
+* **i18n:** add spanish translations ([b76abca](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b76abca))
+* **NgRx:** add store devtools ([98a5d5d](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/98a5d5d))
+
+
+
 <a name="6.8.0"></a>
 # [6.8.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.7.0...v6.8.0) (2018-08-22)
 

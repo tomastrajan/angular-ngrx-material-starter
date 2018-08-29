@@ -1,6 +1,6 @@
 {
   "name": "angular-ngrx-material-starter",
-  "version": "6.8.0",
+  "version": "6.9.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -50,6 +50,7 @@
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@ngrx/effects": "^6.1.0",
     "@ngrx/store": "^6.1.0",
+    "@ngrx/store-devtools": "^6.1.0",
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
     "bootstrap": "^4.1.1",
