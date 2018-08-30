@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
-import { HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
-import { Form } from '@app/examples/form/form.model';
+import { Form } from './form.model';
 
 export enum FormActionTypes {
   RETRIEVE = '[Form] Retrieve',
@@ -24,7 +24,7 @@ export class ActionFormRetrieveSuccess implements Action {
 export class ActionFormRetrieveError implements Action {
   readonly type = FormActionTypes.RETRIEVE_ERROR;
 
-  constructor(readonly payload: { error: HttpErrorResponse }) {}
+  constructor(readonly payload: { error: Observable<never> }) {}
 }
 
 export type FormActions =

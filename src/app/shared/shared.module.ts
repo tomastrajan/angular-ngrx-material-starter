@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -20,6 +20,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSliderModule } from '@angular/material/';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
 
 import { BigInputComponent } from './big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action.component';
@@ -52,6 +55,7 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
   exports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
 
     TranslateModule,
 
@@ -71,6 +75,9 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatTooltipModule,
     MatSnackBarModule,
     MatSlideToggleModule,
+    MatSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
 
     BigInputComponent,
     BigInputActionComponent

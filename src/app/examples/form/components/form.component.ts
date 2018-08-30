@@ -1,21 +1,16 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import {
-  Validators,
-  FormBuilder,
-  AbstractControl,
-  FormGroup,
-  FormControl
-} from '@angular/forms';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
-import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
-import { State } from '@app/examples/examples.state';
 import { takeUntil } from 'rxjs/operators';
-import { selectForm } from '@app/examples/form/form.selectors';
-import { ActionFormRetrieve } from '@app/examples/form/form.actions';
-import { Form } from '@app/examples/form/form.model';
-import { MatSnackBar } from '@angular/material';
+
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
+
+import { State } from '../../examples.state';
+import { ActionFormRetrieve } from '../form.actions';
+import { selectForm } from '../form.selectors';
 
 @Component({
   selector: 'anms-form',
@@ -43,7 +38,7 @@ export class FormComponent implements OnInit, OnDestroy {
         Validators.maxLength(1000)
       ]
     ],
-    wannagift: [''],
+    requestGift: [''],
     age: ['', [Validators.min(18), Validators.max(99)]],
     dob: [''],
     address: this.fb.group({
@@ -107,7 +102,7 @@ export class FormComponent implements OnInit, OnDestroy {
   onSubmit() {
     this.save();
     this.snackBar.open(
-      this.form.value.wannagift ? 'Gift sended !' : 'No gift sended.',
+      this.form.value.requestGift ? 'Gift sended !' : 'No gift sended.',
       'Clap',
       {
         duration: 1000

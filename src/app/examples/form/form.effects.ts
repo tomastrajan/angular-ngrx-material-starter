@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 import {
   tap,
   map,
@@ -36,9 +36,8 @@ export class FormEffects {
       tap(action => this.localStorageService.setItem(FORM_KEY, action.payload)),
       switchMap((action: ActionFormRetrieve) =>
         of(this.localStorageService.getItem(FORM_KEY)).pipe(
-          tap(console.log),
           map(form => new ActionFormRetrieveSuccess({ form })),
-          catchError(error => of(new ActionFormRetrieveError({ error })))
+          catchError(error => Observable.throw(error))
         )
       )
     );
