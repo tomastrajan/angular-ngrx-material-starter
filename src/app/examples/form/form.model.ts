@@ -1,11 +1,11 @@
-import { HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 export interface Form {
   firstname: string;
   lastname: string;
   email: string;
   description: string;
-  wannagift: boolean;
+  requestGift: boolean;
   age: number;
   dob: Date;
   address: {
@@ -22,5 +22,5 @@ export interface Form {
 export interface FormState {
   loading: boolean;
   form?: Form;
-  error?: HttpErrorResponse;
+  error?: Observable<never>;
 }

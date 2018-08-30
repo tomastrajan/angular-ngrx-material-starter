@@ -80,7 +80,36 @@
   "anms.examples.auth.title": "Authenticated component",
   "anms.examples.auth.description1":
     "This component is only accessible for authenticated users",
-  "anms.examples.form.title": "Complex reactive form using a form builder",
+  "anms.examples.form.title": "Reactive form using a form builder",
+  "anms.examples.form.subtitle1": "Contact form",
+  "anms.examples.form.subtitle2": "Marketing information",
+  "anms.examples.form.autosave": "Auto Save",
+  "anms.examples.form.placeholder1": "Your firstname",
+  "anms.examples.form.placeholder2": "Your lastname",
+  "anms.examples.form.placeholder3": "Your e-mail",
+  "anms.examples.form.placeholder4": "Description",
+  "anms.examples.form.placeholder5": "Your age",
+  "anms.examples.form.placeholder6": "Date of birth",
+  "anms.examples.form.placeholder7": "Country",
+  "anms.examples.form.placeholder8": "State",
+  "anms.examples.form.placeholder9": "City",
+  "anms.examples.form.placeholder10": "Zip",
+  "anms.examples.form.placeholder11": "Street",
+  "anms.examples.form.placeholder12": "n°",
+  "anms.examples.form.error1": "is required",
+  "anms.examples.form.error2": "should be valid",
+  "anms.examples.form.error3": "should be longer than",
+  "anms.examples.form.error4": "should be smaller than",
+  "anms.examples.form.error5": "should be minimum",
+  "anms.examples.form.error6": "should be maximum",
+  "anms.examples.form.text1": "Request a gift.",
+  "anms.examples.form.text2": "Rate this form:",
+  "anms.examples.form.text3":
+    "You have to request a gift to see more information.",
+  "anms.examples.form.reset": "Reset",
+  "anms.examples.form.save": "Save",
+  "anms.examples.form.send": "Send",
+
   "anms.examples.auth.description2":
     "Logging out will cause user to be redirected to home screen if visiting route accessible only to authenticated users"
 }

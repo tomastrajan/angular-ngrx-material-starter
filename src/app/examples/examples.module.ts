@@ -19,18 +19,11 @@ import { StockMarketEffects } from './stock-market/stock-market.effects';
 import { StockMarketService } from './stock-market/stock-market.service';
 import { ParentComponent } from './theming/parent/parent.component';
 import { ChildComponent } from './theming/child/child.component';
-import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { CrudComponent } from './crud/components/crud.component';
 import { BooksEffects } from './crud/books.effects';
 import { FormComponent } from './form/components/form.component';
-
-import {
-  MatDatepickerModule,
-  MatNativeDateModule,
-  MatSliderModule
-} from '@angular/material';
-
-import { FormEffects } from '@app/examples/form/form.effects';
+import { FormEffects } from './form/form.effects';
+import { AuthenticatedComponent } from './authenticated/authenticated.component';
 
 @NgModule({
   imports: [
@@ -45,16 +38,7 @@ import { FormEffects } from '@app/examples/form/form.effects';
       },
       isolate: true
     }),
-    EffectsModule.forFeature([
-      TodosEffects,
-      StockMarketEffects,
-      BooksEffects,
-      FormEffects
-    ]),
-    ReactiveFormsModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatSliderModule
+    EffectsModule.forFeature([TodosEffects, StockMarketEffects, BooksEffects, FormEffects])
   ],
   declarations: [
     ExamplesComponent,
