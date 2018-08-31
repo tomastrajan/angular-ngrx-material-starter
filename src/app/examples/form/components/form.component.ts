@@ -7,9 +7,10 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
+import { TranslateService } from '@ngx-translate/core';
 
 import { State } from '../../examples.state';
-import { ActionFormRetrieve } from '../form.actions';
+import { ActionFormSave, ActionFormUpdate } from '../form.actions';
 import { selectForm } from '../form.selectors';
 
 @Component({
@@ -19,7 +20,6 @@ import { selectForm } from '../form.selectors';
 })
 export class FormComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
-  initialized;
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
 
@@ -60,8 +60,20 @@ export class FormComponent implements OnInit, OnDestroy {
   constructor(
     private fb: FormBuilder,
     private store: Store<State>,
+    private translate: TranslateService,
     public snackBar: MatSnackBar
-  ) {
+  ) {}
+
+  ngOnInit() {
+    this.store
+      .pipe(select(selectForm), takeUntil(this.unsubscribe$))
+      .subscribe(form => {
+        if (!this.form.dirty) {
+          this.form.patchValue(form.form);
+        }
+        this.store.dispatch(new ActionFormSave({ form: form }));
+      });
+
     this.form.valueChanges.subscribe((f: FormGroup) => {
       const today = new Date();
       this.minDate = new Date(
@@ -74,24 +86,10 @@ export class FormComponent implements OnInit, OnDestroy {
         today.getMonth(),
         today.getDate()
       );
-
       if (f['autosave']) {
-        this.store.dispatch(new ActionFormRetrieve(f));
+        this.store.dispatch(new ActionFormUpdate({ form: f }));
       }
     });
-  }
-
-  ngOnInit() {
-    this.initialized = false;
-    this.store
-      .pipe(select(selectForm), takeUntil(this.unsubscribe$))
-      .subscribe((form: any) => {
-        if (!this.initialized) {
-          this.initialized = true;
-          this.form.patchValue(form);
-          this.store.dispatch(new ActionFormRetrieve(form));
-        }
-      });
   }
 
   ngOnDestroy(): void {
@@ -102,8 +100,10 @@ export class FormComponent implements OnInit, OnDestroy {
   onSubmit() {
     this.save();
     this.snackBar.open(
-      this.form.value.requestGift ? 'Gift sended !' : 'No gift sended.',
-      'Clap',
+      this.form.value.requestGift
+        ? this.translate.instant('anms.examples.form.text4')
+        : this.translate.instant('anms.examples.form.text5'),
+      this.translate.instant('anms.examples.form.text6'),
       {
         duration: 1000
       }
@@ -111,11 +111,11 @@ export class FormComponent implements OnInit, OnDestroy {
   }
 
   save() {
-    this.store.dispatch(new ActionFormRetrieve(this.form.value));
+    this.store.dispatch(new ActionFormUpdate({ form: this.form.value }));
   }
 
   reset() {
     this.form.reset();
-    this.store.dispatch(new ActionFormRetrieve({}));
+    this.store.dispatch(new ActionFormUpdate({ form: {} }));
   }
 }

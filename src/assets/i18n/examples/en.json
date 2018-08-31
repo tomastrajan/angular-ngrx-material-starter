@@ -106,6 +106,9 @@
   "anms.examples.form.text2": "Rate this form:",
   "anms.examples.form.text3":
     "You have to request a gift to see more information.",
+  "anms.examples.form.text4": "Gift sended!",
+  "anms.examples.form.text5": "No gift sended.",
+  "anms.examples.form.text6": "Clap",
   "anms.examples.form.reset": "Reset",
   "anms.examples.form.save": "Save",
   "anms.examples.form.send": "Send",

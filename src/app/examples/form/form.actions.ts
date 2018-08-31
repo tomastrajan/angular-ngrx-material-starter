@@ -1,33 +1,32 @@
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { Form } from './form.model';
+import { Form, FormState } from './form.model';
 
 export enum FormActionTypes {
-  RETRIEVE = '[Form] Retrieve',
-  RETRIEVE_SUCCESS = '[Form] Retrieve Success',
-  RETRIEVE_ERROR = '[Form] Retrieve Error'
+  SAVE = '[Form] Save',
+  UPDATE = '[Form] Update',
+  RETRIEVE = '[Form] Retrieve'
+}
+
+export class ActionFormSave implements Action {
+  readonly type = FormActionTypes.SAVE;
+
+  constructor(readonly payload: { form: FormState }) {}
+}
+
+export class ActionFormUpdate implements Action {
+  readonly type = FormActionTypes.UPDATE;
+
+  constructor(readonly payload: { form: any }) {}
 }
 
 export class ActionFormRetrieve implements Action {
   readonly type = FormActionTypes.RETRIEVE;
 
-  constructor(readonly payload: any) {}
+  constructor(readonly payload: { form: Form }) {}
 }
-
-export class ActionFormRetrieveSuccess implements Action {
-  readonly type = FormActionTypes.RETRIEVE_SUCCESS;
-
-  constructor(readonly payload: { form: any }) {}
-}
-
-export class ActionFormRetrieveError implements Action {
-  readonly type = FormActionTypes.RETRIEVE_ERROR;
-
-  constructor(readonly payload: { error: Observable<never> }) {}
-}
-
 export type FormActions =
-  | ActionFormRetrieve
-  | ActionFormRetrieveSuccess
-  | ActionFormRetrieveError;
+  | ActionFormSave
+  | ActionFormUpdate
+  | ActionFormRetrieve;

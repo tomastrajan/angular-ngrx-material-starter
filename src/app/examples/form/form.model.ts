@@ -1,5 +1,3 @@
-import { Observable } from 'rxjs';
-
 export interface Form {
   firstname: string;
   lastname: string;
@@ -20,7 +18,5 @@ export interface Form {
 }
 
 export interface FormState {
-  loading: boolean;
-  form?: Form;
-  error?: Observable<never>;
+  form: Form;
 }
