@@ -1,27 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { of, Observable } from 'rxjs';
-import {
-  tap,
-  map,
-  debounceTime,
-  distinctUntilChanged,
-  switchMap,
-  catchError
-} from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 
 import { LocalStorageService } from '@app/core';
 
-import {
-  ActionFormRetrieve,
-  ActionFormRetrieveError,
-  ActionFormRetrieveSuccess,
-  FormActionTypes
-} from './form.actions';
+import { ActionFormSave, FormActionTypes } from './form.actions';
 
 export const FORM_KEY = 'EXAMPLES.FORM';
-
 @Injectable()
 export class FormEffects {
   constructor(
@@ -29,16 +15,12 @@ export class FormEffects {
     private localStorageService: LocalStorageService
   ) {}
 
-  @Effect()
-  retrieveForm() {
+  @Effect({ dispatch: false })
+  saveForm() {
     return this.actions$.pipe(
-      ofType<ActionFormRetrieve>(FormActionTypes.RETRIEVE),
-      tap(action => this.localStorageService.setItem(FORM_KEY, action.payload)),
-      switchMap((action: ActionFormRetrieve) =>
-        of(this.localStorageService.getItem(FORM_KEY)).pipe(
-          map(form => new ActionFormRetrieveSuccess({ form })),
-          catchError(error => Observable.throw(error))
-        )
+      ofType<ActionFormSave>(FormActionTypes.SAVE),
+      tap(action =>
+        this.localStorageService.setItem(FORM_KEY, action.payload.form)
       )
     );
   }

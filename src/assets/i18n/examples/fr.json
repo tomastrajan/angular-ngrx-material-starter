@@ -88,6 +88,9 @@
   "anms.examples.form.text2": "Évaluer ce formulaire:",
   "anms.examples.form.text3":
     "Vous devez solliciter un cadeau pour voir plus d'iformations.",
+  "anms.examples.form.text4": "Cadeau envoyé!",
+  "anms.examples.form.text5": "Pas de cadeau envoyé.",
+  "anms.examples.form.text6": "Clap",
   "anms.examples.form.reset": "Réinitialiser",
   "anms.examples.form.save": "Sauver",
   "anms.examples.form.send": "Envoyer",
