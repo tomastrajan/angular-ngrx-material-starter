@@ -98,16 +98,18 @@ export class FormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.save();
-    this.snackBar.open(
-      this.form.value.requestGift
-        ? this.translate.instant('anms.examples.form.text4')
-        : this.translate.instant('anms.examples.form.text5'),
-      this.translate.instant('anms.examples.form.text6'),
-      {
-        duration: 1000
-      }
-    );
+    if (this.form.valid) {
+      this.save();
+      this.snackBar.open(
+        this.form.value.requestGift
+          ? this.translate.instant('anms.examples.form.text4')
+          : this.translate.instant('anms.examples.form.text5'),
+        this.translate.instant('anms.examples.form.text6'),
+        {
+          duration: 1000
+        }
+      );
+    }
   }
 
   save() {
@@ -116,6 +118,8 @@ export class FormComponent implements OnInit, OnDestroy {
 
   reset() {
     this.form.reset();
+    this.form.clearValidators();
+    this.form.clearAsyncValidators();
     this.store.dispatch(new ActionFormUpdate({ form: {} }));
   }
 }

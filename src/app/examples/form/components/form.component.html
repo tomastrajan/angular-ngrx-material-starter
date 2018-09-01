@@ -4,7 +4,7 @@
       <h1 class="main-heading">{{ 'anms.examples.form.title' | translate }}</h1>
     </div>
   </div>
-  <form [formGroup]="form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-md-6" [ngClass]="routeAnimationsElements">
           <mat-slide-toggle formControlName="autosave">{{ 'anms.examples.form.autosave' | translate }}</mat-slide-toggle>
@@ -105,13 +105,13 @@
         </ng-template>
         <div class="row buttons">
           <div class="col" [ngClass]="routeAnimationsElements">
-            <button mat-raised-button color="warn" (click)="reset()">{{ 'anms.examples.form.reset' | translate }}</button>
+            <button type="reset" mat-raised-button color="warn" (click)="reset()">{{ 'anms.examples.form.reset' | translate }}</button>
           </div>
           <div class="col" [ngClass]="routeAnimationsElements">
-            <button mat-raised-button [disabled]="form.get('autosave').value" color="secondary" (click)="save()">{{ 'anms.examples.form.save' | translate }}</button>
+            <button type="button" mat-raised-button [disabled]="form.get('autosave').value" color="secondary" (click)="save()">{{ 'anms.examples.form.save' | translate }}</button>
           </div>
           <div class="col" [ngClass]="routeAnimationsElements">
-            <button mat-raised-button color="primary" [disabled]="form.invalid" (click)=onSubmit()>{{ 'anms.examples.form.send' | translate }}</button>
+            <button mat-raised-button color="primary" >{{ 'anms.examples.form.send' | translate }}</button>
           </div>
         </div>
       </div>
