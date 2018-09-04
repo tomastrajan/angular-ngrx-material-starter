@@ -26,9 +26,9 @@ export class FormComponent implements OnInit, OnDestroy {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
   form = this.fb.group({
-    autosave: true,
-    firstname: ['', [Validators.required]],
-    lastname: ['', [Validators.required]],
+    autosave: false,
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
     description: [
       '',
@@ -39,23 +39,9 @@ export class FormComponent implements OnInit, OnDestroy {
       ]
     ],
     requestGift: [''],
-    age: ['', [Validators.min(18), Validators.max(99)]],
-    dob: [''],
-    address: this.fb.group({
-      country: [''],
-      state: [''],
-      city: [''],
-      street: [''],
-      zip: [''],
-      numero: ['']
-    }),
-    rating: 10
+    birthday: ['', [Validators.required]],
+    rating: 0
   });
-
-  minDate: Date;
-  maxDate: Date;
-
-  countries = ['Belgium', 'Switzerland'];
 
   constructor(
     private fb: FormBuilder,
@@ -75,17 +61,6 @@ export class FormComponent implements OnInit, OnDestroy {
       });
 
     this.form.valueChanges.subscribe((f: FormGroup) => {
-      const today = new Date();
-      this.minDate = new Date(
-        today.getFullYear() - (f['age'] + 1),
-        today.getMonth(),
-        today.getDate()
-      );
-      this.maxDate = new Date(
-        today.getFullYear() - f['age'],
-        today.getMonth(),
-        today.getDate()
-      );
       if (f['autosave']) {
         this.store.dispatch(new ActionFormUpdate({ form: f }));
       }

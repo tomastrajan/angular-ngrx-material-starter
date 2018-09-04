@@ -1,19 +1,11 @@
 export interface Form {
-  firstname: string;
-  lastname: string;
+  username: string;
+  password: string;
   email: string;
   description: string;
   requestGift: boolean;
   age: number;
-  dob: Date;
-  address: {
-    country: string;
-    state: string;
-    city: string;
-    street: string;
-    zip: number;
-    numero: number;
-  };
+  birthday: Date;
   rating: number;
 }
 
