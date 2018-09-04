@@ -151,6 +151,16 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "Zuiago",
+      "name": "Iago Andrade",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8050831?v=4",
+      "profile": "https://github.com/Zuiago",
+      "contributions": [
+        "code",
+        "translation"
+      ]
     }
   ]
 }
