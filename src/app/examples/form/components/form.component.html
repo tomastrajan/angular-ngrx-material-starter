@@ -5,114 +5,75 @@
     </div>
   </div>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="row">
+    <div class="row justify-content-center">
       <div class="col-md-6" [ngClass]="routeAnimationsElements">
-          <mat-slide-toggle formControlName="autosave">{{ 'anms.examples.form.autosave' | translate }}</mat-slide-toggle>
+        <mat-slide-toggle formControlName="autosave">{{ 'anms.examples.form.autosave' | translate }}</mat-slide-toggle>
         <h2>{{ 'anms.examples.form.subtitle1' | translate }}</h2>
         <div class="row">
           <mat-form-field class="col" [ngClass]="routeAnimationsElements">
-            <input matInput placeholder="{{ 'anms.examples.form.placeholder1' | translate }}" formControlName="firstname" required>
-            <mat-error *ngIf="form.get('firstname').invalid">{{ 'anms.examples.form.placeholder1' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
+            <input matInput placeholder="{{ 'anms.examples.form.placeholder1' | translate }}" formControlName="username" required>
+            <mat-error *ngIf="form.get('username').invalid">{{ 'anms.examples.form.placeholder1' | translate }} {{ 'anms.examples.form.error1'
+              | translate }}</mat-error>
           </mat-form-field>
           <mat-form-field class="col" [ngClass]="routeAnimationsElements">
-            <input matInput placeholder="{{ 'anms.examples.form.placeholder2' | translate }}" formControlName="lastname" required>
-            <mat-error *ngIf="form.get('lastname').invalid">{{ 'anms.examples.form.placeholder2' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
+            <input matInput type="password" placeholder="{{ 'anms.examples.form.placeholder2' | translate }}" formControlName="password"
+              required>
+            <mat-error *ngIf="form.get('password').invalid">{{ 'anms.examples.form.placeholder2' | translate }} {{ 'anms.examples.form.error1'
+              | translate }}</mat-error>
           </mat-form-field>
         </div>
         <div class="row">
           <mat-form-field class="col" [ngClass]="routeAnimationsElements">
             <input matInput placeholder="{{ 'anms.examples.form.placeholder3' | translate }}" formControlName="email" required type="email">
-            <mat-error *ngIf="form.get('email').hasError('required')">{{ 'anms.examples.form.placeholder3' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
-            <mat-error *ngIf="form.get('email').hasError('email')">{{ 'anms.examples.form.placeholder3' | translate }} {{ 'anms.examples.form.error2' | translate }}</mat-error>
+            <mat-error *ngIf="form.get('email').hasError('required')">{{ 'anms.examples.form.placeholder3' | translate }}
+              {{ 'anms.examples.form.error1' | translate }}</mat-error>
+            <mat-error *ngIf="form.get('email').hasError('email')">{{ 'anms.examples.form.placeholder3' | translate }} {{
+              'anms.examples.form.error2' | translate }}</mat-error>
           </mat-form-field>
         </div>
         <div class="row">
           <mat-form-field class="col" [ngClass]="routeAnimationsElements">
-            <textarea matInput placeholder="{{ 'anms.examples.form.placeholder4' | translate }}" formControlName="description" required cdkTextareaAutosize
-              #autosize="cdkTextareaAutosize" minlength="10" maxlength="1000" cdkAutosizeMinRows="4" cdkAutosizeMaxRows="10"></textarea>
-            <mat-hint align="end">{{form.get('description').value?.length}} / 1000</mat-hint>
-            <mat-error *ngIf="form.get('description').hasError('required')">{{ 'anms.examples.form.placeholder4' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
-            <mat-error *ngIf="form.get('description').hasError('minlength')">{{ 'anms.examples.form.placeholder4' | translate }} {{ 'anms.examples.form.error3' | translate }} 10</mat-error>
-            <mat-error *ngIf="form.get('description').hasError('maxlength')">{{ 'anms.examples.form.placeholder4' | translate }} {{ 'anms.examples.form.error4' | translate }} 1000</mat-error>
+            <input matInput formControlName="birthday" [matDatepicker]="picker" placeholder="{{ 'anms.examples.form.placeholder5' | translate }}"
+              required>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="form.get('birthday').hasError('required')">{{ 'anms.examples.form.placeholder5' | translate
+              }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
           </mat-form-field>
         </div>
         <div class="row">
-          <mat-checkbox class="col" formControlName="requestGift" [ngClass]="routeAnimationsElements">{{ 'anms.examples.form.text1' | translate }}</mat-checkbox>
+          <mat-form-field class="col" [ngClass]="routeAnimationsElements">
+            <textarea matInput placeholder="{{ 'anms.examples.form.placeholder4' | translate }}" formControlName="description" required
+              cdkTextareaAutosize #autosize="cdkTextareaAutosize" minlength="10" maxlength="1000" cdkAutosizeMinRows="3" cdkAutosizeMaxRows="10"></textarea>
+            <mat-hint align="end">{{form.get('description').value?.length}} / 1000</mat-hint>
+            <mat-error *ngIf="form.get('description').hasError('required')">{{ 'anms.examples.form.placeholder4' | translate
+              }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
+            <mat-error *ngIf="form.get('description').hasError('minlength')">{{ 'anms.examples.form.placeholder4' | translate
+              }} {{ 'anms.examples.form.error3' | translate }} 10</mat-error>
+            <mat-error *ngIf="form.get('description').hasError('maxlength')">{{ 'anms.examples.form.placeholder4' | translate
+              }} {{ 'anms.examples.form.error4' | translate }} 1000</mat-error>
+          </mat-form-field>
         </div>
-      </div>
-      <div class="col-md-6" [ngClass]="routeAnimationsElements">
-        <h2>{{ 'anms.examples.form.subtitle2' | translate }}</h2>
-        <div *ngIf="form.get('requestGift').value; else info">
-          <div class="row">
-            <mat-form-field [ngClass]="form.get('age').valid ? 'col-4' : 'col'">
-              <input matInput placeholder="{{ 'anms.examples.form.placeholder5' | translate }}" formControlName="age" required type="number" min="0" max="99">
-              <mat-error *ngIf="form.get('age').hasError('required')">{{ 'anms.examples.form.placeholder5' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
-              <mat-error *ngIf="form.get('age').hasError('min')">{{ 'anms.examples.form.placeholder5' | translate }} {{ 'anms.examples.form.error5' | translate }} 18 </mat-error>
-              <mat-error *ngIf="form.get('age').hasError('max')">{{ 'anms.examples.form.placeholder5' | translate }} {{ 'anms.examples.form.error6' | translate }} 99</mat-error>
-            </mat-form-field>
-            <mat-form-field class="col-8" [style.display]="form.get('age').valid ? 'inherit': 'none'">
-              <input matInput formControlName="dob" [matDatepicker]="picker" [min]="minDate" [max]="maxDate"
-                placeholder="{{ 'anms.examples.form.placeholder6' | translate }}" required>
-              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
-              <mat-error *ngIf="form.get('dob').hasError('required')">{{ 'anms.examples.form.placeholder6' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="row">
-            <mat-form-field *ngIf="form.get('dob').value" class="col-6" formGroupName="address">
-              <mat-select placeholder="{{ 'anms.examples.form.placeholder7' | translate }}" formControlName="country" required>
-                <mat-option *ngFor="let country of countries" [value]="country">
-                  {{country}}
-                </mat-option>
-              </mat-select>
-              <mat-error *ngIf="form.get('address')?.get('country').invalid">{{ 'anms.examples.form.placeholder7' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field *ngIf="form.get('address')?.get('country').value;" class="col-6" formGroupName="address">
-              <input matInput placeholder="{{ 'anms.examples.form.placeholder8' | translate }}" formControlName="state" required>
-              <mat-error *ngIf="form.get('address')?.get('state').invalid">{{ 'anms.examples.form.placeholder8' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="row" *ngIf="form.get('address')?.get('state').value">
-            <mat-form-field class="col-8" formGroupName="address">
-              <input matInput placeholder="{{ 'anms.examples.form.placeholder9' | translate }}" formControlName="city" required>
-              <mat-error *ngIf="form.get('address')?.get('city').invalid">{{ 'anms.examples.form.placeholder9' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field class="col-4" formGroupName="address">
-              <input matInput placeholder="{{ 'anms.examples.form.placeholder10' | translate }}" formControlName="zip" type="number" min="0" required>
-              <mat-error *ngIf="form.get('address')?.get('zip').invalid">{{ 'anms.examples.form.placeholder10' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="row" *ngIf="form.get('address')?.get('zip').value">
-            <mat-form-field class="col-10" formGroupName="address">
-              <input matInput placeholder="{{ 'anms.examples.form.placeholder11' | translate }}" formControlName="street" required>
-              <mat-error *ngIf="form.get('address')?.get('street').invalid">{{ 'anms.examples.form.placeholder11' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
-            </mat-form-field>
-            <mat-form-field class="col-2" formGroupName="address">
-              <input matInput type="number" placeholder="{{ 'anms.examples.form.placeholder12' | translate }}" formControlName="numero" required>
-              <mat-error *ngIf="form.get('address')?.get('numero').invalid">{{ 'anms.examples.form.placeholder12' | translate }} {{ 'anms.examples.form.error1' | translate }}</mat-error>
-            </mat-form-field>
-          </div>
-          <div class="row" *ngIf="form.get('address')?.get('numero').value">
-            <div class="col">
-              <label>{{ 'anms.examples.form.text2' | translate }}</label>
-              <br>
-              <mat-slider thumbLabel tickInterval="1" min="1" max="10" formControlName="rating"></mat-slider>
-            </div>
+        <div class="row" [ngClass]="routeAnimationsElements">
+          <div class="col">
+            <label>{{ 'anms.examples.form.text2' | translate }}</label>
+            <br>
+            <mat-slider thumbLabel tickInterval="1" min="1" max="10" formControlName="rating" required></mat-slider>
           </div>
         </div>
-        <ng-template #info>
-          <p>{{ 'anms.examples.form.text3' | translate }}</p>
-        </ng-template>
-        <div class="row buttons">
-          <div class="col" [ngClass]="routeAnimationsElements">
-            <button type="reset" mat-raised-button color="warn" (click)="reset()">{{ 'anms.examples.form.reset' | translate }}</button>
-          </div>
-          <div class="col" [ngClass]="routeAnimationsElements">
-            <button type="button" mat-raised-button [disabled]="form.get('autosave').value" color="secondary" (click)="save()">{{ 'anms.examples.form.save' | translate }}</button>
-          </div>
-          <div class="col" [ngClass]="routeAnimationsElements">
-            <button mat-raised-button color="primary" >{{ 'anms.examples.form.send' | translate }}</button>
-          </div>
+        <div class="row">
+          <mat-checkbox class="col" formControlName="requestGift" [ngClass]="routeAnimationsElements">{{ 'anms.examples.form.text1'
+            | translate }}</mat-checkbox>
+        </div>
+        <div class="row buttons d-flex justify-content-around">
+          <button type="reset" mat-raised-button color="warn" (click)="reset()" [ngClass]="routeAnimationsElements">{{ 'anms.examples.form.reset'
+            | translate }}
+          </button>
+          <button type="button" mat-raised-button [disabled]="form.get('autosave').value" color="secondary" (click)="save()" [ngClass]="routeAnimationsElements">{{
+            'anms.examples.form.save' | translate }}</button>
+          <button mat-raised-button color="primary" [ngClass]="routeAnimationsElements">{{ 'anms.examples.form.send' | translate
+            }}
+          </button>
         </div>
       </div>
     </div>
