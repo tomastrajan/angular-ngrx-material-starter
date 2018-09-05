@@ -121,6 +121,46 @@
         "code",
         "translation"
       ]
+    },
+    {
+      "login": "FabienDehopre",
+      "name": "Fabien Dehopré",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/97023?v=4",
+      "profile": "https://www.dehopre.com",
+      "contributions": [
+        "code",
+        "translation"
+      ]
+    },
+    {
+      "login": "matiasiglesias",
+      "name": "Matias Iglesias",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2591889?v=4",
+      "profile": "http://www.matiasiglesias.com.ar",
+      "contributions": [
+        "code",
+        "translation"
+      ]
+    },
+    {
+      "login": "Jeykairis",
+      "name": "Jeremy Kairis",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/10895934?v=4",
+      "profile": "https://github.com/Jeykairis",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "Zuiago",
+      "name": "Iago Andrade",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/8050831?v=4",
+      "profile": "https://github.com/Zuiago",
+      "contributions": [
+        "code",
+        "translation"
+      ]
     }
   ]
 }

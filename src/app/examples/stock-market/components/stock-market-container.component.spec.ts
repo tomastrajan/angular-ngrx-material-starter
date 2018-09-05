@@ -2,6 +2,7 @@ import { By } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpErrorResponse } from '@angular/common/http';
+import { EMPTY } from 'rxjs';
 
 import { TestingModule, MockStore } from '@testing/utils';
 import { CoreModule } from '@app/core';
@@ -11,8 +12,11 @@ import { ActionStockMarketRetrieve } from '../stock-market.actions';
 import { StockMarketState } from '../stock-market.model';
 import { StockMarketContainerComponent } from './stock-market-container.component';
 import { State } from '../../examples.state';
+import { StockMarketService } from '../../stock-market/stock-market.service';
 
 describe('StockMarketContainerComponent', () => {
+  let retrieveStockSpy: jasmine.Spy;
+
   let component: StockMarketContainerComponent;
   let fixture: ComponentFixture<StockMarketContainerComponent>;
   let store: MockStore<State>;
@@ -44,6 +48,12 @@ describe('StockMarketContainerComponent', () => {
           imports: [TestingModule, CoreModule, ExamplesModule],
           providers: [{ provide: Store, useClass: MockStore }]
         }).compileComponents();
+
+        const stockMarketService = TestBed.get(StockMarketService);
+        retrieveStockSpy = spyOn(
+          stockMarketService,
+          'retrieveStock'
+        ).and.returnValue(EMPTY);
 
         store = TestBed.get(Store);
         store.setState(createState({ symbol: '', loading: true }));

@@ -1,0 +1,69 @@
+{
+  "anms.examples.menu.todos": "Recordatorios",
+  "anms.examples.menu.stocks": "Acciones",
+  "anms.examples.menu.theming": "Tematización",
+  "anms.examples.menu.auth": "Autenticación",
+  "anms.examples.todos.input": "Voy a ...",
+  "anms.examples.todos.tooltip.add": "Nuevo recordatorio",
+  "anms.examples.todos.tooltip.remove": "Eliminar completados",
+  "anms.examples.todos.list": "Lista de recordatorios",
+  "anms.examples.todos.example": "Ejemplo de recordatorio",
+  "anms.examples.todos.text1": "Este es un ejemplo clásico de",
+  "anms.examples.todos.text2": "recordatorio",
+  "anms.examples.todos.text3":
+    " con soporte para agregar, alternar, eliminar y filtrar los recordatorios pendientes.",
+  "anms.examples.todos.text4":
+    "El manejo del estado se implementa usando el módulo",
+  "anms.examples.todos.text5":
+    "y soporte para reductores de carga perezosa (este es un módulo de función de carga perezosa).",
+  "anms.examples.todos.text6":
+    "Los recordatorios son almacenados localmente, por lo que debería verlos en visitas posteriores cuando use el mismo navegador.",
+  "anms.examples.todos.filter.all": "Todos",
+  "anms.examples.todos.filter.done": "Hechos",
+  "anms.examples.todos.filter.active": "Activos",
+  "anms.examples.todos.filter.description": "Mostrando",
+  "anms.examples.todos.filter.items": "recordatorios",
+  "anms.examples.todos.filter.item": "recordatorio",
+  "anms.examples.stocks.title": "Mercado de valores",
+  "anms.examples.stocks.symbol": "Símbolo de la acción",
+  "anms.examples.stocks.description":
+    "Proporcione algún símbolo válido del mercado de valores como por ejemplo:",
+  "anms.examples.stocks.text1":
+    "El ejemplo del mercado de valores muestra cómo implementar",
+  "anms.examples.stocks.text2": "para peticiones utilizando el módulo",
+  "anms.examples.stocks.text3": ".",
+  "anms.examples.stocks.text4":
+    "Cambiar por un símbolo diferente emitirá una acción que actualiza el estado con el indicador de carga (reductor) y desencadena el efecto para recuperar la acción seleccionada.",
+  "anms.examples.stocks.text5":
+    "Las acciones son rechazadas y cada solicitud posterior cancelará la anterior usando",
+  "anms.examples.stocks.text6":
+    "Las acciones exitosas o erróneas se emiten al completar la solicitud. Se quitó la ruedecilla de carga y se muestra información de la acción o mensaje de error.",
+  "anms.examples.stocks.error1": "Acción",
+  "anms.examples.stocks.error2": "no encontrada",
+  "anms.examples.theming.parent.title":
+    "Alcance del tema con componentes anidados",
+  "anms.examples.theming.parent.description": "el padre funciona!",
+  "anms.examples.theming.parent.text1":
+    "Los estilos de tema no se importan en la propiedad ",
+  "anms.examples.theming.parent.text2": "del decorador",
+  "anms.examples.theming.parent.text3":
+    "de los componentes, sino en el archivo",
+  "anms.examples.theming.parent.text4": ". Debido a eso, los estilos del tema",
+  "anms.examples.theming.parent.text5": "NO",
+  "anms.examples.theming.parent.text6":
+    " tienen un alcance automático para el componente.",
+  "anms.examples.theming.parent.text7": "Tenemos que utilizar selectores",
+  "anms.examples.theming.parent.text8": "específicos",
+  "anms.examples.theming.parent.text9":
+    "para evitar que los estilos se filtren en los componentes secundarios. Esto se puede lograr utilizando",
+  "anms.examples.theming.parent.text10":
+    "en las reglas CSS para mejorar su especificidad. Por ejemplo, eche un vistazo al tema de este componente:",
+  "anms.examples.theming.child.title": "h1 hijos",
+  "anms.examples.theming.child.subtitle": "deben estar ser sin estilo",
+  "anms.examples.theming.child.description": "el hijo funciona!",
+  "anms.examples.auth.title": "Componente autenticado",
+  "anms.examples.auth.description1":
+    "Este componente solo es accesible para usuarios autenticados",
+  "anms.examples.auth.description2":
+    "Cerrar la sesión causará que el usuario sea redirigido a la pantalla de inicio si se visita la ruta accesible solo para usuarios autenticados"
+}

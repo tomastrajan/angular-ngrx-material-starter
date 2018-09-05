@@ -3,7 +3,8 @@
      *ngFor="let e of examples"
      [routerLink]="e.link"
      routerLinkActive #rla="routerLinkActive"
-     [active]="rla.isActive">
+     [active]="rla.isActive"
+     [disabled]="e.auth && !(isAuthenticated$ | async)">
     {{e.label | translate}}
   </a>
 </nav>
