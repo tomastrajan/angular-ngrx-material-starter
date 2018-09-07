@@ -49,6 +49,7 @@
     "@angular/router": "^6.1.2",
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "@ngrx/effects": "^6.1.0",
+    "@ngrx/entity": "^6.1.0",
     "@ngrx/store": "^6.1.0",
     "@ngrx/store-devtools": "^6.1.0",
     "@ngx-translate/core": "^10.0.2",
