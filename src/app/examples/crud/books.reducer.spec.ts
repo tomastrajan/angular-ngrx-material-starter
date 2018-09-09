@@ -7,7 +7,7 @@ import {
   ActionBookSelect
 } from './books.actions';
 
-fdescribe('BookReducer', () => {
+describe('BookReducer', () => {
   const TEST_INITIAL_STATE: BookState = {
     selectedBookId: null,
     ids: ['123'],

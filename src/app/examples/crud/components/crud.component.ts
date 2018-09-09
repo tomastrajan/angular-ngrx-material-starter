@@ -96,7 +96,7 @@ export class CrudComponent implements OnInit {
     this.clearForm(form);
   }
 
-  private clearForm(form: NgForm) {
+  clearForm(form: NgForm) {
     form.resetForm();
     this.emptyBook.id = new Date().getUTCMilliseconds().toString();
     this.bookFormGroup.setValue(this.emptyBook);
