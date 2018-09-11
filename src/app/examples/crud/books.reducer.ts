@@ -1,9 +1,15 @@
-import { createEntityAdapter } from '@ngrx/entity';
+import { createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 
 import { Book, BookState } from './books.model';
 import { BookActionTypes, BookActions } from './books.actions';
 
-const bookAdapter = createEntityAdapter<Book>();
+export function sortByTitle(a: Book, b: Book): number {
+  return a.title.localeCompare(b.title);
+}
+
+export const bookAdapter: EntityAdapter<Book> = createEntityAdapter<Book>({
+  sortComparer: sortByTitle
+});
 
 export const initialState: BookState = bookAdapter.getInitialState({
   selectedBookId: null,

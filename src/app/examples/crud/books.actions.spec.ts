@@ -41,12 +41,12 @@ describe('Books Actions', () => {
   describe('ActionBooksPersist', () => {
     it('should create an action', () => {
       const action = new ActionBooksPersist({
-        books: { ids: ['1'], entities: {}, selectedBookId: 1 }
+        books: { ids: ['1'], entities: {}, selectedBookId: '1' }
       });
 
       expect({ ...action }).toEqual({
         type: BookActionTypes.PERSIST,
-        payload: { books: { ids: ['1'], entities: {}, selectedBookId: 1 } }
+        payload: { books: { ids: ['1'], entities: {}, selectedBookId: '1' } }
       });
     });
   });

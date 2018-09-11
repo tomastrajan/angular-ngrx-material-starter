@@ -8,5 +8,5 @@ export interface Book {
 }
 
 export interface BookState extends EntityState<Book> {
-  selectedBookId: string | number | null;
+  selectedBookId: string | null;
 }

@@ -43,29 +43,34 @@ describe('BookReducer', () => {
   });
 
   it('should update a book', () => {
-    const id = TEST_INITIAL_STATE.ids[0].toString();
-    const action = new UpdateOne(id, {
+    const id = TEST_INITIAL_STATE.ids[0];
+    const action = new UpdateOne(id as string, {
       title: 'updated',
       author: 'updated',
       description: 'updated'
     });
+
     const state = bookReducer(TEST_INITIAL_STATE, action);
-    expect(state.entities[id].title).toEqual('updated');
-    expect(state.entities[id].author).toEqual('updated');
-    expect(state.entities[id].description).toEqual('updated');
+    expect(state.entities[id]).toEqual(
+      jasmine.objectContaining({
+        title: 'updated',
+        author: 'updated',
+        description: 'updated'
+      })
+    );
   });
 
   it('should remove a book', () => {
-    const id = TEST_INITIAL_STATE.ids[0].toString();
-    const action = new DeleteOne(id);
+    const id = TEST_INITIAL_STATE.ids[0];
+    const action = new DeleteOne(id as string);
     const state = bookReducer(TEST_INITIAL_STATE, action);
     expect(state.entities[id]).toBe(undefined);
   });
 
   it('should select a book', () => {
-    const id = TEST_INITIAL_STATE.ids[0].toString();
-    const action = new ActionBookSelect(id);
+    const id = TEST_INITIAL_STATE.ids[0];
+    const action = new ActionBookSelect(id as string);
     const state = bookReducer(TEST_INITIAL_STATE, action);
-    expect(state.selectedBookId).toBe(id);
+    expect(state.selectedBookId).toBe(id as string);
   });
 });

@@ -20,10 +20,8 @@ export const selectCurrentBookId = createSelector(
   getSelectedBookId
 );
 
-export const selectBooksIds = createSelector(selectBooks, selectIds);
 export const selectBooksEntities = createSelector(selectBooks, selectEntities);
 export const selectAllBooks = createSelector(selectBooks, selectAll);
-export const selectBooksTotal = createSelector(selectBooks, selectTotal);
 export const selectCurrentBook = createSelector(
   selectBooksEntities,
   selectCurrentBookId,
