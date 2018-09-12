@@ -1,17 +1,18 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder } from '@angular/forms';
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { takeUntil, filter, debounceTime, tap } from 'rxjs/operators';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 import { TranslateService } from '@ngx-translate/core';
 
 import { State } from '../../examples.state';
-import { ActionFormSave, ActionFormUpdate } from '../form.actions';
+import { ActionFormUpdate, ActionFormReset } from '../form.actions';
 import { selectForm } from '../form.selectors';
+import { Form } from '../form.model';
 
 @Component({
   selector: 'anms-form',
@@ -40,7 +41,7 @@ export class FormComponent implements OnInit, OnDestroy {
     ],
     requestGift: [''],
     birthday: ['', [Validators.required]],
-    rating: 0
+    rating: [0, Validators.required]
   });
 
   constructor(
@@ -52,24 +53,25 @@ export class FormComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store
-      .pipe(select(selectForm), takeUntil(this.unsubscribe$))
-      .subscribe(form => {
-        if (!this.form.dirty) {
-          this.form.patchValue(form.form);
-        }
-        this.store.dispatch(new ActionFormSave({ form: form }));
-      });
+      .pipe(select(selectForm))
+      .subscribe(form => this.form.patchValue(form))
+      .unsubscribe();
 
-    this.form.valueChanges.subscribe((f: FormGroup) => {
-      if (f['autosave']) {
-        this.store.dispatch(new ActionFormUpdate({ form: f }));
-      }
-    });
+    this.form.valueChanges
+      .pipe(
+        debounceTime(500),
+        filter((form: Form) => form['autosave']),
+        takeUntil(this.unsubscribe$)
+      )
+      .subscribe((form: Form) =>
+        this.store.dispatch(new ActionFormUpdate({ form }))
+      );
   }
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+    this.form = null;
   }
 
   onSubmit() {
@@ -95,6 +97,6 @@ export class FormComponent implements OnInit, OnDestroy {
     this.form.reset();
     this.form.clearValidators();
     this.form.clearAsyncValidators();
-    this.store.dispatch(new ActionFormUpdate({ form: {} }));
+    this.store.dispatch(new ActionFormReset());
   }
 }
