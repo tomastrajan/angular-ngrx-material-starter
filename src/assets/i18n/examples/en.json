@@ -63,7 +63,7 @@
   "anms.examples.auth.description1":
     "This component is only accessible for authenticated users",
   "anms.examples.form.title": "Reactive form using a form builder",
-  "anms.examples.form.subtitle1": "Contact form",
+  "anms.examples.form.subtitle1": "The form",
   "anms.examples.form.subtitle2": "Marketing information",
   "anms.examples.form.autosave": "Auto Save",
   "anms.examples.form.placeholder1": "Username",

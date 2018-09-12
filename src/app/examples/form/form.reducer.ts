@@ -15,6 +15,11 @@ export function formReducer(
         ...state,
         form: action.payload.form
       };
+    case FormActionTypes.RESET:
+      return {
+        ...state,
+        form: initialState.form
+      };
 
     default:
       return state;
