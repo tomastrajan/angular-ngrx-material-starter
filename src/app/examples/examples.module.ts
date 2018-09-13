@@ -19,6 +19,8 @@ import { StockMarketService } from './stock-market/stock-market.service';
 import { ParentComponent } from './theming/parent/parent.component';
 import { ChildComponent } from './theming/child/child.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
+import { CrudComponent } from './crud/components/crud.component';
+import { BooksEffects } from './crud/books.effects';
 
 @NgModule({
   imports: [
@@ -33,7 +35,7 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
       },
       isolate: true
     }),
-    EffectsModule.forFeature([TodosEffects, StockMarketEffects])
+    EffectsModule.forFeature([TodosEffects, StockMarketEffects, BooksEffects])
   ],
   declarations: [
     ExamplesComponent,
@@ -41,7 +43,8 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
     StockMarketContainerComponent,
     ParentComponent,
     ChildComponent,
-    AuthenticatedComponent
+    AuthenticatedComponent,
+    CrudComponent
   ],
   providers: [StockMarketService]
 })
