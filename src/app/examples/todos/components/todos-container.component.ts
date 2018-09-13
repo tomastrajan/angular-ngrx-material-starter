@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Store, select } from '@ngrx/store';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { select, Store } from '@ngrx/store';
+import { forkJoin, Subject } from 'rxjs';
+import { first, takeUntil } from 'rxjs/operators';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 
@@ -16,6 +16,7 @@ import {
 import { selectTodos } from '../todos.selectors';
 import { Todo, TodosFilter, TodosState } from '../todos.model';
 import { State } from '../../examples.state';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'anms-todos',
@@ -29,7 +30,11 @@ export class TodosContainerComponent implements OnInit, OnDestroy {
   todos: TodosState;
   newTodo = '';
 
-  constructor(public store: Store<State>, public snackBar: MatSnackBar) {}
+  constructor(
+    public store: Store<State>,
+    public snackBar: MatSnackBar,
+    public translateService: TranslateService
+  ) {}
 
   ngOnInit() {
     this.store
@@ -73,26 +78,58 @@ export class TodosContainerComponent implements OnInit, OnDestroy {
 
   onAddTodo() {
     this.store.dispatch(new ActionTodosAdd({ name: this.newTodo }));
-    this.showNotification(`"${this.newTodo}" added`);
+    this.translateService
+      .get('anms.examples.todos.added.notification', { name: this.newTodo })
+      .pipe(first())
+      .subscribe(addedMessage => {
+        this.showNotification(addedMessage);
+      });
     this.newTodo = '';
   }
 
   onToggleTodo(todo: Todo) {
-    const newStatus = todo.done ? 'active' : 'done';
     this.store.dispatch(new ActionTodosToggle({ id: todo.id }));
-    this.showNotification(`Toggled "${todo.name}" to ${newStatus}`, 'Undo')
-      .onAction()
-      .subscribe(() => this.onToggleTodo({ ...todo, done: !todo.done }));
+    const newStatus$ = this.translateService
+      .get(`anms.examples.todos.filter.${todo.done ? 'active' : 'done'}`)
+      .pipe(first());
+    const undo$ = this.translateService
+      .get('anms.examples.todos.undo')
+      .pipe(first());
+    const toggledMessage$ = this.translateService
+      .get('anms.examples.todos.toggle.notification', { name: todo.name })
+      .pipe(first());
+    forkJoin(newStatus$, undo$, toggledMessage$).subscribe(
+      ([newStatus, undo, toggledMessage]) => {
+        this.showNotification(`${toggledMessage} ${newStatus}`, undo)
+          .onAction()
+          .subscribe(() => this.onToggleTodo({ ...todo, done: !todo.done }));
+      }
+    );
   }
 
   onRemoveDoneTodos() {
     this.store.dispatch(new ActionTodosRemoveDone());
-    this.showNotification('Removed done todos');
+    this.translateService
+      .get('anms.examples.todos.remove.notification')
+      .pipe(first())
+      .subscribe(removedMessage => {
+        this.showNotification(removedMessage);
+      });
   }
 
   onFilterTodos(filter: TodosFilter) {
     this.store.dispatch(new ActionTodosFilter({ filter }));
-    this.showNotification(`Filtered to ${filter.toLowerCase()}`);
+    const filterToMessage$ = this.translateService
+      .get('anms.examples.todos.filter.notification')
+      .pipe(first());
+    const filterMessage$ = this.translateService
+      .get(`anms.examples.todos.filter.${filter.toLowerCase()}`)
+      .pipe(first());
+    forkJoin(filterToMessage$, filterMessage$).subscribe(
+      ([filterToMessage, filterMessage]) => {
+        this.showNotification(`${filterToMessage} ${filterMessage}`);
+      }
+    );
   }
 
   private showNotification(message: string, action?: string) {
