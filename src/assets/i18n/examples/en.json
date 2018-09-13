@@ -62,15 +62,20 @@
   "anms.examples.crud.title": "CRUD books using @ngrx/entity",
   "anms.examples.crud.subtitle1": "Your books",
   "anms.examples.crud.subtitle2": "Book editor",
+  "anms.examples.crud.placeholder0": "Id",
   "anms.examples.crud.placeholder1": "Title",
   "anms.examples.crud.placeholder2": "Author",
   "anms.examples.crud.placeholder3": "Description",
+  "anms.examples.crud.empty":
+    "Looks like you don't have any books, let's add some!",
   "anms.examples.crud.text":
     "Books can be managed in this editor and are added, updated, deleted and selected through ",
   "anms.examples.crud.error": "is required",
-  "anms.examples.crud.add": "Add a new book",
-  "anms.examples.crud.new": "New",
   "anms.examples.crud.save": "Save",
+  "anms.examples.crud.cancel": "Cancel",
+  "anms.examples.crud.tooltip.edit": "Edit book",
+  "anms.examples.crud.tooltip.delete": "Delete book",
+  "anms.examples.crud.tooltip.deselect": "Deselect book",
   "anms.examples.auth.title": "Authenticated component",
   "anms.examples.auth.description1":
     "This component is only accessible for authenticated users",

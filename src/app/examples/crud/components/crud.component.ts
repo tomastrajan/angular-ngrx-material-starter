@@ -1,6 +1,6 @@
+import { v4 as uuid } from 'uuid';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
-
 import { takeUntil } from 'rxjs/operators';
 import { Subject, Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
@@ -8,19 +8,14 @@ import { Store, select } from '@ngrx/store';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 
 import { State } from '../../examples.state';
-import { Book, BookState } from '../books.model';
+import { Book } from '../books.model';
 import {
-  ActionBooksPersist,
-  AddOne,
-  DeleteOne,
-  UpdateOne,
-  ActionBookSelect
+  ActionBooksAddOne,
+  ActionBooksDeleteOne,
+  ActionBooksUpdateOne,
+  ActionBooksSelect
 } from '../books.actions';
-import {
-  selectBooks,
-  selectCurrentBook,
-  selectAllBooks
-} from '../books.selectors';
+import { selectSelectedBook, selectAllBooks } from '../books.selectors';
 
 @Component({
   selector: 'anms-crud',
@@ -29,66 +24,78 @@ import {
 })
 export class CrudComponent implements OnInit {
   private unsubscribe$: Subject<void> = new Subject<void>();
-
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
-  bookFormGroup = this.fb.group(
-    this.createBook(new Date().getUTCMilliseconds().toString())
-  );
-  books: Observable<Book[]>;
-  bookState: BookState;
-  selectedBook: Observable<Book>;
+  bookFormGroup = this.fb.group(CrudComponent.createBook());
+  books$: Observable<Book[]>;
+  selectedBook: Book;
   isEditing: boolean;
 
-  constructor(public store: Store<State>, public fb: FormBuilder) {}
-
-  ngOnInit() {
-    this.store
-      .pipe(select(selectBooks), takeUntil(this.unsubscribe$))
-      .subscribe(books => {
-        this.store.dispatch(new ActionBooksPersist({ books }));
-      });
-    this.books = this.store.pipe(select(selectAllBooks));
-    this.selectedBook = this.store.pipe(select(selectCurrentBook));
-  }
-
-  createBook(bookId: string): Book {
+  static createBook(): Book {
     return {
-      id: bookId,
+      id: uuid(),
       title: '',
       author: '',
       description: ''
     };
   }
 
-  select(book: Book) {
-    this.bookFormGroup.setValue(book);
-    this.store.dispatch(new ActionBookSelect(book.id));
-    this.isEditing = !this.isEditing;
+  constructor(public store: Store<State>, public fb: FormBuilder) {}
+
+  ngOnInit() {
+    this.books$ = this.store.pipe(select(selectAllBooks));
+    this.store
+      .pipe(select(selectSelectedBook), takeUntil(this.unsubscribe$))
+      .subscribe(book => (this.selectedBook = book));
   }
 
-  delete(id: string, form: NgForm) {
-    this.store.dispatch(new DeleteOne(id));
-    this.clearForm(form);
+  select(id: string) {
+    this.store.dispatch(new ActionBooksSelect({ id }));
+    this.isEditing = false;
   }
 
-  onSubmit(book: Book) {
+  deselect() {
+    this.store.dispatch(new ActionBooksSelect({ id: null }));
+    this.isEditing = false;
+  }
+
+  edit() {
+    this.isEditing = true;
+    this.bookFormGroup.setValue(this.selectedBook);
+  }
+
+  addNew(bookForm: NgForm) {
+    bookForm.resetForm();
+    this.bookFormGroup.reset();
+    this.bookFormGroup.setValue(CrudComponent.createBook());
+    this.store.dispatch(new ActionBooksSelect({ id: null }));
+    this.isEditing = true;
+  }
+
+  cancelEditing() {
+    this.isEditing = false;
+  }
+
+  delete() {
+    this.store.dispatch(new ActionBooksDeleteOne({ id: this.selectedBook.id }));
+    this.isEditing = false;
+  }
+
+  save() {
     if (this.bookFormGroup.valid) {
+      const book = this.bookFormGroup.value;
       this.store.dispatch(
-        book
-          ? new UpdateOne(book.id, this.bookFormGroup.value)
-          : new AddOne(this.bookFormGroup.value)
+        this.selectedBook
+          ? new ActionBooksUpdateOne({
+              update: {
+                id: book.id,
+                changes: book
+              }
+            })
+          : new ActionBooksAddOne({ book })
       );
-      this.select(this.bookFormGroup.value);
+      this.select(book.id);
       this.isEditing = false;
     }
-  }
-
-  clearForm(form: NgForm) {
-    form.resetForm();
-    this.bookFormGroup.setValue(
-      this.createBook(new Date().getUTCMilliseconds().toString())
-    );
-    this.store.dispatch(new ActionBookSelect(null));
   }
 }

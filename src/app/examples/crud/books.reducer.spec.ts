@@ -1,10 +1,10 @@
 import { bookReducer, initialState } from './books.reducer';
 import { BookState } from './books.model';
 import {
-  AddOne,
-  UpdateOne,
-  DeleteOne,
-  ActionBookSelect
+  ActionBooksAddOne,
+  ActionBooksUpdateOne,
+  ActionBooksDeleteOne,
+  ActionBooksSelect
 } from './books.actions';
 
 describe('BookReducer', () => {
@@ -30,11 +30,13 @@ describe('BookReducer', () => {
   });
 
   it('should add a book', () => {
-    const action = new AddOne({
-      id: '1234',
-      title: 'test',
-      author: 'test',
-      description: 'test'
+    const action = new ActionBooksAddOne({
+      book: {
+        id: '1234',
+        title: 'test',
+        author: 'test',
+        description: 'test'
+      }
     });
     const state = bookReducer(TEST_INITIAL_STATE, action);
 
@@ -43,11 +45,16 @@ describe('BookReducer', () => {
   });
 
   it('should update a book', () => {
-    const id = TEST_INITIAL_STATE.ids[0];
-    const action = new UpdateOne(id as string, {
-      title: 'updated',
-      author: 'updated',
-      description: 'updated'
+    const id = TEST_INITIAL_STATE.ids[0] as string;
+    const action = new ActionBooksUpdateOne({
+      update: {
+        id,
+        changes: {
+          title: 'updated',
+          author: 'updated',
+          description: 'updated'
+        }
+      }
     });
 
     const state = bookReducer(TEST_INITIAL_STATE, action);
@@ -61,15 +68,15 @@ describe('BookReducer', () => {
   });
 
   it('should remove a book', () => {
-    const id = TEST_INITIAL_STATE.ids[0];
-    const action = new DeleteOne(id as string);
+    const id = TEST_INITIAL_STATE.ids[0] as string;
+    const action = new ActionBooksDeleteOne({ id });
     const state = bookReducer(TEST_INITIAL_STATE, action);
     expect(state.entities[id]).toBe(undefined);
   });
 
   it('should select a book', () => {
-    const id = TEST_INITIAL_STATE.ids[0];
-    const action = new ActionBookSelect(id as string);
+    const id = TEST_INITIAL_STATE.ids[0] as string;
+    const action = new ActionBooksSelect({ id });
     const state = bookReducer(TEST_INITIAL_STATE, action);
     expect(state.selectedBookId).toBe(id as string);
   });

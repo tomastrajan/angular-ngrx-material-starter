@@ -1,44 +1,50 @@
 <div class="container">
   <h1>{{ 'anms.examples.crud.title' | translate }}</h1>
   <div class="row">
-    <div class="col-md">
+    <div class="col-md-6">
       <h2>{{ 'anms.examples.crud.subtitle1' | translate }}</h2>
-      <mat-card [ngClass]="routeAnimationsElements">
-        <mat-nav-list>
-          <a mat-list-item *ngFor="let book of books | async" (click)=select(book) [ngClass]="routeAnimationsElements">
-            {{book.title}}
-          </a>
-        </mat-nav-list>
+      <mat-card *ngFor="let book of books$ | async"
+                [ngClass]="routeAnimationsElements" (click)=select(book.id)>
+        <h3>{{book.title}}</h3>
+        <small>{{book.author}}</small>
       </mat-card>
+      <p *ngIf="(books$ | async)?.length === 0">{{'anms.examples.crud.empty' | translate}}</p>
+      <button type="button" mat-fab color="primary"
+              class="add" [ngClass]="routeAnimationsElements"
+              *ngIf="!isEditing" (click)="addNew(bookForm)">
+        <mat-icon fontSet="fas" fontIcon="fa-plus"></mat-icon>
+      </button>
     </div>
-    <div class="col-md">
+    <div class="col-md-6">
       <span class="d-flex justify-content-between">
-        <h2>{{ 'anms.examples.crud.subtitle2' | translate }} <span *ngIf="selectedBook | async as book"> : {{ book.id }} </span></h2>
+        <h2>{{ 'anms.examples.crud.subtitle2' | translate }}</h2>
         <span class="d-flex justify-content-end">
-          <span *ngIf="(selectedBook | async) as book; else noBook;">
-            <button mat-icon-button color="accent" (click)="select(book)">
-              <mat-icon fontSet="fas" fontIcon="fa-eye" *ngIf="isEditing"></mat-icon>
-              <mat-icon fontSet="fas" fontIcon="fa-edit" *ngIf="!isEditing"></mat-icon>
+          <span *ngIf="selectedBook">
+            <button mat-icon-button color="accent" *ngIf="!isEditing">
+              <mat-icon fontSet="fas" fontIcon="fa-edit" (click)="edit()"
+                        [matTooltip]="'anms.examples.crud.tooltip.edit' | translate"
+                        matTooltipPosition="above">
+              </mat-icon>
             </button>
-          </span>
-          <ng-template #noBook>
-            <span>
-              <button mat-icon-button color="accent" (click)="isEditing = !isEditing">
-                <mat-icon fontSet="fas" fontIcon="fa-eye" *ngIf="isEditing"></mat-icon>
-                <mat-icon fontSet="fas" fontIcon="fa-edit" *ngIf="!isEditing"></mat-icon>
-              </button>
-            </span>
-          </ng-template>
-          <span *ngIf="selectedBook | async as book">
-            <button mat-icon-button color="warn" (click)="delete(book.id, bookForm)">
-              <mat-icon fontSet="fas" fontIcon="fa-trash"></mat-icon>
+            <button mat-icon-button color="warn" (click)="delete()">
+              <mat-icon fontSet="fas" fontIcon="fa-trash"
+                        [matTooltip]="'anms.examples.crud.tooltip.delete' | translate"
+                        matTooltipPosition="above">
+              </mat-icon>
+            </button>
+            <button mat-icon-button (click)="deselect()">
+              <mat-icon fontSet="fas" fontIcon="fa-times"
+                        [matTooltip]="'anms.examples.crud.tooltip.deselect' | translate"
+                        matTooltipPosition="above">
+              </mat-icon>
             </button>
           </span>
         </span>
       </span>
-      <form #bookForm="ngForm" [formGroup]="bookFormGroup" [style.display]="isEditing ? 'inherit' : 'none'">
+
+      <form #bookForm="ngForm" [formGroup]="bookFormGroup" [style.display]="isEditing ? 'block' : 'none'" [ngClass]="routeAnimationsElements">
         <div class="row">
-          <mat-form-field class="col" [ngClass]="routeAnimationsElements">
+          <mat-form-field class="col">
             <input matInput placeholder="{{ 'anms.examples.crud.placeholder1' | translate }}" formControlName="title"
               required autofocus>
             <mat-error *ngIf="bookFormGroup.get('title').invalid">{{ 'anms.examples.crud.placeholder1' | translate }}
@@ -46,7 +52,7 @@
           </mat-form-field>
         </div>
         <div class="row">
-          <mat-form-field class="col" [ngClass]="routeAnimationsElements">
+          <mat-form-field class="col">
             <input matInput placeholder="{{ 'anms.examples.crud.placeholder2' | translate }}" formControlName="author"
               required>
             <mat-error *ngIf="bookFormGroup.get('author').hasError('required')">{{ 'anms.examples.crud.placeholder2' | translate }}
@@ -54,7 +60,7 @@
           </mat-form-field>
         </div>
         <div class="row">
-          <mat-form-field class="col" [ngClass]="routeAnimationsElements">
+          <mat-form-field class="col">
             <textarea matInput placeholder="{{ 'anms.examples.crud.placeholder3' | translate }}" formControlName="description"
               rows="5"></textarea>
             <mat-error *ngIf="bookFormGroup.get('description').invalid">{{ 'anms.examples.crud.placeholder1' |
@@ -62,28 +68,29 @@
               {{ 'anms.examples.crud.error' | translate }}</mat-error>
           </mat-form-field>
         </div>
-        <div class="row d-flex justify-content-around">
-          <button type="button" mat-raised-button [ngClass]="routeAnimationsElements" (click)="clearForm(bookForm)" color="accent">{{'anms.examples.crud.new' | translate }}
-          </button>
-          <button *ngIf="selectedBook | async as book; else save" (click)="onSubmit(book)" mat-raised-button color="primary" [ngClass]="routeAnimationsElements">{{
-            'anms.examples.crud.save' | translate }}
-          </button>
-          <ng-template #save let-book>
-            <button (click)="onSubmit(book)" mat-raised-button color="primary" [ngClass]="routeAnimationsElements">{{ 'anms.examples.crud.save' | translate }}
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between">
+            <button (click)="save()" mat-raised-button color="primary">
+              {{'anms.examples.crud.save' | translate }}
             </button>
-          </ng-template>
+            <button (click)="cancelEditing()" mat-raised-button>
+              {{'anms.examples.crud.cancel' | translate }}
+            </button>
+          </div>
         </div>
       </form>
-      <div [ngClass]="routeAnimationsElements" *ngIf="!isEditing && selectedBook | async as book">
-        <h3>{{ book.title }}</h3>
+
+      <div [ngClass]="routeAnimationsElements" *ngIf="!isEditing && selectedBook">
+        <h3>{{ selectedBook.title }}</h3>
         <mat-divider></mat-divider>
-        <p>{{ book.description }}</p>
-        <i>{{ book.author }}</i>
+        <p>{{ selectedBook.description }}</p>
+        <i>{{ selectedBook.author }}</i>
       </div>
-      <p *ngIf="!isEditing && !(selectedBook | async) as book" [ngClass]="routeAnimationsElements" >
+
+      <p *ngIf="!isEditing && !selectedBook" [ngClass]="routeAnimationsElements" >
         {{'anms.examples.crud.text' | translate }} <code>@ngrx/entity</code>.
       </p>
-      <button type="button" *ngIf="!isEditing" mat-raised-button color="primary" class="add" [ngClass]="routeAnimationsElements" (click)="clearForm(bookForm); isEditing=true;"> {{'anms.examples.crud.add' | translate }} </button>
+
     </div>
   </div>
 </div>

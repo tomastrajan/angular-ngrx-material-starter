@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Action } from '@ngrx/store';
+import { Action, select, Store } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { tap } from 'rxjs/operators';
+import { tap, withLatestFrom } from 'rxjs/operators';
 
 import { LocalStorageService } from '@app/core';
 
-import { BookActionTypes, ActionBooksPersist } from './books.actions';
+import { State } from '../examples.state';
+import { BookActionTypes } from './books.actions';
+import { selectBooks } from './books.selectors';
 
 export const BOOKS_KEY = 'EXAMPLES.BOOKS';
 
@@ -13,19 +15,20 @@ export const BOOKS_KEY = 'EXAMPLES.BOOKS';
 export class BooksEffects {
   constructor(
     private actions$: Actions<Action>,
+    private store: Store<State>,
     private localStorageService: LocalStorageService
   ) {}
 
   @Effect({ dispatch: false })
-  persistBooks() {
-    return this.actions$.pipe(
-      ofType<ActionBooksPersist>(BookActionTypes.PERSIST),
-      tap(action => {
-        return this.localStorageService.setItem(
-          BOOKS_KEY,
-          action.payload.books
-        );
-      })
-    );
-  }
+  persistBooks = this.actions$.pipe(
+    ofType(
+      BookActionTypes.ADD_ONE,
+      BookActionTypes.UPDATE_ONE,
+      BookActionTypes.DELETE_ONE
+    ),
+    withLatestFrom(this.store.pipe(select(selectBooks))),
+    tap(([actions, booksState]) =>
+      this.localStorageService.setItem(BOOKS_KEY, booksState)
+    )
+  );
 }
