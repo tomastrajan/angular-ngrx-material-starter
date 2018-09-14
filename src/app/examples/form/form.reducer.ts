@@ -16,10 +16,7 @@ export function formReducer(
         form: action.payload.form
       };
     case FormActionTypes.RESET:
-      return {
-        ...state,
-        form: initialState.form
-      };
+      return initialState;
 
     default:
       return state;

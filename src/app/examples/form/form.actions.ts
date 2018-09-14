@@ -8,14 +8,11 @@ export enum FormActionTypes {
 
 export class ActionFormUpdate implements Action {
   readonly type = FormActionTypes.UPDATE;
-
   constructor(readonly payload: { form: Form }) {}
 }
 
 export class ActionFormReset implements Action {
   readonly type = FormActionTypes.RESET;
-
-  constructor() {}
 }
 
 export type FormActions = ActionFormUpdate | ActionFormReset;

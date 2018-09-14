@@ -8,6 +8,7 @@ import { LocalStorageService } from '@app/core';
 import { ActionFormUpdate, FormActionTypes } from './form.actions';
 
 export const FORM_KEY = 'EXAMPLES.FORM';
+
 @Injectable()
 export class FormEffects {
   constructor(
@@ -16,12 +17,10 @@ export class FormEffects {
   ) {}
 
   @Effect({ dispatch: false })
-  saveForm() {
-    return this.actions$.pipe(
-      ofType<ActionFormUpdate>(FormActionTypes.UPDATE),
-      tap(action =>
-        this.localStorageService.setItem(FORM_KEY, action.payload.form)
-      )
-    );
-  }
+  persistForm = this.actions$.pipe(
+    ofType<ActionFormUpdate>(FormActionTypes.UPDATE),
+    tap(action =>
+      this.localStorageService.setItem(FORM_KEY, action.payload.form)
+    )
+  );
 }
