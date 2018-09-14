@@ -2,12 +2,19 @@ h1 {
   margin: 0 0 20px 0;
   text-transform: uppercase;
 }
-.mat-nav-list {
-  padding-top: 0;
+
+mat-card {
+  margin: 0 0 10px 0;
+  cursor: pointer;
 }
-.col-md {
-  margin-bottom: 20px;
+
+.mat-fab {
+  .mat-icon {
+    position: relative;
+    top: 4px;
+  }
 }
+
 .add {
   margin: 20px auto 0;
   display: block;

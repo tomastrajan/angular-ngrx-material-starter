@@ -1,43 +1,37 @@
 import { Action } from '@ngrx/store';
+import { Update } from '@ngrx/entity';
+
 import { Book } from './books.model';
-import { BookState } from './books.model';
 
 export enum BookActionTypes {
   ADD_ONE = '[Books] Add One',
   UPDATE_ONE = '[Books] Update One',
   DELETE_ONE = '[Books] Delete One',
-  SELECT_ONE = '[Books] Select One',
-  PERSIST = '[Books] Persist'
+  SELECT_ONE = '[Books] Select One'
 }
 
-export class AddOne implements Action {
+export class ActionBooksAddOne implements Action {
   readonly type = BookActionTypes.ADD_ONE;
-  constructor(public book: Book) {}
+  constructor(readonly payload: { book: Book }) {}
 }
 
-export class UpdateOne implements Action {
+export class ActionBooksUpdateOne implements Action {
   readonly type = BookActionTypes.UPDATE_ONE;
-  constructor(public id: string, public changes: Partial<Book>) {}
+  constructor(readonly payload: { update: Update<Book> }) {}
 }
 
-export class DeleteOne implements Action {
+export class ActionBooksDeleteOne implements Action {
   readonly type = BookActionTypes.DELETE_ONE;
-  constructor(public id: string) {}
+  constructor(readonly payload: { id: string }) {}
 }
 
-export class ActionBookSelect implements Action {
+export class ActionBooksSelect implements Action {
   readonly type = BookActionTypes.SELECT_ONE;
-  constructor(public id: string) {}
-}
-
-export class ActionBooksPersist implements Action {
-  readonly type = BookActionTypes.PERSIST;
-  constructor(readonly payload: { books: BookState }) {}
+  constructor(readonly payload: { id: string }) {}
 }
 
 export type BookActions =
-  | AddOne
-  | UpdateOne
-  | DeleteOne
-  | ActionBookSelect
-  | ActionBooksPersist;
+  | ActionBooksAddOne
+  | ActionBooksUpdateOne
+  | ActionBooksDeleteOne
+  | ActionBooksSelect;
