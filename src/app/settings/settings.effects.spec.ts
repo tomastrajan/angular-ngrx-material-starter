@@ -61,7 +61,7 @@ describe('SettingsEffects', () => {
 
     const persistAction = new ActionSettingsPersist({ settings: settings });
     actions$ = cold('a', { a: persistAction });
-    effects.persistSettings().subscribe(() => {
+    effects.persistSettings.subscribe(() => {
       expect(localStorageService.setItem).toHaveBeenCalledWith(
         SETTINGS_KEY,
         persistAction.payload.settings
@@ -79,7 +79,7 @@ describe('SettingsEffects', () => {
     );
 
     actions$ = cold('a-|', { a: nonPersistAction });
-    effects.persistSettings().subscribe(undefined, undefined, () => {
+    effects.persistSettings.subscribe(undefined, undefined, () => {
       expect(localStorageService.setItem).not.toHaveBeenCalled();
       expect(animationsService.updateRouteAnimationType).not.toHaveBeenCalled();
     });

@@ -23,23 +23,19 @@ export class AuthEffects {
   ) {}
 
   @Effect({ dispatch: false })
-  login() {
-    return this.actions$.pipe(
-      ofType<ActionAuthLogin>(AuthActionTypes.LOGIN),
-      tap(() =>
-        this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: true })
-      )
-    );
-  }
+  login = this.actions$.pipe(
+    ofType<ActionAuthLogin>(AuthActionTypes.LOGIN),
+    tap(() =>
+      this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: true })
+    )
+  );
 
   @Effect({ dispatch: false })
-  logout() {
-    return this.actions$.pipe(
-      ofType<ActionAuthLogout>(AuthActionTypes.LOGOUT),
-      tap(() => {
-        this.router.navigate(['']);
-        this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: false });
-      })
-    );
-  }
+  logout = this.actions$.pipe(
+    ofType<ActionAuthLogout>(AuthActionTypes.LOGOUT),
+    tap(() => {
+      this.router.navigate(['']);
+      this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: false });
+    })
+  );
 }
