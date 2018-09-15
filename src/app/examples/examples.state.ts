@@ -26,7 +26,7 @@ export const selectExamples = createFeatureSelector<State, ExamplesState>(
 
 export interface ExamplesState {
   todos: TodosState;
-  stockMarket: StockMarketState;
+  stocks: StockMarketState;
   books: BookState;
   form: FormState;
 }

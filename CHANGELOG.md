@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.10.0"></a>
+# [6.10.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.9.0...v6.10.0) (2018-09-15)
+
+
+### Bug Fixes
+
+* **examples:** rename stockMarket state to stocks to support localstorage persistence, fixes [#315](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/315) ([e9f19fb](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e9f19fb))
+* **todos:** snackbar not being translated ([4d18657](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4d18657)), closes [#324](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/324)
+* **todos:** snackbar not being translated ([fc54a52](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/fc54a52)), closes [#324](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/324)
+
+
+### Features
+
+* **docs:** add contributor aideslucas ([ed98a31](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ed98a31))
+* **i18n:** add portuguese brazil translations ([f12665b](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f12665b))
+
+
+
 <a name="6.9.0"></a>
 # [6.9.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.8.0...v6.9.0) (2018-08-27)
 

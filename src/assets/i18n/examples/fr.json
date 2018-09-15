@@ -25,6 +25,11 @@
   "anms.examples.todos.filter.description": "Affiche",
   "anms.examples.todos.filter.items": "tâches",
   "anms.examples.todos.filter.item": "tâche",
+  "anms.examples.todos.filter.notification": "Filtré à",
+  "anms.examples.todos.remove.notification": "Terminées tâches supprimées",
+  "anms.examples.todos.toggle.notification": "basculer {{name}} à",
+  "anms.examples.todos.added.notification": "{{name}} ajouté",
+  "anms.examples.todos.undo": "Annuler",
   "anms.examples.stocks.title": "Bourse",
   "anms.examples.stocks.symbol": "Symbole boursier",
   "anms.examples.stocks.description":
