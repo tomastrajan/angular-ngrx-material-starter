@@ -5,7 +5,10 @@ import { takeUntil } from 'rxjs/operators';
 
 import { selectStockMarket } from '../stock-market.selectors';
 import { ActionStockMarketRetrieve } from '../stock-market.actions';
+import { STOCK_MARKET_KEY } from '../stock-market.effects';
 import { State } from '../../examples.state';
+
+import { LocalStorageService } from '@app/core';
 
 @Component({
   selector: 'anms-stock-market',
@@ -18,14 +21,23 @@ export class StockMarketContainerComponent implements OnInit, OnDestroy {
   initialized;
   stocks;
 
-  constructor(public store: Store<State>) {}
+  constructor(
+    public store: Store<State>, 
+    public localStorageService: LocalStorageService) {
 
-  ngOnInit() {
+      this.stocks  = localStorageService.getItem(STOCK_MARKET_KEY);
+  }
+
+  ngOnInit() { 
     this.initialized = false;
     this.store
       .pipe(select(selectStockMarket), takeUntil(this.unsubscribe$))
       .subscribe((stocks: any) => {
-        this.stocks = stocks;
+        
+        if (stocks == undefined)
+          stocks = this.stocks;
+        else
+          this.stocks = stocks;
 
         if (!this.initialized) {
           this.initialized = true;
