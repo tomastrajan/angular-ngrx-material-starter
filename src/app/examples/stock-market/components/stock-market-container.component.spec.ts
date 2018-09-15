@@ -181,7 +181,7 @@ describe('StockMarketContainerComponent', () => {
 function createState(stockState: StockMarketState) {
   return {
     examples: {
-      stockMarket: stockState
+      stocks: stockState
     }
   } as State;
 }

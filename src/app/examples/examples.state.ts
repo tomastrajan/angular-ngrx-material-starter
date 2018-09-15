@@ -13,7 +13,7 @@ export const FEATURE_NAME = 'examples';
 
 export const reducers: ActionReducerMap<ExamplesState> = {
   todos: todosReducer,
-  stockMarket: stockMarketReducer,
+  stocks: stockMarketReducer,
   books: bookReducer
 };
 
@@ -23,7 +23,7 @@ export const selectExamples = createFeatureSelector<State, ExamplesState>(
 
 export interface ExamplesState {
   todos: TodosState;
-  stockMarket: StockMarketState;
+  stocks: StockMarketState;
   books: BookState;
 }
 
