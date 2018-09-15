@@ -15,7 +15,7 @@ export const FEATURE_NAME = 'examples';
 
 export const reducers: ActionReducerMap<ExamplesState> = {
   todos: todosReducer,
-  stockMarket: stockMarketReducer,
+  stocks: stockMarketReducer,
   books: bookReducer,
   form: formReducer
 };

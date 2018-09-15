@@ -38,7 +38,12 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
       },
       isolate: true
     }),
-    EffectsModule.forFeature([TodosEffects, StockMarketEffects, BooksEffects, FormEffects])
+    EffectsModule.forFeature([
+      TodosEffects,
+      StockMarketEffects,
+      BooksEffects,
+      FormEffects
+    ])
   ],
   declarations: [
     ExamplesComponent,
