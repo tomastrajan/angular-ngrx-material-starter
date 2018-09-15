@@ -24,6 +24,11 @@
   "anms.examples.todos.filter.description": "Mostrando",
   "anms.examples.todos.filter.items": "recordatorios",
   "anms.examples.todos.filter.item": "recordatorio",
+  "anms.examples.todos.filter.notification": "Filtrado a",
+  "anms.examples.todos.remove.notification": "Hechos eliminados",
+  "anms.examples.todos.toggle.notification": "Alternadas de {{name}} a",
+  "anms.examples.todos.added.notification": "{{name}} agregado",
+  "anms.examples.todos.undo": "Deshacer",
   "anms.examples.stocks.title": "Mercado de valores",
   "anms.examples.stocks.symbol": "Símbolo de la acción",
   "anms.examples.stocks.description":

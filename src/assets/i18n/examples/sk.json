@@ -23,6 +23,11 @@
   "anms.examples.todos.filter.active": "Aktívne",
   "anms.examples.todos.filter.description": "Zobrazené",
   "anms.examples.todos.filter.items": "úlohy",
+  "anms.examples.todos.filter.notification": "Filtrované na",
+  "anms.examples.todos.remove.notification": "Dokončené úlohy noli odstránené",
+  "anms.examples.todos.toggle.notification": "Zmeniť stav {{name}} na",
+  "anms.examples.todos.added.notification": "Úloha {{name}} pridaná",
+  "anms.examples.todos.undo": "Späť",
   "anms.examples.stocks.title": "Akciový trh",
   "anms.examples.stocks.symbol": "Symbol akcie",
   "anms.examples.stocks.description":

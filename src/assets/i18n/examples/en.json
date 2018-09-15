@@ -25,6 +25,11 @@
   "anms.examples.todos.filter.description": "Displaying",
   "anms.examples.todos.filter.items": "todos",
   "anms.examples.todos.filter.item": "todo",
+  "anms.examples.todos.filter.notification": "Filtered to",
+  "anms.examples.todos.remove.notification": "Removed done todos",
+  "anms.examples.todos.toggle.notification": "Toggled {{name}} to",
+  "anms.examples.todos.added.notification": "{{name}} added",
+  "anms.examples.todos.undo": "Undo",
   "anms.examples.stocks.title": "Stock market",
   "anms.examples.stocks.symbol": "Stock symbol",
   "anms.examples.stocks.description":
