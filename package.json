@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "watch": "ng test --configuration=test --browsers ChromeHeadless --watch",
-    "build:prod": "ng build --prod --build-optimizer --vendor-chunk --common-chunk",
+    "build:prod": "ng build --prod --vendor-chunk",
     "clean": "rimraf ./dist/",
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
