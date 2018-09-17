@@ -67,6 +67,7 @@
   "anms.settings.themes.nature": "Nature",
   "anms.settings.themes.dark": "Sombre",
   "anms.settings.themes.night-mode": "Mode nuit automatique (de 21h00 à 7h00)",
+  "anms.settings.themes.sticky-header": "Entête fixe",
   "anms.settings.animations": "Animations",
   "anms.settings.animations.page":
     "Transition de la page entière lors de la navigation",
