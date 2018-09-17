@@ -35,7 +35,8 @@ export class SettingsContainerComponent implements OnInit, OnDestroy {
     { value: 'de', label: 'de' },
     { value: 'sk', label: 'sk' },
     { value: 'fr', label: 'fr' },
-    { value: 'es', label: 'es' }
+    { value: 'es', label: 'es' },
+    { value: 'pt-br', label: 'pt-br' }
   ];
 
   constructor(private store: Store<{}>) {
