@@ -13,7 +13,6 @@ describe('Form Actions', () => {
       email: 'test@test.test',
       description: 'It is a test.',
       requestGift: true,
-      age: 27,
       birthday: new Date(),
       rating: 10
     };
