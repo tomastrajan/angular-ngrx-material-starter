@@ -56,6 +56,7 @@ describe('SettingsEffects', () => {
       elementsAnimations: true,
       theme: 'default',
       autoNightMode: false,
+      stickyHeader: false,
       pageAnimationsDisabled: true
     };
 
