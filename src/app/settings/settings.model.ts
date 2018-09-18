@@ -8,6 +8,7 @@ export interface SettingsState {
   language: string;
   theme: string;
   autoNightMode: boolean;
+  stickyHeader: boolean;
   pageAnimations: boolean;
   pageAnimationsDisabled: boolean;
   elementsAnimations: boolean;

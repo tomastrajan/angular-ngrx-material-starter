@@ -9,7 +9,8 @@ import {
   ActionSettingsChangeAutoNightMode,
   ActionSettingsChangeLanguage,
   ActionSettingsChangeTheme,
-  ActionSettingsPersist
+  ActionSettingsPersist,
+  ActionSettingsChangeStickyHeader
 } from '../settings.actions';
 import { SettingsState } from '../settings.model';
 import { selectSettings } from '../settings.selectors';
@@ -66,6 +67,11 @@ export class SettingsContainerComponent implements OnInit, OnDestroy {
     this.store.dispatch(
       new ActionSettingsChangeAutoNightMode({ autoNightMode })
     );
+    this.store.dispatch(new ActionSettingsPersist({ settings: this.settings }));
+  }
+
+  onStickyHeaderToggle({ checked: stickyHeader }) {
+    this.store.dispatch(new ActionSettingsChangeStickyHeader({ stickyHeader }));
     this.store.dispatch(new ActionSettingsPersist({ settings: this.settings }));
   }
 
