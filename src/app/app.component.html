@@ -39,7 +39,7 @@
             </button>
           </span>
 
-        <button mat-button class="sign-in-button "
+        <button mat-button mat-stroked-button color="accent"
                 *ngIf="!isAuthenticated"
                 (click)="onLoginClick()">
           {{ 'anms.menu.login' | translate }}
