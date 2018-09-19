@@ -28,8 +28,8 @@ describe('SettingsComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [SettingsContainerComponent],
-        imports: [TestingModule]
+        imports: [TestingModule],
+        declarations: [SettingsContainerComponent]
       }).compileComponents();
 
       store = TestBed.get(Store);

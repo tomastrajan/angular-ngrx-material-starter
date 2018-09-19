@@ -37,10 +37,17 @@ describe('LocalStorageService', () => {
     });
   });
 
-  it('should load nested initial state with camel case properties and object value', () => {
-    service.setItem('TEST.PROP.SUB-PROP', 'value');
+  it('should load initial state with camel case property', () => {
+    service.setItem('TEST.SUB-PROP', 'value');
     expect(LocalStorageService.loadInitialState()).toEqual({
-      test: { prop: { subProp: 'value' } }
+      test: { subProp: 'value' }
+    });
+  });
+
+  it('should load nested initial state with camel case properties', () => {
+    service.setItem('TEST.SUB-PROP.SUB-SUB-PROP', 'value');
+    expect(LocalStorageService.loadInitialState()).toEqual({
+      test: { subProp: { subSubProp: 'value' } }
     });
   });
 });

@@ -1,12 +1,9 @@
-import { FormState, Form } from './form.model';
+import { Form } from './form.model';
 import { formReducer, initialState } from './form.reducer';
-import {
-  ActionFormUpdate,
-  ActionFormReset
-} from '@app/examples/form/form.actions';
+import { ActionFormUpdate, ActionFormReset } from './form.actions';
 
 describe('FormReducer', () => {
-  const newForm: Form = {
+  const form: Form = {
     username: 'test',
     password: 'test',
     email: 'test@test.test',
@@ -23,14 +20,16 @@ describe('FormReducer', () => {
   });
 
   it('should update the form', () => {
-    const action = new ActionFormUpdate({ form: newForm });
+    const action = new ActionFormUpdate({
+      form: { ...form, username: 'updated' }
+    });
     const state = formReducer(initialState, action);
-    expect(state.form).toEqual(jasmine.objectContaining(newForm));
+    expect(state.form.username).toBe('updated');
   });
 
   it('should reset the form', () => {
     const action = new ActionFormReset();
-    const state = formReducer({ form: newForm }, action);
-    expect(state).toBe(initialState);
+    const state = formReducer(undefined, action);
+    expect(state).toEqual(initialState);
   });
 });
