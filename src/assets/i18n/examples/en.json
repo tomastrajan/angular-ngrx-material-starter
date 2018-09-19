@@ -4,6 +4,7 @@
   "anms.examples.menu.theming": "Theming",
   "anms.examples.menu.crud": "CRUD",
   "anms.examples.menu.auth": "Auth",
+  "anms.examples.menu.form": "Form",
   "anms.examples.todos.input": "I am going to...",
   "anms.examples.todos.tooltip.add": "Add new todo",
   "anms.examples.todos.tooltip.remove": "Remove done todos",
@@ -84,6 +85,30 @@
   "anms.examples.auth.title": "Authenticated component",
   "anms.examples.auth.description1":
     "This component is only accessible for authenticated users",
+  "anms.examples.form.title": "Reactive form using a form builder",
+  "anms.examples.form.subtitle1": "The form",
+  "anms.examples.form.subtitle2": "Marketing information",
+  "anms.examples.form.autosave": "Auto Save",
+  "anms.examples.form.placeholder1": "Username",
+  "anms.examples.form.placeholder2": "Password",
+  "anms.examples.form.placeholder3": "E-mail",
+  "anms.examples.form.placeholder4": "Description",
+  "anms.examples.form.placeholder5": "Birthday",
+  "anms.examples.form.error1": "is required",
+  "anms.examples.form.error2": "should be valid",
+  "anms.examples.form.error3": "should be longer than",
+  "anms.examples.form.error4": "should be smaller than",
+  "anms.examples.form.text1": "Request a gift.",
+  "anms.examples.form.text2": "Rate this form:",
+  "anms.examples.form.text3":
+    "You have to request a gift to see more information.",
+  "anms.examples.form.text4": "Gift sended!",
+  "anms.examples.form.text5": "No gift sended.",
+  "anms.examples.form.text6": "Clap",
+  "anms.examples.form.reset": "Reset",
+  "anms.examples.form.save": "Save",
+  "anms.examples.form.send": "Send",
+
   "anms.examples.auth.description2":
     "Logging out will cause user to be redirected to home screen if visiting route accessible only to authenticated users"
 }
