@@ -172,6 +172,16 @@
         "translation",
         "bug"
       ]
+    },
+    {
+      "login": "terrystrachan",
+      "name": "Terry Strachan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4921146?v=4",
+      "profile": "https://www.linkedin.com/in/terrystrachan/",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
