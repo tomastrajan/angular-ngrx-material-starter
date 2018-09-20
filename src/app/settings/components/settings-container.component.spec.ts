@@ -10,7 +10,8 @@ import {
   ActionSettingsChangeAnimationsElements,
   ActionSettingsChangeAnimationsPage,
   ActionSettingsChangeAutoNightMode,
-  ActionSettingsChangeTheme
+  ActionSettingsChangeTheme,
+  ActionSettingsChangeStickyHeader
 } from '../settings.actions';
 
 describe('SettingsComponent', () => {
@@ -27,8 +28,8 @@ describe('SettingsComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [SettingsContainerComponent],
-        imports: [TestingModule]
+        imports: [TestingModule],
+        declarations: [SettingsContainerComponent]
       }).compileComponents();
 
       store = TestBed.get(Store);
@@ -36,6 +37,7 @@ describe('SettingsComponent', () => {
         settings: {
           theme: 'DEFAULT-THEME',
           autoNightMode: true,
+          stickyHeader: true,
           pageAnimations: true,
           pageAnimationsDisabled: false,
           elementsAnimations: true,
@@ -53,6 +55,20 @@ describe('SettingsComponent', () => {
     expect(component.settings.theme).toBe('DEFAULT-THEME');
     expect(component.settings.autoNightMode).toBeTruthy();
     expect(component.settings.pageAnimations).toBeTruthy();
+  });
+
+  it('should dispatch change sticky header on sticky header toggle', () => {
+    dispatchSpy = spyOn(store, 'dispatch');
+    const componentDebug = fixture.debugElement;
+    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[0];
+
+    slider.triggerEventHandler('change', { checked: false });
+    fixture.detectChanges();
+
+    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledWith(
+      new ActionSettingsChangeStickyHeader({ stickyHeader: false })
+    );
   });
 
   it('should dispatch change theme action on theme selection', () => {
@@ -74,7 +90,7 @@ describe('SettingsComponent', () => {
   it('should dispatch change auto night mode on night mode toggle', () => {
     dispatchSpy = spyOn(store, 'dispatch');
     const componentDebug = fixture.debugElement;
-    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[0];
+    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[1];
 
     slider.triggerEventHandler('change', { checked: false });
     fixture.detectChanges();
@@ -88,7 +104,7 @@ describe('SettingsComponent', () => {
   it('should dispatch change animations page', () => {
     dispatchSpy = spyOn(store, 'dispatch');
     const componentDebug = fixture.debugElement;
-    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[1];
+    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[2];
 
     slider.triggerEventHandler('change', { checked: false });
     fixture.detectChanges();
@@ -102,7 +118,7 @@ describe('SettingsComponent', () => {
   it('should dispatch change animations elements', () => {
     dispatchSpy = spyOn(store, 'dispatch');
     const componentDebug = fixture.debugElement;
-    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[2];
+    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[3];
 
     slider.triggerEventHandler('change', { checked: false });
     fixture.detectChanges();
@@ -128,7 +144,7 @@ describe('SettingsComponent', () => {
 
     dispatchSpy = spyOn(store, 'dispatch');
     const componentDebug = fixture.debugElement;
-    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[1];
+    const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[2];
 
     slider.triggerEventHandler('change', { checked: false });
     fixture.detectChanges();

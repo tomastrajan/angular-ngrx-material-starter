@@ -4,9 +4,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Stock } from './stock-market.model';
 
 export enum StockMarketActionTypes {
-  RETRIEVE = '[Todos] Retrieve',
-  RETRIEVE_SUCCESS = '[Todos] Retrieve Success',
-  RETRIEVE_ERROR = '[Todos] Retrieve Error'
+  RETRIEVE = '[Stock] Retrieve',
+  RETRIEVE_SUCCESS = '[Stock] Retrieve Success',
+  RETRIEVE_ERROR = '[Stock] Retrieve Error'
 }
 
 export class ActionStockMarketRetrieve implements Action {

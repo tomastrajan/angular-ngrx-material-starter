@@ -19,6 +19,15 @@
           </mat-select>
         </mat-form-field>
       </div>
+      <div class="icon-form-field">
+         <mat-icon fontSet="fas" fontIcon="fa-bars" color="accent"></mat-icon>
+         <mat-placeholder>{{ 'anms.settings.themes.sticky-header' | translate }}
+         </mat-placeholder>
+         <mat-slide-toggle
+           [checked]="settings?.stickyHeader"
+           (change)="onStickyHeaderToggle($event)">
+         </mat-slide-toggle>
+       </div>
     </div>
     <div class="col-md-6 group">
     </div>

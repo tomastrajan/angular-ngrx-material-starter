@@ -13,6 +13,7 @@ by [@tomastrajan](https://twitter.com/tomastrajan)
   * [Getting Started](#getting-started)
   * [Useful Commands](#useful-commands)
   * [Make It Your Own](#make-it-your-own)
+  * [Goals](#goals)
   * [Learning Materials](#learning-materials)
   * [List of Projects Built Using This Starter](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md)
   * [Features](#features)
@@ -45,6 +46,7 @@ When using this starter project to build your own app you might consider some of
   
   * use `search and replace` functionality of your favourite IDE to replace `anms` with `<your-app-prefix>`
   * rename project in `package.json` `name` property and set appropriate version (eg `0.0.0` or `1.0.0`)
+  * remove / rename context path config ` -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter` in `package.json`, this is used to configure url (context path) on which the application will be available (eg. `https://www.something.com/<context-path>/`)
   * rename app in `src/environments/` files (will be shown in browser tab)
   * delete pre-existing `CHANGELOG.md` (you will generate your own with future releases of your features)
   * delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILT_WITH.md` files as they are relevant only if project is open sourced on Github
@@ -60,6 +62,21 @@ Based on your preferences and needs you can either:
   * not use / use other CI server and delete both `.travis.yml` and `.travis-deploy.sh`
   * create Travis CI account and link it to your projects Github repo and [configure build](https://medium.com/@tomastrajan/continuous-deployment-of-client-side-apps-with-github-pages-travis-ci-10e9d641a889) 
     with `GH_REF` and `GH_TOKEN` environment variables for automatic deployment of releases to Github Pages
+  
+
+## Goals
+The main goal of this repository is to provide an up to date example of Angular application following all recent best practices in various areas like:
+  * `@ngrx/store` - including reducers, actions, selectors
+  * `@ngrx/effects` - for implementation of side effects like `http` requests, logging, notifications,...
+  * `@ngrx/entity` - for CRUD operations
+  * `@angular/material` - material design component library, theming, ...
+  * routing
+  * testing of all the above mentioned concepts
+  * Angular CLI configuration (prod build, budgets, ...)
+  
+Repository will also strive to always stay in sync with releases of Angular and the related libraries.
+The nature of the repository is also a great match for first time open source contributors who can add
+simple features and enhance test coverage, all contributors are more than welcome!
   
 
 ## Learning Materials
