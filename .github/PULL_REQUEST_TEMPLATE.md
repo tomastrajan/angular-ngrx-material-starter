@@ -1,5 +1,3 @@
-## PR Checklist
-
 <!--
 
 Hi, thanks for taking the time to submit this Pull Request, it is really appreciated!
@@ -11,7 +9,7 @@ Before submitting the Pull Request make sure you:
 
 * the commit message follows our guidelines: CONTRIBUTING.md#commit-message-guidelines
 
-Feel free to add you as a contributor via `npm run contributors:add`
+Feel free to add yourself as a contributor via `npm run contributors:add`
 
 -->
 
