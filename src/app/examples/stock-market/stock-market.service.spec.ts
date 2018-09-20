@@ -42,9 +42,14 @@ describe('StockMarketService', () => {
 
       httpClientSpy.get.and.returnValue(of(expectedStock));
 
-      service
-        .retrieveStock('TS')
-        .subscribe(stock => expect(stock).toBeTruthy(), fail);
+      service.retrieveStock('TS').subscribe(stock => {
+        expect(stock.symbol).toBe(expectedStock.symbol);
+        expect(stock.exchange).toBe(expectedStock.primaryExchange);
+        expect(stock.changePercent).toBe(
+          expectedStock.changePercent.toFixed(2)
+        );
+        expect(stock.last).toBe(expectedStock.latestPrice);
+      }, fail);
 
       expect(httpClientSpy.get.calls.count()).toBe(1, 'called once');
     })
@@ -58,13 +63,14 @@ describe('StockMarketService', () => {
         statusText: 'Not Found',
         status: 404
       });
+
       httpClientSpy.get.and.returnValue(of(errorResponse));
 
       service
         .retrieveStock('TS')
         .subscribe(
           () => fail('expected an error'),
-          error => expect(error).not.toBeUndefined()
+          error => expect(error).toBeDefined()
         );
     })
   );
