@@ -8,6 +8,7 @@ import {
 describe('Form Actions', () => {
   it('should create ActionFormUpdate action', () => {
     const testForm: Form = {
+      autosave: false,
       username: 'test',
       password: 'test',
       email: 'test@test.test',

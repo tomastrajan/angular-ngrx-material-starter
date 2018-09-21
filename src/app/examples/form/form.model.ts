@@ -1,4 +1,5 @@
 export interface Form {
+  autosave: boolean;
   username: string;
   password: string;
   email: string;

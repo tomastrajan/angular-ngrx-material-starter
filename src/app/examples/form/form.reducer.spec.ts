@@ -4,6 +4,7 @@ import { ActionFormUpdate, ActionFormReset } from './form.actions';
 
 describe('FormReducer', () => {
   const form: Form = {
+    autosave: false,
     username: 'test',
     password: 'test',
     email: 'test@test.test',

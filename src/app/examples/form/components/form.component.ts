@@ -1,10 +1,9 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
-import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
-import { takeUntil, filter, debounceTime, tap } from 'rxjs/operators';
+import { takeUntil, filter, debounceTime, take } from 'rxjs/operators';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 import { TranslateService } from '@ngx-translate/core';
@@ -20,9 +19,7 @@ import { Form } from '../form.model';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit, OnDestroy {
-  private unsubscribe$: Subject<void> = new Subject<void>();
-
-  @ViewChild('autosize') autosize: CdkTextareaAutosize;
+  private unsubscribe$ = new Subject<void>();
 
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
@@ -53,14 +50,13 @@ export class FormComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store
-      .pipe(select(selectForm))
-      .subscribe(form => this.form.patchValue(form))
-      .unsubscribe();
+      .pipe(select(selectForm), take(1))
+      .subscribe(form => this.form.patchValue(form));
 
     this.form.valueChanges
       .pipe(
         debounceTime(500),
-        filter((form: Form) => form['autosave']),
+        filter((form: Form) => form.autosave),
         takeUntil(this.unsubscribe$)
       )
       .subscribe((form: Form) =>
