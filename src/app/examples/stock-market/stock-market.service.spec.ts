@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 
 import { CoreModule } from '@app/core';
@@ -52,26 +52,6 @@ describe('StockMarketService', () => {
       }, fail);
 
       expect(httpClientSpy.get.calls.count()).toBe(1, 'called once');
-    })
-  );
-
-  it(
-    'should return error when server returns 404',
-    inject([StockMarketService], (service: StockMarketService) => {
-      const errorResponse = new HttpErrorResponse({
-        error: 'call expected error',
-        statusText: 'Not Found',
-        status: 404
-      });
-
-      httpClientSpy.get.and.returnValue(of(errorResponse));
-
-      service
-        .retrieveStock('TS')
-        .subscribe(
-          () => fail('expected an error'),
-          error => expect(error).toBeDefined()
-        );
     })
   );
 });
