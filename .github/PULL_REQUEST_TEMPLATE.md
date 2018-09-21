@@ -9,7 +9,11 @@ Before submitting the Pull Request make sure you:
 
 * the commit message follows our guidelines: CONTRIBUTING.md#commit-message-guidelines
 
-Feel free to add yourself as a contributor via `npm run contributors:add`
+Feel free to add yourself as a contributor via `npm run contributors:add` and don't forget to run 
+`npm run contributors:generate` after this. For example:
+
+$ npm run contributors:add username code,test,translation
+$ npm run contributors:generate
 
 -->
 
