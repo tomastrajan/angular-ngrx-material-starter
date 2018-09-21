@@ -48,10 +48,10 @@ export class CrudComponent implements OnInit, OnDestroy {
       .pipe(select(selectSelectedBook), takeUntil(this.unsubscribe$))
       .subscribe(book => (this.selectedBook = book));
   }
-                                
+
   ngOnDestroy() {
-     this.unsubscribe$.next();
-     this.unsubscribe$.completed();
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   select(id: string) {
