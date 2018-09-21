@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
 import { Subject, Observable } from 'rxjs';
@@ -22,7 +22,7 @@ import { selectSelectedBook, selectAllBooks } from '../books.selectors';
   templateUrl: './crud.component.html',
   styleUrls: ['./crud.component.scss']
 })
-export class CrudComponent implements OnInit {
+export class CrudComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
@@ -47,6 +47,11 @@ export class CrudComponent implements OnInit {
     this.store
       .pipe(select(selectSelectedBook), takeUntil(this.unsubscribe$))
       .subscribe(book => (this.selectedBook = book));
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   select(id: string) {
