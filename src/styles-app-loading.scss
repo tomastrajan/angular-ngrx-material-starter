@@ -1,7 +1,8 @@
 .app-loading {
   .logo {
-    width: 128px;
-    height: 128px;
+    width: 64px;
+    height: 64px;
     background: url(./assets/logo.png) center center no-repeat;
+    background-size: cover;
   }
 }
