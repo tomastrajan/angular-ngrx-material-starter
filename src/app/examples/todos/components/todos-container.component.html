@@ -43,8 +43,8 @@
             <span>{{ 'anms.examples.todos.filter.active' | translate }}</span>
           </button>
         </mat-menu>
-        <mat-chip-list class="todos-filter-info d-none d-sm-block">
-          <mat-chip>
+        <mat-chip-list class="todos-filter-info d-none d-sm-block d-md-none d-lg-block">
+          <mat-chip [disabled]=true>
             {{ 'anms.examples.todos.filter.description' | translate }} {{todos.filter !==
             'ALL' ? filteredTodos.length : ''}}
             {{ ('anms.examples.todos.filter.' + todos.filter.toLowerCase() |
