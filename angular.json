@@ -31,9 +31,8 @@
               }
             ],
             "styles": [
-              {
-                "input": "src/styles.scss"
-              }
+              { "input": "src/styles-app-loading.scss" },
+              { "input": "src/styles.scss" }
             ],
             "scripts": []
           },
