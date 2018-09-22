@@ -1,5 +1,11 @@
 import { v4 as uuid } from 'uuid';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef
+} from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { takeUntil } from 'rxjs/operators';
@@ -16,7 +22,8 @@ import { selectSelectedBook, selectAllBooks } from '../books.selectors';
 @Component({
   selector: 'anms-crud',
   templateUrl: './crud.component.html',
-  styleUrls: ['./crud.component.scss']
+  styleUrls: ['./crud.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CrudComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
@@ -39,7 +46,8 @@ export class CrudComponent implements OnInit, OnDestroy {
   constructor(
     public store: Store<State>,
     public fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private cd: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
@@ -49,7 +57,10 @@ export class CrudComponent implements OnInit, OnDestroy {
         select(selectSelectedBook),
         takeUntil(this.unsubscribe$)
       )
-      .subscribe(book => (this.selectedBook = book));
+      .subscribe(book => {
+        this.selectedBook = book;
+        this.cd.markForCheck();
+      });
   }
 
   ngOnDestroy() {

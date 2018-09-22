@@ -1,5 +1,10 @@
 import { Store, select } from '@ngrx/store';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivationEnd, Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
@@ -21,11 +26,12 @@ interface State extends BaseSettingsState, BaseExamplesState {}
   selector: 'anms-examples',
   templateUrl: './examples.component.html',
   styleUrls: ['./examples.component.scss'],
-  animations: [routeAnimations]
+  animations: [routeAnimations],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExamplesComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
-  private isAuthenticated$: Observable<boolean>;
+  isAuthenticated$: Observable<boolean>;
 
   examples = [
     { link: 'todos', label: 'anms.examples.menu.todos' },

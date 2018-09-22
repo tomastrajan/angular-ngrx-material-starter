@@ -6,6 +6,7 @@ import {
   RenderResult,
   fireEvent
 } from '@angular-extensions/testing-library';
+import { MatCheckbox } from '@angular/material';
 
 import { MockStore, TestingModule } from '@testing/utils';
 
@@ -139,7 +140,7 @@ describe('TodosComponent', () => {
     );
   });
 
-  it('should disable remove done todos button if no todo is done', () => {
+  it('should disable remove done todos button if no todo is done', async () => {
     store.setState(
       createState({
         items: [{ id: '1', name: 'test 1', done: true }],
