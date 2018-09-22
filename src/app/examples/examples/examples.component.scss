@@ -2,17 +2,15 @@
 
 nav {
   margin-bottom: 20px;
-  position: relative;
-  overflow: scroll;
 
   .mat-tab-link {
-    min-width: 130px;
+    min-width: 120px;
+    padding: 0 15px;
   }
 
-  @media (max-width: map-get($grid-breakpoints, sm)) {
+  @media (max-width: map-get($grid-breakpoints, md)) {
     .mat-tab-link {
       min-width: 0;
-      padding: 0 15px;
     }
   }
 }
