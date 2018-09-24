@@ -14,7 +14,7 @@
     "clean": "rimraf ./dist/",
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
-    "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --configuration=test --browsers ChromeTravisCi && ng e2e && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
+    "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --configuration=test --browsers ChromeTravisCi && ng e2e && npm run cy:ci && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
     "release": "standard-version && git push --follow-tags origin master",
     "prettier": "prettier {src,e2e}/**/*.{ts,json,md,scss} --write",
     "prettier:ci": "prettier {src,e2e}/**/*.{ts,json,md,scss} --list-different",
@@ -24,9 +24,9 @@
     "contributors:check": "all-contributors check",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "precy:ci": "npm run build",
+    "precy:ci": "npm run build:prod -- --deploy-url \"/angular-ngrx-material-starter/\" --base-href \"/angular-ngrx-material-starter\"",
     "cy:ci": "npm-run-all --parallel --race cy:server \"cy:run -- --config=baseUrl=http://localhost:4000\"",
-    "cy:server": "angular-http-server --path ./dist -p 4000 --silent"
+    "cy:server": "node ./cy-server.js"
   },
   "husky": {
     "hooks": {
@@ -77,9 +77,9 @@
     "@types/jasmine": "~2.8.3",
     "@types/node": "~9.4.0",
     "all-contributors-cli": "^5.2.1",
-    "angular-http-server": "^1.5.0",
     "codelyzer": "~4.4.2",
     "cypress": "^3.1.0",
+    "express": "^4.16.3",
     "http-server": "^0.11.1",
     "husky": "^1.0.0-rc.13",
     "jasmine-core": "~2.99.1",
