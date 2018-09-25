@@ -1,6 +1,6 @@
 describe('About', () => {
   beforeEach(() => {
-    cy.visit('/#about');
+    cy.visit('/#/about');
   });
 
   it('should display main heading', () => {
