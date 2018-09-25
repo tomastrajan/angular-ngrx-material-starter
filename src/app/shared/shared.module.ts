@@ -27,10 +27,35 @@ import { MatNativeDateModule } from '@angular/material';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+import {
+  faBars,
+  faUserCircle,
+  faPowerOff,
+  faCog,
+  faPlayCircle,
+  faRocket
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithub,
+  faMediumM,
+  faTwitter,
+  faInstagram,
+  faYoutube
+} from '@fortawesome/free-brands-svg-icons';
 
-library.add(fas, fab);
+library.add(
+  faBars,
+  faUserCircle,
+  faPowerOff,
+  faCog,
+  faRocket,
+  faPlayCircle,
+  faGithub,
+  faMediumM,
+  faTwitter,
+  faInstagram,
+  faYoutube
+);
 
 import { BigInputComponent } from './big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action.component';
