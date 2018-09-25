@@ -35,6 +35,8 @@ npm start
   * `npm start` - starts a dev server and opens browser with running app
   * `npm run test` - runs lint and tests
   * `npm run watch` - runs tests in watch mode
+  * `npm run cy:open` - opens the Cypress Test Runner in interactive mode
+  * `npm run cy:run` - runs Cypress tests via the cli
   * `npm run prod` - runs full prod build and serves prod bundle
   * `npm run prettier` - runs prettier to format whole code base (`.ts` and `.scss`) 
   * `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application) 
@@ -73,8 +75,9 @@ The main goal of this repository is to provide an up to date example of Angular 
   * routing
   * testing of all the above mentioned concepts
   * Angular CLI configuration (prod build, budgets, ...)
-  
-Repository will also strive to always stay in sync with releases of Angular and the related libraries.
+  * end to end tests - a comparison between Protractor and Cypress
+
+This repository will also strive to always stay in sync with releases of Angular and the related libraries.
 The nature of the repository is also a great match for first time open source contributors who can add
 simple features and enhance test coverage, all contributors are more than welcome!
   
@@ -106,6 +109,7 @@ Articles with content that explains various approaches used to build this starte
 * `@ngrx/effects` for API requests
 * fully responsive design
 * angular-material and custom components in `SharedModule`
+* Cypress for end to end tests
  
 ## Stack
 
@@ -119,7 +123,7 @@ Articles with content that explains various approaches used to build this starte
 * **Blocking at emitting LicenseWebpackPlugin when npm start** - try using [cnpm](https://github.com/cnpm/cnpm) instead of npm
 
 ## Contributors
-Want to start contributing to open source with Angular? 
+Want to start contributing to open source with Angular?
 
 Leave your mark and join the growing team of contributors!
 
