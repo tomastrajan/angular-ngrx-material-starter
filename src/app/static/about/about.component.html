@@ -3,52 +3,37 @@
     <div class="container">
       <h1>{{ 'anms.title' | translate }}</h1>
       <div class="actions">
-        <a [ngClass]="routeAnimationsElements"
-           mat-raised-button class="actions-main" color="primary" routerLink="../features">
+        <a [ngClass]="routeAnimationsElements" mat-raised-button class="actions-main" color="primary" routerLink="../features">
           {{ 'anms.menu.features' | translate }}
         </a>
-        <a mat-raised-button class="actions-main" color="accent" routerLink="../examples"
-           [ngClass]="routeAnimationsElements">
+        <a mat-raised-button class="actions-main" color="accent" routerLink="../examples" [ngClass]="routeAnimationsElements">
           {{ 'anms.menu.examples' | translate }}
         </a>
-        <a mat-raised-button class="actions-main" color="warn" routerLink="../settings"
-           [ngClass]="routeAnimationsElements">
+        <a mat-raised-button class="actions-main" color="warn" routerLink="../settings" [ngClass]="routeAnimationsElements">
           {{ 'anms.about.change-theme' | translate }}
         </a>
         <br>
         <span [ngClass]="routeAnimationsElements">{{ 'anms.about.check-blogs' | translate }}</span>
         <br>
-        <a mat-raised-button
-           [ngClass]="routeAnimationsElements"
-           target="_blank"
-           href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1">
+        <a mat-raised-button [ngClass]="routeAnimationsElements" target="_blank" href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1">
           <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
           Material Theming
         </a>
-        <a mat-raised-button
-           [ngClass]="routeAnimationsElements"
-           target="_blank"
-           href="https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81">
+        <a mat-raised-button [ngClass]="routeAnimationsElements" target="_blank" href="https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81">
           <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
           Angular Cli Tips
         </a>
-        <a mat-raised-button
-           [ngClass]="routeAnimationsElements"
-           target="_blank"
-           href="https://medium.com/@tomastrajan/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0">
+        <a mat-raised-button [ngClass]="routeAnimationsElements" target="_blank" href="https://medium.com/@tomastrajan/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0">
           <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
           Ngrx Typescript Tips
         </a>
-        <a mat-raised-button
-           [ngClass]="routeAnimationsElements"
-           target="_blank"
-           href="https://medium.com/@tomastrajan/how-to-style-angular-application-loading-with-angular-cli-like-a-boss-cdd4f5358554">
+        <a mat-raised-button [ngClass]="routeAnimationsElements" target="_blank" href="https://medium.com/@tomastrajan/how-to-style-angular-application-loading-with-angular-cli-like-a-boss-cdd4f5358554">
           <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
           App Loading Style
         </a>
       </div>
       <div class="get-started" [ngClass]="routeAnimationsElements">
-        <h2>{{ 'anms.about.get-started' | translate }}</h2>
+        <h2 data-testid='get-started'>{{ 'anms.about.get-started' | translate }}</h2>
         <code>git clone
           https://github.com/tomastrajan/angular-ngrx-material-starter.git
           new-project</code><br>
@@ -63,9 +48,8 @@
   <div class="follow-releases" [ngClass]="routeAnimationsElements">
     <h2>{{ 'anms.about.get-notified' | translate }}</h2>
     <p>
-      {{ 'anms.about.get-notified.follow' | translate }} <a
-      href="https://www.twitter.com/releasebutler" target="_blank">Release
-      Butler</a>
+      {{ 'anms.about.get-notified.follow' | translate }} <a href="https://www.twitter.com/releasebutler" target="_blank">Release
+        Butler</a>
       {{ 'anms.about.get-notified.description' | translate }}
     </p>
 
@@ -79,119 +63,118 @@
     <p>{{ 'anms.about.contributors.description2' | translate }}</p>
     <p>
       {{ 'anms.about.contributors.description3' | translate }}
-      <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues"
-         target="_blank">{{'anms.about.contributors.issues' | translate}}</a>
+      <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues" target="_blank">{{'anms.about.contributors.issues'
+        | translate}}</a>
       {{ 'anms.about.contributors.description4' | translate }}
-      <a
-        href="https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CONTRIBUTING.md"
-        target="_blank">{{'anms.about.contributors.guide' | translate}}</a>
+      <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CONTRIBUTING.md" target="_blank">{{'anms.about.contributors.guide'
+        | translate}}</a>
       ...
     </p>
 
     <div class="contributors-wrapper">
 
       <!-- ALL-CONTRIBUTORS-LIST:START -->
-  <a class="contributor" href="https://medium.com/@tomastrajan" target="_blank">
-    <img src="https://avatars0.githubusercontent.com/u/3764868?v=4">
-    <span>Tomas Trajan</span>
-  </a>
+      <a class="contributor" href="https://medium.com/@tomastrajan" target="_blank">
+        <img src="https://avatars0.githubusercontent.com/u/3764868?v=4">
+        <span>Tomas Trajan</span>
+      </a>
 
 
-  <a class="contributor" href="https://twitter.com/tim_deschryver" target="_blank">
-    <img src="https://avatars1.githubusercontent.com/u/28659384?v=4">
-    <span>Tim Deschryver</span>
-  </a>
+      <a class="contributor" href="https://twitter.com/tim_deschryver" target="_blank">
+        <img src="https://avatars1.githubusercontent.com/u/28659384?v=4">
+        <span>Tim Deschryver</span>
+      </a>
 
 
-  <a class="contributor" href="http://gs500coder.blogspot.com" target="_blank">
-    <img src="https://avatars0.githubusercontent.com/u/1336862?v=4">
-    <span>Moshe</span>
-  </a>
+      <a class="contributor" href="http://gs500coder.blogspot.com" target="_blank">
+        <img src="https://avatars0.githubusercontent.com/u/1336862?v=4">
+        <span>Moshe</span>
+      </a>
 
 
-  <a class="contributor" href="https://github.com/hhubik" target="_blank">
-    <img src="https://avatars0.githubusercontent.com/u/14813201?v=4">
-    <span>hhubik</span>
-  </a>
+      <a class="contributor" href="https://github.com/hhubik" target="_blank">
+        <img src="https://avatars0.githubusercontent.com/u/14813201?v=4">
+        <span>hhubik</span>
+      </a>
 
 
-  <a class="contributor" href="https://github.com/mumairofficial" target="_blank">
-    <img src="https://avatars2.githubusercontent.com/u/6498132?v=4">
-    <span>Muhammad Umair</span>
-  </a>
+      <a class="contributor" href="https://github.com/mumairofficial" target="_blank">
+        <img src="https://avatars2.githubusercontent.com/u/6498132?v=4">
+        <span>Muhammad Umair</span>
+      </a>
 
 
-  <a class="contributor" href="https://github.com/philmerrell" target="_blank">
-    <img src="https://avatars2.githubusercontent.com/u/2514268?v=4">
-    <span>Phil Merrell</span>
-  </a>
+      <a class="contributor" href="https://github.com/philmerrell" target="_blank">
+        <img src="https://avatars2.githubusercontent.com/u/2514268?v=4">
+        <span>Phil Merrell</span>
+      </a>
 
 
-  <a class="contributor" href="https://www.linkedin.com/in/kharshats" target="_blank">
-    <img src="https://avatars3.githubusercontent.com/u/1059539?v=4">
-    <span>Valery Kharshats</span>
-  </a>
+      <a class="contributor" href="https://www.linkedin.com/in/kharshats" target="_blank">
+        <img src="https://avatars3.githubusercontent.com/u/1059539?v=4">
+        <span>Valery Kharshats</span>
+      </a>
 
 
-  <a class="contributor" href="https://1nv1n.GitHub.io/" target="_blank">
-    <img src="https://avatars1.githubusercontent.com/u/3885804?v=4">
-    <span>Neil Pathare</span>
-  </a>
+      <a class="contributor" href="https://1nv1n.GitHub.io/" target="_blank">
+        <img src="https://avatars1.githubusercontent.com/u/3885804?v=4">
+        <span>Neil Pathare</span>
+      </a>
 
 
-  <a class="contributor" href="http://peterkrieg.com" target="_blank">
-    <img src="https://avatars0.githubusercontent.com/u/7385488?v=4">
-    <span>Peter Krieg</span>
-  </a>
+      <a class="contributor" href="http://peterkrieg.com" target="_blank">
+        <img src="https://avatars0.githubusercontent.com/u/7385488?v=4">
+        <span>Peter Krieg</span>
+      </a>
 
 
-  <a class="contributor" href="https://github.com/alexkonovalov" target="_blank">
-    <img src="https://avatars1.githubusercontent.com/u/11887873?v=4">
-    <span>Alex</span>
-  </a>
+      <a class="contributor" href="https://github.com/alexkonovalov" target="_blank">
+        <img src="https://avatars1.githubusercontent.com/u/11887873?v=4">
+        <span>Alex</span>
+      </a>
 
 
-  <a class="contributor" href="https://github.com/scheifi" target="_blank">
-    <img src="https://avatars0.githubusercontent.com/u/42332935?v=4">
-    <span>Fiona</span>
-  </a>
+      <a class="contributor" href="https://github.com/scheifi" target="_blank">
+        <img src="https://avatars0.githubusercontent.com/u/42332935?v=4">
+        <span>Fiona</span>
+      </a>
 
 
-  <a class="contributor" href="https://www.dehopre.com" target="_blank">
-    <img src="https://avatars3.githubusercontent.com/u/97023?v=4">
-    <span>Fabien Dehopré</span>
-  </a>
+      <a class="contributor" href="https://www.dehopre.com" target="_blank">
+        <img src="https://avatars3.githubusercontent.com/u/97023?v=4">
+        <span>Fabien Dehopré</span>
+      </a>
 
 
-  <a class="contributor" href="http://www.matiasiglesias.com.ar" target="_blank">
-    <img src="https://avatars0.githubusercontent.com/u/2591889?v=4">
-    <span>Matias Iglesias</span>
-  </a>
+      <a class="contributor" href="http://www.matiasiglesias.com.ar" target="_blank">
+        <img src="https://avatars0.githubusercontent.com/u/2591889?v=4">
+        <span>Matias Iglesias</span>
+      </a>
 
 
-  <a class="contributor" href="https://github.com/Jeykairis" target="_blank">
-    <img src="https://avatars1.githubusercontent.com/u/10895934?v=4">
-    <span>Jeremy Kairis</span>
-  </a>
+      <a class="contributor" href="https://github.com/Jeykairis" target="_blank">
+        <img src="https://avatars1.githubusercontent.com/u/10895934?v=4">
+        <span>Jeremy Kairis</span>
+      </a>
 
 
-  <a class="contributor" href="https://github.com/Zuiago" target="_blank">
-    <img src="https://avatars0.githubusercontent.com/u/8050831?v=4">
-    <span>Iago Andrade</span>
-  </a>
+      <a class="contributor" href="https://github.com/Zuiago" target="_blank">
+        <img src="https://avatars0.githubusercontent.com/u/8050831?v=4">
+        <span>Iago Andrade</span>
+      </a>
 
 
-  <a class="contributor" href="https://github.com/aideslucas" target="_blank">
-    <img src="https://avatars1.githubusercontent.com/u/8929821?v=4">
-    <span>aideslucas</span>
-  </a>
+      <a class="contributor" href="https://github.com/aideslucas" target="_blank">
+        <img src="https://avatars1.githubusercontent.com/u/8929821?v=4">
+        <span>aideslucas</span>
+      </a>
 
 
-  <a class="contributor" href="https://www.linkedin.com/in/terrystrachan/" target="_blank">
-    <img src="https://avatars1.githubusercontent.com/u/4921146?v=4">
-    <span>Terry Strachan</span>
-  </a>
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+      <a class="contributor" href="https://www.linkedin.com/in/terrystrachan/" target="_blank">
+        <img src="https://avatars1.githubusercontent.com/u/4921146?v=4">
+        <span>Terry Strachan</span>
+      </a>
+      <!-- ALL-CONTRIBUTORS-LIST:END -->
 
     </div>
   </div>
