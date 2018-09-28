@@ -33,7 +33,24 @@ import {
   faPowerOff,
   faCog,
   faPlayCircle,
-  faRocket
+  faRocket,
+  faPlus,
+  faEdit,
+  faTrash,
+  faTimes,
+  faCaretUp,
+  faCaretDown,
+  faExclamationTriangle,
+  faFilter,
+  faTasks,
+  faCheck,
+  faSquare,
+  faLanguage,
+  faPaintBrush,
+  faLightbulb,
+  faWindowMaximize,
+  faStream,
+  faBook
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithub,
@@ -54,7 +71,24 @@ library.add(
   faMediumM,
   faTwitter,
   faInstagram,
-  faYoutube
+  faYoutube,
+  faPlus,
+  faEdit,
+  faTrash,
+  faTimes,
+  faCaretUp,
+  faCaretDown,
+  faExclamationTriangle,
+  faFilter,
+  faTasks,
+  faCheck,
+  faSquare,
+  faLanguage,
+  faPaintBrush,
+  faLightbulb,
+  faWindowMaximize,
+  faStream,
+  faBook
 );
 
 import { BigInputComponent } from './big-input/big-input.component';
@@ -83,7 +117,9 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     MatTooltipModule,
     MatSnackBarModule,
     MatSlideToggleModule,
-    MatDividerModule
+    MatDividerModule,
+
+    FontAwesomeModule
   ],
   declarations: [BigInputComponent, BigInputActionComponent],
   exports: [

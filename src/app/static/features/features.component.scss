@@ -34,16 +34,16 @@ mat-card {
   }
 
   a {
-    mat-icon {
+    fa-icon {
       position: relative;
-      top: 2px;
+      bottom: 2px;
       font-size: 16px;
+      margin: 6px;
     }
   }
 
   a[mat-icon-button] {
     position: relative;
-    top: -4px;
     left: 5px;
   }
 }

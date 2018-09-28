@@ -6,13 +6,13 @@
                       (keyup)="onNewTodoChange($event.target.value)"
                       (keyup.enter)="!isAddTodoDisabled && onAddTodo()"
                       (keyup.escape)="onNewTodoClear()">
-        <anms-big-input-action fontSet="fas" fontIcon="fa-plus" color="accent"
+        <anms-big-input-action fontSet="fas" fontIcon="fa-plus" faIcon="plus" color="accent"
                                (action)="onAddTodo()"
                                [disabled]="isAddTodoDisabled"
                                [matTooltip]="'anms.examples.todos.tooltip.add' | translate"
                                matTooltipPosition="before">
         </anms-big-input-action>
-        <anms-big-input-action fontSet="fas" fontIcon="fa-trash" color="warn"
+        <anms-big-input-action fontSet="fas" fontIcon="fa-trash" faIcon="trash" color="warn"
                                (action)="onRemoveDoneTodos()"
                                [disabled]="isRemoveDoneTodosDisabled"
                                matTooltip="Remove done todos"
@@ -27,19 +27,19 @@
       <h2>
         {{ 'anms.examples.todos.list' | translate }}
         <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter">
-          <mat-icon fontSet="fas" fontIcon="fa-filter"></mat-icon>
+          <fa-icon icon="filter"></fa-icon>
         </button>
         <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">
           <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }">
-            <mat-icon fontSet="fas" fontIcon="fa-tasks"></mat-icon>
+            <mat-icon><fa-icon icon="tasks"></fa-icon></mat-icon>
             <span>{{ 'anms.examples.todos.filter.all' | translate }}</span>
           </button>
           <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }">
-            <mat-icon fontSet="fas" fontIcon="fa-check"></mat-icon>
+            <mat-icon><fa-icon icon="check"></fa-icon></mat-icon>
             <span>{{ 'anms.examples.todos.filter.done' | translate }}</span>
           </button>
           <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }">
-            <mat-icon fontSet="fas" fontIcon="fa-square"></mat-icon>
+            <mat-icon><fa-icon icon="square"></fa-icon></mat-icon>
             <span>{{ 'anms.examples.todos.filter.active' | translate }}</span>
           </button>
         </mat-menu>
