@@ -46,6 +46,8 @@
   "anms.features.lazyloading":
     "Faster startup time with lazy loaded feature modules",
   "anms.features.lazyloading.title": "Lazy loading",
+  "anms.features.cypress":
+    "Cypress is a next generation front end testing tool built for the modern web.",
   "anms.settings.title": "Settings",
   "anms.settings.general": "General",
   "anms.settings.general.placeholder": "Language",
