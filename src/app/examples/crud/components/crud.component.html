@@ -12,7 +12,7 @@
       <button type="button" mat-fab color="primary"
               class="add" [ngClass]="routeAnimationsElements"
               *ngIf="!isEditing" (click)="addNew(bookForm)">
-        <mat-icon fontSet="fas" fontIcon="fa-plus"></mat-icon>
+        <fa-icon icon="plus"></fa-icon>
       </button>
     </div>
     <div class="col-md-6">
@@ -21,22 +21,22 @@
         <span class="d-flex justify-content-end">
           <span *ngIf="selectedBook">
             <button mat-icon-button color="accent" *ngIf="!isEditing">
-              <mat-icon fontSet="fas" fontIcon="fa-edit" (click)="edit()"
+              <fa-icon icon="edit" (click)="edit()"
                         [matTooltip]="'anms.examples.crud.tooltip.edit' | translate"
                         matTooltipPosition="above">
-              </mat-icon>
+              </fa-icon>
             </button>
             <button mat-icon-button color="warn" (click)="delete()">
-              <mat-icon fontSet="fas" fontIcon="fa-trash"
+              <fa-icon icon="trash"
                         [matTooltip]="'anms.examples.crud.tooltip.delete' | translate"
                         matTooltipPosition="above">
-              </mat-icon>
+              </fa-icon>
             </button>
             <button mat-icon-button (click)="deselect()">
-              <mat-icon fontSet="fas" fontIcon="fa-times"
+              <fa-icon icon="times"
                         [matTooltip]="'anms.examples.crud.tooltip.deselect' | translate"
                         matTooltipPosition="above">
-              </mat-icon>
+              </fa-icon>
             </button>
           </span>
         </span>

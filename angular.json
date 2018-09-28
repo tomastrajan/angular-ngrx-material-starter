@@ -64,7 +64,7 @@
                 {
                   "type": "bundle",
                   "name": "vendor",
-                  "baseline": "750kb",
+                  "baseline": "800kb",
                   "warning": "100kb",
                   "error": "200kb"
                 },

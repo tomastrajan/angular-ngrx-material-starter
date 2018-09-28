@@ -25,17 +25,17 @@
         <mat-card-title>{{stocks.stock.symbol}} <span>{{stocks.stock.last}} {{stocks.stock.ccy}}</span></mat-card-title>
         <mat-card-subtitle>
           <p [ngClass]="{ negative: stocks.stock.changeNegative }">
-            <mat-icon fontSet="fas" fontIcon="fa-caret-up"
-                      *ngIf="stocks.stock.changePositive"></mat-icon>
-            <mat-icon fontSet="fas" fontIcon="fa-caret-down"
-                      *ngIf="stocks.stock.changeNegative"></mat-icon>
+            <fa-icon icon="caret-up"
+                      *ngIf="stocks.stock.changePositive"></fa-icon>
+            <fa-icon icon="caret-down"
+                      *ngIf="stocks.stock.changeNegative"></fa-icon>
             {{stocks.stock.change}} ({{stocks.stock.changePercent}})
           </p>
         </mat-card-subtitle>
         <mat-card-content>{{stocks.stock.exchange}}</mat-card-content>
       </mat-card>
       <p *ngIf="stocks.error" class="error">
-        <mat-icon fontSet="fas" fontIcon="fa-exclamation-triangle"></mat-icon>
+        <fa-icon icon="exclamation-triangle"></fa-icon>
         <br><br>
         <span>
           {{ 'anms.examples.stocks.error1' | translate }}
