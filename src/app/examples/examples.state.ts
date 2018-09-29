@@ -1,5 +1,4 @@
-import { createFeatureSelector, ActionReducerMap } from '@ngrx/store';
-
+import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 import { AppState } from '@app/core';
 
 import { todosReducer } from './todos/todos.reducer';

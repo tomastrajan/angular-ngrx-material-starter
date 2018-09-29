@@ -24,6 +24,8 @@
   "anms.examples.todos.filter.description": "Mostrando",
   "anms.examples.todos.filter.items": "todos",
   "anms.examples.todos.filter.item": "todo",
+  "anms.examples.todos.filter.one": "único",
+  "anms.examples.todos.filter.none": "nenhum",
   "anms.examples.todos.filter.notification": "Filtrado para",
   "anms.examples.todos.remove.notification": "Removido tudo feito",
   "anms.examples.todos.toggle.notification": "alternou de {{name}} para",

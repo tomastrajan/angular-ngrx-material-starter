@@ -34,9 +34,9 @@ h2 {
         padding: 3px 24px;
       }
 
-      mat-icon {
+      fa-icon {
         position: relative;
-        top: 4px;
+        bottom: 1px;
       }
     }
   }
@@ -74,7 +74,7 @@ h2 {
   .gradient {
     &::before {
       position: absolute;
-      top: 50%;
+      top: 51%;
       left: 0;
       bottom: 0;
       right: 0;

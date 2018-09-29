@@ -45,4 +45,32 @@ export class LocalStorageService {
   getItem(key: string) {
     return JSON.parse(localStorage.getItem(`${APP_PREFIX}${key}`));
   }
+
+  /** Returns true if localStorage is defined, otherwise false. */
+  localStorageExists(): boolean {
+    if (localStorage) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  /** Tests that localStorage exists, can be written to, and read from. */
+  testLocalStorage() {
+    const testValue = 'testValue';
+    const testKey = 'testKey';
+    let retrievedValue: string;
+    const errorMessage = 'localStorage unavailable';
+
+    if (!this.localStorageExists()) {
+      throw new Error(errorMessage);
+    }
+
+    this.setItem(testKey, testValue);
+    retrievedValue = this.getItem(testKey);
+
+    if (retrievedValue !== testValue) {
+      throw new Error(errorMessage);
+    }
+  }
 }
