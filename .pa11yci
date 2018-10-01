@@ -1,0 +1,19 @@
+{
+  "defaults": {
+    "timeout": 10000,
+    "wait": 2000,
+    "ignore": [ 
+      "notice",
+      "WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchId" 
+    ]
+  },
+  "urls": [ 
+    "http://localhost:4000",
+    "http://localhost:4000/#/features",
+    "http://localhost:4000/#/examples/todos",
+    "http://localhost:4000/#/examples/stock-market",
+    "http://localhost:4000/#/examples/theming",
+    "http://localhost:4000/#/examples/crud",
+    "http://localhost:4000/#/examples/form"
+  ]
+}
