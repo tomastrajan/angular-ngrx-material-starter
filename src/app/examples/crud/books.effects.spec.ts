@@ -4,7 +4,7 @@ import { EffectsMetadata, getEffectsMetadata } from '@ngrx/effects';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { Action, Store, StoreModule } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { MockStore, provideMockStore } from '../../../testing/utils';
+import { MockStore, provideMockStore } from '@testing/utils';
 import { State } from '../examples.state';
 import { BooksEffects, BOOKS_KEY } from './books.effects';
 import { BookState } from './books.model';
