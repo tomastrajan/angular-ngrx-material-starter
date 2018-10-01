@@ -26,6 +26,8 @@
   "anms.examples.todos.filter.description": "Affiche",
   "anms.examples.todos.filter.items": "tâches",
   "anms.examples.todos.filter.item": "tâche",
+  "anms.examples.todos.filter.one": "un",
+  "anms.examples.todos.filter.none": "nul",
   "anms.examples.todos.filter.notification": "Filtré à",
   "anms.examples.todos.remove.notification": "Terminées tâches supprimées",
   "anms.examples.todos.toggle.notification": "basculer {{name}} à",
