@@ -8,12 +8,11 @@ import { AuthState } from './auth.models';
 describe('AuthGuardService', () => {
   let authGuardService: AuthGuardService;
   let store: MockStore<AppState>;
+  let state: AppState;
 
   const authState: AuthState = {
     isAuthenticated: true
   };
-
-  const state = createState(authState);
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -22,6 +21,7 @@ describe('AuthGuardService', () => {
     });
     authGuardService = TestBed.get(AuthGuardService);
     store = TestBed.get(Store);
+    state = createState(authState);
     store.setState(state);
   });
 
@@ -36,8 +36,8 @@ describe('AuthGuardService', () => {
   });
 });
 
-function createState(authState: AuthState) {
+function createState(authState: AuthState)  {
   return {
     auth: authState
-  };
+  } as AppState;
 }

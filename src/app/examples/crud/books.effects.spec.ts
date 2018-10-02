@@ -15,6 +15,7 @@ describe('BooksEffects', () => {
   let metadata: EffectsMetadata<BooksEffects>;
   let store: MockStore<State>;
   let localStorageService: any;
+  let state: State;
 
   const booksState: BookState = {
     entities: {
@@ -28,8 +29,6 @@ describe('BooksEffects', () => {
     ids: ['1'],
     selectedBookId: '1'
   };
-
-  const state = createState(booksState);
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -47,6 +46,7 @@ describe('BooksEffects', () => {
     localStorageService = TestBed.get(LocalStorageService);
     bookEffects = TestBed.get(BooksEffects);
     store = TestBed.get(Store);
+    state = createState(booksState);
     store.setState(state);
   });
 
