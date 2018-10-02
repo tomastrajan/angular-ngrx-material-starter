@@ -36,7 +36,7 @@ describe('AuthGuardService', () => {
   });
 });
 
-function createState(authState: AuthState)  {
+function createState(authState: AuthState) {
   return {
     auth: authState
   } as AppState;

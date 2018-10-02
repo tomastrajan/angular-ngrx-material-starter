@@ -16,8 +16,8 @@
     "prod": "npm run clean && npm run build:prod && npm run server",
     "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --configuration=test --browsers ChromeTravisCi && ng e2e && npm run cy:ci && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
     "release": "standard-version && git push --follow-tags origin master",
-    "prettier": "prettier {src,e2e}/**/*.{ts,json,md,scss} --write",
-    "prettier:ci": "prettier {src,e2e}/**/*.{ts,json,md,scss} --list-different",
+    "prettier": "prettier {src,e2e,cypress}/**/*.{ts,json,md,scss} --write",
+    "prettier:ci": "prettier {src,e2e,cypress}/**/*.{ts,json,md,scss} --list-different",
     "analyze": "npm run clean && npm run build:prod -- --stats-json && webpack-bundle-analyzer ./dist/stats.json",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate && node .all-contributors-html.js",
@@ -34,7 +34,7 @@
     }
   },
   "lint-staged": {
-    "{src,e2e}/**/*.{ts,json,md,scss}": [
+    "{src,e2e,cypress}/**/*.{ts,json,md,scss}": [
       "prettier --write",
       "git add"
     ]
