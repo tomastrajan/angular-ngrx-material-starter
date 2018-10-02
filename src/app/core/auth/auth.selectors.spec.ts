@@ -1,19 +1,21 @@
 import { selectAuth, selectIsAuthenticated } from './auth.selectors';
 
-const createAuthState = ({ isAuthenticated = false } = {}) => ({
-  auth: {
-    isAuthenticated
-  }
-});
-
 describe('Auth Selectors', () => {
-  const state = createAuthState();
-
   it('selectAuth', () => {
+    const state = createAuthState();
     expect(selectAuth(state)).toBe(state.auth);
   });
 
   it('selectIsAuthenticated', () => {
-    expect(selectIsAuthenticated(state)).toBe(state.auth.isAuthenticated);
+    const state = createAuthState();
+    expect(selectIsAuthenticated(state)).toBe(false);
   });
 });
+
+function createAuthState() {
+  return {
+    auth: {
+      isAuthenticated: false
+    }
+  };
+}
