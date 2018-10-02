@@ -182,6 +182,55 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "lau32",
+      "name": "Laurentiu Amagdei",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8844319?v=4",
+      "profile": "https://github.com/lau32",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "simply10w",
+      "name": "Petar Djordjevic",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/16257515?v=4",
+      "profile": "https://github.com/simply10w",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "ZackDeRose",
+      "name": "Zachary DeRose",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3788405?v=4",
+      "profile": "https://github.com/ZackDeRose",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "erhise",
+      "name": "erhise",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/28264731?v=4",
+      "profile": "https://github.com/erhise",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
+      "login": "joostme",
+      "name": "Joost Zöllner",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/14245982?v=4",
+      "profile": "http://joost.io",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
