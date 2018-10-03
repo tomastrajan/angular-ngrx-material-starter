@@ -1,7 +1,7 @@
 const book_title = 'The Little Schemer';
 
 describe('CRUD Actions', () => {
-  context('Valid Data', function() {
+  context('Valid Data', () => {
     beforeEach(() => {
       cy.visit('/#/examples/crud');
       cy.get('[data-testid="add-crud"]').click();
@@ -35,7 +35,7 @@ describe('CRUD Actions', () => {
     });
   });
 
-  context('Empty book title and author', function() {
+  context('Empty book title and author', () => {
     beforeEach(() => {
       cy.visit('/#/examples/crud');
       cy.get('[data-testid="add-crud"]').click();
@@ -43,8 +43,12 @@ describe('CRUD Actions', () => {
 
     it('should display errors', () => {
       cy.get('[placeholder="Title"]').type('{enter}');
-      cy.get('[data-testid="error-title-crud"]').should('be.visible');
-      cy.get('[data-testid="error-author-crud"]').should('be.visible');
+      cy
+        .get('[data-testid="error-title-crud"]')
+        .should('contain', 'Title is required');
+      cy
+        .get('[data-testid="error-author-crud"]')
+        .should('contain', 'Author is required');
     });
   });
 });
