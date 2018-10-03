@@ -20,7 +20,7 @@ export class FormEffects {
   persistForm = this.actions$.pipe(
     ofType<ActionFormUpdate>(FormActionTypes.UPDATE),
     tap(action =>
-      this.localStorageService.setItem(FORM_KEY, action.payload.form)
+      this.localStorageService.setItem(FORM_KEY, { form: action.payload.form })
     )
   );
 }
