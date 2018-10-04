@@ -6,9 +6,8 @@ import { Observable, Subject } from 'rxjs';
 import { filter, takeUntil, map } from 'rxjs/operators';
 
 import { routeAnimations, TitleService } from '@app/core';
-import { selectSettings, SettingsState } from '@app/settings';
+import { selectSettings, SettingsState, State } from '@app/settings';
 
-import { State } from '../examples.state';
 import { selectAuth } from '@app/core/auth/auth.selectors';
 
 @Component({
