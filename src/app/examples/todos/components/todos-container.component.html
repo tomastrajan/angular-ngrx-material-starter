@@ -44,13 +44,11 @@
           </button>
         </mat-menu>
         <mat-chip-list class="todos-filter-info d-none d-sm-block d-md-none d-lg-block">
-          <mat-chip [disabled]=true>
-            {{ 'anms.examples.todos.filter.description' | translate }} {{todos.filter !==
-            'ALL' ? filteredTodos.length : ''}}
-            {{ ('anms.examples.todos.filter.' + todos.filter.toLowerCase() |
-            translate).toLowerCase() }}
-            {{todos.filter === 'ALL' ? filteredTodos.length : ''}}
-            {{ 'anms.examples.todos.filter.items' | translate }}
+          <mat-chip [disabled]=true [ngPlural]="filteredTodos.length">
+            {{ 'anms.examples.todos.filter.description' | translate }}
+            <ng-template ngPluralCase="other">{{ filteredTodos.length }} {{ 'anms.examples.todos.filter.items' | translate }}</ng-template>
+            <ng-template ngPluralCase="=1">{{ 'anms.examples.todos.filter.one' | translate }} {{ 'anms.examples.todos.filter.item' | translate }}</ng-template>
+            <ng-template ngPluralCase="=0">{{ 'anms.examples.todos.filter.none' | translate }} {{ 'anms.examples.todos.filter.items' | translate }}</ng-template>
           </mat-chip>
         </mat-chip-list>
       </h2>

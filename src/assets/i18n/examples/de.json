@@ -24,6 +24,8 @@
   "anms.examples.todos.filter.description": "Anzeigen",
   "anms.examples.todos.filter.items": "Aufgaben",
   "anms.examples.todos.filter.item": "Aufgabe",
+  "anms.examples.todos.filter.one": "ein",
+  "anms.examples.todos.filter.none": "keiner",
   "anms.examples.todos.filter.notification": "Gefiltert nach",
   "anms.examples.todos.remove.notification": "Erledigt aufgaben entfernt",
   "anms.examples.todos.toggle.notification": "Umschalten von {{name}} nach",
