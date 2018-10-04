@@ -52,6 +52,7 @@ When using this starter project to build your own app you might consider some of
   * rename app in `src/environments/` files (will be shown in browser tab)
   * delete pre-existing `CHANGELOG.md` (you will generate your own with future releases of your features)
   * delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILT_WITH.md` files as they are relevant only if project is open sourced on Github
+  * edit the title and Open Graph metadata properties in `index.html`
   * remove or adjust links in the [footer](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/src/app/app.component.html#L79)
   * replace logo in `src/assets` folder ( currently 128 x 128 pixel `png` file )
   * adjust colors in `src/themes/default-theme.scss`
