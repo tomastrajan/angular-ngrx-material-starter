@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 
+import { SharedModule } from '@app/shared';
 import { CoreModule } from '@app/core';
 
 import { StockMarketService } from './stock-market.service';
@@ -14,7 +15,7 @@ describe('StockMarketService', () => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
 
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, CoreModule],
+      imports: [RouterTestingModule, CoreModule, SharedModule],
       providers: [
         StockMarketService,
         { provide: HttpClient, useValue: httpClientSpy }

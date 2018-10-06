@@ -81,6 +81,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscribeToSettings();
     this.subscribeToIsAuthenticated();
     this.subscribeToRouterEvents();
+
+    this.testLocalStorage();
   }
 
   ngOnDestroy(): void {
@@ -168,5 +170,19 @@ export class AppComponent implements OnInit, OnDestroy {
         AppComponent.trackPageView(event);
       }
     });
+  }
+
+  /** Verifies that localStorage can be written to and read from */
+  private testLocalStorage() {
+    const testValue = 'testValue';
+    const testKey = 'testKey';
+    let retrievedValue: string;
+
+    localStorage.setItem(testKey, testValue);
+    retrievedValue = localStorage.getItem(testKey);
+
+    if (!retrievedValue || retrievedValue !== testValue) {
+      throw new Error('localStorage unavailable');
+    }
   }
 }
