@@ -12,7 +12,6 @@ export const bookAdapter: EntityAdapter<Book> = createEntityAdapter<Book>({
 });
 
 export const initialState: BookState = bookAdapter.getInitialState({
-  selectedBookId: null,
   ids: ['123'],
   entities: {
     '123': {
@@ -30,20 +29,11 @@ export function bookReducer(
   action: BookActions
 ): BookState {
   switch (action.type) {
-    case BookActionTypes.ADD_ONE:
-      return bookAdapter.addOne(action.payload.book, state);
-
-    case BookActionTypes.UPDATE_ONE:
-      return bookAdapter.updateOne(action.payload.update, state);
+    case BookActionTypes.UPSERT_ONE:
+      return bookAdapter.upsertOne(action.payload.book, state);
 
     case BookActionTypes.DELETE_ONE:
-      return {
-        ...bookAdapter.removeOne(action.payload.id, state),
-        selectedBookId: null
-      };
-
-    case BookActionTypes.SELECT_ONE:
-      return { ...state, selectedBookId: action.payload.id };
+      return bookAdapter.removeOne(action.payload.id, state);
 
     default:
       return state;

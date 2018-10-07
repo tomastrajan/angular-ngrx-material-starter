@@ -20,9 +20,7 @@ describe('CrudComponent', () => {
         declarations: [CrudComponent]
       }).compileComponents();
       store = TestBed.get(Store);
-      store.setState(
-        createState({ selectedBookId: null, ids: [], entities: {} })
-      );
+      store.setState(createState({ ids: [], entities: {} }));
       fixture = TestBed.createComponent(CrudComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();

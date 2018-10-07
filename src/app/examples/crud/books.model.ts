@@ -7,6 +7,4 @@ export interface Book {
   description: string;
 }
 
-export interface BookState extends EntityState<Book> {
-  selectedBookId: string | null;
-}
+export interface BookState extends EntityState<Book> {}

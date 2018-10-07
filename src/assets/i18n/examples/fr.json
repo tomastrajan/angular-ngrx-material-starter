@@ -70,7 +70,8 @@
   "anms.examples.theming.child.title": "enfant h1",
   "anms.examples.theming.child.subtitle": "devrait être non stylé",
   "anms.examples.theming.child.description": "L'enfant fonctionne!",
-  "anms.examples.crud.title": "CRUD livres avec @ngrx/entity",
+  "anms.examples.crud.title":
+    "CRUD livres avec @ngrx/entity & @ngrx/router-store",
   "anms.examples.crud.subtitle1": "Vos livres",
   "anms.examples.crud.subtitle2": "Editeur de livre",
   "anms.examples.crud.placeholder1": "Titre",
