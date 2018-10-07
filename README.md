@@ -72,6 +72,8 @@ The main goal of this repository is to provide an up to date example of Angular 
   * `@ngrx/store` - including reducers, actions, selectors
   * `@ngrx/effects` - for implementation of side effects like `http` requests, logging, notifications,...
   * `@ngrx/entity` - for CRUD operations
+  * `@ngrx/router-store` - to connect the Angular Router to @ngrx/store
+  * `@ngrx/store-devtools` - to enable a powerful time-travelling debugger.
   * `@angular/material` - material design component library, theming, ...
   * routing
   * testing of all the above mentioned concepts
@@ -104,7 +106,7 @@ Articles with content that explains various approaches used to build this starte
  
 ## Features
 
-* custom themes support (3 themes included)
+* custom themes support (4 themes included)
 * lazy-loading of feature modules
 * lazy reducers
 * localStorage ui state persistence
