@@ -42,6 +42,11 @@ const routes: Routes = [
         data: { title: 'anms.examples.menu.crud' }
       },
       {
+        path: 'crud/:id',
+        component: CrudComponent,
+        data: { title: 'anms.examples.menu.crud' }
+      },
+      {
         path: 'form',
         component: FormComponent,
         data: { title: 'anms.examples.menu.form' }

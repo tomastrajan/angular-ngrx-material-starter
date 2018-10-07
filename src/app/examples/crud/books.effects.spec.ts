@@ -26,8 +26,7 @@ describe('BooksEffects', () => {
         title: 'Title'
       }
     },
-    ids: ['1'],
-    selectedBookId: '1'
+    ids: ['1']
   };
 
   beforeEach(() => {

@@ -21,11 +21,7 @@ export class BooksEffects {
 
   @Effect({ dispatch: false })
   persistBooks = this.actions$.pipe(
-    ofType(
-      BookActionTypes.ADD_ONE,
-      BookActionTypes.UPDATE_ONE,
-      BookActionTypes.DELETE_ONE
-    ),
+    ofType(BookActionTypes.UPSERT_ONE, BookActionTypes.DELETE_ONE),
     withLatestFrom(this.store.pipe(select(selectBooks))),
     tap(([actions, booksState]) =>
       this.localStorageService.setItem(BOOKS_KEY, booksState)

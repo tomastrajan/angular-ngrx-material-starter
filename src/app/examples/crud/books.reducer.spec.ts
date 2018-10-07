@@ -1,15 +1,9 @@
-import { bookReducer, initialState } from './books.reducer';
 import { BookState } from './books.model';
-import {
-  ActionBooksAddOne,
-  ActionBooksUpdateOne,
-  ActionBooksDeleteOne,
-  ActionBooksSelect
-} from './books.actions';
+import { bookReducer, initialState } from './books.reducer';
+import { ActionBooksUpsertOne, ActionBooksDeleteOne } from './books.actions';
 
 describe('BookReducer', () => {
   const TEST_INITIAL_STATE: BookState = {
-    selectedBookId: null,
     ids: ['123'],
     entities: {
       '123': {
@@ -30,7 +24,7 @@ describe('BookReducer', () => {
   });
 
   it('should add a book', () => {
-    const action = new ActionBooksAddOne({
+    const action = new ActionBooksUpsertOne({
       book: {
         id: '1234',
         title: 'test',
@@ -46,14 +40,12 @@ describe('BookReducer', () => {
 
   it('should update a book', () => {
     const id = TEST_INITIAL_STATE.ids[0] as string;
-    const action = new ActionBooksUpdateOne({
-      update: {
-        id,
-        changes: {
-          title: 'updated',
-          author: 'updated',
-          description: 'updated'
-        }
+    const action = new ActionBooksUpsertOne({
+      book: {
+        id: id,
+        title: 'updated',
+        author: 'updated',
+        description: 'updated'
       }
     });
 
@@ -72,12 +64,5 @@ describe('BookReducer', () => {
     const action = new ActionBooksDeleteOne({ id });
     const state = bookReducer(TEST_INITIAL_STATE, action);
     expect(state.entities[id]).toBe(undefined);
-  });
-
-  it('should select a book', () => {
-    const id = TEST_INITIAL_STATE.ids[0] as string;
-    const action = new ActionBooksSelect({ id });
-    const state = bookReducer(TEST_INITIAL_STATE, action);
-    expect(state.selectedBookId).toBe(id as string);
   });
 });
