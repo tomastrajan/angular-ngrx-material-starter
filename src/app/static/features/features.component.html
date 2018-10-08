@@ -8,10 +8,7 @@
     <div *ngFor="let feature of features" class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
         <mat-card-title>
-          <ng-container *ngIf="feature.version; else translateName;">
-            <code>{{feature.version}}</code>{{feature.name}}
-          </ng-container>
-          <ng-template #translateName>{{feature.name | translate}}</ng-template>
+          <code *ngIf="feature.version">{{feature.version}}</code>{{feature.name | translate}}
         </mat-card-title>
         <mat-card-subtitle>
           {{ feature.description | translate }}
