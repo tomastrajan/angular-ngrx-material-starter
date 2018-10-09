@@ -5,225 +5,23 @@
     </div>
   </div>
   <div class="row align-items-end">
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
+    <div *ngFor="let feature of features" class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
       <mat-card>
-        <mat-card-title><code>{{versions.angular}}</code>Angular</mat-card-title>
-        <mat-card-subtitle>
-          {{ 'anms.features.angular' | translate }}
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-icon-button href="https://github.com/angular/angular" target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-          <a mat-button href="https://angular.io/docs/ts/latest/" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title><code>{{versions.material}}</code>Angular Material</mat-card-title>
-        <mat-card-subtitle>
-          {{ 'anms.features.angular-material' | translate }}
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-icon-button href="https://github.com/angular/material2/" target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-          <a mat-button href="https://material.angular.io/" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title><code>{{versions.angularCli}}</code>Angular Cli</mat-card-title>
-        <mat-card-subtitle>
-          {{ 'anms.features.angular-cli' | translate }}
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-icon-button href="https://github.com/angular/angular-cli"
-             target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-          <a mat-button href="https://cli.angular.io/" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title><code>{{versions.ngrx}}</code>NgRx</mat-card-title>
-        <mat-card-subtitle>
-          {{ 'anms.features.ngrx' | translate }}
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-icon-button href="https://github.com/ngrx/platform" target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-          <a mat-button href="http://ngrx.github.io/" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
-          </a>
-          <a mat-button
-             href="https://medium.com/@tomastrajan/object-assign-vs-object-spread-in-angular-ngrx-reducers-3d62ecb4a4b0"
-             target="_blank">
-            <fa-icon [icon]="['fab','medium-m']"></fa-icon>
-            {{ 'anms.features.guide' | translate }}
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title><code>{{versions.rxjs}}</code>RxJS</mat-card-title>
-        <mat-card-subtitle>
-          {{ 'anms.features.rxjs' | translate }}
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-icon-button href="https://github.com/ReactiveX/RxJS" target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-          <a mat-button href="http://reactivex.io/rxjs/" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
-          </a>
-          <a mat-button
-             href="https://medium.com/@tomastrajan/practical-rxjs-in-the-wild-requests-with-concatmap-vs-mergemap-vs-forkjoin-11e5b2efe293"
-             target="_blank">
-            <fa-icon [icon]="['fab','medium-m']"></fa-icon>
-            {{ 'anms.features.guide' | translate }}
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title><code>{{versions.bootstrap}}</code>Bootstrap</mat-card-title>
-        <mat-card-subtitle>
-          {{ 'anms.features.bootstrap' | translate }}
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-icon-button href="https://github.com/twbs/bootstrap" target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-          <a mat-button href="https://getbootstrap.com/docs/4.0/layout/grid/"
-             target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
-          </a>
-          <a mat-button
-             href="https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b"
-             target="_blank">
-            <fa-icon [icon]="['fab','medium-m']"></fa-icon>
-            {{ 'anms.features.guide' | translate }}
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title><code>{{versions.typescript}}</code> Typescript</mat-card-title>
-        <mat-card-subtitle>{{ 'anms.features.typescript' | translate }}
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-icon-button href="https://github.com/Microsoft/TypeScript"
-             target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-          <a mat-button href="https://www.typescriptlang.org/docs/home.html" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title><code>{{versions.ngxtranslate}}</code> I18n
+        <mat-card-title>
+          <code *ngIf="feature.version">{{feature.version}}</code>{{feature.name | translate}}
         </mat-card-title>
-        <mat-card-subtitle>{{ 'anms.features.ngxtranslate' | translate }}
-          (ngx-translate)
+        <mat-card-subtitle>
+          {{ feature.description | translate }}
         </mat-card-subtitle>
         <mat-card-actions>
-          <a mat-icon-button href="https://github.com/ngx-translate/core"
-             target="_blank">
+          <a *ngIf="feature.github" mat-icon-button [href]="feature.github" target="_blank">
             <fa-icon [icon]="['fab','github']"></fa-icon>
           </a>
-          <a mat-button href="http://www.ngx-translate.com/" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
+          <a mat-button [href]="feature.documentation" target="_blank">
+            <fa-icon icon="book"></fa-icon>{{ 'anms.features.documentation' | translate }}
           </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title><code>{{versions.fontAwesome}}</code> Font Awesome 5
-        </mat-card-title>
-        <mat-card-subtitle>{{ 'anms.features.fontawesome' | translate }}
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-icon-button href="https://github.com/FortAwesome/Font-Awesome"
-             target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-          <a mat-button href="https://fontawesome.com/icons" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title><code>{{versions.cypress}}</code>Cypress</mat-card-title>
-        <mat-card-subtitle>{{ 'anms.features.cypress' | translate }}
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-icon-button href="https://github.com/cypress-io/cypress" target="_blank">
-            <fa-icon [icon]="['fab','github']"></fa-icon>
-          </a>
-          <a mat-button href="https://www.cypress.io/" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title>{{ 'anms.features.themes.title' | translate }}</mat-card-title>
-        <mat-card-subtitle>{{ 'anms.features.themes' | translate }}</mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-button href="https://material.angular.io/guide/theming" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
-          </a>
-          <a mat-button href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1" target="_blank">
-            <fa-icon [icon]="['fab','medium-m']"></fa-icon>
-            {{ 'anms.features.guide' | translate }}
-          </a>
-        </mat-card-actions>
-      </mat-card>
-    </div>
-    <div class="col-md-6 col-lg-4" [ngClass]="routeAnimationsElements">
-      <mat-card>
-        <mat-card-title>{{ 'anms.features.lazyloading.title' | translate }}
-        </mat-card-title>
-        <mat-card-subtitle>{{ 'anms.features.lazyloading' | translate }}
-        </mat-card-subtitle>
-        <mat-card-actions>
-          <a mat-button href="https://angular.io/guide/router#lazy-loading-route-configuration" target="_blank">
-            <fa-icon icon="book"></fa-icon>
-            {{ 'anms.features.documentation' | translate }}
+          <a *ngIf="feature.medium" mat-button [href]="feature.medium" target="_blank">
+            <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'anms.features.guide' | translate }}
           </a>
         </mat-card-actions>
       </mat-card>
