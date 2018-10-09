@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 
-import features from './features';
+import { features } from './features.data';
 
 @Component({
   selector: 'anms-features',
@@ -11,7 +11,7 @@ import features from './features';
 })
 export class FeaturesComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  features = features.features;
+  features = features;
 
   ngOnInit() {}
 
