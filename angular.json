@@ -58,29 +58,29 @@
                   "type": "bundle",
                   "name": "polyfills",
                   "baseline": "150kb",
-                  "warning": "50kb",
-                  "error": "100kb"
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
                 },
                 {
                   "type": "bundle",
                   "name": "vendor",
-                  "baseline": "800kb",
-                  "warning": "100kb",
-                  "error": "200kb"
+                  "baseline": "900kb",
+                  "maximumWarning": "100kb",
+                  "maximumError": "200kb"
                 },
                 {
                   "type": "bundle",
                   "name": "styles",
-                  "baseline": "250kb",
-                  "warning": "50kb",
-                  "error": "100kb"
+                  "baseline": "280kb",
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
                 },
                 {
                   "type": "bundle",
                   "name": "main",
                   "baseline": "100kb",
-                  "warning": "50kb",
-                  "error": "100kb"
+                  "maximumWarning": "50kb",
+                  "maximumError": "100kb"
                 }
               ]
             }
@@ -112,7 +112,7 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               {
-                "input": "styles.scss"
+                "input": "src/styles.scss"
               }
             ],
             "scripts": [],

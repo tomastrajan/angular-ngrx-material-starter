@@ -1,10 +1,4 @@
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
-import {
-  RouterReducerState,
-  routerReducer,
-  RouterStateSerializer
-} from '@ngrx/router-store';
-import { EntityState } from '@ngrx/entity';
 import { AppState } from '@app/core';
 
 import { todosReducer } from './todos/todos.reducer';
