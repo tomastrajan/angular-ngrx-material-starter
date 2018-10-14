@@ -89,7 +89,6 @@
     "codelyzer": "~4.4.2",
     "cypress": "^3.1.0",
     "express": "^4.16.3",
-    "husky": "^1.0.0-rc.13",
     "jasmine-core": "~2.99.1",
     "jasmine-marbles": "^0.3.1",
     "jasmine-spec-reporter": "~4.2.1",
