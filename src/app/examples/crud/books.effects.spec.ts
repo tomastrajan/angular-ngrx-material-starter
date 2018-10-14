@@ -1,77 +1,71 @@
-import { TestBed } from '@angular/core/testing';
 import { LocalStorageService } from '@app/core';
-import { EffectsMetadata, getEffectsMetadata } from '@ngrx/effects';
-import { provideMockActions } from '@ngrx/effects/testing';
-import { Action, Store, StoreModule } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { MockStore, provideMockStore } from '@testing/utils';
-import { State } from '../examples.state';
-import { BooksEffects, BOOKS_KEY } from './books.effects';
+import { ActionBooksDeleteOne, ActionBooksUpsertOne } from './books.actions';
 import { BookState } from './books.model';
+import { Actions, getEffectsMetadata } from '@ngrx/effects';
+import { Store } from '@ngrx/store';
+import { cold } from 'jasmine-marbles';
+import { EMPTY, of } from 'rxjs';
+import { BooksEffects, BOOKS_KEY } from './books.effects';
 
 describe('BooksEffects', () => {
-  const actions$: Observable<Action> = null;
-  let bookEffects: BooksEffects;
-  let metadata: EffectsMetadata<BooksEffects>;
-  let store: MockStore<State>;
-  let localStorageService: any;
-  let state: State;
-
-  const booksState: BookState = {
-    entities: {
-      '1': {
-        author: 'Author',
-        description: 'Description',
-        id: '1',
-        title: 'Title'
-      }
-    },
-    ids: ['1']
-  };
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [StoreModule.forRoot({})],
-      providers: [
-        BooksEffects,
-        provideMockActions(() => actions$),
-        provideMockStore(),
-        {
-          provide: LocalStorageService,
-          useValue: jasmine.createSpyObj('LocalStorageService', ['setItem'])
+  describe('persistBooks', () => {
+    const booksState: BookState = {
+      entities: {
+        '1': {
+          author: 'Author',
+          description: 'Description',
+          id: '1',
+          title: 'Title'
         }
-      ]
+      },
+      ids: ['1']
+    };
+    let localStorage: LocalStorageService;
+    let store: Store<any>;
+
+    beforeEach(() => {
+      localStorage = jasmine.createSpyObj('localStorage', ['setItem']);
+      store = of({
+        examples: {
+          books: booksState
+        }
+      }) as any;
     });
-    localStorageService = TestBed.get(LocalStorageService);
-    bookEffects = TestBed.get(BooksEffects);
-    store = TestBed.get(Store);
-    state = createState(booksState);
-    store.setState(state);
-  });
 
-  it('should be created', () => {
-    expect(bookEffects).toBeTruthy();
-  });
+    it('should not dispatch any actions', () => {
+      const actions = new Actions(EMPTY);
+      const effects = new BooksEffects(actions, store, localStorage);
+      const metadata = getEffectsMetadata(effects);
 
-  it('persistBooks should not dispatch any action', () => {
-    metadata = getEffectsMetadata(bookEffects);
-    expect(metadata.persistBooks).toEqual({ dispatch: false });
-  });
+      expect(metadata.persistBooks).toEqual({ dispatch: false });
+    });
 
-  it('should call setItem on LocalStorageService for add one action', () => {
-    bookEffects.persistBooks.subscribe(() => {
-      expect(localStorageService.setItem).toHaveBeenCalledWith(
-        BOOKS_KEY,
-        state
-      );
+    it('should call setItem on LocalStorageService for delete one action', () => {
+      const action = new ActionBooksDeleteOne({ id: '1' });
+      const source = cold('a', { a: action });
+      const actions = new Actions(source);
+      const effects = new BooksEffects(actions, store, localStorage);
+
+      effects.persistBooks.subscribe(() => {
+        expect(localStorage.setItem).toHaveBeenCalledWith(
+          BOOKS_KEY,
+          booksState
+        );
+      });
+    });
+
+    it('should call setItem on LocalStorageService for upsert one action', () => {
+      const action = new ActionBooksUpsertOne({ book: {} as any });
+      const source = cold('a', { a: action });
+      const actions = new Actions(source);
+      const effects = new BooksEffects(actions, store, localStorage);
+
+      effects.persistBooks.subscribe(() => {
+        expect(localStorage.setItem).toHaveBeenCalledWith(
+          BOOKS_KEY,
+          booksState
+        );
+      });
     });
   });
 });
-
-function createState(booksState: BookState) {
-  return {
-    examples: {
-      books: booksState
-    }
-  } as State;
-}
