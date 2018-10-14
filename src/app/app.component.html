@@ -1,88 +1,81 @@
 <mat-sidenav-container>
 
   <mat-sidenav #sidenav mode="push">
-    <div class="branding"><img [src]="logo"/>
-      <span>{{ 'anms.title.short' | translate}}</span></div>
+    <div class="branding"><img [src]="logo" />
+      <span data-testid="title">{{ 'anms.title.short' | translate}}</span></div>
     <mat-nav-list>
-      <a mat-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()"
-         [routerLink]="[item.link]" routerLinkActive="active">
+      <a mat-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()" [routerLink]="[item.link]"
+        routerLinkActive="active">
         {{item.label | translate}}
       </a>
-      <a mat-list-item
-         href="https://github.com/tomastrajan/angular-ngrx-material-starter"
-         target="_blank">
+      <a mat-list-item href="https://github.com/tomastrajan/angular-ngrx-material-starter" target="_blank">
         Github
       </a>
     </mat-nav-list>
   </mat-sidenav>
 
-  <div class="toolbar">
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
-        <mat-icon fontSet="fas" fontIcon="fa-bars"></mat-icon>
-      </button>
+  <div class="wrapper">
 
-      <span routerLink="" class="branding spacer center d-inline d-sm-none">
-          <img [src]="logo"/></span>
-      <span routerLink=""
-            class="branding spacer center d-none d-sm-inline d-md-none"><img
-        [src]="logo"/> {{ 'anms.title.short' | translate }}</span>
-      <span routerLink="" class="branding spacer d-none d-md-inline"><img
-        [src]="logo"/> {{ 'anms.title' | translate }}</span>
+    <div class="toolbar" [style.position]="isHeaderSticky ? 'fixed' : 'inherit'" [class.mat-elevation-z4]="isHeaderSticky">
+      <mat-toolbar color="primary">
+        <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
+          <fa-icon icon="bars"></fa-icon>
 
-      <span class="d-none d-md-inline">
-          <button mat-button class="nav-button" *ngFor="let item of navigation"
-                  [routerLink]="[item.link]" routerLinkActive="active">
+        </button>
+
+        <span routerLink="" class="branding spacer center d-inline d-sm-none">
+          <img [src]="logo" /></span>
+        <span routerLink="" class="branding spacer center d-none d-sm-inline d-md-none"><img [src]="logo" /> {{
+          'anms.title.short' | translate }}</span>
+        <span routerLink="" class="branding spacer d-none d-md-inline"><img [src]="logo" /> {{ 'anms.title' | translate
+          }}</span>
+
+        <span class="d-none d-md-inline">
+          <button mat-button class="nav-button" *ngFor="let item of navigation" [routerLink]="[item.link]"
+            routerLinkActive="active">
             {{item.label | translate}}
           </button>
         </span>
 
-      <button mat-button class="sign-in-button "
-              *ngIf="!isAuthenticated"
-              (click)="onLoginClick()">
-        {{ 'anms.menu.login' | translate }}
-      </button>
-
-      <button *ngIf="isAuthenticated"
-              mat-icon-button
-              [matMenuTriggerFor]="toolbarUserMenu">
-        <mat-icon fontSet="fas" fontIcon="fa-user-circle"></mat-icon>
-      </button>
-      <mat-menu #toolbarUserMenu="matMenu">
-        <button mat-menu-item (click)="onLogoutClick()">
-          <mat-icon fontSet="fas" fontIcon="fa-power-off"></mat-icon>
-          <span>{{ 'anms.menu.logout' | translate }}</span>
+        <button mat-button mat-stroked-button color="accent" *ngIf="!isAuthenticated" (click)="onLoginClick()">
+          {{ 'anms.menu.login' | translate }}
         </button>
-      </mat-menu>
 
-      <button mat-icon-button routerLink="settings" class="d-none d-sm-inline">
-        <mat-icon fontSet="fas" fontIcon="fa-cog"></mat-icon>
-      </button>
+        <button *ngIf="isAuthenticated"
+                mat-icon-button
+                [matMenuTriggerFor]="toolbarUserMenu">
+          <fa-icon icon="user-circle"></fa-icon>
+        </button>
+        <mat-menu #toolbarUserMenu="matMenu">
+          <button mat-menu-item (click)="onLogoutClick()">
+            <mat-icon><fa-icon icon="power-off"></fa-icon></mat-icon>
+            <span>{{ 'anms.menu.logout' | translate }}</span>
+          </button>
+        </mat-menu>
 
-      <a [matTooltip]="'anms.header.github' | translate"
-         matdTooltipPosition="before"
-         mat-icon-button
-         class="link d-none d-sm-inline"
-         href="https://github.com/tomastrajan/angular-ngrx-material-starter"
-         target="_blank">
-        <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
-      </a>
+        <button mat-icon-button routerLink="settings" class="d-none d-sm-inline">
+          <fa-icon icon="cog"></fa-icon>
+        </button>
 
-      <span>
-        <mat-select [ngModel]="settings?.language"
-                    (selectionChange)="onLanguageSelect($event)">
-          <mat-option *ngFor="let l of languages" [value]="l">
-            {{ l.toUpperCase() }}
-          </mat-option>
-        </mat-select>
-      </span>
-    </mat-toolbar>
-  </div>
+        <a [matTooltip]="'anms.header.github' | translate"
+           matTooltipPosition="before"
+           mat-icon-button
+           class="link d-none d-sm-inline"
+           href="https://github.com/tomastrajan/angular-ngrx-material-starter"
+           target="_blank">
+          <fa-icon [icon]="['fab','github']"></fa-icon>
+        </a>
 
-  <div class="wrapper">
-
-    <div class="content"
-         [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
+        <span>
+          <mat-select [ngModel]="settings?.language" (selectionChange)="onLanguageSelect($event)">
+            <mat-option *ngFor="let l of languages" [value]="l">
+              {{ l.toUpperCase() }}
+            </mat-option>
+          </mat-select>
+        </span>
+      </mat-toolbar>
+    </div>
+    <div class="content" [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
       <router-outlet #o="outlet"></router-outlet>
     </div>
 
@@ -90,40 +83,40 @@
       <div class="row">
         <div class="col-sm-12 links">
           <a href="https://www.github.com/tomastrajan" target="_blank">
-            <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
+            <fa-icon [icon]="['fab','github']"></fa-icon>
             <span>Github</span>
           </a>
           <a href="https://www.medium.com/@tomastrajan" target="_blank">
-            <mat-icon fontSet="fab" fontIcon="fa-medium-m"></mat-icon>
+            <fa-icon [icon]="['fab','medium-m']"></fa-icon>
             <span>Medium</span>
           </a>
           <a href="https://www.twitter.com/tomastrajan" target="_blank">
-            <mat-icon fontSet="fab" fontIcon="fa-twitter"></mat-icon>
+            <fa-icon [icon]="['fab','twitter']"></fa-icon>
             <span>Twitter</span>
           </a>
           <a href="https://www.youtube.com/channel/UC7XgRHIVoqnh3U5Vmly9ofQ"
              target="_blank">
-            <mat-icon fontSet="fab" fontIcon="fa-youtube"></mat-icon>
+            <fa-icon [icon]="['fab','youtube']"></fa-icon>
             <span>Youtube</span>
           </a>
           <a href="https://www.instagram.com/tomastrajan" target="_blank">
-            <mat-icon fontSet="fab" fontIcon="fa-instagram"></mat-icon>
+            <fa-icon [icon]="['fab','instagram']"></fa-icon>
             <span>Instagram</span>
           </a>
           <a href="https://www.slides.com/tomastrajan" target="_blank">
-            <mat-icon fontSet="fas" fontIcon="fa-play-circle"></mat-icon>
+            <fa-icon icon="play-circle"></fa-icon>
             <span>Slides</span>
           </a>
         </div>
       </div>
       <div class="row">
         <div class="col-12 signature">
-          &#169; <span class="year">{{year}}</span> - Tomas Trajan
+          &#169; <span class="year" data-testid="footer-year">{{year}}</span> - Tomas Trajan
           <br class="d-block d-sm-none">
           <a [matTooltip]="'anms.footer.changelog' | translate"
              matTooltipPosition="before"
              href="https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md">
-            <mat-icon fontSet="fas" fontIcon="fa-rocket"></mat-icon>
+            <fa-icon icon="rocket"></fa-icon>
             {{version}} <span *ngIf="!isProd">[{{envName}}]</span>
           </a>
         </div>

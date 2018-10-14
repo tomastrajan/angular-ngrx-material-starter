@@ -1,4 +1,5 @@
 {
+  "anms.examples": "Beispiele",
   "anms.examples.menu.todos": "Aufgabenliste",
   "anms.examples.menu.stocks": "Börse",
   "anms.examples.menu.theming": "Theming",
@@ -23,6 +24,13 @@
   "anms.examples.todos.filter.description": "Anzeigen",
   "anms.examples.todos.filter.items": "Aufgaben",
   "anms.examples.todos.filter.item": "Aufgabe",
+  "anms.examples.todos.filter.one": "ein",
+  "anms.examples.todos.filter.none": "keiner",
+  "anms.examples.todos.filter.notification": "Gefiltert nach",
+  "anms.examples.todos.remove.notification": "Erledigt aufgaben entfernt",
+  "anms.examples.todos.toggle.notification": "Umschalten von {{name}} nach",
+  "anms.examples.todos.added.notification": "{{name}} hinzugefügt",
+  "anms.examples.todos.undo": "Undo",
   "anms.examples.stocks.title": "Börse",
   "anms.examples.stocks.symbol": "Aktiensymbol",
   "anms.examples.stocks.description":

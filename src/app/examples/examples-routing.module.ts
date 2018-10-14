@@ -8,6 +8,8 @@ import { ParentComponent } from './theming/parent/parent.component';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { TodosContainerComponent } from './todos/components/todos-container.component';
 import { StockMarketContainerComponent } from './stock-market/components/stock-market-container.component';
+import { CrudComponent } from './crud/components/crud.component';
+import { FormComponent } from './form/components/form.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,21 @@ const routes: Routes = [
         path: 'theming',
         component: ParentComponent,
         data: { title: 'anms.examples.menu.theming' }
+      },
+      {
+        path: 'crud',
+        component: CrudComponent,
+        data: { title: 'anms.examples.menu.crud' }
+      },
+      {
+        path: 'crud/:id',
+        component: CrudComponent,
+        data: { title: 'anms.examples.menu.crud' }
+      },
+      {
+        path: 'form',
+        component: FormComponent,
+        data: { title: 'anms.examples.menu.form' }
       },
       {
         path: 'authenticated',

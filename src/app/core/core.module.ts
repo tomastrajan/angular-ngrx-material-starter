@@ -15,6 +15,11 @@ import { AuthGuardService } from './auth/auth-guard.service';
 import { AnimationsService } from './animations/animations.service';
 import { TitleService } from './title/title.service';
 import { reducers, metaReducers } from './core.state';
+import {
+  StoreRouterConnectingModule,
+  RouterStateSerializer
+} from '@ngrx/router-store';
+import { CustomSerializer } from './router/custom-serializer';
 
 @NgModule({
   imports: [
@@ -24,6 +29,7 @@ import { reducers, metaReducers } from './core.state';
 
     // ngrx
     StoreModule.forRoot(reducers, { metaReducers }),
+    StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot([AuthEffects]),
     environment.production
       ? []
@@ -45,7 +51,8 @@ import { reducers, metaReducers } from './core.state';
     LocalStorageService,
     AuthGuardService,
     AnimationsService,
-    TitleService
+    TitleService,
+    { provide: RouterStateSerializer, useClass: CustomSerializer }
   ],
   exports: [TranslateModule]
 })

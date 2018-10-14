@@ -6,7 +6,13 @@
 
   anms-examples {
     .nav-responsive {
-      border-bottom: 2px solid mat-color($primary);
+      border-bottom: 1px solid mat-color($primary);
+
+      mat-select {
+        line-height: 48px;
+        margin: 0 20px;
+        width: 100%;
+      }
     }
   }
 

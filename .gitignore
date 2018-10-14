@@ -20,10 +20,10 @@ yarn.lock
 
 # IDE - VSCode
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# !.vscode/settings.json
+# !.vscode/tasks.json
+# !.vscode/launch.json
+# !.vscode/extensions.json
 
 # misc
 /.sass-cache
@@ -37,7 +37,11 @@ testem.log
 # e2e
 /e2e/src/*.js
 /e2e/src/*.map
+/cypress/screenshots
 
 # System Files
 .DS_Store
 Thumbs.db
+
+# debug
+debug.log

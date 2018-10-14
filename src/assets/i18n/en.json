@@ -46,6 +46,8 @@
   "anms.features.lazyloading":
     "Faster startup time with lazy loaded feature modules",
   "anms.features.lazyloading.title": "Lazy loading",
+  "anms.features.cypress":
+    "Cypress is a next generation front end testing tool built for the modern web.",
   "anms.settings.title": "Settings",
   "anms.settings.general": "General",
   "anms.settings.general.placeholder": "Language",
@@ -62,6 +64,7 @@
   "anms.settings.themes.nature": "Nature",
   "anms.settings.themes.dark": "Dark",
   "anms.settings.themes.night-mode": "Auto night mode (from 21:00 to 7:00)",
+  "anms.settings.themes.sticky-header": "Sticky header",
   "anms.settings.animations": "Animations",
   "anms.settings.animations.page": "Navigation whole page transition",
   "anms.settings.animations.elements": "Navigation page elements slide up"

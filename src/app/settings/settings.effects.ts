@@ -18,18 +18,16 @@ export class SettingsEffects {
   ) {}
 
   @Effect({ dispatch: false })
-  persistSettings() {
-    return this.actions$.pipe(
-      ofType<ActionSettingsPersist>(SettingsActionTypes.PERSIST),
-      tap(action => {
-        const { settings } = action.payload;
-        const { pageAnimations, elementsAnimations } = settings;
-        this.localStorageService.setItem(SETTINGS_KEY, settings);
-        this.animationsService.updateRouteAnimationType(
-          pageAnimations,
-          elementsAnimations
-        );
-      })
-    );
-  }
+  persistSettings = this.actions$.pipe(
+    ofType<ActionSettingsPersist>(SettingsActionTypes.PERSIST),
+    tap(action => {
+      const { settings } = action.payload;
+      const { pageAnimations, elementsAnimations } = settings;
+      this.localStorageService.setItem(SETTINGS_KEY, settings);
+      this.animationsService.updateRouteAnimationType(
+        pageAnimations,
+        elementsAnimations
+      );
+    })
+  );
 }

@@ -56,6 +56,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   settings: SettingsState;
   isAuthenticated: boolean;
+  isHeaderSticky: boolean;
 
   constructor(
     public overlayContainer: OverlayContainer,
@@ -119,6 +120,7 @@ export class AppComponent implements OnInit, OnDestroy {
       .subscribe(settings => {
         this.settings = settings;
         this.setTheme(settings);
+        this.setStickyHeader(settings);
         this.setLanguage(settings);
         this.animationService.updateRouteAnimationType(
           settings.pageAnimations,
@@ -143,6 +145,10 @@ export class AppComponent implements OnInit, OnDestroy {
       classList.remove(...toRemove);
     }
     classList.add(effectiveTheme);
+  }
+
+  private setStickyHeader(settings: SettingsState) {
+    this.isHeaderSticky = settings.stickyHeader;
   }
 
   private setLanguage(settings: SettingsState) {

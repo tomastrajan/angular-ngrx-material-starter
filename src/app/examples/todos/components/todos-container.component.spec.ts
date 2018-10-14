@@ -48,8 +48,8 @@ describe('TodosComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [TodosContainerComponent],
-        imports: [TestingModule]
+        imports: [TestingModule],
+        declarations: [TodosContainerComponent]
       }).compileComponents();
 
       store = TestBed.get(Store);

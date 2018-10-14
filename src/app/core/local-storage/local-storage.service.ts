@@ -9,14 +9,24 @@ export class LocalStorageService {
   static loadInitialState() {
     return Object.keys(localStorage).reduce((state: any, storageKey) => {
       if (storageKey.includes(APP_PREFIX)) {
-        state = state || {};
-        const stateKey = storageKey
+        const stateKeys = storageKey
           .replace(APP_PREFIX, '')
           .toLowerCase()
-          .split('.');
+          .split('.')
+          .map(key =>
+            key
+              .split('-')
+              .map(
+                (token, index) =>
+                  index === 0
+                    ? token
+                    : token.charAt(0).toUpperCase() + token.slice(1)
+              )
+              .join('')
+          );
         let currentStateRef = state;
-        stateKey.forEach((key, index) => {
-          if (index === stateKey.length - 1) {
+        stateKeys.forEach((key, index) => {
+          if (index === stateKeys.length - 1) {
             currentStateRef[key] = JSON.parse(localStorage.getItem(storageKey));
             return;
           }
@@ -25,7 +35,7 @@ export class LocalStorageService {
         });
       }
       return state;
-    }, undefined);
+    }, {});
   }
 
   setItem(key: string, value: any) {

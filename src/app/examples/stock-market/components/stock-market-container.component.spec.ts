@@ -7,12 +7,11 @@ import { EMPTY } from 'rxjs';
 import { TestingModule, MockStore } from '@testing/utils';
 import { CoreModule } from '@app/core';
 
-import { ExamplesModule } from '../../examples.module';
+import { State } from '../../examples.state';
+import { StockMarketService } from '../stock-market.service';
 import { ActionStockMarketRetrieve } from '../stock-market.actions';
 import { StockMarketState } from '../stock-market.model';
 import { StockMarketContainerComponent } from './stock-market-container.component';
-import { State } from '../../examples.state';
-import { StockMarketService } from '../../stock-market/stock-market.service';
 
 describe('StockMarketContainerComponent', () => {
   let retrieveStockSpy: jasmine.Spy;
@@ -37,16 +36,15 @@ describe('StockMarketContainerComponent', () => {
     fixture.debugElement.query(By.css('mat-card mat-card-subtitle'));
 
   const getCaretUpDownItem = () =>
-    fixture.debugElement.query(
-      By.css('mat-card mat-icon[fontIcon="fa-caret-down"]')
-    );
+    fixture.debugElement.query(By.css('mat-card fa-icon[icon="caret-down"]'));
 
   describe('given component booted', () => {
     beforeEach(
       async(() => {
         TestBed.configureTestingModule({
-          imports: [TestingModule, CoreModule, ExamplesModule],
-          providers: [{ provide: Store, useClass: MockStore }]
+          imports: [CoreModule, TestingModule],
+          providers: [StockMarketService],
+          declarations: [StockMarketContainerComponent]
         }).compileComponents();
 
         const stockMarketService = TestBed.get(StockMarketService);
@@ -181,7 +179,7 @@ describe('StockMarketContainerComponent', () => {
 function createState(stockState: StockMarketState) {
   return {
     examples: {
-      stockMarket: stockState
+      stocks: stockState
     }
   } as State;
 }

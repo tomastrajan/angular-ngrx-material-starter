@@ -17,12 +17,10 @@ export class TodosEffects {
   ) {}
 
   @Effect({ dispatch: false })
-  persistTodos() {
-    return this.actions$.pipe(
-      ofType<ActionTodosPersist>(TodosActionTypes.PERSIST),
-      tap(action =>
-        this.localStorageService.setItem(TODOS_KEY, action.payload.todos)
-      )
-    );
-  }
+  persistTodos = this.actions$.pipe(
+    ofType<ActionTodosPersist>(TodosActionTypes.PERSIST),
+    tap(action =>
+      this.localStorageService.setItem(TODOS_KEY, action.payload.todos)
+    )
+  );
 }
