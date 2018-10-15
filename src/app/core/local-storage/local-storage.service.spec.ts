@@ -18,9 +18,17 @@ describe('LocalStorageService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get and set the item', () => {
+  it('testLocalStorage should be executable', () => {
+    spyOn(service, 'testLocalStorage');
+    service.testLocalStorage();
+    expect(service.testLocalStorage).toHaveBeenCalled();
+  });
+
+  it('should get, set, and remove the item', () => {
     service.setItem('TEST', 'item');
     expect(service.getItem('TEST')).toBe('item');
+    service.removeItem('TEST');
+    expect(service.getItem('TEST')).toBe(null);
   });
 
   it('should load initial state', () => {
