@@ -1,57 +1,43 @@
-import { TestBed } from '@angular/core/testing';
-import { provideMockActions } from '@ngrx/effects/testing';
-import { Action } from '@ngrx/store';
-import { EffectsMetadata, getEffectsMetadata } from '@ngrx/effects';
-import { Observable } from 'rxjs';
 import { LocalStorageService } from '@app/core';
-import { TodosEffects, TODOS_KEY } from './todos.effects';
-import { TodosState, TodosFilter, Todo } from './todos.model';
-import { ActionTodosPersist } from './todos.actions';
+import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { cold } from 'jasmine-marbles';
+import { EMPTY } from 'rxjs';
+import { ActionTodosPersist } from './todos.actions';
+import { TodosEffects, TODOS_KEY } from './todos.effects';
+import { TodosState } from './todos.model';
 
 describe('TodosEffects', () => {
-  let actions$: Observable<Action>;
-  let todosEffect: TodosEffects;
-  let metadata: EffectsMetadata<TodosEffects>;
-  let localStorageService: any;
+  let localStorage: jasmine.SpyObj<LocalStorageService>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        TodosEffects,
-        provideMockActions(() => actions$),
-        {
-          provide: LocalStorageService,
-          useValue: jasmine.createSpyObj('LocalStorageService', ['setItem'])
-        }
-      ]
+    localStorage = jasmine.createSpyObj('LocalStorageService', ['setItem']);
+  });
+
+  describe('persistTodos', () => {
+    it('should not dispatch any action', () => {
+      const actions = new Actions(EMPTY);
+      const effect = new TodosEffects(actions, localStorage);
+      const metadata = getEffectsMetadata(effect);
+
+      expect(metadata.persistTodos).toEqual({ dispatch: false });
     });
-    localStorageService = TestBed.get(LocalStorageService);
-    todosEffect = TestBed.get(TodosEffects);
-  });
 
-  it('should be created', () => {
-    expect(todosEffect).toBeTruthy();
-  });
+    it('should call setItem on LocalStorageService for PERSIST action', () => {
+      const todosState: TodosState = {
+        items: [{ id: '1', name: 'Test ToDo', done: false }],
+        filter: 'ALL'
+      };
+      const persistAction = new ActionTodosPersist({ todos: todosState });
+      const source = cold('a', { a: persistAction });
+      const actions = new Actions(source);
+      const effect = new TodosEffects(actions, localStorage);
 
-  it('should not dispatch any action', () => {
-    metadata = getEffectsMetadata(todosEffect);
-    expect(metadata.persistTodos).toEqual({ dispatch: false });
-  });
-
-  it('should call setItem on LocalStorageService for PERSIST action', () => {
-    const todosState: TodosState = {
-      items: [{ id: '1', name: 'Test ToDo', done: false }],
-      filter: 'ALL'
-    };
-
-    const persistAction = new ActionTodosPersist({ todos: todosState });
-    actions$ = cold('a', { a: persistAction });
-    todosEffect.persistTodos.subscribe(() => {
-      expect(localStorageService.setItem).toHaveBeenCalledWith(
-        TODOS_KEY,
-        persistAction.payload.todos
-      );
+      effect.persistTodos.subscribe(() => {
+        expect(localStorage.setItem).toHaveBeenCalledWith(
+          TODOS_KEY,
+          persistAction.payload.todos
+        );
+      });
     });
   });
 });
