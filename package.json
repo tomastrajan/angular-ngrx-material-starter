@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
+    "docker-start": "ng serve  --host 0.0.0.0",
     "build": "ng build",
     "test": "npm run lint && ng test --configuration=test",
     "lint": "ng lint",
