@@ -36,7 +36,8 @@ import {
 export class AppComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
-  @HostBinding('class') componentCssClass;
+  @HostBinding('class')
+  componentCssClass;
 
   isProd = env.production;
   envName = env.envName;
@@ -103,7 +104,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
   private subscribeToIsAuthenticated() {
     this.store
-      .pipe(select(selectAuth), takeUntil(this.unsubscribe$))
+      .pipe(
+        select(selectAuth),
+        takeUntil(this.unsubscribe$)
+      )
       .subscribe(auth => (this.isAuthenticated = auth.isAuthenticated));
   }
 
@@ -116,7 +120,10 @@ export class AppComponent implements OnInit, OnDestroy {
       );
     }
     this.store
-      .pipe(select(selectSettings), takeUntil(this.unsubscribe$))
+      .pipe(
+        select(selectSettings),
+        takeUntil(this.unsubscribe$)
+      )
       .subscribe(settings => {
         this.settings = settings;
         this.setTheme(settings);

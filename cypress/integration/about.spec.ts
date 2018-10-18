@@ -12,8 +12,7 @@ describe('About', () => {
   });
 
   it('first action button should lead to "Features" route', () => {
-    cy
-      .get('.actions a')
+    cy.get('.actions a')
       .first()
       .click();
     cy.url().should('include', 'features');

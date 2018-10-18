@@ -13,13 +13,10 @@
   "anms.examples.todos.example": "Todo example",
   "anms.examples.todos.text1": "This is a classic",
   "anms.examples.todos.text2": "todo",
-  "anms.examples.todos.text3":
-    "example with support for adding, toggling, removing and filtering of the todo items.",
+  "anms.examples.todos.text3": "example with support for adding, toggling, removing and filtering of the todo items.",
   "anms.examples.todos.text4": "State handling is implemented using",
-  "anms.examples.todos.text5":
-    "module and support for lazy loaded reducers (this is a lazy loaded feature module).",
-  "anms.examples.todos.text6":
-    "Todos are persisted into local storage so you should see your todos also on later visits when using the same browser.",
+  "anms.examples.todos.text5": "module and support for lazy loaded reducers (this is a lazy loaded feature module).",
+  "anms.examples.todos.text6": "Todos are persisted into local storage so you should see your todos also on later visits when using the same browser.",
   "anms.examples.todos.filter.all": "All",
   "anms.examples.todos.filter.done": "Done",
   "anms.examples.todos.filter.active": "Active",
@@ -35,51 +32,39 @@
   "anms.examples.todos.undo": "Undo",
   "anms.examples.stocks.title": "Stock market",
   "anms.examples.stocks.symbol": "Stock symbol",
-  "anms.examples.stocks.description":
-    "Please provide some valid stock market symbol like:",
+  "anms.examples.stocks.description": "Please provide some valid stock market symbol like:",
   "anms.examples.stocks.text1": "Stock market example shows how to implement",
   "anms.examples.stocks.text2": "requests using",
   "anms.examples.stocks.text3": "module.",
-  "anms.examples.stocks.text4":
-    "Updating symbol query with different symbol will emit action which updates state with loading flag (reducer) and triggers effect for retrieving of selected stock.",
-  "anms.examples.stocks.text5":
-    "Actions are debounced and every subsequent request will cancel previous one using",
-  "anms.examples.stocks.text6":
-    "Success or error actions are emitted on request completion. Loading spinner is removed and stock info or error message is displayed.",
+  "anms.examples.stocks.text4": "Updating symbol query with different symbol will emit action which updates state with loading flag (reducer) and triggers effect for retrieving of selected stock.",
+  "anms.examples.stocks.text5": "Actions are debounced and every subsequent request will cancel previous one using",
+  "anms.examples.stocks.text6": "Success or error actions are emitted on request completion. Loading spinner is removed and stock info or error message is displayed.",
   "anms.examples.stocks.error1": "Stock",
   "anms.examples.stocks.error2": "not found",
   "anms.examples.theming.parent.title": "Theme scoping with nested components",
   "anms.examples.theming.parent.description": "parent works!",
-  "anms.examples.theming.parent.text1":
-    "Theme styles are not imported in component's",
+  "anms.examples.theming.parent.text1": "Theme styles are not imported in component's",
   "anms.examples.theming.parent.text2": "property of",
   "anms.examples.theming.parent.text3": "decorator but in the main",
-  "anms.examples.theming.parent.text4":
-    "file. Because of this, theme styles are",
+  "anms.examples.theming.parent.text4": "file. Because of this, theme styles are",
   "anms.examples.theming.parent.text5": "NOT",
-  "anms.examples.theming.parent.text6":
-    "scoped to the component automatically.",
+  "anms.examples.theming.parent.text6": "scoped to the component automatically.",
   "anms.examples.theming.parent.text7": "We have to use",
   "anms.examples.theming.parent.text8": "specific",
-  "anms.examples.theming.parent.text9":
-    "selectors to prevent styles from leaking into child components. This can be achieved by using",
-  "anms.examples.theming.parent.text10":
-    "in css rules to enhance their specificity. For example checkout theme file of this component:",
+  "anms.examples.theming.parent.text9": "selectors to prevent styles from leaking into child components. This can be achieved by using",
+  "anms.examples.theming.parent.text10": "in css rules to enhance their specificity. For example checkout theme file of this component:",
   "anms.examples.theming.child.title": "childs h1",
   "anms.examples.theming.child.subtitle": "should be without style",
   "anms.examples.theming.child.description": "child works!",
-  "anms.examples.crud.title":
-    "CRUD books using @ngrx/entity & @ngrx/router-store",
+  "anms.examples.crud.title": "CRUD books using @ngrx/entity & @ngrx/router-store",
   "anms.examples.crud.subtitle1": "Your books",
   "anms.examples.crud.subtitle2": "Book editor",
   "anms.examples.crud.placeholder0": "Id",
   "anms.examples.crud.placeholder1": "Title",
   "anms.examples.crud.placeholder2": "Author",
   "anms.examples.crud.placeholder3": "Description",
-  "anms.examples.crud.empty":
-    "Looks like you don't have any books, let's add some!",
-  "anms.examples.crud.text":
-    "Books can be managed in this editor and are added, updated, deleted and selected through ",
+  "anms.examples.crud.empty": "Looks like you don't have any books, let's add some!",
+  "anms.examples.crud.text": "Books can be managed in this editor and are added, updated, deleted and selected through ",
   "anms.examples.crud.error": "is required",
   "anms.examples.crud.save": "Save",
   "anms.examples.crud.cancel": "Cancel",
@@ -87,8 +72,7 @@
   "anms.examples.crud.tooltip.delete": "Delete book",
   "anms.examples.crud.tooltip.deselect": "Deselect book",
   "anms.examples.auth.title": "Authenticated component",
-  "anms.examples.auth.description1":
-    "This component is only accessible for authenticated users",
+  "anms.examples.auth.description1": "This component is only accessible for authenticated users",
   "anms.examples.form.title": "Reactive form using a form builder",
   "anms.examples.form.subtitle1": "The form",
   "anms.examples.form.subtitle2": "Marketing information",
@@ -104,8 +88,7 @@
   "anms.examples.form.error4": "should be smaller than",
   "anms.examples.form.text1": "Request a gift.",
   "anms.examples.form.text2": "Rate this form:",
-  "anms.examples.form.text3":
-    "You have to request a gift to see more information.",
+  "anms.examples.form.text3": "You have to request a gift to see more information.",
   "anms.examples.form.text4": "Gift sended!",
   "anms.examples.form.text5": "No gift sended.",
   "anms.examples.form.text6": "Clap",
@@ -113,6 +96,5 @@
   "anms.examples.form.save": "Save",
   "anms.examples.form.send": "Send",
 
-  "anms.examples.auth.description2":
-    "Logging out will cause user to be redirected to home screen if visiting route accessible only to authenticated users"
+  "anms.examples.auth.description2": "Logging out will cause user to be redirected to home screen if visiting route accessible only to authenticated users"
 }

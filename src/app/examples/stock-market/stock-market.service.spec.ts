@@ -22,16 +22,16 @@ describe('StockMarketService', () => {
     });
   });
 
-  it(
-    'should be created',
-    inject([StockMarketService], (service: StockMarketService) => {
+  it('should be created', inject(
+    [StockMarketService],
+    (service: StockMarketService) => {
       expect(service).toBeTruthy();
-    })
-  );
+    }
+  ));
 
-  it(
-    'should return expected result',
-    inject([StockMarketService], (service: StockMarketService) => {
+  it('should return expected result', inject(
+    [StockMarketService],
+    (service: StockMarketService) => {
       const expectedStock: any = {
         symbol: 'TSLA',
         primaryExchange: 'Nasdaq Global Select',
@@ -52,6 +52,6 @@ describe('StockMarketService', () => {
       }, fail);
 
       expect(httpClientSpy.get.calls.count()).toBe(1, 'called once');
-    })
-  );
+    }
+  ));
 });

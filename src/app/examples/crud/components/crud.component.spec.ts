@@ -13,19 +13,17 @@ describe('CrudComponent', () => {
   let fixture: ComponentFixture<CrudComponent>;
   let store: MockStore<State>;
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        imports: [CoreModule, TestingModule],
-        declarations: [CrudComponent]
-      }).compileComponents();
-      store = TestBed.get(Store);
-      store.setState(createState({ ids: [], entities: {} }));
-      fixture = TestBed.createComponent(CrudComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
-    })
-  );
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [CoreModule, TestingModule],
+      declarations: [CrudComponent]
+    }).compileComponents();
+    store = TestBed.get(Store);
+    store.setState(createState({ ids: [], entities: {} }));
+    fixture = TestBed.createComponent(CrudComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
   it('should create', () => {
     expect(component).toBeTruthy();
   });

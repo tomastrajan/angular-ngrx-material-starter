@@ -45,20 +45,18 @@ describe('TodosComponent', () => {
       By.css('anms-big-input-action[fontIcon="fa-plus"] > button')
     );
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        imports: [TestingModule],
-        declarations: [TodosContainerComponent]
-      }).compileComponents();
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [TestingModule],
+      declarations: [TodosContainerComponent]
+    }).compileComponents();
 
-      store = TestBed.get(Store);
-      store.setState(createState({ items: [], filter: 'ALL' }));
-      fixture = TestBed.createComponent(TodosContainerComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
-    })
-  );
+    store = TestBed.get(Store);
+    store.setState(createState({ items: [], filter: 'ALL' }));
+    fixture = TestBed.createComponent(TodosContainerComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
 
   it('should be created with 0 todos', () => {
     expect(component).toBeTruthy();

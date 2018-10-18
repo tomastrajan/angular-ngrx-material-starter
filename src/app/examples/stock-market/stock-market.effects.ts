@@ -40,14 +40,10 @@ export class StockMarketEffects {
       distinctUntilChanged((x, y) => x.payload.symbol === y.payload.symbol),
       debounceTime(debounce, scheduler),
       switchMap((action: ActionStockMarketRetrieve) =>
-        this.service
-          .retrieveStock(action.payload.symbol)
-          .pipe(
-            map(stock => new ActionStockMarketRetrieveSuccess({ stock })),
-            catchError(error =>
-              of(new ActionStockMarketRetrieveError({ error }))
-            )
-          )
+        this.service.retrieveStock(action.payload.symbol).pipe(
+          map(stock => new ActionStockMarketRetrieveSuccess({ stock })),
+          catchError(error => of(new ActionStockMarketRetrieveError({ error })))
+        )
       )
     );
 }

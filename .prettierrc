@@ -4,7 +4,5 @@
     "tabWidth": 2,
     "singleQuote": true,
     "trailingComma": "none",
-    "jsxBracketSameLine": false,
-    "parser": "babylon",
-    "semi": true,
+    "semi": true
 }
