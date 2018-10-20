@@ -45,4 +45,24 @@ export class LocalStorageService {
   getItem(key: string) {
     return JSON.parse(localStorage.getItem(`${APP_PREFIX}${key}`));
   }
+
+  removeItem(key: string) {
+    localStorage.removeItem(`${APP_PREFIX}${key}`);
+  }
+
+  /** Tests that localStorage exists, can be written to, and read from. */
+  testLocalStorage() {
+    const testValue = 'testValue';
+    const testKey = 'testKey';
+    let retrievedValue: string;
+    const errorMessage = 'localStorage did not return expected value';
+
+    this.setItem(testKey, testValue);
+    retrievedValue = this.getItem(testKey);
+    this.removeItem(testKey);
+
+    if (retrievedValue !== testValue) {
+      throw new Error(errorMessage);
+    }
+  }
 }

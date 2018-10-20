@@ -14,7 +14,8 @@ import {
   TitleService,
   selectAuth,
   routeAnimations,
-  AppState
+  AppState,
+  LocalStorageService
 } from '@app/core';
 import { environment as env } from '@env/environment';
 
@@ -65,7 +66,8 @@ export class AppComponent implements OnInit, OnDestroy {
     private router: Router,
     private titleService: TitleService,
     private animationService: AnimationsService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private storageService: LocalStorageService
   ) {}
 
   private static trackPageView(event: NavigationEnd) {
@@ -82,6 +84,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subscribeToSettings();
     this.subscribeToIsAuthenticated();
     this.subscribeToRouterEvents();
+    this.storageService.testLocalStorage();
   }
 
   ngOnDestroy(): void {
