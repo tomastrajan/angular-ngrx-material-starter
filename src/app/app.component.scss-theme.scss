@@ -3,6 +3,7 @@
 @mixin anms-app-component-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
 
   mat-sidenav-container {
     mat-toolbar {
@@ -44,6 +45,17 @@
           }
         }
       }
+    }
+  }
+
+  .error-notification-overlay {
+    color: mat-color($primary, default-contrast);
+    background-color: mat-color($warn);
+
+    button {
+      border-radius: 2px;
+      background-color: mat-color($accent);
+      color: mat-color($accent, default-contrast);
     }
   }
 }

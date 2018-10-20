@@ -13,14 +13,21 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BigInputActionComponent {
-  @Input() disabled = false;
-  @Input() fontSet = '';
-  @Input() fontIcon = '';
-  @Input() faIcon = '';
-  @Input() label = '';
-  @Input() color = '';
+  @Input()
+  disabled = false;
+  @Input()
+  fontSet = '';
+  @Input()
+  fontIcon = '';
+  @Input()
+  faIcon = '';
+  @Input()
+  label = '';
+  @Input()
+  color = '';
 
-  @Output() action = new EventEmitter<void>();
+  @Output()
+  action = new EventEmitter<void>();
 
   hasFocus = false;
 

@@ -14,13 +14,10 @@
   "anms.about.get-started": "Leg los!",
   "anms.about.get-notified": "Werde über neue Versionen informiert",
   "anms.about.get-notified.follow": "Folge",
-  "anms.about.get-notified.description":
-    "ein Twitterbot, der dich über die neusten Versionen deiner Lieblingsframeworks & -bibliotheken informiert!",
+  "anms.about.get-notified.description": "ein Twitterbot, der dich über die neusten Versionen deiner Lieblingsframeworks & -bibliotheken informiert!",
   "anms.about.contributors": "Beitragende",
-  "anms.about.contributors.description1":
-    "Möchtest du auch zu einem Open Source Projekt mit Angular beitragen?",
-  "anms.about.contributors.description2":
-    "Hinterlasse deine Spuren und werde Teil eines wachsenden Teams!",
+  "anms.about.contributors.description1": "Möchtest du auch zu einem Open Source Projekt mit Angular beitragen?",
+  "anms.about.contributors.description2": "Hinterlasse deine Spuren und werde Teil eines wachsenden Teams!",
   "anms.about.contributors.description3": "Werfe einen ersten Blick auf",
   "anms.about.contributors.description4": " und ",
   "anms.about.contributors.issues": "offene Probleme",
@@ -32,21 +29,14 @@
   "anms.features.angular-material": "Material Design-Komponente",
   "anms.features.angular-cli": "Eine Befehlszeilenschnittstelle für Angular",
   "anms.features.ngrx": "Einweg-Datenfluss unterstützt von RxJS Observables",
-  "anms.features.ngxtranslate":
-    "Eine Internationalisierungsbibliothek für Angular",
-  "anms.features.rxjs":
-    "Reaktive Programmierung mit Async-Sammlungen unter Verwendung von Observablen",
-  "anms.features.bootstrap":
-    "Responsives Layout von der weltbekannten UI-Bibliothek",
-  "anms.features.typescript":
-    "Überlegene Entwickler Erfahrung, Code-Vervollständigung, Refaktorierung und weniger Bugs",
-  "anms.features.fontawesome":
-    "Einfach zu bedienende Vektor-Icons und soziale Logos",
-  "anms.features.themes":
-    "Flexible Theming-Unterstützung für bereitgestellte und benutzerdefinierte Komponenten.",
+  "anms.features.ngxtranslate": "Eine Internationalisierungsbibliothek für Angular",
+  "anms.features.rxjs": "Reaktive Programmierung mit Async-Sammlungen unter Verwendung von Observablen",
+  "anms.features.bootstrap": "Responsives Layout von der weltbekannten UI-Bibliothek",
+  "anms.features.typescript": "Überlegene Entwickler Erfahrung, Code-Vervollständigung, Refaktorierung und weniger Bugs",
+  "anms.features.fontawesome": "Einfach zu bedienende Vektor-Icons und soziale Logos",
+  "anms.features.themes": "Flexible Theming-Unterstützung für bereitgestellte und benutzerdefinierte Komponenten.",
   "anms.features.themes.title": "Themen",
-  "anms.features.lazyloading":
-    "Schnellere Startzeit mit Lazy Loaded Feature-Modulen",
+  "anms.features.lazyloading": "Schnellere Startzeit mit Lazy Loaded Feature-Modulen",
   "anms.features.lazyloading.title": "Lazy Loading",
   "anms.settings.title": "Einstellungen",
   "anms.settings.general": "Haupteinstellungen",
@@ -65,6 +55,5 @@
   "anms.settings.themes.night-mode": "Auto Nachtmodus (von 21:00 bis 7:00)",
   "anms.settings.animations": "Animationen",
   "anms.settings.animations.page": "Navigation ganzer Seitenübergang",
-  "anms.settings.animations.elements":
-    "Navigation Seitenelemente nach oben schieben"
+  "anms.settings.animations.elements": "Navigation Seitenelemente nach oben schieben"
 }

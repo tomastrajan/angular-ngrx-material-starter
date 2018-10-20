@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.11.0...v7.0.0) (2018-10-18)
+
+
+### Bug Fixes
+
+* **examples:** broken tests due to missing state initialization and undefined in selector ([01c0906](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/01c0906))
+* **form:** restore the form state consistently with the local storage ([a67656c](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a67656c))
+
+
+### Features
+
+* add pa11y for accessibility checks ([#379](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/379)) ([af32ac5](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/af32ac5))
+* **dependencies:** update to Angular (and related) 7.0.0 RCs ([c2d6815](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c2d6815))
+* **router-store:** Use [@ngrx-router-store](https://github.com/ngrx-router-store) to CRUD ([98b9896](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/98b9896))
+* **todos:** add ngPlural todos filter description ([#365](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/365)) ([2b001ee](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2b001ee)), closes [#362](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/362)
+* **update:** update to Angular (and related) 7.0.0 BREAKING CHANGE ([36ee08f](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/36ee08f))
+
+
 <a name="6.11.0"></a>
 # [6.11.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.10.0...v6.11.0) (2018-10-02)
 

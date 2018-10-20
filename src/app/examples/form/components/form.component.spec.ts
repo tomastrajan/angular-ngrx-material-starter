@@ -13,20 +13,18 @@ describe('FormComponent', () => {
   let fixture: ComponentFixture<FormComponent>;
   let store: MockStore<State>;
 
-  beforeEach(
-    async(() => {
-      TestBed.configureTestingModule({
-        imports: [TestingModule],
-        declarations: [FormComponent]
-      }).compileComponents();
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [TestingModule],
+      declarations: [FormComponent]
+    }).compileComponents();
 
-      store = TestBed.get(Store);
-      store.setState(createState(initialState));
-      fixture = TestBed.createComponent(FormComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
-    })
-  );
+    store = TestBed.get(Store);
+    store.setState(createState(initialState));
+    fixture = TestBed.createComponent(FormComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  }));
 
   it('should create', () => {
     expect(component).toBeTruthy();

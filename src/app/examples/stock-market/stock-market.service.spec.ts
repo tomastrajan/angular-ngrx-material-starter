@@ -3,6 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 
+import { SharedModule } from '@app/shared';
 import { CoreModule } from '@app/core';
 
 import { StockMarketService } from './stock-market.service';
@@ -14,7 +15,7 @@ describe('StockMarketService', () => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
 
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, CoreModule],
+      imports: [RouterTestingModule, CoreModule, SharedModule],
       providers: [
         StockMarketService,
         { provide: HttpClient, useValue: httpClientSpy }
@@ -22,16 +23,16 @@ describe('StockMarketService', () => {
     });
   });
 
-  it(
-    'should be created',
-    inject([StockMarketService], (service: StockMarketService) => {
+  it('should be created', inject(
+    [StockMarketService],
+    (service: StockMarketService) => {
       expect(service).toBeTruthy();
-    })
-  );
+    }
+  ));
 
-  it(
-    'should return expected result',
-    inject([StockMarketService], (service: StockMarketService) => {
+  it('should return expected result', inject(
+    [StockMarketService],
+    (service: StockMarketService) => {
       const expectedStock: any = {
         symbol: 'TSLA',
         primaryExchange: 'Nasdaq Global Select',
@@ -52,6 +53,6 @@ describe('StockMarketService', () => {
       }, fail);
 
       expect(httpClientSpy.get.calls.count()).toBe(1, 'called once');
-    })
-  );
+    }
+  ));
 });

@@ -1,4 +1,4 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
@@ -15,6 +15,8 @@ import { AuthGuardService } from './auth/auth-guard.service';
 import { AnimationsService } from './animations/animations.service';
 import { TitleService } from './title/title.service';
 import { reducers, metaReducers } from './core.state';
+import { AppErrorHandler } from './error-handler/app-error-handler.service';
+import { httpInterceptorProviders } from '@app/core/http-interceptors';
 import {
   StoreRouterConnectingModule,
   RouterStateSerializer
@@ -51,7 +53,9 @@ import { CustomSerializer } from './router/custom-serializer';
     LocalStorageService,
     AuthGuardService,
     AnimationsService,
+    httpInterceptorProviders,
     TitleService,
+    { provide: ErrorHandler, useClass: AppErrorHandler },
     { provide: RouterStateSerializer, useClass: CustomSerializer }
   ],
   exports: [TranslateModule]

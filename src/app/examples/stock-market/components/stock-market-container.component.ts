@@ -23,7 +23,10 @@ export class StockMarketContainerComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.initialized = false;
     this.store
-      .pipe(select(selectStockMarket), takeUntil(this.unsubscribe$))
+      .pipe(
+        select(selectStockMarket),
+        takeUntil(this.unsubscribe$)
+      )
       .subscribe((stocks: any) => {
         this.stocks = stocks;
 

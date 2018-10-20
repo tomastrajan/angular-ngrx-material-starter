@@ -8,9 +8,10 @@ describe('App', () => {
   });
 
   it('should display current year in the footer', () => {
-    cy
-      .get('[data-testid=footer-year]')
-      .should('contain', new Date().getFullYear().toString());
+    cy.get('[data-testid=footer-year]').should(
+      'contain',
+      new Date().getFullYear().toString()
+    );
   });
 
   it('should have "About", "Features", "Examples" menus', () => {

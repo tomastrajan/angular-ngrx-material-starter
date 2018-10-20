@@ -14,8 +14,7 @@ describe('CRUD Actions', () => {
     });
 
     it('should not display a book deleted', () => {
-      cy
-        .get('[data-testid="crud-item"]')
+      cy.get('[data-testid="crud-item"]')
         .first()
         .click();
       cy.get('[data-testid="delete-crud"]').click();
@@ -25,8 +24,7 @@ describe('CRUD Actions', () => {
     });
 
     it('should update a book title', () => {
-      cy
-        .get('[data-testid="crud-item"]')
+      cy.get('[data-testid="crud-item"]')
         .first()
         .click();
       cy.get('[data-testid="edit-crud"]').click();
@@ -43,12 +41,14 @@ describe('CRUD Actions', () => {
 
     it('should display errors', () => {
       cy.get('[placeholder="Title"]').type('{enter}');
-      cy
-        .get('[data-testid="error-title-crud"]')
-        .should('contain', 'Title is required');
-      cy
-        .get('[data-testid="error-author-crud"]')
-        .should('contain', 'Author is required');
+      cy.get('[data-testid="error-title-crud"]').should(
+        'contain',
+        'Title is required'
+      );
+      cy.get('[data-testid="error-author-crud"]').should(
+        'contain',
+        'Author is required'
+      );
     });
   });
 });

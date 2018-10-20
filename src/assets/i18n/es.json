@@ -14,13 +14,10 @@
   "anms.about.get-started": "Comenzar",
   "anms.about.get-notified": "Ser notificado acerca de nuevos lanzamientos",
   "anms.about.get-notified.follow": "Siga a",
-  "anms.about.get-notified.description":
-    ", un bot de Twitter que lo ayuda a mantenerse al día con lanzamientos de frameworks frontend y librerías populares!",
+  "anms.about.get-notified.description": ", un bot de Twitter que lo ayuda a mantenerse al día con lanzamientos de frameworks frontend y librerías populares!",
   "anms.about.contributors": "Contribuyentes",
-  "anms.about.contributors.description1":
-    "¿Quiere comenzar a contribuir con el Código Abierto con Angular?",
-  "anms.about.contributors.description2":
-    "Deje su marca y únase al creciente equipo de colaboradores!",
+  "anms.about.contributors.description1": "¿Quiere comenzar a contribuir con el Código Abierto con Angular?",
+  "anms.about.contributors.description2": "Deje su marca y únase al creciente equipo de colaboradores!",
   "anms.about.contributors.description3": "Comience echando un vistazo a las ",
   "anms.about.contributors.description4": " y la ",
   "anms.about.contributors.issues": "incidencias abiertas",
@@ -29,26 +26,17 @@
   "anms.features.documentation": "Docs",
   "anms.features.guide": "Guía",
   "anms.features.angular": "framework moderno y poderoso",
-  "anms.features.angular-material":
-    "Librería de componentes de Material design",
+  "anms.features.angular-material": "Librería de componentes de Material design",
   "anms.features.angular-cli": "Una interfaz de línea de comando para Angular",
-  "anms.features.ngrx":
-    "Flujo de datos unidireccional impulsado por Observables RxJS",
-  "anms.features.ngxtranslate":
-    "Una librería de internacionalización para Angular",
-  "anms.features.rxjs":
-    "Programación reactiva con colecciones asíncronas utlilizando Observables",
-  "anms.features.bootstrap":
-    "Diseño receptivo de la librería de IU probada en batalla más famosa del mundo",
-  "anms.features.typescript":
-    "Experiencia superior de desarrollador, completado de código, refactorización y menos errores",
-  "anms.features.fontawesome":
-    "Iconos vectoriales fáciles de usar y logos sociales",
-  "anms.features.themes":
-    "Soporte flexible de tematización para componentes proporcionados y personalizados",
+  "anms.features.ngrx": "Flujo de datos unidireccional impulsado por Observables RxJS",
+  "anms.features.ngxtranslate": "Una librería de internacionalización para Angular",
+  "anms.features.rxjs": "Programación reactiva con colecciones asíncronas utlilizando Observables",
+  "anms.features.bootstrap": "Diseño receptivo de la librería de IU probada en batalla más famosa del mundo",
+  "anms.features.typescript": "Experiencia superior de desarrollador, completado de código, refactorización y menos errores",
+  "anms.features.fontawesome": "Iconos vectoriales fáciles de usar y logos sociales",
+  "anms.features.themes": "Soporte flexible de tematización para componentes proporcionados y personalizados",
   "anms.features.themes.title": "Temas",
-  "anms.features.lazyloading":
-    "Tiempo de inicio más rápido con módulos de funciones cargadas perezosas",
+  "anms.features.lazyloading": "Tiempo de inicio más rápido con módulos de funciones cargadas perezosas",
   "anms.features.lazyloading.title": "Carga perezosa",
   "anms.settings.title": "Ajustes",
   "anms.settings.general": "General",
@@ -66,8 +54,6 @@
   "anms.settings.themes.dark": "Oscuro",
   "anms.settings.themes.night-mode": "Modo oscuro automático (de 21:00 a 7:00)",
   "anms.settings.animations": "Animaciones",
-  "anms.settings.animations.page":
-    "Navegación de transición de página completa",
-  "anms.settings.animations.elements":
-    "Los elementos de la página de navegación se deslizan"
+  "anms.settings.animations.page": "Navegación de transición de página completa",
+  "anms.settings.animations.elements": "Los elementos de la página de navegación se deslizan"
 }

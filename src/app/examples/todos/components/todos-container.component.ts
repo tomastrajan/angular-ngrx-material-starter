@@ -38,7 +38,10 @@ export class TodosContainerComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store
-      .pipe(select(selectTodos), takeUntil(this.unsubscribe$))
+      .pipe(
+        select(selectTodos),
+        takeUntil(this.unsubscribe$)
+      )
       .subscribe(todos => {
         this.todos = todos;
         this.store.dispatch(new ActionTodosPersist({ todos }));

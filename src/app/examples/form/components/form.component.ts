@@ -50,7 +50,10 @@ export class FormComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.store
-      .pipe(select(selectForm), take(1))
+      .pipe(
+        select(selectForm),
+        take(1)
+      )
       .subscribe(form => this.form.patchValue(form.form));
 
     this.form.valueChanges

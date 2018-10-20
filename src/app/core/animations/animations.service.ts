@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AnimationsService {
-  constructor() {}
+  constructor() {
+    AnimationsService.routeAnimationType = 'NONE';
+  }
 
   private static routeAnimationType: RouteAnimationType = 'NONE';
 
@@ -17,7 +19,11 @@ export class AnimationsService {
     AnimationsService.routeAnimationType =
       pageAnimations && elementsAnimations
         ? 'ALL'
-        : pageAnimations ? 'PAGE' : elementsAnimations ? 'ELEMENTS' : 'NONE';
+        : pageAnimations
+          ? 'PAGE'
+          : elementsAnimations
+            ? 'ELEMENTS'
+            : 'NONE';
   }
 }
 

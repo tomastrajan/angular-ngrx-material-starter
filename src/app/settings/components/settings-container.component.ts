@@ -42,7 +42,10 @@ export class SettingsContainerComponent implements OnInit, OnDestroy {
 
   constructor(private store: Store<{}>) {
     store
-      .pipe(select(selectSettings), takeUntil(this.unsubscribe$))
+      .pipe(
+        select(selectSettings),
+        takeUntil(this.unsubscribe$)
+      )
       .subscribe(settings => (this.settings = settings));
   }
 

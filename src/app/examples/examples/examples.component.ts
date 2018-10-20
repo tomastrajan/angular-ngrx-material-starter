@@ -60,7 +60,10 @@ export class ExamplesComponent implements OnInit, OnDestroy {
 
   private subscribeToSettings() {
     this.store
-      .pipe(select(selectSettings), takeUntil(this.unsubscribe$))
+      .pipe(
+        select(selectSettings),
+        takeUntil(this.unsubscribe$)
+      )
       .subscribe((settings: SettingsState) =>
         this.translate.use(settings.language)
       );
