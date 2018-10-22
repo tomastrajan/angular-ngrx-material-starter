@@ -55,5 +55,16 @@
   "anms.settings.themes.night-mode": "Auto Nachtmodus (von 21:00 bis 7:00)",
   "anms.settings.animations": "Animationen",
   "anms.settings.animations.page": "Navigation ganzer Seitenübergang",
-  "anms.settings.animations.elements": "Navigation Seitenelemente nach oben schieben"
+  "anms.settings.animations.elements": "Navigation Seitenelemente nach oben schieben",
+  "anms.examples.todos.tooltip.add": "Fügen Sie eine Todo hinzu",
+  "anms.a11y.header.logo": "Angular NgRx Material Starter-Logo",
+  "anms.a11y.header.logo-link": "Gehe zur Startseite",
+  "anms.a11y.header.navigation": "Öffnen Sie das Navigationsmenü",
+  "anms.a11y.header.logout": "Öffnen Sie das Abmelde-Menü",
+  "anms.a11y.header.settings": "Einstellungsseite öffnen",
+  "anms.a11y.github-link": "Öffnen Sie den Link zum Projekt Github-Repository",
+  "anms.a11y.features.medium-link": "Öffnen Sie den Link zum Medium-Blog-Leitfaden",
+  "anms.a11y.features.documentation-link": "Öffnen Sie den Link zur Dokumentation",
+  "anms.a11y.about.contributors-link": "Link zur Contributor-Kontaktseite öffnen",
+  "anms.a11y.about.contributors-avatar": "Beitragender Avatar"
 }

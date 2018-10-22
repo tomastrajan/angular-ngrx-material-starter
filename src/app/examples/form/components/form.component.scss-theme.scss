@@ -1,0 +1,10 @@
+@import '~@angular/material/theming';
+
+@mixin anms-form-component-theme($theme) {
+  $accent: map-get($theme, accent);
+
+  .save {
+    color: mat-color($accent, default-contrast);
+    background-color: mat-color($accent, darker);
+  }
+}

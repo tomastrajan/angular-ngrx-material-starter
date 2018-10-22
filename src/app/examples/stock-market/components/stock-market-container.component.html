@@ -6,13 +6,12 @@
   </div>
   <div class="row">
     <div class="col-md-6 col-lg-3">
-      <form autocomplete="false">
-        <mat-form-field>
-          <input matInput [placeholder]="'anms.examples.stocks.symbol' | translate"
-                 [value]="stocks.symbol"
-                 (keyup)="onSymbolChange($event.target.value)">
-        </mat-form-field>
-      </form>
+      <mat-form-field>
+        <input matInput [placeholder]="'anms.examples.stocks.symbol' | translate"
+               [value]="stocks.symbol"
+               (keyup)="onSymbolChange($event.target.value)"
+               autocomplete="false">
+      </mat-form-field>
       <p>
         {{ 'anms.examples.stocks.description' | translate }} GOOGL, FB, AAPL, NVDA, AMZN,
         TWTR, SNAP, TSLA...

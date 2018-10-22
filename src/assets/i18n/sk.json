@@ -56,5 +56,16 @@
   "anms.settings.themes.night-mode": "Automatický nočný režim (od 21:00 do 7:00)",
   "anms.settings.animations": "Animácie",
   "anms.settings.animations.page": "Animácia celej stránky pri navigácii",
-  "anms.settings.animations.elements": "Animácia elementov stránky pri navigácii"
+  "anms.settings.animations.elements": "Animácia elementov stránky pri navigácii",
+  "anms.examples.todos.tooltip.add": "Pridať Todo",
+  "anms.a11y.header.logo": "Angular NgRx Material Štartér logo",
+  "anms.a11y.header.logo-link": "Prejdi na domovskú stránku",
+  "anms.a11y.header.navigation": "Otvorte ponuku navigácie",
+  "anms.a11y.header.logout": "Otvorte menu odhlásenia",
+  "anms.a11y.header.settings": "Otvorte stránku s nastaveniami",
+  "anms.a11y.github-link": "Otvoriť odkaz na projekt úložiska Github",
+  "anms.a11y.features.medium-link": "Otvorte odkaz na príručku Medium blog",
+  "anms.a11y.features.documentation-link": "Otvoriť odkaz na dokumentáciu",
+  "anms.a11y.about.contributors-link": "Otvorte odkaz na stránku kontaktov prispievateľa",
+  "anms.a11y.about.contributors-avatar": "Avatar prispievateľa"
 }

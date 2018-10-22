@@ -59,5 +59,16 @@
   "anms.settings.animations.page": "Navegação com transição em toda pagina",
   "anms.settings.animations.elements": "Elementos de navegação deslizam para cima",
   "anms.menu.configuracoes": "Configurações",
-  "anms.configuracoes.title": "Configurações"
+  "anms.configuracoes.title": "Configurações",
+  "anms.examples.todos.tooltip.add": "Adicionar um Todo",
+  "anms.a11y.header.logo": "Angular Ngrx Material Início logotipo",
+  "anms.a11y.header.logo-link": "Vá para a página inicial",
+  "anms.a11y.header.navigation": "Abrir o menu de navegação",
+  "anms.a11y.header.logout": "Abrir o menu de logout",
+  "anms.a11y.header.settings": "Abra a página de configurações",
+  "anms.a11y.github-link": "Abrir link para o repositório do projeto Github",
+  "anms.a11y.features.medium-link": "Abra o link para o guia de blog do Medium",
+  "anms.a11y.features.documentation-link": "Abrir link para documentação",
+  "anms.a11y.about.contributors-link": "Abrir link para a página de contato do contribuidor",
+  "anms.a11y.about.contributors-avatar": "Avatar de contribuidor"
 }

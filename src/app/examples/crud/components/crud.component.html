@@ -10,7 +10,7 @@
       </mat-card>
       <p *ngIf="(books$ | async)?.length === 0">{{'anms.examples.crud.empty' | translate}}</p>
       <button type="button" mat-fab color="primary" class="add" [ngClass]="routeAnimationsElements"
-        *ngIf="!isEditing" (click)="addNew(bookForm)" data-testid="add-crud">
+        *ngIf="!isEditing" (click)="addNew(bookForm)" data-testid="add-crud" aria-label="Open a book creation form">
         <fa-icon icon="plus"></fa-icon>
       </button>
     </div>

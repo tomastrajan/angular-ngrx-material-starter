@@ -2,6 +2,7 @@
   <input (focus)="hasFocus = true" (blur)="hasFocus = false"
          [value]="value"
          [placeholder]="placeholder"
-         [disabled]="disabled" />
+         [disabled]="disabled" 
+         attr.aria-label="{{placeholder}}"/>
   <ng-content></ng-content>
 </mat-card>

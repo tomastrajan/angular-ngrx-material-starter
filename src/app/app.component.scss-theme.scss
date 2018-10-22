@@ -10,10 +10,12 @@
       button {
         &.active {
           color: mat-color($accent, default-contrast);
-          background-color: mat-color($accent);
+          background-color: mat-color($accent, darker);
         }
       }
-
+      .login {
+        color: mat-color($accent, lighter);
+      }
       .link {
         color: mat-color($primary, default-contrast);
       }

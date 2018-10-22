@@ -57,5 +57,16 @@
   "anms.settings.themes.sticky-header": "Entête fixe",
   "anms.settings.animations": "Animations",
   "anms.settings.animations.page": "Transition de la page entière lors de la navigation",
-  "anms.settings.animations.elements": "Les éléments de la page de navigation glissent vers le haut"
+  "anms.settings.animations.elements": "Les éléments de la page de navigation glissent vers le haut",
+  "anms.examples.todos.tooltip.add": "Ajouer une Todo",
+  "anms.a11y.header.logo": "logo Angular NgRx Material Starter",
+  "anms.a11y.header.logo-link": "lien vers la page d'accueil",
+  "anms.a11y.header.navigation": "Ouvre le menu de nagivation",
+  "anms.a11y.header.logout": "Ouvre le menu de déconnection",
+  "anms.a11y.header.settings": "Ouvre la page de configuration",
+  "anms.a11y.github-link": "Ouvre un lien vers le répertoire du projet Github",
+  "anms.a11y.features.medium-link": "Ouvre un lien vers un guide sur Medium",
+  "anms.a11y.features.documentation-link": "Ouvre un lien vers la documentation",
+  "anms.a11y.about.contributors-link": "Ouvre un lien vers la page de contact du contributeur",
+  "anms.a11y.about.contributors-avatar": "Avatar du contributeur"
 }

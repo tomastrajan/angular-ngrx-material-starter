@@ -55,5 +55,16 @@
   "anms.settings.themes.night-mode": "Modo oscuro automático (de 21:00 a 7:00)",
   "anms.settings.animations": "Animaciones",
   "anms.settings.animations.page": "Navegación de transición de página completa",
-  "anms.settings.animations.elements": "Los elementos de la página de navegación se deslizan"
+  "anms.settings.animations.elements": "Los elementos de la página de navegación se deslizan",
+  "anms.examples.todos.tooltip.add": "Añadir un Todo",
+  "anms.a11y.header.logo": "Angular NgRx Material Inicio logo",
+  "anms.a11y.header.logo-link": "Ir a la página de inicio",
+  "anms.a11y.header.navigation": "Abrir el menú de navegación",
+  "anms.a11y.header.logout": "Abrir el menú de cierre de sesión",
+  "anms.a11y.header.settings": "Abrir página de configuración",
+  "anms.a11y.github-link": "Abrir enlace al proyecto repositorio Github",
+  "anms.a11y.features.medium-link": "Abrir enlace a la guía de blog Medium",
+  "anms.a11y.features.documentation-link": "Abrir enlace a la documentación",
+  "anms.a11y.about.contributors-link": "Abrir enlace a la página de contacto del colaborador",
+  "anms.a11y.about.contributors-avatar": "Contribuidor avatar"
 }
