@@ -14,13 +14,13 @@
           {{ feature.description | translate }}
         </mat-card-subtitle>
         <mat-card-actions>
-          <a *ngIf="feature.github" mat-icon-button [href]="feature.github" target="_blank" attr.aria-label="{{'anms.a11y.github-link' | translate}}">
+          <a *ngIf="feature.github" mat-icon-button [href]="feature.github" target="_blank" [attr.aria-label]="'anms.a11y.github-link' | translate">
             <fa-icon [icon]="['fab','github']"></fa-icon>
           </a>
-          <a mat-button [href]="feature.documentation" target="_blank" attr.aria-label="{{'anms.a11y.features.documentation-link' | translate}}">
+          <a mat-button [href]="feature.documentation" target="_blank" [attr.aria-label]="'anms.a11y.features.documentation-link' | translate">
             <fa-icon icon="book"></fa-icon>{{ 'anms.features.documentation' | translate }}
           </a>
-          <a *ngIf="feature.medium" mat-button [href]="feature.medium" target="_blank" attr.aria-label="{{'anms.a11y.features.medium-link' | translate}}">
+          <a *ngIf="feature.medium" mat-button [href]="feature.medium" target="_blank" [attr.aria-label]="'anms.a11y.features.medium-link' | translate">
             <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'anms.features.guide' | translate }}
           </a>
         </mat-card-actions>

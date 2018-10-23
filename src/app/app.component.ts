@@ -165,7 +165,7 @@ export class AppComponent implements OnInit, OnDestroy {
     const { language } = settings;
     if (language) {
       this.translate.use(language);
-      document.querySelector('html').setAttribute('lang', language);
+      document.documentElement.lang = language;
     }
   }
 

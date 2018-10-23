@@ -69,5 +69,7 @@
   "anms.a11y.features.medium-link": "Open link to Medium blog guide",
   "anms.a11y.features.documentation-link": "Open link to Documentation",
   "anms.a11y.about.contributors-link": "Open link to contributor contact page",
-  "anms.a11y.about.contributors-avatar": "Contributor avatar"
+  "anms.a11y.about.contributors-avatar": "Contributor avatar",
+  "anms.a11y.todos.filter.button": "Open filter menu",
+  "anms.a11y.crud.creation.button": "Open a book creation form"
 }

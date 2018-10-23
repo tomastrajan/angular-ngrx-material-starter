@@ -18,16 +18,16 @@
 
     <div class="toolbar" [style.position]="isHeaderSticky ? 'fixed' : 'inherit'" [class.mat-elevation-z4]="isHeaderSticky">
       <mat-toolbar color="primary">
-        <button mat-icon-button class="d-md-none" (click)="sidenav.open()"  attr.aria-label="{{'anms.a11y.header.navigation' | translate}}">
+        <button mat-icon-button class="d-md-none" (click)="sidenav.open()"  [attr.aria-label]="'anms.a11y.header.navigation' | translate">
           <fa-icon icon="bars"></fa-icon>
 
         </button>
 
-        <span routerLink="" class="branding spacer center d-inline d-sm-none" attr.aria-label="{{'anms.a11y.header.logo-link' | translate}}">
+        <span routerLink="" class="branding spacer center d-inline d-sm-none" [attr.aria-label]="'anms.a11y.header.logo-link' | translate">
           <img [src]="logo" alt="{{'anms.a11y.header.logo' | translate}}"/></span>
-        <span routerLink="" class="branding spacer center d-none d-sm-inline d-md-none" attr.aria-label="{{'anms.a11y.header.logo-link' | translate}}"><img [src]="logo" alt="{{'anms.a11y.header.logo' | translate}}"/> {{
+        <span routerLink="" class="branding spacer center d-none d-sm-inline d-md-none" [attr.aria-label]="'anms.a11y.header.logo-link' | translate"><img [src]="logo" alt="{{'anms.a11y.header.logo' | translate}}"/> {{
           'anms.title.short' | translate }}</span>
-        <span routerLink="" class="branding spacer d-none d-md-inline" attr.aria-label="{{'anms.a11y.header.logo-link' | translate}}"><img [src]="logo" alt="{{'anms.a11y.header.logo' | translate}}"/> {{ 'anms.title' | translate
+        <span routerLink="" class="branding spacer d-none d-md-inline" [attr.aria-label]="'anms.a11y.header.logo-link' | translate"><img [src]="logo" alt="{{'anms.a11y.header.logo' | translate}}"/> {{ 'anms.title' | translate
           }}</span>
 
         <span class="d-none d-md-inline">
@@ -44,7 +44,7 @@
         <button *ngIf="isAuthenticated"
                 mat-icon-button
                 [matMenuTriggerFor]="toolbarUserMenu"
-                attr.aria-label="{{'anms.a11y.header.logout' | translate}}">
+                [attr.aria-label]="'anms.a11y.header.logout' | translate">
           <fa-icon icon="user-circle"></fa-icon>
         </button>
         <mat-menu #toolbarUserMenu="matMenu">
@@ -54,7 +54,7 @@
           </button>
         </mat-menu>
 
-        <button mat-icon-button routerLink="settings" class="d-none d-sm-inline" attr.aria-label="{{'anms.a11y.header.settings' | translate}}">
+        <button mat-icon-button routerLink="settings" class="d-none d-sm-inline" [attr.aria-label]="'anms.a11y.header.settings' | translate">
           <fa-icon icon="cog"></fa-icon>
         </button>
 
@@ -63,7 +63,7 @@
            mat-icon-button
            class="link d-none d-sm-inline"
            href="https://github.com/tomastrajan/angular-ngrx-material-starter"
-           target="_blank" attr.aria-label="{{'anms.a11y.github-link' | translate}}">
+           target="_blank" [attr.aria-label]="'anms.a11y.github-link' | translate">
           <fa-icon [icon]="['fab','github']"></fa-icon>
         </a>
 

@@ -11,13 +11,13 @@
                                [disabled]="isAddTodoDisabled"
                                [matTooltip]="'anms.examples.todos.tooltip.add' | translate"
                                matTooltipPosition="before"
-                               [aria]="'anms.examples.todos.tooltip.add' | translate">
+                               [ariaLabel]="'anms.examples.todos.tooltip.add' | translate">
         </anms-big-input-action>
         <anms-big-input-action fontSet="fas" fontIcon="fa-trash" faIcon="trash" color="warn"
                                (action)="onRemoveDoneTodos()"
                                [disabled]="isRemoveDoneTodosDisabled"
                                [matTooltip]="'anms.examples.todos.tooltip.remove' | translate"
-                               [aria]="'anms.examples.todos.tooltip.remove' | translate"
+                               [ariaLabel]="'anms.examples.todos.tooltip.remove' | translate"
                                matTooltipPosition="after">
         </anms-big-input-action>
       </anms-big-input>
@@ -27,7 +27,7 @@
     <div class="col-md-6">
       <h2>
         {{ 'anms.examples.todos.list' | translate }}
-        <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter" aria-label="Open the filter menu">
+        <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter" [attr.aria-label]="'anms.a11y.todos.filter.button' | translate">
           <fa-icon icon="filter"></fa-icon>
         </button>
         <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">
