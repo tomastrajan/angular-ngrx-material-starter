@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil, filter, debounceTime, take } from 'rxjs/operators';
@@ -12,6 +11,7 @@ import { State } from '../../examples.state';
 import { ActionFormUpdate, ActionFormReset } from '../form.actions';
 import { selectForm } from '../form.selectors';
 import { Form } from '../form.model';
+import { NotificationService } from '@app/core/notifications/notification.service';
 
 @Component({
   selector: 'anms-form',
@@ -45,7 +45,7 @@ export class FormComponent implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private store: Store<State>,
     private translate: TranslateService,
-    public snackBar: MatSnackBar
+    private notificationService: NotificationService
   ) {}
 
   ngOnInit() {
@@ -76,14 +76,12 @@ export class FormComponent implements OnInit, OnDestroy {
   onSubmit() {
     if (this.form.valid) {
       this.save();
-      this.snackBar.open(
-        this.form.value.requestGift
+      this.notificationService.info(
+        (this.form.value.requestGift
           ? this.translate.instant('anms.examples.form.text4')
-          : this.translate.instant('anms.examples.form.text5'),
-        this.translate.instant('anms.examples.form.text6'),
-        {
-          duration: 1000
-        }
+          : this.translate.instant('anms.examples.form.text5')) +
+          ' : ' +
+          this.translate.instant('anms.examples.form.text6')
       );
     }
   }
