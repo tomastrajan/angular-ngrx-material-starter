@@ -42,7 +42,14 @@ npm start
   * `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application) 
 
 ![analzye](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/analyze.png)
-
+## Run Inside Docker Container
+  * `docker build -t material-starter .` - builds docker image with name `material-starter`
+  * `docker run -it \
+   -v ${PWD}:/usr/src/app \
+   -v /usr/src/app/node_modules \
+   -p 4200:4200 \
+   --rm \
+   material-starter` - starts `material-starter` container (you can access running application browsing http://localhost:4200) 
 ## Make It Your Own
 When using this starter project to build your own app you might consider some of the following steps:
   
