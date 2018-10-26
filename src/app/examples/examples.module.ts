@@ -23,6 +23,7 @@ import { BooksEffects } from './crud/books.effects';
 import { FormComponent } from './form/components/form.component';
 import { FormEffects } from './form/form.effects';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
+import { NotificationsComponent } from './notifications/components/notifications.component';
 
 @NgModule({
   imports: [
@@ -52,7 +53,8 @@ import { AuthenticatedComponent } from './authenticated/authenticated.component'
     ChildComponent,
     AuthenticatedComponent,
     CrudComponent,
-    FormComponent
+    FormComponent,
+    NotificationsComponent
   ],
   providers: [StockMarketService]
 })

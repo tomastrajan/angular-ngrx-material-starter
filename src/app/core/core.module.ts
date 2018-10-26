@@ -22,6 +22,7 @@ import {
   RouterStateSerializer
 } from '@ngrx/router-store';
 import { CustomSerializer } from './router/custom-serializer';
+import { NotificationService } from './notifications/notification.service';
 
 @NgModule({
   imports: [
@@ -50,6 +51,7 @@ import { CustomSerializer } from './router/custom-serializer';
   ],
   declarations: [],
   providers: [
+    NotificationService,
     LocalStorageService,
     AuthGuardService,
     AnimationsService,

@@ -1,0 +1,22 @@
+@import '~@angular/material/theming';
+
+@mixin anms-notifications-component-theme($theme) {
+  $info-color: map-get($theme, primary);
+  $error-color: map-get($theme, warn);
+
+  .error {
+    background-color: mat-color($error-color);
+  }
+
+  .information {
+    background-color: mat-color($info-color);
+  }
+
+  .success {
+    background-color: $success-color;
+  }
+
+  .warning {
+    background-color: $warning-color;
+  }
+}

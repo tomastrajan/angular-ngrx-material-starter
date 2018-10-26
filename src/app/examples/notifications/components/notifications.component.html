@@ -1,0 +1,36 @@
+<div class="container h-100">
+  <div class="row">
+    <div class="col-12">
+        <h1 class="main-heading">{{ 'anms.examples.notifications.title' | translate }}</h1>
+    </div>
+  </div>
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-md-offset-3 col-md-6 text-center">
+      <button mat-raised-button class="error" [ngClass]="routeAnimationsElements" (click)="error()">
+    {{ 'anms.examples.notifications.error' | translate }}
+  </button>
+    </div>
+  </div>
+  <div class="row h-100 justify-content-center align-items-center" style="margin-top: 1em">
+    <div class="col-md-offset-3 col-md-6 text-center">
+      <button mat-raised-button class="information"
+    [ngClass]="routeAnimationsElements" (click)="info()">
+    {{ 'anms.examples.notifications.information' | translate }}
+  </button>
+    </div>
+  </div>
+  <div class="row h-100 justify-content-center align-items-center" style="margin-top: 1em">
+    <div class="col-md-offset-3 col-md-6 text-center">
+      <button mat-raised-button class="success" (click)="success()" [ngClass]="routeAnimationsElements">
+    {{ 'anms.examples.notifications.success' | translate }}
+  </button>
+    </div>
+  </div>
+  <div class="row h-100 justify-content-center align-items-center" style="margin-top: 1em">
+    <div class="col-md-offset-3 col-md-6 text-center">
+      <button mat-raised-button class="warning" (click)="warn()" [ngClass]="routeAnimationsElements">
+    {{ 'anms.examples.notifications.warning' | translate }}
+  </button>
+    </div>
+  </div>
+</div>
