@@ -242,6 +242,26 @@
         "test",
         "bug"
       ]
+    },
+    {
+      "login": "GrzegorzStanczyk",
+      "name": "Front-End Developer",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/18703886?v=4",
+      "profile": "http://code-it.eu/",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
+      "login": "vishalsodani",
+      "name": "Vishal Sodani",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/364183?v=4",
+      "profile": "http://vishalsodani.com",
+      "contributions": [
+        "code",
+        "tool"
+      ]
     }
   ]
 }
