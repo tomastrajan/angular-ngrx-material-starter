@@ -131,6 +131,7 @@
           },
           "configurations": {
             "test": {
+              "sourceMap": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
