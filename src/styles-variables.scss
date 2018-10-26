@@ -1,3 +1,5 @@
+@import '~@angular/material/theming';
+
 $toolbar-breakpoint: 600px;
 
 $fa-font-path: '../node_modules/@fortawesome/fontawesome-free-webfonts/webfonts';
@@ -12,5 +14,5 @@ $grid-breakpoints: (
   xl: 1200px
 );
 
-$success-color: #8bc34a;
-$warning-color: #ffeb3b;
+$success-colors: mat-palette($mat-green, 400);
+$warning-colors: mat-palette($mat-amber, 400);

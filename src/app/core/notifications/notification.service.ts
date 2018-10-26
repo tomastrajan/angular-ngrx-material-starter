@@ -1,7 +1,6 @@
 import { Injectable, NgZone } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 
-/** UI notifications service */
 @Injectable()
 export class NotificationService {
   constructor(
@@ -9,19 +8,13 @@ export class NotificationService {
     private readonly zone: NgZone
   ) {}
 
-  /** Displays a self-closing Error notification.
-   * @param {string} message - message.
-   */
-  error(message: string) {
+  default(message: string) {
     this.show(message, {
-      duration: 3000,
-      panelClass: 'error-notification-overlay'
+      duration: 2000,
+      panelClass: 'default-notification-overlay'
     });
   }
 
-  /** Displays a self-closing Information notification.
-   * @param {string} message - message.
-   */
   info(message: string) {
     this.show(message, {
       duration: 2000,
@@ -29,9 +22,6 @@ export class NotificationService {
     });
   }
 
-  /** Displays a self-closing Success notification.
-   * @param {string} message - message.
-   */
   success(message: string) {
     this.show(message, {
       duration: 2000,
@@ -39,13 +29,17 @@ export class NotificationService {
     });
   }
 
-  /** Displays a self-closing Warning notification.
-   * @param {string} message - message.
-   */
   warn(message: string) {
     this.show(message, {
       duration: 2500,
       panelClass: 'warning-notification-overlay'
+    });
+  }
+
+  error(message: string) {
+    this.show(message, {
+      duration: 3000,
+      panelClass: 'error-notification-overlay'
     });
   }
 

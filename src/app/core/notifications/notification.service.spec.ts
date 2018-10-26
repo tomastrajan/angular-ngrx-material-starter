@@ -18,10 +18,10 @@ describe('NotificationsService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('error method should be executable', () => {
-    spyOn(service, 'error');
-    service.error('error message');
-    expect(service.error).toHaveBeenCalled();
+  it('default method should be executable', () => {
+    spyOn(service, 'default');
+    service.default('default message');
+    expect(service.default).toHaveBeenCalled();
   });
 
   it('info method should be executable', () => {
@@ -40,5 +40,11 @@ describe('NotificationsService', () => {
     spyOn(service, 'warn');
     service.warn('warning message');
     expect(service.warn).toHaveBeenCalled();
+  });
+
+  it('error method should be executable', () => {
+    spyOn(service, 'error');
+    service.error('error message');
+    expect(service.error).toHaveBeenCalled();
   });
 });

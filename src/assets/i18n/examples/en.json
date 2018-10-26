@@ -97,11 +97,17 @@
   "anms.examples.form.save": "Save",
   "anms.examples.form.send": "Send",
 
-  "anms.examples.notifications.title": "Notifications provided by NotificationService",
+  "anms.examples.notifications.title": "Notifications",
+  "anms.examples.notifications.default": "Default",
+  "anms.examples.notifications.default.description": "Default notifications for events of low importance",
   "anms.examples.notifications.error": "Error",
-  "anms.examples.notifications.information": "Information",
+  "anms.examples.notifications.error.description": "Error notifications, when things go really wrong...",
+  "anms.examples.notifications.info": "Info",
+  "anms.examples.notifications.info.description": "Info notifications for events of medium importance",
   "anms.examples.notifications.success": "Success",
+  "anms.examples.notifications.success.description": "Success notifications for reporting of a successful end of an operation or action",
   "anms.examples.notifications.warning": "Warning",
+  "anms.examples.notifications.warning.description": "Warning notifications for events that require user attention",
 
   "anms.examples.auth.description2": "Logging out will cause user to be redirected to home screen if visiting route accessible only to authenticated users"
 }

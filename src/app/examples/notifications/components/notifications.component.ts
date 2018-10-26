@@ -5,7 +5,7 @@ import { NotificationService } from '@app/core/notifications/notification.servic
 @Component({
   selector: 'anms-notifications',
   templateUrl: './notifications.component.html',
-  styleUrls: ['./notifications.component.css']
+  styleUrls: ['./notifications.component.scss']
 })
 export class NotificationsComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
@@ -14,8 +14,8 @@ export class NotificationsComponent implements OnInit {
 
   ngOnInit() {}
 
-  error() {
-    this.notificationService.error('Error message');
+  default() {
+    this.notificationService.default('Default message');
   }
 
   info() {
@@ -28,5 +28,9 @@ export class NotificationsComponent implements OnInit {
 
   warn() {
     this.notificationService.warn('Warning message');
+  }
+
+  error() {
+    this.notificationService.error('Error message');
   }
 }

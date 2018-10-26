@@ -49,22 +49,22 @@
   }
 
   .error-notification-overlay {
-    color: mat-color($primary, default-contrast);
+    color: mat-color($warn, default-contrast);
     background-color: mat-color($warn);
   }
 
-  .information-notification-overlay {
-    color: mat-color($primary, default-contrast);
-    background-color: mat-color($primary);
+  .info-notification-overlay {
+    color: mat-color($accent, default-contrast);
+    background-color: mat-color($accent);
   }
 
   .success-notification-overlay {
-    color: mat-color($primary, default-contrast);
-    background-color: $success-color;
+    color: mat-color($success-colors, default-contrast);
+    background-color: mat-color($success-colors);
   }
 
   .warning-notification-overlay {
-    color: mat-color($primary, default-contrast);
-    background-color: $warning-color;
+    color: mat-color($warning-colors, default-contrast);
+    background-color: mat-color($warning-colors);
   }
 }
