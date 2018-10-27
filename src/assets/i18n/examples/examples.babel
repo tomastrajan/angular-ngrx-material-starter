@@ -3821,6 +3821,6 @@
     <primary_language></primary_language>
     <configuration>
         <indent>tab</indent>
-        <format>namespaced-json</format>
+        <format>json</format>
     </configuration>
 </babeledit_project>
