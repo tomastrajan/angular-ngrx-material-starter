@@ -10,7 +10,7 @@
 </nav>
 
 <nav class="nav-responsive d-sm-none d-flex justify-content-center">
-    <mat-select [placeholder]="'anms.examples' | translate" [value]="'todos'">
+    <mat-select [placeholder]="'anms.examples.title' | translate" [value]="'todos'">
       <mat-option *ngFor="let e of examples"
         [value]="e"
         [routerLink]="e.link"

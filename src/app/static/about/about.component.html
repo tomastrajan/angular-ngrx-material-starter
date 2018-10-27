@@ -1,7 +1,7 @@
 <div class="background">
   <div class="gradient">
     <div class="container">
-      <h1>{{ 'anms.title' | translate }}</h1>
+      <h1>{{ 'anms.title.long' | translate }}</h1>
       <div class="actions">
         <a [ngClass]="routeAnimationsElements" mat-raised-button class="actions-main" color="primary" routerLink="../features">
           {{ 'anms.menu.features' | translate }}
@@ -58,7 +58,7 @@
 </div>
 <div class="container">
   <div class="follow-releases" [ngClass]="routeAnimationsElements">
-    <h2>{{ 'anms.about.get-notified' | translate }}</h2>
+    <h2>{{ 'anms.about.get-notified.title' | translate }}</h2>
     <p>
       {{ 'anms.about.get-notified.follow' | translate }} <a href="https://www.twitter.com/releasebutler" target="_blank">Release
         Butler</a>
@@ -70,7 +70,7 @@
 </div>
 <div class="container">
   <div class="contributors" [ngClass]="routeAnimationsElements">
-    <h2>{{ 'anms.about.contributors' | translate }}</h2>
+    <h2>{{ 'anms.about.contributors.title' | translate }}</h2>
     <p>{{ 'anms.about.contributors.description1' | translate }}</p>
     <p>{{ 'anms.about.contributors.description2' | translate }}</p>
     <p>
@@ -233,6 +233,12 @@
   <a class="contributor" href="http://vishalsodani.com" target="_blank">
     <img src="https://avatars1.githubusercontent.com/u/364183?v=4">
     <span>Vishal Sodani</span>
+  </a>
+
+
+  <a class="contributor" href="https://github.com/kosmas58" target="_blank">
+    <img src="https://avatars2.githubusercontent.com/u/43474?v=4">
+    <span>Kosmas Schütz</span>
   </a>
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
