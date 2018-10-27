@@ -5,7 +5,7 @@
   "projects": {
     "angular-ngrx-material-starter": {
       "root": "",
-      "sourceRoot": "/src",
+      "sourceRoot": "src",
       "projectType": "application",
       "prefix": "anms",
       "schematics": {},

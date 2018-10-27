@@ -10,6 +10,7 @@ import { TodosContainerComponent } from './todos/components/todos-container.comp
 import { StockMarketContainerComponent } from './stock-market/components/stock-market-container.component';
 import { CrudComponent } from './crud/components/crud.component';
 import { FormComponent } from './form/components/form.component';
+import { NotificationsComponent } from './notifications/components/notifications.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,11 @@ const routes: Routes = [
         path: 'form',
         component: FormComponent,
         data: { title: 'anms.examples.menu.form' }
+      },
+      {
+        path: 'notifications',
+        component: NotificationsComponent,
+        data: { title: 'anms.examples.menu.notifications' }
       },
       {
         path: 'authenticated',

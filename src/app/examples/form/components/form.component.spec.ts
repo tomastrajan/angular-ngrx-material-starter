@@ -7,6 +7,7 @@ import { State } from '../../examples.state';
 import { FormState } from '../form.model';
 import { initialState } from '../form.reducer';
 import { FormComponent } from './form.component';
+import { NotificationService } from '@app/core/notifications/notification.service';
 
 describe('FormComponent', () => {
   let component: FormComponent;
@@ -16,7 +17,8 @@ describe('FormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [TestingModule],
-      declarations: [FormComponent]
+      declarations: [FormComponent],
+      providers: [NotificationService]
     }).compileComponents();
 
     store = TestBed.get(Store);

@@ -12,6 +12,7 @@ import {
 import { TodosState } from '../todos.model';
 import { TodosContainerComponent } from './todos-container.component';
 import { State } from '../../examples.state';
+import { NotificationService } from '@app/core/notifications/notification.service';
 
 describe('TodosComponent', () => {
   let component: TodosContainerComponent;
@@ -48,7 +49,8 @@ describe('TodosComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [TestingModule],
-      declarations: [TodosContainerComponent]
+      declarations: [TodosContainerComponent],
+      providers: [NotificationService]
     }).compileComponents();
 
     store = TestBed.get(Store);
