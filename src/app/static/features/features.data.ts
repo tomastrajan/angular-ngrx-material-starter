@@ -80,14 +80,14 @@ export const features: Feature[] = [
   },
   {
     name: 'anms.features.themes.title',
-    description: 'anms.features.themes',
+    description: 'anms.features.themes.description',
     documentation: 'https://material.angular.io/guide/theming',
     medium:
       'https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1'
   },
   {
     name: 'anms.features.lazyloading.title',
-    description: 'anms.features.lazyloading',
+    description: 'anms.features.lazyloading.description',
     documentation:
       'https://angular.io/guide/router#lazy-loading-route-configuration'
   }
