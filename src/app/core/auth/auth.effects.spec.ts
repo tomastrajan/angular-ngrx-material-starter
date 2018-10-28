@@ -1,78 +1,66 @@
-import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { LocalStorageService } from '@app/core';
-import { EffectsMetadata, getEffectsMetadata } from '@ngrx/effects';
-import { provideMockActions } from '@ngrx/effects/testing';
-import { Action } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { ActionAuthLogin, ActionAuthLogout } from '@app/core/auth/auth.actions';
+import { Actions, getEffectsMetadata } from '@ngrx/effects';
+import { cold } from 'jasmine-marbles';
+import { EMPTY } from 'rxjs';
 import { AuthEffects, AUTH_KEY } from './auth.effects';
-import { AuthState } from './auth.models';
 
 describe('AuthEffects', () => {
-  const actions$: Observable<Action> = null;
-  let authEffect: AuthEffects;
-  let metadata: EffectsMetadata<AuthEffects>;
-  let localStorageService: any;
-  let router: Router;
+  let localStorageService: jasmine.SpyObj<LocalStorageService>;
+  let router: jasmine.SpyObj<Router>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        AuthEffects,
-        provideMockActions(() => actions$),
-        {
-          provide: LocalStorageService,
-          useValue: jasmine.createSpyObj('LocalStorageService', ['setItem'])
-        },
-        {
-          provide: Router,
-          useValue: jasmine.createSpyObj('Router', ['navigateByUrl'])
-        }
-      ]
+    localStorageService = jasmine.createSpyObj('LocalStorageService', [
+      'setItem'
+    ]);
+    router = jasmine.createSpyObj('Router', ['navigateByUrl']);
+  });
+
+  describe('login', () => {
+    it('should not dispatch any action', () => {
+      const actions = new Actions(EMPTY);
+      const effect = new AuthEffects(actions, localStorageService, router);
+      const metadata = getEffectsMetadata(effect);
+
+      expect(metadata.login).toEqual({ dispatch: false });
     });
-    localStorageService = TestBed.get(LocalStorageService);
-    authEffect = TestBed.get(AuthEffects);
-    router = TestBed.get(Router);
-  });
 
-  it('should be created', () => {
-    expect(authEffect).toBeTruthy();
-  });
+    it('should call setItem on LocalStorageService', () => {
+      const loginAction = new ActionAuthLogin();
+      const source = cold('a', { a: loginAction });
+      const actions = new Actions(source);
+      const effect = new AuthEffects(actions, localStorageService, router);
 
-  it('login should not dispatch any action', () => {
-    metadata = getEffectsMetadata(authEffect);
-    expect(metadata.login).toEqual({ dispatch: false });
-  });
-
-  it('logout should not dispatch any action', () => {
-    metadata = getEffectsMetadata(authEffect);
-    expect(metadata.logout).toEqual({ dispatch: false });
-  });
-
-  it('should call setItem on LocalStorageService for login action', () => {
-    const loginState: AuthState = {
-      isAuthenticated: true
-    };
-
-    authEffect.login.subscribe(() => {
-      expect(localStorageService.setItem).toHaveBeenCalledWith(
-        AUTH_KEY,
-        loginState
-      );
+      effect.login.subscribe(() => {
+        expect(localStorageService.setItem).toHaveBeenCalledWith(AUTH_KEY, {
+          isAuthenticated: true
+        });
+      });
     });
   });
 
-  it('should call setItem on LocalStorageService for logout action and navigate to about', () => {
-    const logoutState: AuthState = {
-      isAuthenticated: false
-    };
+  describe('logout', () => {
+    it('should not dispatch any action', () => {
+      const actions = new Actions(EMPTY);
+      const effect = new AuthEffects(actions, localStorageService, router);
+      const metadata = getEffectsMetadata(effect);
 
-    authEffect.logout.subscribe(() => {
-      expect(localStorageService.setItem).toHaveBeenCalledWith(
-        AUTH_KEY,
-        logoutState
-      );
-      expect(router.navigate).toHaveBeenCalledWith(['']);
+      expect(metadata.logout).toEqual({ dispatch: false });
+    });
+
+    it('should call setItem on LocalStorageService and navigate to about', () => {
+      const logoutAction = new ActionAuthLogout();
+      const source = cold('a', { a: logoutAction });
+      const actions = new Actions(source);
+      const effect = new AuthEffects(actions, localStorageService, router);
+
+      effect.login.subscribe(() => {
+        expect(localStorageService.setItem).toHaveBeenCalledWith(AUTH_KEY, {
+          isAuthenticated: false
+        });
+        expect(router.navigate).toHaveBeenCalledWith(['']);
+      });
     });
   });
 });
