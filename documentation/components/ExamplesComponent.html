@@ -1,0 +1,774 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-ngrx-material-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-ngrx-material-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ExamplesComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/examples/examples/examples.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>anms-examples</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>examples.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./examples.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#examples">examples</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isAuthenticated$">isAuthenticated$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#unsubscribe$">unsubscribe$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subscribeToRouterEvents">subscribeToRouterEvents</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#subscribeToSettings">subscribeToSettings</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/State.html">Store<State></a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, titleService: <a href="../injectables/TitleService.html">TitleService</a>, translate: TranslateService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/examples/examples/examples.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/State.html" target="_self" >Store&lt;State&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>titleService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/TitleService.html" target="_self" >TitleService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translate</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/examples/examples/examples.component.ts:57</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/examples/examples/examples.component.ts:47</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscribeToRouterEvents"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            subscribeToRouterEvents
+                            </b>
+                            <a href="#subscribeToRouterEvents"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>subscribeToRouterEvents()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="73" class="link-to-prism">src/app/examples/examples/examples.component.ts:73</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscribeToSettings"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            subscribeToSettings
+                            </b>
+                            <a href="#subscribeToSettings"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>subscribeToSettings()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/examples/examples/examples.component.ts:62</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="examples"></a>
+                        <span class="name">
+                            <b>
+                            examples
+                            </b>
+                            <a href="#examples"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>examples:     <code>[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    { link: &#x27;todos&#x27;, label: &#x27;anms.examples.menu.todos&#x27; },
+    { link: &#x27;stock-market&#x27;, label: &#x27;anms.examples.menu.stocks&#x27; },
+    { link: &#x27;theming&#x27;, label: &#x27;anms.examples.menu.theming&#x27; },
+    { link: &#x27;crud&#x27;, label: &#x27;anms.examples.menu.crud&#x27; },
+    { link: &#x27;form&#x27;, label: &#x27;anms.examples.menu.form&#x27; },
+    { link: &#x27;notifications&#x27;, label: &#x27;anms.examples.menu.notifications&#x27; },
+    { link: &#x27;authenticated&#x27;, label: &#x27;anms.examples.menu.auth&#x27;, auth: true }
+  ]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/examples/examples/examples.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isAuthenticated$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            isAuthenticated$
+                            </b>
+                            <a href="#isAuthenticated$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>isAuthenticated$:     <code>Observable&lt;boolean&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Observable&lt;boolean&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/examples/examples/examples.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="unsubscribe$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            unsubscribe$
+                            </b>
+                            <a href="#unsubscribe$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>unsubscribe$:     <code>Subject&lt;void&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/examples/examples/examples.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Store, select } from &#x27;@ngrx/store&#x27;;
+import { Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+import { ActivationEnd, Router } from &#x27;@angular/router&#x27;;
+import { Observable, Subject } from &#x27;rxjs&#x27;;
+import { filter, takeUntil, map } from &#x27;rxjs/operators&#x27;;
+
+import { routeAnimations, TitleService } from &#x27;@app/core&#x27;;
+import {
+  State as BaseSettingsState,
+  selectSettings,
+  SettingsState
+} from &#x27;@app/settings&#x27;;
+
+import { State as BaseExamplesState } from &#x27;../examples.state&#x27;;
+import { selectAuth } from &#x27;@app/core/auth/auth.selectors&#x27;;
+
+interface State extends BaseSettingsState, BaseExamplesState {}
+
+@Component({
+  selector: &#x27;anms-examples&#x27;,
+  templateUrl: &#x27;./examples.component.html&#x27;,
+  styleUrls: [&#x27;./examples.component.scss&#x27;],
+  animations: [routeAnimations]
+})
+export class ExamplesComponent implements OnInit, OnDestroy {
+  private unsubscribe$: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
+  private isAuthenticated$: Observable&lt;boolean&gt;;
+
+  examples &#x3D; [
+    { link: &#x27;todos&#x27;, label: &#x27;anms.examples.menu.todos&#x27; },
+    { link: &#x27;stock-market&#x27;, label: &#x27;anms.examples.menu.stocks&#x27; },
+    { link: &#x27;theming&#x27;, label: &#x27;anms.examples.menu.theming&#x27; },
+    { link: &#x27;crud&#x27;, label: &#x27;anms.examples.menu.crud&#x27; },
+    { link: &#x27;form&#x27;, label: &#x27;anms.examples.menu.form&#x27; },
+    { link: &#x27;notifications&#x27;, label: &#x27;anms.examples.menu.notifications&#x27; },
+    { link: &#x27;authenticated&#x27;, label: &#x27;anms.examples.menu.auth&#x27;, auth: true }
+  ];
+
+  constructor(
+    private store: Store&lt;State&gt;,
+    private router: Router,
+    private titleService: TitleService,
+    private translate: TranslateService
+  ) {}
+
+  ngOnInit(): void {
+    this.translate.setDefaultLang(&#x27;en&#x27;);
+    this.subscribeToSettings();
+    this.subscribeToRouterEvents();
+    this.isAuthenticated$ &#x3D; this.store.pipe(
+      select(selectAuth),
+      map(auth &#x3D;&gt; auth.isAuthenticated)
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  private subscribeToSettings() {
+    this.store
+      .pipe(
+        select(selectSettings),
+        takeUntil(this.unsubscribe$)
+      )
+      .subscribe((settings: SettingsState) &#x3D;&gt;
+        this.translate.use(settings.language)
+      );
+  }
+
+  private subscribeToRouterEvents() {
+    this.titleService.setTitle(
+      this.router.routerState.snapshot.root,
+      this.translate
+    );
+    this.router.events
+      .pipe(
+        filter(event &#x3D;&gt; event instanceof ActivationEnd),
+        map((event: ActivationEnd) &#x3D;&gt; event.snapshot),
+        takeUntil(this.unsubscribe$)
+      )
+      .subscribe(snapshot &#x3D;&gt;
+        this.titleService.setTitle(snapshot, this.translate)
+      );
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;nav mat-tab-nav-bar class&#x3D;&quot;d-none d-sm-flex&quot;&gt;
+  &lt;a mat-tab-link
+     *ngFor&#x3D;&quot;let e of examples&quot;
+     [routerLink]&#x3D;&quot;e.link&quot;
+     routerLinkActive #rla&#x3D;&quot;routerLinkActive&quot;
+     [active]&#x3D;&quot;rla.isActive&quot;
+     [disabled]&#x3D;&quot;e.auth &amp;&amp; !(isAuthenticated$ | async)&quot;&gt;
+    {{e.label | translate}}
+  &lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;nav class&#x3D;&quot;nav-responsive d-sm-none d-flex justify-content-center&quot;&gt;
+    &lt;mat-select [placeholder]&#x3D;&quot;&#x27;anms.examples.title&#x27; | translate&quot; [value]&#x3D;&quot;&#x27;todos&#x27;&quot;&gt;
+      &lt;mat-option *ngFor&#x3D;&quot;let e of examples&quot;
+        [value]&#x3D;&quot;e&quot;
+        [routerLink]&#x3D;&quot;e.link&quot;
+        [disabled]&#x3D;&quot;e.auth &amp;&amp; !(isAuthenticated$ | async)&quot;&gt;
+          {{e.label | translate}}
+      &lt;/mat-option&gt;
+    &lt;/mat-select&gt;
+&lt;/nav&gt;
+
+
+
+&lt;div [@routeAnimations]&#x3D;&quot;o.isActivated &amp;&amp; o.activatedRoute.routeConfig.path&quot;&gt;
+  &lt;router-outlet #o&#x3D;&quot;outlet&quot;&gt;&lt;/router-outlet&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><nav mat-tab-nav-bar class="d-none d-sm-flex">  <a mat-tab-link     *ngFor="let e of examples"     [routerLink]="e.link"     routerLinkActive #rla="routerLinkActive"     [active]="rla.isActive"     [disabled]="e.auth && !(isAuthenticated$ | async)">    {{e.label | translate}}  </a></nav><nav class="nav-responsive d-sm-none d-flex justify-content-center">    <mat-select [placeholder]="\'anms.examples.title\' | translate" [value]="\'todos\'">      <mat-option *ngFor="let e of examples"        [value]="e"        [routerLink]="e.link"        [disabled]="e.auth && !(isAuthenticated$ | async)">          {{e.label | translate}}      </mat-option>    </mat-select></nav><div [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">  <router-outlet #o="outlet"></router-outlet></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'anms-about'},{'name': 'AppComponent', 'selector': 'anms-root'},{'name': 'AuthenticatedComponent', 'selector': 'anms-authenticated'},{'name': 'BigInputActionComponent', 'selector': 'anms-big-input-action'},{'name': 'BigInputComponent', 'selector': 'anms-big-input'},{'name': 'ChildComponent', 'selector': 'anms-child'},{'name': 'CrudComponent', 'selector': 'anms-crud'},{'name': 'ExamplesComponent', 'selector': 'anms-examples'},{'name': 'FeaturesComponent', 'selector': 'anms-features'},{'name': 'FormComponent', 'selector': 'anms-form'},{'name': 'NotificationsComponent', 'selector': 'anms-notifications'},{'name': 'ParentComponent', 'selector': 'anms-parent'},{'name': 'SettingsContainerComponent', 'selector': 'anms-settings'},{'name': 'StockMarketContainerComponent', 'selector': 'anms-stock-market'},{'name': 'TodosContainerComponent', 'selector': 'anms-todos'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ExamplesComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ExamplesComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

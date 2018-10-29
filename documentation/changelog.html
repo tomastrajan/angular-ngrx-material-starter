@@ -1,0 +1,731 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-ngrx-material-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">angular-ngrx-material-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="change-log">Change Log</h1>
+<p>All notable changes to this project will be documented in this file. See <a href="https://github.com/conventional-changelog/standard-version">standard-version</a> for commit guidelines.</p>
+<p><a name="7.0.0"></a></p>
+<h1 id="7-0-0-2018-10-18-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.11.0...v7.0.0">7.0.0</a> (2018-10-18)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>examples:</strong> broken tests due to missing state initialization and undefined in selector (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/01c0906">01c0906</a>)</li>
+<li><strong>form:</strong> restore the form state consistently with the local storage (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a67656c">a67656c</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>add pa11y for accessibility checks (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/379">#379</a>) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/af32ac5">af32ac5</a>)</li>
+<li><strong>dependencies:</strong> update to Angular (and related) 7.0.0 RCs (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c2d6815">c2d6815</a>)</li>
+<li><strong>router-store:</strong> Use <a href="https://github.com/ngrx-router-store">@ngrx-router-store</a> to CRUD (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/98b9896">98b9896</a>)</li>
+<li><strong>todos:</strong> add ngPlural todos filter description (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/365">#365</a>) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2b001ee">2b001ee</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/362">#362</a></li>
+<li><strong>update:</strong> update to Angular (and related) 7.0.0 BREAKING CHANGE (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/36ee08f">36ee08f</a>)</li>
+</ul>
+<p><a name="6.11.0"></a></p>
+<h1 id="6-11-0-2018-10-02-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.10.0...v6.11.0">6.11.0</a> (2018-10-02)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>styles:</strong> app loading styles (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/10a1b3a">10a1b3a</a>)</li>
+<li><strong>test:</strong> add SettingsModule import to examples component tests, tests code style and improvements (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/722fc81">722fc81</a>)</li>
+<li><strong>ui:</strong> Cosmetic changes to improve responsive translated views (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/95dc751">95dc751</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>core:</strong> support persistence of state with camelCase props in the local storage (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2763f1b">2763f1b</a>)</li>
+<li><strong>fontawesome:</strong> upgrade to the new angular-fontawesome (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/357">#357</a>) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2e3615b">2e3615b</a>)</li>
+<li><strong>form:</strong> Create new form example <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/263">#263</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/49e6a65">49e6a65</a>)</li>
+<li><strong>form:</strong> Create new form example <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/263">#263</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/40786af">40786af</a>)</li>
+<li><strong>settings:</strong> Toggle sticky header (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/006d749">006d749</a>)</li>
+<li><strong>testing:</strong> add cypress (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/356">#356</a>) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6c3e781">6c3e781</a>)</li>
+</ul>
+<h3 id="performance-improvements">Performance Improvements</h3>
+<ul>
+<li><strong>CRUD:</strong> remove memory leak (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/351">#351</a>) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/5f3c687">5f3c687</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/349">#349</a></li>
+</ul>
+<p><a name="6.10.0"></a></p>
+<h1 id="6-10-0-2018-09-15-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.9.0...v6.10.0">6.10.0</a> (2018-09-15)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>examples:</strong> rename stockMarket state to stocks to support localstorage persistence, fixes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/315">#315</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e9f19fb">e9f19fb</a>)</li>
+<li><strong>todos:</strong> snackbar not being translated (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4d18657">4d18657</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/324">#324</a></li>
+<li><strong>todos:</strong> snackbar not being translated (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/fc54a52">fc54a52</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/324">#324</a></li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>docs:</strong> add contributor aideslucas (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ed98a31">ed98a31</a>)</li>
+<li><strong>i18n:</strong> add portuguese brazil translations (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f12665b">f12665b</a>)</li>
+</ul>
+<p><a name="6.9.0"></a></p>
+<h1 id="6-9-0-2018-08-27-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.8.0...v6.9.0">6.9.0</a> (2018-08-27)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>app:</strong> Apply $toolbar-breakpoint to remove top white space on resize (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/14e0507">14e0507</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>examples:</strong> Disable authenticated link when not authenticated (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/cafa041">cafa041</a>)</li>
+<li><strong>i18n:</strong> add spanish translations (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b76abca">b76abca</a>)</li>
+<li><strong>NgRx:</strong> add store devtools (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/98a5d5d">98a5d5d</a>)</li>
+</ul>
+<p><a name="6.8.0"></a></p>
+<h1 id="6-8-0-2018-08-22-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.7.0...v6.8.0">6.8.0</a> (2018-08-22)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>about:</strong> contributors layout (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/5a9c78d">5a9c78d</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>about:</strong> add contributor FabienDehopre (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/96dd59f">96dd59f</a>)</li>
+<li><strong>i18n:</strong> add french translations (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ad53353">ad53353</a>)</li>
+</ul>
+<p><a name="6.7.0"></a></p>
+<h1 id="6-7-0-2018-08-13-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.6.1...v6.7.0">6.7.0</a> (2018-08-13)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>contributors:</strong> add contributor fiona (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7ae05b7">7ae05b7</a>)</li>
+<li><strong>i18n:</strong> add german language (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c6e27f9">c6e27f9</a>)</li>
+</ul>
+<p><a name="6.6.1"></a></p>
+<h2 id="6-6-1-2018-08-13-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.6.0...v6.6.1">6.6.1</a> (2018-08-13)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>style:</strong> prettier (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/1db7b48">1db7b48</a>)</li>
+</ul>
+<p><a name="6.6.0"></a></p>
+<h1 id="6-6-0-2018-08-13-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.5.1...v6.6.0">6.6.0</a> (2018-08-13)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li>upgrade angular and ngrx deps (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/211e041">211e041</a>)</li>
+<li><strong>about:</strong> add contributors section (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/35d67a6">35d67a6</a>)</li>
+</ul>
+<p><a name="6.5.1"></a></p>
+<h2 id="6-5-1-2018-08-01-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.5.0...v6.5.1">6.5.1</a> (2018-08-01)</h2>
+<p><a name="6.5.0"></a></p>
+<h1 id="6-5-0-2018-08-01-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.4.3...v6.5.0">6.5.0</a> (2018-08-01)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>build:</strong> bump webpack-bundle-analyzer to fix broken bundles chart (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/bb44d0e">bb44d0e</a>)</li>
+<li><strong>dependencies:</strong> bump versions to fix various npm warnings. fixes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/290">#290</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/73ea92c">73ea92c</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>i18n:</strong> browser tab page title translations (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/8a5346d">8a5346d</a>)</li>
+<li><strong>ngrx:</strong> use readonly payloads and operator style ofType in effects (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0a4781f">0a4781f</a>)</li>
+<li><strong>routing:</strong> use scroll position restoration (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/fe9d460">fe9d460</a>)</li>
+</ul>
+<p><a name="6.4.3"></a></p>
+<h2 id="6-4-3-2018-07-31-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.4.2...v6.4.3">6.4.3</a> (2018-07-31)</h2>
+<p><a name="6.4.2"></a></p>
+<h2 id="6-4-2-2018-07-31-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.4.1...v6.4.2">6.4.2</a> (2018-07-31)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>i18n:</strong> environment based assets url (for dev and github pages deployment) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e1a8fbc">e1a8fbc</a>)</li>
+</ul>
+<p><a name="6.4.1"></a></p>
+<h2 id="6-4-1-2018-07-31-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.4.0...v6.4.1">6.4.1</a> (2018-07-31)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>i18n:</strong> assets url for github pages deployment (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e0d0e76">e0d0e76</a>)</li>
+</ul>
+<p><a name="6.4.0"></a></p>
+<h1 id="6-4-0-2018-07-31-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.3.0...v6.4.0">6.4.0</a> (2018-07-31)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>polyfills:</strong> add missing hammerjs, fixes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/247">#247</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/27cc797">27cc797</a>)</li>
+<li><strong>tsconfig:</strong> adjust baseUrl, fixes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/220">#220</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/04c80f3">04c80f3</a>)</li>
+<li>code formatting, tslint errors, i18n test dependencies (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7c8c8f5">7c8c8f5</a>)</li>
+<li>prettier (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/144c566">144c566</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>dependencies:</strong> migrate to the latest version of Angular, Ngrx, Material, CLI (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3f7a310">3f7a310</a>)</li>
+<li><strong>i18n:</strong> add i18n support, closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/287">#287</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/527f5f1">527f5f1</a>)</li>
+<li><strong>tests:</strong> for settings component <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/244">#244</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e5d65ed">e5d65ed</a>)</li>
+<li><strong>tests:</strong> setting page <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/244">#244</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3631a0c">3631a0c</a>)</li>
+<li><strong>todo:</strong> create tests for todos container [added more TODOS] (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/219">#219</a>) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b4c49f6">b4c49f6</a>)</li>
+</ul>
+<p><a name="6.3.0"></a></p>
+<h1 id="6-3-0-2018-06-09-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.2.0...v6.3.0">6.3.0</a> (2018-06-09)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>app:</strong> rework main layout to prevent scrollbar issues, closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/221">#221</a>, closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/240">#240</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0d08ade">0d08ade</a>)</li>
+<li><strong>environments:</strong> use test environment for unit tests on ci (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6cfec6e">6cfec6e</a>)</li>
+<li><strong>index:</strong> favicon url (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b862590">b862590</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>environments:</strong> add test environment, skip debug meta-reducer in tests (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7205db2">7205db2</a>)</li>
+<li><strong>static:</strong> add font awesome feature card, update docs / github links, add guide links (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a5bf758">a5bf758</a>)</li>
+</ul>
+<p><a name="6.2.0"></a></p>
+<h1 id="6-2-0-2018-06-08-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.1.0...v6.2.0">6.2.0</a> (2018-06-08)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>assets:</strong> rework logo and add logo source (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/33282cc">33282cc</a>)</li>
+<li><strong>icons:</strong> migrate to font awesome 5 (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/983e532">983e532</a>)</li>
+<li><strong>icons:</strong> standardize icon usage with mat-icon component and font awesome icon set (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/26b0cf2">26b0cf2</a>)</li>
+<li><strong>todos:</strong> create tests for todos container (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/04b0846">04b0846</a>)</li>
+</ul>
+<p><a name="6.1.0"></a></p>
+<h1 id="6-1-0-2018-06-03-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.4...v6.1.0">6.1.0</a> (2018-06-03)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>settings:</strong> add runtime animations toggles (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/91131b4">91131b4</a>)</li>
+</ul>
+<p><a name="6.0.4"></a></p>
+<h2 id="6-0-4-2018-05-29-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.3...v6.0.4">6.0.4</a> (2018-05-29)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>animations:</strong> fix dynamic animations in prod build, fixes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/71">#71</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ca281f2">ca281f2</a>)</li>
+</ul>
+<p><a name="6.0.3"></a></p>
+<h2 id="6-0-3-2018-05-29-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.2...v6.0.3">6.0.3</a> (2018-05-29)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>animations:</strong> disable whole page slide-in animation in IE &amp; EDGE, adjust styles, fixes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/71">#71</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d2c4b8a">d2c4b8a</a>)</li>
+<li><strong>app:</strong> takeUntil should be always used as the last operator to prevent potential leaks (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/80773bd">80773bd</a>)</li>
+</ul>
+<p><a name="6.0.2"></a></p>
+<h2 id="6-0-2-2018-05-26-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.1...v6.0.2">6.0.2</a> (2018-05-26)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>angular.json project name typo (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/5bd6115">5bd6115</a>)</li>
+</ul>
+<p><a name="6.0.1"></a></p>
+<h2 id="6-0-1-2018-05-24-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0...v6.0.1">6.0.1</a> (2018-05-24)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>app:</strong> only remove existing theme classes (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/692edfc">692edfc</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>unit-test:</strong> add test for action <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/177">#177</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/24f8145">24f8145</a>)</li>
+</ul>
+<p><a name="6.0.0"></a></p>
+<h1 id="6-0-0-2018-05-04-"><a href="https://github.com/mumairofficial/angular-ngrx-material-starter/compare/v6.0.0-rc.4...v6.0.0">6.0.0</a> (2018-05-04)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>build:</strong> lint e2e tests (<a href="https://github.com/mumairofficial/angular-ngrx-material-starter/commit/fe55a82">fe55a82</a>)</li>
+<li><strong>dependencies:</strong> migrated to stable release of Angular 6.0.0 (<a href="https://github.com/mumairofficial/angular-ngrx-material-starter/commit/cb2d0ae">cb2d0ae</a>)</li>
+<li><strong>e2e:</strong> <a href="https://github.com/mumairofficial/angular-ngrx-material-starter/issues/178">#178</a> add tests for app and about page (<a href="https://github.com/mumairofficial/angular-ngrx-material-starter/commit/31565c0">31565c0</a>)</li>
+</ul>
+<p><a name="6.0.0-rc.4"></a></p>
+<h1 id="6-0-0-rc-4-2018-04-28-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.3...v6.0.0-rc.4">6.0.0-rc.4</a> (2018-04-28)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>about:</strong> improve responsive layout and add release butler section (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3622801">3622801</a>)</li>
+<li><strong>dependencies:</strong> bump angular, cli, material and rxjs versions, update angular.json (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/1d363dd">1d363dd</a>)</li>
+</ul>
+<p><a name="6.0.0-rc.3"></a></p>
+<h1 id="6-0-0-rc-3-2018-04-25-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.2...v6.0.0-rc.3">6.0.0-rc.3</a> (2018-04-25)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>app:</strong> track pageviews in Google Analytics (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3eb484a">3eb484a</a>)</li>
+<li><strong>codestyle:</strong> prettier (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9168685">9168685</a>)</li>
+</ul>
+<p><a name="6.0.0-rc.2"></a></p>
+<h1 id="6-0-0-rc-2-2018-04-22-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.1...v6.0.0-rc.2">6.0.0-rc.2</a> (2018-04-22)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>examples:</strong> fix stock market API source (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d486f10">d486f10</a>)</li>
+<li><strong>styles:</strong> prevent blue labels in menus (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/45327b4">45327b4</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/93">#93</a></li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>app:</strong> Changed change detection strategy to OnPush in two components (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/8e8fc49">8e8fc49</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter//issues/126">tomastrajan/angular-ngrx-material-starter/#126</a></li>
+<li><strong>build:</strong> use rimraf to clean dist to support building in windows environments (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f883013">f883013</a>)</li>
+</ul>
+<p><a name="6.0.0-rc.1"></a></p>
+<h1 id="6-0-0-rc-1-2018-04-08-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.0.0-rc.0...v6.0.0-rc.1">6.0.0-rc.1</a> (2018-04-08)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>e2e:</strong> re-add protractor.conf.js, adjust .gitignore rules (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f04f994">f04f994</a>)</li>
+</ul>
+<p><a name="6.0.0-rc.0"></a></p>
+<h1 id="6-0-0-rc-0-2018-04-08-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.33.0...v6.0.0-rc.0">6.0.0-rc.0</a> (2018-04-08)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>codestyle:</strong> prettier (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/978d490">978d490</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>dependencies:</strong> migrate to release candidates of 6 of Angular, CLI, Material, RxJS... (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9a41534">9a41534</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/125">#125</a></li>
+<li><strong>docs:</strong> add live demo url (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3e7a621">3e7a621</a>)</li>
+</ul>
+<p><a name="1.33.0"></a></p>
+<h1 id="1-33-0-2018-03-20-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.32.0...v1.33.0">1.33.0</a> (2018-03-20)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>styles:</strong> include default-theme by default, fixes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/92">#92</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2e087f0">2e087f0</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>docs:</strong> update meta assets (intro picture) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6c0d38c">6c0d38c</a>)</li>
+</ul>
+<p><a name="1.32.0"></a></p>
+<h1 id="1-32-0-2018-03-17-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.31.1...v1.32.0">1.32.0</a> (2018-03-17)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>app:</strong> footer styles (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/358d7e6">358d7e6</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>core:</strong> add ngrx store freeze lib for development mode (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/80a81fe">80a81fe</a>)</li>
+<li><strong>examples:</strong> enhance todo notification messages, adjust done todo styles (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0e34d7e">0e34d7e</a>)</li>
+<li><strong>examples:</strong> theme todo notifications (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/075bef9">075bef9</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/72">#72</a></li>
+</ul>
+<p><a name="1.31.1"></a></p>
+<h2 id="1-31-1-2018-03-16-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.31.0...v1.31.1">1.31.1</a> (2018-03-16)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>build:</strong> sudo mode for travis ci (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2500f90">2500f90</a>)</li>
+</ul>
+<p><a name="1.31.0"></a></p>
+<h1 id="1-31-0-2018-03-16-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.30.0...v1.31.0">1.31.0</a> (2018-03-16)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>app:</strong> remove remaining bootstrap util css classes, fix branding positioning (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/5899a25">5899a25</a>)</li>
+<li><strong>themes:</strong> input focus color for dark theme, color inconsistencies (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/14721a3">14721a3</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/70">#70</a></li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>docs:</strong> add &quot;make it your own&quot; section to README.md (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/363b7c3">363b7c3</a>)</li>
+</ul>
+<p><a name="1.30.0"></a></p>
+<h1 id="1-30-0-2018-03-14-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.29.1...v1.30.0">1.30.0</a> (2018-03-14)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>examples:</strong> remove unused code (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0ff88e8">0ff88e8</a>)</li>
+<li><strong>examples:</strong> return snack-bar instance (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/91efbb4">91efbb4</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>examples:</strong> add notifications to todos example (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/71d0f2a">71d0f2a</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/65">#65</a></li>
+</ul>
+<p><a name="1.29.1"></a></p>
+<h2 id="1-29-1-2018-03-08-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.29.0...v1.29.1">1.29.1</a> (2018-03-08)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>dependencies:</strong> update package-lock.json (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7332a68">7332a68</a>)</li>
+</ul>
+<p><a name="1.29.0"></a></p>
+<h1 id="1-29-0-2018-03-08-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.28.0...v1.29.0">1.29.0</a> (2018-03-08)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>app:</strong> responsive styles (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f45f498">f45f498</a>)</li>
+<li><strong>build:</strong> code style (prettier) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e9cb3c9">e9cb3c9</a>)</li>
+<li><strong>static:</strong> responsive styles (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d6568b1">d6568b1</a>)</li>
+<li><strong>styles:</strong> remove unnecessary bootstrap import (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/fba978c">fba978c</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>examples:</strong> enhance responsivenes of submenu (and related styles fixes) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4975389">4975389</a>)</li>
+<li><strong>styles:</strong> add nature theme (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b0324cb">b0324cb</a>)</li>
+</ul>
+<p><a name="1.28.0"></a></p>
+<h1 id="1-28-0-2018-03-06-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.27.1...v1.28.0">1.28.0</a> (2018-03-06)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>build:</strong> remove --open flag which currently opens new window on every code change (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f991231">f991231</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>app:</strong> enhance responsive layout (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2af20d2">2af20d2</a>)</li>
+<li><strong>examples:</strong> enhance responsivenes of submenu (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a22cd8e">a22cd8e</a>)</li>
+<li><strong>static:</strong> adjust about page content (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ead970c">ead970c</a>)</li>
+</ul>
+<p><a name="1.27.1"></a></p>
+<h2 id="1-27-1-2018-03-03-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.27.0...v1.27.1">1.27.1</a> (2018-03-03)</h2>
+<p><a name="1.27.0"></a></p>
+<h1 id="1-27-0-2018-03-03-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.26.0...v1.27.0">1.27.0</a> (2018-03-03)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>app:</strong> responsive styles on small screens (content padding) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/15862d8">15862d8</a>)</li>
+<li><strong>build:</strong> prettier list diferent flag (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d489132">d489132</a>)</li>
+<li><strong>build:</strong> run e2e tests in CI environment (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9026ff6">9026ff6</a>)</li>
+<li><strong>e2e:</strong> correct message and selector (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/27955e9">27955e9</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>build:</strong> run e2e tests in CI environment (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3d65d8b">3d65d8b</a>)</li>
+<li><strong>dependecies:</strong> bump to angular 6 betas, add package-lock.json (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ffc0177">ffc0177</a>)</li>
+<li><strong>examples:</strong> add authenticated route example (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2aab9a6">2aab9a6</a>)</li>
+</ul>
+<p><a name="1.26.0"></a></p>
+<h1 id="1-26-0-2018-01-29-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.25.0...v1.26.0">1.26.0</a> (2018-01-29)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>build:</strong> prevent deceiving error messages (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/894f7ca">894f7ca</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>settings:</strong> auto night mode, settings persistence, layout enhancements (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/982f6c8">982f6c8</a>)</li>
+</ul>
+<p><a name="1.25.0"></a></p>
+<h1 id="1-25-0-2018-01-29-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.24.0...v1.25.0">1.25.0</a> (2018-01-29)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>app:</strong> add missing declarative unsubscribe for title handling (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9418e37">9418e37</a>)</li>
+<li><strong>app:</strong> remove old theme class from overlay container before setting of new one (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4358ac5">4358ac5</a>)</li>
+<li><strong>codestyle:</strong> prettier (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/1bceff3">1bceff3</a>)</li>
+<li><strong>core:</strong> correctly expand content section on route animation, fixes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/39">#39</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2442f72">2442f72</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>app:</strong> enhance responsive footer layout (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/422a097">422a097</a>)</li>
+<li><strong>app:</strong> fixed header toolbar (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b3b1b1c">b3b1b1c</a>)</li>
+<li><strong>docs:</strong> enhance documentation (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4e71253">4e71253</a>)</li>
+</ul>
+<p><a name="1.24.0"></a></p>
+<h1 id="1-24-0-2018-01-21-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.23.2...v1.24.0">1.24.0</a> (2018-01-21)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>build:</strong> extend angular cli version to include fix releases (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/82a700c">82a700c</a>)</li>
+<li><strong>build:</strong> remove deprecated tslint rules (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7577653">7577653</a>)</li>
+<li><strong>styles:</strong> sticky footer animation flicker (IE11), fixes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/39">#39</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9209ca2">9209ca2</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>codestyle:</strong> add state interfaces and use object spread instead of object assign to type check new state creation in reducers (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2adb6e9">2adb6e9</a>)</li>
+<li><strong>dependencies:</strong> use bootstrap 4, adjust responsive classes (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/03292f7">03292f7</a>)</li>
+<li><strong>docs:</strong> enhance README.md and add BUILT_WITH.md (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4bdfdfa">4bdfdfa</a>)</li>
+</ul>
+<p><a name="1.23.2"></a></p>
+<h2 id="1-23-2-2018-01-17-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.23.1...v1.23.2">1.23.2</a> (2018-01-17)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>dependencies:</strong> add missing polyfill for array includes (IE11), fixes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/39">#39</a> (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0406652">0406652</a>)</li>
+<li><strong>todos:</strong> eliminate input mutation from the reducer (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7869cb0">7869cb0</a>)</li>
+</ul>
+<p><a name="1.23.1"></a></p>
+<h2 id="1-23-1-2018-01-13-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.23.0...v1.23.1">1.23.1</a> (2018-01-13)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>core:</strong> rework local-storage initial state hydratation (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/42a37d9">42a37d9</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/3">#3</a> <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/34">#34</a></li>
+</ul>
+<p><a name="1.23.0"></a></p>
+<h1 id="1-23-0-2018-01-12-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.22.1...v1.23.0">1.23.0</a> (2018-01-12)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>codestyle:</strong> use action types for ngrx actions instead of factory functions (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/98435ed">98435ed</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/25">#25</a></li>
+</ul>
+<p><a name="1.22.1"></a></p>
+<h2 id="1-22-1-2017-12-30-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.22.0...v1.22.1">1.22.1</a> (2017-12-30)</h2>
+<p><a name="1.22.0"></a></p>
+<h1 id="1-22-0-2017-12-06-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.21.1...v1.22.0">1.22.0</a> (2017-12-06)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>dependency:</strong> use angular 5.1, material 5.0 and CLI 1.6, standardize paths in styles (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/8758cb3">8758cb3</a>)</li>
+</ul>
+<p><a name="1.21.1"></a></p>
+<h2 id="1-21-1-2017-11-08-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.21.0...v1.21.1">1.21.1</a> (2017-11-08)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>codestyle:</strong> new prettier version formats code differently (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a775b7f">a775b7f</a>)</li>
+</ul>
+<p><a name="1.21.0"></a></p>
+<h1 id="1-21-0-2017-11-08-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.20.0...v1.21.0">1.21.0</a> (2017-11-08)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>dependency:</strong> use angular material and cdk 5.0.0-rc0 (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a5fc8b0">a5fc8b0</a>)</li>
+</ul>
+<p><a name="1.20.0"></a></p>
+<h1 id="1-20-0-2017-11-05-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.19.0...v1.20.0">1.20.0</a> (2017-11-05)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>dependency:</strong> use angular 5 and angular cli 1.5, use correct typescript version (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/33abbb6">33abbb6</a>)</li>
+</ul>
+<p><a name="1.19.0"></a></p>
+<h1 id="1-19-0-2017-10-29-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.18.0...v1.19.0">1.19.0</a> (2017-10-29)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>build:</strong> add webpack-bundle-analyzer and analyze build script (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/16159a8">16159a8</a>)</li>
+<li><strong>perf:</strong> explicitly import angular material components to achieve smaller bundle size, remove unnecessary polyfills, bump rxjs version (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/801757a">801757a</a>)</li>
+</ul>
+<p><a name="1.18.0"></a></p>
+<h1 id="1-18-0-2017-10-19-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.17.0...v1.18.0">1.18.0</a> (2017-10-19)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>dependency:</strong> remove redundant font awesome reference (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4f2be5e">4f2be5e</a>)</li>
+<li><strong>dependency:</strong> use font-awesome from npm (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/94ddb50">94ddb50</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>loading:</strong> load logo as asset not inline (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b03541f">b03541f</a>)</li>
+<li><strong>title:</strong> add route title data support and display title when found (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7ab617f">7ab617f</a>)</li>
+</ul>
+<p><a name="1.17.0"></a></p>
+<h1 id="1-17-0-2017-10-16-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.16.0...v1.17.0">1.17.0</a> (2017-10-16)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>environment:</strong> show current environment name next to version (besides prod) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3322b41">3322b41</a>)</li>
+<li><strong>loading:</strong> show logo and spinner during initial app loading (slow connection) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6609ee6">6609ee6</a>)</li>
+</ul>
+<p><a name="1.16.0"></a></p>
+<h1 id="1-16-0-2017-10-10-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.15.0...v1.16.0">1.16.0</a> (2017-10-10)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>dependency:</strong> use angular-cli 1.5.0-beta.4, remove unused types (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ebccc76">ebccc76</a>)</li>
+<li><strong>prettier:</strong> add prettier support (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7409bc6">7409bc6</a>)</li>
+</ul>
+<p><a name="1.15.0"></a></p>
+<h1 id="1-15-0-2017-10-07-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.14.0...v1.15.0">1.15.0</a> (2017-10-07)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><strong>dependency:</strong> remove core module import (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/084a9f7">084a9f7</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><p><strong>core:</strong> core module single import check (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4da5b85">4da5b85</a>)</p>
+</li>
+<li><p><strong>material:</strong> migrate from md to mat prefixes, bump version of angular to rc.1 and material to beta.12 (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/41c10f9">41c10f9</a>)</p>
+</li>
+</ul>
+<p><a name="1.14.0"></a></p>
+<h1 id="1-14-0-2017-09-26-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.13.0...v1.14.0">1.14.0</a> (2017-09-26)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>examples:</strong> use HttpClientModule and HttpCLient instead of deprecated Http (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/167556b">167556b</a>)</li>
+</ul>
+<p><a name="1.13.0"></a></p>
+<h1 id="1-13-0-2017-09-25-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.12.0...v1.13.0">1.13.0</a> (2017-09-25)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li>add typescript card to features screen (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/caf8528">caf8528</a>)</li>
+<li>bump <a href="https://github.com/angular">@angular</a> to beta.7, material to beta.11, use uuid instead of deprecated node-uuid (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/69a845f">69a845f</a>)</li>
+</ul>
+<p><a name="1.12.0"></a></p>
+<h1 id="1-12-0-2017-09-04-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.11.0...v1.12.0">1.12.0</a> (2017-09-04)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>travis ci chrome env (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/415bdc9">415bdc9</a>)</li>
+<li>travis ci chrome env (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4e56415">4e56415</a>)</li>
+<li>travis ci chrome env (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/94e571b">94e571b</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>add meetup video link to README.md (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ae85ec0">ae85ec0</a>)</li>
+<li>bump angular, material and cli versions, use chrome on travis ci, remove intl dependency (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0b65ae5">0b65ae5</a>)</li>
+<li>use headless chrome for local watch mode testing (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/70df03d">70df03d</a>)</li>
+</ul>
+<p><a name="1.11.0"></a></p>
+<h1 id="1-11-0-2017-08-25-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.9.0...v1.11.0">1.11.0</a> (2017-08-25)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li>add license file (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4def862">4def862</a>), closes <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/issues/4">#4</a></li>
+<li>add video link to README.md (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/be2e4e4">be2e4e4</a>)</li>
+<li>bump <a href="https://github.com/angular">@angular</a> to 5.0.0-beta.4 and <a href="https://github.com/angular">@angular</a>/cli to 1.4.0-beta.21 (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7f1ae65">7f1ae65</a>)</li>
+<li>bump <a href="https://github.com/angular">@angular</a>/cli to 1.3.0 and use --build-optimizer (smaller bundles) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f0ec1c0">f0ec1c0</a>)</li>
+<li>update README.md (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/42655a4">42655a4</a>)</li>
+</ul>
+<p><a name="1.10.0"></a></p>
+<h1 id="1-10-0-2017-08-10-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.9.0...v1.10.0">1.10.0</a> (2017-08-10)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li>bump <a href="https://github.com/angular">@angular</a>/cli to 1.3.0 and use --build-optimizer (smaller bundles) (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f0ec1c0">f0ec1c0</a>)</li>
+</ul>
+<p><a name="1.9.0"></a></p>
+<h1 id="1-9-0-2017-07-25-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.8.0...v1.9.0">1.9.0</a> (2017-07-25)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>test dependency (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/afa97d6">afa97d6</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>add open graph metadata (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0840cef">0840cef</a>)</li>
+</ul>
+<p><a name="1.8.0"></a></p>
+<h1 id="1-8-0-2017-07-25-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.7.1...v1.8.0">1.8.0</a> (2017-07-25)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li>sub navigation animations (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/be7a040">be7a040</a>)</li>
+</ul>
+<p><a name="1.7.1"></a></p>
+<h2 id="1-7-1-2017-07-24-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.7.0...v1.7.1">1.7.1</a> (2017-07-24)</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>broken build dependencies (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f4ec9f4">f4ec9f4</a>)</li>
+<li>remove unused imports (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c49f75d">c49f75d</a>)</li>
+</ul>
+<p><a name="1.7.0"></a></p>
+<h1 id="1-7-0-2017-07-24-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.6.0...v1.7.0">1.7.0</a> (2017-07-24)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>responsive layout (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/27db236">27db236</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>add route transitions (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/df94736">df94736</a>)</li>
+<li>use route transitions (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/224c44d">224c44d</a>)</li>
+</ul>
+<p><a name="1.6.0"></a></p>
+<h1 id="1-6-0-2017-07-22-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.5.0...v1.6.0">1.6.0</a> (2017-07-22)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>styling inconsistencies (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/38b12ca">38b12ca</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>stub auth functionality (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7d3a098">7d3a098</a>)</li>
+</ul>
+<p><a name="1.5.0"></a></p>
+<h1 id="1-5-0-2017-07-21-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.4.0...v1.5.0">1.5.0</a> (2017-07-21)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li>add blog link (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3483898">3483898</a>)</li>
+</ul>
+<p><a name="1.4.0"></a></p>
+<h1 id="1-4-0-2017-07-21-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.3.0...v1.4.0">1.4.0</a> (2017-07-21)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li>theme styles scoping example, unified theme mixing naming (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ec971ae">ec971ae</a>)</li>
+</ul>
+<p><a name="1.3.0"></a></p>
+<h1 id="1-3-0-2017-07-21-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.2.0...v1.3.0">1.3.0</a> (2017-07-21)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>about screen responsive layout (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9be673e">9be673e</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>add tooltips to todo example (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e5168f3">e5168f3</a>)</li>
+<li>adjust theme colors (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4bc6760">4bc6760</a>)</li>
+</ul>
+<p><a name="1.2.0"></a></p>
+<h1 id="1-2-0-2017-07-20-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.1.0...v1.2.0">1.2.0</a> (2017-07-20)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li>add new features (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6054191">6054191</a>)</li>
+<li>update ngrx version (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ec5f6f3">ec5f6f3</a>)</li>
+</ul>
+<p><a name="1.1.0"></a></p>
+<h1 id="1-1-0-2017-07-17-"><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v1.0.0...v1.1.0">1.1.0</a> (2017-07-17)</h1>
+<h3 id="features">Features</h3>
+<ul>
+<li>add library version info (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b6aaa5d">b6aaa5d</a>)</li>
+</ul>
+<p><a name="1.0.0"></a></p>
+<h1 id="1-0-0-2017-07-17-">1.0.0 (2017-07-17)</h1>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>main nav github link (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/63365b8">63365b8</a>)</li>
+<li>responsive layout (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/8e45e71">8e45e71</a>)</li>
+<li>tests (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4c0cd43">4c0cd43</a>)</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li>add blog link to README.md (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/1c9e12d">1c9e12d</a>)</li>
+<li>add features overview (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2a4447f">2a4447f</a>)</li>
+<li>add google analytics tracking (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b1fc278">b1fc278</a>)</li>
+<li>add ngrx effects, theme state local storage persistence, theme adjustments, lazy examples route (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/81c25a0">81c25a0</a>)</li>
+<li>add share module, add header toolbar (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0314346">0314346</a>)</li>
+<li>add theming, ngrx (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/43a177f">43a177f</a>)</li>
+<li>add todos, lazy reducer, big input custom component (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/878662e">878662e</a>)</li>
+<li>adjust theming mechanism, add bootstrap for grid, static module for static content (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b1753ad">b1753ad</a>)</li>
+<li>clear todos input with escape key, github link (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f2888d1">f2888d1</a>)</li>
+<li>features responsive layout (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/fd427a3">fd427a3</a>)</li>
+<li>intro page (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/fda5089">fda5089</a>)</li>
+<li>migrate to angular 4.3 and ngrx 4 (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0b88aa8">0b88aa8</a>)</li>
+<li>project skeleton (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3ea3e3f">3ea3e3f</a>)</li>
+<li>README.md images (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b9f80e9">b9f80e9</a>)</li>
+<li>refactor custom component theming into separate mixin (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/8ec91e5">8ec91e5</a>)</li>
+<li>sidenav (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c897e94">c897e94</a>)</li>
+<li>stock market example (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7eb155d">7eb155d</a>)</li>
+<li>todos logic (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/2ba208c">2ba208c</a>)</li>
+<li>update README.md (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b4e90dd">b4e90dd</a>)</li>
+<li>use dark theme for black custom theme (<a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f9df455">f9df455</a>)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'changelog.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <script src="./js/menu-wc.js"></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

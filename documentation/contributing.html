@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-ngrx-material-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">angular-ngrx-material-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="contributing-to-angular-ngrx-material-starter">Contributing to Angular Ngrx Material Starter</h1>
+<p>We would love for you to contribute to starter project and help make it even better than it is
+today! As a contributor, here are the guidelines we would like you to follow:</p>
+<h2 id="getting-started">Getting started</h2>
+<p>Please check out one of the getting started guides about GitHub fork / pull requests workflow:</p>
+<ul>
+<li><a href="https://guides.github.com/activities/forking/">Forking project</a></li>
+<li><a href="https://help.github.com/articles/fork-a-repo/">Fork a repo</a></li>
+<li><a href="https://gist.github.com/Chaser324/ce0505fbed06b947d962">Forking</a></li>
+</ul>
+<h2 id="how-to-sync-your-fork">How to sync your fork</h2>
+<p>Your fork of the repo can fall behind as more work is done in the original repository.
+It is always good idea to update your work before starting to work on new issue.
+The fork can be updated by navigating to your for directory and running the following command...
+<code>git checkout master --force &amp;&amp; git fetch upstream &amp;&amp; git merge upstream/master &amp;&amp; git push</code></p>
+<p>This command assumes you&#39;re using unix or unix like environment (macOS, cygwin, WSL, ...). 
+If not you might need to execute commands one by one instead of chaining them with <code>&amp;&amp;</code>.</p>
+<h2 id="commit-message-guidelines">Commit Message Guidelines</h2>
+<p>We have very precise rules over how our git commit messages can be formatted.  This leads to <strong>more
+readable messages</strong> that are easy to follow when looking through the <strong>project history</strong>.  But also,
+we use the git commit messages to <strong>generate the <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/CHANGELOG.md">change log</a></strong>.</p>
+<h3 id="format">Format</h3>
+<p>Each commit message consists of a <strong>header</strong>, a <strong>body</strong> and a <strong>footer</strong>.  The header has a special
+format that includes a <strong>type</strong>, a <strong>scope</strong> and a <strong>subject</strong>. 
+The <strong>header</strong> is mandatory and the <strong>scope</strong> of the header is optional.</p>
+<div><pre class="line-numbers"><code class="language-none">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+&lt;BLANK LINE&gt;
+&lt;body&gt;
+&lt;BLANK LINE&gt;
+&lt;footer&gt;</code></pre></div><h3 id="type">Type</h3>
+<p>Commit types that will appear in changelog:</p>
+<ul>
+<li><strong>feat</strong> - adding new feature</li>
+<li><strong>fix</strong> - fixing bug (please use <code>fixes #&lt;issue-number&gt;</code> at the end of commit message)</li>
+<li><strong>perf</strong> - changes to improve performance</li>
+<li>If there is <strong>BREAKING CHANGE</strong> text anywhere in the commit message, the commit will always appear in the changelog</li>
+</ul>
+<p>Other types that will not appear in changelog:</p>
+<ul>
+<li><strong>docs</strong> - changes in documentation</li>
+<li><strong>chore</strong> - changes in build or other application unrelated changes</li>
+<li><strong>refactor</strong> - changes to implementation without changes to functionality</li>
+<li><strong>test</strong> - adding tests</li>
+<li><strong>style</strong> - changes to codestyle (should be unnecessary since we use prettier)</li>
+</ul>
+<p>Any line of the commit message should not be longer 100 characters! This allows the message to be easier
+to read on GitHub as well as in various git tools.</p>
+<h3 id="scope">Scope</h3>
+<p>The commit scope is specified inside of the parentheses. Scope can be omitted when changed
+relates to multiple modules or even whole project. If possible, scope should refer to a module where change was performed.
+Approximate steps to specify scope:</p>
+<ol>
+<li>change belongs to a well defined module like <code>core</code>, <code>shared</code>, <code>app</code>, ...</li>
+<li>change belongs to a &quot;separated&quot; bigger chung of a module (eg: <code>todos</code> from the <code>examples</code> module)</li>
+<li>change belongs to a unique cross-cutting concern like <code>animations</code>, <code>logging</code> or <code>build</code></li>
+<li>change belongs to a unique entity like <code>readme</code> or <code>contributing</code></li>
+</ol>
+<h3 id="examples">Examples</h3>
+<div><pre class="line-numbers"><code class="language-none">fix(polyfills): add missing hammerjs, fixes #247</code></pre></div><div><pre class="line-numbers"><code class="language-none">refactor(settings): reorder imports</code></pre></div><div><pre class="line-numbers"><code class="language-none">test(todos): add dispatch filter action test, adjust existing tests</code></pre></div><div><pre class="line-numbers"><code class="language-none">fix(app): rework main layout to prevent scrollbar issues, closes #221, closes #240</code></pre></div><div><pre class="line-numbers"><code class="language-none">docs(readme): add logo, update meta assets</code></pre></div><div><pre class="line-numbers"><code class="language-none">feat(settings): add runtime animations toggles</code></pre></div><div><pre class="line-numbers"><code class="language-none">fix(animations): fix dynamic animations in prod build, fixes #71</code></pre></div><div><pre class="line-numbers"><code class="language-none">chore(release): 6.0.1</code></pre></div><p>Even more <a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits/master">examples</a> of commit messages from commit history of this project.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'contributing.html';
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <script src="./js/menu-wc.js"></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

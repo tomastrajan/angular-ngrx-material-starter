@@ -1,0 +1,1322 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-ngrx-material-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-ngrx-material-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CrudComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/examples/crud/components/crud.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>anms-crud</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>crud.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./crud.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#bookFormGroup">bookFormGroup</a>
+                            </li>
+                            <li>
+                                <a href="#books$">books$</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#fb">fb</a>
+                            </li>
+                            <li>
+                                <a href="#isEditing">isEditing</a>
+                            </li>
+                            <li>
+                                <a href="#routeAnimationsElements">routeAnimationsElements</a>
+                            </li>
+                            <li>
+                                <a href="#selectedBook">selectedBook</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#store">store</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#unsubscribe$">unsubscribe$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addNew">addNew</a>
+                            </li>
+                            <li>
+                                <a href="#cancelEditing">cancelEditing</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#createBook">createBook</a>
+                            </li>
+                            <li>
+                                <a href="#delete">delete</a>
+                            </li>
+                            <li>
+                                <a href="#deselect">deselect</a>
+                            </li>
+                            <li>
+                                <a href="#edit">edit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#save">save</a>
+                            </li>
+                            <li>
+                                <a href="#select">select</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/State.html">Store<State></a>, fb: <a href="../interfaces/Form.html">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/State.html" target="_self" >Store&lt;State&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/Form.html" target="_self" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addNew"></a>
+                        <span class="name">
+                            <b>
+                            addNew
+                            </b>
+                            <a href="#addNew"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>addNew(bookForm: <a href="../interfaces/Form.html">NgForm</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:75</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>bookForm</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/Form.html" target="_self" >NgForm</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cancelEditing"></a>
+                        <span class="name">
+                            <b>
+                            cancelEditing
+                            </b>
+                            <a href="#cancelEditing"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>cancelEditing()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:82</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createBook"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Static</span>
+                            createBook
+                            </b>
+                            <a href="#createBook"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                            <span class="modifier-icon icon ion-ios-reset"></span>
+                        <code>createBook()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../interfaces/Book.html" target="_self" >Book</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="delete"></a>
+                        <span class="name">
+                            <b>
+                            delete
+                            </b>
+                            <a href="#delete"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>delete()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:86</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deselect"></a>
+                        <span class="name">
+                            <b>
+                            deselect
+                            </b>
+                            <a href="#deselect"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>deselect()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:65</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="edit"></a>
+                        <span class="name">
+                            <b>
+                            edit
+                            </b>
+                            <a href="#edit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>edit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:45</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="save"></a>
+                        <span class="name">
+                            <b>
+                            save
+                            </b>
+                            <a href="#save"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>save()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:92</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="select"></a>
+                        <span class="name">
+                            <b>
+                            select
+                            </b>
+                            <a href="#select"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>select(bookId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:60</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>bookId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="bookFormGroup"></a>
+                        <span class="name">
+                            <b>
+                            bookFormGroup
+                            </b>
+                            <a href="#bookFormGroup"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>bookFormGroup:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.fb.group(CrudComponent.createBook())</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="books$"></a>
+                        <span class="name">
+                            <b>
+                            books$
+                            </b>
+                            <a href="#books$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>books$:     <code><a href="../interfaces/Book.html" target="_self" >Observable&lt;Book[]&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Book.html" target="_self" >Observable&lt;Book[]&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fb"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            fb
+                            </b>
+                            <a href="#fb"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>fb:     <code><a href="../interfaces/Form.html" target="_self" >FormBuilder</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Form.html" target="_self" >FormBuilder</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isEditing"></a>
+                        <span class="name">
+                            <b>
+                            isEditing
+                            </b>
+                            <a href="#isEditing"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>isEditing:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="routeAnimationsElements"></a>
+                        <span class="name">
+                            <b>
+                            routeAnimationsElements
+                            </b>
+                            <a href="#routeAnimationsElements"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>routeAnimationsElements:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>ROUTE_ANIMATIONS_ELEMENTS</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedBook"></a>
+                        <span class="name">
+                            <b>
+                            selectedBook
+                            </b>
+                            <a href="#selectedBook"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>selectedBook:     <code><a href="../interfaces/Book.html" target="_self" >Book</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/Book.html" target="_self" >Book</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="store"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            store
+                            </b>
+                            <a href="#store"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>store:     <code><a href="../interfaces/State.html" target="_self" >Store&lt;State&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/State.html" target="_self" >Store&lt;State&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="unsubscribe$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            unsubscribe$
+                            </b>
+                            <a href="#unsubscribe$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>unsubscribe$:     <code>Subject&lt;void&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/examples/crud/components/crud.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { v4 as uuid } from &#x27;uuid&#x27;;
+import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { FormBuilder, NgForm } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { takeUntil } from &#x27;rxjs/operators&#x27;;
+import { Subject, Observable } from &#x27;rxjs&#x27;;
+import { Store, select } from &#x27;@ngrx/store&#x27;;
+
+import { ROUTE_ANIMATIONS_ELEMENTS } from &#x27;@app/core&#x27;;
+
+import { State } from &#x27;../../examples.state&#x27;;
+import { Book } from &#x27;../books.model&#x27;;
+import { ActionBooksUpsertOne, ActionBooksDeleteOne } from &#x27;../books.actions&#x27;;
+import { selectSelectedBook, selectAllBooks } from &#x27;../books.selectors&#x27;;
+
+@Component({
+  selector: &#x27;anms-crud&#x27;,
+  templateUrl: &#x27;./crud.component.html&#x27;,
+  styleUrls: [&#x27;./crud.component.scss&#x27;]
+})
+export class CrudComponent implements OnInit, OnDestroy {
+  private unsubscribe$: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
+  routeAnimationsElements &#x3D; ROUTE_ANIMATIONS_ELEMENTS;
+
+  bookFormGroup &#x3D; this.fb.group(CrudComponent.createBook());
+  books$: Observable&lt;Book[]&gt;;
+  selectedBook: Book;
+  isEditing: boolean;
+
+  static createBook(): Book {
+    return {
+      id: uuid(),
+      title: &#x27;&#x27;,
+      author: &#x27;&#x27;,
+      description: &#x27;&#x27;
+    };
+  }
+
+  constructor(
+    public store: Store&lt;State&gt;,
+    public fb: FormBuilder,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.books$ &#x3D; this.store.pipe(select(selectAllBooks));
+    this.store
+      .pipe(
+        select(selectSelectedBook),
+        takeUntil(this.unsubscribe$)
+      )
+      .subscribe(book &#x3D;&gt; (this.selectedBook &#x3D; book));
+  }
+
+  ngOnDestroy() {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  select(bookId: string) {
+    this.isEditing &#x3D; false;
+    this.router.navigate([&#x27;examples/crud&#x27;, bookId]);
+  }
+
+  deselect() {
+    this.isEditing &#x3D; false;
+    this.router.navigate([&#x27;examples/crud&#x27;]);
+  }
+
+  edit() {
+    this.isEditing &#x3D; true;
+    this.bookFormGroup.setValue(this.selectedBook);
+  }
+
+  addNew(bookForm: NgForm) {
+    bookForm.resetForm();
+    this.bookFormGroup.reset();
+    this.bookFormGroup.setValue(CrudComponent.createBook());
+    this.isEditing &#x3D; true;
+  }
+
+  cancelEditing() {
+    this.isEditing &#x3D; false;
+  }
+
+  delete() {
+    this.store.dispatch(new ActionBooksDeleteOne({ id: this.selectedBook.id }));
+    this.isEditing &#x3D; false;
+    this.router.navigate([&#x27;examples/crud&#x27;]);
+  }
+
+  save() {
+    if (this.bookFormGroup.valid) {
+      const book &#x3D; this.bookFormGroup.value;
+      this.store.dispatch(new ActionBooksUpsertOne({ book }));
+      this.isEditing &#x3D; false;
+      this.router.navigate([&#x27;examples/crud&#x27;, book.id]);
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;h1&gt;{{ &#x27;anms.examples.crud.title&#x27; | translate }}&lt;/h1&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+      &lt;h2&gt;{{ &#x27;anms.examples.crud.subtitle1&#x27; | translate }}&lt;/h2&gt;
+      &lt;mat-card *ngFor&#x3D;&quot;let book of books$ | async&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;
+        [routerLink]&#x3D;&quot;[&#x27;/examples/crud&#x27;, book.id]&quot; (click)&#x3D;select() data-testid&#x3D;&quot;crud-item&quot;&gt;
+        &lt;h3 data-testid&#x3D;&quot;item-title&quot;&gt;{{book.title}}&lt;/h3&gt;
+        &lt;small&gt;{{book.author}}&lt;/small&gt;
+      &lt;/mat-card&gt;
+      &lt;p *ngIf&#x3D;&quot;(books$ | async)?.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;{{&#x27;anms.examples.crud.empty&#x27; | translate}}&lt;/p&gt;
+      &lt;button type&#x3D;&quot;button&quot; mat-fab color&#x3D;&quot;primary&quot; class&#x3D;&quot;add&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;
+        *ngIf&#x3D;&quot;!isEditing&quot; (click)&#x3D;&quot;addNew(bookForm)&quot; data-testid&#x3D;&quot;add-crud&quot;&gt;
+        &lt;fa-icon icon&#x3D;&quot;plus&quot;&gt;&lt;/fa-icon&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+      &lt;span class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
+        &lt;h2&gt;{{ &#x27;anms.examples.crud.subtitle2&#x27; | translate }}&lt;/h2&gt;
+        &lt;span class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
+          &lt;span *ngIf&#x3D;&quot;selectedBook&quot;&gt;
+            &lt;button mat-icon-button color&#x3D;&quot;accent&quot; *ngIf&#x3D;&quot;!isEditing&quot; data-testid&#x3D;&quot;edit-crud&quot;&gt;
+              &lt;fa-icon icon&#x3D;&quot;edit&quot; (click)&#x3D;&quot;edit()&quot; [matTooltip]&#x3D;&quot;&#x27;anms.examples.crud.tooltip.edit&#x27; | translate&quot;
+                matTooltipPosition&#x3D;&quot;above&quot;&gt;
+              &lt;/fa-icon&gt;
+            &lt;/button&gt;
+            &lt;button mat-icon-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;delete()&quot; data-testid&#x3D;&quot;delete-crud&quot;&gt;
+              &lt;fa-icon icon&#x3D;&quot;trash&quot; [matTooltip]&#x3D;&quot;&#x27;anms.examples.crud.tooltip.delete&#x27; | translate&quot;
+                matTooltipPosition&#x3D;&quot;above&quot;&gt;
+              &lt;/fa-icon&gt;
+            &lt;/button&gt;
+            &lt;button mat-icon-button (click)&#x3D;&quot;deselect()&quot;&gt;
+              &lt;fa-icon icon&#x3D;&quot;times&quot; [matTooltip]&#x3D;&quot;&#x27;anms.examples.crud.tooltip.deselect&#x27; | translate&quot;
+                matTooltipPosition&#x3D;&quot;above&quot;&gt;
+              &lt;/fa-icon&gt;
+            &lt;/button&gt;
+          &lt;/span&gt;
+        &lt;/span&gt;
+      &lt;/span&gt;
+
+      &lt;form #bookForm&#x3D;&quot;ngForm&quot; [formGroup]&#x3D;&quot;bookFormGroup&quot; [style.display]&#x3D;&quot;isEditing ? &#x27;block&#x27; : &#x27;none&#x27;&quot;
+        [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;mat-form-field class&#x3D;&quot;col&quot;&gt;
+            &lt;input matInput placeholder&#x3D;&quot;{{ &#x27;anms.examples.crud.placeholder1&#x27; | translate }}&quot;
+              formControlName&#x3D;&quot;title&quot; required autofocus&gt;
+            &lt;mat-error *ngIf&#x3D;&quot;bookFormGroup.get(&#x27;title&#x27;).invalid&quot; data-testid&#x3D;&quot;error-title-crud&quot;&gt;
+              {{ &#x27;anms.examples.crud.placeholder1&#x27; | translate }}
+              {{ &#x27;anms.examples.crud.error&#x27; | translate }}
+            &lt;/mat-error&gt;
+          &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;mat-form-field class&#x3D;&quot;col&quot;&gt;
+            &lt;input matInput placeholder&#x3D;&quot;{{ &#x27;anms.examples.crud.placeholder2&#x27; | translate }}&quot;
+              formControlName&#x3D;&quot;author&quot; required&gt;
+            &lt;mat-error *ngIf&#x3D;&quot;bookFormGroup.get(&#x27;author&#x27;).hasError(&#x27;required&#x27;)&quot; data-testid&#x3D;&quot;error-author-crud&quot;&gt;
+              {{ &#x27;anms.examples.crud.placeholder2&#x27; | translate }}
+              {{ &#x27;anms.examples.crud.error&#x27; | translate }}
+            &lt;/mat-error&gt;
+          &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;mat-form-field class&#x3D;&quot;col&quot;&gt;
+            &lt;textarea matInput placeholder&#x3D;&quot;{{ &#x27;anms.examples.crud.placeholder3&#x27; | translate }}&quot;
+              formControlName&#x3D;&quot;description&quot; rows&#x3D;&quot;5&quot;&gt;&lt;/textarea&gt;
+            &lt;mat-error *ngIf&#x3D;&quot;bookFormGroup.get(&#x27;description&#x27;).invalid&quot;&gt;
+              {{ &#x27;anms.examples.crud.placeholder1&#x27; | translate }}
+              {{ &#x27;anms.examples.crud.error&#x27; | translate }}
+            &lt;/mat-error&gt;
+          &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;row&quot;&gt;
+          &lt;div class&#x3D;&quot;col-12 d-flex justify-content-between&quot;&gt;
+            &lt;button (click)&#x3D;&quot;save()&quot; mat-raised-button color&#x3D;&quot;primary&quot;&gt;
+              {{&#x27;anms.examples.crud.save&#x27; | translate }}
+            &lt;/button&gt;
+            &lt;button (click)&#x3D;&quot;cancelEditing()&quot; mat-raised-button&gt;
+              {{&#x27;anms.examples.crud.cancel&#x27; | translate }}
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+
+      &lt;div [ngClass]&#x3D;&quot;routeAnimationsElements&quot; *ngIf&#x3D;&quot;!isEditing &amp;&amp; selectedBook&quot;&gt;
+        &lt;h3&gt;{{ selectedBook.title }}&lt;/h3&gt;
+        &lt;mat-divider&gt;&lt;/mat-divider&gt;
+        &lt;p&gt;{{ selectedBook.description }}&lt;/p&gt;
+        &lt;i&gt;{{ selectedBook.author }}&lt;/i&gt;
+      &lt;/div&gt;
+
+      &lt;p *ngIf&#x3D;&quot;!isEditing &amp;&amp; !selectedBook&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+        {{&#x27;anms.examples.crud.text&#x27; | translate }} &lt;code&gt;@ngrx/entity&lt;/code&gt;.
+      &lt;/p&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <h1>{{ \'anms.examples.crud.title\' | translate }}</h1>  <div class="row">    <div class="col-md-6">      <h2>{{ \'anms.examples.crud.subtitle1\' | translate }}</h2>      <mat-card *ngFor="let book of books$ | async" [ngClass]="routeAnimationsElements"        [routerLink]="[\'/examples/crud\', book.id]" (click)=select() data-testid="crud-item">        <h3 data-testid="item-title">{{book.title}}</h3>        <small>{{book.author}}</small>      </mat-card>      <p *ngIf="(books$ | async)?.length === 0">{{\'anms.examples.crud.empty\' | translate}}</p>      <button type="button" mat-fab color="primary" class="add" [ngClass]="routeAnimationsElements"        *ngIf="!isEditing" (click)="addNew(bookForm)" data-testid="add-crud">        <fa-icon icon="plus"></fa-icon>      </button>    </div>    <div class="col-md-6">      <span class="d-flex justify-content-between">        <h2>{{ \'anms.examples.crud.subtitle2\' | translate }}</h2>        <span class="d-flex justify-content-end">          <span *ngIf="selectedBook">            <button mat-icon-button color="accent" *ngIf="!isEditing" data-testid="edit-crud">              <fa-icon icon="edit" (click)="edit()" [matTooltip]="\'anms.examples.crud.tooltip.edit\' | translate"                matTooltipPosition="above">              </fa-icon>            </button>            <button mat-icon-button color="warn" (click)="delete()" data-testid="delete-crud">              <fa-icon icon="trash" [matTooltip]="\'anms.examples.crud.tooltip.delete\' | translate"                matTooltipPosition="above">              </fa-icon>            </button>            <button mat-icon-button (click)="deselect()">              <fa-icon icon="times" [matTooltip]="\'anms.examples.crud.tooltip.deselect\' | translate"                matTooltipPosition="above">              </fa-icon>            </button>          </span>        </span>      </span>      <form #bookForm="ngForm" [formGroup]="bookFormGroup" [style.display]="isEditing ? \'block\' : \'none\'"        [ngClass]="routeAnimationsElements">        <div class="row">          <mat-form-field class="col">            <input matInput placeholder="{{ \'anms.examples.crud.placeholder1\' | translate }}"              formControlName="title" required autofocus>            <mat-error *ngIf="bookFormGroup.get(\'title\').invalid" data-testid="error-title-crud">              {{ \'anms.examples.crud.placeholder1\' | translate }}              {{ \'anms.examples.crud.error\' | translate }}            </mat-error>          </mat-form-field>        </div>        <div class="row">          <mat-form-field class="col">            <input matInput placeholder="{{ \'anms.examples.crud.placeholder2\' | translate }}"              formControlName="author" required>            <mat-error *ngIf="bookFormGroup.get(\'author\').hasError(\'required\')" data-testid="error-author-crud">              {{ \'anms.examples.crud.placeholder2\' | translate }}              {{ \'anms.examples.crud.error\' | translate }}            </mat-error>          </mat-form-field>        </div>        <div class="row">          <mat-form-field class="col">            <textarea matInput placeholder="{{ \'anms.examples.crud.placeholder3\' | translate }}"              formControlName="description" rows="5"></textarea>            <mat-error *ngIf="bookFormGroup.get(\'description\').invalid">              {{ \'anms.examples.crud.placeholder1\' | translate }}              {{ \'anms.examples.crud.error\' | translate }}            </mat-error>          </mat-form-field>        </div>        <div class="row">          <div class="col-12 d-flex justify-content-between">            <button (click)="save()" mat-raised-button color="primary">              {{\'anms.examples.crud.save\' | translate }}            </button>            <button (click)="cancelEditing()" mat-raised-button>              {{\'anms.examples.crud.cancel\' | translate }}            </button>          </div>        </div>      </form>      <div [ngClass]="routeAnimationsElements" *ngIf="!isEditing && selectedBook">        <h3>{{ selectedBook.title }}</h3>        <mat-divider></mat-divider>        <p>{{ selectedBook.description }}</p>        <i>{{ selectedBook.author }}</i>      </div>      <p *ngIf="!isEditing && !selectedBook" [ngClass]="routeAnimationsElements">        {{\'anms.examples.crud.text\' | translate }} <code>@ngrx/entity</code>.      </p>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'anms-about'},{'name': 'AppComponent', 'selector': 'anms-root'},{'name': 'AuthenticatedComponent', 'selector': 'anms-authenticated'},{'name': 'BigInputActionComponent', 'selector': 'anms-big-input-action'},{'name': 'BigInputComponent', 'selector': 'anms-big-input'},{'name': 'ChildComponent', 'selector': 'anms-child'},{'name': 'CrudComponent', 'selector': 'anms-crud'},{'name': 'ExamplesComponent', 'selector': 'anms-examples'},{'name': 'FeaturesComponent', 'selector': 'anms-features'},{'name': 'FormComponent', 'selector': 'anms-form'},{'name': 'NotificationsComponent', 'selector': 'anms-notifications'},{'name': 'ParentComponent', 'selector': 'anms-parent'},{'name': 'SettingsContainerComponent', 'selector': 'anms-settings'},{'name': 'StockMarketContainerComponent', 'selector': 'anms-stock-market'},{'name': 'TodosContainerComponent', 'selector': 'anms-todos'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CrudComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CrudComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

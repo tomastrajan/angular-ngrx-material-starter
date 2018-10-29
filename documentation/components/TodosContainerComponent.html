@@ -1,0 +1,1359 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-ngrx-material-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-ngrx-material-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>TodosContainerComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/examples/todos/components/todos-container.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>anms-todos</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>todos-container.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./todos-container.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#newTodo">newTodo</a>
+                            </li>
+                            <li>
+                                <a href="#routeAnimationsElements">routeAnimationsElements</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#snackBar">snackBar</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#store">store</a>
+                            </li>
+                            <li>
+                                <a href="#todos">todos</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#translateService">translateService</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#unsubscribe$">unsubscribe$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onAddTodo">onAddTodo</a>
+                            </li>
+                            <li>
+                                <a href="#onFilterTodos">onFilterTodos</a>
+                            </li>
+                            <li>
+                                <a href="#onNewTodoChange">onNewTodoChange</a>
+                            </li>
+                            <li>
+                                <a href="#onNewTodoClear">onNewTodoClear</a>
+                            </li>
+                            <li>
+                                <a href="#onRemoveDoneTodos">onRemoveDoneTodos</a>
+                            </li>
+                            <li>
+                                <a href="#onToggleTodo">onToggleTodo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#filteredTodos">filteredTodos</a>
+                                </li>
+                                <li>
+                                    <a href="#isAddTodoDisabled">isAddTodoDisabled</a>
+                                </li>
+                                <li>
+                                    <a href="#isRemoveDoneTodosDisabled">isRemoveDoneTodosDisabled</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/State.html">Store<State></a>, snackBar: MatSnackBar, translateService: TranslateService, notificationService: <a href="../injectables/NotificationService.html">NotificationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/State.html" target="_self" >Store&lt;State&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatSnackBar</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notificationService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onAddTodo"></a>
+                        <span class="name">
+                            <b>
+                            onAddTodo
+                            </b>
+                            <a href="#onAddTodo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onAddTodo()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:84</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onFilterTodos"></a>
+                        <span class="name">
+                            <b>
+                            onFilterTodos
+                            </b>
+                            <a href="#onFilterTodos"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onFilterTodos(filter: <a href="../interfaces/Todo.html">TodosFilter</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="122" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:122</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>filter</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/Todo.html" target="_self" >TodosFilter</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onNewTodoChange"></a>
+                        <span class="name">
+                            <b>
+                            onNewTodoChange
+                            </b>
+                            <a href="#onNewTodoChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onNewTodoChange(newTodo: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>newTodo</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onNewTodoClear"></a>
+                        <span class="name">
+                            <b>
+                            onNewTodoClear
+                            </b>
+                            <a href="#onNewTodoClear"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onNewTodoClear()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:80</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onRemoveDoneTodos"></a>
+                        <span class="name">
+                            <b>
+                            onRemoveDoneTodos
+                            </b>
+                            <a href="#onRemoveDoneTodos"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onRemoveDoneTodos()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:114</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onToggleTodo"></a>
+                        <span class="name">
+                            <b>
+                            onToggleTodo
+                            </b>
+                            <a href="#onToggleTodo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onToggleTodo(todo: <a href="../interfaces/Todo.html">Todo</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:94</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>todo</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/Todo.html" target="_self" >Todo</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="newTodo"></a>
+                        <span class="name">
+                            <b>
+                            newTodo
+                            </b>
+                            <a href="#newTodo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>newTodo:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="routeAnimationsElements"></a>
+                        <span class="name">
+                            <b>
+                            routeAnimationsElements
+                            </b>
+                            <a href="#routeAnimationsElements"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>routeAnimationsElements:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>ROUTE_ANIMATIONS_ELEMENTS</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="snackBar"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            snackBar
+                            </b>
+                            <a href="#snackBar"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>snackBar:     <code>MatSnackBar</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatSnackBar</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="store"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            store
+                            </b>
+                            <a href="#store"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>store:     <code><a href="../interfaces/State.html" target="_self" >Store&lt;State&gt;</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/State.html" target="_self" >Store&lt;State&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:35</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="todos"></a>
+                        <span class="name">
+                            <b>
+                            todos
+                            </b>
+                            <a href="#todos"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>todos:     <code><a href="../interfaces/TodosState.html" target="_self" >TodosState</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../interfaces/TodosState.html" target="_self" >TodosState</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="translateService"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            translateService
+                            </b>
+                            <a href="#translateService"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>translateService:     <code>TranslateService</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>TranslateService</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="unsubscribe$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            unsubscribe$
+                            </b>
+                            <a href="#unsubscribe$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>unsubscribe$:     <code>Subject&lt;void&gt;</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subject&lt;void&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filteredTodos"></a>
+                        <span class="name"><b>filteredTodos</b><a href="#filteredTodos"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>filteredTodos()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:58</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isAddTodoDisabled"></a>
+                        <span class="name"><b>isAddTodoDisabled</b><a href="#isAddTodoDisabled"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isAddTodoDisabled()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:68</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isRemoveDoneTodosDisabled"></a>
+                        <span class="name"><b>isRemoveDoneTodosDisabled</b><a href="#isRemoveDoneTodosDisabled"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>isRemoveDoneTodosDisabled()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/examples/todos/components/todos-container.component.ts:72</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnDestroy, OnInit } from &#x27;@angular/core&#x27;;
+import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
+import { select, Store } from &#x27;@ngrx/store&#x27;;
+import { Subject } from &#x27;rxjs&#x27;;
+import { takeUntil } from &#x27;rxjs/operators&#x27;;
+
+import { ROUTE_ANIMATIONS_ELEMENTS } from &#x27;@app/core&#x27;;
+
+import {
+  ActionTodosAdd,
+  ActionTodosFilter,
+  ActionTodosPersist,
+  ActionTodosRemoveDone,
+  ActionTodosToggle
+} from &#x27;../todos.actions&#x27;;
+import { selectTodos } from &#x27;../todos.selectors&#x27;;
+import { Todo, TodosFilter, TodosState } from &#x27;../todos.model&#x27;;
+import { State } from &#x27;../../examples.state&#x27;;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+import { NotificationService } from &#x27;@app/core/notifications/notification.service&#x27;;
+
+@Component({
+  selector: &#x27;anms-todos&#x27;,
+  templateUrl: &#x27;./todos-container.component.html&#x27;,
+  styleUrls: [&#x27;./todos-container.component.scss&#x27;]
+})
+export class TodosContainerComponent implements OnInit, OnDestroy {
+  private unsubscribe$: Subject&lt;void&gt; &#x3D; new Subject&lt;void&gt;();
+
+  routeAnimationsElements &#x3D; ROUTE_ANIMATIONS_ELEMENTS;
+  todos: TodosState;
+  newTodo &#x3D; &#x27;&#x27;;
+
+  constructor(
+    public store: Store&lt;State&gt;,
+    public snackBar: MatSnackBar,
+    public translateService: TranslateService,
+    private notificationService: NotificationService
+  ) {}
+
+  ngOnInit() {
+    this.store
+      .pipe(
+        select(selectTodos),
+        takeUntil(this.unsubscribe$)
+      )
+      .subscribe(todos &#x3D;&gt; {
+        this.todos &#x3D; todos;
+        this.store.dispatch(new ActionTodosPersist({ todos }));
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
+
+  get filteredTodos() {
+    const filter &#x3D; this.todos.filter;
+    if (filter &#x3D;&#x3D;&#x3D; &#x27;ALL&#x27;) {
+      return this.todos.items;
+    } else {
+      const predicate &#x3D; filter &#x3D;&#x3D;&#x3D; &#x27;DONE&#x27; ? t &#x3D;&gt; t.done : t &#x3D;&gt; !t.done;
+      return this.todos.items.filter(predicate);
+    }
+  }
+
+  get isAddTodoDisabled() {
+    return this.newTodo.length &lt; 4;
+  }
+
+  get isRemoveDoneTodosDisabled() {
+    return this.todos.items.filter(item &#x3D;&gt; item.done).length &#x3D;&#x3D;&#x3D; 0;
+  }
+
+  onNewTodoChange(newTodo: string) {
+    this.newTodo &#x3D; newTodo;
+  }
+
+  onNewTodoClear() {
+    this.newTodo &#x3D; &#x27;&#x27;;
+  }
+
+  onAddTodo() {
+    this.store.dispatch(new ActionTodosAdd({ name: this.newTodo }));
+    const addedMessage &#x3D; this.translateService.instant(
+      &#x27;anms.examples.todos.added.notification&#x27;,
+      { name: this.newTodo }
+    );
+    this.notificationService.info(addedMessage);
+    this.newTodo &#x3D; &#x27;&#x27;;
+  }
+
+  onToggleTodo(todo: Todo) {
+    this.store.dispatch(new ActionTodosToggle({ id: todo.id }));
+    const newStatus &#x3D; this.translateService.instant(
+      &#x60;anms.examples.todos.filter.${todo.done ? &#x27;active&#x27; : &#x27;done&#x27;}&#x60;
+    );
+    const undo &#x3D; this.translateService.instant(&#x27;anms.examples.todos.undo&#x27;);
+    const toggledMessage &#x3D; this.translateService.instant(
+      &#x27;anms.examples.todos.toggle.notification&#x27;,
+      { name: todo.name }
+    );
+
+    this.snackBar
+      .open(&#x60;${toggledMessage} ${newStatus}&#x60;, undo, {
+        duration: 2500,
+        panelClass: &#x27;todos-notification-overlay&#x27;
+      })
+      .onAction()
+      .subscribe(() &#x3D;&gt; this.onToggleTodo({ ...todo, done: !todo.done }));
+  }
+
+  onRemoveDoneTodos() {
+    this.store.dispatch(new ActionTodosRemoveDone());
+    const removedMessage &#x3D; this.translateService.instant(
+      &#x27;anms.examples.todos.remove.notification&#x27;
+    );
+    this.notificationService.info(removedMessage);
+  }
+
+  onFilterTodos(filter: TodosFilter) {
+    this.store.dispatch(new ActionTodosFilter({ filter }));
+    const filterToMessage &#x3D; this.translateService.instant(
+      &#x27;anms.examples.todos.filter.notification&#x27;
+    );
+    const filterMessage &#x3D; this.translateService.instant(
+      &#x60;anms.examples.todos.filter.${filter.toLowerCase()}&#x60;
+    );
+    this.notificationService.info(&#x60;${filterToMessage} ${filterMessage}&#x60;);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;offset-md-2 col-md-8 entry&quot;&gt;
+      &lt;anms-big-input [placeholder]&#x3D;&quot;&#x27;anms.examples.todos.input&#x27; | translate&quot;
+                      [value]&#x3D;&quot;newTodo&quot;
+                      (keyup)&#x3D;&quot;onNewTodoChange($event.target.value)&quot;
+                      (keyup.enter)&#x3D;&quot;!isAddTodoDisabled &amp;&amp; onAddTodo()&quot;
+                      (keyup.escape)&#x3D;&quot;onNewTodoClear()&quot;&gt;
+        &lt;anms-big-input-action fontSet&#x3D;&quot;fas&quot; fontIcon&#x3D;&quot;fa-plus&quot; faIcon&#x3D;&quot;plus&quot; color&#x3D;&quot;accent&quot;
+                               (action)&#x3D;&quot;onAddTodo()&quot;
+                               [disabled]&#x3D;&quot;isAddTodoDisabled&quot;
+                               [matTooltip]&#x3D;&quot;&#x27;anms.examples.todos.tooltip.add&#x27; | translate&quot;
+                               matTooltipPosition&#x3D;&quot;before&quot;&gt;
+        &lt;/anms-big-input-action&gt;
+        &lt;anms-big-input-action fontSet&#x3D;&quot;fas&quot; fontIcon&#x3D;&quot;fa-trash&quot; faIcon&#x3D;&quot;trash&quot; color&#x3D;&quot;warn&quot;
+                               (action)&#x3D;&quot;onRemoveDoneTodos()&quot;
+                               [disabled]&#x3D;&quot;isRemoveDoneTodosDisabled&quot;
+                               matTooltip&#x3D;&quot;Remove done todos&quot;
+                               [matTooltip]&#x3D;&quot;&#x27;anms.examples.todos.tooltip.remove&#x27; | translate&quot;
+                               matTooltipPosition&#x3D;&quot;after&quot;&gt;
+        &lt;/anms-big-input-action&gt;
+      &lt;/anms-big-input&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+      &lt;h2&gt;
+        {{ &#x27;anms.examples.todos.list&#x27; | translate }}
+        &lt;button class&#x3D;&quot;todos-filter&quot; mat-icon-button [matMenuTriggerFor]&#x3D;&quot;todosFilter&quot;&gt;
+          &lt;fa-icon icon&#x3D;&quot;filter&quot;&gt;&lt;/fa-icon&gt;
+        &lt;/button&gt;
+        &lt;mat-menu class&#x3D;&quot;todos-filter-menu-overlay&quot; #todosFilter&#x3D;&quot;matMenu&quot; xPosition&#x3D;&quot;before&quot;&gt;
+          &lt;button mat-menu-item (click)&#x3D;&quot;onFilterTodos(&#x27;ALL&#x27;)&quot; [ngClass]&#x3D;&quot;{ active: todos.filter &#x3D;&#x3D;&#x3D; &#x27;ALL&#x27; }&quot;&gt;
+            &lt;mat-icon&gt;&lt;fa-icon icon&#x3D;&quot;tasks&quot;&gt;&lt;/fa-icon&gt;&lt;/mat-icon&gt;
+            &lt;span&gt;{{ &#x27;anms.examples.todos.filter.all&#x27; | translate }}&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button mat-menu-item (click)&#x3D;&quot;onFilterTodos(&#x27;DONE&#x27;)&quot; [ngClass]&#x3D;&quot;{ active: todos.filter &#x3D;&#x3D;&#x3D; &#x27;DONE&#x27; }&quot;&gt;
+            &lt;mat-icon&gt;&lt;fa-icon icon&#x3D;&quot;check&quot;&gt;&lt;/fa-icon&gt;&lt;/mat-icon&gt;
+            &lt;span&gt;{{ &#x27;anms.examples.todos.filter.done&#x27; | translate }}&lt;/span&gt;
+          &lt;/button&gt;
+          &lt;button mat-menu-item (click)&#x3D;&quot;onFilterTodos(&#x27;ACTIVE&#x27;)&quot; [ngClass]&#x3D;&quot;{ active: todos.filter &#x3D;&#x3D;&#x3D; &#x27;ACTIVE&#x27; }&quot;&gt;
+            &lt;mat-icon&gt;&lt;fa-icon icon&#x3D;&quot;square&quot;&gt;&lt;/fa-icon&gt;&lt;/mat-icon&gt;
+            &lt;span&gt;{{ &#x27;anms.examples.todos.filter.active&#x27; | translate }}&lt;/span&gt;
+          &lt;/button&gt;
+        &lt;/mat-menu&gt;
+        &lt;mat-chip-list class&#x3D;&quot;todos-filter-info d-none d-sm-block d-md-none d-lg-block&quot;&gt;
+          &lt;mat-chip [disabled]&#x3D;true [ngPlural]&#x3D;&quot;filteredTodos.length&quot;&gt;
+            {{ &#x27;anms.examples.todos.filter.description&#x27; | translate }}
+            &lt;ng-template ngPluralCase&#x3D;&quot;other&quot;&gt;{{ filteredTodos.length }} {{ &#x27;anms.examples.todos.filter.items&#x27; | translate }}&lt;/ng-template&gt;
+            &lt;ng-template ngPluralCase&#x3D;&quot;&#x3D;1&quot;&gt;{{ &#x27;anms.examples.todos.filter.one&#x27; | translate }} {{ &#x27;anms.examples.todos.filter.item&#x27; | translate }}&lt;/ng-template&gt;
+            &lt;ng-template ngPluralCase&#x3D;&quot;&#x3D;0&quot;&gt;{{ &#x27;anms.examples.todos.filter.none&#x27; | translate }} {{ &#x27;anms.examples.todos.filter.items&#x27; | translate }}&lt;/ng-template&gt;
+          &lt;/mat-chip&gt;
+        &lt;/mat-chip-list&gt;
+      &lt;/h2&gt;
+      &lt;mat-card *ngFor&#x3D;&quot;let todo of filteredTodos&quot; class&#x3D;&quot;todo&quot;
+                [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+        &lt;mat-checkbox class&#x3D;&quot;todo-done&quot; [checked]&#x3D;&quot;todo.done&quot; (change)&#x3D;&quot;onToggleTodo(todo)&quot;&gt;&lt;/mat-checkbox&gt;
+        &lt;span class&#x3D;&quot;todo-label&quot;
+              [ngClass]&#x3D;&quot;{ &#x27;todo-label-done&#x27;: todo.done }&quot;
+              (click)&#x3D;&quot;onToggleTodo(todo)&quot;&gt;
+          &amp;nbsp;{{todo.name}}&amp;nbsp;
+        &lt;/span&gt;
+      &lt;/mat-card&gt;
+      &lt;br&gt;
+      &lt;br&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;offset-md-1  col-md-5&quot;&gt;
+      &lt;h2&gt;{{ &#x27;anms.examples.todos.example&#x27; | translate }}&lt;/h2&gt;
+      &lt;p&gt;
+        {{ &#x27;anms.examples.todos.text1&#x27; | translate }}
+        &lt;code&gt;{{ &#x27;anms.examples.todos.text2&#x27; | translate }}&lt;/code&gt;
+        {{ &#x27;anms.examples.todos.text3&#x27; | translate }}
+      &lt;/p&gt;
+      &lt;p&gt;
+        {{ &#x27;anms.examples.todos.text4&#x27; | translate }} &lt;code&gt;ngrx&lt;/code&gt;
+        {{ &#x27;anms.examples.todos.text5&#x27; | translate }}
+      &lt;/p&gt;
+      &lt;p&gt;{{ &#x27;anms.examples.todos.text6&#x27; | translate }}&lt;/p&gt;
+      &lt;br&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="row">    <div class="offset-md-2 col-md-8 entry">      <anms-big-input [placeholder]="\'anms.examples.todos.input\' | translate"                      [value]="newTodo"                      (keyup)="onNewTodoChange($event.target.value)"                      (keyup.enter)="!isAddTodoDisabled && onAddTodo()"                      (keyup.escape)="onNewTodoClear()">        <anms-big-input-action fontSet="fas" fontIcon="fa-plus" faIcon="plus" color="accent"                               (action)="onAddTodo()"                               [disabled]="isAddTodoDisabled"                               [matTooltip]="\'anms.examples.todos.tooltip.add\' | translate"                               matTooltipPosition="before">        </anms-big-input-action>        <anms-big-input-action fontSet="fas" fontIcon="fa-trash" faIcon="trash" color="warn"                               (action)="onRemoveDoneTodos()"                               [disabled]="isRemoveDoneTodosDisabled"                               matTooltip="Remove done todos"                               [matTooltip]="\'anms.examples.todos.tooltip.remove\' | translate"                               matTooltipPosition="after">        </anms-big-input-action>      </anms-big-input>    </div>  </div>  <div class="row">    <div class="col-md-6">      <h2>        {{ \'anms.examples.todos.list\' | translate }}        <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter">          <fa-icon icon="filter"></fa-icon>        </button>        <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">          <button mat-menu-item (click)="onFilterTodos(\'ALL\')" [ngClass]="{ active: todos.filter === \'ALL\' }">            <mat-icon><fa-icon icon="tasks"></fa-icon></mat-icon>            <span>{{ \'anms.examples.todos.filter.all\' | translate }}</span>          </button>          <button mat-menu-item (click)="onFilterTodos(\'DONE\')" [ngClass]="{ active: todos.filter === \'DONE\' }">            <mat-icon><fa-icon icon="check"></fa-icon></mat-icon>            <span>{{ \'anms.examples.todos.filter.done\' | translate }}</span>          </button>          <button mat-menu-item (click)="onFilterTodos(\'ACTIVE\')" [ngClass]="{ active: todos.filter === \'ACTIVE\' }">            <mat-icon><fa-icon icon="square"></fa-icon></mat-icon>            <span>{{ \'anms.examples.todos.filter.active\' | translate }}</span>          </button>        </mat-menu>        <mat-chip-list class="todos-filter-info d-none d-sm-block d-md-none d-lg-block">          <mat-chip [disabled]=true [ngPlural]="filteredTodos.length">            {{ \'anms.examples.todos.filter.description\' | translate }}            <ng-template ngPluralCase="other">{{ filteredTodos.length }} {{ \'anms.examples.todos.filter.items\' | translate }}</ng-template>            <ng-template ngPluralCase="=1">{{ \'anms.examples.todos.filter.one\' | translate }} {{ \'anms.examples.todos.filter.item\' | translate }}</ng-template>            <ng-template ngPluralCase="=0">{{ \'anms.examples.todos.filter.none\' | translate }} {{ \'anms.examples.todos.filter.items\' | translate }}</ng-template>          </mat-chip>        </mat-chip-list>      </h2>      <mat-card *ngFor="let todo of filteredTodos" class="todo"                [ngClass]="routeAnimationsElements">        <mat-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></mat-checkbox>        <span class="todo-label"              [ngClass]="{ \'todo-label-done\': todo.done }"              (click)="onToggleTodo(todo)">          &nbsp;{{todo.name}}&nbsp;        </span>      </mat-card>      <br>      <br>    </div>    <div class="offset-md-1  col-md-5">      <h2>{{ \'anms.examples.todos.example\' | translate }}</h2>      <p>        {{ \'anms.examples.todos.text1\' | translate }}        <code>{{ \'anms.examples.todos.text2\' | translate }}</code>        {{ \'anms.examples.todos.text3\' | translate }}      </p>      <p>        {{ \'anms.examples.todos.text4\' | translate }} <code>ngrx</code>        {{ \'anms.examples.todos.text5\' | translate }}      </p>      <p>{{ \'anms.examples.todos.text6\' | translate }}</p>      <br>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'anms-about'},{'name': 'AppComponent', 'selector': 'anms-root'},{'name': 'AuthenticatedComponent', 'selector': 'anms-authenticated'},{'name': 'BigInputActionComponent', 'selector': 'anms-big-input-action'},{'name': 'BigInputComponent', 'selector': 'anms-big-input'},{'name': 'ChildComponent', 'selector': 'anms-child'},{'name': 'CrudComponent', 'selector': 'anms-crud'},{'name': 'ExamplesComponent', 'selector': 'anms-examples'},{'name': 'FeaturesComponent', 'selector': 'anms-features'},{'name': 'FormComponent', 'selector': 'anms-form'},{'name': 'NotificationsComponent', 'selector': 'anms-notifications'},{'name': 'ParentComponent', 'selector': 'anms-parent'},{'name': 'SettingsContainerComponent', 'selector': 'anms-settings'},{'name': 'StockMarketContainerComponent', 'selector': 'anms-stock-market'},{'name': 'TodosContainerComponent', 'selector': 'anms-todos'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TodosContainerComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TodosContainerComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

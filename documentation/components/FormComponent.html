@@ -1,0 +1,896 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>angular-ngrx-material-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">angular-ngrx-material-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>FormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/examples/form/components/form.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>anms-form</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>form.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./form.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                <a href="#routeAnimationsElements">routeAnimationsElements</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#unsubscribe$">unsubscribe$</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit">onSubmit</a>
+                            </li>
+                            <li>
+                                <a href="#reset">reset</a>
+                            </li>
+                            <li>
+                                <a href="#save">save</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: <a href="../interfaces/Form.html">FormBuilder</a>, store: <a href="../interfaces/State.html">Store<State></a>, translate: TranslateService, notificationService: <a href="../injectables/NotificationService.html">NotificationService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/examples/form/components/form.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/Form.html" target="_self" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../interfaces/State.html" target="_self" >Store&lt;State&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translate</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notificationService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/NotificationService.html" target="_self" >NotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/app/examples/form/components/form.component.ts:70</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/examples/form/components/form.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onSubmit"></a>
+                        <span class="name">
+                            <b>
+                            onSubmit
+                            </b>
+                            <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onSubmit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/examples/form/components/form.component.ts:76</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reset"></a>
+                        <span class="name">
+                            <b>
+                            reset
+                            </b>
+                            <a href="#reset"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>reset()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/examples/form/components/form.component.ts:93</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="save"></a>
+                        <span class="name">
+                            <b>
+                            save
+                            </b>
+                            <a href="#save"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>save()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/examples/form/components/form.component.ts:89</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form
+                            </b>
+                            <a href="#form"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>form:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.fb.group({
+    autosave: false,
+    username: [&#x27;&#x27;, [Validators.required]],
+    password: [&#x27;&#x27;, [Validators.required]],
+    email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+    description: [
+      &#x27;&#x27;,
+      [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(1000)
+      ]
+    ],
+    requestGift: [&#x27;&#x27;],
+    birthday: [&#x27;&#x27;, [Validators.required]],
+    rating: [0, Validators.required]
+  })</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/examples/form/components/form.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="routeAnimationsElements"></a>
+                        <span class="name">
+                            <b>
+                            routeAnimationsElements
+                            </b>
+                            <a href="#routeAnimationsElements"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>routeAnimationsElements:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>ROUTE_ANIMATIONS_ELEMENTS</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/examples/form/components/form.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="unsubscribe$"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            unsubscribe$
+                            </b>
+                            <a href="#unsubscribe$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>unsubscribe$:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new Subject&lt;void&gt;()</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/examples/form/components/form.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { Validators, FormBuilder } from &#x27;@angular/forms&#x27;;
+import { Store, select } from &#x27;@ngrx/store&#x27;;
+import { Subject } from &#x27;rxjs&#x27;;
+import { takeUntil, filter, debounceTime, take } from &#x27;rxjs/operators&#x27;;
+
+import { ROUTE_ANIMATIONS_ELEMENTS } from &#x27;@app/core&#x27;;
+import { TranslateService } from &#x27;@ngx-translate/core&#x27;;
+
+import { State } from &#x27;../../examples.state&#x27;;
+import { ActionFormUpdate, ActionFormReset } from &#x27;../form.actions&#x27;;
+import { selectForm } from &#x27;../form.selectors&#x27;;
+import { Form } from &#x27;../form.model&#x27;;
+import { NotificationService } from &#x27;@app/core/notifications/notification.service&#x27;;
+
+@Component({
+  selector: &#x27;anms-form&#x27;,
+  templateUrl: &#x27;./form.component.html&#x27;,
+  styleUrls: [&#x27;./form.component.scss&#x27;]
+})
+export class FormComponent implements OnInit, OnDestroy {
+  private unsubscribe$ &#x3D; new Subject&lt;void&gt;();
+
+  routeAnimationsElements &#x3D; ROUTE_ANIMATIONS_ELEMENTS;
+
+  form &#x3D; this.fb.group({
+    autosave: false,
+    username: [&#x27;&#x27;, [Validators.required]],
+    password: [&#x27;&#x27;, [Validators.required]],
+    email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+    description: [
+      &#x27;&#x27;,
+      [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(1000)
+      ]
+    ],
+    requestGift: [&#x27;&#x27;],
+    birthday: [&#x27;&#x27;, [Validators.required]],
+    rating: [0, Validators.required]
+  });
+
+  constructor(
+    private fb: FormBuilder,
+    private store: Store&lt;State&gt;,
+    private translate: TranslateService,
+    private notificationService: NotificationService
+  ) {}
+
+  ngOnInit() {
+    this.store
+      .pipe(
+        select(selectForm),
+        take(1)
+      )
+      .subscribe(form &#x3D;&gt; this.form.patchValue(form.form));
+
+    this.form.valueChanges
+      .pipe(
+        debounceTime(500),
+        filter((form: Form) &#x3D;&gt; form.autosave),
+        takeUntil(this.unsubscribe$)
+      )
+      .subscribe((form: Form) &#x3D;&gt;
+        this.store.dispatch(new ActionFormUpdate({ form }))
+      );
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+    this.form &#x3D; null;
+  }
+
+  onSubmit() {
+    if (this.form.valid) {
+      this.save();
+      this.notificationService.info(
+        (this.form.value.requestGift
+          ? this.translate.instant(&#x27;anms.examples.form.text4&#x27;)
+          : this.translate.instant(&#x27;anms.examples.form.text5&#x27;)) +
+          &#x27; : &#x27; +
+          this.translate.instant(&#x27;anms.examples.form.text6&#x27;)
+      );
+    }
+  }
+
+  save() {
+    this.store.dispatch(new ActionFormUpdate({ form: this.form.value }));
+  }
+
+  reset() {
+    this.form.reset();
+    this.form.clearValidators();
+    this.form.clearAsyncValidators();
+    this.store.dispatch(new ActionFormReset());
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;h1 class&#x3D;&quot;main-heading&quot;&gt;{{ &#x27;anms.examples.form.title&#x27; | translate }}&lt;/h1&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+    &lt;div class&#x3D;&quot;row justify-content-center&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+        &lt;mat-card [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+          &lt;span class&#x3D;&quot;d-flex justify-content-between align-items-baseline&quot;&gt;
+            &lt;h2&gt;{{ &#x27;anms.examples.form.subtitle1&#x27; | translate }}&lt;/h2&gt;
+            &lt;mat-slide-toggle formControlName&#x3D;&quot;autosave&quot;&gt;
+              {{ &#x27;anms.examples.form.autosave&#x27; | translate }}
+            &lt;/mat-slide-toggle&gt;
+          &lt;/span&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;col&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+              &lt;input matInput placeholder&#x3D;&quot;{{ &#x27;anms.examples.form.placeholder1&#x27; | translate }}&quot;
+                formControlName&#x3D;&quot;username&quot;&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;form.get(&#x27;username&#x27;).invalid&quot;&gt;
+                {{ &#x27;anms.examples.form.placeholder1&#x27; | translate }}
+                {{ &#x27;anms.examples.form.error1&#x27; | translate }}
+              &lt;/mat-error&gt;
+            &lt;/mat-form-field&gt;
+            &lt;mat-form-field class&#x3D;&quot;col&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+              &lt;input matInput type&#x3D;&quot;password&quot; placeholder&#x3D;&quot;{{ &#x27;anms.examples.form.placeholder2&#x27; | translate }}&quot;
+                formControlName&#x3D;&quot;password&quot;&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;form.get(&#x27;password&#x27;).invalid&quot;&gt;
+                {{ &#x27;anms.examples.form.placeholder2&#x27; | translate }}
+                {{ &#x27;anms.examples.form.error1&#x27; | translate }}
+              &lt;/mat-error&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;col&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+              &lt;input matInput placeholder&#x3D;&quot;{{ &#x27;anms.examples.form.placeholder3&#x27; | translate }}&quot;
+                formControlName&#x3D;&quot;email&quot; type&#x3D;&quot;email&quot;&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;form.get(&#x27;email&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+                {{ &#x27;anms.examples.form.placeholder3&#x27; | translate }}
+                {{ &#x27;anms.examples.form.error1&#x27; | translate }}
+              &lt;/mat-error&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;form.get(&#x27;email&#x27;).hasError(&#x27;email&#x27;)&quot;&gt;
+                {{ &#x27;anms.examples.form.placeholder3&#x27; | translate }}
+                {{ &#x27;anms.examples.form.error2&#x27; | translate }}&lt;/mat-error&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;col&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+              &lt;input matInput formControlName&#x3D;&quot;birthday&quot; [matDatepicker]&#x3D;&quot;picker&quot; placeholder&#x3D;&quot;{{ &#x27;anms.examples.form.placeholder5&#x27; | translate }}&quot;&gt;
+              &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;picker&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+              &lt;mat-datepicker #picker&gt;&lt;/mat-datepicker&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;form.get(&#x27;birthday&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+                {{ &#x27;anms.examples.form.placeholder5&#x27; | translate }}
+                {{ &#x27;anms.examples.form.error1&#x27; | translate }}
+              &lt;/mat-error&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;col&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+              &lt;textarea matInput placeholder&#x3D;&quot;{{ &#x27;anms.examples.form.placeholder4&#x27; | translate }}&quot;
+                formControlName&#x3D;&quot;description&quot; minlength&#x3D;&quot;10&quot; maxlength&#x3D;&quot;1000&quot; cdkTextareaAutosize
+                #autosize&#x3D;&quot;cdkTextareaAutosize&quot; cdkAutosizeMinRows&#x3D;&quot;3&quot; cdkAutosizeMaxRows&#x3D;&quot;10&quot;&gt;&lt;/textarea&gt;
+              &lt;mat-hint align&#x3D;&quot;end&quot;&gt;{{form.get(&#x27;description&#x27;).value?.length}} /
+                1000&lt;/mat-hint&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;form.get(&#x27;description&#x27;).hasError(&#x27;required&#x27;)&quot;&gt;
+                {{ &#x27;anms.examples.form.placeholder4&#x27; | translate }}
+                {{ &#x27;anms.examples.form.error1&#x27; | translate }}
+              &lt;/mat-error&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;form.get(&#x27;description&#x27;).hasError(&#x27;minlength&#x27;)&quot;&gt;
+                {{ &#x27;anms.examples.form.placeholder4&#x27; | translate }}
+                {{ &#x27;anms.examples.form.error3&#x27; | translate }} 10
+              &lt;/mat-error&gt;
+              &lt;mat-error *ngIf&#x3D;&quot;form.get(&#x27;description&#x27;).hasError(&#x27;maxlength&#x27;)&quot;&gt;
+                {{ &#x27;anms.examples.form.placeholder4&#x27; | translate }}
+                {{ &#x27;anms.examples.form.error4&#x27; | translate }} 1000
+              &lt;/mat-error&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+            &lt;div class&#x3D;&quot;col&quot;&gt;
+              &lt;label&gt;{{ &#x27;anms.examples.form.text2&#x27; | translate }}&lt;/label&gt;
+              &lt;br&gt;
+              &lt;mat-slider thumbLabel tickInterval&#x3D;&quot;1&quot; min&#x3D;&quot;1&quot; max&#x3D;&quot;10&quot; formControlName&#x3D;&quot;rating&quot;&gt;&lt;/mat-slider&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;mat-checkbox class&#x3D;&quot;col&quot; formControlName&#x3D;&quot;requestGift&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+              {{ &#x27;anms.examples.form.text1&#x27; | translate }}
+            &lt;/mat-checkbox&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row buttons d-flex justify-content-between pad&quot;&gt;
+            &lt;button mat-raised-button color&#x3D;&quot;primary&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+              {{ &#x27;anms.examples.form.send&#x27; | translate }}
+            &lt;/button&gt;
+            &lt;button type&#x3D;&quot;button&quot; mat-raised-button color&#x3D;&quot;accent&quot; [disabled]&#x3D;&quot;form.get(&#x27;autosave&#x27;).value&quot;
+              [ngClass]&#x3D;&quot;routeAnimationsElements&quot; (click)&#x3D;&quot;save()&quot;&gt;
+              {{ &#x27;anms.examples.form.save&#x27; | translate }}
+            &lt;/button&gt;
+            &lt;button type&#x3D;&quot;reset&quot; mat-raised-button (click)&#x3D;&quot;reset()&quot; [ngClass]&#x3D;&quot;routeAnimationsElements&quot;&gt;
+              {{ &#x27;anms.examples.form.reset&#x27; | translate }}
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/mat-card&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="row">    <div class="col">      <h1 class="main-heading">{{ \'anms.examples.form.title\' | translate }}</h1>    </div>  </div>  <form [formGroup]="form" (ngSubmit)="onSubmit()">    <div class="row justify-content-center">      <div class="col-md-8">        <mat-card [ngClass]="routeAnimationsElements">          <span class="d-flex justify-content-between align-items-baseline">            <h2>{{ \'anms.examples.form.subtitle1\' | translate }}</h2>            <mat-slide-toggle formControlName="autosave">              {{ \'anms.examples.form.autosave\' | translate }}            </mat-slide-toggle>          </span>          <div class="row">            <mat-form-field class="col" [ngClass]="routeAnimationsElements">              <input matInput placeholder="{{ \'anms.examples.form.placeholder1\' | translate }}"                formControlName="username">              <mat-error *ngIf="form.get(\'username\').invalid">                {{ \'anms.examples.form.placeholder1\' | translate }}                {{ \'anms.examples.form.error1\' | translate }}              </mat-error>            </mat-form-field>            <mat-form-field class="col" [ngClass]="routeAnimationsElements">              <input matInput type="password" placeholder="{{ \'anms.examples.form.placeholder2\' | translate }}"                formControlName="password">              <mat-error *ngIf="form.get(\'password\').invalid">                {{ \'anms.examples.form.placeholder2\' | translate }}                {{ \'anms.examples.form.error1\' | translate }}              </mat-error>            </mat-form-field>          </div>          <div class="row">            <mat-form-field class="col" [ngClass]="routeAnimationsElements">              <input matInput placeholder="{{ \'anms.examples.form.placeholder3\' | translate }}"                formControlName="email" type="email">              <mat-error *ngIf="form.get(\'email\').hasError(\'required\')">                {{ \'anms.examples.form.placeholder3\' | translate }}                {{ \'anms.examples.form.error1\' | translate }}              </mat-error>              <mat-error *ngIf="form.get(\'email\').hasError(\'email\')">                {{ \'anms.examples.form.placeholder3\' | translate }}                {{ \'anms.examples.form.error2\' | translate }}</mat-error>            </mat-form-field>          </div>          <div class="row">            <mat-form-field class="col" [ngClass]="routeAnimationsElements">              <input matInput formControlName="birthday" [matDatepicker]="picker" placeholder="{{ \'anms.examples.form.placeholder5\' | translate }}">              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>              <mat-datepicker #picker></mat-datepicker>              <mat-error *ngIf="form.get(\'birthday\').hasError(\'required\')">                {{ \'anms.examples.form.placeholder5\' | translate }}                {{ \'anms.examples.form.error1\' | translate }}              </mat-error>            </mat-form-field>          </div>          <div class="row">            <mat-form-field class="col" [ngClass]="routeAnimationsElements">              <textarea matInput placeholder="{{ \'anms.examples.form.placeholder4\' | translate }}"                formControlName="description" minlength="10" maxlength="1000" cdkTextareaAutosize                #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3" cdkAutosizeMaxRows="10"></textarea>              <mat-hint align="end">{{form.get(\'description\').value?.length}} /                1000</mat-hint>              <mat-error *ngIf="form.get(\'description\').hasError(\'required\')">                {{ \'anms.examples.form.placeholder4\' | translate }}                {{ \'anms.examples.form.error1\' | translate }}              </mat-error>              <mat-error *ngIf="form.get(\'description\').hasError(\'minlength\')">                {{ \'anms.examples.form.placeholder4\' | translate }}                {{ \'anms.examples.form.error3\' | translate }} 10              </mat-error>              <mat-error *ngIf="form.get(\'description\').hasError(\'maxlength\')">                {{ \'anms.examples.form.placeholder4\' | translate }}                {{ \'anms.examples.form.error4\' | translate }} 1000              </mat-error>            </mat-form-field>          </div>          <div class="row" [ngClass]="routeAnimationsElements">            <div class="col">              <label>{{ \'anms.examples.form.text2\' | translate }}</label>              <br>              <mat-slider thumbLabel tickInterval="1" min="1" max="10" formControlName="rating"></mat-slider>            </div>          </div>          <div class="row">            <mat-checkbox class="col" formControlName="requestGift" [ngClass]="routeAnimationsElements">              {{ \'anms.examples.form.text1\' | translate }}            </mat-checkbox>          </div>          <div class="row buttons d-flex justify-content-between pad">            <button mat-raised-button color="primary" [ngClass]="routeAnimationsElements">              {{ \'anms.examples.form.send\' | translate }}            </button>            <button type="button" mat-raised-button color="accent" [disabled]="form.get(\'autosave\').value"              [ngClass]="routeAnimationsElements" (click)="save()">              {{ \'anms.examples.form.save\' | translate }}            </button>            <button type="reset" mat-raised-button (click)="reset()" [ngClass]="routeAnimationsElements">              {{ \'anms.examples.form.reset\' | translate }}            </button>          </div>        </mat-card>      </div>    </div>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'anms-about'},{'name': 'AppComponent', 'selector': 'anms-root'},{'name': 'AuthenticatedComponent', 'selector': 'anms-authenticated'},{'name': 'BigInputActionComponent', 'selector': 'anms-big-input-action'},{'name': 'BigInputComponent', 'selector': 'anms-big-input'},{'name': 'ChildComponent', 'selector': 'anms-child'},{'name': 'CrudComponent', 'selector': 'anms-crud'},{'name': 'ExamplesComponent', 'selector': 'anms-examples'},{'name': 'FeaturesComponent', 'selector': 'anms-features'},{'name': 'FormComponent', 'selector': 'anms-form'},{'name': 'NotificationsComponent', 'selector': 'anms-notifications'},{'name': 'ParentComponent', 'selector': 'anms-parent'},{'name': 'SettingsContainerComponent', 'selector': 'anms-settings'},{'name': 'StockMarketContainerComponent', 'selector': 'anms-stock-market'},{'name': 'TodosContainerComponent', 'selector': 'anms-todos'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'FormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'FormComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
