@@ -42,6 +42,7 @@ npm start
   * `npm run prod` - runs full prod build and serves prod bundle
   * `npm run prettier` - runs prettier to format whole code base (`.ts` and `.scss`) 
   * `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application) 
+  * `npm run compodoc` - runs [Compodoc](https://compodoc.app) to generate a static documentation of the application 
 
 ![analzye](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/analyze.png)
 ## Run Inside Docker Container

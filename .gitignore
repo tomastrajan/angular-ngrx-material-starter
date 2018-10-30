@@ -26,6 +26,9 @@ yarn.lock
 # !.vscode/launch.json
 # !.vscode/extensions.json
 
+# compodoc
+/documentation
+
 # misc
 /.sass-cache
 /connect.lock
