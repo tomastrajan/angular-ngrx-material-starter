@@ -13,11 +13,11 @@ import { ActionFormUpdate } from '../form.actions';
 
 fdescribe('FormComponent', () => {
   let store: MockStore<State>;
-  let renderResult: RenderResult;
+  let component: RenderResult;
   let dispatchSpy: jasmine.Spy;
 
   beforeEach(async () => {
-    renderResult = await createComponent<FormComponent>(
+    component = await createComponent<FormComponent>(
       '<anms-form></anms-form>',
       {
         declarations: [FormComponent],
@@ -31,52 +31,52 @@ fdescribe('FormComponent', () => {
     store.setState(createState(initialState));
     dispatchSpy = spyOn(store, 'dispatch');
 
-    renderResult.fixture.detectChanges();
+    component.fixture.detectChanges();
   });
 
   it('should submit when form is valid', async () => {
-    renderResult.input(
-      renderResult.getByLabelText('anms.examples.form.placeholder1'),
+    component.input(
+      component.getByLabelText('anms.examples.form.placeholder1'),
       {
         target: {
           value: '@tim_deschryver'
         }
       }
     );
-    renderResult.input(
-      renderResult.getByLabelText('anms.examples.form.placeholder2'),
+    component.input(
+      component.getByLabelText('anms.examples.form.placeholder2'),
       {
         target: {
           value: 'mysuperawesomeandsecurepassword'
         }
       }
     );
-    renderResult.input(
-      renderResult.getByLabelText('anms.examples.form.placeholder3'),
+    component.input(
+      component.getByLabelText('anms.examples.form.placeholder3'),
       {
         target: {
           value: 'foo@bar.baz'
         }
       }
     );
-    renderResult.input(
-      renderResult.getByLabelText('anms.examples.form.placeholder5'),
+    component.input(
+      component.getByLabelText('anms.examples.form.placeholder5'),
       {
         target: {
           value: '1991-12-31'
         }
       }
     );
-    renderResult.input(
-      renderResult.getByLabelText('anms.examples.form.placeholder4'),
+    component.input(
+      component.getByLabelText('anms.examples.form.placeholder4'),
       {
         target: {
           value: 'no description needed here'
         }
       }
     );
-    renderResult.click(renderResult.getByLabelText('anms.examples.form.text1'));
-    renderResult.click(renderResult.getByText('anms.examples.form.send'));
+    component.click(component.getByLabelText('anms.examples.form.text1'));
+    component.click(component.getByText('anms.examples.form.send'));
     const { type, payload } = new ActionFormUpdate({
       form: {
         autosave: false,
