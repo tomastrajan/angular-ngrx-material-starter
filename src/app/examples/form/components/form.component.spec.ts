@@ -1,9 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
-import { createComponent, RenderResult } from 'ngx-testing-library';
+import {
+  createComponent,
+  RenderResult
+} from '@angular-extensions/testing-library';
 
 import { MockStore, TestingModule } from '@testing/utils';
-
 import { NotificationService } from '@app/core/notifications/notification.service';
 import { State } from '../../examples.state';
 import { FormState } from '../form.model';
