@@ -1,6 +1,11 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
+import {
+  createComponent,
+  RenderResult,
+  fireEvent
+} from '@angular-extensions/testing-library';
 
 import { MockStore, TestingModule } from '@testing/utils';
 
@@ -15,55 +20,28 @@ import { State } from '../../examples.state';
 import { NotificationService } from '@app/core/notifications/notification.service';
 
 describe('TodosComponent', () => {
-  let component: TodosContainerComponent;
-  let fixture: ComponentFixture<TodosContainerComponent>;
+  let component: RenderResult;
   let store: MockStore<State>;
-  let dispatchSpy;
+  let dispatchSpy: jasmine.Spy;
 
-  const getTodos = () => fixture.debugElement.queryAll(By.css('.todo'));
-
-  const getBigInput = () =>
-    fixture.debugElement.query(By.css('anms-big-input'));
-
-  const getBigInputValue = () =>
-    getBigInput().query(By.css('input')).nativeElement.value;
-
-  const getTodosFilter = () =>
-    fixture.debugElement.query(By.css('.todos-filter'));
-
-  const getTodosFilterOptions = () =>
-    fixture.debugElement.queryAll(
-      By.css('.todos-filter-menu-overlay .mat-menu-item')
-    );
-
-  const deleteDoneTodosBtn = () =>
-    fixture.debugElement.query(
-      By.css('anms-big-input-action[fontIcon="fa-trash"] > button')
-    );
-
-  const addTodoBtn = () =>
-    fixture.debugElement.query(
-      By.css('anms-big-input-action[fontIcon="fa-plus"] > button')
-    );
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
+  beforeEach(async () => {
+    component = await createComponent('<anms-todos></anms-todos>', {
       imports: [TestingModule],
       declarations: [TodosContainerComponent],
-      providers: [NotificationService]
-    }).compileComponents();
+      providers: [NotificationService],
+      detectChanges: false
+    });
 
     store = TestBed.get(Store);
-    store.setState(createState({ items: [], filter: 'ALL' }));
-    fixture = TestBed.createComponent(TodosContainerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+    dispatchSpy = spyOn(store, 'dispatch');
+  });
 
   it('should be created with 0 todos', () => {
+    store.setState(createState({ items: [], filter: 'ALL' }));
+    component.fixture.detectChanges();
+
     expect(component).toBeTruthy();
-    expect(component.todos.items.length).toBe(0);
-    expect(getTodos().length).toBe(0);
+    expect((<any>component.queryAllByTestId)('todo-item').length).toBe(0);
   });
 
   it('should display todos', () => {
@@ -73,26 +51,10 @@ describe('TodosComponent', () => {
         filter: 'ALL'
       })
     );
+    component.fixture.detectChanges();
 
-    fixture.detectChanges();
-    expect(getTodos().length).toBe(1);
-    expect(getTodos()[0].nativeElement.textContent.trim()).toBe('test');
-  });
-
-  it('should filter and show "DONE" todos', () => {
-    store.setState(
-      createState({
-        items: [
-          { id: '1', name: 'test 1', done: true },
-          { id: '2', name: 'test 2', done: false }
-        ],
-        filter: 'DONE'
-      })
-    );
-
-    fixture.detectChanges();
-    expect(getTodos().length).toBe(1);
-    expect(getTodos()[0].nativeElement.textContent.trim()).toBe('test 1');
+    expect((<any>component.queryAllByTestId)('todo-item').length).toBe(1);
+    expect(component.getByTestId('todo-item').textContent.trim()).toBe('test');
   });
 
   it('should dispatch remove "DONE" todos action', () => {
@@ -105,31 +67,53 @@ describe('TodosComponent', () => {
         filter: 'DONE'
       })
     );
+    component.fixture.detectChanges();
+    dispatchSpy.calls.reset();
 
-    fixture.detectChanges();
-    dispatchSpy = spyOn(store, 'dispatch');
-    deleteDoneTodosBtn().triggerEventHandler('click', {});
+    component.click(component.queryByLabelText('remove done items'));
 
-    fixture.detectChanges();
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(new ActionTodosRemoveDone());
   });
 
   it('should dispatch add todo action', () => {
-    dispatchSpy = spyOn(store, 'dispatch');
-    component.newTodo = 'test';
-    addTodoBtn().triggerEventHandler('click', {});
+    store.setState(createState({ items: [], filter: 'ALL' }));
+    component.fixture.detectChanges();
+    dispatchSpy.calls.reset();
 
-    fixture.detectChanges();
-    expect(component.newTodo).toBe('');
+    component.keyUp(
+      component.getByPlaceholderText('anms.examples.todos.input'),
+      {
+        target: {
+          value: 'poke Tomas'
+        }
+      }
+    );
+
+    component.click(component.getByLabelText('add todo'));
+
+    expect(
+      (component.getByPlaceholderText(
+        'anms.examples.todos.input'
+      ) as HTMLInputElement).value
+    ).toBe('');
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy.calls.mostRecent().args[0].payload.name).toBe('test');
+    expect(dispatchSpy.calls.mostRecent().args[0].payload.name).toBe(
+      'poke Tomas'
+    );
   });
 
   it('should dispatch filter todo action', () => {
-    dispatchSpy = spyOn(store, 'dispatch');
-    getTodosFilter().triggerEventHandler('click', {});
-    getTodosFilterOptions()[2].triggerEventHandler('click', {});
+    store.setState(createState({ items: [], filter: 'ALL' }));
+    component.fixture.detectChanges();
+    dispatchSpy.calls.reset();
+
+    component.click(component.getByLabelText('open filter menu'));
+    fireEvent.click(
+      component.fixture.debugElement.query(
+        By.css('[aria-label="show active items"]')
+      ).nativeElement
+    );
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
@@ -144,14 +128,11 @@ describe('TodosComponent', () => {
         filter: 'ALL'
       })
     );
+    component.fixture.detectChanges();
+    dispatchSpy.calls.reset();
 
-    fixture.detectChanges();
-    dispatchSpy = spyOn(store, 'dispatch');
-    getTodos()[0]
-      .query(By.css('.todo-label'))
-      .triggerEventHandler('click', {});
+    component.click(component.getByLabelText('toggle todo'));
 
-    fixture.detectChanges();
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
       new ActionTodosToggle({ id: '1' })
@@ -165,34 +146,63 @@ describe('TodosComponent', () => {
         filter: 'ALL'
       })
     );
+    component.fixture.detectChanges();
 
-    fixture.detectChanges();
-    expect(deleteDoneTodosBtn().nativeElement.disabled).toBeFalsy();
-
-    component.todos.items[0].done = false;
-
-    fixture.detectChanges();
-    expect(deleteDoneTodosBtn().nativeElement.disabled).toBeTruthy();
+    expect(
+      (component.getByLabelText('remove done items') as HTMLInputElement)
+        .disabled
+    ).toBeFalsy();
   });
 
   it('should disable add new todo button if input length is less than 4', () => {
-    component.newTodo = 'test';
+    store.setState(createState({ items: [], filter: 'ALL' }));
+    component.fixture.detectChanges();
 
-    fixture.detectChanges();
-    expect(addTodoBtn().nativeElement.disabled).toBeFalsy();
+    component.keyUp(
+      component.getByPlaceholderText('anms.examples.todos.input'),
+      {
+        target: {
+          value: 'add'
+        }
+      }
+    );
 
-    component.newTodo = 'tes';
-
-    fixture.detectChanges();
-    expect(addTodoBtn().nativeElement.disabled).toBeTruthy();
+    expect(
+      (component.getByLabelText('add todo') as HTMLInputElement).disabled
+    ).toBeTruthy();
   });
 
   it('should clear new todo input value on ESC key press', () => {
-    component.newTodo = 'tes';
-    getBigInput().triggerEventHandler('keyup.escape', {});
+    store.setState(createState({ items: [], filter: 'ALL' }));
+    component.fixture.detectChanges();
 
-    fixture.detectChanges();
-    expect(getBigInputValue()).toBe('');
+    component.keyUp(
+      component.getByPlaceholderText('anms.examples.todos.input'),
+      {
+        target: {
+          value: 'hellooooo'
+        }
+      }
+    );
+
+    expect(
+      (component.getByPlaceholderText(
+        'anms.examples.todos.input'
+      ) as HTMLInputElement).value
+    ).toBeTruthy();
+
+    component.keyUp(
+      component.getByPlaceholderText('anms.examples.todos.input'),
+      {
+        key: 'Esc'
+      }
+    );
+
+    expect(
+      (component.getByPlaceholderText(
+        'anms.examples.todos.input'
+      ) as HTMLInputElement).value
+    ).toBeFalsy();
   });
 });
 

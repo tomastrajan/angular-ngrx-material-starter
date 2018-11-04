@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { select, Store } from '@ngrx/store';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
@@ -13,8 +13,12 @@ import {
   ActionTodosRemoveDone,
   ActionTodosToggle
 } from '../todos.actions';
-import { selectTodos } from '../todos.selectors';
-import { Todo, TodosFilter, TodosState } from '../todos.model';
+import {
+  selectTodos,
+  selectTodosState,
+  selectRemoveDoneTodosDisabled
+} from '../todos.selectors';
+import { Todo, TodosFilter } from '../todos.model';
 import { State } from '../../examples.state';
 import { TranslateService } from '@ngx-translate/core';
 import { NotificationService } from '@app/core/notifications/notification.service';
@@ -28,7 +32,8 @@ export class TodosContainerComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  todos: TodosState;
+  todos: Observable<Todo[]>;
+  removeDoneDisabled: Observable<boolean>;
   newTodo = '';
 
   constructor(
@@ -41,13 +46,17 @@ export class TodosContainerComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.store
       .pipe(
-        select(selectTodos),
+        select(selectTodosState),
         takeUntil(this.unsubscribe$)
       )
       .subscribe(todos => {
-        this.todos = todos;
         this.store.dispatch(new ActionTodosPersist({ todos }));
       });
+
+    this.todos = this.store.pipe(select(selectTodos));
+    this.removeDoneDisabled = this.store.pipe(
+      select(selectRemoveDoneTodosDisabled)
+    );
   }
 
   ngOnDestroy(): void {
@@ -55,22 +64,8 @@ export class TodosContainerComponent implements OnInit, OnDestroy {
     this.unsubscribe$.complete();
   }
 
-  get filteredTodos() {
-    const filter = this.todos.filter;
-    if (filter === 'ALL') {
-      return this.todos.items;
-    } else {
-      const predicate = filter === 'DONE' ? t => t.done : t => !t.done;
-      return this.todos.items.filter(predicate);
-    }
-  }
-
   get isAddTodoDisabled() {
     return this.newTodo.length < 4;
-  }
-
-  get isRemoveDoneTodosDisabled() {
-    return this.todos.items.filter(item => item.done).length === 0;
   }
 
   onNewTodoChange(newTodo: string) {
