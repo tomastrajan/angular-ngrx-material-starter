@@ -13,7 +13,7 @@ import { FormComponent } from './form.component';
 import { initialState } from '../form.reducer';
 import { ActionFormUpdate } from '../form.actions';
 
-fdescribe('FormComponent', () => {
+describe('FormComponent', () => {
   let store: MockStore<State>;
   let component: RenderResult;
   let dispatchSpy: jasmine.Spy;

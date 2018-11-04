@@ -25,6 +25,8 @@ export class BigInputActionComponent {
   label = '';
   @Input()
   color = '';
+  @Input()
+  ariaLabel = '';
 
   @Output()
   action = new EventEmitter<void>();
