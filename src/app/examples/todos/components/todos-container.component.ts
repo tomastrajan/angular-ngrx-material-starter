@@ -16,7 +16,7 @@ import {
 import {
   selectTodos,
   selectTodosState,
-  removeDoneDisabled
+  selectRemoveDoneTodosDisabled
 } from '../todos.selectors';
 import { Todo, TodosFilter } from '../todos.model';
 import { State } from '../../examples.state';
@@ -54,7 +54,9 @@ export class TodosContainerComponent implements OnInit, OnDestroy {
       });
 
     this.todos = this.store.pipe(select(selectTodos));
-    this.removeDoneDisabled = this.store.pipe(select(removeDoneDisabled));
+    this.removeDoneDisabled = this.store.pipe(
+      select(selectRemoveDoneTodosDisabled)
+    );
   }
 
   ngOnDestroy(): void {
