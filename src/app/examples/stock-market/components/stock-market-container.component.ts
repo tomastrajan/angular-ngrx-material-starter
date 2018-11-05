@@ -3,6 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
+
 import { selectStockMarket } from '../stock-market.selectors';
 import { ActionStockMarketRetrieve } from '../stock-market.actions';
 import { State } from '../../examples.state';
@@ -15,6 +17,7 @@ import { State } from '../../examples.state';
 export class StockMarketContainerComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
 
+  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   initialized;
   stocks;
 

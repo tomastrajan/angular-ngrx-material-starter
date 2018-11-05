@@ -4,7 +4,7 @@
   </div>
   <br>
   <div class="row">
-    <div class="col-md-6 group">
+    <div class="col-md-6 group" [ngClass]="routeAnimationsElements">
       <h2>{{ 'anms.settings.general.title' | translate }}</h2>
       <div class="icon-form-field">
         <mat-icon color="accent"><fa-icon icon="language" color="accent"></fa-icon></mat-icon>
@@ -31,7 +31,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6 group">
+    <div class="col-md-6 group" [ngClass]="routeAnimationsElements">
       <h2>{{ 'anms.settings.themes.title' | translate }}</h2>
       <div class="icon-form-field">
         <mat-icon color="accent"><fa-icon icon="paint-brush" color="accent"></fa-icon></mat-icon>
@@ -56,7 +56,7 @@
         </mat-slide-toggle>
       </div>
     </div>
-    <div class="col-md-6 group">
+    <div class="col-md-6 group" [ngClass]="routeAnimationsElements">
       <h2>{{ 'anms.settings.animations.title' | translate }}</h2>
       <div class="icon-form-field">
         <mat-icon color="accent"><mat-icon color="accent"><fa-icon icon="window-maximize"></fa-icon></mat-icon></mat-icon>

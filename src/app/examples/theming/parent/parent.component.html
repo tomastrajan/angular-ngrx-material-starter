@@ -5,7 +5,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6" [ngClass]="routeAnimationsElements">
       <p>
         {{ 'anms.examples.theming.parent.text1' | translate }} <code>stylesUrls</code>
         {{ 'anms.examples.theming.parent.text2' | translate }} <code>@Component</code>
@@ -25,7 +25,7 @@
 {{themeSrc}}
       </pre>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" [ngClass]="routeAnimationsElements">
       <div class="example">
         <h1>{{ 'anms.examples.theming.parent.description' | translate }}</h1>
         <anms-child></anms-child>
