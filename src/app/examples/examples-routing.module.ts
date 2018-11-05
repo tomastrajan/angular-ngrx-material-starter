@@ -39,8 +39,8 @@ const routes: Routes = [
       },
       {
         path: 'crud',
-        component: CrudComponent,
-        data: { title: 'anms.examples.menu.crud' }
+        redirectTo: 'crud/',
+        pathMatch: 'full'
       },
       {
         path: 'crud/:id',

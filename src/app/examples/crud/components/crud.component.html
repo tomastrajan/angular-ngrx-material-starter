@@ -4,7 +4,7 @@
     <div class="col-md-6">
       <h2>{{ 'anms.examples.crud.subtitle1' | translate }}</h2>
       <mat-card *ngFor="let book of books$ | async" [ngClass]="routeAnimationsElements"
-        [routerLink]="['/examples/crud', book.id]" (click)=select() data-testid="crud-item">
+        (click)="select(book.id)" data-testid="crud-item">
         <h3 data-testid="item-title">{{book.title}}</h3>
         <small>{{book.author}}</small>
       </mat-card>
