@@ -2,11 +2,10 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { selectStockMarket } from '../stock-market.selectors';
@@ -22,28 +21,24 @@ import { State } from '../../examples.state';
 })
 export class StockMarketContainerComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
+  private initialized: boolean;
 
-  initialized: boolean;
-  stocks: StockMarketState;
+  stocks$: Observable<StockMarketState> = this.store.pipe(
+    select(selectStockMarket)
+  );
 
-  constructor(public store: Store<State>, private cd: ChangeDetectorRef) {}
+  constructor(public store: Store<State>) {}
 
   ngOnInit() {
     this.initialized = false;
-    this.store
-      .pipe(select(selectStockMarket), takeUntil(this.unsubscribe$))
-      .subscribe(stocks => {
-        this.stocks = stocks;
-
-        if (!this.initialized) {
-          this.initialized = true;
-          this.store.dispatch(
-            new ActionStockMarketRetrieve({ symbol: stocks.symbol })
-          );
-        }
-
-        this.cd.markForCheck();
-      });
+    this.stocks$.pipe(takeUntil(this.unsubscribe$)).subscribe(stocks => {
+      if (!this.initialized) {
+        this.initialized = true;
+        this.store.dispatch(
+          new ActionStockMarketRetrieve({ symbol: stocks.symbol })
+        );
+      }
+    });
   }
 
   ngOnDestroy(): void {

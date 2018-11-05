@@ -47,8 +47,10 @@ export class SettingsContainerComponent implements OnInit, OnDestroy {
     { value: 'pt-br', label: 'pt-br' }
   ];
 
-  constructor(private store: Store<{}>, private cd: ChangeDetectorRef) {
-    store
+  constructor(private store: Store<{}>, private cd: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    this.store
       .pipe(
         select(selectSettings),
         takeUntil(this.unsubscribe$)
@@ -58,8 +60,6 @@ export class SettingsContainerComponent implements OnInit, OnDestroy {
         this.cd.markForCheck();
       });
   }
-
-  ngOnInit() {}
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();

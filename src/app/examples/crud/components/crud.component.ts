@@ -1,15 +1,8 @@
 import { v4 as uuid } from 'uuid';
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef
-} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { takeUntil } from 'rxjs/operators';
-import { Subject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
@@ -25,13 +18,13 @@ import { selectSelectedBook, selectAllBooks } from '../books.selectors';
   styleUrls: ['./crud.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CrudComponent implements OnInit, OnDestroy {
-  private unsubscribe$: Subject<void> = new Subject<void>();
+export class CrudComponent {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
   bookFormGroup = this.fb.group(CrudComponent.createBook());
-  books$: Observable<Book[]>;
-  selectedBook: Book;
+  books$: Observable<Book[]> = this.store.pipe(select(selectAllBooks));
+  selectedBook$: Observable<Book> = this.store.pipe(select(selectSelectedBook));
+
   isEditing: boolean;
 
   static createBook(): Book {
@@ -46,31 +39,12 @@ export class CrudComponent implements OnInit, OnDestroy {
   constructor(
     public store: Store<State>,
     public fb: FormBuilder,
-    private router: Router,
-    private cd: ChangeDetectorRef
+    private router: Router
   ) {}
 
-  ngOnInit() {
-    this.books$ = this.store.pipe(select(selectAllBooks));
-    this.store
-      .pipe(
-        select(selectSelectedBook),
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe(book => {
-        this.selectedBook = book;
-        this.cd.markForCheck();
-      });
-  }
-
-  ngOnDestroy() {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
-  }
-
-  select(bookId: string) {
+  select(book: Book) {
     this.isEditing = false;
-    this.router.navigate(['examples/crud', bookId]);
+    this.router.navigate(['examples/crud', book.id]);
   }
 
   deselect() {
@@ -78,9 +52,9 @@ export class CrudComponent implements OnInit, OnDestroy {
     this.router.navigate(['examples/crud']);
   }
 
-  edit() {
+  edit(book: Book) {
     this.isEditing = true;
-    this.bookFormGroup.setValue(this.selectedBook);
+    this.bookFormGroup.setValue(book);
   }
 
   addNew(bookForm: NgForm) {
@@ -94,8 +68,8 @@ export class CrudComponent implements OnInit, OnDestroy {
     this.isEditing = false;
   }
 
-  delete() {
-    this.store.dispatch(new ActionBooksDeleteOne({ id: this.selectedBook.id }));
+  delete(book: Book) {
+    this.store.dispatch(new ActionBooksDeleteOne({ id: book.id }));
     this.isEditing = false;
     this.router.navigate(['examples/crud']);
   }

@@ -6,7 +6,6 @@ import {
   RenderResult,
   fireEvent
 } from '@angular-extensions/testing-library';
-import { MatCheckbox } from '@angular/material';
 
 import { MockStore, TestingModule } from '@testing/utils';
 
