@@ -8,7 +8,7 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <mat-card [ngClass]="routeAnimationsElements">
+        <mat-card>
           <span class="d-flex justify-content-between align-items-baseline">
             <h2>{{ 'anms.examples.form.subtitle1' | translate }}</h2>
             <mat-slide-toggle formControlName="autosave">

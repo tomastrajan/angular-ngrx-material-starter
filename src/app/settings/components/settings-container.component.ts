@@ -18,6 +18,9 @@ import {
   ActionSettingsPersist,
   ActionSettingsChangeStickyHeader
 } from '../settings.actions';
+
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
+
 import { SettingsState } from '../settings.model';
 import { selectSettings } from '../settings.selectors';
 
@@ -29,6 +32,7 @@ import { selectSettings } from '../settings.selectors';
 })
 export class SettingsContainerComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
+  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   settings: SettingsState;
 
   themes = [

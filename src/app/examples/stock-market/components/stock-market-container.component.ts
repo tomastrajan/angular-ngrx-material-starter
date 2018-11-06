@@ -8,6 +8,8 @@ import { Store, select } from '@ngrx/store';
 import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
+
 import { selectStockMarket } from '../stock-market.selectors';
 import { ActionStockMarketRetrieve } from '../stock-market.actions';
 import { StockMarketState } from '../stock-market.model';
@@ -26,6 +28,7 @@ export class StockMarketContainerComponent implements OnInit, OnDestroy {
   stocks$: Observable<StockMarketState> = this.store.pipe(
     select(selectStockMarket)
   );
+  routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
   constructor(public store: Store<State>) {}
 
