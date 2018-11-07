@@ -1,5 +1,13 @@
 import { environment as env } from '@env/environment';
-import { Feature } from './features.model';
+
+export interface Feature {
+  name: string;
+  version?: string;
+  description: string;
+  github?: string;
+  documentation: string;
+  medium?: string;
+}
 
 export const features: Feature[] = [
   {

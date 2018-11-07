@@ -1,4 +1,4 @@
-<div class="container" *ngIf="(todos | async) as todoItems">
+<div class="container">
   <div class="row">
     <div class="offset-md-2 col-md-8 entry">
       <anms-big-input [placeholder]="'anms.examples.todos.input' | translate" [value]="newTodo" (keyup)="onNewTodoChange($event.target.value)"
@@ -8,63 +8,65 @@
           matTooltipPosition="before">
         </anms-big-input-action>
         <anms-big-input-action ariaLabel="remove done items" fontSet="fas" fontIcon="fa-trash" faIcon="trash" color="warn"
-          (action)="onRemoveDoneTodos()" [disabled]="removeDoneDisabled | async" matTooltip="Remove done todos"
+          (action)="onRemoveDoneTodos()" [disabled]="removeDoneDisabled$ | async"
           [matTooltip]="'anms.examples.todos.tooltip.remove' | translate" matTooltipPosition="after">
         </anms-big-input-action>
       </anms-big-input>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
-      <h2>
-        {{ 'anms.examples.todos.list' | translate }}
-        <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter" aria-label="open filter menu">
-          <fa-icon icon="filter"></fa-icon>
-        </button>
-        <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">
-          <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }"
-            aria-label="show all items">
-            <mat-icon>
-              <fa-icon icon="tasks"></fa-icon>
-            </mat-icon>
-            <span>{{ 'anms.examples.todos.filter.all' | translate }}</span>
+    <ng-container *ngIf="todos$ | async as todos">
+      <div class="col-md-6">
+        <h2>
+          {{ 'anms.examples.todos.list' | translate }}
+          <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter" aria-label="open filter menu">
+            <fa-icon icon="filter"></fa-icon>
           </button>
-          <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }"
-            aria-label="show completed items">
-            <mat-icon>
-              <fa-icon icon="check"></fa-icon>
-            </mat-icon>
-            <span>{{ 'anms.examples.todos.filter.done' | translate }}</span>
-          </button>
-          <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }"
-            aria-label="show active items">
-            <mat-icon>
-              <fa-icon icon="square"></fa-icon>
-            </mat-icon>
-            <span>{{ 'anms.examples.todos.filter.active' | translate }}</span>
-          </button>
-        </mat-menu>
-        <mat-chip-list class="todos-filter-info d-none d-sm-block d-md-none d-lg-block">
-          <mat-chip [disabled]=true [ngPlural]="todoItems.length">
-            {{ 'anms.examples.todos.filter.description' | translate }}
-            <ng-template ngPluralCase="other">{{ todoItems.length }} {{ 'anms.examples.todos.filter.items' |
-              translate }}</ng-template>
-            <ng-template ngPluralCase="=1">{{ 'anms.examples.todos.filter.one' | translate }} {{
-              'anms.examples.todos.filter.item' | translate }}</ng-template>
-            <ng-template ngPluralCase="=0">{{ 'anms.examples.todos.filter.none' | translate }} {{
-              'anms.examples.todos.filter.items' | translate }}</ng-template>
-          </mat-chip>
-        </mat-chip-list>
-      </h2>
-      <mat-card *ngFor="let todo of todoItems" class="todo" [ngClass]="routeAnimationsElements" data-testid="todo-item">
-        <mat-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></mat-checkbox>
-        <span class="todo-label" [ngClass]="{ 'todo-label-done': todo.done }" (click)="onToggleTodo(todo)" aria-label="toggle todo">
-          &nbsp;{{todo.name}}&nbsp;
-        </span>
-      </mat-card>
-      <br>
-      <br>
-    </div>
+          <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">
+            <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }"
+              aria-label="show all items">
+              <mat-icon>
+                <fa-icon icon="tasks"></fa-icon>
+              </mat-icon>
+              <span>{{ 'anms.examples.todos.filter.all' | translate }}</span>
+            </button>
+            <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }"
+              aria-label="show completed items">
+              <mat-icon>
+                <fa-icon icon="check"></fa-icon>
+              </mat-icon>
+              <span>{{ 'anms.examples.todos.filter.done' | translate }}</span>
+            </button>
+            <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }"
+              aria-label="show active items">
+              <mat-icon>
+                <fa-icon icon="square"></fa-icon>
+              </mat-icon>
+              <span>{{ 'anms.examples.todos.filter.active' | translate }}</span>
+            </button>
+          </mat-menu>
+          <mat-chip-list class="todos-filter-info d-none d-sm-block d-md-none d-lg-block">
+            <mat-chip [disabled]=true [ngPlural]="todos.length">
+              {{ 'anms.examples.todos.filter.description' | translate }}
+              <ng-template ngPluralCase="other">{{ todos.length }} {{ 'anms.examples.todos.filter.items' |
+                translate }}</ng-template>
+              <ng-template ngPluralCase="=1">{{ 'anms.examples.todos.filter.one' | translate }} {{
+                'anms.examples.todos.filter.item' | translate }}</ng-template>
+              <ng-template ngPluralCase="=0">{{ 'anms.examples.todos.filter.none' | translate }} {{
+                'anms.examples.todos.filter.items' | translate }}</ng-template>
+            </mat-chip>
+          </mat-chip-list>
+        </h2>
+        <mat-card *ngFor="let todo of todos" class="todo" [ngClass]="routeAnimationsElements" data-testid="todo-item">
+          <mat-checkbox class="todo-done" [checked]="todo.done" (change)="onToggleTodo(todo)"></mat-checkbox>
+          <span class="todo-label" [ngClass]="{ 'todo-label-done': todo.done }" (click)="onToggleTodo(todo)" aria-label="toggle todo">
+            &nbsp;{{todo.name}}&nbsp;
+          </span>
+        </mat-card>
+        <br>
+        <br>
+      </div>
+  </ng-container>
     <div class="offset-md-1 col-md-5" [ngClass]="routeAnimationsElements">
       <h2>{{ 'anms.examples.todos.example' | translate }}</h2>
       <p>
@@ -80,4 +82,5 @@
       <br>
     </div>
   </div>
+
 </div>

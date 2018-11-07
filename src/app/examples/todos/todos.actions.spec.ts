@@ -1,7 +1,6 @@
 import {
   ActionTodosAdd,
   ActionTodosFilter,
-  ActionTodosPersist,
   ActionTodosRemoveDone,
   ActionTodosToggle,
   TodosActionTypes
@@ -49,19 +48,6 @@ describe('Todos Actions', () => {
       expect({ ...action }).toEqual({
         type: TodosActionTypes.FILTER,
         payload: { filter: 'DONE' }
-      });
-    });
-  });
-
-  describe('ActionTodosPersist', () => {
-    it('should create an action', () => {
-      const action = new ActionTodosPersist({
-        todos: { filter: 'ALL', items: [] }
-      });
-
-      expect({ ...action }).toEqual({
-        type: TodosActionTypes.PERSIST,
-        payload: { todos: { filter: 'ALL', items: [] } }
       });
     });
   });

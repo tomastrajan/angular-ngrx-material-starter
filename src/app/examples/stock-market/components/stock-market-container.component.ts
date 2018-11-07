@@ -1,12 +1,7 @@
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  ChangeDetectionStrategy
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Subject, Observable } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
 
@@ -21,32 +16,17 @@ import { State } from '../../examples.state';
   styleUrls: ['./stock-market-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class StockMarketContainerComponent implements OnInit, OnDestroy {
-  private unsubscribe$: Subject<void> = new Subject<void>();
-  private initialized: boolean;
-
-  stocks$: Observable<StockMarketState> = this.store.pipe(
-    select(selectStockMarket)
-  );
+export class StockMarketContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
+  stocks$: Observable<StockMarketState>;
 
   constructor(public store: Store<State>) {}
 
   ngOnInit() {
-    this.initialized = false;
-    this.stocks$.pipe(takeUntil(this.unsubscribe$)).subscribe(stocks => {
-      if (!this.initialized) {
-        this.initialized = true;
-        this.store.dispatch(
-          new ActionStockMarketRetrieve({ symbol: stocks.symbol })
-        );
-      }
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+    this.stocks$ = this.store.pipe(select(selectStockMarket));
+    this.stocks$
+      .pipe(take(1))
+      .subscribe(stocks => this.onSymbolChange(stocks.symbol));
   }
 
   onSymbolChange(symbol: string) {

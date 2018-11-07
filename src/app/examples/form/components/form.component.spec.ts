@@ -6,7 +6,8 @@ import {
 } from '@angular-extensions/testing-library';
 
 import { MockStore, TestingModule } from '@testing/utils';
-import { NotificationService } from '@app/core/notifications/notification.service';
+import { NotificationService } from '@app/core';
+
 import { State } from '../../examples.state';
 import { FormState } from '../form.model';
 import { FormComponent } from './form.component';

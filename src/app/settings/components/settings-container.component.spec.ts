@@ -48,13 +48,6 @@ describe('SettingsComponent', () => {
     fixture.detectChanges();
   }));
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-    expect(component.settings.theme).toBe('DEFAULT-THEME');
-    expect(component.settings.autoNightMode).toBeTruthy();
-    expect(component.settings.pageAnimations).toBeTruthy();
-  });
-
   it('should dispatch change sticky header on sticky header toggle', () => {
     dispatchSpy = spyOn(store, 'dispatch');
     const componentDebug = fixture.debugElement;
@@ -63,7 +56,7 @@ describe('SettingsComponent', () => {
     slider.triggerEventHandler('change', { checked: false });
     fixture.detectChanges();
 
-    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
       new ActionSettingsChangeStickyHeader({ stickyHeader: false })
     );
@@ -79,7 +72,7 @@ describe('SettingsComponent', () => {
 
     fixture.detectChanges();
 
-    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
       new ActionSettingsChangeTheme({ theme: 'LIGHT-THEME' })
     );
@@ -93,7 +86,7 @@ describe('SettingsComponent', () => {
     slider.triggerEventHandler('change', { checked: false });
     fixture.detectChanges();
 
-    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
       new ActionSettingsChangeAutoNightMode({ autoNightMode: false })
     );
@@ -107,7 +100,7 @@ describe('SettingsComponent', () => {
     slider.triggerEventHandler('change', { checked: false });
     fixture.detectChanges();
 
-    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
       new ActionSettingsChangeAnimationsPage({ pageAnimations: false })
     );
@@ -121,7 +114,7 @@ describe('SettingsComponent', () => {
     slider.triggerEventHandler('change', { checked: false });
     fixture.detectChanges();
 
-    expect(dispatchSpy).toHaveBeenCalledTimes(2);
+    expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
       new ActionSettingsChangeAnimationsElements({ elementsAnimations: false })
     );

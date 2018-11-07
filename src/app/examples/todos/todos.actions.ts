@@ -7,8 +7,7 @@ export enum TodosActionTypes {
   ADD = '[Todos] Add',
   TOGGLE = '[Todos] Toggle',
   REMOVE_DONE = '[Todos] Remove Done',
-  FILTER = '[Todos] Filter',
-  PERSIST = '[Todos] Persist'
+  FILTER = '[Todos] Filter'
 }
 
 export class ActionTodosAdd implements Action {
@@ -36,15 +35,8 @@ export class ActionTodosFilter implements Action {
   constructor(readonly payload: { filter: TodosFilter }) {}
 }
 
-export class ActionTodosPersist implements Action {
-  readonly type = TodosActionTypes.PERSIST;
-
-  constructor(readonly payload: { todos: TodosState }) {}
-}
-
 export type TodosActions =
   | ActionTodosAdd
   | ActionTodosToggle
   | ActionTodosRemoveDone
-  | ActionTodosFilter
-  | ActionTodosPersist;
+  | ActionTodosFilter;

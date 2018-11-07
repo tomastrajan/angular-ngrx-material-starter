@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
-import { NotificationService } from '@app/core/notifications/notification.service';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+
+import { ROUTE_ANIMATIONS_ELEMENTS, NotificationService } from '@app/core';
 
 @Component({
   selector: 'anms-notifications',
   templateUrl: './notifications.component.html',
-  styleUrls: ['./notifications.component.scss']
+  styleUrls: ['./notifications.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NotificationsComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;

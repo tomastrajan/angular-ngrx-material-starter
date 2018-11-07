@@ -1,9 +1,14 @@
 import { Router } from '@angular/router';
-import { LocalStorageService } from '@app/core';
-import { ActionAuthLogin, ActionAuthLogout } from '@app/core/auth/auth.actions';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { cold } from 'jasmine-marbles';
 import { EMPTY } from 'rxjs';
+
+import {
+  LocalStorageService,
+  ActionAuthLogin,
+  ActionAuthLogout
+} from '@app/core';
+
 import { AuthEffects, AUTH_KEY } from './auth.effects';
 
 describe('AuthEffects', () => {

@@ -8,6 +8,7 @@ import {
 } from '@angular-extensions/testing-library';
 
 import { MockStore, TestingModule } from '@testing/utils';
+import { NotificationService } from '@app/core';
 
 import {
   ActionTodosFilter,
@@ -17,7 +18,6 @@ import {
 import { TodosState } from '../todos.model';
 import { TodosContainerComponent } from './todos-container.component';
 import { State } from '../../examples.state';
-import { NotificationService } from '@app/core/notifications/notification.service';
 
 describe('TodosComponent', () => {
   let component: RenderResult;

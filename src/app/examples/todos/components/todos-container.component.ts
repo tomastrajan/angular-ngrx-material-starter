@@ -1,30 +1,18 @@
-import {
-  Component,
-  OnDestroy,
-  OnInit,
-  ChangeDetectionStrategy
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { select, Store } from '@ngrx/store';
-import { Subject, Observable } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
-import { NotificationService } from '@app/core/notifications/notification.service';
+import { ROUTE_ANIMATIONS_ELEMENTS, NotificationService } from '@app/core';
 
 import {
   ActionTodosAdd,
   ActionTodosFilter,
-  ActionTodosPersist,
   ActionTodosRemoveDone,
   ActionTodosToggle
 } from '../todos.actions';
-import {
-  selectTodos,
-  selectTodosState,
-  selectRemoveDoneTodosDisabled
-} from '../todos.selectors';
+import { selectTodos, selectRemoveDoneTodosDisabled } from '../todos.selectors';
 import { Todo, TodosFilter } from '../todos.model';
 import { State } from '../../examples.state';
 
@@ -34,12 +22,10 @@ import { State } from '../../examples.state';
   styleUrls: ['./todos-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TodosContainerComponent implements OnInit, OnDestroy {
-  private unsubscribe$: Subject<void> = new Subject<void>();
-
+export class TodosContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  todos: Observable<Todo[]>;
-  removeDoneDisabled: Observable<boolean>;
+  todos$: Observable<Todo[]>;
+  removeDoneDisabled$: Observable<boolean>;
   newTodo = '';
 
   constructor(
@@ -50,24 +36,10 @@ export class TodosContainerComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.store
-      .pipe(
-        select(selectTodosState),
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe(todos => {
-        this.store.dispatch(new ActionTodosPersist({ todos }));
-      });
-
-    this.todos = this.store.pipe(select(selectTodos));
-    this.removeDoneDisabled = this.store.pipe(
+    this.todos$ = this.store.pipe(select(selectTodos));
+    this.removeDoneDisabled$ = this.store.pipe(
       select(selectRemoveDoneTodosDisabled)
     );
-  }
-
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
   }
 
   get isAddTodoDisabled() {

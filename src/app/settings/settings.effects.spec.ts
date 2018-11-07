@@ -1,14 +1,18 @@
 import { AnimationsService, LocalStorageService } from '@app/core';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { cold } from 'jasmine-marbles';
-import { EMPTY } from 'rxjs';
-import { ActionSettingsPersist } from './settings.actions';
+import { of } from 'rxjs';
+
 import { SettingsEffects, SETTINGS_KEY } from './settings.effects';
 import { SettingsState } from './settings.model';
+import { ActionSettingsChangeTheme } from './settings.actions';
+import { Store } from '@ngrx/store';
+import { State } from '@app/examples/examples.state';
 
 describe('SettingsEffects', () => {
   let localStorageService: jasmine.SpyObj<LocalStorageService>;
   let animationsService: jasmine.SpyObj<AnimationsService>;
+  let store: jasmine.SpyObj<Store<State>>;
 
   beforeEach(() => {
     localStorageService = jasmine.createSpyObj('LocalStorageService', [
@@ -17,13 +21,15 @@ describe('SettingsEffects', () => {
     animationsService = jasmine.createSpyObj('AnimationsService', [
       'updateRouteAnimationType'
     ]);
+    store = jasmine.createSpyObj('store', ['pipe']);
   });
 
   describe('persistSettings', () => {
     it('should not dispatch any action', () => {
-      const actions = new Actions(EMPTY);
+      const actions = new Actions();
       const effect = new SettingsEffects(
         actions,
+        store,
         localStorageService,
         animationsService
       );
@@ -43,11 +49,13 @@ describe('SettingsEffects', () => {
       stickyHeader: false,
       pageAnimationsDisabled: true
     };
-    const persistAction = new ActionSettingsPersist({ settings: settings });
+    store.pipe.and.returnValue(of(settings));
+    const persistAction = new ActionSettingsChangeTheme({ theme: 'DEFAULT' });
     const source = cold('a', { a: persistAction });
     const actions = new Actions(source);
     const effect = new SettingsEffects(
       actions,
+      store,
       localStorageService,
       animationsService
     );
@@ -55,7 +63,7 @@ describe('SettingsEffects', () => {
     effect.persistSettings.subscribe(() => {
       expect(localStorageService.setItem).toHaveBeenCalledWith(
         SETTINGS_KEY,
-        persistAction.payload.settings
+        settings
       );
       expect(animationsService.updateRouteAnimationType).toHaveBeenCalledWith(
         true,

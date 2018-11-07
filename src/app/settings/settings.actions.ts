@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { Language, SettingsState } from './settings.model';
+import { Language } from './settings.model';
 
 export enum SettingsActionTypes {
   CHANGE_LANGUAGE = '[Settings] Change Language',
@@ -9,8 +9,7 @@ export enum SettingsActionTypes {
   CHANGE_STICKY_HEADER = '[Settings] Change Sticky Header',
   CHANGE_ANIMATIONS_PAGE = '[Settings] Change Animations Page',
   CHANGE_ANIMATIONS_PAGE_DISABLED = '[Settings] Change Animations Page Disabled',
-  CHANGE_ANIMATIONS_ELEMENTS = '[Settings] Change Animations Elements',
-  PERSIST = '[Settings] Persist'
+  CHANGE_ANIMATIONS_ELEMENTS = '[Settings] Change Animations Elements'
 }
 
 export class ActionSettingsChangeLanguage implements Action {
@@ -55,14 +54,7 @@ export class ActionSettingsChangeAnimationsElements implements Action {
   constructor(readonly payload: { elementsAnimations: boolean }) {}
 }
 
-export class ActionSettingsPersist implements Action {
-  readonly type = SettingsActionTypes.PERSIST;
-
-  constructor(readonly payload: { settings: SettingsState }) {}
-}
-
 export type SettingsActions =
-  | ActionSettingsPersist
   | ActionSettingsChangeLanguage
   | ActionSettingsChangeTheme
   | ActionSettingsChangeAnimationsPage

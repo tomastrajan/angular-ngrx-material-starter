@@ -1,8 +1,8 @@
 import { createSelector } from '@ngrx/store';
 
-import { ExamplesState, selectExamples } from '@app/examples/examples.state';
+import { ExamplesState, selectExamples } from '../examples.state';
 
-export const selectForm = createSelector(
+export const selectFormState = createSelector(
   selectExamples,
   (state: ExamplesState) => state.form
 );

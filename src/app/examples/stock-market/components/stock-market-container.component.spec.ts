@@ -22,7 +22,7 @@ describe('StockMarketContainerComponent', () => {
 
   const getSpinner = () => fixture.debugElement.query(By.css('mat-spinner'));
 
-  const getError = () => fixture.debugElement.query(By.css('.error'));
+  const getError = () => fixture.debugElement.query(By.css('.error-state'));
 
   const getStocks = () =>
     fixture.debugElement.query(By.css('mat-card mat-card-title'));

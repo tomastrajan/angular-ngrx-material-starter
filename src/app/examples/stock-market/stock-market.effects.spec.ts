@@ -9,7 +9,7 @@ import {
 } from './stock-market.actions';
 import { StockMarketEffects, STOCK_MARKET_KEY } from './stock-market.effects';
 import { Stock } from './stock-market.model';
-import { StockMarketService } from '@app/examples/stock-market/stock-market.service';
+import { StockMarketService } from './stock-market.service';
 
 describe('StockMarketEffects', () => {
   let localStorage: jasmine.SpyObj<LocalStorageService>;

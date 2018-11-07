@@ -1,22 +1,16 @@
-import {
-  Component,
-  OnInit,
-  OnDestroy,
-  ChangeDetectionStrategy
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
-import { Subject } from 'rxjs';
-import { takeUntil, filter, debounceTime, take } from 'rxjs/operators';
-
-import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
+import { filter, debounceTime, take } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+
+import { ROUTE_ANIMATIONS_ELEMENTS, NotificationService } from '@app/core';
 
 import { State } from '../../examples.state';
 import { ActionFormUpdate, ActionFormReset } from '../form.actions';
-import { selectForm } from '../form.selectors';
+import { selectFormState } from '../form.selectors';
 import { Form } from '../form.model';
-import { NotificationService } from '@app/core/notifications/notification.service';
 
 @Component({
   selector: 'anms-form',
@@ -24,9 +18,7 @@ import { NotificationService } from '@app/core/notifications/notification.servic
   styleUrls: ['./form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FormComponent implements OnInit, OnDestroy {
-  private unsubscribe$ = new Subject<void>();
-
+export class FormComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
   form = this.fb.group({
@@ -47,6 +39,8 @@ export class FormComponent implements OnInit, OnDestroy {
     rating: [0, Validators.required]
   });
 
+  formValueChanges$: Observable<Form>;
+
   constructor(
     private fb: FormBuilder,
     private store: Store<State>,
@@ -55,31 +49,27 @@ export class FormComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.formValueChanges$ = this.form.valueChanges.pipe(
+      debounceTime(500),
+      filter((form: Form) => form.autosave)
+    );
     this.store
       .pipe(
-        select(selectForm),
+        select(selectFormState),
         take(1)
       )
       .subscribe(form => this.form.patchValue(form.form));
-
-    this.form.valueChanges
-      .pipe(
-        debounceTime(500),
-        filter((form: Form) => form.autosave),
-        takeUntil(this.unsubscribe$)
-      )
-      .subscribe((form: Form) =>
-        this.store.dispatch(new ActionFormUpdate({ form }))
-      );
   }
 
-  ngOnDestroy(): void {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
-    this.form = null;
+  update(form: Form) {
+    this.store.dispatch(new ActionFormUpdate({ form }));
   }
 
-  onSubmit() {
+  save() {
+    this.store.dispatch(new ActionFormUpdate({ form: this.form.value }));
+  }
+
+  submit() {
     if (this.form.valid) {
       this.save();
       this.notificationService.info(
@@ -90,10 +80,6 @@ export class FormComponent implements OnInit, OnDestroy {
           this.translate.instant('anms.examples.form.text6')
       );
     }
-  }
-
-  save() {
-    this.store.dispatch(new ActionFormUpdate({ form: this.form.value }));
   }
 
   reset() {

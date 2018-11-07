@@ -23,7 +23,6 @@ import {
   NIGHT_MODE_THEME,
   selectSettings,
   SettingsState,
-  ActionSettingsPersist,
   ActionSettingsChangeLanguage,
   ActionSettingsChangeAnimationsPageDisabled
 } from './settings';
@@ -102,7 +101,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
   onLanguageSelect({ value: language }) {
     this.store.dispatch(new ActionSettingsChangeLanguage({ language }));
-    this.store.dispatch(new ActionSettingsPersist({ settings: this.settings }));
   }
 
   private subscribeToIsAuthenticated() {

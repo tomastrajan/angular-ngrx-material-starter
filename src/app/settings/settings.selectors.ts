@@ -10,3 +10,8 @@ export const selectSettings = createSelector(
   selectSettingsState,
   (state: SettingsState) => state
 );
+
+export const selectSettingsLanguage = createSelector(
+  selectSettings,
+  (state: SettingsState) => state.language
+);
