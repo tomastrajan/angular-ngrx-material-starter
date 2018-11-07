@@ -1,4 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef
+} from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -21,7 +27,8 @@ import { selectSettings } from '../settings.selectors';
 @Component({
   selector: 'anms-settings',
   templateUrl: './settings-container.component.html',
-  styleUrls: ['./settings-container.component.scss']
+  styleUrls: ['./settings-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SettingsContainerComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();
@@ -44,16 +51,19 @@ export class SettingsContainerComponent implements OnInit, OnDestroy {
     { value: 'pt-br', label: 'pt-br' }
   ];
 
-  constructor(private store: Store<{}>) {
-    store
+  constructor(private store: Store<{}>, private cd: ChangeDetectorRef) {}
+
+  ngOnInit() {
+    this.store
       .pipe(
         select(selectSettings),
         takeUntil(this.unsubscribe$)
       )
-      .subscribe(settings => (this.settings = settings));
+      .subscribe(settings => {
+        this.settings = settings;
+        this.cd.markForCheck();
+      });
   }
-
-  ngOnInit() {}
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();

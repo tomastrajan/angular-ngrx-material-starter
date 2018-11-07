@@ -8,7 +8,11 @@
       "sourceRoot": "src",
       "projectType": "application",
       "prefix": "anms",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "changeDetection": "OnPush"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

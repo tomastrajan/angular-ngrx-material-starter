@@ -4,7 +4,7 @@
     <div class="col-md-6">
       <h2>{{ 'anms.examples.crud.subtitle1' | translate }}</h2>
       <mat-card *ngFor="let book of books$ | async" [ngClass]="routeAnimationsElements"
-        (click)="select(book.id)" data-testid="crud-item">
+        (click)=select(book) data-testid="crud-item">
         <h3 data-testid="item-title">{{book.title}}</h3>
         <small>{{book.author}}</small>
       </mat-card>
@@ -18,13 +18,13 @@
       <span class="d-flex justify-content-between">
         <h2>{{ 'anms.examples.crud.subtitle2' | translate }}</h2>
         <span class="d-flex justify-content-end">
-          <span *ngIf="selectedBook">
+          <span *ngIf="selectedBook$ | async as selectedBook">
             <button mat-icon-button color="accent" *ngIf="!isEditing" data-testid="edit-crud">
-              <fa-icon icon="edit" (click)="edit()" [matTooltip]="'anms.examples.crud.tooltip.edit' | translate"
+              <fa-icon icon="edit" (click)="edit(selectedBook)" [matTooltip]="'anms.examples.crud.tooltip.edit' | translate"
                 matTooltipPosition="above">
               </fa-icon>
             </button>
-            <button mat-icon-button color="warn" (click)="delete()" data-testid="delete-crud">
+            <button mat-icon-button color="warn" (click)="delete(selectedBook)" data-testid="delete-crud">
               <fa-icon icon="trash" [matTooltip]="'anms.examples.crud.tooltip.delete' | translate"
                 matTooltipPosition="above">
               </fa-icon>
@@ -82,16 +82,20 @@
         </div>
       </form>
 
-      <div [ngClass]="routeAnimationsElements" *ngIf="!isEditing && selectedBook">
-        <h3>{{ selectedBook.title }}</h3>
-        <mat-divider></mat-divider>
-        <p>{{ selectedBook.description }}</p>
-        <i>{{ selectedBook.author }}</i>
-      </div>
+      <ng-container *ngIf="!isEditing">
+        <div [ngClass]="routeAnimationsElements" *ngIf="selectedBook$ | async as selectedBook; else noSelectedBookTmpl">
+          <h3>{{ selectedBook.title }}</h3>
+          <mat-divider></mat-divider>
+          <p>{{ selectedBook.description }}</p>
+          <i>{{ selectedBook.author }}</i>
+        </div>
 
-      <p *ngIf="!isEditing && !selectedBook" [ngClass]="routeAnimationsElements">
-        {{'anms.examples.crud.text' | translate }} <code>@ngrx/entity</code>.
-      </p>
+        <ng-template #noSelectedBookTmpl>
+          <p [ngClass]="routeAnimationsElements">
+            {{'anms.examples.crud.text' | translate }} <code>@ngrx/entity</code>.
+          </p>
+        </ng-template>
+      </ng-container>
 
     </div>
   </div>

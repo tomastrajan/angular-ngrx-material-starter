@@ -1,10 +1,17 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  Component,
+  OnDestroy,
+  OnInit,
+  ChangeDetectionStrategy
+} from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { select, Store } from '@ngrx/store';
 import { Subject, Observable } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
+import { NotificationService } from '@app/core/notifications/notification.service';
 
 import {
   ActionTodosAdd,
@@ -20,13 +27,12 @@ import {
 } from '../todos.selectors';
 import { Todo, TodosFilter } from '../todos.model';
 import { State } from '../../examples.state';
-import { TranslateService } from '@ngx-translate/core';
-import { NotificationService } from '@app/core/notifications/notification.service';
 
 @Component({
   selector: 'anms-todos',
   templateUrl: './todos-container.component.html',
-  styleUrls: ['./todos-container.component.scss']
+  styleUrls: ['./todos-container.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodosContainerComponent implements OnInit, OnDestroy {
   private unsubscribe$: Subject<void> = new Subject<void>();

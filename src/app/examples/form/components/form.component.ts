@@ -1,4 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
 import { Subject } from 'rxjs';
@@ -16,7 +21,8 @@ import { NotificationService } from '@app/core/notifications/notification.servic
 @Component({
   selector: 'anms-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  styleUrls: ['./form.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormComponent implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject<void>();
