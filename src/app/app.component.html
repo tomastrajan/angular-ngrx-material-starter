@@ -1,3 +1,13 @@
+<ng-container *ngIf="settings$ | async as settings">
+  {{onSettings(settings)}}
+</ng-container>
+<ng-container *ngIf="navigationEnd$ | async as event">
+  {{onNavigationEnd(event)}}
+</ng-container>
+<ng-container *ngIf="activatedRouteSnapshot$ | async as snapshot">
+  {{onActivatedRouteSnapshot(snapshot)}}
+</ng-container>
+
 <mat-sidenav-container>
 
   <mat-sidenav #sidenav mode="push">
@@ -16,7 +26,7 @@
 
   <div class="wrapper">
 
-    <div class="toolbar" [style.position]="isHeaderSticky ? 'fixed' : 'inherit'" [class.mat-elevation-z4]="isHeaderSticky">
+    <div class="toolbar" [style.position]="(settings$ | async)?.stickyHeader ? 'fixed' : 'inherit'" [class.mat-elevation-z4]="isHeaderSticky">
       <mat-toolbar color="primary">
         <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
           <fa-icon icon="bars"></fa-icon>
@@ -37,7 +47,7 @@
           </button>
         </span>
 
-        <button mat-button mat-stroked-button color="accent" *ngIf="!isAuthenticated" (click)="onLoginClick()">
+        <button mat-button mat-stroked-button color="accent" *ngIf="!(isAuthenticated$ | async)" (click)="onLoginClick()">
           {{ 'anms.menu.login' | translate }}
         </button>
 
@@ -66,8 +76,8 @@
           <fa-icon [icon]="['fab','github']"></fa-icon>
         </a>
 
-        <span>
-          <mat-select [ngModel]="settings?.language" (selectionChange)="onLanguageSelect($event)">
+        <span *ngIf="settings$ | async as settings">
+          <mat-select [ngModel]="settings.language" (selectionChange)="onLanguageSelect($event)">
             <mat-option *ngFor="let l of languages" [value]="l">
               {{ l.toUpperCase() }}
             </mat-option>

@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { select, Store } from '@ngrx/store';
+import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 import { ROUTE_ANIMATIONS_ELEMENTS, NotificationService } from '@app/core';
@@ -81,6 +82,7 @@ export class TodosContainerComponent implements OnInit {
         panelClass: 'todos-notification-overlay'
       })
       .onAction()
+      .pipe(take(1))
       .subscribe(() => this.onToggleTodo({ ...todo, done: !todo.done }));
   }
 
