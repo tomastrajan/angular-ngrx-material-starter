@@ -47,9 +47,11 @@ describe('SettingsEffects', () => {
       pageAnimations: true,
       elementsAnimations: true,
       theme: 'default',
+      nightTheme: 'default',
       autoNightMode: false,
       stickyHeader: false,
-      pageAnimationsDisabled: true
+      pageAnimationsDisabled: true,
+      hour: 12
     };
     store.pipe.and.returnValue(of(settings));
     const persistAction = new ActionSettingsChangeTheme({ theme: 'DEFAULT' });

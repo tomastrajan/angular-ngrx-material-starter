@@ -1,14 +1,25 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { tap, withLatestFrom, map, distinctUntilChanged } from 'rxjs/operators';
+import { interval } from 'rxjs';
+import {
+  tap,
+  withLatestFrom,
+  map,
+  distinctUntilChanged,
+  mapTo
+} from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 import { LocalStorageService, AnimationsService } from '@app/core';
 
-import { SettingsActionTypes, SettingsActions } from './settings.actions';
+import {
+  SettingsActionTypes,
+  SettingsActions,
+  ActionSettingsChangeHour
+} from './settings.actions';
 import { State } from './settings.model';
 import { selectSettingsState } from './settings.selectors';
-import { TranslateService } from '@ngx-translate/core';
 
 export const SETTINGS_KEY = 'SETTINGS';
 
@@ -50,5 +61,12 @@ export class SettingsEffects {
     map(settings => settings.language),
     distinctUntilChanged(),
     tap(language => this.translate.use(language))
+  );
+
+  @Effect()
+  changeLanguages = interval(60_000).pipe(
+    mapTo(new Date().getHours()),
+    distinctUntilChanged(),
+    map(hour => new ActionSettingsChangeHour({ hour }))
   );
 }

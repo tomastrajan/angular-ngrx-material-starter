@@ -8,7 +8,7 @@
   {{onActivatedRouteSnapshot(snapshot)}}
 </ng-container>
 
-<mat-sidenav-container>
+<mat-sidenav-container [class]="theme$ | async">
 
   <mat-sidenav #sidenav mode="push">
     <div class="branding"><img [src]="logo" />
