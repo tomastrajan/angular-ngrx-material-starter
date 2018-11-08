@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Action, select, Store } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { tap, withLatestFrom } from 'rxjs/operators';
+import { tap, withLatestFrom, map, distinctUntilChanged } from 'rxjs/operators';
 
 import { LocalStorageService, AnimationsService } from '@app/core';
 
-import { SettingsActionTypes } from './settings.actions';
+import { SettingsActionTypes, SettingsActions } from './settings.actions';
 import { State } from './settings.model';
 import { selectSettingsState } from './settings.selectors';
+import { TranslateService } from '@ngx-translate/core';
 
 export const SETTINGS_KEY = 'SETTINGS';
 
 @Injectable()
 export class SettingsEffects {
   constructor(
-    private actions$: Actions<Action>,
+    private actions$: Actions<SettingsActions>,
     private store: Store<State>,
     private localStorageService: LocalStorageService,
-    private animationsService: AnimationsService
+    private animationsService: AnimationsService,
+    private translate: TranslateService
   ) {}
 
   @Effect({ dispatch: false })
@@ -40,5 +42,13 @@ export class SettingsEffects {
         elementsAnimations
       );
     })
+  );
+
+  @Effect({ dispatch: false })
+  changeLanguage = this.store.pipe(
+    select(selectSettingsState),
+    map(settings => settings.language),
+    distinctUntilChanged(),
+    tap(language => this.translate.use(language))
   );
 }

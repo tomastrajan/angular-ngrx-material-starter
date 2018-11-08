@@ -24,6 +24,7 @@ import { FormComponent } from './form/components/form.component';
 import { FormEffects } from './form/form.effects';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { NotificationsComponent } from './notifications/components/notifications.component';
+import { SettingsEffects } from './examples.effects';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { NotificationsComponent } from './notifications/components/notifications
       isolate: true
     }),
     EffectsModule.forFeature([
+      SettingsEffects,
       TodosEffects,
       StockMarketEffects,
       BooksEffects,

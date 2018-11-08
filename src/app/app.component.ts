@@ -7,7 +7,6 @@ import {
 import browser from 'browser-detect';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { delay, filter, map } from 'rxjs/operators';
@@ -69,13 +68,12 @@ export class AppComponent implements OnInit {
     private router: Router,
     private titleService: TitleService,
     private animationService: AnimationsService,
-    private translate: TranslateService,
     private storageService: LocalStorageService
   ) {}
 
   private static trackPageView(event: NavigationEnd) {
-    (<any>window).ga('set', 'page', event.urlAfterRedirects);
-    (<any>window).ga('send', 'pageview');
+    // (<any>window).ga('set', 'page', event.urlAfterRedirects);
+    // (<any>window).ga('send', 'pageview');
   }
 
   private static isIEorEdgeOrSafari() {
@@ -83,7 +81,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.translate.setDefaultLang('en');
     this.storageService.testLocalStorage();
     if (AppComponent.isIEorEdgeOrSafari()) {
       this.store.dispatch(
@@ -106,7 +103,6 @@ export class AppComponent implements OnInit {
 
   onSettings(settings: SettingsState) {
     this.setTheme(settings);
-    this.setLanguage(settings);
     this.animationService.updateRouteAnimationType(
       settings.pageAnimations,
       settings.elementsAnimations
@@ -149,12 +145,5 @@ export class AppComponent implements OnInit {
       classList.remove(...toRemove);
     }
     classList.add(effectiveTheme);
-  }
-
-  private setLanguage(settings: SettingsState) {
-    const { language } = settings;
-    if (language) {
-      this.translate.use(language);
-    }
   }
 }
