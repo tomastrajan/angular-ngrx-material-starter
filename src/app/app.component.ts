@@ -69,11 +69,6 @@ export class AppComponent implements OnInit {
     private storageService: LocalStorageService
   ) {}
 
-  private static trackPageView(event: NavigationEnd) {
-    // (<any>window).ga('set', 'page', event.urlAfterRedirects);
-    // (<any>window).ga('send', 'pageview');
-  }
-
   private static isIEorEdgeOrSafari() {
     return ['ie', 'edge', 'safari'].includes(browser().name);
   }
@@ -91,9 +86,6 @@ export class AppComponent implements OnInit {
     this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
     this.settings$ = this.store.pipe(select(selectSettings));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
-    this.navigationEnd$ = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ) as Observable<NavigationEnd>;
     this.activatedRouteSnapshot$ = this.router.events.pipe(
       filter(event => event instanceof ActivationEnd),
       map((event: ActivationEnd) => event.snapshot)
@@ -105,10 +97,6 @@ export class AppComponent implements OnInit {
       settings.pageAnimations,
       settings.elementsAnimations
     );
-  }
-
-  onNavigationEnd(event: NavigationEnd) {
-    AppComponent.trackPageView(event);
   }
 
   onActivatedRouteSnapshot(snapshot: ActivatedRouteSnapshot) {

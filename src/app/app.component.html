@@ -1,9 +1,6 @@
 <ng-container *ngIf="settings$ | async as settings">
   {{onSettings(settings)}}
 </ng-container>
-<ng-container *ngIf="navigationEnd$ | async as event">
-  {{onNavigationEnd(event)}}
-</ng-container>
 <ng-container *ngIf="activatedRouteSnapshot$ | async as snapshot">
   {{onActivatedRouteSnapshot(snapshot)}}
 </ng-container>
