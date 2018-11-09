@@ -80,7 +80,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.10.4",
     "@angular-extensions/testing-library": "^3.0.3",
-    "@angular/cli": "^7.0.4",
+    "@angular/cli": "^7.0.5",
     "@angular/compiler-cli": "^7.0.3",
     "@angular/language-service": "^7.0.3",
     "@bahmutov/add-typescript-to-cypress": "^2.0.0",
