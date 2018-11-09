@@ -5,9 +5,10 @@ import { of } from 'rxjs';
 
 import { SettingsEffects, SETTINGS_KEY } from './settings.effects';
 import { SettingsState } from './settings.model';
-import { ActionSettingsChangeTheme } from './settings.actions';
+import { ActionSettingsChangeTheme, SettingsActions } from './settings.actions';
 import { Store } from '@ngrx/store';
 import { State } from '@app/examples/examples.state';
+import { TranslateService } from '@ngx-translate/core';
 
 describe('SettingsEffects', () => {
   let localStorageService: jasmine.SpyObj<LocalStorageService>;
@@ -26,12 +27,13 @@ describe('SettingsEffects', () => {
 
   describe('persistSettings', () => {
     it('should not dispatch any action', () => {
-      const actions = new Actions();
+      const actions = new Actions<SettingsActions>();
       const effect = new SettingsEffects(
         actions,
         store,
         localStorageService,
-        animationsService
+        animationsService,
+        jasmine.createSpyObj('Translate', ['use'])
       );
       const metadata = getEffectsMetadata(effect);
 
@@ -45,9 +47,11 @@ describe('SettingsEffects', () => {
       pageAnimations: true,
       elementsAnimations: true,
       theme: 'default',
+      nightTheme: 'default',
       autoNightMode: false,
       stickyHeader: false,
-      pageAnimationsDisabled: true
+      pageAnimationsDisabled: true,
+      hour: 12
     };
     store.pipe.and.returnValue(of(settings));
     const persistAction = new ActionSettingsChangeTheme({ theme: 'DEFAULT' });
@@ -57,7 +61,8 @@ describe('SettingsEffects', () => {
       actions,
       store,
       localStorageService,
-      animationsService
+      animationsService,
+      jasmine.createSpyObj('Translate', ['use'])
     );
 
     effect.persistSettings.subscribe(() => {
