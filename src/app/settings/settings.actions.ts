@@ -9,7 +9,8 @@ export enum SettingsActionTypes {
   CHANGE_STICKY_HEADER = '[Settings] Change Sticky Header',
   CHANGE_ANIMATIONS_PAGE = '[Settings] Change Animations Page',
   CHANGE_ANIMATIONS_PAGE_DISABLED = '[Settings] Change Animations Page Disabled',
-  CHANGE_ANIMATIONS_ELEMENTS = '[Settings] Change Animations Elements'
+  CHANGE_ANIMATIONS_ELEMENTS = '[Settings] Change Animations Elements',
+  CHANGE_HOUR = '[Settings] Change Hours'
 }
 
 export class ActionSettingsChangeLanguage implements Action {
@@ -54,6 +55,12 @@ export class ActionSettingsChangeAnimationsElements implements Action {
   constructor(readonly payload: { elementsAnimations: boolean }) {}
 }
 
+export class ActionSettingsChangeHour implements Action {
+  readonly type = SettingsActionTypes.CHANGE_HOUR;
+
+  constructor(readonly payload: { hour: number }) {}
+}
+
 export type SettingsActions =
   | ActionSettingsChangeLanguage
   | ActionSettingsChangeTheme
@@ -61,4 +68,5 @@ export type SettingsActions =
   | ActionSettingsChangeAnimationsPageDisabled
   | ActionSettingsChangeAnimationsElements
   | ActionSettingsChangeAutoNightMode
-  | ActionSettingsChangeStickyHeader;
+  | ActionSettingsChangeStickyHeader
+  | ActionSettingsChangeHour;

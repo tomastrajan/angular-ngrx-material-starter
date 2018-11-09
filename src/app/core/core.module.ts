@@ -23,6 +23,7 @@ import { reducers, metaReducers } from './core.state';
 import { AppErrorHandler } from './error-handler/app-error-handler.service';
 import { CustomSerializer } from './router/custom-serializer';
 import { NotificationService } from './notifications/notification.service';
+import { GoogleAnalyticsEffects } from './google-analytics/google-analytics.effects';
 
 @NgModule({
   imports: [
@@ -33,7 +34,7 @@ import { NotificationService } from './notifications/notification.service';
     // ngrx
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreRouterConnectingModule.forRoot(),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, GoogleAnalyticsEffects]),
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({

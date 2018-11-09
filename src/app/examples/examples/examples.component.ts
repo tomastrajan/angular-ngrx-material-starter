@@ -1,6 +1,5 @@
 import { Store, select } from '@ngrx/store';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRouteSnapshot, ActivationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
@@ -40,16 +39,11 @@ export class ExamplesComponent implements OnInit {
   constructor(
     private store: Store<State>,
     private router: Router,
-    private titleService: TitleService,
-    private translate: TranslateService
+    private titleService: TitleService
   ) {}
 
   ngOnInit(): void {
-    this.titleService.setTitle(
-      this.router.routerState.snapshot.root,
-      this.translate
-    );
-    this.translate.setDefaultLang('en');
+    this.titleService.setTitle(this.router.routerState.snapshot.root);
 
     this.isAuthenticated$ = this.store.pipe(
       select(selectAuth),
@@ -60,13 +54,5 @@ export class ExamplesComponent implements OnInit {
       filter(event => event instanceof ActivationEnd),
       map((event: ActivationEnd) => event.snapshot)
     );
-  }
-
-  updateLanguage(language: string) {
-    this.translate.use(language);
-  }
-
-  updateTitle(activatedRouteSnapshot: ActivatedRouteSnapshot) {
-    this.titleService.setTitle(activatedRouteSnapshot, this.translate);
   }
 }

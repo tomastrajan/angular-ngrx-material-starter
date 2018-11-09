@@ -7,10 +7,9 @@ import {
 import browser from 'browser-detect';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { delay, filter, map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 import {
   ActionAuthLogin,
@@ -25,11 +24,11 @@ import {
 import { environment as env } from '@env/environment';
 
 import {
-  NIGHT_MODE_THEME,
   selectSettings,
   SettingsState,
   ActionSettingsChangeLanguage,
-  ActionSettingsChangeAnimationsPageDisabled
+  ActionSettingsChangeAnimationsPageDisabled,
+  selectEffectiveTheme
 } from './settings';
 
 @Component({
@@ -39,9 +38,6 @@ import {
   animations: [routeAnimations]
 })
 export class AppComponent implements OnInit {
-  @HostBinding('class')
-  componentCssClass;
-
   isProd = env.production;
   envName = env.envName;
   version = env.versions.app;
@@ -62,6 +58,7 @@ export class AppComponent implements OnInit {
   settings$: Observable<SettingsState>;
   navigationEnd$: Observable<NavigationEnd>;
   activatedRouteSnapshot$: Observable<ActivatedRouteSnapshot>;
+  theme$: Observable<string>;
 
   constructor(
     public overlayContainer: OverlayContainer,
@@ -69,21 +66,14 @@ export class AppComponent implements OnInit {
     private router: Router,
     private titleService: TitleService,
     private animationService: AnimationsService,
-    private translate: TranslateService,
     private storageService: LocalStorageService
   ) {}
-
-  private static trackPageView(event: NavigationEnd) {
-    (<any>window).ga('set', 'page', event.urlAfterRedirects);
-    (<any>window).ga('send', 'pageview');
-  }
 
   private static isIEorEdgeOrSafari() {
     return ['ie', 'edge', 'safari'].includes(browser().name);
   }
 
   ngOnInit(): void {
-    this.translate.setDefaultLang('en');
     this.storageService.testLocalStorage();
     if (AppComponent.isIEorEdgeOrSafari()) {
       this.store.dispatch(
@@ -95,9 +85,7 @@ export class AppComponent implements OnInit {
 
     this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
     this.settings$ = this.store.pipe(select(selectSettings));
-    this.navigationEnd$ = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ) as Observable<NavigationEnd>;
+    this.theme$ = this.store.pipe(select(selectEffectiveTheme));
     this.activatedRouteSnapshot$ = this.router.events.pipe(
       filter(event => event instanceof ActivationEnd),
       map((event: ActivationEnd) => event.snapshot)
@@ -105,16 +93,10 @@ export class AppComponent implements OnInit {
   }
 
   onSettings(settings: SettingsState) {
-    this.setTheme(settings);
-    this.setLanguage(settings);
     this.animationService.updateRouteAnimationType(
       settings.pageAnimations,
       settings.elementsAnimations
     );
-  }
-
-  onNavigationEnd(event: NavigationEnd) {
-    AppComponent.trackPageView(event);
   }
 
   onActivatedRouteSnapshot(snapshot: ActivatedRouteSnapshot) {
@@ -131,30 +113,5 @@ export class AppComponent implements OnInit {
 
   onLanguageSelect({ value: language }) {
     this.store.dispatch(new ActionSettingsChangeLanguage({ language }));
-  }
-
-  private setTheme(settings: SettingsState) {
-    const { theme, autoNightMode } = settings;
-    const hours = new Date().getHours();
-    const effectiveTheme = (autoNightMode && (hours >= 20 || hours <= 6)
-      ? NIGHT_MODE_THEME
-      : theme
-    ).toLowerCase();
-    setTimeout(() => (this.componentCssClass = effectiveTheme));
-    const classList = this.overlayContainer.getContainerElement().classList;
-    const toRemove = Array.from(classList).filter((item: string) =>
-      item.includes('-theme')
-    );
-    if (toRemove.length) {
-      classList.remove(...toRemove);
-    }
-    classList.add(effectiveTheme);
-  }
-
-  private setLanguage(settings: SettingsState) {
-    const { language } = settings;
-    if (language) {
-      this.translate.use(language);
-    }
   }
 }

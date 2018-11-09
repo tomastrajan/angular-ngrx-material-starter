@@ -1,14 +1,11 @@
 <ng-container *ngIf="settings$ | async as settings">
   {{onSettings(settings)}}
 </ng-container>
-<ng-container *ngIf="navigationEnd$ | async as event">
-  {{onNavigationEnd(event)}}
-</ng-container>
 <ng-container *ngIf="activatedRouteSnapshot$ | async as snapshot">
   {{onActivatedRouteSnapshot(snapshot)}}
 </ng-container>
 
-<mat-sidenav-container>
+<mat-sidenav-container [class]="theme$ | async">
 
   <mat-sidenav #sidenav mode="push">
     <div class="branding"><img [src]="logo" />
@@ -26,7 +23,7 @@
 
   <div class="wrapper">
 
-    <div class="toolbar" [style.position]="(settings$ | async)?.stickyHeader ? 'fixed' : 'inherit'" [class.mat-elevation-z4]="isHeaderSticky">
+    <div class="toolbar" [style.position]="(settings$ | async)?.stickyHeader ? 'fixed' : 'inherit'" [class.mat-elevation-z4]="(settings$ | async)?.stickyHeader">
       <mat-toolbar color="primary">
         <button mat-icon-button class="d-md-none" (click)="sidenav.open()">
           <fa-icon icon="bars"></fa-icon>
@@ -51,7 +48,7 @@
           {{ 'anms.menu.login' | translate }}
         </button>
 
-        <button *ngIf="isAuthenticated"
+        <button *ngIf="(isAuthenticated$ | async)"
                 mat-icon-button
                 [matMenuTriggerFor]="toolbarUserMenu">
           <fa-icon icon="user-circle"></fa-icon>
