@@ -11,6 +11,11 @@ export const selectSettings = createSelector(
   (state: SettingsState) => state
 );
 
+export const selectSettingsStickyHeader = createSelector(
+  selectSettings,
+  (state: SettingsState) => state.stickyHeader
+);
+
 export const selectSettingsLanguage = createSelector(
   selectSettings,
   (state: SettingsState) => state.language
@@ -39,7 +44,7 @@ export const selectHour = createSelector(
 export const selectIsNightHour = createSelector(
   selectAutoNightMode,
   selectHour,
-  (autoNightMode, hour) => autoNightMode && (hour >= 20 || hour <= 6)
+  (autoNightMode, hour) => autoNightMode && (hour >= 21 || hour <= 7)
 );
 
 export const selectEffectiveTheme = createSelector(
