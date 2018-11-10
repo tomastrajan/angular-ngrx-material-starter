@@ -272,6 +272,16 @@
         "code",
         "translation"
       ]
+    },
+    {
+      "login": "chauey",
+      "name": "Chau (Joe) Nguyen",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5130533?v=4",
+      "profile": "https://medium.com/@chauey",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
