@@ -30,7 +30,10 @@
     "preaccessibility": "npm run build:prod -- --deploy-url \"/angular-ngrx-material-starter/\" --base-href \"/angular-ngrx-material-starter\"",
     "accessibility": "npm-run-all --parallel --race server accessibility:run",
     "accessibility:run": "pa11y-ci --threshold 250",
-    "compodoc": "compodoc -p src/tsconfig.app.json"
+    "compodoc": "compodoc -p src/tsconfig.app.json",
+    "docker:prod": "docker-compose -f Production.docker-compose.yml build",
+    "docker:prod-up": "docker-compose -f Production.docker-compose.yml up",
+    "docker:prod-down": "docker-compose -f Production.docker-compose.yml down"
   },
   "husky": {
     "hooks": {
