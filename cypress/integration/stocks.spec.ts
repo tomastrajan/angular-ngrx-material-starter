@@ -7,20 +7,23 @@ describe('STOCKS Actions', () => {
     const goodStockSymbol = 'NVDA';
 
     cy.get('input[placeholder="Stock symbol"]').type(
-      '{selectall}' + goodStockSymbol
+      `{selectall}${goodStockSymbol}`
     );
 
-    cy.get('.mat-card-title').should('contain', goodStockSymbol);
+    cy.get('.mat-card-title', { timeout: 10000 }).should(
+      'contain',
+      goodStockSymbol
+    );
   });
 
   it('should display not found error for an invalid stock symbol', () => {
     const badStockSymbol = 'BADSTOCK';
 
     cy.get('input[placeholder="Stock symbol"]').type(
-      '{selectall}' + badStockSymbol
+      `{selectall}${badStockSymbol}`
     );
 
-    cy.get('p.error-state')
+    cy.get('p.error-state', { timeout: 10000 })
       .should('contain', 'not found')
       .should('contain', badStockSymbol);
   });
