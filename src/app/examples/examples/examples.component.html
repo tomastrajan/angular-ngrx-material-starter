@@ -1,7 +1,3 @@
-<ng-container *ngIf="activatedRouteSnapshot$ | async as snapshot">
-  {{updateTitle(snapshot)}}
-</ng-container>
-
 <nav mat-tab-nav-bar class="d-none d-sm-flex">
   <a mat-tab-link
      *ngFor="let e of examples"
@@ -23,8 +19,6 @@
       </mat-option>
     </mat-select>
 </nav>
-
-
 
 <div [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.path">
   <router-outlet #o="outlet"></router-outlet>

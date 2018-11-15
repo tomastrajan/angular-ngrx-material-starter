@@ -1,21 +1,11 @@
-import {
-  ActivationEnd,
-  Router,
-  NavigationEnd,
-  ActivatedRouteSnapshot
-} from '@angular/router';
 import browser from 'browser-detect';
-import { OverlayContainer } from '@angular/cdk/overlay';
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
 
 import {
   ActionAuthLogin,
   ActionAuthLogout,
-  AnimationsService,
-  TitleService,
   routeAnimations,
   AppState,
   LocalStorageService,
@@ -24,11 +14,11 @@ import {
 import { environment as env } from '@env/environment';
 
 import {
-  selectSettings,
-  SettingsState,
   ActionSettingsChangeLanguage,
   ActionSettingsChangeAnimationsPageDisabled,
-  selectEffectiveTheme
+  selectEffectiveTheme,
+  selectSettingsLanguage,
+  selectSettingsStickyHeader
 } from './settings';
 
 @Component({
@@ -55,17 +45,12 @@ export class AppComponent implements OnInit {
   ];
 
   isAuthenticated$: Observable<boolean>;
-  settings$: Observable<SettingsState>;
-  navigationEnd$: Observable<NavigationEnd>;
-  activatedRouteSnapshot$: Observable<ActivatedRouteSnapshot>;
+  stickyHeader$: Observable<boolean>;
+  language$: Observable<string>;
   theme$: Observable<string>;
 
   constructor(
-    public overlayContainer: OverlayContainer,
     private store: Store<AppState>,
-    private router: Router,
-    private titleService: TitleService,
-    private animationService: AnimationsService,
     private storageService: LocalStorageService
   ) {}
 
@@ -84,23 +69,9 @@ export class AppComponent implements OnInit {
     }
 
     this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
-    this.settings$ = this.store.pipe(select(selectSettings));
+    this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
+    this.language$ = this.store.pipe(select(selectSettingsLanguage));
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
-    this.activatedRouteSnapshot$ = this.router.events.pipe(
-      filter(event => event instanceof ActivationEnd),
-      map((event: ActivationEnd) => event.snapshot)
-    );
-  }
-
-  onSettings(settings: SettingsState) {
-    this.animationService.updateRouteAnimationType(
-      settings.pageAnimations,
-      settings.elementsAnimations
-    );
-  }
-
-  onActivatedRouteSnapshot(snapshot: ActivatedRouteSnapshot) {
-    this.titleService.setTitle(snapshot);
   }
 
   onLoginClick() {

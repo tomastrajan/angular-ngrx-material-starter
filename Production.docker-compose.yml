@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  web:
+    image: persistentcontainerregistry.azurecr.io/brothinjord.client
+    container_name: b_client
+    build:
+      context: .
+      dockerfile: Production.Dockerfile
+      target: production
+    environment:
+      - CONTEXT=angular-ngrx-material-starter
+      - PORT=150
+    ports:
+      - '100:150'

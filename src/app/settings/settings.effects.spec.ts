@@ -1,27 +1,51 @@
-import { AnimationsService, LocalStorageService } from '@app/core';
+import { Router } from '@angular/router';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { TranslateService } from '@ngx-translate/core';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
+import { Store } from '@ngrx/store';
 import { cold } from 'jasmine-marbles';
 import { of } from 'rxjs';
+
+import {
+  AnimationsService,
+  AppState,
+  LocalStorageService,
+  TitleService
+} from '@app/core';
 
 import { SettingsEffects, SETTINGS_KEY } from './settings.effects';
 import { SettingsState } from './settings.model';
 import { ActionSettingsChangeTheme, SettingsActions } from './settings.actions';
-import { Store } from '@ngrx/store';
-import { State } from '@app/examples/examples.state';
-import { TranslateService } from '@ngx-translate/core';
 
 describe('SettingsEffects', () => {
+  let router: any;
   let localStorageService: jasmine.SpyObj<LocalStorageService>;
+  let overlayContainer: jasmine.SpyObj<OverlayContainer>;
+  let titleService: jasmine.SpyObj<TitleService>;
   let animationsService: jasmine.SpyObj<AnimationsService>;
-  let store: jasmine.SpyObj<Store<State>>;
+  let translateService: jasmine.SpyObj<TranslateService>;
+  let store: jasmine.SpyObj<Store<AppState>>;
 
   beforeEach(() => {
+    router = {
+      routerState: {
+        snapshot: {}
+      },
+      events: {
+        pipe() {}
+      }
+    };
     localStorageService = jasmine.createSpyObj('LocalStorageService', [
       'setItem'
     ]);
+    overlayContainer = jasmine.createSpyObj('OverlayContainer', [
+      'getContainerElement'
+    ]);
+    titleService = jasmine.createSpyObj('TitleService', ['setTitle']);
     animationsService = jasmine.createSpyObj('AnimationsService', [
       'updateRouteAnimationType'
     ]);
+    translateService = jasmine.createSpyObj('TranslateService', ['use']);
     store = jasmine.createSpyObj('store', ['pipe']);
   });
 
@@ -31,9 +55,12 @@ describe('SettingsEffects', () => {
       const effect = new SettingsEffects(
         actions,
         store,
+        router,
+        overlayContainer,
         localStorageService,
+        titleService,
         animationsService,
-        jasmine.createSpyObj('Translate', ['use'])
+        translateService
       );
       const metadata = getEffectsMetadata(effect);
 
@@ -41,7 +68,7 @@ describe('SettingsEffects', () => {
     });
   });
 
-  it('should call methods on AnimationsService and LocalStorageService for PERSIST action', () => {
+  it('should call methods on LocalStorageService for PERSIST action', () => {
     const settings: SettingsState = {
       language: 'en',
       pageAnimations: true,
@@ -60,19 +87,18 @@ describe('SettingsEffects', () => {
     const effect = new SettingsEffects(
       actions,
       store,
+      router,
+      overlayContainer,
       localStorageService,
+      titleService,
       animationsService,
-      jasmine.createSpyObj('Translate', ['use'])
+      translateService
     );
 
     effect.persistSettings.subscribe(() => {
       expect(localStorageService.setItem).toHaveBeenCalledWith(
         SETTINGS_KEY,
         settings
-      );
-      expect(animationsService.updateRouteAnimationType).toHaveBeenCalledWith(
-        true,
-        true
       );
     });
   });
