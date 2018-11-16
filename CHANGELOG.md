@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.0"></a>
+# [7.2.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v7.1.0...v7.2.0) (2018-11-16)
+
+
+### Bug Fixes
+
+* **crud:** don't reload page on book (de)selection, fix call to select without book.id ([4a9c09b](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4a9c09b))
+* **ngrx:** fix e2e / cypress tests, refactor effects ([1cdf595](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/1cdf595))
+
+
+### Features
+
+* **animations:** add animations to rest of the components (auth, form, stocks, settings) ([048076b](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/048076b))
+* **docker:** adding some npm scripts to run the Production.Docker commands ([6094d75](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6094d75))
+* **docker:** dockerfile for production ([4f850fe](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4f850fe))
+* **ngrx:** app component, move tu .subscribe() less architecture, use | async pipe instead ([645e20d](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/645e20d))
+* **ngrx:** move tu .subscribe() less architecture, use | async pipe instead ([24e80e4](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/24e80e4))
+
+
+### Performance Improvements
+
+* Add OnPush change detection strategy on all components. ([f3fbfa1](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f3fbfa1))
+
+
+
 <a name="7.0.0"></a>
 # [7.0.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v6.11.0...v7.0.0) (2018-10-18)
 

@@ -1,6 +1,6 @@
 {
   "name": "angular-ngrx-material-starter",
-  "version": "7.1.0",
+  "version": "7.2.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -37,7 +37,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run test"
+      "pre-commit": "lint-staged && npm run lint"
     }
   },
   "lint-staged": {
