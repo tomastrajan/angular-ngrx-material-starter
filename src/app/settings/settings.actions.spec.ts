@@ -3,6 +3,7 @@ import {
   ActionSettingsChangeAnimationsPage,
   ActionSettingsChangeAnimationsPageDisabled,
   ActionSettingsChangeAutoNightMode,
+  ActionSettingsChangeHour,
   ActionSettingsChangeLanguage,
   ActionSettingsChangeStickyHeader,
   ActionSettingsChangeTheme,
@@ -76,5 +77,14 @@ describe('Settings Actions', () => {
 
     expect(action.type).toEqual(SettingsActionTypes.CHANGE_STICKY_HEADER);
     expect(action.payload.stickyHeader).toEqual(true);
+  });
+
+  it('should create ActionSettingsChangeHour action', () => {
+    const action = new ActionSettingsChangeHour({
+      hour: 7
+    });
+
+    expect(action.type).toEqual(SettingsActionTypes.CHANGE_HOUR);
+    expect(action.payload.hour).toEqual(7);
   });
 });

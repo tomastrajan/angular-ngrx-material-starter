@@ -7,7 +7,8 @@ import {
   ActionSettingsChangeAutoNightMode,
   ActionSettingsChangeLanguage,
   ActionSettingsChangeTheme,
-  ActionSettingsChangeStickyHeader
+  ActionSettingsChangeStickyHeader,
+  ActionSettingsChangeHour
 } from './settings.actions';
 
 describe('SettingsReducer', () => {
@@ -68,5 +69,13 @@ describe('SettingsReducer', () => {
     });
     const state = settingsReducer(undefined, action);
     expect(state.stickyHeader).toEqual(false);
+  });
+
+  it('should update hour', () => {
+    const action = new ActionSettingsChangeHour({
+      hour: 7
+    });
+    const state = settingsReducer(undefined, action);
+    expect(state.hour).toEqual(7);
   });
 });
