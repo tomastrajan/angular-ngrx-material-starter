@@ -10,20 +10,20 @@ describe('TODO Actions', () => {
   });
 
   it('should be able to add a new todo with enter or + button click', () => {
-    cy.get('input[placeholder="I am going to..."]').type(newToDo1 + '{enter}');
-    cy.get('body').should('contain', newToDo1);
+    cy.get('input[placeholder="I am going to..."]').type(`${newToDo1}{enter}`);
+    cy.get('[data-testid="todo-item"]').should('contain', newToDo1);
 
     cy.get('input[placeholder="I am going to..."]').type(newToDo2);
-    cy.get('[arialabel="add todo"]').click();
-    cy.get('body').should('contain', newToDo2);
+    cy.get('[aria-label="add todo"]').click();
+    cy.get('[data-testid="todo-item"]').should('contain', newToDo2);
   });
 
   it('should be able to delete', () => {
     cy.contains(existingToDo2).click();
-    cy.get('[arialabel="remove done items"]').click();
+    cy.get('[aria-label="remove done items"]').click();
 
-    cy.get('body').should('not.contain', existingToDo1);
-    cy.get('body').should('not.contain', existingToDo2);
+    cy.get('[data-testid="todo-item"]').should('not.contain', existingToDo1);
+    cy.get('[data-testid="todo-item"]').should('not.contain', existingToDo2);
   });
 
   it('should be able to update', () => {
@@ -40,21 +40,21 @@ describe('TODO Actions', () => {
   });
 
   it('should be able to filter all, done, and active', () => {
-    cy.get('.todos-filter').click();
+    cy.get('[aria-label="open filter menu"]').click();
     cy.get('[aria-label="show all items"]').click();
     cy.contains(existingToDo1);
     cy.contains(existingToDo2);
     cy.contains(existingToDo3);
 
-    cy.get('.todos-filter').click();
+    cy.get('[aria-label="open filter menu"]').click();
     cy.get('[aria-label="show completed items"]').click();
     cy.contains(existingToDo1);
-    cy.get('body').should('not.contain', existingToDo2);
-    cy.get('body').should('not.contain', existingToDo3);
+    cy.get('[data-testid="todo-item"]').should('not.contain', existingToDo2);
+    cy.get('[data-testid="todo-item"]').should('not.contain', existingToDo3);
 
-    cy.get('.todos-filter').click();
+    cy.get('[aria-label="open filter menu"]').click();
     cy.get('[aria-label="show active items"]').click();
-    cy.get('body').should('not.contain', existingToDo1);
+    cy.get('[data-testid="todo-item"]').should('not.contain', existingToDo1);
     cy.contains(existingToDo2);
     cy.contains(existingToDo3);
   });
