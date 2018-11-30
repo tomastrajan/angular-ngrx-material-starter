@@ -45,6 +45,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -78,6 +82,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -109,6 +117,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -149,6 +161,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -180,6 +196,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -215,6 +235,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -246,6 +270,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -281,6 +309,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -312,6 +344,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -347,6 +383,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -378,6 +418,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -413,6 +457,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -444,6 +492,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -479,6 +531,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -510,6 +566,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -545,6 +605,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -576,6 +640,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -614,6 +682,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -647,6 +719,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -678,6 +754,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -720,6 +800,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -751,6 +835,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -786,6 +874,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -817,6 +909,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -852,6 +948,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -883,6 +983,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -918,6 +1022,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -949,6 +1057,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -984,6 +1096,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1015,6 +1131,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -1050,6 +1170,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1081,6 +1205,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -1116,6 +1244,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1147,6 +1279,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -1182,6 +1318,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1213,6 +1353,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -1248,6 +1392,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1279,6 +1427,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -1314,6 +1466,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1345,6 +1501,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -1380,6 +1540,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1411,6 +1575,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -1451,6 +1619,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1482,6 +1654,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -1517,6 +1693,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1548,6 +1728,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -1583,6 +1767,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1616,6 +1804,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -1647,6 +1839,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -1690,6 +1886,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -1721,6 +1921,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -1761,6 +1965,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -1792,6 +2000,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -1832,6 +2044,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -1863,6 +2079,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -1903,6 +2123,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -1934,6 +2158,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -1969,6 +2197,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -2007,6 +2239,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -2038,6 +2274,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -2080,6 +2320,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -2111,6 +2355,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -2146,6 +2394,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -2177,6 +2429,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -2212,6 +2468,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -2243,6 +2503,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -2278,6 +2542,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -2309,6 +2577,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -2344,6 +2616,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -2377,6 +2653,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -2408,6 +2688,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -2451,6 +2735,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -2484,6 +2772,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -2515,6 +2807,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -2555,6 +2851,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -2586,6 +2886,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -2621,6 +2925,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -2652,6 +2960,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -2687,6 +2999,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -2718,6 +3034,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -2753,6 +3073,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -2784,6 +3108,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -2819,6 +3147,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -2850,6 +3182,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -2885,6 +3221,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -2916,6 +3256,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -2953,6 +3297,10 @@
                                     </translation>
                                     <translation>
                                         <language>sk-SK</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>zh-CN</language>
                                         <approved>false</approved>
                                     </translation>
                                 </translations>
@@ -2994,6 +3342,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                         </children>
@@ -3027,6 +3379,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -3065,6 +3421,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -3096,6 +3456,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -3131,6 +3495,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -3162,6 +3530,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -3197,6 +3569,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -3228,6 +3604,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -3263,6 +3643,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -3296,6 +3680,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -3327,6 +3715,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -3364,6 +3756,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -3395,6 +3791,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -3433,6 +3833,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                         </children>
@@ -3468,6 +3872,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -3499,6 +3907,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -3534,6 +3946,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -3565,6 +3981,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -3600,6 +4020,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                     <concept_node>
@@ -3631,6 +4055,10 @@
                                             </translation>
                                             <translation>
                                                 <language>sk-SK</language>
+                                                <approved>false</approved>
+                                            </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
                                                 <approved>false</approved>
                                             </translation>
                                         </translations>
@@ -3667,6 +4095,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -3707,6 +4139,10 @@
                                                         <language>sk-SK</language>
                                                         <approved>false</approved>
                                                     </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
+                                                        <approved>false</approved>
+                                                    </translation>
                                                 </translations>
                                             </concept_node>
                                             <concept_node>
@@ -3738,6 +4174,10 @@
                                                     </translation>
                                                     <translation>
                                                         <language>sk-SK</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>zh-CN</language>
                                                         <approved>false</approved>
                                                     </translation>
                                                 </translations>
@@ -3775,6 +4215,10 @@
                                                 <language>sk-SK</language>
                                                 <approved>false</approved>
                                             </translation>
+                                            <translation>
+                                                <language>zh-CN</language>
+                                                <approved>false</approved>
+                                            </translation>
                                         </translations>
                                     </concept_node>
                                 </children>
@@ -3785,6 +4229,7 @@
             </folder_node>
         </children>
     </folder_node>
+    <isTemplateProject>false</isTemplateProject>
     <translation_files>
         <translation_file>
             <language>es-ES</language>
@@ -3809,6 +4254,10 @@
         <translation_file>
             <language>pt-BR</language>
             <file>pt-br.json</file>
+        </translation_file>
+        <translation_file>
+            <language>zh-CN</language>
+            <file>zh-cn.json</file>
         </translation_file>
     </translation_files>
     <editor_configuration>
