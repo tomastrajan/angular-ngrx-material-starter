@@ -43,7 +43,8 @@ export class SettingsContainerComponent implements OnInit {
     { value: 'sk', label: 'sk' },
     { value: 'fr', label: 'fr' },
     { value: 'es', label: 'es' },
-    { value: 'pt-br', label: 'pt-br' }
+    { value: 'pt-br', label: 'pt-br' },
+    { value: 'zh-cn', label: 'zh-cn' }
   ];
 
   constructor(private store: Store<State>) {}
