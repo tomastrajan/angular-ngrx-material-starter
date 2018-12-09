@@ -37,7 +37,6 @@ export class StockMarketEffects {
           symbol: action.payload.symbol
         })
       ),
-      distinctUntilChanged((x, y) => x.payload.symbol === y.payload.symbol),
       debounceTime(debounce, scheduler),
       switchMap((action: ActionStockMarketRetrieve) =>
         this.service.retrieveStock(action.payload.symbol).pipe(
