@@ -318,6 +318,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "cveld",
+      "name": "Carl in 't Veld",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6196260?v=4",
+      "profile": "http://www.carlintveld.nl",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ]
 }
