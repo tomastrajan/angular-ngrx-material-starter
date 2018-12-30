@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.0"></a>
+# [7.3.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v7.2.0...v7.3.0) (2018-12-30)
+
+
+### Bug Fixes
+
+* **build:** pin standard-version to 4.2.0 because version above fail during git commit ([a002550](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/a002550))
+* Remove non existing import NotificationStyles ([ae18815](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/ae18815))
+* **dependencies:** update packages to remove dependency for corrupted event-stream package ([83ec9d4](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/83ec9d4))
+
+
+### Features
+
+* **tooling:** add commitlint to verify commit messages ([4b4ae1b](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4b4ae1b))
+
+
+
 <a name="7.2.0"></a>
 # [7.2.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v7.1.0...v7.2.0) (2018-11-16)
 
