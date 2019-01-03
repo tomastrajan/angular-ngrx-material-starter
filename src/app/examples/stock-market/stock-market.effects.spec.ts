@@ -12,8 +12,8 @@ import { Stock } from './stock-market.model';
 import { StockMarketService } from './stock-market.service';
 
 describe('StockMarketEffects', () => {
-  let localStorage: jasmine.SpyObj<LocalStorageService>;
-  let stockMarket: jasmine.SpyObj<StockMarketService>;
+  let localStorage: LocalStorageService;
+  let stockMarket: StockMarketService;
 
   beforeEach(() => {
     localStorage = jasmine.createSpyObj('localStorageService', ['setItem']);
@@ -57,7 +57,7 @@ describe('StockMarketEffects', () => {
       const expected = cold('--s', values);
       const actions = new Actions(source);
 
-      stockMarket.retrieveStock.and.returnValue(of(stock));
+      (stockMarket.retrieveStock as jasmine.Spy).and.returnValue(of(stock));
 
       const effects = new StockMarketEffects(
         actions,
@@ -92,7 +92,9 @@ describe('StockMarketEffects', () => {
       const expected = cold('--e', values);
       const actions = new Actions(source);
 
-      stockMarket.retrieveStock.and.returnValue(throwError(error));
+      (stockMarket.retrieveStock as jasmine.Spy).and.returnValue(
+        throwError(error)
+      );
 
       const effects = new StockMarketEffects(
         actions,

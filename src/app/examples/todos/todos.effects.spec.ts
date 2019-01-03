@@ -10,8 +10,8 @@ import { TodosEffects, TODOS_KEY } from './todos.effects';
 import { TodosState } from './todos.model';
 
 describe('TodosEffects', () => {
-  let localStorage: jasmine.SpyObj<LocalStorageService>;
-  let store: jasmine.SpyObj<Store<State>>;
+  let localStorage: LocalStorageService;
+  let store: Store<State>;
 
   beforeEach(() => {
     localStorage = jasmine.createSpyObj('LocalStorageService', ['setItem']);
@@ -32,7 +32,7 @@ describe('TodosEffects', () => {
         items: [{ id: '1', name: 'Test ToDo', done: false }],
         filter: 'ALL'
       };
-      store.pipe.and.returnValue(of(todosState));
+      (store.pipe as jasmine.Spy).and.returnValue(of(todosState));
       const persistAction = new ActionTodosToggle({ id: 'a' });
       const source = cold('a', { a: persistAction });
       const actions = new Actions(source);

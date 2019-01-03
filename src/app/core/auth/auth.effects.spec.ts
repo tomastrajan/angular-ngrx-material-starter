@@ -12,8 +12,8 @@ import {
 import { AuthEffects, AUTH_KEY } from './auth.effects';
 
 describe('AuthEffects', () => {
-  let localStorageService: jasmine.SpyObj<LocalStorageService>;
-  let router: jasmine.SpyObj<Router>;
+  let localStorageService: LocalStorageService;
+  let router: Router;
 
   beforeEach(() => {
     localStorageService = jasmine.createSpyObj('LocalStorageService', [

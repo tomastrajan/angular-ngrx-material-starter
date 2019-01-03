@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { TranslateService } from '@ngx-translate/core';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
@@ -8,23 +7,22 @@ import { of } from 'rxjs';
 
 import {
   AnimationsService,
-  AppState,
   LocalStorageService,
   TitleService
 } from '@app/core';
 
 import { SettingsEffects, SETTINGS_KEY } from './settings.effects';
-import { SettingsState } from './settings.model';
+import { SettingsState, State } from './settings.model';
 import { ActionSettingsChangeTheme, SettingsActions } from './settings.actions';
 
 describe('SettingsEffects', () => {
   let router: any;
-  let localStorageService: jasmine.SpyObj<LocalStorageService>;
-  let overlayContainer: jasmine.SpyObj<OverlayContainer>;
-  let titleService: jasmine.SpyObj<TitleService>;
-  let animationsService: jasmine.SpyObj<AnimationsService>;
-  let translateService: jasmine.SpyObj<TranslateService>;
-  let store: jasmine.SpyObj<Store<AppState>>;
+  let localStorageService: LocalStorageService;
+  let overlayContainer: OverlayContainer;
+  let titleService: TitleService;
+  let animationsService: AnimationsService;
+  let translateService: TranslateService;
+  let store: Store<State>;
 
   beforeEach(() => {
     router = {
@@ -80,7 +78,7 @@ describe('SettingsEffects', () => {
       pageAnimationsDisabled: true,
       hour: 12
     };
-    store.pipe.and.returnValue(of(settings));
+    (store.pipe as jasmine.Spy).and.returnValue(of(settings));
     const persistAction = new ActionSettingsChangeTheme({ theme: 'DEFAULT' });
     const source = cold('a', { a: persistAction });
     const actions = new Actions(source);

@@ -14,9 +14,9 @@ import { ExamplesEffects } from './examples.effects';
 
 describe('SettingsEffects', () => {
   let router: any;
-  let titleService: jasmine.SpyObj<TitleService>;
-  let translateService: jasmine.SpyObj<TranslateService>;
-  let store: jasmine.SpyObj<Store<State>>;
+  let titleService: TitleService;
+  let translateService: TranslateService;
+  let store: Store<State>;
 
   beforeEach(() => {
     router = {
