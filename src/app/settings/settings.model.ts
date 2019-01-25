@@ -2,7 +2,7 @@ import { AppState } from '@app/core';
 
 export const NIGHT_MODE_THEME = 'BLACK-THEME';
 
-export type Language = 'en' | 'sk' | 'de' | 'fr' | 'es' | 'pt-br';
+export type Language = 'en' | 'sk' | 'de' | 'fr' | 'es' | 'pt-br' | 'he';
 
 export interface SettingsState {
   language: string;
