@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
-import { AppState } from '@app/core';
 import { Store, StoreModule } from '@ngrx/store';
-import { MockStore, provideMockStore } from '@testing/utils';
-import { AuthGuardService } from './auth-guard.service';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+
+import { AppState, AuthGuardService } from '@app/core';
 import { AuthState } from './auth.models';
 
 describe('AuthGuardService', () => {

@@ -1,8 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TestingModule } from '@testing/utils';
-
 import { ChildComponent } from './child.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from '@app/shared';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('ChildComponent', () => {
   let component: ChildComponent;
@@ -10,7 +12,12 @@ describe('ChildComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [TestingModule],
+      imports: [
+        RouterTestingModule,
+        NoopAnimationsModule,
+        SharedModule,
+        TranslateModule.forRoot()
+      ],
       declarations: [ChildComponent]
     }).compileComponents();
   }));

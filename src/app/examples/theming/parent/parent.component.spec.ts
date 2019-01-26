@@ -1,9 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { TestingModule } from '@testing/utils';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { ChildComponent } from '../child/child.component';
-
 import { ParentComponent } from './parent.component';
 
 describe('ParentComponent', () => {
@@ -12,7 +11,7 @@ describe('ParentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [TestingModule],
+      imports: [NoopAnimationsModule, TranslateModule.forRoot()],
       declarations: [ParentComponent, ChildComponent]
     }).compileComponents();
   }));

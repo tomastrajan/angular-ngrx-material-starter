@@ -1,18 +1,21 @@
-import { By } from '@angular/platform-browser';
-import { Store } from '@ngrx/store';
-import { MatSlideToggle } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatSlideToggle } from '@angular/material';
+import { Store } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
-import { TestingModule, MockStore } from '@testing/utils';
-
-import { SettingsContainerComponent } from './settings-container.component';
+import { SharedModule } from '@app/shared';
 import {
   ActionSettingsChangeAnimationsElements,
   ActionSettingsChangeAnimationsPage,
   ActionSettingsChangeAutoNightMode,
   ActionSettingsChangeTheme,
-  ActionSettingsChangeStickyHeader
-} from '../settings.actions';
+  ActionSettingsChangeStickyHeader,
+  SettingsContainerComponent
+} from '@app/settings';
 
 describe('SettingsComponent', () => {
   let component: SettingsContainerComponent;
@@ -27,8 +30,14 @@ describe('SettingsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [TestingModule],
-      declarations: [SettingsContainerComponent]
+      imports: [
+        RouterTestingModule,
+        NoopAnimationsModule,
+        SharedModule,
+        TranslateModule.forRoot()
+      ],
+      declarations: [SettingsContainerComponent],
+      providers: [provideMockStore()]
     }).compileComponents();
 
     store = TestBed.get(Store);

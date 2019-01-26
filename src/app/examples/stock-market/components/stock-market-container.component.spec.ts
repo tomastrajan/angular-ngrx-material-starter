@@ -1,12 +1,15 @@
-import { By } from '@angular/platform-browser';
-import { Store } from '@ngrx/store';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpErrorResponse } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { By } from '@angular/platform-browser';
+import { Store } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { TranslateModule } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
 
-import { TestingModule, MockStore } from '@testing/utils';
-import { CoreModule } from '@app/core';
-
+import { SharedModule } from '@app/shared';
 import { State } from '../../examples.state';
 import { StockMarketService } from '../stock-market.service';
 import { ActionStockMarketRetrieve } from '../stock-market.actions';
@@ -41,9 +44,15 @@ describe('StockMarketContainerComponent', () => {
   describe('given component booted', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [CoreModule, TestingModule],
-        providers: [StockMarketService],
-        declarations: [StockMarketContainerComponent]
+        imports: [
+          RouterTestingModule,
+          HttpClientTestingModule,
+          NoopAnimationsModule,
+          SharedModule,
+          TranslateModule.forRoot()
+        ],
+        declarations: [StockMarketContainerComponent],
+        providers: [StockMarketService, provideMockStore()]
       }).compileComponents();
 
       const stockMarketService = TestBed.get(StockMarketService);

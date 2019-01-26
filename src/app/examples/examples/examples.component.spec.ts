@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { provideMockStore } from '@ngrx/store/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
-import { CoreModule } from '@app/core';
-import { TestingModule } from '@testing/utils';
-import { SettingsModule } from '@app/settings';
-
+import { SharedModule } from '@app/shared';
 import { ExamplesComponent } from './examples.component';
 
 describe('ExamplesComponent', () => {
@@ -12,8 +13,14 @@ describe('ExamplesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [TestingModule, CoreModule, SettingsModule],
-      declarations: [ExamplesComponent]
+      imports: [
+        RouterTestingModule,
+        NoopAnimationsModule,
+        SharedModule,
+        TranslateModule.forRoot()
+      ],
+      declarations: [ExamplesComponent],
+      providers: [provideMockStore()]
     }).compileComponents();
   }));
 
