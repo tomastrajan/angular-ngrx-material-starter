@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1 class="main-heading">{{ 'anms.features.title' | translate }}</h1>
+      <h1 rtl class="main-heading">{{ 'anms.features.title' | translate }}</h1>
     </div>
   </div>
   <div class="row align-items-end">
@@ -10,7 +10,7 @@
         <mat-card-title>
           <code *ngIf="feature.version">{{feature.version}}</code>{{feature.name | translate}}
         </mat-card-title>
-        <mat-card-subtitle>
+        <mat-card-subtitle rtl>
           {{ feature.description | translate }}
         </mat-card-subtitle>
         <mat-card-actions>

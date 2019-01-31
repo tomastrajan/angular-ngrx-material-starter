@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1 class="main-heading">{{ 'anms.examples.theming.parent.title' | translate }}</h1>
+      <h1 rtl class="main-heading">{{ 'anms.examples.theming.parent.title' | translate }}</h1>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6" [ngClass]="routeAnimationsElements">
-      <p>
+    <div  class="col-md-6" [ngClass]="routeAnimationsElements">
+      <p rtl>
         {{ 'anms.examples.theming.parent.text1' | translate }} <code>stylesUrls</code>
         {{ 'anms.examples.theming.parent.text2' | translate }} <code>@Component</code>
         {{ 'anms.examples.theming.parent.text3' | translate }} <code>styles.scss</code>
@@ -14,7 +14,7 @@
         <strong>{{ 'anms.examples.theming.parent.text5' | translate }}</strong>
         {{ 'anms.examples.theming.parent.text6' | translate }}
       </p>
-      <p>
+      <p rtl>
         {{ 'anms.examples.theming.parent.text7' | translate }}
         <strong>{{ 'anms.examples.theming.parent.text8' | translate }}</strong>
         {{ 'anms.examples.theming.parent.text9' | translate }}
@@ -25,7 +25,7 @@
 {{themeSrc}}
       </pre>
     </div>
-    <div class="col-md-6" [ngClass]="routeAnimationsElements">
+    <div rtl class="col-md-6" [ngClass]="routeAnimationsElements">
       <div class="example">
         <h1>{{ 'anms.examples.theming.parent.description' | translate }}</h1>
         <anms-child></anms-child>
