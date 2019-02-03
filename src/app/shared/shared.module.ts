@@ -93,6 +93,7 @@ library.add(
 
 import { BigInputComponent } from './big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action.component';
+import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
 
 @NgModule({
   imports: [
@@ -121,7 +122,11 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
 
     FontAwesomeModule
   ],
-  declarations: [BigInputComponent, BigInputActionComponent],
+  declarations: [
+    BigInputComponent,
+    BigInputActionComponent,
+    RtlSupportDirective
+  ],
   exports: [
     CommonModule,
     FormsModule,
@@ -153,7 +158,8 @@ import { BigInputActionComponent } from './big-input/big-input-action.component'
     FontAwesomeModule,
 
     BigInputComponent,
-    BigInputActionComponent
+    BigInputActionComponent,
+    RtlSupportDirective
   ]
 })
 export class SharedModule {}

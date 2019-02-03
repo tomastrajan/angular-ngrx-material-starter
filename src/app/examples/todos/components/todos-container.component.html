@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="offset-md-2 col-md-8 entry">
-      <anms-big-input [placeholder]="'anms.examples.todos.input' | translate" [value]="newTodo" (keyup)="onNewTodoChange($event.target.value)"
+      <anms-big-input rtl [placeholder]="'anms.examples.todos.input' | translate" [value]="newTodo" (keyup)="onNewTodoChange($event.target.value)"
         (keyup.enter)="!isAddTodoDisabled && onAddTodo()" (keyup.escape)="onNewTodoClear()">
         <anms-big-input-action ariaLabel="add todo" fontSet="fas" fontIcon="fa-plus" faIcon="plus" color="accent"
           (action)="onAddTodo()" [disabled]="isAddTodoDisabled" [matTooltip]="'anms.examples.todos.tooltip.add' | translate"
@@ -67,7 +67,7 @@
         <br>
       </div>
   </ng-container>
-    <div class="offset-md-1 col-md-5" [ngClass]="routeAnimationsElements">
+    <div class="offset-md-1 col-md-5" [ngClass]="routeAnimationsElements" rtl>
       <h2>{{ 'anms.examples.todos.example' | translate }}</h2>
       <p>
         {{ 'anms.examples.todos.text1' | translate }}
