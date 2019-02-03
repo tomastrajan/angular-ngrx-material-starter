@@ -1,11 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { TranslateModule } from '@ngx-translate/core';
 
-import { SharedModule } from '@app/shared';
+import { TestingModule } from '@testing/utils';
 import { State } from '../../examples.state';
 import { BookState } from '../books.model';
 import { CrudComponent } from './crud.component';
@@ -17,12 +14,7 @@ describe('CrudComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        NoopAnimationsModule,
-        SharedModule,
-        TranslateModule.forRoot()
-      ],
+      imports: [TestingModule],
       declarations: [CrudComponent],
       providers: [provideMockStore()]
     }).compileComponents();

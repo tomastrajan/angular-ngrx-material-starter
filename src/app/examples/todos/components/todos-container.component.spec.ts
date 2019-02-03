@@ -1,18 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   createComponent,
   RenderResult,
   fireEvent
 } from '@angular-extensions/testing-library';
-import { RouterTestingModule } from '@angular/router/testing';
 import { Store } from '@ngrx/store';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { NotificationService } from '@app/core';
-import { SharedModule } from '@app/shared';
+import { TestingModule } from '@testing/utils';
 import {
   ActionTodosFilter,
   ActionTodosRemoveDone,
@@ -29,12 +26,7 @@ describe('TodosComponent', () => {
 
   beforeEach(async () => {
     component = await createComponent('<anms-todos></anms-todos>', {
-      imports: [
-        RouterTestingModule,
-        NoopAnimationsModule,
-        SharedModule,
-        TranslateModule.forRoot()
-      ],
+      imports: [TestingModule],
       declarations: [TodosContainerComponent],
       providers: [NotificationService, provideMockStore()],
       detectChanges: false

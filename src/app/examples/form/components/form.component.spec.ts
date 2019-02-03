@@ -1,16 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
 import {
   createComponent,
   RenderResult
 } from '@angular-extensions/testing-library';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
-import { TranslateModule } from '@ngx-translate/core';
 
 import { NotificationService } from '@app/core';
-import { SharedModule } from '@app/shared';
+import { TestingModule } from '@testing/utils';
 import { State } from '../../examples.state';
 import { FormState } from '../form.model';
 import { FormComponent } from './form.component';
@@ -27,12 +24,7 @@ describe('FormComponent', () => {
       '<anms-form></anms-form>',
       {
         declarations: [FormComponent],
-        imports: [
-          RouterTestingModule,
-          NoopAnimationsModule,
-          SharedModule,
-          TranslateModule.forRoot()
-        ],
+        imports: [TestingModule],
         providers: [NotificationService, provideMockStore()],
         detectChanges: false
       }
