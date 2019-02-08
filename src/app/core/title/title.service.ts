@@ -8,6 +8,7 @@ import { environment as env } from '@env/environment';
 
 @Injectable()
 export class TitleService {
+  private unsubscribe$ = new Subject();
   constructor(
     private translateService: TranslateService,
     private title: Title
@@ -27,8 +28,12 @@ export class TitleService {
       translate
         .get(title)
         .pipe(filter(translatedTitle => translatedTitle !== title))
-        .subscribe(translatedTitle =>
-          this.title.setTitle(`${translatedTitle} - ${env.appName}`)
+        .takeUntil(this.unsubscribe$)
+        .subscribe(translatedTitle => {
+          this.title.setTitle(`${translatedTitle} - ${env.appName}`);
+          this.unsubscribe$.next();
+          this.unsubscribe$.complete();
+        }
         );
     } else {
       this.title.setTitle(env.appName);
