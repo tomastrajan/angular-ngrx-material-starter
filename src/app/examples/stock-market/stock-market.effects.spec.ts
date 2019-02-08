@@ -20,7 +20,7 @@ describe('StockMarketEffects', () => {
     stockMarket = jasmine.createSpyObj('stockMarketService', ['retrieveStock']);
   });
 
-  fdescribe('retrieveStock', () => {
+  describe('retrieveStock', () => {
     const symbol = 'TSLA';
 
     it('should emit ActionStockMarketRetrieveSuccess on success', () => {
