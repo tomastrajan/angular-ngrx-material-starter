@@ -12,7 +12,13 @@ describe('ExamplesComponent', () => {
     TestBed.configureTestingModule({
       imports: [TestingModule],
       declarations: [ExamplesComponent],
-      providers: [provideMockStore()]
+      providers: [
+        provideMockStore({
+          initialState: {
+            auth: {}
+          }
+        })
+      ]
     }).compileComponents();
   }));
 
