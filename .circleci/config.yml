@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:8.12
+      - image: circleci/node:jessie-browsers
 
     working_directory: ~/repo
 
