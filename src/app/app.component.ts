@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
+import { environment as env } from '../environments/environment';
+
 import {
   ActionAuthLogin,
   ActionAuthLogout,
@@ -10,16 +12,14 @@ import {
   AppState,
   LocalStorageService,
   selectIsAuthenticated
-} from '@app/core';
-import { environment as env } from '@env/environment';
-
+} from './core/core.module';
 import {
   ActionSettingsChangeLanguage,
   ActionSettingsChangeAnimationsPageDisabled,
   selectEffectiveTheme,
   selectSettingsLanguage,
   selectSettingsStickyHeader
-} from './settings';
+} from './settings/settings.module';
 
 @Component({
   selector: 'anms-root',

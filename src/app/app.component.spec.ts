@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
-import { TestingModule } from '@testing/utils';
-import { CoreModule } from '@app/core';
+import { TestingModule } from '../testing/utils';
+import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 

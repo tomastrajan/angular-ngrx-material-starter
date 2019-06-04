@@ -1,7 +1,9 @@
-import { LocalStorageService } from '@app/core';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { cold } from 'jasmine-marbles';
 import { EMPTY } from 'rxjs';
+
+import { LocalStorageService } from '../../core/core.module';
+
 import { ActionFormUpdate } from './form.actions';
 import { FormEffects, FORM_KEY } from './form.effects';
 import { Form } from './form.model';
@@ -21,7 +23,7 @@ describe('FormEffects', () => {
       const effect = new FormEffects(actions, localStorageService);
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.persistForm).toEqual({ dispatch: false });
+      expect(metadata.persistForm.dispatch).toEqual(false);
     });
 
     it('should call setItem on LocalStorageService for UPDATE action', () => {

@@ -1,7 +1,9 @@
-import { LocalStorageService } from '@app/core';
 import { Actions } from '@ngrx/effects';
 import { cold, getTestScheduler } from 'jasmine-marbles';
-import { of, throwError } from 'rxjs/';
+import { of, throwError } from 'rxjs';
+
+import { LocalStorageService } from '../../core/core.module';
+
 import {
   ActionStockMarketRetrieve,
   ActionStockMarketRetrieveError,
@@ -20,7 +22,7 @@ describe('StockMarketEffects', () => {
     stockMarket = jasmine.createSpyObj('stockMarketService', ['retrieveStock']);
   });
 
-  fdescribe('retrieveStock', () => {
+  describe('retrieveStock', () => {
     const symbol = 'TSLA';
 
     it('should emit ActionStockMarketRetrieveSuccess on success', () => {

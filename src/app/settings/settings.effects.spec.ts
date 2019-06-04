@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { TranslateService } from '@ngx-translate/core';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
@@ -11,7 +10,7 @@ import {
   AppState,
   LocalStorageService,
   TitleService
-} from '@app/core';
+} from '../core/core.module';
 
 import { SettingsEffects, SETTINGS_KEY } from './settings.effects';
 import { SettingsState } from './settings.model';
@@ -64,7 +63,7 @@ describe('SettingsEffects', () => {
       );
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.persistSettings).toEqual({ dispatch: false });
+      expect(metadata.persistSettings.dispatch).toEqual(false);
     });
   });
 

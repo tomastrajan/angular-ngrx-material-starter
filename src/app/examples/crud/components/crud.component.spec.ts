@@ -1,8 +1,8 @@
 import { Store } from '@ngrx/store';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoreModule } from '@app/core';
-import { MockStore, TestingModule } from '@testing/utils';
+import { MockStore, TestingModule } from '../../../../testing/utils';
+import { CoreModule } from '../../../core/core.module';
 
 import { State } from '../../examples.state';
 import { BookState } from '../books.model';

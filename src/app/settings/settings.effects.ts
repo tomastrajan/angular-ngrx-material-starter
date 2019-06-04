@@ -18,7 +18,7 @@ import {
   LocalStorageService,
   AnimationsService,
   TitleService
-} from '@app/core';
+} from '../core/core.module';
 
 import {
   SettingsActionTypes,

@@ -10,7 +10,8 @@
       "prefix": "anms",
       "schematics": {
         "@schematics/angular:component": {
-          "changeDetection": "OnPush"
+          "changeDetection": "OnPush",
+          "style": "scss"
         }
       },
       "architect": {

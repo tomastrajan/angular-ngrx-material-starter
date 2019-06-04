@@ -1,11 +1,11 @@
 import { By } from '@angular/platform-browser';
-import { Store } from '@ngrx/store';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpErrorResponse } from '@angular/common/http';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Store } from '@ngrx/store';
 import { EMPTY } from 'rxjs';
 
-import { TestingModule, MockStore } from '@testing/utils';
-import { CoreModule } from '@app/core';
+import { TestingModule, MockStore } from '../../../../testing/utils';
+import { CoreModule } from '../../../core/core.module';
 
 import { State } from '../../examples.state';
 import { StockMarketService } from '../stock-market.service';

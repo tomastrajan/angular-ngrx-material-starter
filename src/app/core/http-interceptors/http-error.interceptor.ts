@@ -19,10 +19,12 @@ export class HttpErrorInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
-      tap(null, (err: any) => {
-        if (err instanceof HttpErrorResponse) {
-          const appErrorHandler = this.injector.get(ErrorHandler);
-          appErrorHandler.handleError(err);
+      tap({
+        error: (err: any) => {
+          if (err instanceof HttpErrorResponse) {
+            const appErrorHandler = this.injector.get(ErrorHandler);
+            appErrorHandler.handleError(err);
+          }
         }
       })
     );

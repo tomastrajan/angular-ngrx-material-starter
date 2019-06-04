@@ -1,10 +1,12 @@
-import { LocalStorageService } from '@app/core';
-import { ActionBooksDeleteOne, ActionBooksUpsertOne } from './books.actions';
-import { BookState } from './books.model';
-import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { cold } from 'jasmine-marbles';
 import { EMPTY, of } from 'rxjs';
+
+import { LocalStorageService } from '../../core/core.module';
+
+import { ActionBooksDeleteOne, ActionBooksUpsertOne } from './books.actions';
+import { BookState } from './books.model';
+import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { BooksEffects, BOOKS_KEY } from './books.effects';
 
 describe('BooksEffects', () => {
@@ -37,7 +39,7 @@ describe('BooksEffects', () => {
       const effects = new BooksEffects(actions, store, localStorage);
       const metadata = getEffectsMetadata(effects);
 
-      expect(metadata.persistBooks).toEqual({ dispatch: false });
+      expect(metadata.persistBooks.dispatch).toEqual(false);
     });
 
     it('should call setItem on LocalStorageService for delete one action', () => {

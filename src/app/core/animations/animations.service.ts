@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AnimationsService {
   constructor() {
     AnimationsService.routeAnimationType = 'NONE';
@@ -20,10 +22,10 @@ export class AnimationsService {
       pageAnimations && elementsAnimations
         ? 'ALL'
         : pageAnimations
-          ? 'PAGE'
-          : elementsAnimations
-            ? 'ELEMENTS'
-            : 'NONE';
+        ? 'PAGE'
+        : elementsAnimations
+        ? 'ELEMENTS'
+        : 'NONE';
   }
 }
 

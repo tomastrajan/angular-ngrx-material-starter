@@ -1,5 +1,6 @@
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
-import { AppState } from '@app/core';
+
+import { AppState } from '../core/core.module';
 
 import { todosReducer } from './todos/todos.reducer';
 import { TodosState } from './todos/todos.model';
@@ -8,7 +9,7 @@ import { StockMarketState } from './stock-market/stock-market.model';
 import { bookReducer } from './crud/books.reducer';
 import { formReducer } from './form/form.reducer';
 import { FormState } from './form/form.model';
-import { Book, BookState } from './crud/books.model';
+import { BookState } from './crud/books.model';
 
 export const FEATURE_NAME = 'examples';
 export const selectExamples = createFeatureSelector<State, ExamplesState>(

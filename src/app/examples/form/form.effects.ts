@@ -3,7 +3,7 @@ import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { tap } from 'rxjs/operators';
 
-import { LocalStorageService } from '@app/core';
+import { LocalStorageService } from '../../core/core.module';
 
 import { ActionFormUpdate, FormActionTypes } from './form.actions';
 

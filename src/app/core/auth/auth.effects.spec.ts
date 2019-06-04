@@ -3,11 +3,9 @@ import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { cold } from 'jasmine-marbles';
 import { EMPTY } from 'rxjs';
 
-import {
-  LocalStorageService,
-  ActionAuthLogin,
-  ActionAuthLogout
-} from '@app/core';
+import { LocalStorageService } from '../local-storage/local-storage.service';
+
+import { ActionAuthLogin, ActionAuthLogout } from './auth.actions';
 
 import { AuthEffects, AUTH_KEY } from './auth.effects';
 
@@ -28,7 +26,7 @@ describe('AuthEffects', () => {
       const effect = new AuthEffects(actions, localStorageService, router);
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.login).toEqual({ dispatch: false });
+      expect(metadata.login.dispatch).toEqual(false);
     });
 
     it('should call setItem on LocalStorageService', () => {
@@ -51,7 +49,7 @@ describe('AuthEffects', () => {
       const effect = new AuthEffects(actions, localStorageService, router);
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.logout).toEqual({ dispatch: false });
+      expect(metadata.logout.dispatch).toEqual(false);
     });
 
     it('should call setItem on LocalStorageService and navigate to about', () => {

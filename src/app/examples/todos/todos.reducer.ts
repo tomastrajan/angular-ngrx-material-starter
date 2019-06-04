@@ -37,9 +37,8 @@ export function todosReducer(
     case TodosActionTypes.TOGGLE:
       return {
         ...state,
-        items: state.items.map(
-          (item: Todo) =>
-            item.id === action.payload.id ? { ...item, done: !item.done } : item
+        items: state.items.map((item: Todo) =>
+          item.id === action.payload.id ? { ...item, done: !item.done } : item
         )
       };
 

@@ -4,9 +4,11 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs/operators';
 
-import { environment as env } from '@env/environment';
+import { environment as env } from '../../../environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class TitleService {
   constructor(
     private translateService: TranslateService,

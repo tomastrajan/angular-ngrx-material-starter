@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TestingModule } from '@testing/utils';
-import { NotificationService } from '@app/core';
+import { TestingModule } from '../../../../testing/utils';
+import { NotificationService } from '../../../core/core.module';
 
 import { NotificationsComponent } from './notifications.component';
 

@@ -1,8 +1,8 @@
+import { By } from '@angular/platform-browser';
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 
-import { SharedModule } from '@app/shared';
+import { SharedModule } from '../shared.module';
 
 @Component({
   selector: 'host-for-test',
@@ -35,7 +35,8 @@ describe('BigInputActionComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HostComponent],
       imports: [SharedModule]
-    }));
+    })
+  );
 
   it('should be created', () => {
     const template = '<anms-big-input-action></anms-big-input-action>';

@@ -3,8 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 
-import { SharedModule } from '@app/shared';
-import { CoreModule } from '@app/core';
+import { SharedModule } from '../../shared/shared.module';
+import { CoreModule } from '../../core/core.module';
 
 import { StockMarketService } from './stock-market.service';
 

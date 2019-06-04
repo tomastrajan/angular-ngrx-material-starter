@@ -1,11 +1,11 @@
 import { v4 as uuid } from 'uuid';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { FormBuilder, NgForm } from '@angular/forms';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '@app/core';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
 
 import { State } from '../../examples.state';
 import { Book } from '../books.model';

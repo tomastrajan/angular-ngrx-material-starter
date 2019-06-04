@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
-import { ROUTE_ANIMATIONS_ELEMENTS, NotificationService } from '@app/core';
+import {
+  ROUTE_ANIMATIONS_ELEMENTS,
+  NotificationService
+} from '../../../core/core.module';
 
 @Component({
   selector: 'anms-notifications',

@@ -28,7 +28,7 @@ describe('GoogleAnalyticsEffects', () => {
     const effect = new GoogleAnalyticsEffects(router);
     const metadata = getEffectsMetadata(effect);
 
-    expect(metadata.pageView).toEqual({ dispatch: false });
+    expect(metadata.pageView.dispatch).toEqual(false);
   });
 
   it('should call google analytics', function() {

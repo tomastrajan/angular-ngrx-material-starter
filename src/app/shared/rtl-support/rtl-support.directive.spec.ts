@@ -1,17 +1,17 @@
+import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { cold, getTestScheduler } from 'jasmine-marbles';
 
 import { RtlSupportDirective } from './rtl-support.directive';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { of } from 'rxjs';
-import { cold, getTestScheduler } from 'jasmine-marbles';
 @Component({
   template: `
-  <h2 rtl>Something Yellow</h2>
-  <h2 rtl>The Default (Gray)</h2>
-  <h2>No Highlight</h2>
-  <div rtl>Vasili</div>`
+    <h2 rtl>Something Yellow</h2>
+    <h2 rtl>The Default (Gray)</h2>
+    <h2>No Highlight</h2>
+    <div rtl>Vasili</div>
+  `
 })
 class TestComponent {}
 

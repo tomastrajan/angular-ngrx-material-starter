@@ -3,8 +3,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { routeAnimations, selectAuth } from '@app/core';
-import { State as BaseSettingsState } from '@app/settings';
+import { routeAnimations, selectAuth } from '../../core/core.module';
+import { State as BaseSettingsState } from '../../settings/settings.module';
 
 import { State as BaseExamplesState } from '../examples.state';
 

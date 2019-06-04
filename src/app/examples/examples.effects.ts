@@ -6,13 +6,13 @@ import { Store, select } from '@ngrx/store';
 import { merge } from 'rxjs';
 import { tap, map, distinctUntilChanged, filter } from 'rxjs/operators';
 
-import { TitleService } from '@app/core';
+import { TitleService } from '../core/core.module';
 import {
   State,
   selectSettingsState,
   SettingsActions,
   SettingsActionTypes
-} from '@app/settings';
+} from '../settings/settings.module';
 
 @Injectable()
 export class ExamplesEffects {

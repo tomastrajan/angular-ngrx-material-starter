@@ -1,8 +1,9 @@
-import { LocalStorageService } from '@app/core';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { cold } from 'jasmine-marbles';
 import { of } from 'rxjs';
+
+import { LocalStorageService } from '../../core/core.module';
 
 import { State } from '../examples.state';
 import { ActionTodosToggle } from './todos.actions';
@@ -24,7 +25,7 @@ describe('TodosEffects', () => {
       const effect = new TodosEffects(actions$, store, localStorage);
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.persistTodos).toEqual({ dispatch: false });
+      expect(metadata.persistTodos.dispatch).toEqual(false);
     });
 
     it('should call setItem on LocalStorageService for any action', () => {

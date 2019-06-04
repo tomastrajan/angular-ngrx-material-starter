@@ -1,17 +1,20 @@
 import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SharedModule } from '@app/shared';
+
+import { SharedModule } from '../shared.module';
 
 @Component({
   selector: 'host-for-test',
   template: `
-  <anms-big-input placeholder="I am going to do..."
-  [value]="newValue"
-  (keyup)="onKeyEvent($event)"
-  (keyup.enter)="onKeyEvent($event)"
-  (keyup.escape)="onKeyEvent($event)">
-</anms-big-input>
-`
+    <anms-big-input
+      placeholder="I am going to do..."
+      [value]="newValue"
+      (keyup)="onKeyEvent($event)"
+      (keyup.enter)="onKeyEvent($event)"
+      (keyup.escape)="onKeyEvent($event)"
+    >
+    </anms-big-input>
+  `
 })
 class HostComponent {
   newValue: string;

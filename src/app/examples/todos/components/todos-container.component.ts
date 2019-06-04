@@ -5,7 +5,10 @@ import { select, Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-import { ROUTE_ANIMATIONS_ELEMENTS, NotificationService } from '@app/core';
+import {
+  ROUTE_ANIMATIONS_ELEMENTS,
+  NotificationService
+} from '../../../core/core.module';
 
 import {
   ActionTodosAdd,

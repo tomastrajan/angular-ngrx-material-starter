@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { SettingsContainerComponent } from './settings';
+import { SettingsContainerComponent } from './settings/settings.module';
 
 const routes: Routes = [
   {
@@ -16,7 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'examples',
-    loadChildren: 'app/examples/examples.module#ExamplesModule'
+    loadChildren: () =>
+      import('./examples/examples.module').then(m => m.ExamplesModule)
   },
   {
     path: '**',

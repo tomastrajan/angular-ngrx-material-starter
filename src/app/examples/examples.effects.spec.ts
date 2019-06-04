@@ -1,3 +1,4 @@
+import { ActivationEnd } from '@angular/router';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
@@ -7,9 +8,9 @@ import {
   ActionSettingsChangeLanguage,
   SettingsActions,
   State
-} from '@app/settings';
-import { ActivationEnd } from '@angular/router';
-import { TitleService } from '@app/core';
+} from '../settings/settings.module';
+import { TitleService } from '../core/core.module';
+
 import { ExamplesEffects } from './examples.effects';
 
 describe('SettingsEffects', () => {
@@ -47,7 +48,7 @@ describe('SettingsEffects', () => {
       );
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.setTranslateServiceLanguage).toEqual({ dispatch: false });
+      expect(metadata.setTranslateServiceLanguage.dispatch).toEqual(false);
     });
   });
 
@@ -63,7 +64,7 @@ describe('SettingsEffects', () => {
       );
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.setTitle).toEqual({ dispatch: false });
+      expect(metadata.setTitle.dispatch).toEqual(false);
     });
 
     it('should setTitle', function() {

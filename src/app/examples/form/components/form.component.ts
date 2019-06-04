@@ -5,7 +5,10 @@ import { filter, debounceTime, take } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
-import { ROUTE_ANIMATIONS_ELEMENTS, NotificationService } from '@app/core';
+import {
+  ROUTE_ANIMATIONS_ELEMENTS,
+  NotificationService
+} from '../../../core/core.module';
 
 import { State } from '../../examples.state';
 import { ActionFormUpdate, ActionFormReset } from '../form.actions';

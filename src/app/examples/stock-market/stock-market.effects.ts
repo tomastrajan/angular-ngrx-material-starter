@@ -1,16 +1,11 @@
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from '@app/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { asyncScheduler, of } from 'rxjs';
-import {
-  catchError,
-  debounceTime,
-  map,
-  switchMap,
-  tap,
-  distinctUntilChanged
-} from 'rxjs/operators';
+import { catchError, debounceTime, map, switchMap, tap } from 'rxjs/operators';
+
+import { LocalStorageService } from '../../core/core.module';
+
 import {
   ActionStockMarketRetrieve,
   ActionStockMarketRetrieveError,
@@ -18,6 +13,7 @@ import {
   StockMarketActionTypes
 } from './stock-market.actions';
 import { StockMarketService } from './stock-market.service';
+
 export const STOCK_MARKET_KEY = 'EXAMPLES.STOCKS';
 
 @Injectable()

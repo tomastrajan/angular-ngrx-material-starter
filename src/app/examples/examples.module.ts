@@ -5,8 +5,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-import { SharedModule } from '@app/shared';
-import { environment } from '@env/environment';
+import { SharedModule } from '../shared/shared.module';
+import { environment } from '../../environments/environment';
 
 import { FEATURE_NAME, reducers } from './examples.state';
 import { ExamplesRoutingModule } from './examples-routing.module';
@@ -25,6 +25,14 @@ import { FormEffects } from './form/form.effects';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { NotificationsComponent } from './notifications/components/notifications.component';
 import { ExamplesEffects } from './examples.effects';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(
+    http,
+    `${environment.i18nPrefix}/assets/i18n/examples/`,
+    '.json'
+  );
+}
 
 @NgModule({
   imports: [
@@ -62,12 +70,4 @@ import { ExamplesEffects } from './examples.effects';
 })
 export class ExamplesModule {
   constructor() {}
-}
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(
-    http,
-    `${environment.i18nPrefix}/assets/i18n/examples/`,
-    '.json'
-  );
 }
