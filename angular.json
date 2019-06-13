@@ -68,13 +68,6 @@
                 },
                 {
                   "type": "bundle",
-                  "name": "vendor",
-                  "baseline": "900kb",
-                  "maximumWarning": "100kb",
-                  "maximumError": "200kb"
-                },
-                {
-                  "type": "bundle",
                   "name": "styles",
                   "baseline": "280kb",
                   "maximumWarning": "50kb",
@@ -83,9 +76,9 @@
                 {
                   "type": "bundle",
                   "name": "main",
-                  "baseline": "100kb",
-                  "maximumWarning": "50kb",
-                  "maximumError": "100kb"
+                  "baseline": "1024kb",
+                  "maximumWarning": "100kb",
+                  "maximumError": "200kb"
                 }
               ]
             }

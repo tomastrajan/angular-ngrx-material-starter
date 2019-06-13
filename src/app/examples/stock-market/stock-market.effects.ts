@@ -25,7 +25,7 @@ export class StockMarketEffects {
   ) {}
 
   @Effect()
-  retrieveStock = ({ debounce = 500, scheduler = asyncScheduler } = {}) =>
+  retrieveStock = ({ debounce = 500 } = {}) =>
     this.actions$.pipe(
       ofType<ActionStockMarketRetrieve>(StockMarketActionTypes.RETRIEVE),
       tap(action =>
@@ -33,7 +33,7 @@ export class StockMarketEffects {
           symbol: action.payload.symbol
         })
       ),
-      debounceTime(debounce, scheduler),
+      debounceTime(debounce),
       switchMap((action: ActionStockMarketRetrieve) =>
         this.service.retrieveStock(action.payload.symbol).pipe(
           map(stock => new ActionStockMarketRetrieveSuccess({ stock })),

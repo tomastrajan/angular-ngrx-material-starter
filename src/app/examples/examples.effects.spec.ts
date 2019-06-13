@@ -1,8 +1,9 @@
+import * as assert from 'assert';
 import { ActivationEnd } from '@angular/router';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
-import { cold, hot } from 'jasmine-marbles';
+import { TestScheduler } from 'rxjs/testing';
 
 import {
   ActionSettingsChangeLanguage,
@@ -12,6 +13,10 @@ import {
 import { TitleService } from '../core/core.module';
 
 import { ExamplesEffects } from './examples.effects';
+
+const scheduler = new TestScheduler((actual, expected) =>
+  assert.deepStrictEqual(actual, expected)
+);
 
 describe('SettingsEffects', () => {
   let router: any;
@@ -68,26 +73,29 @@ describe('SettingsEffects', () => {
     });
 
     it('should setTitle', function() {
-      const action = new ActionSettingsChangeLanguage({ language: 'en' });
-      const actions = hot('-a', { a: action });
+      scheduler.run(helpers => {
+        const { cold, hot } = helpers;
+        const action = new ActionSettingsChangeLanguage({ language: 'en' });
+        const actions = hot('-a', { a: action });
 
-      const routerEvent = new ActivationEnd(router.routerState.snapshot);
-      router.events = cold('a', { a: routerEvent });
+        const routerEvent = new ActivationEnd(router.routerState.snapshot);
+        router.events = cold('a', { a: routerEvent });
 
-      const effect = new ExamplesEffects(
-        actions,
-        store,
-        translateService,
-        router,
-        titleService
-      );
-
-      effect.setTitle.subscribe(() => {
-        expect(titleService.setTitle).toHaveBeenCalled();
-        expect(titleService.setTitle).toHaveBeenCalledWith(
-          router.routerState.snapshot.root,
-          translateService
+        const effect = new ExamplesEffects(
+          actions,
+          store,
+          translateService,
+          router,
+          titleService
         );
+
+        effect.setTitle.subscribe(() => {
+          expect(titleService.setTitle).toHaveBeenCalled();
+          expect(titleService.setTitle).toHaveBeenCalledWith(
+            router.routerState.snapshot.root,
+            translateService
+          );
+        });
       });
     });
   });

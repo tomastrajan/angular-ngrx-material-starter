@@ -1,7 +1,13 @@
-import { getEffectsMetadata } from '@ngrx/effects';
-import { cold } from 'jasmine-marbles';
-import { GoogleAnalyticsEffects } from './google-analytics.effects';
+import * as assert from 'assert';
 import { NavigationEnd } from '@angular/router';
+import { getEffectsMetadata } from '@ngrx/effects';
+import { TestScheduler } from 'rxjs/testing';
+
+import { GoogleAnalyticsEffects } from './google-analytics.effects';
+
+const scheduler = new TestScheduler((actual, expected) =>
+  assert.deepStrictEqual(actual, expected)
+);
 
 describe('GoogleAnalyticsEffects', () => {
   let router: any;
@@ -32,18 +38,22 @@ describe('GoogleAnalyticsEffects', () => {
   });
 
   it('should call google analytics', function() {
-    const routerEvent = new NavigationEnd(1, '', '');
-    router.events = cold('a', { a: routerEvent });
-    const effect = new GoogleAnalyticsEffects(router);
+    scheduler.run(helpers => {
+      const { cold } = helpers;
 
-    effect.pageView.subscribe(() => {
-      expect((<any>window).ga).toHaveBeenCalled();
-      expect((<any>window).ga).toHaveBeenCalledWith(
-        'set',
-        'page',
-        routerEvent.urlAfterRedirects
-      );
-      expect((<any>window).ga).toHaveBeenCalledWith('send', 'pageview');
+      const routerEvent = new NavigationEnd(1, '', '');
+      router.events = cold('a', { a: routerEvent });
+      const effect = new GoogleAnalyticsEffects(router);
+
+      effect.pageView.subscribe(() => {
+        expect((<any>window).ga).toHaveBeenCalled();
+        expect((<any>window).ga).toHaveBeenCalledWith(
+          'set',
+          'page',
+          routerEvent.urlAfterRedirects
+        );
+        expect((<any>window).ga).toHaveBeenCalledWith('send', 'pageview');
+      });
     });
   });
 });

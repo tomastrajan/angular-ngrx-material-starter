@@ -1,7 +1,8 @@
-import { Actions, getEffectsMetadata } from '@ngrx/effects';
+import * as assert from 'assert';
 import { Store } from '@ngrx/store';
-import { cold } from 'jasmine-marbles';
+import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { of } from 'rxjs';
+import { TestScheduler } from 'rxjs/testing';
 
 import { LocalStorageService } from '../../core/core.module';
 
@@ -9,6 +10,10 @@ import { State } from '../examples.state';
 import { ActionTodosToggle } from './todos.actions';
 import { TodosEffects, TODOS_KEY } from './todos.effects';
 import { TodosState } from './todos.model';
+
+const scheduler = new TestScheduler((actual, expected) =>
+  assert.deepStrictEqual(actual, expected)
+);
 
 describe('TodosEffects', () => {
   let localStorage: jasmine.SpyObj<LocalStorageService>;
@@ -29,21 +34,25 @@ describe('TodosEffects', () => {
     });
 
     it('should call setItem on LocalStorageService for any action', () => {
-      const todosState: TodosState = {
-        items: [{ id: '1', name: 'Test ToDo', done: false }],
-        filter: 'ALL'
-      };
-      store.pipe.and.returnValue(of(todosState));
-      const persistAction = new ActionTodosToggle({ id: 'a' });
-      const source = cold('a', { a: persistAction });
-      const actions = new Actions(source);
-      const effect = new TodosEffects(actions, store, localStorage);
+      scheduler.run(helpers => {
+        const { cold } = helpers;
 
-      effect.persistTodos.subscribe(() => {
-        expect(localStorage.setItem).toHaveBeenCalledWith(
-          TODOS_KEY,
-          todosState
-        );
+        const todosState: TodosState = {
+          items: [{ id: '1', name: 'Test ToDo', done: false }],
+          filter: 'ALL'
+        };
+        store.pipe.and.returnValue(of(todosState));
+        const persistAction = new ActionTodosToggle({ id: 'a' });
+        const source = cold('a', { a: persistAction });
+        const actions = new Actions(source);
+        const effect = new TodosEffects(actions, store, localStorage);
+
+        effect.persistTodos.subscribe(() => {
+          expect(localStorage.setItem).toHaveBeenCalledWith(
+            TODOS_KEY,
+            todosState
+          );
+        });
       });
     });
   });

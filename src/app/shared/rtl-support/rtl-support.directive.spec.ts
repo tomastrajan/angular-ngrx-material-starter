@@ -1,10 +1,16 @@
+import * as assert from 'assert';
 import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { cold, getTestScheduler } from 'jasmine-marbles';
+import { TestScheduler } from 'rxjs/testing';
 
 import { RtlSupportDirective } from './rtl-support.directive';
+
+const scheduler = new TestScheduler((actual, expected) =>
+  assert.deepStrictEqual(actual, expected)
+);
+
 @Component({
   template: `
     <h2 rtl>Something Yellow</h2>
@@ -21,31 +27,34 @@ describe('RtlSupportDirective', () => {
   let bareH2: DebugElement; // the <h2> w/o the directive
 
   beforeEach(() => {
-    fixture = TestBed.configureTestingModule({
-      imports: [TranslateModule.forRoot()],
-      declarations: [RtlSupportDirective, TestComponent],
-      providers: [
-        {
-          provide: TranslateService,
-          useValue: {
-            currentLang: 'he',
-            onLangChange: cold('--x--y|', {
-              x: { lang: 'he' },
-              y: { lang: 'de' }
-            })
+    scheduler.run(helpers => {
+      const { cold, flush } = helpers;
+      fixture = TestBed.configureTestingModule({
+        imports: [TranslateModule.forRoot()],
+        declarations: [RtlSupportDirective, TestComponent],
+        providers: [
+          {
+            provide: TranslateService,
+            useValue: {
+              currentLang: 'he',
+              onLangChange: cold('--x--y|', {
+                x: { lang: 'he' },
+                y: { lang: 'de' }
+              })
+            }
           }
-        }
-      ]
-    }).createComponent(TestComponent);
+        ]
+      }).createComponent(TestComponent);
 
-    getTestScheduler().flush(); // flush the observables
-    fixture.detectChanges(); // initial binding
+      flush(); // flush the observables
+      fixture.detectChanges(); // initial binding
 
-    // all elements with an attached RtlDirective
-    des = fixture.debugElement.queryAll(By.directive(RtlSupportDirective));
+      // all elements with an attached RtlDirective
+      des = fixture.debugElement.queryAll(By.directive(RtlSupportDirective));
 
-    // the h2 without the RtlDirective
-    bareH2 = fixture.debugElement.query(By.css('h2:not([rtl])'));
+      // the h2 without the RtlDirective
+      bareH2 = fixture.debugElement.query(By.css('h2:not([rtl])'));
+    });
   });
 
   // color tests
@@ -64,12 +73,15 @@ describe('RtlSupportDirective', () => {
   });
 
   it('should set "direction" rule value to "ltr" after current language changed to NOT hebrew', () => {
-    getTestScheduler().flush(); // flush the observables
-    fixture.detectChanges();
+    scheduler.run(helpers => {
+      const { flush } = helpers;
+      flush(); // flush the observables
+      fixture.detectChanges();
 
-    const textAlign = des[0].nativeElement.style.textAlign;
-    expect(textAlign).toBe('left');
-    const direction = des[0].nativeElement.style.direction;
-    expect(direction).toBe('ltr');
+      const textAlign = des[0].nativeElement.style.textAlign;
+      expect(textAlign).toBe('left');
+      const direction = des[0].nativeElement.style.direction;
+      expect(direction).toBe('ltr');
+    });
   });
 });
