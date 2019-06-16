@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+
+@import '../../../../../styles-variables';
+
+@mixin anms-notifications-component-theme($theme) {
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  .error {
+    color: mat-color($warn, default-contrast);
+    background-color: mat-color($warn);
+  }
+
+  .information {
+    color: mat-color($accent, default-contrast);
+    background-color: mat-color($accent);
+  }
+
+  .success {
+    color: mat-color($success-colors, default-contrast);
+    background-color: mat-color($success-colors);
+  }
+
+  .warning {
+    color: mat-color($warning-colors, default-contrast);
+    background-color: mat-color($warning-colors);
+  }
+}

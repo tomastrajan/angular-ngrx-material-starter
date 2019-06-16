@@ -14,15 +14,15 @@
 @import 'themes/nature-theme.scss';
 
 @import 'styles-reset.scss-theme';
-@import 'app/app.component.scss-theme';
-@import 'app/shared/big-input/big-input.component.scss-theme';
-@import 'app/static/about/about.component.scss-theme';
-@import 'app/examples/notifications/components/notifications.component.scss-theme';
-@import 'app/examples/todos/components/todos-container.component.scss-theme';
-@import 'app/examples/stock-market/components/stock-market-container.component.scss-theme';
-@import 'app/examples/theming/parent/parent.component.scss-theme';
-@import 'app/examples/theming/child/child.component.scss-theme';
-@import 'app/examples/examples/examples.component.scss-theme';
+@import 'app/app/app.component.scss-theme';
+@import 'app/shared/big-input/big-input/big-input.component.scss-theme';
+@import 'app/features/about/about/about.component.scss-theme.scss';
+@import 'app/features/examples/notifications/components/notifications.component.scss-theme';
+@import 'app/features/examples/todos/components/todos-container.component.scss-theme';
+@import 'app/features/examples/stock-market/components/stock-market-container.component.scss-theme';
+@import 'app/features/examples/theming/parent/parent.component.scss-theme';
+@import 'app/features/examples/theming/child/child.component.scss-theme';
+@import 'app/features/examples/examples/examples.component.scss-theme';
 
 @mixin custom-components-theme($theme) {
   @include anms-styles-reset-theme($theme);

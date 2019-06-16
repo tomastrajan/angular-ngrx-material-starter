@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
-import { Store, StoreModule } from '@ngrx/store';
+import { Store } from '@ngrx/store';
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
-import { MockStore, provideMockStore } from '../../../testing/utils';
 import { AppState } from '../core.state';
 
 import { AuthGuardService } from './auth-guard.service';
@@ -10,7 +10,6 @@ import { AuthState } from './auth.models';
 describe('AuthGuardService', () => {
   let authGuardService: AuthGuardService;
   let store: MockStore<AppState>;
-  let state: AppState;
 
   const authState: AuthState = {
     isAuthenticated: true
@@ -18,13 +17,17 @@ describe('AuthGuardService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [StoreModule.forRoot({})],
-      providers: [AuthGuardService, provideMockStore()]
+      providers: [
+        AuthGuardService,
+        provideMockStore({
+          initialState: {
+            auth: authState
+          }
+        })
+      ]
     });
     authGuardService = TestBed.get(AuthGuardService);
     store = TestBed.get(Store);
-    state = createState(authState);
-    store.setState(state);
   });
 
   it('should be created', () => {
@@ -33,7 +36,7 @@ describe('AuthGuardService', () => {
 
   it('should return isAuthenticated from authState', () => {
     authGuardService.canActivate().subscribe(canActivate => {
-      expect(canActivate).toBe(state.auth.isAuthenticated);
+      expect(canActivate).toBe(true);
     });
   });
 });

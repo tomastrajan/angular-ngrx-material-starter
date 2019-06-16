@@ -1,0 +1,64 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 rtl class="main-heading">{{ 'anms.examples.stocks.title' | translate }}</h1>
+    </div>
+  </div>
+  <div class="row" [ngClass]="routeAnimationsElements" rtl>
+    <ng-container *ngIf="stocks$ | async as stocks">
+      <div class="col-md-6 col-lg-3">
+        <form autocomplete="false">
+          <mat-form-field>
+            <input matInput [placeholder]="'anms.examples.stocks.symbol' | translate"
+                   [value]="stocks.symbol"
+                   (keyup)="onSymbolChange($event.target.value)">
+          </mat-form-field>
+        </form>
+        <p>
+          {{ 'anms.examples.stocks.description' | translate }} GOOGL, FB, AAPL, NVDA, AMZN,
+          TWTR, SNAP, TSLA...
+        </p>
+        <br>
+      </div>
+      <div class="col-md-6 col-lg-4 offset-lg-1">
+        <mat-spinner *ngIf="stocks.loading"></mat-spinner>
+        <mat-card *ngIf="stocks.stock">
+          <mat-card-title>{{stocks.stock.symbol}} <span>{{stocks.stock.last}} {{stocks.stock.ccy}}</span></mat-card-title>
+          <mat-card-subtitle>
+            <p [ngClass]="{ negative: stocks.stock.changeNegative }">
+              <fa-icon icon="caret-up"
+                        *ngIf="stocks.stock.changePositive"></fa-icon>
+              <fa-icon icon="caret-down"
+                        *ngIf="stocks.stock.changeNegative"></fa-icon>
+              {{stocks.stock.change}} ({{stocks.stock.changePercent}}%)
+            </p>
+          </mat-card-subtitle>
+          <mat-card-content>{{stocks.stock.exchange}}</mat-card-content>
+        </mat-card>
+        <p *ngIf="stocks.error" class="error-state">
+          <fa-icon icon="exclamation-triangle" size="3x"></fa-icon>
+          <br><br>
+          <span>
+            {{ 'anms.examples.stocks.error1' | translate }}
+            <span class="symbol">{{stocks.symbol}}</span>
+            {{ 'anms.examples.stocks.error2' | translate }}
+          </span>
+        </p>
+        <br>
+        <br>
+      </div>
+    </ng-container>
+    <div class="col-md-12 col-lg-4" [ngClass]="routeAnimationsElements">
+      <p>
+        {{ 'anms.examples.stocks.text1' | translate }} <code>HTTP</code>
+        {{ 'anms.examples.stocks.text2' | translate }} <code>@ngrx/effects</code>
+        {{ 'anms.examples.stocks.text3' | translate }}
+      </p>
+      <p>{{ 'anms.examples.stocks.text4' | translate }}</p>
+      <p>
+        {{ 'anms.examples.stocks.text5' | translate }} <code>.switchMap</code>.
+      </p>
+      <p>{{ 'anms.examples.stocks.text6' | translate }}</p>
+    </div>
+  </div>
+</div>

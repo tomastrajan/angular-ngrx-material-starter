@@ -4,11 +4,9 @@ import { NgModule } from '@angular/core';
 
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
-import { SettingsModule } from './settings/settings.module';
-import { StaticModule } from './static/static.module';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent } from './app/app.component';
 
 @NgModule({
   imports: [
@@ -20,15 +18,10 @@ import { AppComponent } from './app.component';
     CoreModule,
     SharedModule,
 
-    // eager features
-    StaticModule,
-    SettingsModule,
-
     // app
     AppRoutingModule
   ],
   declarations: [AppComponent],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-import { SettingsContainerComponent } from './settings/settings.module';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -10,14 +8,26 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'about',
+    loadChildren: () =>
+      import('./features/about/about.module').then(m => m.AboutModule)
+  },
+  {
+    path: 'feature-list',
+    loadChildren: () =>
+      import('./features/feature-list/feature-list.module').then(
+        m => m.FeatureListModule
+      )
+  },
+  {
     path: 'settings',
-    component: SettingsContainerComponent,
-    data: { title: 'anms.menu.settings' }
+    loadChildren: () =>
+      import('./features/settings/settings.module').then(m => m.SettingsModule)
   },
   {
     path: 'examples',
     loadChildren: () =>
-      import('./examples/examples.module').then(m => m.ExamplesModule)
+      import('./features/examples/examples.module').then(m => m.ExamplesModule)
   },
   {
     path: '**',
@@ -30,7 +40,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, {
       useHash: true,
-      scrollPositionRestoration: 'enabled'
+      scrollPositionRestoration: 'enabled',
+      preloadingStrategy: PreloadAllModules
     })
   ],
   exports: [RouterModule]
