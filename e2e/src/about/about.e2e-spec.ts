@@ -24,6 +24,8 @@ describe('About Page', () => {
     page
       .getActionButton(0)
       .click()
-      .then(() => expect(getCurrentRouteUrl()).toBe('features'));
+      .then(() => {
+        expect(getCurrentRouteUrl()).toBe('feature-list');
+      });
   });
 });
