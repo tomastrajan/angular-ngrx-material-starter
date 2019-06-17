@@ -28,7 +28,6 @@ export const selectPageAnimations = createSelector(
   settings => settings.pageAnimations
 );
 
-
 export const selectElementsAnimations = createSelector(
   selectSettings,
   settings => settings.elementsAnimations

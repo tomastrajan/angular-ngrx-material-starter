@@ -17,17 +17,24 @@ describe('CrudComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule, NoopAnimationsModule, RouterTestingModule, TranslateModule.forRoot()],
-      providers: [provideMockStore({
-        initialState: {
-          examples: {
-            books: {
-              ids: [],
-              entities: {}
+      imports: [
+        SharedModule,
+        NoopAnimationsModule,
+        RouterTestingModule,
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        provideMockStore({
+          initialState: {
+            examples: {
+              books: {
+                ids: [],
+                entities: {}
+              }
             }
           }
-        }
-      })],
+        })
+      ],
       declarations: [CrudComponent]
     }).compileComponents();
     store = TestBed.get(Store);

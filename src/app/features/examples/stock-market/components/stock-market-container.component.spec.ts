@@ -43,10 +43,17 @@ describe('StockMarketContainerComponent', () => {
   describe('given component booted', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [SharedModule, NoopAnimationsModule, TranslateModule.forRoot()],
-        providers: [StockMarketService, provideMockStore({
-          initialState: createState({ symbol: '', loading: true })
-        })],
+        imports: [
+          SharedModule,
+          NoopAnimationsModule,
+          TranslateModule.forRoot()
+        ],
+        providers: [
+          StockMarketService,
+          provideMockStore({
+            initialState: createState({ symbol: '', loading: true })
+          })
+        ],
         declarations: [StockMarketContainerComponent]
       }).compileComponents();
 

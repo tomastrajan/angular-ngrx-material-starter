@@ -5,6 +5,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { RtlSupportDirective } from './rtl-support.directive';
 import { BehaviorSubject, of } from 'rxjs';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   template: `
@@ -25,7 +26,7 @@ describe('RtlSupportDirective', () => {
   beforeEach(() => {
     languageSubject = new BehaviorSubject({ lang: 'he' });
     fixture = TestBed.configureTestingModule({
-      imports: [TranslateModule.forRoot()],
+      imports: [NoopAnimationsModule, TranslateModule.forRoot()],
       declarations: [RtlSupportDirective, TestComponent],
       providers: [
         {

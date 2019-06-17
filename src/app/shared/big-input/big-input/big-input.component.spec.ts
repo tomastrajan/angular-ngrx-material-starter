@@ -1,4 +1,5 @@
 import { Component, DebugElement } from '@angular/core';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SharedModule } from '../../shared.module';
@@ -30,7 +31,7 @@ describe('BigInputComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [HostComponent],
-      imports: [SharedModule]
+      imports: [SharedModule, NoopAnimationsModule]
     });
     fixture = TestBed.createComponent(HostComponent);
     component = fixture.componentInstance;

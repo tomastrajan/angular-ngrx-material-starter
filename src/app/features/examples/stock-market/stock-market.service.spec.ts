@@ -1,21 +1,11 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { of } from 'rxjs';
-
-import { SharedModule } from '../../../shared/shared.module';
-import { CoreModule } from '../../../core/core.module';
 
 import { StockMarketService } from './stock-market.service';
 
 describe('StockMarketService', () => {
-
   beforeEach(() => {
-
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule, CoreModule, SharedModule],
-      providers: [
-        StockMarketService
-      ]
+      providers: [StockMarketService]
     });
   });
 
@@ -40,9 +30,7 @@ describe('StockMarketService', () => {
       service.retrieveStock('TSLA').subscribe(stock => {
         expect(stock.symbol).toBe(expectedStock.symbol);
         expect(stock.exchange).toBe(expectedStock.primaryExchange);
-        expect(stock.changePercent).toBe(
-          expectedStock.changePercent
-        );
+        expect(stock.changePercent).toBe(expectedStock.changePercent);
         expect(stock.last).toBe(expectedStock.latestPrice);
       }, fail);
     }

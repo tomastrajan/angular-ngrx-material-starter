@@ -3,6 +3,7 @@ import { MatSlideToggle } from '@angular/material';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Store } from '@ngrx/store';
+import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 import { SharedModule } from '../../../shared/shared.module';
 
@@ -14,11 +15,12 @@ import {
   ActionSettingsChangeTheme,
   ActionSettingsChangeStickyHeader
 } from '../../../core/settings/settings.actions';
+import { TranslateModule } from '@ngx-translate/core';
 
 describe('SettingsComponent', () => {
   let component: SettingsContainerComponent;
   let fixture: ComponentFixture<SettingsContainerComponent>;
-  let store: Store<any>;
+  let store: MockStore<any>;
   let dispatchSpy;
 
   const getThemeSelectArrow = () =>
@@ -28,7 +30,14 @@ describe('SettingsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [SharedModule, NoopAnimationsModule],
+      imports: [SharedModule, NoopAnimationsModule, TranslateModule.forRoot()],
+      providers: [
+        provideMockStore({
+          initialState: {
+            settings: {}
+          }
+        })
+      ],
       declarations: [SettingsContainerComponent]
     }).compileComponents();
 
@@ -111,6 +120,11 @@ describe('SettingsComponent', () => {
   });
 
   it('should disable change animations page when disabled is set in state', () => {
+    store.setState({
+      settings: {
+        pageAnimationsDisabled: true
+      }
+    });
     fixture.detectChanges();
 
     dispatchSpy = spyOn(store, 'dispatch');
