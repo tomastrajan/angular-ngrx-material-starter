@@ -15,16 +15,4 @@ describe('STOCKS Actions', () => {
       goodStockSymbol
     );
   });
-
-  it('should display not found error for an invalid stock symbol', () => {
-    const badStockSymbol = 'BADSTOCK';
-
-    cy.get('input[placeholder="Stock symbol"]').type(
-      `{selectall}${badStockSymbol}`
-    );
-
-    cy.get('p.error-state', { timeout: 10000 })
-      .should('contain', 'not found')
-      .should('contain', badStockSymbol);
-  });
 });
