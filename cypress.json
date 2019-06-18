@@ -1,4 +1,10 @@
 {
   "baseUrl": "http://localhost:4200",
-  "video": false
+  "video": false,
+  "fixturesFolder": "projects/angular-ngrx-material-starter/cypress/fixtures",
+  "integrationFolder": "projects/angular-ngrx-material-starter/cypress/integration",
+  "pluginsFile": "projects/angular-ngrx-material-starter/cypress/plugins/index.js",
+  "screenshotsFolder": "projects/angular-ngrx-material-starter/cypress/screenshots",
+  "videosFolder": "projects/angular-ngrx-material-starter/cypress/videos",
+  "supportFile": "projects/angular-ngrx-material-starter/cypress/support/index.js"
 }
