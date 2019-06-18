@@ -7,7 +7,7 @@ import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { EMPTY } from 'rxjs';
 
-import { SharedModule } from '../../../../shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 import { State } from '../../examples.state';
 import { StockMarketService } from '../stock-market.service';

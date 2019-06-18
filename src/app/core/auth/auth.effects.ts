@@ -4,7 +4,7 @@ import { Action } from '@ngrx/store';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { tap } from 'rxjs/operators';
 
-import { LocalStorageService } from '../local-storage/local-storage.service';
+import { LocalStorageService } from '@core/local-storage/local-storage.service';
 
 import {
   ActionAuthLogin,

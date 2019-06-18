@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@core/core.module';
 
-import { Feature, features } from '../feature-list.data';
+import { Feature, features } from './feature-list.data';
 
 @Component({
   selector: 'anms-feature-list',

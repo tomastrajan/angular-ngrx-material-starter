@@ -12,7 +12,7 @@ import {
   AppState,
   selectSettingsLanguage,
   SettingsActionTypes
-} from '../../core/core.module';
+} from '@core/core.module';
 
 @Injectable()
 export class ExamplesEffects {

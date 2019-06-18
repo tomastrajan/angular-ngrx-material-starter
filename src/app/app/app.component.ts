@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { environment as env } from '../../environments/environment';
+import { environment as env } from '@environments/environment';
 
 import {
   ActionAuthLogin,
@@ -17,7 +17,7 @@ import {
   selectSettingsLanguage,
   selectEffectiveTheme,
   ActionSettingsChangeLanguage
-} from '../core/core.module';
+} from '@core/core.module';
 
 @Component({
   selector: 'anms-root',

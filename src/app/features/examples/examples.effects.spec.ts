@@ -9,7 +9,7 @@ import {
   TitleService,
   SettingsActions,
   ActionSettingsChangeLanguage
-} from '../../core/core.module';
+} from '@core/core.module';
 
 import { ExamplesEffects } from './examples.effects';
 import { State } from './examples.state';

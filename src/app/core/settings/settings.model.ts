@@ -1,4 +1,4 @@
-import { AppState } from '../core.module';
+import { AppState } from '@core/core.module';
 
 export const NIGHT_MODE_THEME = 'BLACK-THEME';
 

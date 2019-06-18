@@ -4,7 +4,7 @@ import { Action } from '@ngrx/store';
 import { asyncScheduler, of } from 'rxjs';
 import { catchError, debounceTime, map, switchMap, tap } from 'rxjs/operators';
 
-import { LocalStorageService } from '../../../core/core.module';
+import { LocalStorageService } from '@core/core.module';
 
 import {
   ActionStockMarketRetrieve,

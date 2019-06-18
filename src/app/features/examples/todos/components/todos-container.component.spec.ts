@@ -3,7 +3,7 @@
 // import { Store } from '@ngrx/store';
 //
 // import { MockStore, TestingModule } from '../../../../testing/utils';
-// import { NotificationService } from '../../../core/core.module';
+// import { NotificationService } from '@core/core.module';
 //
 // import {
 //   ActionTodosFilter,

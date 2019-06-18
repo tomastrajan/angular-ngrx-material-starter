@@ -11,7 +11,7 @@ import {
   AppState,
   LocalStorageService,
   TitleService
-} from '../core.module';
+} from '@core/core.module';
 
 import { SettingsEffects, SETTINGS_KEY } from './settings.effects';
 import { SettingsState } from './settings.model';

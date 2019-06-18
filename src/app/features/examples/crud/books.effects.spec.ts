@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { EMPTY, of } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 
-import { LocalStorageService } from '../../../core/core.module';
+import { LocalStorageService } from '@core/core.module';
 
 import { ActionBooksDeleteOne, ActionBooksUpsertOne } from './books.actions';
 import { BookState } from './books.model';
