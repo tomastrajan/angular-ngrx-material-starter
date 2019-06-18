@@ -110,6 +110,16 @@
               "projects/angular-ngrx-material-starter/src/styles.scss"
             ],
             "scripts": []
+          },
+          "configurations": {
+            "test": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/angular-ngrx-material-starter/src/environments/environment.ts",
+                  "with": "projects/angular-ngrx-material-starter/src/environments/environment.test.ts"
+                }
+              ]
+            }
           }
         },
         "lint": {
@@ -120,9 +130,7 @@
               "projects/angular-ngrx-material-starter/tsconfig.spec.json",
               "projects/angular-ngrx-material-starter/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {

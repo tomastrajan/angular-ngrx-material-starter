@@ -5,44 +5,36 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
+    "start:prod": "npm run build:prod && npm run server",
     "build": "ng build",
-    "test": "npm run lint && ng test --configuration=test",
-    "lint": "ng lint",
-    "e2e": "ng e2e",
-    "watch": "ng test --configuration=test --browsers ChromeHeadless --watch",
     "build:prod": "ng build --prod",
-    "clean": "rimraf ./dist/",
-    "server": "node ./server.js",
-    "prod": "npm run clean && npm run build:prod && npm run server",
-    "ci": "npm run clean && npm run format:test && ng lint && ng test --configuration=test --browsers ChromeTravisCi --code-coverage && ng e2e && npm run cy:ci && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "precy:ci": "npm run build:prod -- --deploy-url \"/angular-ngrx-material-starter/\" --base-href \"/angular-ngrx-material-starter\"",
-    "cy:ci": "npm-run-all --parallel --race server \"cy:run -- --config=baseUrl=http://localhost:4000\"",
+    "lint": "ng lint",
+    "test": "ng lint && ng test --configuration=test",
+    "watch": "ng test --configuration=test --browsers ChromeHeadless --watch",
+    "e2e": "ng e2e",
+    "ci": "npm run format:test && ng lint && ng test --configuration=test --browsers ChromeTravisCi --code-coverage && ng e2e && npm run cypress:ci-prepare && npm run cypress:ci && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:ci-prepare": "npm run build:prod -- --deploy-url \"/angular-ngrx-material-starter/\" --base-href \"/angular-ngrx-material-starter\"",
+    "cypress:ci": "npm-run-all --parallel --race server \"cypress:run -- --config=baseUrl=http://localhost:4000\"",
     "format:write": "prettier {src,e2e,cypress}/**/*.{ts,json,md,scss} --write",
     "format:test": "prettier {src,e2e,cypress}/**/*.{ts,json,md,scss} --list-different",
+    "release": "standard-version && git push --follow-tags origin master",
+    "analyze": "npm run build:prod -- --stats-json && webpack-bundle-analyzer ./dist/angular-ngrx-material-starter/stats.json",
+    "server": "node ./projects/server/server.js",
     "contributors:add": "all-contributors add",
     "contributors:generate": "all-contributors generate && node .all-contributors-html.js",
-    "contributors:check": "all-contributors check",
-    "compodoc": "compodoc -p src/tsconfig.app.json",
-    "analyze": "npm run clean && npm run build:prod -- --stats-json && webpack-bundle-analyzer ./dist/stats.json",
-    "release": "standard-version && git push --follow-tags origin master"
+    "contributors:check": "all-contributors check"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm run lint",
+      "pre-commit": "pretty-quick --staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
-    ]
-  },
-  "lint-staged": {
-    "{src,e2e,cypress}/**/*.{ts,json,md,scss}": [
-      "prettier --write",
-      "git add"
     ]
   },
   "private": true,
@@ -104,9 +96,9 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.1",
     "karma-spec-reporter": "^0.0.32",
-    "lint-staged": "^7.3.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.1",
     "protractor": "~5.4.1",
     "rimraf": "^2.6.2",
     "standard-version": "^6.0.1",
