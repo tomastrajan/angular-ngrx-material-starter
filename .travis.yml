@@ -1,20 +1,20 @@
 language: node_js
 node_js:
-  - "10"
+  - '10'
 sudo: required
 dist: trusty
 addons:
   chrome: stable
 cache:
   directories:
-  - $HOME/.npm
+    - $HOME/.npm
 before_install:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 install:
   - npm install codecov -g
-  - npm ci
+  - npm ci --ignore-scripts
 script:
   # run build script specified in package.json
   - npm run ci

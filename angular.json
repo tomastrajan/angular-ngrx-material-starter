@@ -142,14 +142,6 @@
           "configurations": {
             "production": {
               "devServerTarget": "angular-ngrx-material-starter:serve:production"
-            },
-            "test": {
-              "fileReplacements": [
-                {
-                  "replace": "projects/angular-ngrx-material-starter/src/environments/environment.ts",
-                  "with": "projects/angular-ngrx-material-starter/src/environments/environment.test.ts"
-                }
-              ]
             }
           }
         }
