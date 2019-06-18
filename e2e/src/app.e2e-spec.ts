@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-import { getCurrentRouteUrl } from './utils';
+import { getCurrentRouteUrl } from './utils/utils';
 
 describe('App', () => {
   let page: AppPage;

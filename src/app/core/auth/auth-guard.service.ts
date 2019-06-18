@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
 import { selectIsAuthenticated } from './auth.selectors';
 import { AppState } from '../core.state';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthGuardService implements CanActivate {
   constructor(private store: Store<AppState>) {}
 

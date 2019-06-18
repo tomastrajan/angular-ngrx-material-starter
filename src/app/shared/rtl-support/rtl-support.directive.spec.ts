@@ -1,17 +1,19 @@
+import { By } from '@angular/platform-browser';
 import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { RtlSupportDirective } from './rtl-support.directive';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { of } from 'rxjs';
-import { cold, getTestScheduler } from 'jasmine-marbles';
+import { BehaviorSubject, of } from 'rxjs';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 @Component({
   template: `
-  <h2 rtl>Something Yellow</h2>
-  <h2 rtl>The Default (Gray)</h2>
-  <h2>No Highlight</h2>
-  <div rtl>Vasili</div>`
+    <h2 rtl>Something Yellow</h2>
+    <h2 rtl>The Default (Gray)</h2>
+    <h2>No Highlight</h2>
+    <div rtl>Vasili</div>
+  `
 })
 class TestComponent {}
 
@@ -19,26 +21,24 @@ describe('RtlSupportDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
   let des: DebugElement[]; // the three elements w/ the directive
   let bareH2: DebugElement; // the <h2> w/o the directive
+  let languageSubject;
 
   beforeEach(() => {
+    languageSubject = new BehaviorSubject({ lang: 'he' });
     fixture = TestBed.configureTestingModule({
-      imports: [TranslateModule.forRoot()],
+      imports: [NoopAnimationsModule, TranslateModule.forRoot()],
       declarations: [RtlSupportDirective, TestComponent],
       providers: [
         {
           provide: TranslateService,
           useValue: {
             currentLang: 'he',
-            onLangChange: cold('--x--y|', {
-              x: { lang: 'he' },
-              y: { lang: 'de' }
-            })
+            onLangChange: languageSubject.asObservable()
           }
         }
       ]
     }).createComponent(TestComponent);
 
-    getTestScheduler().flush(); // flush the observables
     fixture.detectChanges(); // initial binding
 
     // all elements with an attached RtlDirective
@@ -63,8 +63,8 @@ describe('RtlSupportDirective', () => {
     expect(direction).toBe('rtl');
   });
 
-  it('should set "direction" rule value to "ltr" after current language changed to NOT hebrew', () => {
-    getTestScheduler().flush(); // flush the observables
+  it('should set "direction" rule value to "ltr" after current language changed to German', () => {
+    languageSubject.next({ lang: 'de' });
     fixture.detectChanges();
 
     const textAlign = des[0].nativeElement.style.textAlign;

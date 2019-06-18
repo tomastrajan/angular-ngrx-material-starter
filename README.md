@@ -45,31 +45,6 @@ npm start
   * `npm run compodoc` - runs [Compodoc](https://compodoc.app) to generate a static documentation of the application 
 
 ![analzye](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/analyze.png)
-## Run Inside Docker Container
-  * `docker build -t material-starter .` - builds docker image with name `material-starter`
-  * `docker run -it \
-   -v ${PWD}:/usr/src/app \
-   -v /usr/src/app/node_modules \
-   -p 4200:4200 \
-   --rm \
-   material-starter` - starts `material-starter` container (you can access running application browsing http://localhost:4200) 
-
-### Serving a Docker image
-When you are ready to serve your application the process has been made simple through the use of `Production.Dockerfile` and `Production.docker-compose.yml`.
-
-From the root directory of the project simply run `docker-compose -f Production.docker-compose.yml build`. After this has run you can test your image locally by running `docker-compose -f Production.docker-compose.yml up`. Run `docker-compose -f Production.docker-compose.yml down` once you are done looking over the website so that docker cleans up all the resources related to it.
-
-Npm scripts are also available to save having to write such a long command.
-
-#### Npm Scripts
-
-The following npm scripts correspond to the docker-compose commands.
-
-| Npm Script       | Docker Compose       |
-|------------------|----------------------|
-| docker:prod      | docker-compose build |
-| docker:prod-up   | docker-compose up    |
-| docker:prod-down | docker-compose down  |
 
 ## Make It Your Own
 When using this starter project to build your own app you might consider some of the following steps:

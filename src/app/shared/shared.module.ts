@@ -91,8 +91,8 @@ library.add(
   faBook
 );
 
-import { BigInputComponent } from './big-input/big-input.component';
-import { BigInputActionComponent } from './big-input/big-input-action.component';
+import { BigInputComponent } from './big-input/big-input/big-input.component';
+import { BigInputActionComponent } from './big-input/big-input-action/big-input-action.component';
 import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
 
 @NgModule({

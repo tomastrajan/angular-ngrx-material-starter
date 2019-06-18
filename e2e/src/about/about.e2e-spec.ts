@@ -1,5 +1,5 @@
 import { AboutPage } from './about.po';
-import { getCurrentRouteUrl } from '../utils';
+import { getCurrentRouteUrl } from '../utils/utils';
 
 describe('About Page', () => {
   let page: AboutPage;
@@ -24,6 +24,8 @@ describe('About Page', () => {
     page
       .getActionButton(0)
       .click()
-      .then(() => expect(getCurrentRouteUrl()).toBe('features'));
+      .then(() => {
+        expect(getCurrentRouteUrl()).toBe('feature-list');
+      });
   });
 });

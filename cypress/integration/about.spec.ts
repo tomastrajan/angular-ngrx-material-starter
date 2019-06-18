@@ -15,6 +15,6 @@ describe('About', () => {
     cy.get('.actions a')
       .first()
       .click();
-    cy.url().should('include', 'features');
+    cy.url().should('include', 'feature-list');
   });
 });
