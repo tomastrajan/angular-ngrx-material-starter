@@ -39,8 +39,6 @@ npm start
 - `npm run start:prod` - runs full prod build and serves prod bundle
 - `npm run test` - runs lint and tests
 - `npm run watch` - runs tests in watch mode
-- `npm run cypress:open` - opens the Cypress Test Runner in interactive mode
-- `npm run cypress:run` - runs Cypress tests via the cli
 - `npm run prettier` - runs prettier to format whole code base (`.ts` and `.scss`)
 - `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application)
 
@@ -84,7 +82,6 @@ The main goal of this repository is to provide an up to date example of Angular 
 - routing
 - testing of all the above mentioned concepts
 - Angular CLI configuration (prod build, budgets, ...)
-- end to end tests - a comparison between Protractor and Cypress
 
 This repository will also strive to always stay in sync with releases of Angular and the related libraries.
 The nature of the repository is also a great match for first time open source contributors who can add
@@ -120,7 +117,6 @@ Articles with content that explains various approaches used to build this starte
 - `@ngrx/effects` for API requests
 - fully responsive design
 - angular-material and custom components in `SharedModule`
-- Cypress for end to end tests
 
 ## Stack
 
