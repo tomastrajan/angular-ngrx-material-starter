@@ -4,7 +4,7 @@
 
     <mat-sidenav #sidenav mode="push">
       <div class="branding"><img [src]="logo" />
-        <span data-testid="title">{{ 'anms.title.short' | translate}}</span></div>
+        <span>{{ 'anms.title.short' | translate}}</span></div>
       <mat-nav-list>
         <a mat-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()" [routerLink]="[item.link]"
           routerLinkActive="active">
@@ -114,7 +114,7 @@
         </div>
         <div class="row">
           <div class="col-12 signature">
-            &#169; <span class="year" data-testid="footer-year">{{year}}</span> - Tomas Trajan
+            &#169; <span class="year">{{year}}</span> - Tomas Trajan
             <br class="d-block d-sm-none">
             <a [matTooltip]="'anms.footer.changelog' | translate"
                matTooltipPosition="before"

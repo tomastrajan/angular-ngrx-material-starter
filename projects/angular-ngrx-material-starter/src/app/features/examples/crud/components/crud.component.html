@@ -4,13 +4,13 @@
     <div class="col-md-6">
       <h2>{{ 'anms.examples.crud.subtitle1' | translate }}</h2>
       <mat-card *ngFor="let book of books$ | async" [ngClass]="routeAnimationsElements"
-        (click)=select(book) data-testid="crud-item">
-        <h3 data-testid="item-title">{{book.title}}</h3>
+        (click)=select(book)>
+        <h3>{{book.title}}</h3>
         <small>{{book.author}}</small>
       </mat-card>
       <p *ngIf="(books$ | async)?.length === 0">{{'anms.examples.crud.empty' | translate}}</p>
       <button type="button" mat-fab color="primary" class="add" [ngClass]="routeAnimationsElements"
-        *ngIf="!isEditing" (click)="addNew(bookForm)" data-testid="add-crud">
+        *ngIf="!isEditing" (click)="addNew(bookForm)">
         <fa-icon icon="plus"></fa-icon>
       </button>
     </div>
@@ -19,12 +19,12 @@
         <h2>{{ 'anms.examples.crud.subtitle2' | translate }}</h2>
         <span class="d-flex justify-content-end">
           <span *ngIf="selectedBook$ | async as selectedBook">
-            <button mat-icon-button color="accent" *ngIf="!isEditing" data-testid="edit-crud">
+            <button mat-icon-button color="accent" *ngIf="!isEditing">
               <fa-icon icon="edit" (click)="edit(selectedBook)" [matTooltip]="'anms.examples.crud.tooltip.edit' | translate"
                 matTooltipPosition="above">
               </fa-icon>
             </button>
-            <button mat-icon-button color="warn" (click)="delete(selectedBook)" data-testid="delete-crud">
+            <button mat-icon-button color="warn" (click)="delete(selectedBook)">
               <fa-icon icon="trash" [matTooltip]="'anms.examples.crud.tooltip.delete' | translate"
                 matTooltipPosition="above">
               </fa-icon>
@@ -44,7 +44,7 @@
           <mat-form-field class="col">
             <input matInput placeholder="{{ 'anms.examples.crud.placeholder1' | translate }}"
               formControlName="title" required autofocus>
-            <mat-error *ngIf="bookFormGroup.get('title').invalid" data-testid="error-title-crud">
+            <mat-error *ngIf="bookFormGroup.get('title').invalid">
               {{ 'anms.examples.crud.placeholder1' | translate }}
               {{ 'anms.examples.crud.error' | translate }}
             </mat-error>
@@ -54,7 +54,7 @@
           <mat-form-field class="col">
             <input matInput placeholder="{{ 'anms.examples.crud.placeholder2' | translate }}"
               formControlName="author" required>
-            <mat-error *ngIf="bookFormGroup.get('author').hasError('required')" data-testid="error-author-crud">
+            <mat-error *ngIf="bookFormGroup.get('author').hasError('required')">
               {{ 'anms.examples.crud.placeholder2' | translate }}
               {{ 'anms.examples.crud.error' | translate }}
             </mat-error>
