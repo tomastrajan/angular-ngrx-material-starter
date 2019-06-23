@@ -328,6 +328,25 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "abedzantout",
+      "name": "Abed Zantout",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4046627?v=4",
+      "profile": "https://github.com/abedzantout",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "wpcfan",
+      "name": "Peng Wang",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/85388?v=4",
+      "profile": "https://github.com/wpcfan",
+      "contributions": [
+        "code",
+        "translation"
+      ]
     }
   ]
 }
