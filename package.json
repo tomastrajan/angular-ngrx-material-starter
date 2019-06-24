@@ -35,6 +35,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-extensions/model": "^8.0.0",
     "@angular/animations": "~8.0.0",
     "@angular/cdk": "~8.0.0",
     "@angular/common": "~8.0.0",

@@ -1,0 +1,20 @@
+mat-card {
+  margin: 0 0 20px 0;
+  display: flex;
+
+  mat-card-header {
+    flex: 1 0 auto;
+  }
+}
+
+form {
+  margin: 20px 0;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  button {
+    margin: 20px 10px 0 0;
+  }
+}

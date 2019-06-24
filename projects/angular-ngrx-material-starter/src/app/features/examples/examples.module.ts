@@ -25,6 +25,8 @@ import { FormEffects } from './form/form.effects';
 import { AuthenticatedComponent } from './authenticated/authenticated.component';
 import { NotificationsComponent } from './notifications/components/notifications.component';
 import { ExamplesEffects } from './examples.effects';
+import { UserComponent } from './simple-state-management/components/user.component';
+import { UserService } from './simple-state-management/user.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(
@@ -64,9 +66,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     AuthenticatedComponent,
     CrudComponent,
     FormComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    UserComponent
   ],
-  providers: [StockMarketService]
+  providers: [StockMarketService, UserService]
 })
 export class ExamplesModule {
   constructor() {}
