@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.0.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v8.0.0...v8.0.1) (2019-06-24)
+
+### Bug Fixes
+
+- **ci:** adjust path in deployment script ([5464144](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/5464144))
+
 ## [8.0.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v7.4.0...v8.0.0) (2019-06-24)
 
 ### Bug Fixes
