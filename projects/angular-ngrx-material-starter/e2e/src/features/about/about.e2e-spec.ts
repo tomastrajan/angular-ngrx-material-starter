@@ -1,5 +1,5 @@
 import { AboutPage } from './about.po';
-import { getCurrentRouteUrl } from '../utils/utils';
+import { getCurrentRouteUrl } from '../../utils/utils';
 
 describe('About Page', () => {
   let page: AboutPage;
