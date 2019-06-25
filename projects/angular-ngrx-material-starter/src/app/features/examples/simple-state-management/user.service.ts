@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Model, ModelFactory } from '@angular-extensions/model';
 import { Observable } from 'rxjs';
 
-const initialData: User[] = [
+const INITIAL_DATA: User[] = [
   { id: uuid(), username: 'rockets', name: 'Elon', surname: 'Musk' },
   { id: uuid(), username: 'investing', name: 'Nassim', surname: 'Taleb' },
   { id: uuid(), username: 'philosophy', name: 'Yuval', surname: 'Harari' }
@@ -16,7 +16,7 @@ export class UserService {
   users$: Observable<User[]>;
 
   constructor(private modelFactory: ModelFactory<User[]>) {
-    this.model = this.modelFactory.create(initialData);
+    this.model = this.modelFactory.create([...INITIAL_DATA]);
     this.users$ = this.model.data$;
   }
 

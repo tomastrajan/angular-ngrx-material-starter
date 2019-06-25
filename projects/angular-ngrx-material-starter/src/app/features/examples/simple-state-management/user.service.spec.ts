@@ -26,11 +26,10 @@ describe('UserService', () => {
 
   it('should add user', done => {
     service.addUser({ username: 'test', name: 'Test', surname: 'Tester' });
-    setTimeout(() => {
-      service.users$.subscribe(users => {
-        expect(users.length).toBe(4);
-        done();
-      });
+    service.users$.subscribe(users => {
+      expect(users.length).toBe(4);
+      expect(users[3].username).toBe('test');
+      done();
     });
   });
 });
