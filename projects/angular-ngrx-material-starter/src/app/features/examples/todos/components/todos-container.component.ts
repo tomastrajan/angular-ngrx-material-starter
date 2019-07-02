@@ -10,12 +10,7 @@ import {
   NotificationService
 } from '../../../../core/core.module';
 
-import {
-  ActionTodosAdd,
-  ActionTodosFilter,
-  ActionTodosRemoveDone,
-  ActionTodosToggle
-} from '../todos.actions';
+import * as todoActions from '../todos.actions';
 import { selectTodos, selectRemoveDoneTodosDisabled } from '../todos.selectors';
 import { Todo, TodosFilter } from '../todos.model';
 import { State } from '../../examples.state';
@@ -59,7 +54,7 @@ export class TodosContainerComponent implements OnInit {
   }
 
   onAddTodo() {
-    this.store.dispatch(new ActionTodosAdd({ name: this.newTodo }));
+    this.store.dispatch(todoActions.actionTodosAdd(this.newTodo));
     const addedMessage = this.translateService.instant(
       'anms.examples.todos.added.notification',
       { name: this.newTodo }
@@ -69,7 +64,7 @@ export class TodosContainerComponent implements OnInit {
   }
 
   onToggleTodo(todo: Todo) {
-    this.store.dispatch(new ActionTodosToggle({ id: todo.id }));
+    this.store.dispatch(todoActions.actionTodosToggle({ id: todo.id }));
     const newStatus = this.translateService.instant(
       `anms.examples.todos.filter.${todo.done ? 'active' : 'done'}`
     );
@@ -90,7 +85,7 @@ export class TodosContainerComponent implements OnInit {
   }
 
   onRemoveDoneTodos() {
-    this.store.dispatch(new ActionTodosRemoveDone());
+    this.store.dispatch(todoActions.actionTodosRemoveDone());
     const removedMessage = this.translateService.instant(
       'anms.examples.todos.remove.notification'
     );
@@ -98,7 +93,7 @@ export class TodosContainerComponent implements OnInit {
   }
 
   onFilterTodos(filter: TodosFilter) {
-    this.store.dispatch(new ActionTodosFilter({ filter }));
+    this.store.dispatch(todoActions.actionTodosFilter({ filter }));
     const filterToMessage = this.translateService.instant(
       'anms.examples.todos.filter.notification'
     );

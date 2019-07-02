@@ -1,42 +1,21 @@
 import { v4 as uuid } from 'uuid';
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
 import { TodosFilter, TodosState } from './todos.model';
 
-export enum TodosActionTypes {
-  ADD = '[Todos] Add',
-  TOGGLE = '[Todos] Toggle',
-  REMOVE_DONE = '[Todos] Remove Done',
-  FILTER = '[Todos] Filter'
-}
+export const actionTodosAdd = createAction(
+  '[Todos] Add',
+  (name: string, id = uuid()) => ({ name, id })
+);
 
-export class ActionTodosAdd implements Action {
-  readonly type = TodosActionTypes.ADD;
-  readonly payload: { id: string; name: string };
+export const actionTodosToggle = createAction(
+  '[Todos] Toggle',
+  props<{ id: string }>()
+);
 
-  constructor({ id = uuid(), name = '' }: { id?: string; name: string }) {
-    this.payload = { id, name };
-  }
-}
+export const actionTodosRemoveDone = createAction('[Todos] Remove Done');
 
-export class ActionTodosToggle implements Action {
-  readonly type = TodosActionTypes.TOGGLE;
-
-  constructor(readonly payload: { id: string }) {}
-}
-
-export class ActionTodosRemoveDone implements Action {
-  readonly type = TodosActionTypes.REMOVE_DONE;
-}
-
-export class ActionTodosFilter implements Action {
-  readonly type = TodosActionTypes.FILTER;
-
-  constructor(readonly payload: { filter: TodosFilter }) {}
-}
-
-export type TodosActions =
-  | ActionTodosAdd
-  | ActionTodosToggle
-  | ActionTodosRemoveDone
-  | ActionTodosFilter;
+export const actionTodosFilter = createAction(
+  '[Todos] Filter',
+  props<{ filter: TodosFilter }>()
+);
