@@ -1,0 +1,15 @@
+{
+  "version": {
+    "app": "8.1.1",
+    "angular": "~8.0.0",
+    "ngrx": "^8.0.0",
+    "material": "~8.0.0",
+    "bootstrap": "^4.3.1",
+    "rxjs": "~6.5.0",
+    "ngxtranslate": "^11.0.1",
+    "fontAwesome": "^5.8.2",
+    "angularCli": "~8.0.0",
+    "typescript": "~3.4.0",
+    "cypress": ""
+  }
+}
