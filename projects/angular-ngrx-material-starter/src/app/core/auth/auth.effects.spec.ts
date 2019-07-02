@@ -5,7 +5,7 @@ import { EMPTY } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 
 import { LocalStorageService } from '../local-storage/local-storage.service';
-import { ActionAuthLogin, ActionAuthLogout } from './auth.actions';
+import { authLogin, authLogout } from './auth.actions';
 import { AuthEffects, AUTH_KEY } from './auth.effects';
 
 const scheduler = new TestScheduler((actual, expected) =>
@@ -35,7 +35,7 @@ describe('AuthEffects', () => {
     it('should call setItem on LocalStorageService', () => {
       scheduler.run(helpers => {
         const { cold } = helpers;
-        const loginAction = new ActionAuthLogin();
+        const loginAction = authLogin();
         const source = cold('a', { a: loginAction });
         const actions = new Actions(source);
         const effect = new AuthEffects(actions, localStorageService, router);
@@ -61,7 +61,7 @@ describe('AuthEffects', () => {
     it('should call setItem on LocalStorageService and navigate to about', () => {
       scheduler.run(helpers => {
         const { cold } = helpers;
-        const logoutAction = new ActionAuthLogout();
+        const logoutAction = authLogout();
         const source = cold('a', { a: logoutAction });
         const actions = new Actions(source);
         const effect = new AuthEffects(actions, localStorageService, router);

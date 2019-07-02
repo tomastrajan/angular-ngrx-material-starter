@@ -25,7 +25,7 @@ import {
 } from './core.state';
 import { AuthEffects } from './auth/auth.effects';
 import { selectIsAuthenticated, selectAuth } from './auth/auth.selectors';
-import { ActionAuthLogin, ActionAuthLogout } from './auth/auth.actions';
+import { authLogin, authLogout } from './auth/auth.actions';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { TitleService } from './title/title.service';
 import {
@@ -55,8 +55,8 @@ import {
 export {
   TitleService,
   selectAuth,
-  ActionAuthLogin,
-  ActionAuthLogout,
+  authLogin,
+  authLogout,
   routeAnimations,
   AppState,
   LocalStorageService,

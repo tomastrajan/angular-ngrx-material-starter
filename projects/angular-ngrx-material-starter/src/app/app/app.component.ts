@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
 import { environment as env } from '../../environments/environment';
 
 import {
-  ActionAuthLogin,
-  ActionAuthLogout,
+  authLogin,
+  authLogout,
   routeAnimations,
   AppState,
   LocalStorageService,
@@ -73,11 +73,11 @@ export class AppComponent implements OnInit {
   }
 
   onLoginClick() {
-    this.store.dispatch(new ActionAuthLogin());
+    this.store.dispatch(authLogin());
   }
 
   onLogoutClick() {
-    this.store.dispatch(new ActionAuthLogout());
+    this.store.dispatch(authLogout());
   }
 
   onLanguageSelect({ value: language }) {
