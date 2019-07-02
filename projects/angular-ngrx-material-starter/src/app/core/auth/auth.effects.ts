@@ -1,41 +1,44 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Action } from '@ngrx/store';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { ofType, createEffect, Actions } from '@ngrx/effects';
 import { tap } from 'rxjs/operators';
 
 import { LocalStorageService } from '../local-storage/local-storage.service';
 
-import {
-  ActionAuthLogin,
-  ActionAuthLogout,
-  AuthActionTypes
-} from './auth.actions';
+import { authLogin, authLogout } from './auth.actions';
 
 export const AUTH_KEY = 'AUTH';
 
 @Injectable()
 export class AuthEffects {
   constructor(
-    private actions$: Actions<Action>,
+    private actions$: Actions,
     private localStorageService: LocalStorageService,
     private router: Router
   ) {}
 
-  @Effect({ dispatch: false })
-  login = this.actions$.pipe(
-    ofType<ActionAuthLogin>(AuthActionTypes.LOGIN),
-    tap(() =>
-      this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: true })
-    )
+  login = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(authLogin),
+        tap(() =>
+          this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: true })
+        )
+      ),
+    { dispatch: false }
   );
 
-  @Effect({ dispatch: false })
-  logout = this.actions$.pipe(
-    ofType<ActionAuthLogout>(AuthActionTypes.LOGOUT),
-    tap(() => {
-      this.router.navigate(['']);
-      this.localStorageService.setItem(AUTH_KEY, { isAuthenticated: false });
-    })
+  logout = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(authLogout),
+        tap(() => {
+          this.router.navigate(['']);
+          this.localStorageService.setItem(AUTH_KEY, {
+            isAuthenticated: false
+          });
+        })
+      ),
+    { dispatch: false }
   );
 }

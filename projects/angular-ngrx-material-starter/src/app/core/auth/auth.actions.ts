@@ -1,16 +1,4 @@
-import { Action } from '@ngrx/store';
+import { createAction } from '@ngrx/store';
 
-export enum AuthActionTypes {
-  LOGIN = '[Auth] Login',
-  LOGOUT = '[Auth] Logout'
-}
-
-export class ActionAuthLogin implements Action {
-  readonly type = AuthActionTypes.LOGIN;
-}
-
-export class ActionAuthLogout implements Action {
-  readonly type = AuthActionTypes.LOGOUT;
-}
-
-export type AuthActions = ActionAuthLogin | ActionAuthLogout;
+export const authLogin = createAction('[Auth] Login');
+export const authLogout = createAction('[Auth] Logout');
