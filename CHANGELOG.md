@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.1.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v8.1.1...v8.1.2) (2019-07-03)
+
+### Bug Fixes
+
+- **dependencies:** regenerate package-lock.json to fix missing dep ([c562759](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c562759))
+
 ### [8.1.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v8.1.0...v8.1.1) (2019-06-25)
 
 ### Bug Fixes
