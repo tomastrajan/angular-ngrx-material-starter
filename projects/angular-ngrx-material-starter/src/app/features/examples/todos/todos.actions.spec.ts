@@ -1,53 +1,43 @@
-import {
-  ActionTodosAdd,
-  ActionTodosFilter,
-  ActionTodosRemoveDone,
-  ActionTodosToggle,
-  TodosActionTypes
-} from './todos.actions';
+import * as todoAction from './todos.actions';
 
 describe('Todos Actions', () => {
   describe('TodosAdd', () => {
     it('should create an action', () => {
-      const action = new ActionTodosAdd({ name: 'test' });
-      expect(action.payload).toEqual(
-        jasmine.objectContaining({
-          name: 'test'
-        })
-      );
-      expect(action.type).toEqual(TodosActionTypes.ADD);
-      expect(action.payload.id).toBeDefined();
+      const action = todoAction.actionTodosAdd('test');
+      expect(action.name).toEqual('test');
+      expect(action.type).toEqual(todoAction.actionTodosAdd.type);
+      expect(action.id).toBeDefined();
     });
   });
 
   describe('ActionTodosToggle', () => {
     it('should create an action', () => {
-      const action = new ActionTodosToggle({ id: '1' });
+      const action = todoAction.actionTodosToggle({ id: '1' });
 
       expect({ ...action }).toEqual({
-        type: TodosActionTypes.TOGGLE,
-        payload: { id: '1' }
+        type: todoAction.actionTodosToggle.type,
+        id: '1'
       });
     });
   });
 
   describe('ActionTodosRemoveDone', () => {
     it('should create an action', () => {
-      const action = new ActionTodosRemoveDone();
+      const action = todoAction.actionTodosRemoveDone();
 
       expect({ ...action }).toEqual({
-        type: TodosActionTypes.REMOVE_DONE
+        type: todoAction.actionTodosRemoveDone.type
       });
     });
   });
 
   describe('ActionTodosFilter', () => {
     it('should create an action', () => {
-      const action = new ActionTodosFilter({ filter: 'DONE' });
+      const action = todoAction.actionTodosFilter({ filter: 'DONE' });
 
       expect({ ...action }).toEqual({
-        type: TodosActionTypes.FILTER,
-        payload: { filter: 'DONE' }
+        type: todoAction.actionTodosFilter.type,
+        filter: 'DONE'
       });
     });
   });

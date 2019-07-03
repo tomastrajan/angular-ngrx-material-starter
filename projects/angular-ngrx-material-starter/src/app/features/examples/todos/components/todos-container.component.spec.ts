@@ -7,11 +7,7 @@ import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
-import {
-  ActionTodosFilter,
-  ActionTodosRemoveDone,
-  ActionTodosToggle
-} from '../todos.actions';
+import * as todoActions from '../todos.actions';
 import { TodosState } from '../todos.model';
 import { TodosContainerComponent } from './todos-container.component';
 import { State } from '../../examples.state';
@@ -105,7 +101,9 @@ describe('TodosComponent', () => {
     getRemoveDoneTodosButton().nativeElement.click();
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy).toHaveBeenCalledWith(new ActionTodosRemoveDone());
+    expect(dispatchSpy).toHaveBeenCalledWith(
+      todoActions.actionTodosRemoveDone()
+    );
   });
 
   it('should dispatch add todo action', () => {
@@ -129,9 +127,8 @@ describe('TodosComponent', () => {
 
     expect(getTodoInput().nativeElement.value).toBe('');
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    expect(dispatchSpy.calls.mostRecent().args[0].payload.name).toBe(
-      'hello world'
-    );
+    console.log(dispatchSpy.calls.mostRecent().args[0]);
+    expect(dispatchSpy.calls.mostRecent().args[0].name).toBe('hello world');
   });
 
   it('should dispatch filter todo action', () => {
@@ -147,7 +144,7 @@ describe('TodosComponent', () => {
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionTodosFilter({ filter: 'ACTIVE' })
+      todoActions.actionTodosFilter({ filter: 'ACTIVE' })
     );
   });
 
@@ -166,7 +163,7 @@ describe('TodosComponent', () => {
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionTodosToggle({ id: '1' })
+      todoActions.actionTodosToggle({ id: '1' })
     );
   });
 

@@ -1,11 +1,6 @@
 import { todosReducer, initialState } from './todos.reducer';
 import { TodosState } from './todos.model';
-import {
-  ActionTodosAdd,
-  ActionTodosFilter,
-  ActionTodosRemoveDone,
-  ActionTodosToggle
-} from './todos.actions';
+import * as todoActions from './todos.actions';
 
 describe('TodoReducer', () => {
   it('should return the default state', () => {
@@ -20,7 +15,7 @@ describe('TodoReducer', () => {
       items: [],
       filter: 'ALL'
     };
-    const action = new ActionTodosAdd({ name: 'Mercuccio' });
+    const action = todoActions.actionTodosAdd('Mercuccio');
     const state = todosReducer(TEST_INITIAL_STATE, action);
 
     expect(state.items.length).toEqual(1);
@@ -32,7 +27,7 @@ describe('TodoReducer', () => {
       items: [{ id: '1', name: 'Tibald', done: false }],
       filter: 'ALL'
     };
-    const action = new ActionTodosToggle({
+    const action = todoActions.actionTodosToggle({
       id: TEST_INITIAL_STATE.items[0].id
     });
     const state = todosReducer(TEST_INITIAL_STATE, action);
@@ -47,7 +42,7 @@ describe('TodoReducer', () => {
       ],
       filter: 'ALL'
     };
-    const action = new ActionTodosRemoveDone();
+    const action = todoActions.actionTodosRemoveDone();
     const state = todosReducer(TEST_INITIAL_STATE, action);
     expect(state.items.length).toBe(1);
     expect(state.items[0].name).toBe('Romeo');
@@ -63,7 +58,7 @@ describe('TodoReducer', () => {
       ],
       filter: 'ALL'
     };
-    const action = new ActionTodosFilter({ filter: 'DONE' });
+    const action = todoActions.actionTodosFilter({ filter: 'DONE' });
     const state = todosReducer(TEST_INITIAL_STATE, action);
 
     expect(state.items.length).toEqual(3); // must not change items collection

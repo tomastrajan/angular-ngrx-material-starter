@@ -7,7 +7,7 @@ import { TestScheduler } from 'rxjs/testing';
 import { LocalStorageService } from '../../../core/core.module';
 
 import { State } from '../examples.state';
-import { ActionTodosToggle } from './todos.actions';
+import { actionTodosToggle } from './todos.actions';
 import { TodosEffects, TODOS_KEY } from './todos.effects';
 import { TodosState } from './todos.model';
 
@@ -42,7 +42,7 @@ describe('TodosEffects', () => {
           filter: 'ALL'
         };
         store.pipe.and.returnValue(of(todosState));
-        const persistAction = new ActionTodosToggle({ id: 'a' });
+        const persistAction = actionTodosToggle({ id: 'a' });
         const source = cold('a', { a: persistAction });
         const actions = new Actions(source);
         const effect = new TodosEffects(actions, store, localStorage);

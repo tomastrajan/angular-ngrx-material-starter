@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
-
-import { TodosActions, TodosActionTypes } from './todos.actions';
+import { createReducer, on, Action } from '@ngrx/store';
+import * as todoAction from './todos.actions';
 import { Todo, TodosState } from './todos.model';
 
 export const initialState: TodosState = {
@@ -16,42 +16,35 @@ export const initialState: TodosState = {
   filter: 'ALL'
 };
 
-export function todosReducer(
-  state: TodosState = initialState,
-  action: TodosActions
-): TodosState {
-  switch (action.type) {
-    case TodosActionTypes.ADD:
-      return {
-        ...state,
-        items: [
-          {
-            id: action.payload.id,
-            name: action.payload.name,
-            done: false
-          },
-          ...state.items
-        ]
-      };
+const reducer = createReducer(
+  initialState,
+  on(todoAction.actionTodosAdd, (state, todo) => ({
+    ...state,
+    items: [
+      {
+        id: todo.id,
+        name: todo.name,
+        done: false
+      },
+      ...state.items
+    ]
+  })),
+  on(todoAction.actionTodosToggle, (state, todo) => ({
+    ...state,
+    items: state.items.map((item: Todo) =>
+      item.id === todo.id ? { ...item, done: !item.done } : item
+    )
+  })),
+  on(todoAction.actionTodosRemoveDone, (state, todo) => ({
+    ...state,
+    items: state.items.filter((item: Todo) => !item.done)
+  })),
+  on(todoAction.actionTodosFilter, (state, todo) => ({
+    ...state,
+    filter: todo.filter
+  }))
+);
 
-    case TodosActionTypes.TOGGLE:
-      return {
-        ...state,
-        items: state.items.map((item: Todo) =>
-          item.id === action.payload.id ? { ...item, done: !item.done } : item
-        )
-      };
-
-    case TodosActionTypes.REMOVE_DONE:
-      return {
-        ...state,
-        items: state.items.filter((item: Todo) => !item.done)
-      };
-
-    case TodosActionTypes.FILTER:
-      return { ...state, filter: action.payload.filter };
-
-    default:
-      return state;
-  }
+export function todosReducer(state: TodosState | undefined, action: Action) {
+  return reducer(state, action);
 }
