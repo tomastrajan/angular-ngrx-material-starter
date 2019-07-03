@@ -2,10 +2,9 @@ import { Stock, StockMarketState } from './stock-market.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { stockMarketReducer, initialState } from './stock-market.reducer';
 import {
-  StockMarketActions,
-  ActionStockMarketRetrieve,
-  ActionStockMarketRetrieveError,
-  ActionStockMarketRetrieveSuccess
+  actionStockMarketRetrieve,
+  actionStockMarketRetrieveError,
+  actionStockMarketRetrieveSuccess
 } from './stock-market.actions';
 
 const originalState: StockMarketState = {
@@ -27,7 +26,7 @@ describe('StockMarketReducer', () => {
   describe('undefined action', () => {
     describe('with undefined original state', () => {
       it('should return the initial state', () => {
-        const action = {} as StockMarketActions;
+        const action = {} as any;
         const state = stockMarketReducer(undefined, action);
 
         expect(state).toBe(initialState);
@@ -36,7 +35,7 @@ describe('StockMarketReducer', () => {
 
     describe('with a valid original state', () => {
       it('should return the original state', () => {
-        const action = {} as StockMarketActions;
+        const action = {} as any;
         const state = stockMarketReducer(originalState, action);
 
         expect(state).toBe(originalState);
@@ -46,20 +45,20 @@ describe('StockMarketReducer', () => {
 
   describe('RETRIEVE action', () => {
     it('should reflect that it has started loading the provided symbol', () => {
-      const action = new ActionStockMarketRetrieve({ symbol: 'AEONS' });
+      const action = actionStockMarketRetrieve({ symbol: 'AEONS' });
       const state = stockMarketReducer(originalState, action);
 
       expect(state.loading).toBeTruthy();
       expect(state.stock).toBeNull();
       expect(state.error).toBeNull();
-      expect(state.symbol).toBe(action.payload.symbol);
+      expect(state.symbol).toBe(action.symbol);
     });
   });
 
   describe('RETRIEVE_ERROR action', () => {
     it('should reflect the Error that occured', () => {
       const error = new HttpErrorResponse({});
-      const action = new ActionStockMarketRetrieveError({ error: error });
+      const action = actionStockMarketRetrieveError({ error: error });
       const state = stockMarketReducer(originalState, action);
 
       expect(state.symbol).toBe(state.symbol);
@@ -81,7 +80,7 @@ describe('StockMarketReducer', () => {
         changeNegative: false,
         changePercent: '+5%'
       };
-      const action = new ActionStockMarketRetrieveSuccess({ stock: stock });
+      const action = actionStockMarketRetrieveSuccess({ stock: stock });
       const state = stockMarketReducer(originalState, action);
 
       expect(state.loading).toBeFalsy();

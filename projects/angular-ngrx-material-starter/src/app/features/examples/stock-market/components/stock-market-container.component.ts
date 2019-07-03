@@ -6,7 +6,7 @@ import { take } from 'rxjs/operators';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../../core/core.module';
 
 import { selectStockMarket } from '../stock-market.selectors';
-import { ActionStockMarketRetrieve } from '../stock-market.actions';
+import { actionStockMarketRetrieve } from '../stock-market.actions';
 import { StockMarketState } from '../stock-market.model';
 import { State } from '../../examples.state';
 
@@ -30,6 +30,6 @@ export class StockMarketContainerComponent implements OnInit {
   }
 
   onSymbolChange(symbol: string) {
-    this.store.dispatch(new ActionStockMarketRetrieve({ symbol }));
+    this.store.dispatch(actionStockMarketRetrieve({ symbol }));
   }
 }

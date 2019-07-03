@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { Stock } from './stock-market.model';
@@ -9,25 +9,17 @@ export enum StockMarketActionTypes {
   RETRIEVE_ERROR = '[Stock] Retrieve Error'
 }
 
-export class ActionStockMarketRetrieve implements Action {
-  readonly type = StockMarketActionTypes.RETRIEVE;
+export const actionStockMarketRetrieve = createAction(
+  StockMarketActionTypes.RETRIEVE,
+  props<{ symbol: string }>()
+);
 
-  constructor(readonly payload: { symbol: string }) {}
-}
+export const actionStockMarketRetrieveSuccess = createAction(
+  StockMarketActionTypes.RETRIEVE_SUCCESS,
+  props<{ stock: Stock }>()
+);
 
-export class ActionStockMarketRetrieveSuccess implements Action {
-  readonly type = StockMarketActionTypes.RETRIEVE_SUCCESS;
-
-  constructor(readonly payload: { stock: Stock }) {}
-}
-
-export class ActionStockMarketRetrieveError implements Action {
-  readonly type = StockMarketActionTypes.RETRIEVE_ERROR;
-
-  constructor(readonly payload: { error: HttpErrorResponse }) {}
-}
-
-export type StockMarketActions =
-  | ActionStockMarketRetrieve
-  | ActionStockMarketRetrieveSuccess
-  | ActionStockMarketRetrieveError;
+export const actionStockMarketRetrieveError = createAction(
+  StockMarketActionTypes.RETRIEVE_ERROR,
+  props<{ error: HttpErrorResponse }>()
+);

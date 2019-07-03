@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect, ofType } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
-import { asyncScheduler, of } from 'rxjs';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { of } from 'rxjs';
 import { catchError, debounceTime, map, switchMap, tap } from 'rxjs/operators';
 
 import { LocalStorageService } from '../../../core/core.module';
 
 import {
-  ActionStockMarketRetrieve,
-  ActionStockMarketRetrieveError,
-  ActionStockMarketRetrieveSuccess,
-  StockMarketActionTypes
+  actionStockMarketRetrieve,
+  actionStockMarketRetrieveError,
+  actionStockMarketRetrieveSuccess
 } from './stock-market.actions';
 import { StockMarketService } from './stock-market.service';
 
@@ -19,26 +17,26 @@ export const STOCK_MARKET_KEY = 'EXAMPLES.STOCKS';
 @Injectable()
 export class StockMarketEffects {
   constructor(
-    private actions$: Actions<Action>,
+    private actions$: Actions,
     private localStorageService: LocalStorageService,
     private service: StockMarketService
   ) {}
 
-  @Effect()
-  retrieveStock = ({ debounce = 500 } = {}) =>
+  retrieveStock = createEffect(() => ({ debounce = 500 } = {}) =>
     this.actions$.pipe(
-      ofType<ActionStockMarketRetrieve>(StockMarketActionTypes.RETRIEVE),
+      ofType(actionStockMarketRetrieve),
       tap(action =>
         this.localStorageService.setItem(STOCK_MARKET_KEY, {
-          symbol: action.payload.symbol
+          symbol: action.symbol
         })
       ),
       debounceTime(debounce),
-      switchMap((action: ActionStockMarketRetrieve) =>
-        this.service.retrieveStock(action.payload.symbol).pipe(
-          map(stock => new ActionStockMarketRetrieveSuccess({ stock })),
-          catchError(error => of(new ActionStockMarketRetrieveError({ error })))
+      switchMap(action =>
+        this.service.retrieveStock(action.symbol).pipe(
+          map(stock => actionStockMarketRetrieveSuccess({ stock })),
+          catchError(error => of(actionStockMarketRetrieveError({ error })))
         )
       )
-    );
+    )
+  );
 }
