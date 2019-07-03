@@ -11,7 +11,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 
 import { State } from '../../examples.state';
 import { StockMarketService } from '../stock-market.service';
-import { ActionStockMarketRetrieve } from '../stock-market.actions';
+import { actionStockMarketRetrieve } from '../stock-market.actions';
 import { StockMarketContainerComponent } from './stock-market-container.component';
 import { StockMarketState } from '../stock-market.model';
 
@@ -85,7 +85,7 @@ describe('StockMarketContainerComponent', () => {
       it('should trigger dispatch with correct input', () => {
         expect(dispatchSpy).toHaveBeenCalledTimes(1);
         expect(dispatchSpy).toHaveBeenCalledWith(
-          new ActionStockMarketRetrieve({ symbol: 'A' })
+          actionStockMarketRetrieve({ symbol: 'A' })
         );
         expect(true).toBeTruthy();
       });

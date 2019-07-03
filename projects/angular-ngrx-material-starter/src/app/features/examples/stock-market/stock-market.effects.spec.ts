@@ -6,9 +6,9 @@ import { TestScheduler } from 'rxjs/testing';
 import { LocalStorageService } from '../../../core/core.module';
 
 import {
-  ActionStockMarketRetrieve,
-  ActionStockMarketRetrieveError,
-  ActionStockMarketRetrieveSuccess
+  actionStockMarketRetrieve,
+  actionStockMarketRetrieveError,
+  actionStockMarketRetrieveSuccess
 } from './stock-market.actions';
 import { StockMarketEffects, STOCK_MARKET_KEY } from './stock-market.effects';
 import { Stock } from './stock-market.model';
@@ -32,13 +32,13 @@ describe('StockMarketEffects', () => {
   it('should emit ActionStockMarketRetrieveSuccess on success', done => {
     scheduler.run(helpers => {
       const { cold, expectObservable } = helpers;
-      const retrieveAction1 = new ActionStockMarketRetrieve({
+      const retrieveAction1 = actionStockMarketRetrieve({
         symbol
       });
-      const retrieveAction2 = new ActionStockMarketRetrieve({
+      const retrieveAction2 = actionStockMarketRetrieve({
         symbol
       });
-      const retrieveAction3 = new ActionStockMarketRetrieve({
+      const retrieveAction3 = actionStockMarketRetrieve({
         symbol
       });
       const stock: Stock = {
@@ -51,7 +51,7 @@ describe('StockMarketEffects', () => {
         changeNegative: false,
         changePercent: '2.00'
       };
-      const successAction = new ActionStockMarketRetrieveSuccess({
+      const successAction = actionStockMarketRetrieveSuccess({
         stock
       });
       const values = {
@@ -72,11 +72,10 @@ describe('StockMarketEffects', () => {
         stockMarket
       );
 
-      expectObservable(
-        effects.retrieveStock({
-          debounce: 2
-        })
-      ).toBe(expected, values);
+      expectObservable(effects.retrieveStock({ debounce: 2 })).toBe(
+        expected,
+        values
+      );
 
       setTimeout(() => {
         expect(localStorage.setItem).toHaveBeenCalledTimes(3);
@@ -91,11 +90,11 @@ describe('StockMarketEffects', () => {
   it('should emit ActionStockMarketRetrieveError on error', () => {
     scheduler.run(helpers => {
       const { cold, expectObservable } = helpers;
-      const retrieveAction = new ActionStockMarketRetrieve({
+      const retrieveAction = actionStockMarketRetrieve({
         symbol
       });
       const error = 'ERROR';
-      const errorAction = new ActionStockMarketRetrieveError({
+      const errorAction = actionStockMarketRetrieveError({
         error
       } as any);
       const values = {
@@ -114,11 +113,10 @@ describe('StockMarketEffects', () => {
         stockMarket
       );
 
-      expectObservable(
-        effects.retrieveStock({
-          debounce: 0
-        })
-      ).toBe(expected, values);
+      expectObservable(effects.retrieveStock({ debounce: 0 })).toBe(
+        expected,
+        values
+      );
     });
   });
 });

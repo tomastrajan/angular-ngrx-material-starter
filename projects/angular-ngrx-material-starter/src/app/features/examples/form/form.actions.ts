@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { Form } from './form.model';
 
 export enum FormActionTypes {
@@ -6,13 +6,9 @@ export enum FormActionTypes {
   RESET = '[Form] Reset'
 }
 
-export class ActionFormUpdate implements Action {
-  readonly type = FormActionTypes.UPDATE;
-  constructor(readonly payload: { form: Form }) {}
-}
+export const actionFormUpdate = createAction(
+  FormActionTypes.UPDATE,
+  props<{ form: Form }>()
+);
 
-export class ActionFormReset implements Action {
-  readonly type = FormActionTypes.RESET;
-}
-
-export type FormActions = ActionFormUpdate | ActionFormReset;
+export const actionFormReset = createAction(FormActionTypes.RESET);

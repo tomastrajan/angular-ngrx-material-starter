@@ -9,7 +9,7 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../../core/core.module';
 
 import { State } from '../../examples.state';
 import { Book } from '../books.model';
-import { ActionBooksUpsertOne, ActionBooksDeleteOne } from '../books.actions';
+import { actionBooksDeleteOne, actionBooksUpsertOne } from '../books.actions';
 import { selectSelectedBook, selectAllBooks } from '../books.selectors';
 
 @Component({
@@ -69,7 +69,7 @@ export class CrudComponent {
   }
 
   delete(book: Book) {
-    this.store.dispatch(new ActionBooksDeleteOne({ id: book.id }));
+    this.store.dispatch(actionBooksDeleteOne({ id: book.id }));
     this.isEditing = false;
     this.router.navigate(['examples/crud']);
   }
@@ -77,7 +77,7 @@ export class CrudComponent {
   save() {
     if (this.bookFormGroup.valid) {
       const book = this.bookFormGroup.value;
-      this.store.dispatch(new ActionBooksUpsertOne({ book }));
+      this.store.dispatch(actionBooksUpsertOne({ book }));
       this.isEditing = false;
       this.router.navigate(['examples/crud', book.id]);
     }

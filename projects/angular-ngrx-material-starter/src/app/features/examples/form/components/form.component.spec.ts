@@ -63,18 +63,17 @@ describe('FormComponent', () => {
     fixture.detectChanges();
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
+    console.log(dispatchSpy.calls.mostRecent().args[0]);
     expect(dispatchSpy.calls.mostRecent().args[0].type).toBe('[Form] Update');
-    expect(dispatchSpy.calls.mostRecent().args[0].payload).toEqual({
-      form: {
-        autosave: false,
-        username: 'tomastrajan',
-        password: '',
-        email: '',
-        description: '',
-        requestGift: '',
-        birthday: '',
-        rating: 0
-      }
+    expect(dispatchSpy.calls.mostRecent().args[0].form).toEqual({
+      autosave: false,
+      username: 'tomastrajan',
+      password: '',
+      email: '',
+      description: '',
+      requestGift: '',
+      birthday: '',
+      rating: 0
     });
   });
 

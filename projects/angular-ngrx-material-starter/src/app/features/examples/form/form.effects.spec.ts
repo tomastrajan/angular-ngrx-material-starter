@@ -5,9 +5,9 @@ import { TestScheduler } from 'rxjs/testing';
 
 import { LocalStorageService } from '../../../core/core.module';
 
-import { ActionFormUpdate } from './form.actions';
 import { FormEffects, FORM_KEY } from './form.effects';
 import { Form } from './form.model';
+import { actionFormUpdate } from './form.actions';
 
 const scheduler = new TestScheduler((actual, expected) =>
   assert.deepStrictEqual(actual, expected)
@@ -44,7 +44,7 @@ describe('FormEffects', () => {
           birthday: new Date(),
           rating: 10
         };
-        const action = new ActionFormUpdate({ form });
+        const action = actionFormUpdate({ form });
         const source = cold('a', { a: action });
         const actions = new Actions(source);
         const effect = new FormEffects(actions, localStorageService);

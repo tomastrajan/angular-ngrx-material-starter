@@ -1,7 +1,8 @@
 import { createEntityAdapter, EntityAdapter } from '@ngrx/entity';
 
 import { Book, BookState } from './books.model';
-import { BookActionTypes, BookActions } from './books.actions';
+import { actionBooksDeleteOne, actionBooksUpsertOne } from './books.actions';
+import { Action, createReducer, on } from '@ngrx/store';
 
 export function sortByTitle(a: Book, b: Book): number {
   return a.title.localeCompare(b.title);
@@ -24,18 +25,14 @@ export const initialState: BookState = bookAdapter.getInitialState({
   }
 });
 
-export function bookReducer(
-  state: BookState = initialState,
-  action: BookActions
-): BookState {
-  switch (action.type) {
-    case BookActionTypes.UPSERT_ONE:
-      return bookAdapter.upsertOne(action.payload.book, state);
+const reducer = createReducer(
+  initialState,
+  on(actionBooksUpsertOne, (state, { book }) =>
+    bookAdapter.upsertOne(book, state)
+  ),
+  on(actionBooksDeleteOne, (state, { id }) => bookAdapter.removeOne(id, state))
+);
 
-    case BookActionTypes.DELETE_ONE:
-      return bookAdapter.removeOne(action.payload.id, state);
-
-    default:
-      return state;
-  }
+export function bookReducer(state: BookState | undefined, action: Action) {
+  return reducer(state, action);
 }

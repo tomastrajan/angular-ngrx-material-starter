@@ -5,10 +5,10 @@ import { TestScheduler } from 'rxjs/testing';
 
 import { LocalStorageService } from '../../../core/core.module';
 
-import { ActionBooksDeleteOne, ActionBooksUpsertOne } from './books.actions';
 import { BookState } from './books.model';
 import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { BooksEffects, BOOKS_KEY } from './books.effects';
+import { actionBooksDeleteOne, actionBooksUpsertOne } from './books.actions';
 
 const scheduler = new TestScheduler((actual, expected) =>
   assert.deepStrictEqual(actual, expected)
@@ -50,7 +50,7 @@ describe('BooksEffects', () => {
     it('should call setItem on LocalStorageService for delete one action', () => {
       scheduler.run(helpers => {
         const { cold } = helpers;
-        const action = new ActionBooksDeleteOne({ id: '1' });
+        const action = actionBooksDeleteOne({ id: '1' });
         const source = cold('a', { a: action });
         const actions = new Actions(source);
         const effects = new BooksEffects(actions, store, localStorage);
@@ -67,7 +67,7 @@ describe('BooksEffects', () => {
     it('should call setItem on LocalStorageService for upsert one action', () => {
       scheduler.run(helpers => {
         const { cold } = helpers;
-        const action = new ActionBooksUpsertOne({ book: {} as any });
+        const action = actionBooksUpsertOne({ book: {} as any });
         const source = cold('a', { a: action });
         const actions = new Actions(source);
         const effects = new BooksEffects(actions, store, localStorage);

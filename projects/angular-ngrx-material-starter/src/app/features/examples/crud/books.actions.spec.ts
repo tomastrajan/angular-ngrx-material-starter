@@ -1,12 +1,12 @@
 import {
-  BookActionTypes,
-  ActionBooksUpsertOne,
-  ActionBooksDeleteOne
+  actionBooksDeleteOne,
+  actionBooksUpsertOne,
+  BookActionTypes
 } from './books.actions';
 
 describe('Books Actions', () => {
   it('should create ActionBooksUpsertOne action', () => {
-    const action = new ActionBooksUpsertOne({
+    const action = actionBooksUpsertOne({
       book: {
         id: '1',
         title: 'test',
@@ -15,7 +15,7 @@ describe('Books Actions', () => {
       }
     });
     expect(action.type).toEqual(BookActionTypes.UPSERT_ONE);
-    expect(action.payload.book).toEqual(
+    expect(action.book).toEqual(
       jasmine.objectContaining({
         id: '1',
         title: 'test',
@@ -26,8 +26,8 @@ describe('Books Actions', () => {
   });
 
   it('should create ActionBooksDeleteOne action', () => {
-    const action = new ActionBooksDeleteOne({ id: '1' });
+    const action = actionBooksDeleteOne({ id: '1' });
     expect(action.type).toEqual(BookActionTypes.DELETE_ONE);
-    expect(action.payload.id).toEqual('1');
+    expect(action.id).toEqual('1');
   });
 });

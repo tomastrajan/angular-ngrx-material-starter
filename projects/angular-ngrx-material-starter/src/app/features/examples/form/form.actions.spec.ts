@@ -1,8 +1,8 @@
 import { Form } from './form.model';
 import {
-  ActionFormUpdate,
   FormActionTypes,
-  ActionFormReset
+  actionFormUpdate,
+  actionFormReset
 } from './form.actions';
 
 describe('Form Actions', () => {
@@ -17,15 +17,15 @@ describe('Form Actions', () => {
       birthday: new Date(),
       rating: 10
     };
-    const action = new ActionFormUpdate({
+    const action = actionFormUpdate({
       form: testForm
     });
     expect(action.type).toEqual(FormActionTypes.UPDATE);
-    expect(action.payload.form).toEqual(jasmine.objectContaining(testForm));
+    expect(action.form).toEqual(jasmine.objectContaining(testForm));
   });
 
   it('should create ActionFormReset action', () => {
-    const action = new ActionFormReset();
+    const action = actionFormReset();
     expect(action.type).toEqual(FormActionTypes.RESET);
   });
 });

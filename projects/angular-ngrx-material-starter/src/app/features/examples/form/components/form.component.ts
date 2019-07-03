@@ -11,7 +11,7 @@ import {
 } from '../../../../core/core.module';
 
 import { State } from '../../examples.state';
-import { ActionFormUpdate, ActionFormReset } from '../form.actions';
+import { actionFormReset, actionFormUpdate } from '../form.actions';
 import { selectFormState } from '../form.selectors';
 import { Form } from '../form.model';
 
@@ -65,11 +65,11 @@ export class FormComponent implements OnInit {
   }
 
   update(form: Form) {
-    this.store.dispatch(new ActionFormUpdate({ form }));
+    this.store.dispatch(actionFormUpdate({ form }));
   }
 
   save() {
-    this.store.dispatch(new ActionFormUpdate({ form: this.form.value }));
+    this.store.dispatch(actionFormUpdate({ form: this.form.value }));
   }
 
   submit() {
@@ -89,6 +89,6 @@ export class FormComponent implements OnInit {
     this.form.reset();
     this.form.clearValidators();
     this.form.clearAsyncValidators();
-    this.store.dispatch(new ActionFormReset());
+    this.store.dispatch(actionFormReset());
   }
 }
