@@ -1,5 +1,15 @@
 import { SettingsState, NIGHT_MODE_THEME } from './settings.model';
-import { SettingsActions, SettingsActionTypes } from './settings.actions';
+import {
+  actionSettingsChangeAnimationsElements,
+  actionSettingsChangeAnimationsPage,
+  actionSettingsChangeAnimationsPageDisabled,
+  actionSettingsChangeAutoNightMode,
+  actionSettingsChangeHour,
+  actionSettingsChangeLanguage,
+  actionSettingsChangeStickyHeader,
+  actionSettingsChangeTheme
+} from './settings.actions';
+import { Action, createReducer, on } from '@ngrx/store';
 
 export const initialState: SettingsState = {
   language: 'en',
@@ -13,28 +23,31 @@ export const initialState: SettingsState = {
   hour: 0
 };
 
+const reducer = createReducer(
+  initialState,
+  on(
+    actionSettingsChangeLanguage,
+    actionSettingsChangeTheme,
+    actionSettingsChangeAutoNightMode,
+    actionSettingsChangeStickyHeader,
+    actionSettingsChangeAnimationsPage,
+    actionSettingsChangeAnimationsElements,
+    actionSettingsChangeHour,
+    (state, action) => ({ ...state, ...action })
+  ),
+  on(
+    actionSettingsChangeAnimationsPageDisabled,
+    (state, { pageAnimationsDisabled }) => ({
+      ...state,
+      pageAnimationsDisabled,
+      pageAnimations: false
+    })
+  )
+);
+
 export function settingsReducer(
-  state: SettingsState = initialState,
-  action: SettingsActions
-): SettingsState {
-  switch (action.type) {
-    case SettingsActionTypes.CHANGE_LANGUAGE:
-    case SettingsActionTypes.CHANGE_THEME:
-    case SettingsActionTypes.CHANGE_AUTO_NIGHT_AUTO_MODE:
-    case SettingsActionTypes.CHANGE_STICKY_HEADER:
-    case SettingsActionTypes.CHANGE_ANIMATIONS_PAGE:
-    case SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS:
-    case SettingsActionTypes.CHANGE_HOUR:
-      return { ...state, ...action.payload };
-
-    case SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED:
-      return {
-        ...state,
-        pageAnimations: false,
-        pageAnimationsDisabled: action.payload.pageAnimationsDisabled
-      };
-
-    default:
-      return state;
-  }
+  state: SettingsState | undefined,
+  action: Action
+) {
+  return reducer(state, action);
 }

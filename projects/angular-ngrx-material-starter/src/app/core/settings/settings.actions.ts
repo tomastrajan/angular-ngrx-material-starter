@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
 import { Language } from './settings.model';
 
@@ -13,60 +13,40 @@ export enum SettingsActionTypes {
   CHANGE_HOUR = '[Settings] Change Hours'
 }
 
-export class ActionSettingsChangeLanguage implements Action {
-  readonly type = SettingsActionTypes.CHANGE_LANGUAGE;
+export const actionSettingsChangeLanguage = createAction(
+  SettingsActionTypes.CHANGE_LANGUAGE,
+  props<{ language: Language }>()
+);
 
-  constructor(readonly payload: { language: Language }) {}
-}
+export const actionSettingsChangeTheme = createAction(
+  SettingsActionTypes.CHANGE_THEME,
+  props<{ theme: string }>()
+);
+export const actionSettingsChangeAutoNightMode = createAction(
+  SettingsActionTypes.CHANGE_AUTO_NIGHT_AUTO_MODE,
+  props<{ autoNightMode: boolean }>()
+);
 
-export class ActionSettingsChangeTheme implements Action {
-  readonly type = SettingsActionTypes.CHANGE_THEME;
+export const actionSettingsChangeStickyHeader = createAction(
+  SettingsActionTypes.CHANGE_STICKY_HEADER,
+  props<{ stickyHeader: boolean }>()
+);
 
-  constructor(readonly payload: { theme: string }) {}
-}
+export const actionSettingsChangeAnimationsPage = createAction(
+  SettingsActionTypes.CHANGE_ANIMATIONS_PAGE,
+  props<{ pageAnimations: boolean }>()
+);
 
-export class ActionSettingsChangeAutoNightMode implements Action {
-  readonly type = SettingsActionTypes.CHANGE_AUTO_NIGHT_AUTO_MODE;
+export const actionSettingsChangeAnimationsPageDisabled = createAction(
+  SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED,
+  props<{ pageAnimationsDisabled: boolean }>()
+);
 
-  constructor(readonly payload: { autoNightMode: boolean }) {}
-}
-
-export class ActionSettingsChangeStickyHeader implements Action {
-  readonly type = SettingsActionTypes.CHANGE_STICKY_HEADER;
-
-  constructor(readonly payload: { stickyHeader: boolean }) {}
-}
-
-export class ActionSettingsChangeAnimationsPage implements Action {
-  readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_PAGE;
-
-  constructor(readonly payload: { pageAnimations: boolean }) {}
-}
-
-export class ActionSettingsChangeAnimationsPageDisabled implements Action {
-  readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED;
-
-  constructor(readonly payload: { pageAnimationsDisabled: boolean }) {}
-}
-
-export class ActionSettingsChangeAnimationsElements implements Action {
-  readonly type = SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS;
-
-  constructor(readonly payload: { elementsAnimations: boolean }) {}
-}
-
-export class ActionSettingsChangeHour implements Action {
-  readonly type = SettingsActionTypes.CHANGE_HOUR;
-
-  constructor(readonly payload: { hour: number }) {}
-}
-
-export type SettingsActions =
-  | ActionSettingsChangeLanguage
-  | ActionSettingsChangeTheme
-  | ActionSettingsChangeAnimationsPage
-  | ActionSettingsChangeAnimationsPageDisabled
-  | ActionSettingsChangeAnimationsElements
-  | ActionSettingsChangeAutoNightMode
-  | ActionSettingsChangeStickyHeader
-  | ActionSettingsChangeHour;
+export const actionSettingsChangeAnimationsElements = createAction(
+  SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS,
+  props<{ elementsAnimations: boolean }>()
+);
+export const actionSettingsChangeHour = createAction(
+  SettingsActionTypes.CHANGE_HOUR,
+  props<{ hour: number }>()
+);

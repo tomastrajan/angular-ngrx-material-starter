@@ -9,11 +9,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 import { SettingsContainerComponent } from './settings-container.component';
 import {
-  ActionSettingsChangeAnimationsElements,
-  ActionSettingsChangeAnimationsPage,
-  ActionSettingsChangeAutoNightMode,
-  ActionSettingsChangeTheme,
-  ActionSettingsChangeStickyHeader
+  actionSettingsChangeAnimationsElements,
+  actionSettingsChangeAnimationsPage,
+  actionSettingsChangeAutoNightMode,
+  actionSettingsChangeTheme,
+  actionSettingsChangeStickyHeader
 } from '../../../core/settings/settings.actions';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -57,7 +57,7 @@ describe('SettingsComponent', () => {
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionSettingsChangeStickyHeader({ stickyHeader: false })
+      actionSettingsChangeStickyHeader({ stickyHeader: false })
     );
   });
 
@@ -73,7 +73,7 @@ describe('SettingsComponent', () => {
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionSettingsChangeTheme({ theme: 'LIGHT-THEME' })
+      actionSettingsChangeTheme({ theme: 'LIGHT-THEME' })
     );
   });
 
@@ -87,7 +87,7 @@ describe('SettingsComponent', () => {
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionSettingsChangeAutoNightMode({ autoNightMode: false })
+      actionSettingsChangeAutoNightMode({ autoNightMode: false })
     );
   });
 
@@ -101,7 +101,7 @@ describe('SettingsComponent', () => {
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionSettingsChangeAnimationsPage({ pageAnimations: false })
+      actionSettingsChangeAnimationsPage({ pageAnimations: false })
     );
   });
 
@@ -115,7 +115,7 @@ describe('SettingsComponent', () => {
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
-      new ActionSettingsChangeAnimationsElements({ elementsAnimations: false })
+      actionSettingsChangeAnimationsElements({ elementsAnimations: false })
     );
   });
 

@@ -15,7 +15,7 @@ import {
 
 import { SettingsEffects, SETTINGS_KEY } from './settings.effects';
 import { SettingsState } from './settings.model';
-import { ActionSettingsChangeTheme, SettingsActions } from './settings.actions';
+import { actionSettingsChangeTheme } from './settings.actions';
 
 const scheduler = new TestScheduler((actual, expected) =>
   assert.deepStrictEqual(actual, expected)
@@ -55,7 +55,7 @@ describe('SettingsEffects', () => {
 
   describe('persistSettings', () => {
     it('should not dispatch any action', () => {
-      const actions = new Actions<SettingsActions>();
+      const actions = new Actions<any>();
       const effect = new SettingsEffects(
         actions,
         store,
@@ -88,7 +88,7 @@ describe('SettingsEffects', () => {
         hour: 12
       };
       store.pipe.and.returnValue(of(settings));
-      const persistAction = new ActionSettingsChangeTheme({ theme: 'DEFAULT' });
+      const persistAction = actionSettingsChangeTheme({ theme: 'DEFAULT' });
       const source = cold('a', { a: persistAction });
       const actions = new Actions(source);
       const effect = new SettingsEffects(

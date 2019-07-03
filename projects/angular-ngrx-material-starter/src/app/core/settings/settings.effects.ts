@@ -2,7 +2,7 @@ import { ActivationEnd, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { select, Store } from '@ngrx/store';
-import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, interval, merge, of } from 'rxjs';
 import {
@@ -20,9 +20,14 @@ import { AnimationsService } from '../animations/animations.service';
 import { TitleService } from '../title/title.service';
 
 import {
-  SettingsActionTypes,
-  SettingsActions,
-  ActionSettingsChangeHour
+  actionSettingsChangeAnimationsElements,
+  actionSettingsChangeAnimationsPage,
+  actionSettingsChangeAnimationsPageDisabled,
+  actionSettingsChangeAutoNightMode,
+  actionSettingsChangeLanguage,
+  actionSettingsChangeTheme,
+  actionSettingsChangeStickyHeader,
+  actionSettingsChangeHour
 } from './settings.actions';
 import {
   selectEffectiveTheme,
@@ -39,7 +44,7 @@ const INIT = of('anms-init-effect-trigger');
 @Injectable()
 export class SettingsEffects {
   constructor(
-    private actions$: Actions<SettingsActions>,
+    private actions$: Actions,
     private store: Store<State>,
     private router: Router,
     private overlayContainer: OverlayContainer,
@@ -49,90 +54,103 @@ export class SettingsEffects {
     private translateService: TranslateService
   ) {}
 
-  @Effect()
-  changeHour = interval(60_000).pipe(
-    mapTo(new Date().getHours()),
-    distinctUntilChanged(),
-    map(hour => new ActionSettingsChangeHour({ hour }))
-  );
-
-  @Effect({ dispatch: false })
-  persistSettings = this.actions$.pipe(
-    ofType(
-      SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS,
-      SettingsActionTypes.CHANGE_ANIMATIONS_PAGE,
-      SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED,
-      SettingsActionTypes.CHANGE_AUTO_NIGHT_AUTO_MODE,
-      SettingsActionTypes.CHANGE_LANGUAGE,
-      SettingsActionTypes.CHANGE_STICKY_HEADER,
-      SettingsActionTypes.CHANGE_THEME
-    ),
-    withLatestFrom(this.store.pipe(select(selectSettingsState))),
-    tap(([action, settings]) =>
-      this.localStorageService.setItem(SETTINGS_KEY, settings)
+  changeHour = createEffect(() =>
+    interval(60_000).pipe(
+      mapTo(new Date().getHours()),
+      distinctUntilChanged(),
+      map(hour => actionSettingsChangeHour({ hour }))
     )
   );
 
-  @Effect({ dispatch: false })
-  updateRouteAnimationType = merge(
-    INIT,
-    this.actions$.pipe(
-      ofType(
-        SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS,
-        SettingsActionTypes.CHANGE_ANIMATIONS_PAGE
-      )
-    )
-  ).pipe(
-    withLatestFrom(
-      combineLatest([
-        this.store.pipe(select(selectPageAnimations)),
-        this.store.pipe(select(selectElementsAnimations))
-      ])
-    ),
-    tap(([action, [pageAnimations, elementsAnimations]]) =>
-      this.animationsService.updateRouteAnimationType(
-        pageAnimations,
-
-        elementsAnimations
-      )
-    )
+  persistSettings = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(
+          actionSettingsChangeAnimationsElements,
+          actionSettingsChangeAnimationsPage,
+          actionSettingsChangeAnimationsPageDisabled,
+          actionSettingsChangeAutoNightMode,
+          actionSettingsChangeLanguage,
+          actionSettingsChangeStickyHeader,
+          actionSettingsChangeTheme
+        ),
+        withLatestFrom(this.store.pipe(select(selectSettingsState))),
+        tap(([action, settings]) =>
+          this.localStorageService.setItem(SETTINGS_KEY, settings)
+        )
+      ),
+    { dispatch: false }
   );
 
-  @Effect({ dispatch: false })
-  updateTheme = merge(
-    INIT,
-    this.actions$.pipe(ofType(SettingsActionTypes.CHANGE_THEME))
-  ).pipe(
-    withLatestFrom(this.store.pipe(select(selectEffectiveTheme))),
-    tap(([action, effectiveTheme]) => {
-      const classList = this.overlayContainer.getContainerElement().classList;
-      const toRemove = Array.from(classList).filter((item: string) =>
-        item.includes('-theme')
-      );
-      if (toRemove.length) {
-        classList.remove(...toRemove);
-      }
-      classList.add(effectiveTheme);
-    })
+  updateRouteAnimationType = createEffect(
+    () =>
+      merge(
+        INIT,
+        this.actions$.pipe(
+          ofType(
+            actionSettingsChangeAnimationsElements,
+            actionSettingsChangeAnimationsPage
+          )
+        )
+      ).pipe(
+        withLatestFrom(
+          combineLatest([
+            this.store.pipe(select(selectPageAnimations)),
+            this.store.pipe(select(selectElementsAnimations))
+          ])
+        ),
+        tap(([action, [pageAnimations, elementsAnimations]]) =>
+          this.animationsService.updateRouteAnimationType(
+            pageAnimations,
+            elementsAnimations
+          )
+        )
+      ),
+    { dispatch: false }
   );
 
-  @Effect({ dispatch: false })
-  setTranslateServiceLanguage = this.store.pipe(
-    select(selectSettingsLanguage),
-    distinctUntilChanged(),
-    tap(language => this.translateService.use(language))
+  updateTheme = createEffect(
+    () =>
+      merge(INIT, this.actions$.pipe(ofType(actionSettingsChangeTheme))).pipe(
+        withLatestFrom(this.store.pipe(select(selectEffectiveTheme))),
+        tap(([action, effectiveTheme]) => {
+          const classList = this.overlayContainer.getContainerElement()
+            .classList;
+          const toRemove = Array.from(classList).filter((item: string) =>
+            item.includes('-theme')
+          );
+          if (toRemove.length) {
+            classList.remove(...toRemove);
+          }
+          classList.add(effectiveTheme);
+        })
+      ),
+    { dispatch: false }
   );
 
-  @Effect({ dispatch: false })
-  setTitle = merge(
-    this.actions$.pipe(ofType(SettingsActionTypes.CHANGE_LANGUAGE)),
-    this.router.events.pipe(filter(event => event instanceof ActivationEnd))
-  ).pipe(
-    tap(() => {
-      this.titleService.setTitle(
-        this.router.routerState.snapshot.root,
-        this.translateService
-      );
-    })
+  setTranslateServiceLanguage = createEffect(
+    () =>
+      this.store.pipe(
+        select(selectSettingsLanguage),
+        distinctUntilChanged(),
+        tap(language => this.translateService.use(language))
+      ),
+    { dispatch: false }
+  );
+
+  setTitle = createEffect(
+    () =>
+      merge(
+        this.actions$.pipe(ofType(actionSettingsChangeLanguage)),
+        this.router.events.pipe(filter(event => event instanceof ActivationEnd))
+      ).pipe(
+        tap(() => {
+          this.titleService.setTitle(
+            this.router.routerState.snapshot.root,
+            this.translateService
+          );
+        })
+      ),
+    { dispatch: false }
   );
 }

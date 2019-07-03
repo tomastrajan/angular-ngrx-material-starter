@@ -5,11 +5,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { TestScheduler } from 'rxjs/testing';
 
-import {
-  TitleService,
-  SettingsActions,
-  ActionSettingsChangeLanguage
-} from '../../core/core.module';
+import { TitleService } from '../../core/core.module';
+
+import { actionSettingsChangeLanguage } from '../../core/settings/settings.actions';
 
 import { ExamplesEffects } from './examples.effects';
 import { State } from './examples.state';
@@ -42,8 +40,8 @@ describe('SettingsEffects', () => {
   });
 
   describe('setTranslateServiceLanguage', () => {
-    it('should not dispatch action', function() {
-      const actions = new Actions<SettingsActions>();
+    it('should not dispatch action', () => {
+      const actions = new Actions<any>();
       const effect = new ExamplesEffects(
         actions,
         store,
@@ -52,14 +50,13 @@ describe('SettingsEffects', () => {
         titleService
       );
       const metadata = getEffectsMetadata(effect);
-
       expect(metadata.setTranslateServiceLanguage.dispatch).toEqual(false);
     });
   });
 
   describe('setTitle', () => {
-    it('should not dispatch action', function() {
-      const actions = new Actions<SettingsActions>();
+    it('should not dispatch action', () => {
+      const actions = new Actions<any>();
       const effect = new ExamplesEffects(
         actions,
         store,
@@ -72,10 +69,10 @@ describe('SettingsEffects', () => {
       expect(metadata.setTitle.dispatch).toEqual(false);
     });
 
-    it('should setTitle', function() {
+    it('should setTitle', () => {
       scheduler.run(helpers => {
         const { cold, hot } = helpers;
-        const action = new ActionSettingsChangeLanguage({ language: 'en' });
+        const action = actionSettingsChangeLanguage({ language: 'en' });
         const actions = hot('-a', { a: action });
 
         const routerEvent = new ActivationEnd(router.routerState.snapshot);

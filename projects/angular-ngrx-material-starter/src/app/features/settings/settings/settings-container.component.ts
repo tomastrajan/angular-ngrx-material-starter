@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
 
 import {
-  ActionSettingsChangeAnimationsElements,
-  ActionSettingsChangeAnimationsPage,
-  ActionSettingsChangeAutoNightMode,
-  ActionSettingsChangeLanguage,
-  ActionSettingsChangeTheme,
-  ActionSettingsChangeStickyHeader
+  actionSettingsChangeAnimationsElements,
+  actionSettingsChangeAnimationsPage,
+  actionSettingsChangeAutoNightMode,
+  actionSettingsChangeLanguage,
+  actionSettingsChangeTheme,
+  actionSettingsChangeStickyHeader
 } from '../../../core/settings/settings.actions';
 import { SettingsState, State } from '../../../core/settings/settings.model';
 import { selectSettings } from '../../../core/settings/settings.selectors';
@@ -50,32 +50,28 @@ export class SettingsContainerComponent implements OnInit {
   }
 
   onLanguageSelect({ value: language }) {
-    this.store.dispatch(new ActionSettingsChangeLanguage({ language }));
+    this.store.dispatch(actionSettingsChangeLanguage({ language }));
   }
 
   onThemeSelect({ value: theme }) {
-    this.store.dispatch(new ActionSettingsChangeTheme({ theme }));
+    this.store.dispatch(actionSettingsChangeTheme({ theme }));
   }
 
   onAutoNightModeToggle({ checked: autoNightMode }) {
-    this.store.dispatch(
-      new ActionSettingsChangeAutoNightMode({ autoNightMode })
-    );
+    this.store.dispatch(actionSettingsChangeAutoNightMode({ autoNightMode }));
   }
 
   onStickyHeaderToggle({ checked: stickyHeader }) {
-    this.store.dispatch(new ActionSettingsChangeStickyHeader({ stickyHeader }));
+    this.store.dispatch(actionSettingsChangeStickyHeader({ stickyHeader }));
   }
 
   onPageAnimationsToggle({ checked: pageAnimations }) {
-    this.store.dispatch(
-      new ActionSettingsChangeAnimationsPage({ pageAnimations })
-    );
+    this.store.dispatch(actionSettingsChangeAnimationsPage({ pageAnimations }));
   }
 
   onElementsAnimationsToggle({ checked: elementsAnimations }) {
     this.store.dispatch(
-      new ActionSettingsChangeAnimationsElements({ elementsAnimations })
+      actionSettingsChangeAnimationsElements({ elementsAnimations })
     );
   }
 }
