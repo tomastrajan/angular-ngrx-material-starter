@@ -22,7 +22,7 @@ export class BooksEffects {
   persistBooks = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(actionBooksUpsertOne.type, actionBooksDeleteOne.type),
+        ofType(actionBooksUpsertOne, actionBooksDeleteOne),
         withLatestFrom(this.store.pipe(select(selectBooks))),
         tap(([actions, booksState]) =>
           this.localStorageService.setItem(BOOKS_KEY, booksState)

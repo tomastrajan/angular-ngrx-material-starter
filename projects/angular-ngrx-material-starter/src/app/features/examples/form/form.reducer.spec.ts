@@ -1,6 +1,6 @@
 import { Form } from './form.model';
 import { formReducer, initialState } from './form.reducer';
-import { ActionFormUpdate, ActionFormReset } from './form.actions';
+import { actionFormReset, actionFormUpdate } from './form.actions';
 
 describe('FormReducer', () => {
   const form: Form = {
@@ -21,7 +21,7 @@ describe('FormReducer', () => {
   });
 
   it('should update the form', () => {
-    const action = new ActionFormUpdate({
+    const action = actionFormUpdate({
       form: { ...form, username: 'updated' }
     });
     const state = formReducer(initialState, action);
@@ -29,7 +29,7 @@ describe('FormReducer', () => {
   });
 
   it('should reset the form', () => {
-    const action = new ActionFormReset();
+    const action = actionFormReset();
     const state = formReducer(undefined, action);
     expect(state).toEqual(initialState);
   });

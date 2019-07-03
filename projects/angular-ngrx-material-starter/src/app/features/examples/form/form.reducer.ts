@@ -1,24 +1,17 @@
 import { FormState, Form } from './form.model';
-import { FormActions, FormActionTypes } from './form.actions';
+import { actionFormReset, actionFormUpdate } from './form.actions';
+import { Action, createReducer, on } from '@ngrx/store';
 
 export const initialState: FormState = {
   form: {} as Form
 };
 
-export function formReducer(
-  state: FormState = initialState,
-  action: FormActions
-): FormState {
-  switch (action.type) {
-    case FormActionTypes.UPDATE:
-      return {
-        ...state,
-        form: action.payload.form
-      };
-    case FormActionTypes.RESET:
-      return initialState;
+const reducer = createReducer(
+  initialState,
+  on(actionFormUpdate, (state, { form }) => ({ ...state, form })),
+  on(actionFormReset, () => initialState)
+);
 
-    default:
-      return state;
-  }
+export function formReducer(state: FormState | undefined, action: Action) {
+  return reducer(state, action);
 }
