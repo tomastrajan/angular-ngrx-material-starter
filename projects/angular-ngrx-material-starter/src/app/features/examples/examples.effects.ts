@@ -24,7 +24,7 @@ export class ExamplesEffects {
   ) {}
 
   setTranslateServiceLanguage = createEffect(
-    () =>
+    () => () =>
       this.store.pipe(
         select(selectSettingsLanguage),
         distinctUntilChanged(),
