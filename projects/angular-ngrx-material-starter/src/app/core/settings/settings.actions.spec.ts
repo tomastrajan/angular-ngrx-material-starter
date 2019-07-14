@@ -6,8 +6,7 @@ import {
   actionSettingsChangeHour,
   actionSettingsChangeLanguage,
   actionSettingsChangeStickyHeader,
-  actionSettingsChangeTheme,
-  SettingsActionTypes
+  actionSettingsChangeTheme
 } from './settings.actions';
 import { NIGHT_MODE_THEME } from './settings.model';
 
@@ -17,7 +16,7 @@ describe('Settings Actions', () => {
       theme: NIGHT_MODE_THEME
     });
 
-    expect(action.type).toEqual(SettingsActionTypes.CHANGE_THEME);
+    expect(action.type).toEqual(actionSettingsChangeTheme.type);
     expect(action.theme).toEqual(NIGHT_MODE_THEME);
   });
 
@@ -26,7 +25,7 @@ describe('Settings Actions', () => {
       elementsAnimations: true
     });
 
-    expect(action.type).toEqual(SettingsActionTypes.CHANGE_ANIMATIONS_ELEMENTS);
+    expect(action.type).toEqual(actionSettingsChangeAnimationsElements.type);
     expect(action.elementsAnimations).toEqual(true);
   });
 
@@ -35,7 +34,7 @@ describe('Settings Actions', () => {
       pageAnimations: true
     });
 
-    expect(action.type).toEqual(SettingsActionTypes.CHANGE_ANIMATIONS_PAGE);
+    expect(action.type).toEqual(actionSettingsChangeAnimationsPage.type);
     expect(action.pageAnimations).toEqual(true);
   });
 
@@ -45,7 +44,7 @@ describe('Settings Actions', () => {
     });
 
     expect(action.type).toEqual(
-      SettingsActionTypes.CHANGE_ANIMATIONS_PAGE_DISABLED
+      actionSettingsChangeAnimationsPageDisabled.type
     );
     expect(action.pageAnimationsDisabled).toEqual(true);
   });
@@ -55,9 +54,7 @@ describe('Settings Actions', () => {
       autoNightMode: true
     });
 
-    expect(action.type).toEqual(
-      SettingsActionTypes.CHANGE_AUTO_NIGHT_AUTO_MODE
-    );
+    expect(action.type).toEqual(actionSettingsChangeAutoNightMode.type);
     expect(action.autoNightMode).toEqual(true);
   });
 
@@ -66,7 +63,7 @@ describe('Settings Actions', () => {
       language: 'en'
     });
 
-    expect(action.type).toEqual(SettingsActionTypes.CHANGE_LANGUAGE);
+    expect(action.type).toEqual(actionSettingsChangeLanguage.type);
     expect(action.language).toEqual('en');
   });
 
@@ -75,7 +72,7 @@ describe('Settings Actions', () => {
       stickyHeader: true
     });
 
-    expect(action.type).toEqual(SettingsActionTypes.CHANGE_STICKY_HEADER);
+    expect(action.type).toEqual(actionSettingsChangeStickyHeader.type);
     expect(action.stickyHeader).toEqual(true);
   });
 
@@ -84,7 +81,7 @@ describe('Settings Actions', () => {
       hour: 7
     });
 
-    expect(action.type).toEqual(SettingsActionTypes.CHANGE_HOUR);
+    expect(action.type).toEqual(actionSettingsChangeHour.type);
     expect(action.hour).toEqual(7);
   });
 });

@@ -45,7 +45,6 @@ import {
   selectEffectiveTheme,
   selectSettingsStickyHeader
 } from './settings/settings.selectors';
-import { SettingsActionTypes } from './settings/settings.actions';
 
 export {
   TitleService,
@@ -61,7 +60,6 @@ export {
   AuthGuardService,
   selectRouterState,
   NotificationService,
-  SettingsActionTypes,
   selectEffectiveTheme,
   selectSettingsLanguage,
   selectSettingsStickyHeader

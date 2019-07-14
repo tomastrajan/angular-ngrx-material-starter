@@ -1,7 +1,7 @@
 import { v4 as uuid } from 'uuid';
 import { createAction, props } from '@ngrx/store';
 
-import { TodosFilter, TodosState } from './todos.model';
+import { TodosFilter } from './todos.model';
 
 export const actionTodosAdd = createAction(
   '[Todos] Add',
