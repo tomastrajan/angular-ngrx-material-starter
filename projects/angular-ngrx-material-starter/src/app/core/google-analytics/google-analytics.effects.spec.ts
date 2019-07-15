@@ -45,7 +45,7 @@ describe('GoogleAnalyticsEffects', () => {
       router.events = cold('a', { a: routerEvent });
       const effect = new GoogleAnalyticsEffects(router);
 
-      effect.pageView.subscribe(() => {
+      effect.pageView().subscribe(() => {
         expect((<any>window).ga).toHaveBeenCalled();
         expect((<any>window).ga).toHaveBeenCalledWith(
           'set',
