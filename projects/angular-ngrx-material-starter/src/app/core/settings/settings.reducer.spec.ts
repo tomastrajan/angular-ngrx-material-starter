@@ -1,14 +1,14 @@
 import { initialState, settingsReducer } from './settings.reducer';
 
 import {
-  ActionSettingsChangeAnimationsElements,
-  ActionSettingsChangeAnimationsPage,
-  ActionSettingsChangeAnimationsPageDisabled,
-  ActionSettingsChangeAutoNightMode,
-  ActionSettingsChangeLanguage,
-  ActionSettingsChangeTheme,
-  ActionSettingsChangeStickyHeader,
-  ActionSettingsChangeHour
+  actionSettingsChangeAnimationsElements,
+  actionSettingsChangeAnimationsPage,
+  actionSettingsChangeAnimationsPageDisabled,
+  actionSettingsChangeAutoNightMode,
+  actionSettingsChangeHour,
+  actionSettingsChangeLanguage,
+  actionSettingsChangeStickyHeader,
+  actionSettingsChangeTheme
 } from './settings.actions';
 
 describe('SettingsReducer', () => {
@@ -19,19 +19,19 @@ describe('SettingsReducer', () => {
   });
 
   it('should update language', () => {
-    const action = new ActionSettingsChangeLanguage({ language: 'sk' });
+    const action = actionSettingsChangeLanguage({ language: 'sk' });
     const state = settingsReducer(undefined, action);
     expect(state.language).toEqual('sk');
   });
 
   it('should update theme', () => {
-    const action = new ActionSettingsChangeTheme({ theme: 'dark' });
+    const action = actionSettingsChangeTheme({ theme: 'dark' });
     const state = settingsReducer(undefined, action);
     expect(state.theme).toEqual('dark');
   });
 
   it('should update pageAnimations', () => {
-    const action = new ActionSettingsChangeAnimationsPage({
+    const action = actionSettingsChangeAnimationsPage({
       pageAnimations: false
     });
     const state = settingsReducer(undefined, action);
@@ -39,7 +39,7 @@ describe('SettingsReducer', () => {
   });
 
   it('should update pageAnimationsDisabled and pageAnimations', () => {
-    const action = new ActionSettingsChangeAnimationsPageDisabled({
+    const action = actionSettingsChangeAnimationsPageDisabled({
       pageAnimationsDisabled: true
     });
     const state = settingsReducer(undefined, action);
@@ -48,7 +48,7 @@ describe('SettingsReducer', () => {
   });
 
   it('should update elementsAnimations', () => {
-    const action = new ActionSettingsChangeAnimationsElements({
+    const action = actionSettingsChangeAnimationsElements({
       elementsAnimations: false
     });
     const state = settingsReducer(undefined, action);
@@ -56,7 +56,7 @@ describe('SettingsReducer', () => {
   });
 
   it('should update autoNightMode', () => {
-    const action = new ActionSettingsChangeAutoNightMode({
+    const action = actionSettingsChangeAutoNightMode({
       autoNightMode: true
     });
     const state = settingsReducer(undefined, action);
@@ -64,7 +64,7 @@ describe('SettingsReducer', () => {
   });
 
   it('should update stickyHeader', () => {
-    const action = new ActionSettingsChangeStickyHeader({
+    const action = actionSettingsChangeStickyHeader({
       stickyHeader: false
     });
     const state = settingsReducer(undefined, action);
@@ -72,7 +72,7 @@ describe('SettingsReducer', () => {
   });
 
   it('should update hour', () => {
-    const action = new ActionSettingsChangeHour({
+    const action = actionSettingsChangeHour({
       hour: 7
     });
     const state = settingsReducer(undefined, action);
