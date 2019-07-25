@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { tap, withLatestFrom } from 'rxjs/operators';
 
-import { LocalStorageService } from '../../../core/core.module';
+import { LocalStorageService } from '@core/core.module';
 
 import { State } from '../examples.state';
 import { actionBooksDeleteOne, actionBooksUpsertOne } from './books.actions';

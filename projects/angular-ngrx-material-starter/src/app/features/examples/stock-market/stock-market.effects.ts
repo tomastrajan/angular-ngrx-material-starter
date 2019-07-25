@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, debounceTime, map, switchMap, tap } from 'rxjs/operators';
 
-import { LocalStorageService } from '../../../core/core.module';
+import { LocalStorageService } from '@core/core.module';
 
 import {
   actionStockMarketRetrieve,

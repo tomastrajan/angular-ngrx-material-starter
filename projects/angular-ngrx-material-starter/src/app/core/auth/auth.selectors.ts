@@ -1,6 +1,6 @@
 import { createSelector } from '@ngrx/store';
 
-import { selectAuthState } from '../core.state';
+import { selectAuthState } from '@core/core.state';
 import { AuthState } from './auth.models';
 
 export const selectAuth = createSelector(

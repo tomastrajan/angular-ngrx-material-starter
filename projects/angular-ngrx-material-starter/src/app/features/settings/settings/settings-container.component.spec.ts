@@ -5,7 +5,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Store } from '@ngrx/store';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
-import { SharedModule } from '../../../shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
 import { SettingsContainerComponent } from './settings-container.component';
 import {
@@ -14,7 +14,7 @@ import {
   actionSettingsChangeAutoNightMode,
   actionSettingsChangeTheme,
   actionSettingsChangeStickyHeader
-} from '../../../core/settings/settings.actions';
+} from '@core/settings/settings.actions';
 import { TranslateModule } from '@ngx-translate/core';
 
 describe('SettingsComponent', () => {

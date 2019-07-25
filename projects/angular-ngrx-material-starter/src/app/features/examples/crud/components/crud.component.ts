@@ -5,7 +5,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../../core/core.module';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@core/core.module';
 
 import { State } from '../../examples.state';
 import { Book } from '../books.model';

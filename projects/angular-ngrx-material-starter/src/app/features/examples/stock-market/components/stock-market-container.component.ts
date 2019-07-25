@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../../core/core.module';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '@core/core.module';
 
 import { selectStockMarket } from '../stock-market.selectors';
 import { actionStockMarketRetrieve } from '../stock-market.actions';

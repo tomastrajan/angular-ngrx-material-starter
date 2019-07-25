@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ofType, createEffect, Actions } from '@ngrx/effects';
 import { tap } from 'rxjs/operators';
 
-import { LocalStorageService } from '../local-storage/local-storage.service';
+import { LocalStorageService } from '@core/local-storage/local-storage.service';
 
 import { authLogin, authLogout } from './auth.actions';
 

@@ -4,7 +4,7 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { filter } from 'rxjs/operators';
 
-import { environment as env } from '../../../environments/environment';
+import { environment as env } from '@environments/environment';
 
 @Injectable({
   providedIn: 'root'

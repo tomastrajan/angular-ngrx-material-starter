@@ -1,9 +1,9 @@
 import { Injectable, ErrorHandler } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import { environment } from '../../../environments/environment';
+import { environment } from '@environments/environment';
 
-import { NotificationService } from '../notifications/notification.service';
+import { NotificationService } from '@core/notifications/notification.service';
 
 /** Application-wide error handler that adds a UI notification to the error handling
  * provided by the default Angular ErrorHandler.

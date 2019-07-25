@@ -5,8 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 
-import { NotificationService } from '../../../../core/core.module';
-import { SharedModule } from '../../../../shared/shared.module';
+import { NotificationService } from '@core/core.module';
+import { SharedModule } from '@shared/shared.module';
 
 import { State } from '../../examples.state';
 import { FormState } from '../form.model';

@@ -1,4 +1,4 @@
-const packageJson = require('../../../../package.json');
+const packageJson = require('@root/package.json');
 
 export const environment = {
   appName: 'Angular Ngrx Material Starter',
