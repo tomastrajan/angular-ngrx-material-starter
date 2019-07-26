@@ -14,10 +14,10 @@ import {
   filter
 } from 'rxjs/operators';
 
-import { selectSettingsState } from '@core/core.state';
-import { LocalStorageService } from '@core/local-storage/local-storage.service';
-import { AnimationsService } from '@core/animations/animations.service';
-import { TitleService } from '@core/title/title.service';
+import { selectSettingsState } from '../core.state';
+import { LocalStorageService } from '../local-storage/local-storage.service';
+import { AnimationsService } from '../animations/animations.service';
+import { TitleService } from '../title/title.service';
 
 import {
   actionSettingsChangeAnimationsElements,

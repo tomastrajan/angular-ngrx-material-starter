@@ -5,7 +5,7 @@ import {
 } from '@ngrx/store';
 import { routerReducer, RouterReducerState } from '@ngrx/router-store';
 
-import { environment } from '@environments/environment';
+import { environment } from '../../environments/environment';
 
 import { initStateFromLocalStorage } from './meta-reducers/init-state-from-local-storage.reducer';
 import { debug } from './meta-reducers/debug.reducer';

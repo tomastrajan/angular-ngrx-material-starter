@@ -3,7 +3,7 @@ import { Actions } from '@ngrx/effects';
 import { of, throwError } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 
-import { LocalStorageService } from '@core/core.module';
+import { LocalStorageService } from '../../../core/core.module';
 
 import {
   actionStockMarketRetrieve,

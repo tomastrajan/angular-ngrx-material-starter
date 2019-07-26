@@ -1,4 +1,4 @@
-import { environment as env } from '@environments/environment';
+import { environment as env } from '../../../environments/environment';
 
 export interface Feature {
   name: string;

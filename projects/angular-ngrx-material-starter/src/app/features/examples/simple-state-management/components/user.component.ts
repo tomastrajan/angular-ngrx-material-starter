@@ -8,7 +8,7 @@ import {
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
 
-import { ROUTE_ANIMATIONS_ELEMENTS } from '@core/animations/route.animations';
+import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../../core/animations/route.animations';
 
 import { User, UserService } from '../user.service';
 

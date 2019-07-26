@@ -10,8 +10,8 @@ import {
   TitleService,
   AppState,
   selectSettingsLanguage
-} from '@core/core.module';
-import { actionSettingsChangeLanguage } from '@core/settings/settings.actions';
+} from '../../core/core.module';
+import { actionSettingsChangeLanguage } from '../../core/settings/settings.actions';
 
 @Injectable()
 export class ExamplesEffects {

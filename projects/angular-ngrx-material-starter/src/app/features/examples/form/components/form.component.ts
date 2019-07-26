@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import {
   ROUTE_ANIMATIONS_ELEMENTS,
   NotificationService
-} from '@core/core.module';
+} from '../../../../core/core.module';
 
 import { State } from '../../examples.state';
 import { actionFormReset, actionFormUpdate } from '../form.actions';

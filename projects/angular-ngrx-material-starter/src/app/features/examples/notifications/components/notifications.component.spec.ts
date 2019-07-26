@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { NotificationService } from '@core/core.module';
-import { SharedModule } from '@shared/shared.module';
+import { NotificationService } from '../../../../core/core.module';
+import { SharedModule } from '../../../../shared/shared.module';
 
 import { NotificationsComponent } from './notifications.component';
 

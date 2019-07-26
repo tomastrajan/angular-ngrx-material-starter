@@ -5,9 +5,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { TestScheduler } from 'rxjs/testing';
 
-import { TitleService } from '@core/core.module';
+import { TitleService } from '../../core/core.module';
 
-import { actionSettingsChangeLanguage } from '@core/settings/settings.actions';
+import { actionSettingsChangeLanguage } from '../../core/settings/settings.actions';
 
 import { ExamplesEffects } from './examples.effects';
 import { State } from './examples.state';

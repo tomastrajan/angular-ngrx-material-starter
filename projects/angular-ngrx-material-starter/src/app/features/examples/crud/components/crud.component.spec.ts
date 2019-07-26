@@ -5,7 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
-import { SharedModule } from '@shared/shared.module';
+import { SharedModule } from '../../../../shared/shared.module';
 
 import { State } from '../../examples.state';
 import { CrudComponent } from './crud.component';

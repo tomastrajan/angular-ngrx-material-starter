@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { tap } from 'rxjs/operators';
 
-import { LocalStorageService } from '@core/core.module';
+import { LocalStorageService } from '../../../core/core.module';
 
 import { actionFormUpdate } from './form.actions';
 

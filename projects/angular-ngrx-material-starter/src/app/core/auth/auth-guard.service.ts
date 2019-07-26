@@ -4,7 +4,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { selectIsAuthenticated } from './auth.selectors';
-import { AppState } from '@core/core.state';
+import { AppState } from '../core.state';
 
 @Injectable({
   providedIn: 'root'

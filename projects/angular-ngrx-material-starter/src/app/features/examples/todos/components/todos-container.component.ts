@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import {
   ROUTE_ANIMATIONS_ELEMENTS,
   NotificationService
-} from '@core/core.module';
+} from '../../../../core/core.module';
 
 import * as todoActions from '../todos.actions';
 import { selectTodos, selectRemoveDoneTodosDisabled } from '../todos.selectors';

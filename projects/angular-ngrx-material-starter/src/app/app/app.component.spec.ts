@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { provideMockStore } from '@ngrx/store/testing';
 
-import { SharedModule } from '@shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 
 import { AppComponent } from './app.component';
 

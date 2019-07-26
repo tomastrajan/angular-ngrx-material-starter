@@ -4,7 +4,7 @@ import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 
-import { LocalStorageService } from '@core/core.module';
+import { LocalStorageService } from '../../../core/core.module';
 
 import { State } from '../examples.state';
 import { actionTodosToggle } from './todos.actions';

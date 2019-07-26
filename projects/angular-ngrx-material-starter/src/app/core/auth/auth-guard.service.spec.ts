@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
-import { AppState } from '@core/core.state';
+import { AppState } from '../core.state';
 
 import { AuthGuardService } from './auth-guard.service';
 import { AuthState } from './auth.models';
