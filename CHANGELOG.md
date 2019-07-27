@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.2.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v8.1.2...v8.2.0) (2019-07-27)
+
+### Bug Fixes
+
+- **index:** add missing </div> ([4d6b7bc](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4d6b7bc))
+
+### Features
+
+- **books:** use new ngrx features ([0fc5dc4](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0fc5dc4))
+- **form:** use new ngrx features ([c47dd9e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c47dd9e))
+- **stock-market:** added new ngrx functions ([54272f8](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/54272f8))
+
+### Tests
+
+- **app:** fix all tests ([0961ff3](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0961ff3))
+
 ### [8.1.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v8.1.1...v8.1.2) (2019-07-03)
 
 ### Bug Fixes
