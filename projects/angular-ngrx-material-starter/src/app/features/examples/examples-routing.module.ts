@@ -12,6 +12,7 @@ import { CrudComponent } from './crud/components/crud.component';
 import { FormComponent } from './form/components/form.component';
 import { NotificationsComponent } from './notifications/components/notifications.component';
 import { UserComponent } from './simple-state-management/components/user.component';
+import { ElementsComponent } from './elements/elements.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,11 @@ const routes: Routes = [
         path: 'notifications',
         component: NotificationsComponent,
         data: { title: 'anms.examples.menu.notifications' }
+      },
+      {
+        path: 'elements',
+        component: ElementsComponent,
+        data: { title: 'anms.examples.menu.elements' }
       },
       {
         path: 'authenticated',
