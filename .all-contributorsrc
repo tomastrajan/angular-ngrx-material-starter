@@ -377,6 +377,16 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "twindual",
+      "name": "Andre Fortin",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3850698?v=4",
+      "profile": "http://leadcarrot.io",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ]
 }
