@@ -48,7 +48,7 @@ npm start
 
 When using this starter project to build your own app you might consider some of the following steps:
 
-- use `search and replace` functionality of your favourite IDE to replace `anms` with `<your-app-prefix>`
+- use `search and replace` functionality of your favourite IDE to replace `slang` with `<your-app-prefix>`
 - rename project in `package.json` `name` property and set appropriate version (eg `0.0.0` or `1.0.0`)
 - remove / rename context path config `-- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter` in `package.json`, this is used to configure url (context path) on which the application will be available (eg. `https://www.something.com/<context-path>/`)
 - rename app in `/environments/` files (will be shown in browser tab)

@@ -3,7 +3,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
 
 @Component({
-  selector: 'anms-about',
+  selector: 'slang-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

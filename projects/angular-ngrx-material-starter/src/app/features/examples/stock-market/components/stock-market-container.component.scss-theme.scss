@@ -1,9 +1,9 @@
 @import '~@angular/material/theming';
 
-@mixin anms-stock-market-container-component-theme($theme) {
+@mixin slang-stock-market-container-component-theme($theme) {
   $warn: map-get($theme, warn);
 
-  anms-stock-market {
+  slang-stock-market {
     mat-card {
       .negative {
         color: mat-color($warn);

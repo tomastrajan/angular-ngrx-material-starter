@@ -27,7 +27,7 @@ describe('TodosComponent', () => {
     )[2];
 
   const getTodoInput = () =>
-    fixture.debugElement.query(By.css('anms-big-input input'));
+    fixture.debugElement.query(By.css('slang-big-input input'));
 
   const getTodoItems = () => fixture.debugElement.queryAll(By.css('.todo'));
 
@@ -35,12 +35,12 @@ describe('TodosComponent', () => {
 
   const getAddTodoButton = () =>
     fixture.debugElement
-      .queryAll(By.css('anms-big-input-action'))[0]
+      .queryAll(By.css('slang-big-input-action'))[0]
       .query(By.css('button'));
 
   const getRemoveDoneTodosButton = () =>
     fixture.debugElement
-      .queryAll(By.css('anms-big-input-action'))[1]
+      .queryAll(By.css('slang-big-input-action'))[1]
       .query(By.css('button'));
 
   beforeEach(async () => {

@@ -5,7 +5,7 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../core/core.module';
 import { Feature, features } from '../feature-list.data';
 
 @Component({
-  selector: 'anms-feature-list',
+  selector: 'slang-feature-list',
   templateUrl: './feature-list.component.html',
   styleUrls: ['./feature-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

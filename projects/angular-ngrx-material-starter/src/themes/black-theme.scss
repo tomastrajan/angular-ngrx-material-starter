@@ -1,9 +1,9 @@
-$anms-black-primary: mat-palette($mat-grey, 700, 300, 900);
-$anms-black-accent: mat-palette($mat-blue-grey, 400);
-$anms-black-warn: mat-palette($mat-red, 500);
+$slang-black-primary: mat-palette($mat-grey, 700, 300, 900);
+$slang-black-accent: mat-palette($mat-blue-grey, 400);
+$slang-black-warn: mat-palette($mat-red, 500);
 
-$anms-black-theme: mat-dark-theme(
-  $anms-black-primary,
-  $anms-black-accent,
-  $anms-black-warn
+$slang-black-theme: mat-dark-theme(
+  $slang-black-primary,
+  $slang-black-accent,
+  $slang-black-warn
 );

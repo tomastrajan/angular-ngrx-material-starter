@@ -1,10 +1,10 @@
 @import '~@angular/material/theming';
 
-@mixin anms-examples-component-theme($theme) {
+@mixin slang-examples-component-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
 
-  anms-examples {
+  slang-examples {
     .nav-responsive {
       border-bottom: 1px solid mat-color($primary);
 

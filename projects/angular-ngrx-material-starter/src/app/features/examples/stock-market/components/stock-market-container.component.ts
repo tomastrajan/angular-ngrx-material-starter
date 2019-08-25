@@ -11,7 +11,7 @@ import { StockMarketState } from '../stock-market.model';
 import { State } from '../../examples.state';
 
 @Component({
-  selector: 'anms-stock-market',
+  selector: 'slang-stock-market',
   templateUrl: './stock-market-container.component.html',
   styleUrls: ['./stock-market-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

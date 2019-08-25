@@ -5,16 +5,16 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SharedModule } from '../../shared.module';
 
 @Component({
-  selector: 'anms-host-for-test',
+  selector: 'slang-host-for-test',
   template: `
-    <anms-big-input
+    <slang-big-input
       placeholder="I am going to do..."
       [value]="newValue"
       (keyup)="onKeyEvent($event)"
       (keyup.enter)="onKeyEvent($event)"
       (keyup.escape)="onKeyEvent($event)"
     >
-    </anms-big-input>
+    </slang-big-input>
   `
 })
 class HostComponent {

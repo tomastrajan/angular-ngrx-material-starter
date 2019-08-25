@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'anms-child',
+  selector: 'slang-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

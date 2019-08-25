@@ -1,5 +1,5 @@
-$anms-primary: mat-palette($mat-indigo, 800, 300, 900);
-$anms-accent: mat-palette($mat-light-blue);
-$anms-warn: mat-palette($mat-pink, 600);
+$slang-primary: mat-palette($mat-indigo, 800, 300, 900);
+$slang-accent: mat-palette($mat-light-blue);
+$slang-warn: mat-palette($mat-pink, 600);
 
-$anms-theme: mat-light-theme($anms-primary, $anms-accent, $anms-warn);
+$slang-theme: mat-light-theme($slang-primary, $slang-accent, $slang-warn);

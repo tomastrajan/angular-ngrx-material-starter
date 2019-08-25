@@ -27,17 +27,17 @@ const routes: Routes = [
       {
         path: 'todos',
         component: TodosContainerComponent,
-        data: { title: 'anms.examples.menu.todos' }
+        data: { title: 'slang.examples.menu.todos' }
       },
       {
         path: 'stock-market',
         component: StockMarketContainerComponent,
-        data: { title: 'anms.examples.menu.stocks' }
+        data: { title: 'slang.examples.menu.stocks' }
       },
       {
         path: 'theming',
         component: ParentComponent,
-        data: { title: 'anms.examples.menu.theming' }
+        data: { title: 'slang.examples.menu.theming' }
       },
       {
         path: 'crud',
@@ -47,33 +47,33 @@ const routes: Routes = [
       {
         path: 'crud/:id',
         component: CrudComponent,
-        data: { title: 'anms.examples.menu.crud' }
+        data: { title: 'slang.examples.menu.crud' }
       },
       {
         path: 'simple-state-management',
         component: UserComponent,
-        data: { title: 'anms.examples.menu.simple-state-management' }
+        data: { title: 'slang.examples.menu.simple-state-management' }
       },
       {
         path: 'form',
         component: FormComponent,
-        data: { title: 'anms.examples.menu.form' }
+        data: { title: 'slang.examples.menu.form' }
       },
       {
         path: 'notifications',
         component: NotificationsComponent,
-        data: { title: 'anms.examples.menu.notifications' }
+        data: { title: 'slang.examples.menu.notifications' }
       },
       {
         path: 'elements',
         component: ElementsComponent,
-        data: { title: 'anms.examples.menu.elements' }
+        data: { title: 'slang.examples.menu.elements' }
       },
       {
         path: 'authenticated',
         component: AuthenticatedComponent,
         canActivate: [AuthGuardService],
-        data: { title: 'anms.examples.menu.auth' }
+        data: { title: 'slang.examples.menu.auth' }
       }
     ]
   }

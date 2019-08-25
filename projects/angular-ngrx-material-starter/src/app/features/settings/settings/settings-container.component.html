@@ -1,28 +1,28 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12"><h1>{{ 'anms.settings.title' | translate }}</h1></div>
+    <div class="col-sm-12"><h1>{{ 'slang.settings.title' | translate }}</h1></div>
   </div>
   <br>
   <ng-container *ngIf="settings$ | async as settings">
     <div class="row">
       <div class="col-md-6 group" [ngClass]="routeAnimationsElements">
-        <h2>{{ 'anms.settings.general.title' | translate }}</h2>
+        <h2>{{ 'slang.settings.general.title' | translate }}</h2>
         <div class="icon-form-field">
           <mat-icon color="accent"><fa-icon icon="language" color="accent"></fa-icon></mat-icon>
           <mat-form-field>
-            <mat-select [placeholder]="'anms.settings.general.placeholder' | translate"
+            <mat-select [placeholder]="'slang.settings.general.placeholder' | translate"
                         [ngModel]="settings.language"
                         (selectionChange)="onLanguageSelect($event)"
                         name="language">
               <mat-option *ngFor="let l of languages" [value]="l.value">
-                {{ 'anms.settings.general.language.' + l.label | translate }}
+                {{ 'slang.settings.general.language.' + l.label | translate }}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
         <div class="icon-form-field">
            <mat-icon color="accent"><fa-icon icon="bars" color="accent"></fa-icon></mat-icon>
-           <mat-placeholder>{{ 'anms.settings.themes.sticky-header' | translate }}
+           <mat-placeholder>{{ 'slang.settings.themes.sticky-header' | translate }}
            </mat-placeholder>
            <mat-slide-toggle
              [checked]="settings.stickyHeader"
@@ -33,23 +33,23 @@
     </div>
     <div class="row">
       <div class="col-md-6 group" [ngClass]="routeAnimationsElements">
-        <h2>{{ 'anms.settings.themes.title' | translate }}</h2>
+        <h2>{{ 'slang.settings.themes.title' | translate }}</h2>
         <div class="icon-form-field">
           <mat-icon color="accent"><fa-icon icon="paint-brush" color="accent"></fa-icon></mat-icon>
           <mat-form-field>
-            <mat-select [placeholder]="'anms.settings.themes.placeholder' | translate"
+            <mat-select [placeholder]="'slang.settings.themes.placeholder' | translate"
                         [ngModel]="settings.theme"
                         (selectionChange)="onThemeSelect($event)"
                         name="themes">
               <mat-option *ngFor="let t of themes" [value]="t.value">
-                {{ 'anms.settings.themes.' + t.label | translate }}
+                {{ 'slang.settings.themes.' + t.label | translate }}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
         <div class="icon-form-field">
           <mat-icon color="accent"><fa-icon icon="lightbulb" color="accent"></fa-icon></mat-icon>
-          <mat-placeholder>{{ 'anms.settings.themes.night-mode' | translate }}
+          <mat-placeholder>{{ 'slang.settings.themes.night-mode' | translate }}
           </mat-placeholder>
           <mat-slide-toggle
             [checked]="settings.autoNightMode"
@@ -58,10 +58,10 @@
         </div>
       </div>
       <div class="col-md-6 group" [ngClass]="routeAnimationsElements">
-        <h2>{{ 'anms.settings.animations.title' | translate }}</h2>
+        <h2>{{ 'slang.settings.animations.title' | translate }}</h2>
         <div class="icon-form-field">
           <mat-icon color="accent"><mat-icon color="accent"><fa-icon icon="window-maximize"></fa-icon></mat-icon></mat-icon>
-          <mat-placeholder>{{ 'anms.settings.animations.page' | translate }}
+          <mat-placeholder>{{ 'slang.settings.animations.page' | translate }}
           </mat-placeholder>
           <mat-slide-toggle
             matTooltip="Sorry, this feature is disabled in IE, EDGE and Safari"
@@ -77,7 +77,7 @@
         </div>
         <div class="icon-form-field">
           <mat-icon color="accent"><fa-icon icon="stream" color="accent"></fa-icon></mat-icon>
-          <mat-placeholder>{{ 'anms.settings.animations.elements' | translate }}
+          <mat-placeholder>{{ 'slang.settings.animations.elements' | translate }}
           </mat-placeholder>
           <mat-slide-toggle
             [checked]="settings.elementsAnimations"

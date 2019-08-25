@@ -13,7 +13,7 @@
       },
       "root": "projects/angular-ngrx-material-starter",
       "sourceRoot": "projects/angular-ngrx-material-starter/src",
-      "prefix": "anms",
+      "prefix": "slang",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

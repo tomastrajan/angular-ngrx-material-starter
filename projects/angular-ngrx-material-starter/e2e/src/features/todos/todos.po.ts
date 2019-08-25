@@ -6,11 +6,11 @@ export class TodosPage {
   }
 
   getInput() {
-    return element(by.css('anms-big-input input'));
+    return element(by.css('slang-big-input input'));
   }
 
   getAddTodoButton() {
-    return element(by.css('anms-big-input-action button'));
+    return element(by.css('slang-big-input-action button'));
   }
 
   getResults() {

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1 rtl class="main-heading">{{ 'anms.features.title' | translate }}</h1>
+      <h1 rtl class="main-heading">{{ 'slang.features.title' | translate }}</h1>
     </div>
   </div>
   <div class="row align-items-end">
@@ -18,10 +18,10 @@
             <fa-icon [icon]="['fab','github']"></fa-icon>
           </a>
           <a mat-button [href]="feature.documentation" target="_blank">
-            <fa-icon icon="book"></fa-icon>{{ 'anms.features.documentation' | translate }}
+            <fa-icon icon="book"></fa-icon>{{ 'slang.features.documentation' | translate }}
           </a>
           <a *ngIf="feature.medium" mat-button [href]="feature.medium" target="_blank">
-            <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'anms.features.guide' | translate }}
+            <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'slang.features.guide' | translate }}
           </a>
         </mat-card-actions>
       </mat-card>

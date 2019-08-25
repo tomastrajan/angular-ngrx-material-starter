@@ -22,7 +22,7 @@ import {
 } from '../core/settings/settings.actions';
 
 @Component({
-  selector: 'anms-root',
+  selector: 'slang-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [routeAnimations]
@@ -33,15 +33,16 @@ export class AppComponent implements OnInit {
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = require('../../assets/logo.png');
-  languages = ['en', 'de', 'sk', 'fr', 'es', 'pt-br', 'zh-cn', 'he'];
+  languages = ['en'];
   navigation = [
-    { link: 'about', label: 'anms.menu.about' },
-    { link: 'feature-list', label: 'anms.menu.features' },
-    { link: 'examples', label: 'anms.menu.examples' }
+    { link: 'farm', label: 'slang.menu.about' },
+    { link: 'sheep', label: 'slang.menu.features' },
+    { link: 'outfields', label: 'slang.menu.examples' },
+    { link: 'gatherings', label: 'slang.menu.examples' }
   ];
   navigationSideMenu = [
     ...this.navigation,
-    { link: 'settings', label: 'anms.menu.settings' }
+    { link: 'settings', label: 'slang.menu.settings' }
   ];
 
   isAuthenticated$: Observable<boolean>;

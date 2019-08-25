@@ -1,12 +1,12 @@
 @import '~@angular/material/theming';
 
-@mixin anms-big-input-component-theme($theme) {
+@mixin slang-big-input-component-theme($theme) {
   $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $foreground: map-get($theme, foreground);
   $background: map-get($theme, background);
 
-  anms-big-input {
+  slang-big-input {
     .big-input {
       input {
         color: mat-color($foreground, text);

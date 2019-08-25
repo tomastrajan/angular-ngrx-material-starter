@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'anms-big-input-action',
+  selector: 'slang-big-input-action',
   templateUrl: './big-input-action.component.html',
   styleUrls: ['./big-input-action.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

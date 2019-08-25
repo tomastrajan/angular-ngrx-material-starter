@@ -6,7 +6,7 @@
         <name></name>
         <children>
             <folder_node>
-                <name>anms</name>
+                <name>slang</name>
                 <children>
                     <folder_node>
                         <name>examples</name>
