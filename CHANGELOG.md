@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.3.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v8.3.0...v8.3.1) (2019-10-17)
+
+### Bug Fixes
+
+- **e2e:** bump protractor version ([0680214](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/0680214))
+- **examples:** add element error template ([7fe893f](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7fe893f))
+
 ## [8.3.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v8.2.0...v8.3.0) (2019-08-07)
 
 ### Features
