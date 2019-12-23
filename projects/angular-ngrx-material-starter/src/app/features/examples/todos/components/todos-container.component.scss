@@ -8,6 +8,13 @@
   font-weight: normal;
 }
 
+.dotos-title {
+  display: flex;
+  > span {
+    flex: 1;
+  }
+}
+
 .todos-filter {
   float: right;
   position: relative;
