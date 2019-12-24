@@ -17,13 +17,13 @@
   <div class="row">
     <ng-container *ngIf="todos$ | async as todos">
       <div class="col-md-6">
-        <h2>
-          {{ 'anms.examples.todos.list' | translate }}
+        <h2 class="dotos-title" rtl>
+          <span>{{ 'anms.examples.todos.list' | translate }}</span>
           <button class="todos-filter" mat-icon-button [matMenuTriggerFor]="todosFilter">
             <fa-icon icon="filter"></fa-icon>
           </button>
           <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">
-            <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }">
+            <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }" rtl>
               <mat-icon>
                 <fa-icon icon="tasks"></fa-icon>
               </mat-icon>
