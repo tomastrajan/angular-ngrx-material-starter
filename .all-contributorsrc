@@ -35,6 +35,16 @@
       ]
     },
     {
+      "login": "santoshyadav198613",
+      "name": "Santosh Yadav",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11923975?v=4",
+      "profile": "http://santoshyadavblog.com",
+      "contributions": [
+        "code",
+        "test"
+      ]
+    },
+    {
       "login": "shootermv",
       "name": "Moshe",
       "avatar_url": "https://avatars0.githubusercontent.com/u/1336862?v=4",
@@ -349,16 +359,6 @@
       ]
     },
     {
-      "login": "santoshyadav198613",
-      "name": "Santosh Yadav",
-      "avatar_url": "https://avatars3.githubusercontent.com/u/11923975?v=4",
-      "profile": "http://santoshyadavblog.com",
-      "contributions": [
-        "code",
-        "test"
-      ]
-    },
-    {
       "login": "Flignats",
       "name": "Ray",
       "avatar_url": "https://avatars2.githubusercontent.com/u/947587?v=4",
@@ -377,6 +377,26 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "roniaxe",
+      "name": "roniaxe",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/19142347?v=4",
+      "profile": "https://github.com/roniaxe",
+      "contributions": [
+        "code",
+        "translation"
+      ]
+    },
+    {
+      "login": "tenkmilan",
+      "name": "Milán Tenk",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4102195?v=4",
+      "profile": "https://github.com/tenkmilan",
+      "contributions": [
+        "doc"
+      ]
     }
-  ]
+  ],
+  "commitConvention": "none"
 }
