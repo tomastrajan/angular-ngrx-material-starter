@@ -53,25 +53,6 @@ describe('SettingsEffects', () => {
     store = jasmine.createSpyObj('store', ['pipe']);
   });
 
-  describe('persistSettings', () => {
-    it('should not dispatch any action', () => {
-      const actions = new Actions<any>();
-      const effect = new SettingsEffects(
-        actions,
-        store,
-        router,
-        overlayContainer,
-        localStorageService,
-        titleService,
-        animationsService,
-        translateService
-      );
-      const metadata = getEffectsMetadata(effect);
-
-      expect(metadata.persistSettings.dispatch).toEqual(false);
-    });
-  });
-
   it('should call methods on LocalStorageService for PERSIST action', () => {
     scheduler.run(helpers => {
       const { cold } = helpers;

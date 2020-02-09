@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 import { Router } from '@angular/router';
-import { FormBuilder, NgForm } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -57,8 +57,7 @@ export class CrudComponent {
     this.bookFormGroup.setValue(book);
   }
 
-  addNew(bookForm: NgForm) {
-    bookForm.resetForm();
+  addNew() {
     this.bookFormGroup.reset();
     this.bookFormGroup.setValue(CrudComponent.createBook());
     this.isEditing = true;

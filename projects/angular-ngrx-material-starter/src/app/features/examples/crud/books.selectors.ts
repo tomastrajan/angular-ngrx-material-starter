@@ -12,14 +12,8 @@ export const selectBooks = createSelector(
   (state: ExamplesState) => state.books
 );
 
-export const selectAllBooks = createSelector(
-  selectBooks,
-  selectAll
-);
-export const selectBooksEntities = createSelector(
-  selectBooks,
-  selectEntities
-);
+export const selectAllBooks = createSelector(selectBooks, selectAll);
+export const selectBooksEntities = createSelector(selectBooks, selectEntities);
 
 export const selectSelectedBook = createSelector(
   selectBooksEntities,

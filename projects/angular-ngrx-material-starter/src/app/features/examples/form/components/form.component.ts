@@ -10,7 +10,6 @@ import {
   NotificationService
 } from '../../../../core/core.module';
 
-import { State } from '../../examples.state';
 import { actionFormReset, actionFormUpdate } from '../form.actions';
 import { selectFormState } from '../form.selectors';
 import { Form } from '../form.model';
@@ -46,7 +45,7 @@ export class FormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private store: Store<State>,
+    private store: Store,
     private translate: TranslateService,
     private notificationService: NotificationService
   ) {}
@@ -57,10 +56,7 @@ export class FormComponent implements OnInit {
       filter((form: Form) => form.autosave)
     );
     this.store
-      .pipe(
-        select(selectFormState),
-        take(1)
-      )
+      .pipe(select(selectFormState), take(1))
       .subscribe(form => this.form.patchValue(form.form));
   }
 

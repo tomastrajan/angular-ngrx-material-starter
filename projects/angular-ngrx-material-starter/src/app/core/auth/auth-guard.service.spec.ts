@@ -6,28 +6,19 @@ import { AppState } from '../core.state';
 
 import { AuthGuardService } from './auth-guard.service';
 import { AuthState } from './auth.models';
+import { selectIsAuthenticated } from './auth.selectors';
 
 describe('AuthGuardService', () => {
   let authGuardService: AuthGuardService;
-  let store: MockStore<AppState>;
-
-  const authState: AuthState = {
-    isAuthenticated: true
-  };
+  let store: MockStore;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        AuthGuardService,
-        provideMockStore({
-          initialState: {
-            auth: authState
-          }
-        })
-      ]
+      providers: [AuthGuardService, provideMockStore()]
     });
-    authGuardService = TestBed.get(AuthGuardService);
-    store = TestBed.get(Store);
+    authGuardService = TestBed.inject<AuthGuardService>(AuthGuardService);
+    store = TestBed.inject<MockStore>(MockStore);
+    store.overrideSelector(selectIsAuthenticated, true);
   });
 
   it('should be created', () => {

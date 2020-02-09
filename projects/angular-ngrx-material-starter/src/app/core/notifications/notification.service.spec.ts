@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { NotificationService } from './notification.service';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Overlay } from '@angular/cdk/overlay';
 
 describe('NotificationsService', () => {
@@ -11,7 +11,7 @@ describe('NotificationsService', () => {
     TestBed.configureTestingModule({
       providers: [NotificationService, MatSnackBar, Overlay]
     });
-    service = TestBed.get(NotificationService);
+    service = TestBed.inject<NotificationService>(NotificationService);
   });
 
   it('should be created', () => {

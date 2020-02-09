@@ -10,7 +10,7 @@
       </mat-card>
       <p *ngIf="(books$ | async)?.length === 0">{{'anms.examples.crud.empty' | translate}}</p>
       <button type="button" mat-fab color="primary" class="add" [ngClass]="routeAnimationsElements"
-        *ngIf="!isEditing" (click)="addNew(bookForm)">
+        *ngIf="!isEditing" (click)="addNew()">
         <fa-icon icon="plus"></fa-icon>
       </button>
     </div>
@@ -38,7 +38,7 @@
         </span>
       </span>
 
-      <form #bookForm="ngForm" [formGroup]="bookFormGroup" [style.display]="isEditing ? 'block' : 'none'"
+      <form [formGroup]="bookFormGroup" [style.display]="isEditing ? 'block' : 'none'"
         [ngClass]="routeAnimationsElements">
         <div class="row">
           <mat-form-field class="col">

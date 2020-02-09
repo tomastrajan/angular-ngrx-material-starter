@@ -9,7 +9,6 @@ import {
   authLogin,
   authLogout,
   routeAnimations,
-  AppState,
   LocalStorageService,
   selectIsAuthenticated,
   selectSettingsStickyHeader,
@@ -50,7 +49,7 @@ export class AppComponent implements OnInit {
   theme$: Observable<string>;
 
   constructor(
-    private store: Store<AppState>,
+    private store: Store,
     private storageService: LocalStorageService
   ) {}
 
