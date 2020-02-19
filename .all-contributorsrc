@@ -396,6 +396,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "KadarH",
+      "name": "Kadar Hamza",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/23250431?v=4",
+      "profile": "https://github.com/KadarH",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "commitConvention": "none"
