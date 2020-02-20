@@ -96,7 +96,7 @@
             <button mat-raised-button color="primary" [ngClass]="routeAnimationsElements">
               {{ 'anms.examples.form.send' | translate }}
             </button>
-            <button type="button" mat-raised-button color="accent" [disabled]="form.get('autosave').value"
+            <button type="button" mat-raised-button color="accent" [disabled]="form.get('autosave').value || !form.valid"
               [ngClass]="routeAnimationsElements" (click)="save()">
               {{ 'anms.examples.form.save' | translate }}
             </button>
