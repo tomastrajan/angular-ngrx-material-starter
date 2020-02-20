@@ -16,7 +16,7 @@ import {
   selectTodosState
 } from '../todos.selectors';
 
-xdescribe('TodosComponent', () => {
+describe('TodosComponent', () => {
   let store: MockStore;
   let component: TodosContainerComponent;
   let fixture: ComponentFixture<TodosContainerComponent>;
@@ -56,7 +56,7 @@ xdescribe('TodosComponent', () => {
       providers: [provideMockStore()]
     });
 
-    store = TestBed.inject<MockStore>(MockStore);
+    store = TestBed.inject(MockStore);
     mockSelectTodos = store.overrideSelector(selectTodos, []);
     mockSelectRemoveDoneTodosDisabled = store.overrideSelector(
       selectRemoveDoneTodosDisabled,

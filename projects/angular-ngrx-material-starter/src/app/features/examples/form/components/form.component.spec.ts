@@ -11,7 +11,7 @@ import { FormComponent } from './form.component';
 import { selectFormState } from '../form.selectors';
 import { Form } from '../form.model';
 
-xdescribe('FormComponent', () => {
+describe('FormComponent', () => {
   let store: MockStore;
   let component: FormComponent;
   let fixture: ComponentFixture<FormComponent>;
@@ -33,7 +33,7 @@ xdescribe('FormComponent', () => {
       providers: [provideMockStore(), NotificationService]
     });
 
-    store = TestBed.inject<MockStore>(MockStore);
+    store = TestBed.inject(MockStore);
     store.overrideSelector(selectFormState, { form: {} as Form });
     fixture = TestBed.createComponent(FormComponent);
     component = fixture.componentInstance;

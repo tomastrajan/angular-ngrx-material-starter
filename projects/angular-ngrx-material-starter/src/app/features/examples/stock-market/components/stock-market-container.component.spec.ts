@@ -15,7 +15,7 @@ import { StockMarketContainerComponent } from './stock-market-container.componen
 import { selectStockMarket } from '../stock-market.selectors';
 import { StockMarketState } from '../stock-market.model';
 
-xdescribe('StockMarketContainerComponent', () => {
+describe('StockMarketContainerComponent', () => {
   let retrieveStockSpy: jasmine.Spy;
 
   let component: StockMarketContainerComponent;
@@ -61,7 +61,7 @@ xdescribe('StockMarketContainerComponent', () => {
         'retrieveStock'
       ).and.returnValue(EMPTY);
 
-      store = TestBed.inject<MockStore>(MockStore);
+      store = TestBed.inject(MockStore);
       mockSelectStockMarket = store.overrideSelector(selectStockMarket, {
         symbol: 'AAPL',
         loading: false

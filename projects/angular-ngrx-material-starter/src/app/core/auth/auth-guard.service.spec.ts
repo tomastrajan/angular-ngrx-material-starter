@@ -17,7 +17,7 @@ describe('AuthGuardService', () => {
       providers: [AuthGuardService, provideMockStore()]
     });
     authGuardService = TestBed.inject<AuthGuardService>(AuthGuardService);
-    store = TestBed.inject<MockStore>(MockStore);
+    store = TestBed.inject(MockStore);
     store.overrideSelector(selectIsAuthenticated, true);
   });
 

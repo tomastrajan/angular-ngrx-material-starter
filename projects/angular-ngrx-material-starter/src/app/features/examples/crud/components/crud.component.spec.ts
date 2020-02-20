@@ -6,11 +6,10 @@ import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
-import { State } from '../../examples.state';
 import { CrudComponent } from './crud.component';
 import { selectAllBooks, selectSelectedBook } from '../books.selectors';
 
-xdescribe('CrudComponent', () => {
+describe('CrudComponent', () => {
   let component: CrudComponent;
   let fixture: ComponentFixture<CrudComponent>;
   let store: MockStore;
@@ -26,7 +25,7 @@ xdescribe('CrudComponent', () => {
       providers: [provideMockStore()],
       declarations: [CrudComponent]
     }).compileComponents();
-    store = TestBed.inject<MockStore>(MockStore);
+    store = TestBed.inject(MockStore);
     store.overrideSelector(selectAllBooks, []);
     store.overrideSelector(selectSelectedBook, null);
     fixture = TestBed.createComponent(CrudComponent);
