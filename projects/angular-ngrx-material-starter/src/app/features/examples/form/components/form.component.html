@@ -19,7 +19,7 @@
           </span>
           <div class="row">
             <mat-form-field class="col" [ngClass]="routeAnimationsElements">
-              <input matInput placeholder="{{ 'anms.examples.form.placeholder1' | translate }}"
+              <input matInput placeholder="{{ 'anms.examples.form.placeholder1' | translate }}*"
                 formControlName="username">
               <mat-error *ngIf="form.get('username').invalid">
                 {{ 'anms.examples.form.placeholder1' | translate }}
@@ -27,7 +27,7 @@
               </mat-error>
             </mat-form-field>
             <mat-form-field class="col" [ngClass]="routeAnimationsElements">
-              <input matInput type="password" placeholder="{{ 'anms.examples.form.placeholder2' | translate }}"
+              <input matInput type="password" placeholder="{{ 'anms.examples.form.placeholder2' | translate }}*"
                 formControlName="password">
               <mat-error *ngIf="form.get('password').invalid">
                 {{ 'anms.examples.form.placeholder2' | translate }}
@@ -37,7 +37,7 @@
           </div>
           <div class="row">
             <mat-form-field class="col" [ngClass]="routeAnimationsElements">
-              <input matInput placeholder="{{ 'anms.examples.form.placeholder3' | translate }}"
+              <input matInput placeholder="{{ 'anms.examples.form.placeholder3' | translate }}*"
                 formControlName="email" type="email">
               <mat-error *ngIf="form.get('email').hasError('required')">
                 {{ 'anms.examples.form.placeholder3' | translate }}
@@ -50,7 +50,7 @@
           </div>
           <div class="row">
             <mat-form-field class="col" [ngClass]="routeAnimationsElements">
-              <input matInput formControlName="birthday" [matDatepicker]="picker" placeholder="{{ 'anms.examples.form.placeholder5' | translate }}">
+              <input matInput formControlName="birthday" [matDatepicker]="picker" placeholder="{{ 'anms.examples.form.placeholder5' | translate }}*">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
               <mat-error *ngIf="form.get('birthday').hasError('required')">
@@ -61,7 +61,7 @@
           </div>
           <div class="row">
             <mat-form-field class="col" [ngClass]="routeAnimationsElements">
-              <textarea matInput placeholder="{{ 'anms.examples.form.placeholder4' | translate }}"
+              <textarea matInput placeholder="{{ 'anms.examples.form.placeholder4' | translate }}*"
                 formControlName="description" minlength="10" maxlength="1000" cdkTextareaAutosize
                 #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="3" cdkAutosizeMaxRows="10"></textarea>
               <mat-hint align="end">{{form.get('description').value?.length}} /
