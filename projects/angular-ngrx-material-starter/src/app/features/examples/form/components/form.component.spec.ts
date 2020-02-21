@@ -53,6 +53,28 @@ describe('FormComponent', () => {
     getInput('username').nativeElement.dispatchEvent(inputEvent);
     fixture.detectChanges();
 
+    getInput('password').nativeElement.value = 'password';
+    getInput('password').nativeElement.dispatchEvent(inputEvent);
+    fixture.detectChanges();
+
+    getInput('email').nativeElement.value = 'kadarh@git';
+    getInput('email').nativeElement.dispatchEvent(inputEvent);
+    fixture.detectChanges();
+
+    getInput('description').nativeElement.value = 'tomastrajan';
+    getInput('description').nativeElement.dispatchEvent(inputEvent);
+    fixture.detectChanges();
+
+    getInput('birthday').nativeElement.value = '2/20/2020';
+    getInput('birthday').nativeElement.dispatchEvent(inputEvent);
+    fixture.detectChanges();
+
+    getInput('rating').nativeElement.value = 0;
+    getInput('rating').nativeElement.dispatchEvent(inputEvent);
+    fixture.detectChanges();
+
+    expect(getSaveButton().nativeElement.disabled).toBeFalsy();
+
     getSaveButton().nativeElement.click();
     fixture.detectChanges();
 
@@ -61,11 +83,11 @@ describe('FormComponent', () => {
     expect(dispatchSpy.calls.mostRecent().args[0].form).toEqual({
       autosave: false,
       username: 'tomastrajan',
-      password: '',
-      email: '',
-      description: '',
+      password: 'password',
+      email: 'kadarh@git',
+      description: 'tomastrajan',
       requestGift: '',
-      birthday: '',
+      birthday: new Date('2/20/2020'),
       rating: 0
     });
   });
