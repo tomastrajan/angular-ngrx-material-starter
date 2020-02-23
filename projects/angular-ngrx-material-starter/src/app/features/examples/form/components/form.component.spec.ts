@@ -11,20 +11,32 @@ import { FormComponent } from './form.component';
 import { selectFormState } from '../form.selectors';
 import { Form } from '../form.model';
 
+import { HarnessLoader } from '@angular/cdk/testing';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
+import { MatInputHarness } from '@angular/material/input/testing';
+import { MatButtonHarness } from '@angular/material/button/testing';
+
 describe('FormComponent', () => {
   let store: MockStore;
   let component: FormComponent;
   let fixture: ComponentFixture<FormComponent>;
   let dispatchSpy: jasmine.Spy;
+  let loader: HarnessLoader;
 
   const getInput = (fieldName: string) =>
-    fixture.debugElement.query(By.css(`[formControlName="${fieldName}"]`));
+    loader.getHarness(
+      MatInputHarness.with({ selector: `[formControlName="${fieldName}"]` })
+    );
 
   const getSaveButton = () =>
-    fixture.debugElement.queryAll(By.css('.buttons button'))[1];
+    loader.getHarness(
+      MatButtonHarness.with({ text: 'anms.examples.form.save' })
+    );
 
-  const getResetButton = () =>
-    fixture.debugElement.queryAll(By.css('.buttons button'))[2];
+  const getResetButton = async () =>
+    loader.getHarness(
+      MatButtonHarness.with({ text: 'anms.examples.form.reset' })
+    );
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
@@ -38,23 +50,17 @@ describe('FormComponent', () => {
     fixture = TestBed.createComponent(FormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    loader = TestbedHarnessEnvironment.loader(fixture);
 
     dispatchSpy = spyOn(store, 'dispatch');
   });
 
   it('should save form', async () => {
-    const inputEvent = new KeyboardEvent('input', {
-      bubbles: true,
-      cancelable: true,
-      shiftKey: false
-    });
+    const usernameInput = await getInput('username');
+    const saveButton = await getSaveButton();
 
-    getInput('username').nativeElement.value = 'tomastrajan';
-    getInput('username').nativeElement.dispatchEvent(inputEvent);
-    fixture.detectChanges();
-
-    getSaveButton().nativeElement.click();
-    fixture.detectChanges();
+    await usernameInput.setValue('tomastrajan');
+    await saveButton.click();
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy.calls.mostRecent().args[0].type).toBe('[Form] Update');
@@ -71,21 +77,15 @@ describe('FormComponent', () => {
   });
 
   it('should reset form', async () => {
-    const inputEvent = new KeyboardEvent('input', {
-      bubbles: true,
-      cancelable: true,
-      shiftKey: false
-    });
+    const usernameInput = await getInput('username');
+    const resetButton = await getResetButton();
 
-    getInput('username').nativeElement.value = 'tomastrajan';
-    getInput('username').nativeElement.dispatchEvent(inputEvent);
-    fixture.detectChanges();
-
-    getResetButton().nativeElement.click();
-    fixture.detectChanges();
+    await usernameInput.setValue('tomastrajan');
+    await resetButton.click();
+    const usernameValue = await usernameInput.getValue();
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy.calls.mostRecent().args[0].type).toBe('[Form] Reset');
-    expect(getInput('username').nativeElement.value).toBe('');
+    expect(usernameValue).toBe('');
   });
 });
