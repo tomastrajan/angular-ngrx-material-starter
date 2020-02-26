@@ -15,6 +15,14 @@ import {
   selectTodos,
   selectTodosState
 } from '../todos.selectors';
+import { HarnessLoader, TestKey } from '@angular/cdk/testing';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
+import { MatButtonHarness } from '@angular/material/button/testing';
+import {
+  MatMenuItemHarness,
+  MatMenuHarness
+} from '@angular/material/menu/testing';
+import { MatInputHarness } from '@angular/material/input/testing';
 
 describe('TodosComponent', () => {
   let store: MockStore;
@@ -23,14 +31,16 @@ describe('TodosComponent', () => {
   let dispatchSpy: jasmine.Spy;
   let mockSelectTodos: MemoizedSelector<any, Todo[]>;
   let mockSelectRemoveDoneTodosDisabled: MemoizedSelector<any, boolean>;
+  let loader: HarnessLoader;
 
   const getOpenFilterButton = () =>
-    fixture.debugElement.query(By.css('.todos-filter'));
+    loader.getHarness(MatButtonHarness.with({ selector: '.todos-filter' }));
 
-  const getFilterActiveButton = () =>
-    fixture.debugElement.queryAll(
-      By.css('.todos-filter-menu-overlay button')
-    )[2];
+  const getFilterActiveButton = async () => {
+    const menu = await loader.getHarness(MatMenuHarness);
+    const items = await menu.getItems();
+    return items[2];
+  };
 
   const getTodoInput = () =>
     fixture.debugElement.query(By.css('anms-big-input input'));
@@ -39,15 +49,19 @@ describe('TodosComponent', () => {
 
   const getTodoItem = () => fixture.debugElement.query(By.css('.todo-label'));
 
-  const getAddTodoButton = () =>
-    fixture.debugElement
-      .queryAll(By.css('anms-big-input-action'))[0]
-      .query(By.css('button'));
+  const getAddTodoButton = async () => {
+    const buttons = await loader.getAllHarnesses(
+      MatButtonHarness.with({ selector: 'anms-big-input-action button' })
+    );
+    return buttons[0];
+  };
 
-  const getRemoveDoneTodosButton = () =>
-    fixture.debugElement
-      .queryAll(By.css('anms-big-input-action'))[1]
-      .query(By.css('button'));
+  const getRemoveDoneTodosButton = async () => {
+    const buttons = await loader.getAllHarnesses(
+      MatButtonHarness.with({ selector: 'anms-big-input-action button' })
+    );
+    return buttons[1];
+  };
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
@@ -65,6 +79,8 @@ describe('TodosComponent', () => {
     fixture = TestBed.createComponent(TodosContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    loader = TestbedHarnessEnvironment.loader(fixture);
+
     dispatchSpy = spyOn(store, 'dispatch');
   });
 
@@ -84,7 +100,7 @@ describe('TodosComponent', () => {
     expect(getTodoItems()[0].nativeElement.textContent.trim()).toBe('test');
   });
 
-  it('should dispatch remove "DONE" todos action', () => {
+  it('should dispatch remove "DONE" todos action', async () => {
     mockSelectTodos.setResult([
       { id: '1', name: 'test 1', done: true },
       { id: '2', name: 'test 2', done: false }
@@ -94,7 +110,8 @@ describe('TodosComponent', () => {
     fixture.detectChanges();
     dispatchSpy.calls.reset();
 
-    getRemoveDoneTodosButton().nativeElement.click();
+    const removeDoneTodosButton = await getRemoveDoneTodosButton();
+    await removeDoneTodosButton.click();
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
@@ -102,7 +119,7 @@ describe('TodosComponent', () => {
     );
   });
 
-  it('should dispatch add todo action', () => {
+  it('should dispatch add todo action', async () => {
     fixture.detectChanges();
     dispatchSpy.calls.reset();
 
@@ -116,9 +133,8 @@ describe('TodosComponent', () => {
     getTodoInput().nativeElement.dispatchEvent(keyUpEvent);
     fixture.detectChanges();
 
-    getAddTodoButton().nativeElement.click();
-
-    fixture.detectChanges();
+    const addTodoButton = await getAddTodoButton();
+    await addTodoButton.click();
 
     expect(getTodoInput().nativeElement.value).toBe('');
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
@@ -126,15 +142,14 @@ describe('TodosComponent', () => {
     expect(dispatchSpy.calls.mostRecent().args[0].name).toBe('hello world');
   });
 
-  it('should dispatch filter todo action', () => {
-    fixture.detectChanges();
+  it('should dispatch filter todo action', async () => {
     dispatchSpy.calls.reset();
 
-    getOpenFilterButton().nativeElement.click();
-    fixture.detectChanges();
+    const openFilterButton = await getOpenFilterButton();
+    await openFilterButton.click();
 
-    getFilterActiveButton().nativeElement.click();
-    fixture.detectChanges();
+    const filterActiveButton = await getFilterActiveButton();
+    await filterActiveButton.click();
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
     expect(dispatchSpy).toHaveBeenCalledWith(
@@ -157,13 +172,16 @@ describe('TodosComponent', () => {
     );
   });
 
-  it('should disable remove done todos button if no todo is done', () => {
+  it('should disable remove done todos button if no todo is done', async () => {
     fixture.detectChanges();
 
-    expect(getRemoveDoneTodosButton().nativeElement.disabled).toBe(true);
+    const removeDoneTodosButton = await getRemoveDoneTodosButton();
+    const removeDoneTodosButtonIsDisabled = await removeDoneTodosButton.isDisabled();
+
+    expect(removeDoneTodosButtonIsDisabled).toBe(true);
   });
 
-  it('should disable add new todo button if input length is less than 4', () => {
+  it('should disable add new todo button if input length is less than 4', async () => {
     fixture.detectChanges();
 
     const keyUpEvent = new KeyboardEvent('keyup', {
@@ -175,14 +193,17 @@ describe('TodosComponent', () => {
     getTodoInput().nativeElement.value = 'add';
     getTodoInput().nativeElement.dispatchEvent(keyUpEvent);
     fixture.detectChanges();
+    const addTodoButton = await getAddTodoButton();
+    let addTodoButtonIsDisabled = await addTodoButton.isDisabled();
 
-    expect(getAddTodoButton().nativeElement.disabled).toBe(true);
+    expect(addTodoButtonIsDisabled).toBe(true);
 
     getTodoInput().nativeElement.value = 'long enough';
     getTodoInput().nativeElement.dispatchEvent(keyUpEvent);
     fixture.detectChanges();
 
-    expect(getAddTodoButton().nativeElement.disabled).toBe(false);
+    addTodoButtonIsDisabled = await addTodoButton.isDisabled();
+    expect(addTodoButtonIsDisabled).toBe(false);
   });
 
   it('should clear new todo input value on ESC key press', () => {
