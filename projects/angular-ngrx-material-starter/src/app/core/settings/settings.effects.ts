@@ -1,16 +1,14 @@
 import { ActivationEnd, Router } from '@angular/router';
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { select, Store } from '@ngrx/store';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, interval, merge, of } from 'rxjs';
+import { combineLatest, merge, of } from 'rxjs';
 import {
   tap,
   withLatestFrom,
-  map,
   distinctUntilChanged,
-  mapTo,
   filter
 } from 'rxjs/operators';
 
@@ -51,15 +49,21 @@ export class SettingsEffects {
     private localStorageService: LocalStorageService,
     private titleService: TitleService,
     private animationsService: AnimationsService,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private ngZone: NgZone
   ) {}
 
-  changeHour = createEffect(() =>
-    interval(60_000).pipe(
-      mapTo(new Date().getHours()),
-      distinctUntilChanged(),
-      map(hour => actionSettingsChangeHour({ hour }))
-    )
+  hour = 0;
+  changeHour = this.ngZone.runOutsideAngular(() =>
+    setInterval(() => {
+      const hour = new Date().getHours();
+      if (hour !== this.hour) {
+        this.hour = hour;
+        this.ngZone.run(() =>
+          this.store.dispatch(actionSettingsChangeHour({ hour }))
+        );
+      }
+    }, 60_000)
   );
 
   persistSettings = createEffect(

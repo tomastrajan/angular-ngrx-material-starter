@@ -5,6 +5,7 @@ import { Actions, getEffectsMetadata } from '@ngrx/effects';
 import { TestScheduler } from 'rxjs/testing';
 import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
+import { NgZone } from '@angular/core';
 
 import {
   AnimationsService,
@@ -29,6 +30,7 @@ describe('SettingsEffects', () => {
   let animationsService: jasmine.SpyObj<AnimationsService>;
   let translateService: jasmine.SpyObj<TranslateService>;
   let store: jasmine.SpyObj<Store<AppState>>;
+  let ngZone: jasmine.SpyObj<NgZone>;
 
   beforeEach(() => {
     router = {
@@ -51,6 +53,8 @@ describe('SettingsEffects', () => {
     ]);
     translateService = jasmine.createSpyObj('TranslateService', ['use']);
     store = jasmine.createSpyObj('store', ['pipe']);
+    ngZone = jasmine.createSpyObj('mockNgZone', ['run', 'runOutsideAngular']);
+    ngZone.run.and.callFake(fn => fn());
   });
 
   it('should call methods on LocalStorageService for PERSIST action', () => {
@@ -80,7 +84,8 @@ describe('SettingsEffects', () => {
         localStorageService,
         titleService,
         animationsService,
-        translateService
+        translateService,
+        ngZone
       );
 
       effect.persistSettings.subscribe(() => {
