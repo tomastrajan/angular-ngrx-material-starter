@@ -193,6 +193,7 @@ Get started by checking out list of open [issues](https://github.com/tomastrajan
     <td align="center"><a href="https://github.com/roniaxe"><img src="https://avatars2.githubusercontent.com/u/19142347?v=4" width="100px;" alt=""/><br /><sub><b>roniaxe</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=roniaxe" title="Code">💻</a> <a href="#translation-roniaxe" title="Translation">🌍</a></td>
     <td align="center"><a href="https://github.com/tenkmilan"><img src="https://avatars2.githubusercontent.com/u/4102195?v=4" width="100px;" alt=""/><br /><sub><b>Milán Tenk</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=tenkmilan" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/KadarH"><img src="https://avatars1.githubusercontent.com/u/23250431?v=4" width="100px;" alt=""/><br /><sub><b>Kadar Hamza</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=KadarH" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Zaky7"><img src="https://avatars2.githubusercontent.com/u/16975648?v=4" width="100px;" alt=""/><br /><sub><b>Zakir</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=Zaky7" title="Code">💻</a> <a href="#security-Zaky7" title="Security">🛡️</a></td>
   </tr>
 </table>
 

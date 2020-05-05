@@ -405,6 +405,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "Zaky7",
+      "name": "Zakir",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16975648?v=4",
+      "profile": "https://github.com/Zaky7",
+      "contributions": [
+        "code",
+        "security"
+      ]
     }
   ],
   "commitConvention": "none"

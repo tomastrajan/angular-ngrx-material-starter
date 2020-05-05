@@ -3,14 +3,14 @@
   <mat-sidenav-container>
 
     <mat-sidenav #sidenav mode="push">
-      <div class="branding"><img [src]="logo" />
+      <div class="branding"><img [src]="logo" [alt]="logo"/>
         <span>{{ 'anms.title.short' | translate}}</span></div>
       <mat-nav-list>
         <a mat-list-item *ngFor="let item of navigationSideMenu" (click)="sidenav.close()" [routerLink]="[item.link]"
           routerLinkActive="active">
           {{item.label | translate}}
         </a>
-        <a mat-list-item href="https://github.com/tomastrajan/angular-ngrx-material-starter" target="_blank">
+        <a mat-list-item href="https://github.com/tomastrajan/angular-ngrx-material-starter" target="_blank" rel="noopener noreferrer">
           Github
         </a>
       </mat-nav-list>
@@ -26,10 +26,10 @@
           </button>
 
           <span routerLink="" class="branding spacer center d-inline d-sm-none">
-            <img [src]="logo" /></span>
-          <span routerLink="" class="branding spacer center d-none d-sm-inline d-md-none"><img [src]="logo" /> {{
+            <img [src]="logo" [alt]="logo"/></span>
+          <span routerLink="" class="branding spacer center d-none d-sm-inline d-md-none"><img [src]="logo" [alt]="logo"/> {{
             'anms.title.short' | translate }}</span>
-          <span routerLink="" class="branding spacer d-none d-md-inline"><img [src]="logo" /> {{ 'anms.title.long' | translate
+          <span routerLink="" class="branding spacer d-none d-md-inline"><img [src]="logo"[alt]="logo" /> {{ 'anms.title.long' | translate
             }}</span>
 
           <span class="d-none d-md-inline">
@@ -64,7 +64,7 @@
              mat-icon-button
              class="link d-none d-sm-inline"
              href="https://github.com/tomastrajan/angular-ngrx-material-starter"
-             target="_blank">
+             target="_blank" rel="noopener noreferrer">
             <fa-icon [icon]="['fab','github']"></fa-icon>
           </a>
 
@@ -85,28 +85,28 @@
       <div class="footer">
         <div class="row">
           <div class="col-sm-12 links">
-            <a href="https://www.github.com/tomastrajan" target="_blank">
+            <a href="https://www.github.com/tomastrajan" target="_blank" rel="noopener noreferrer">
               <fa-icon [icon]="['fab','github']"></fa-icon>
               <span>Github</span>
             </a>
-            <a href="https://www.medium.com/@tomastrajan" target="_blank">
+            <a href="https://www.medium.com/@tomastrajan" target="_blank" rel="noopener noreferrer">
               <fa-icon [icon]="['fab','medium-m']"></fa-icon>
               <span>Medium</span>
             </a>
-            <a href="https://www.twitter.com/tomastrajan" target="_blank">
+            <a href="https://www.twitter.com/tomastrajan" target="_blank" rel="noopener noreferrer">
               <fa-icon [icon]="['fab','twitter']"></fa-icon>
               <span>Twitter</span>
             </a>
             <a href="https://www.youtube.com/channel/UC7XgRHIVoqnh3U5Vmly9ofQ"
-               target="_blank">
+               target="_blank" rel="noopener noreferrer">
               <fa-icon [icon]="['fab','youtube']"></fa-icon>
               <span>Youtube</span>
             </a>
-            <a href="https://www.instagram.com/tomastrajan" target="_blank">
+            <a href="https://www.instagram.com/tomastrajan" target="_blank" rel="noopener noreferrer">
               <fa-icon [icon]="['fab','instagram']"></fa-icon>
               <span>Instagram</span>
             </a>
-            <a href="https://www.slides.com/tomastrajan" target="_blank">
+            <a href="https://www.slides.com/tomastrajan" target="_blank" rel="noopener noreferrer">
               <fa-icon icon="play-circle"></fa-icon>
               <span>Slides</span>
             </a>

@@ -14,13 +14,13 @@
           {{ feature.description | translate }}
         </mat-card-subtitle>
         <mat-card-actions>
-          <a *ngIf="feature.github" mat-icon-button [href]="feature.github" target="_blank">
+          <a *ngIf="feature.github" mat-icon-button [href]="feature.github" rel="noopener noreferrer" target="_blank">
             <fa-icon [icon]="['fab','github']"></fa-icon>
           </a>
-          <a mat-button [href]="feature.documentation" target="_blank">
+          <a mat-button [href]="feature.documentation" rel="noopener noreferrer" target="_blank">
             <fa-icon icon="book"></fa-icon>{{ 'anms.features.documentation' | translate }}
           </a>
-          <a *ngIf="feature.medium" mat-button [href]="feature.medium" target="_blank">
+          <a *ngIf="feature.medium" mat-button [href]="feature.medium" rel="noopener noreferrer" target="_blank">
             <fa-icon [icon]="['fab','medium-m']"></fa-icon>{{ 'anms.features.guide' | translate }}
           </a>
         </mat-card-actions>
