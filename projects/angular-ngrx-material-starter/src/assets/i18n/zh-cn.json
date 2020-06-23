@@ -18,7 +18,7 @@
   "anms.features.bootstrap": "久经考验的著名的 UI 类库，为应用提供响应式布局",
   "anms.features.cypress": "Cypress 是下一代的前端测试工具",
   "anms.features.documentation": "文档",
-  "anms.features.fontawesome": "易用的适量图标和社交图标",
+  "anms.features.fontawesome": "易用的矢量图标和社交图标",
   "anms.features.guide": "帮助",
   "anms.features.lazyloading.description": "使用懒加载模块可以得到更快的启动时间",
   "anms.features.lazyloading.title": "懒加载",
