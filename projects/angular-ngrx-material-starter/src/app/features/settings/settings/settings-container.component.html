@@ -14,9 +14,16 @@
                         [ngModel]="settings.language"
                         (selectionChange)="onLanguageSelect($event)"
                         name="language">
-              <mat-option *ngFor="let l of languages" [value]="l.value">
-                {{ 'anms.settings.general.language.' + l.label | translate }}
-              </mat-option>
+              <ng-container  *ngFor="let l of languages">
+                <!-- ngFor hack of missing ngLet of Angular -->
+                <mat-option *ngFor="let title of ['anms.settings.general.language.' + l.value | translate]"
+                  [value]="l.value"
+                  [title]="title !== l.label
+                    ? title
+                    : ''">
+                  {{ l.label }}
+                </mat-option>
+              </ng-container>
             </mat-select>
           </mat-form-field>
         </div>
