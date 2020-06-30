@@ -6,6 +6,18 @@ import { EffectsModule } from '@ngrx/effects';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
+
+import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
+// import a cleave phone addon for ONLY one country
+// import 'cleave.js/dist/addons/cleave-phone.ch';
+// and if an addon for more countries is required, you should build your own
+// https://github.com/nosir/libphonenumber-country-metadata#build-phone-type-formatterjs-for-cleavejs
+import './phone-type-formatter.br-ch-cn-de-es-fr-gb-il-pt-sk-us';
+// --
+// or one for all
+// import 'cleave.js/dist/addons/cleave-phone.i18n';
+
 import { SharedModule } from '../../shared/shared.module';
 import { environment } from '../../../environments/environment';
 
@@ -59,7 +71,10 @@ export function HttpLoaderFactory(http: HttpClient) {
       StockMarketEffects,
       BooksEffects,
       FormEffects
-    ])
+    ]),
+
+    NgxTrimDirectiveModule,
+    NgxCleaveDirectiveModule
   ],
   declarations: [
     ExamplesComponent,

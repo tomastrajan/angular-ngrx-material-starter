@@ -20,7 +20,7 @@
           <div class="row">
             <mat-form-field class="col" [ngClass]="routeAnimationsElements">
               <input matInput placeholder="{{ 'anms.examples.form.placeholder1' | translate }}"
-                formControlName="username">
+                formControlName="username" trim>
               <mat-error *ngIf="form.get('username').invalid">
                 {{ 'anms.examples.form.placeholder1' | translate }}
                 {{ 'anms.examples.form.error1' | translate }}
@@ -50,7 +50,19 @@
           </div>
           <div class="row">
             <mat-form-field class="col" [ngClass]="routeAnimationsElements">
-              <input matInput formControlName="birthday" [matDatepicker]="picker" placeholder="{{ 'anms.examples.form.placeholder5' | translate }}">
+              <input matInput placeholder="{{ 'anms.examples.form.placeholder6' | translate }}"
+                formControlName="phoneNumber" [cleave]="cleavePhoneOptions">
+              <mat-error *ngIf="form.get('phoneNumber').hasError('pattern')">
+                {{ 'anms.examples.form.placeholder6' | translate }}
+                {{ 'anms.examples.form.error2' | translate }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field class="col" [ngClass]="routeAnimationsElements">
+              <input matInput formControlName="birthday"
+                [cleave]="cleaveDateOptions" [matDatepicker]="picker"
+                placeholder="{{ 'anms.examples.form.placeholder5' | translate }}">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
               <mat-error *ngIf="form.get('birthday').hasError('required')">

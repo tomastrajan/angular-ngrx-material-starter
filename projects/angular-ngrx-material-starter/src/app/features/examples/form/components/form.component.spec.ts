@@ -16,6 +16,10 @@ import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
 import { MatInputHarness } from '@angular/material/input/testing';
 import { MatButtonHarness } from '@angular/material/button/testing';
 
+import { NgxTrimDirectiveModule } from 'ngx-trim-directive';
+import { NgxCleaveDirectiveModule } from 'ngx-cleave-directive';
+import '../../phone-type-formatter.br-ch-cn-de-es-fr-gb-il-pt-sk-us';
+
 describe('FormComponent', () => {
   let store: MockStore;
   let component: FormComponent;
@@ -40,7 +44,13 @@ describe('FormComponent', () => {
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      imports: [SharedModule, NoopAnimationsModule, TranslateModule.forRoot()],
+      imports: [
+        SharedModule,
+        NoopAnimationsModule,
+        TranslateModule.forRoot(),
+        NgxTrimDirectiveModule,
+        NgxCleaveDirectiveModule
+      ],
       declarations: [FormComponent],
       providers: [provideMockStore(), NotificationService]
     });
@@ -55,11 +65,15 @@ describe('FormComponent', () => {
     dispatchSpy = spyOn(store, 'dispatch');
   });
 
-  it('should save form', async () => {
+  it('should save form with trimmed username and formatted phone number', async () => {
     const usernameInput = await getInput('username');
+    const phoneNumberInput = await getInput('phoneNumber');
+    const birthdayInput = await getInput('birthday');
     const saveButton = await getSaveButton();
 
-    await usernameInput.setValue('tomastrajan');
+    await usernameInput.setValue('   tomas trajan   ');
+    await phoneNumberInput.setValue('258888888');
+    await birthdayInput.setValue('2153');
     await saveButton.click();
 
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
@@ -69,9 +83,10 @@ describe('FormComponent', () => {
       username: 'tomastrajan',
       password: '',
       email: '',
+      phoneNumber: '+41-25-888-88-88',
       description: '',
       requestGift: '',
-      birthday: '',
+      birthday: new Date(2003, 1, 15),
       rating: 0
     });
   });

@@ -28,6 +28,10 @@ export class FormComponent implements OnInit {
     username: ['', [Validators.required]],
     password: ['', [Validators.required]],
     email: ['', [Validators.required, Validators.email]],
+    phoneNumber: [
+      '',
+      [Validators.pattern(/^\+41\-[2-9]\d\-\d{3}\-\d{2}-\d{2}$/)]
+    ],
     description: [
       '',
       [
@@ -42,6 +46,19 @@ export class FormComponent implements OnInit {
   });
 
   formValueChanges$: Observable<Form>;
+
+  cleavePhoneOptions = {
+    phone: true,
+    phoneRegionCode: 'CH',
+    delimiter: '-',
+    prefix: '+41'
+  };
+
+  cleaveDateOptions = {
+    date: true,
+    delimiter: '/',
+    datePattern: ['m', 'd', 'Y']
+  };
 
   constructor(
     private fb: FormBuilder,
