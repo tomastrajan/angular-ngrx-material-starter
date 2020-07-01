@@ -23,19 +23,19 @@
             <fa-icon icon="filter"></fa-icon>
           </button>
           <mat-menu class="todos-filter-menu-overlay" #todosFilter="matMenu" xPosition="before">
-            <button mat-menu-item (click)="onFilterTodos('ALL')" [ngClass]="{ active: todos.filter === 'ALL' }" rtl>
+            <button mat-menu-item (click)="onFilterTodos('ALL')" [class.active]="(filter$ | async) === 'ALL'" rtl>
               <mat-icon>
                 <fa-icon icon="tasks"></fa-icon>
               </mat-icon>
               <span>{{ 'anms.examples.todos.filter.all' | translate }}</span>
             </button>
-            <button mat-menu-item (click)="onFilterTodos('DONE')" [ngClass]="{ active: todos.filter === 'DONE' }">
+            <button mat-menu-item (click)="onFilterTodos('DONE')" [class.active]="(filter$ | async) === 'DONE'">
               <mat-icon>
                 <fa-icon icon="check"></fa-icon>
               </mat-icon>
               <span>{{ 'anms.examples.todos.filter.done' | translate }}</span>
             </button>
-            <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [ngClass]="{ active: todos.filter === 'ACTIVE' }">
+            <button mat-menu-item (click)="onFilterTodos('ACTIVE')" [class.active]="(filter$ | async) === 'ACTIVE'">
               <mat-icon>
                 <fa-icon icon="square"></fa-icon>
               </mat-icon>
