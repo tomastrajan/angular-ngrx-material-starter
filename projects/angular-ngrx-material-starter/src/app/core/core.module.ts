@@ -7,7 +7,7 @@ import {
 } from '@angular/common/http';
 import {
   StoreRouterConnectingModule,
-  RouterStateSerializer
+  RouterStateSerializer, DefaultRouterStateSerializer
 } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -81,7 +81,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 
     // ngrx
     StoreModule.forRoot(reducers, { metaReducers }),
-    StoreRouterConnectingModule.forRoot(),
+    StoreRouterConnectingModule.forRoot({ serializer: DefaultRouterStateSerializer }),
     EffectsModule.forRoot([
       AuthEffects,
       SettingsEffects,
