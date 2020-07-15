@@ -133,7 +133,9 @@
               "projects/angular-ngrx-material-starter/tsconfig.spec.json",
               "projects/angular-ngrx-material-starter/e2e/tsconfig.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -151,5 +153,8 @@
       }
     }
   },
-  "defaultProject": "angular-ngrx-material-starter"
+  "defaultProject": "angular-ngrx-material-starter",
+  "cli": {
+    "analytics": false
+  }
 }
