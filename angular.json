@@ -23,7 +23,7 @@
             "main": "projects/angular-ngrx-material-starter/src/main.ts",
             "polyfills": "projects/angular-ngrx-material-starter/src/polyfills.ts",
             "tsConfig": "projects/angular-ngrx-material-starter/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "projects/angular-ngrx-material-starter/src/favicon.ico",
               "projects/angular-ngrx-material-starter/src/assets"
@@ -47,7 +47,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -72,6 +71,10 @@
                   "baseline": "1024kb",
                   "maximumWarning": "100kb",
                   "maximumError": "200kb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
