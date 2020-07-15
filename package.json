@@ -76,7 +76,7 @@
     "@commitlint/config-conventional": "^7.1.2",
     "@types/jasmine": "~2.8.9",
     "@types/jasminewd2": "^2.0.5",
-    "@types/node": "^12.11.1",
+    "@types/node": "^12.12.50",
     "@types/uuid": "^3.4.4",
     "all-contributors-cli": "^5.4.1",
     "codelyzer": "^6.0.0",
