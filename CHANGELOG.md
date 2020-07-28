@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.0.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v9.0.1...v10.0.0) (2020-07-28)
+
+### ⚠ BREAKING CHANGES
+
+- **workspace:** upgrade to Angular 10
+
+### Features
+
+- **i18n:** language titles of current language for language select ([5687319](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/5687319f074d510c52b03b79e7fb259afbc30099))
+- **workspace:** bump angular / cli / ngrx to ~9.1.0 ([94d3a2e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/94d3a2ef11e0868eb0f78988df18e07176b5dd93))
+- **workspace:** upgrade to Angular 10 ([7151fb8](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/7151fb8f63aac868ebea8e525d20a6369af85a2a))
+
+### Bug Fixes
+
+- **i18n:** use the own languages for different languages to display ([d86a140](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/d86a14052fce03ddf167af3db228dcd63dbde72c))
+- **workspace:** fix CI build configuration ([292e56e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/292e56efadb06557938d9b6fa9fd1c0ff027aa3e))
+- **workspace:** fix CI build configuration ([e24d606](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/e24d60675dd201a2fa4d6ace46040f5b1bea92da))
+- **workspace:** fix CI build configuration ([fc92ef7](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/fc92ef7bbc0e0afe22ac331560a68a3d86866d1c))
+- **workspace:** fix CI build configuration ([4a74c53](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/4a74c53eb316460033a845d61f7d0160cd0bfa3f))
+- typo in the zh-cn translation for `vector` ([88306bf](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/88306bf80aa83e777ed10cc437d174e8464112a3))
+
 ### [9.0.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v9.0.0...v9.0.1) (2020-05-05)
 
 ### Bug Fixes
