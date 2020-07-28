@@ -27,7 +27,7 @@ describe('StockMarketService', () => {
         changePercent: '0.81'
       };
 
-      service.retrieveStock('TSLA').subscribe(stock => {
+      service.retrieveStock('TSLA').subscribe((stock) => {
         expect(stock.symbol).toBe(expectedStock.symbol);
         expect(stock.exchange).toBe(expectedStock.primaryExchange);
         expect(stock.changePercent).toBe(expectedStock.changePercent);

@@ -28,7 +28,7 @@ export class ExamplesEffects {
       this.store.pipe(
         select(selectSettingsLanguage),
         distinctUntilChanged(),
-        tap(language => this.translateService.use(language))
+        tap((language) => this.translateService.use(language))
       ),
     { dispatch: false }
   );
@@ -37,7 +37,9 @@ export class ExamplesEffects {
     () =>
       merge(
         this.actions$.pipe(ofType(actionSettingsChangeLanguage)),
-        this.router.events.pipe(filter(event => event instanceof ActivationEnd))
+        this.router.events.pipe(
+          filter((event) => event instanceof ActivationEnd)
+        )
       ).pipe(
         tap(() => {
           this.titleService.setTitle(

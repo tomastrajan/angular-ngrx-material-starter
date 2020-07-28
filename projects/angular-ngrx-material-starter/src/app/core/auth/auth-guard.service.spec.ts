@@ -26,7 +26,7 @@ describe('AuthGuardService', () => {
   });
 
   it('should return isAuthenticated from authState', () => {
-    authGuardService.canActivate().subscribe(canActivate => {
+    authGuardService.canActivate().subscribe((canActivate) => {
       expect(canActivate).toBe(true);
     });
   });

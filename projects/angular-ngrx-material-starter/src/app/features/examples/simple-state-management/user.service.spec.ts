@@ -17,16 +17,16 @@ describe('UserService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should provide initial users', done => {
-    service.users$.subscribe(users => {
+  it('should provide initial users', (done) => {
+    service.users$.subscribe((users) => {
       expect(users.length).toBe(3);
       done();
     });
   });
 
-  it('should add user', done => {
+  it('should add user', (done) => {
     service.addUser({ username: 'test', name: 'Test', surname: 'Tester' });
-    service.users$.subscribe(users => {
+    service.users$.subscribe((users) => {
       expect(users.length).toBe(4);
       expect(users[3].username).toBe('test');
       done();

@@ -16,7 +16,7 @@ describe('About Page', () => {
     page
       .getGettingStarted()
       .isPresent()
-      .then(isPresent => expect(isPresent).toBe(true));
+      .then((isPresent) => expect(isPresent).toBe(true));
   });
 
   it('first action button should lead to "Features" route', () => {

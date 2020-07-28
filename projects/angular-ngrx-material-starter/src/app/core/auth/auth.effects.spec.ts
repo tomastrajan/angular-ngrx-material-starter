@@ -33,7 +33,7 @@ describe('AuthEffects', () => {
     });
 
     it('should call setItem on LocalStorageService', () => {
-      scheduler.run(helpers => {
+      scheduler.run((helpers) => {
         const { cold } = helpers;
         const loginAction = authLogin();
         const source = cold('a', { a: loginAction });
@@ -59,7 +59,7 @@ describe('AuthEffects', () => {
     });
 
     it('should call setItem on LocalStorageService and navigate to about', () => {
-      scheduler.run(helpers => {
+      scheduler.run((helpers) => {
         const { cold } = helpers;
         const logoutAction = authLogout();
         const source = cold('a', { a: logoutAction });

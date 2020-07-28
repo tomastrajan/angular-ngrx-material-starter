@@ -21,7 +21,7 @@ describe('Todos Page', () => {
         .getResults()
         .get(0)
         .getText()
-        .then(text => text.trim())
+        .then((text) => text.trim())
     ).toBe('Run e2e tests!');
   });
 });

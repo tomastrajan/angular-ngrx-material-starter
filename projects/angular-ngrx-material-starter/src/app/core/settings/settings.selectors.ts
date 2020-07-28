@@ -20,32 +20,32 @@ export const selectSettingsLanguage = createSelector(
 
 export const selectTheme = createSelector(
   selectSettings,
-  settings => settings.theme
+  (settings) => settings.theme
 );
 
 export const selectPageAnimations = createSelector(
   selectSettings,
-  settings => settings.pageAnimations
+  (settings) => settings.pageAnimations
 );
 
 export const selectElementsAnimations = createSelector(
   selectSettings,
-  settings => settings.elementsAnimations
+  (settings) => settings.elementsAnimations
 );
 
 export const selectAutoNightMode = createSelector(
   selectSettings,
-  settings => settings.autoNightMode
+  (settings) => settings.autoNightMode
 );
 
 export const selectNightTheme = createSelector(
   selectSettings,
-  settings => settings.nightTheme
+  (settings) => settings.nightTheme
 );
 
 export const selectHour = createSelector(
   selectSettings,
-  settings => settings.hour
+  (settings) => settings.hour
 );
 
 export const selectIsNightHour = createSelector(

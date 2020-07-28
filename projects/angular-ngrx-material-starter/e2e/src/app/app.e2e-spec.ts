@@ -21,6 +21,8 @@ describe('App', () => {
     page.navigateTo();
     page
       .getAllMenus()
-      .then(menus => expect(menus).toEqual(['About', 'Features', 'Examples']));
+      .then((menus) =>
+        expect(menus).toEqual(['About', 'Features', 'Examples'])
+      );
   });
 });

@@ -9,12 +9,12 @@ export const selectTodosState = createSelector(
 
 export const selectTodosItems = createSelector(
   selectTodosState,
-  state => state.items
+  (state) => state.items
 );
 
 export const selectTodosFilter = createSelector(
   selectTodosState,
-  state => state.filter
+  (state) => state.filter
 );
 
 export const selectTodos = createSelector(
@@ -24,7 +24,7 @@ export const selectTodos = createSelector(
     if (filter === 'ALL') {
       return items;
     } else {
-      const predicate = filter === 'DONE' ? t => t.done : t => !t.done;
+      const predicate = filter === 'DONE' ? (t) => t.done : (t) => !t.done;
       return items.filter(predicate);
     }
   }
@@ -32,5 +32,5 @@ export const selectTodos = createSelector(
 
 export const selectRemoveDoneTodosDisabled = createSelector(
   selectTodosItems,
-  items => !items.some(item => item.done)
+  (items) => !items.some((item) => item.done)
 );

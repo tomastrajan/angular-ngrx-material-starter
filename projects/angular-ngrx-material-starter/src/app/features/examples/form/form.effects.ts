@@ -19,7 +19,7 @@ export class FormEffects {
     () =>
       this.actions$.pipe(
         ofType(actionFormUpdate),
-        tap(action =>
+        tap((action) =>
           this.localStorageService.setItem(FORM_KEY, { form: action.form })
         )
       ),

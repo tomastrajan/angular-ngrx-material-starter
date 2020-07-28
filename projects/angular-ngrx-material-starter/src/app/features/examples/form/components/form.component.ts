@@ -57,7 +57,7 @@ export class FormComponent implements OnInit {
     );
     this.store
       .pipe(select(selectFormState), take(1))
-      .subscribe(form => this.form.patchValue(form.form));
+      .subscribe((form) => this.form.patchValue(form.form));
   }
 
   update(form: Form) {

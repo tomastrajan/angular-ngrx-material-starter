@@ -34,7 +34,7 @@ describe('TodosEffects', () => {
     });
 
     it('should call setItem on LocalStorageService for any action', () => {
-      scheduler.run(helpers => {
+      scheduler.run((helpers) => {
         const { cold } = helpers;
 
         const todosState: TodosState = {

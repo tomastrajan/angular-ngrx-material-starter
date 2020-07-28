@@ -70,7 +70,7 @@ describe('SettingsEffects', () => {
     });
 
     it('should setTitle', () => {
-      scheduler.run(helpers => {
+      scheduler.run((helpers) => {
         const { cold, hot } = helpers;
         const action = actionSettingsChangeLanguage({ language: 'en' });
         const actions = hot('-a', { a: action });

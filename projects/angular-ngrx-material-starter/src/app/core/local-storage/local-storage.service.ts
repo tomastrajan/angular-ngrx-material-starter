@@ -15,7 +15,7 @@ export class LocalStorageService {
           .replace(APP_PREFIX, '')
           .toLowerCase()
           .split('.')
-          .map(key =>
+          .map((key) =>
             key
               .split('-')
               .map((token, index) =>

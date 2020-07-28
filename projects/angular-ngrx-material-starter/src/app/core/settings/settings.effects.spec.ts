@@ -54,11 +54,11 @@ describe('SettingsEffects', () => {
     translateService = jasmine.createSpyObj('TranslateService', ['use']);
     store = jasmine.createSpyObj('store', ['pipe']);
     ngZone = jasmine.createSpyObj('mockNgZone', ['run', 'runOutsideAngular']);
-    ngZone.run.and.callFake(fn => fn());
+    ngZone.run.and.callFake((fn) => fn());
   });
 
   it('should call methods on LocalStorageService for PERSIST action', () => {
-    scheduler.run(helpers => {
+    scheduler.run((helpers) => {
       const { cold } = helpers;
 
       const settings: SettingsState = {

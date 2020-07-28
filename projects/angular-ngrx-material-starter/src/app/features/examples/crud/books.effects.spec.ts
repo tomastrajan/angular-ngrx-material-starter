@@ -48,7 +48,7 @@ describe('BooksEffects', () => {
     });
 
     it('should call setItem on LocalStorageService for delete one action', () => {
-      scheduler.run(helpers => {
+      scheduler.run((helpers) => {
         const { cold } = helpers;
         const action = actionBooksDeleteOne({ id: '1' });
         const source = cold('a', { a: action });
@@ -65,7 +65,7 @@ describe('BooksEffects', () => {
     });
 
     it('should call setItem on LocalStorageService for upsert one action', () => {
-      scheduler.run(helpers => {
+      scheduler.run((helpers) => {
         const { cold } = helpers;
         const action = actionBooksUpsertOne({ book: {} as any });
         const source = cold('a', { a: action });

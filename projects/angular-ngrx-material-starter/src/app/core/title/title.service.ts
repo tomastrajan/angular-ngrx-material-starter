@@ -28,8 +28,8 @@ export class TitleService {
     if (title) {
       translate
         .get(title)
-        .pipe(filter(translatedTitle => translatedTitle !== title))
-        .subscribe(translatedTitle =>
+        .pipe(filter((translatedTitle) => translatedTitle !== title))
+        .subscribe((translatedTitle) =>
           this.title.setTitle(`${translatedTitle} - ${env.appName}`)
         );
     } else {

@@ -29,8 +29,8 @@ describe('StockMarketEffects', () => {
     );
   });
 
-  it('should emit ActionStockMarketRetrieveSuccess on success', done => {
-    scheduler.run(helpers => {
+  it('should emit ActionStockMarketRetrieveSuccess on success', (done) => {
+    scheduler.run((helpers) => {
       const { cold, expectObservable } = helpers;
       const retrieveAction1 = actionStockMarketRetrieve({
         symbol
@@ -88,7 +88,7 @@ describe('StockMarketEffects', () => {
   });
 
   it('should emit ActionStockMarketRetrieveError on error', () => {
-    scheduler.run(helpers => {
+    scheduler.run((helpers) => {
       const { cold, expectObservable } = helpers;
       const retrieveAction = actionStockMarketRetrieve({
         symbol

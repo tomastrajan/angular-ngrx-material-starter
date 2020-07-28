@@ -25,16 +25,16 @@ export class StockMarketEffects {
   retrieveStock = createEffect(() => ({ debounce = 500 } = {}) =>
     this.actions$.pipe(
       ofType(actionStockMarketRetrieve),
-      tap(action =>
+      tap((action) =>
         this.localStorageService.setItem(STOCK_MARKET_KEY, {
           symbol: action.symbol
         })
       ),
       debounceTime(debounce),
-      switchMap(action =>
+      switchMap((action) =>
         this.service.retrieveStock(action.symbol).pipe(
-          map(stock => actionStockMarketRetrieveSuccess({ stock })),
-          catchError(error => of(actionStockMarketRetrieveError({ error })))
+          map((stock) => actionStockMarketRetrieveSuccess({ stock })),
+          catchError((error) => of(actionStockMarketRetrieveError({ error })))
         )
       )
     )

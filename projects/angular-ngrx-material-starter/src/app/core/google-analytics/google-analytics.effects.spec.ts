@@ -30,15 +30,15 @@ describe('GoogleAnalyticsEffects', () => {
     (<any>window).ga = ga;
   });
 
-  it('should not dispatch action', function() {
+  it('should not dispatch action', function () {
     const effect = new GoogleAnalyticsEffects(router);
     const metadata = getEffectsMetadata(effect);
 
     expect(metadata.pageView.dispatch).toEqual(false);
   });
 
-  it('should call google analytics', function() {
-    scheduler.run(helpers => {
+  it('should call google analytics', function () {
+    scheduler.run((helpers) => {
       const { cold } = helpers;
 
       const routerEvent = new NavigationEnd(1, '', '');

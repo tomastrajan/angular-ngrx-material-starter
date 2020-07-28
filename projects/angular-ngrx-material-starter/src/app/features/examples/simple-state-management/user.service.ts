@@ -31,7 +31,7 @@ export class UserService {
   updateUser(user: User) {
     const users = this.model.get();
 
-    const indexToUpdate = users.findIndex(u => u.id === user.id);
+    const indexToUpdate = users.findIndex((u) => u.id === user.id);
     users[indexToUpdate] = user;
 
     this.model.set(users);
@@ -40,7 +40,7 @@ export class UserService {
   removeUser(id: string) {
     const users = this.model.get();
 
-    const indexToRemove = users.findIndex(user => user.id === id);
+    const indexToRemove = users.findIndex((user) => user.id === id);
     users.splice(indexToRemove, 1);
 
     this.model.set(users);

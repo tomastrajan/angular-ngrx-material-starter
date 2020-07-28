@@ -38,7 +38,7 @@ export class UserComponent implements OnInit {
 
     this.isEdit$ = this.userForm.get('id').valueChanges.pipe(
       startWith(''),
-      map(id => ({ value: (id || '').length > 0 }))
+      map((id) => ({ value: (id || '').length > 0 }))
     );
   }
 

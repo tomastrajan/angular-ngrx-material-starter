@@ -32,7 +32,7 @@ describe('FormEffects', () => {
     });
 
     it('should call setItem on LocalStorageService for UPDATE action', () => {
-      scheduler.run(helpers => {
+      scheduler.run((helpers) => {
         const { cold } = helpers;
         const form: Form = {
           autosave: false,
