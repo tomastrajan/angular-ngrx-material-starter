@@ -9,7 +9,8 @@ import { ROUTE_ANIMATIONS_ELEMENTS } from '../../../../core/core.module';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ParentComponent implements OnInit {
-  themeSrc: string = require('!raw-loader!./parent.component.scss-theme.scss');
+  themeSrc: string = require('!raw-loader!./parent.component.scss-theme.scss')
+    .default;
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
 
   constructor() {}
