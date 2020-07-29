@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.0.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v10.0.1...v10.0.2) (2020-07-29)
+
+### Bug Fixes
+
+- **workspace:** require import syntax ([bea87c5](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/bea87c5e8e363b1b0e2bb90cc0ccfa773b000feb))
+
 ### [10.0.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v10.0.0...v10.0.1) (2020-07-28)
 
 ## [10.0.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v9.0.1...v10.0.0) (2020-07-28)
