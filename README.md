@@ -1,4 +1,4 @@
-# Angular 8, NgRx and Angular Material Starter
+# Angular 10, NgRx and Angular Material Starter
 
 by [@tomastrajan](https://twitter.com/tomastrajan)
 
