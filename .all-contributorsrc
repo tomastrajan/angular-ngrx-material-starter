@@ -415,6 +415,17 @@
         "code",
         "security"
       ]
+    },
+    {
+      "login": "SiddharthSh",
+      "name": "Siddharth",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/22426668?v=4",
+      "profile": "https://github.com/SiddharthSh",
+      "contributions": [
+        "code",
+        "tool",
+        "plugin"
+      ]
     }
   ],
   "commitConvention": "none"

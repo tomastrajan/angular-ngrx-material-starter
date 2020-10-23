@@ -10,11 +10,6 @@ export const FORM_KEY = 'EXAMPLES.FORM';
 
 @Injectable()
 export class FormEffects {
-  constructor(
-    private actions$: Actions,
-    private localStorageService: LocalStorageService
-  ) {}
-
   persistForm = createEffect(
     () =>
       this.actions$.pipe(
@@ -25,4 +20,9 @@ export class FormEffects {
       ),
     { dispatch: false }
   );
+
+  constructor(
+    private actions$: Actions,
+    private localStorageService: LocalStorageService
+  ) {}
 }

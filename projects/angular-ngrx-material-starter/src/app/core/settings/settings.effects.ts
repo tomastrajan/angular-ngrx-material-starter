@@ -41,19 +41,8 @@ const INIT = of('anms-init-effect-trigger');
 
 @Injectable()
 export class SettingsEffects {
-  constructor(
-    private actions$: Actions,
-    private store: Store<State>,
-    private router: Router,
-    private overlayContainer: OverlayContainer,
-    private localStorageService: LocalStorageService,
-    private titleService: TitleService,
-    private animationsService: AnimationsService,
-    private translateService: TranslateService,
-    private ngZone: NgZone
-  ) {}
-
   hour = 0;
+
   changeHour = this.ngZone.runOutsideAngular(() =>
     setInterval(() => {
       const hour = new Date().getHours();
@@ -159,4 +148,16 @@ export class SettingsEffects {
       ),
     { dispatch: false }
   );
+
+  constructor(
+    private actions$: Actions,
+    private store: Store<State>,
+    private router: Router,
+    private overlayContainer: OverlayContainer,
+    private localStorageService: LocalStorageService,
+    private titleService: TitleService,
+    private animationsService: AnimationsService,
+    private translateService: TranslateService,
+    private ngZone: NgZone
+  ) {}
 }

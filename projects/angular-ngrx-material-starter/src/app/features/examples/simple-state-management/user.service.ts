@@ -11,9 +11,9 @@ const INITIAL_DATA: User[] = [
 
 @Injectable()
 export class UserService {
-  private model: Model<User[]>;
-
   users$: Observable<User[]>;
+
+  private model: Model<User[]>;
 
   constructor(private modelFactory: ModelFactory<User[]>) {
     this.model = this.modelFactory.create([...INITIAL_DATA]);

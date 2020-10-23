@@ -16,12 +16,6 @@ export const STOCK_MARKET_KEY = 'EXAMPLES.STOCKS';
 
 @Injectable()
 export class StockMarketEffects {
-  constructor(
-    private actions$: Actions,
-    private localStorageService: LocalStorageService,
-    private service: StockMarketService
-  ) {}
-
   retrieveStock = createEffect(() => ({ debounce = 500 } = {}) =>
     this.actions$.pipe(
       ofType(actionStockMarketRetrieve),
@@ -39,4 +33,9 @@ export class StockMarketEffects {
       )
     )
   );
+  constructor(
+    private actions$: Actions,
+    private localStorageService: LocalStorageService,
+    private service: StockMarketService
+  ) {}
 }

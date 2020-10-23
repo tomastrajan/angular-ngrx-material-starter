@@ -27,6 +27,12 @@ export class CrudComponent {
 
   isEditing: boolean;
 
+  constructor(
+    public store: Store<State>,
+    public fb: FormBuilder,
+    private router: Router
+  ) {}
+
   static createBook(): Book {
     return {
       id: uuid(),
@@ -35,12 +41,6 @@ export class CrudComponent {
       description: ''
     };
   }
-
-  constructor(
-    public store: Store<State>,
-    public fb: FormBuilder,
-    private router: Router
-  ) {}
 
   select(book: Book) {
     this.isEditing = false;

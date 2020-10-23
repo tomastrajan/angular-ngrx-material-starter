@@ -15,14 +15,6 @@ import { actionSettingsChangeLanguage } from '../../core/settings/settings.actio
 
 @Injectable()
 export class ExamplesEffects {
-  constructor(
-    private actions$: Actions,
-    private store: Store<AppState>,
-    private translateService: TranslateService,
-    private router: Router,
-    private titleService: TitleService
-  ) {}
-
   setTranslateServiceLanguage = createEffect(
     () => () =>
       this.store.pipe(
@@ -50,4 +42,12 @@ export class ExamplesEffects {
       ),
     { dispatch: false }
   );
+
+  constructor(
+    private actions$: Actions,
+    private store: Store<AppState>,
+    private translateService: TranslateService,
+    private router: Router,
+    private titleService: TitleService
+  ) {}
 }

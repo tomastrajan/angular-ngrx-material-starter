@@ -5,8 +5,6 @@ import { tap, filter } from 'rxjs/operators';
 
 @Injectable()
 export class GoogleAnalyticsEffects {
-  constructor(private router: Router) {}
-
   pageView = createEffect(
     () => () =>
       this.router.events.pipe(
@@ -18,4 +16,6 @@ export class GoogleAnalyticsEffects {
       ),
     { dispatch: false }
   );
+
+  constructor(private router: Router) {}
 }
