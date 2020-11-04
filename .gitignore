@@ -47,6 +47,7 @@ tslint-to-eslint-config.log
 # System Files
 .DS_Store
 Thumbs.db
+.node-version
 
 # debug
 debug.log

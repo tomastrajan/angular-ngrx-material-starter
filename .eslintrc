@@ -20,6 +20,8 @@
     "@typescript-eslint/tslint"
   ],
   "rules": {
+    "@angular-eslint/directive-selector": ["error", { "type": "attribute", "prefix": "anms", "style": "camelCase"}],
+    "@angular-eslint/component-selector": ["error", { "type": "element", "prefix": "anms", "style": "kebab-case"}],
     "@angular-eslint/component-class-suffix": "error",
     "@angular-eslint/directive-class-suffix": "error",
     "@angular-eslint/no-input-rename": "error",
