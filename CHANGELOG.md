@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [10.1.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v10.0.2...v10.1.0) (2020-11-10)
+
+### Features
+
+- **tool:** added tool into featurelist, config setup for text ([14ad52d](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/14ad52de2c9749926e5705bd688c8d9f1fd59ed4))
+- **tool:** change to eslint In favor of tslint deprecation ([274410e](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/274410e18b4ae8cfe700b65acf7cb575eaf8cccd))
+- **tool:** removed tslint, added component and directive selector to rules ([02205c7](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/02205c7df64301387ee2fb187594355c2706394a))
+- **tool:** updated the ci build for linting ([527af96](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/527af967ba075428cd15c93dd6f45f9afcb7524f))
+
 ### [10.0.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v10.0.1...v10.0.2) (2020-07-29)
 
 ### Bug Fixes
