@@ -3,6 +3,8 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import {
   selectEffectiveTheme,
@@ -21,6 +23,8 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         SharedModule,
+        MatSidenavModule,
+        MatToolbarModule,
         RouterTestingModule,
         NoopAnimationsModule,
         TranslateModule.forRoot()

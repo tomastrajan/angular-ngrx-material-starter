@@ -143,7 +143,6 @@ describe('SettingsComponent', () => {
     const componentDebug = fixture.debugElement;
     const slider = componentDebug.queryAll(By.directive(MatSlideToggle))[2];
 
-    console.log(slider);
     slider.triggerEventHandler('change', { checked: false });
     fixture.detectChanges();
 

@@ -138,7 +138,6 @@ describe('TodosComponent', () => {
 
     expect(getTodoInput().nativeElement.value).toBe('');
     expect(dispatchSpy).toHaveBeenCalledTimes(1);
-    console.log(dispatchSpy.calls.mostRecent().args[0]);
     expect(dispatchSpy.calls.mostRecent().args[0].name).toBe('hello world');
   });
 
