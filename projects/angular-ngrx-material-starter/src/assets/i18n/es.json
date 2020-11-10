@@ -29,6 +29,7 @@
   "anms.features.themes.title": "Temas",
   "anms.features.title": "Características",
   "anms.features.typescript": "Experiencia superior de desarrollador, completado de código, refactorización y menos errores",
+  "anms.features.eslint": "ESLint es para identificar patrones problemáticos encontrados en código JavaScript y TypeScript",
   "anms.footer.changelog": "Mostrar historial de cambios",
   "anms.header.github": "Repositorio del Proyecto en Github",
   "anms.menu.about": "Acerca",

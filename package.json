@@ -9,7 +9,7 @@
     "build": "ng build",
     "build:prod": "ng build --prod",
     "lint": "eslint --color -c .eslintrc --ext .ts .",
-    "test": "ng lint && ng test --configuration=test",
+    "test": "npm run lint && ng test --configuration=test",
     "watch": "ng test --configuration=test --browsers ChromeHeadless --watch --reporters dots",
     "e2e": "ng e2e",
     "e2e:ci": "ng e2e",
