@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AnimationsService {
+  private static routeAnimationType: RouteAnimationType = 'NONE';
+
   constructor() {
     AnimationsService.routeAnimationType = 'NONE';
   }
-
-  private static routeAnimationType: RouteAnimationType = 'NONE';
 
   static isRouteAnimationsType(type: RouteAnimationType) {
     return AnimationsService.routeAnimationType === type;

@@ -36,6 +36,7 @@ yarn.lock
 /libpeerconnection.log
 npm-debug.log
 testem.log
+tslint-to-eslint-config.log
 /typings
 
 # e2e
@@ -46,6 +47,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+.node-version
 
 # debug
 debug.log

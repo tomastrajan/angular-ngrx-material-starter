@@ -11,12 +11,6 @@ export const AUTH_KEY = 'AUTH';
 
 @Injectable()
 export class AuthEffects {
-  constructor(
-    private actions$: Actions,
-    private localStorageService: LocalStorageService,
-    private router: Router
-  ) {}
-
   login = createEffect(
     () =>
       this.actions$.pipe(
@@ -41,4 +35,10 @@ export class AuthEffects {
       ),
     { dispatch: false }
   );
+
+  constructor(
+    private actions$: Actions,
+    private localStorageService: LocalStorageService,
+    private router: Router
+  ) {}
 }

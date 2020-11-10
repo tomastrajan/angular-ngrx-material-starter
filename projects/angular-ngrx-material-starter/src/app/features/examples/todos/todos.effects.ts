@@ -13,12 +13,6 @@ export const TODOS_KEY = 'EXAMPLES.TODOS';
 
 @Injectable()
 export class TodosEffects {
-  constructor(
-    private actions$: Actions,
-    private store: Store<State>,
-    private localStorageService: LocalStorageService
-  ) {}
-
   persistTodos = createEffect(
     () =>
       this.actions$.pipe(
@@ -35,4 +29,10 @@ export class TodosEffects {
       ),
     { dispatch: false }
   );
+
+  constructor(
+    private actions$: Actions,
+    private store: Store<State>,
+    private localStorageService: LocalStorageService
+  ) {}
 }

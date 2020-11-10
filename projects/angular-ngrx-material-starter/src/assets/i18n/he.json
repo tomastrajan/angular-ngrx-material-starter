@@ -29,6 +29,7 @@
   "anms.features.themes.title": "ערכות נושא",
   "anms.features.title": "פיצ׳רים",
   "anms.features.typescript": "חויית פיתוח מתקדמת, השלמת קוד, רפקטורינג, ומניעת באגים",
+  "anms.features.eslint": "ESLint מיועד לזיהוי דפוסים בעייתיים המצויים בקוד JavaScript ו- Typescript",
   "anms.footer.changelog": "להציג רשימת שינויים",
   "anms.header.github": "ספריית גיטהאב של הפרויקט",
   "anms.menu.about": "אודות",

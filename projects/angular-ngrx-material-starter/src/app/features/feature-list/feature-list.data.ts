@@ -98,5 +98,12 @@ export const features: Feature[] = [
     description: 'anms.features.lazyloading.description',
     documentation:
       'https://angular.io/guide/router#lazy-loading-route-configuration'
+  },
+  {
+    name: 'Eslint',
+    version: env.versions.eslint,
+    description: 'anms.features.eslint',
+    github: 'https://github.com/eslint/eslint',
+    documentation: 'https://eslint.org/docs/user-guide/getting-started'
   }
 ];

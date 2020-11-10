@@ -29,6 +29,7 @@
   "anms.features.themes.title": "主题",
   "anms.features.title": "特性",
   "anms.features.typescript": "出色的开发者体验，代码自动完成，重构和引入更少的 bug",
+  "anms.features.eslint": "ESLint用于识别在JavaScript和Typescript代码中发现的有问题的模式",
   "anms.footer.changelog": "显示变更日志",
   "anms.header.github": "项目 Github 代码仓库",
   "anms.menu.about": "关于",

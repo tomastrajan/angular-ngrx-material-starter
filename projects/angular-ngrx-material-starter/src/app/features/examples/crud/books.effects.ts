@@ -13,12 +13,6 @@ export const BOOKS_KEY = 'EXAMPLES.BOOKS';
 
 @Injectable()
 export class BooksEffects {
-  constructor(
-    private actions$: Actions,
-    private store: Store<State>,
-    private localStorageService: LocalStorageService
-  ) {}
-
   persistBooks = createEffect(
     () =>
       this.actions$.pipe(
@@ -30,4 +24,10 @@ export class BooksEffects {
       ),
     { dispatch: false }
   );
+
+  constructor(
+    private actions$: Actions,
+    private store: Store<State>,
+    private localStorageService: LocalStorageService
+  ) {}
 }

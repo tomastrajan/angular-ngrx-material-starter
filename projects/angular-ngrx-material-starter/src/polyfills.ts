@@ -14,7 +14,7 @@
  * Learn more in https://angular.io/guide/browser-support
  */
 
-/***************************************************************************************************
+/**
  * BROWSER POLYFILLS
  */
 
@@ -52,7 +52,7 @@
  *
  */
 
-/***************************************************************************************************
+/**
  * Zone JS is required by default for Angular itself.
  */
 import 'zone.js/dist/zone';

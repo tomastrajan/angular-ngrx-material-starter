@@ -55,11 +55,10 @@ export class LocalStorageService {
   testLocalStorage() {
     const testValue = 'testValue';
     const testKey = 'testKey';
-    let retrievedValue: string;
     const errorMessage = 'localStorage did not return expected value';
 
     this.setItem(testKey, testValue);
-    retrievedValue = this.getItem(testKey);
+    const retrievedValue = this.getItem(testKey);
     this.removeItem(testKey);
 
     if (retrievedValue !== testValue) {

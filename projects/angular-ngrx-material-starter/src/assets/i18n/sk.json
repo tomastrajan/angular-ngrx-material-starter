@@ -29,6 +29,7 @@
   "anms.features.themes.title": "Témy",
   "anms.features.title": "Vlastnosti",
   "anms.features.typescript": "Vynikajúca podpora developerov, automatické dokončovanie kódu, refaktorovanie a menej chýb",
+  "anms.features.eslint": "ESLint slúži na identifikáciu problematických vzorov nájdených v kóde JavaScript a TypeScript",
   "anms.footer.changelog": "Zobraziť list zmien",
   "anms.header.github": "Github Repotitár Projektu",
   "anms.menu.about": "Domov",
