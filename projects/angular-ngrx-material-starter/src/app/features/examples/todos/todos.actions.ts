@@ -5,7 +5,7 @@ import { TodosFilter } from './todos.model';
 
 export const actionTodosAdd = createAction(
   '[Todos] Add',
-  (name: string, id = uuid()) => ({ name, id })
+  (name: string, id: string = uuid()) => ({ name, id })
 );
 
 export const actionTodosToggle = createAction(
