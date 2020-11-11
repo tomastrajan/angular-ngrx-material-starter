@@ -1,3 +1,4 @@
+import { selectTodosFilter } from './../todos.selectors';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -23,6 +24,7 @@ import { Todo, TodosFilter } from '../todos.model';
 export class TodosContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   todos$: Observable<Todo[]>;
+  filter$: Observable<TodosFilter>;
   removeDoneDisabled$: Observable<boolean>;
   newTodo = '';
 
@@ -35,6 +37,7 @@ export class TodosContainerComponent implements OnInit {
 
   ngOnInit() {
     this.todos$ = this.store.pipe(select(selectTodos));
+    this.filter$ = this.store.pipe(select(selectTodosFilter));
     this.removeDoneDisabled$ = this.store.pipe(
       select(selectRemoveDoneTodosDisabled)
     );
