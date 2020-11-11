@@ -1,28 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { HarnessLoader } from '@angular/cdk/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslateModule } from '@ngx-translate/core';
-import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
+import { MatButtonHarness } from '@angular/material/button/testing';
+import { MatMenuHarness } from '@angular/material/menu/testing';
 import { MemoizedSelector } from '@ngrx/store';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
 import * as todoActions from '../todos.actions';
-import { Todo } from '../todos.model';
+import { Todo, TodosFilter } from '../todos.model';
 import { TodosContainerComponent } from './todos-container.component';
 import {
   selectRemoveDoneTodosDisabled,
   selectTodos,
-  selectTodosState
+  selectTodosFilter
 } from '../todos.selectors';
-import { HarnessLoader, TestKey } from '@angular/cdk/testing';
-import { TestbedHarnessEnvironment } from '@angular/cdk/testing/testbed';
-import { MatButtonHarness } from '@angular/material/button/testing';
-import {
-  MatMenuItemHarness,
-  MatMenuHarness
-} from '@angular/material/menu/testing';
-import { MatInputHarness } from '@angular/material/input/testing';
 
 describe('TodosComponent', () => {
   let store: MockStore;
@@ -30,6 +26,7 @@ describe('TodosComponent', () => {
   let fixture: ComponentFixture<TodosContainerComponent>;
   let dispatchSpy: jasmine.Spy;
   let mockSelectTodos: MemoizedSelector<any, Todo[]>;
+  let mockSelectTodosFilter: MemoizedSelector<any, TodosFilter>;
   let mockSelectRemoveDoneTodosDisabled: MemoizedSelector<any, boolean>;
   let loader: HarnessLoader;
 
@@ -72,6 +69,7 @@ describe('TodosComponent', () => {
 
     store = TestBed.inject(MockStore);
     mockSelectTodos = store.overrideSelector(selectTodos, []);
+    mockSelectTodosFilter = store.overrideSelector(selectTodosFilter, 'ACTIVE');
     mockSelectRemoveDoneTodosDisabled = store.overrideSelector(
       selectRemoveDoneTodosDisabled,
       true

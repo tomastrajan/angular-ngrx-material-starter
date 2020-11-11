@@ -12,8 +12,8 @@ import {
 } from '../../../../core/core.module';
 
 import * as todoActions from '../todos.actions';
-import { selectTodos, selectRemoveDoneTodosDisabled } from '../todos.selectors';
 import { Todo, TodosFilter } from '../todos.model';
+import { selectTodos, selectRemoveDoneTodosDisabled } from '../todos.selectors';
 
 @Component({
   selector: 'anms-todos',
