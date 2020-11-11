@@ -54,7 +54,8 @@ export const features: Feature[] = [
     version: env.versions.bootstrap,
     description: 'anms.features.bootstrap',
     github: 'https://github.com/twbs/bootstrap',
-    documentation: 'https://getbootstrap.com/docs/4.0/layout/grid/',
+    documentation:
+      'https://getbootstrap.com/docs/4.4/getting-started/introduction/',
     medium:
       'https://medium.com/@tomastrajan/how-to-build-responsive-layouts-with-bootstrap-4-and-angular-6-cfbb108d797b'
   },
