@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [10.1.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v10.1.0...v10.1.1) (2020-11-11)
+
+### Bug Fixes
+
+- **#524:** class active on Todos filter not showing up ([1b2f49d](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/1b2f49df398287029f835afdf6567a5208ec6aa7)), closes [#524](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/524)
+
 ## [10.1.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v10.0.2...v10.1.0) (2020-11-10)
 
 ### Features
