@@ -12,12 +12,15 @@
         <a mat-raised-button class="actions-main" color="warn" routerLink="../settings" [ngClass]="routeAnimationsElements">
           {{ 'anms.about.change-theme' | translate }}
         </a>
+        <a href="https://www.buymeacoffee.com/tomastrajan" target="_blank">
+          <img [ngClass]="routeAnimationsElements" src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" height="42">
+        </a>
         <br>
         <span [ngClass]="routeAnimationsElements">{{ 'anms.about.check-blogs' | translate }}</span>
         <br>
         <a mat-raised-button
            [ngClass]="routeAnimationsElements"
-           rel="noopener noreferrer" 
+           rel="noopener noreferrer"
            target="_blank"
            href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1">
            <fa-icon [icon]="['fab','medium-m']"></fa-icon>
@@ -25,7 +28,7 @@
         </a>
         <a mat-raised-button
            [ngClass]="routeAnimationsElements"
-           rel="noopener noreferrer" 
+           rel="noopener noreferrer"
            target="_blank"
            href="https://medium.com/@tomastrajan/6-best-practices-pro-tips-for-angular-cli-better-developer-experience-7b328bc9db81">
            <fa-icon [icon]="['fab','medium-m']"></fa-icon>
