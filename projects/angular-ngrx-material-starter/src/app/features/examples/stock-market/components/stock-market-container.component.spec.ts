@@ -1,6 +1,6 @@
 import { By } from '@angular/platform-browser';
 import { HttpErrorResponse } from '@angular/common/http';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { MemoizedSelector } from '@ngrx/store';
@@ -42,34 +42,36 @@ describe('StockMarketContainerComponent', () => {
     fixture.debugElement.query(By.css('mat-card fa-icon[icon="caret-down"]'));
 
   describe('given component booted', () => {
-    beforeEach(async(() => {
-      TestBed.configureTestingModule({
-        imports: [
-          SharedModule,
-          NoopAnimationsModule,
-          TranslateModule.forRoot()
-        ],
-        providers: [StockMarketService, provideMockStore()],
-        declarations: [StockMarketContainerComponent]
-      }).compileComponents();
+    beforeEach(
+      waitForAsync(() => {
+        TestBed.configureTestingModule({
+          imports: [
+            SharedModule,
+            NoopAnimationsModule,
+            TranslateModule.forRoot()
+          ],
+          providers: [StockMarketService, provideMockStore()],
+          declarations: [StockMarketContainerComponent]
+        }).compileComponents();
 
-      const stockMarketService = TestBed.inject<StockMarketService>(
-        StockMarketService
-      );
-      retrieveStockSpy = spyOn(
-        stockMarketService,
-        'retrieveStock'
-      ).and.returnValue(EMPTY);
+        const stockMarketService = TestBed.inject<StockMarketService>(
+          StockMarketService
+        );
+        retrieveStockSpy = spyOn(
+          stockMarketService,
+          'retrieveStock'
+        ).and.returnValue(EMPTY);
 
-      store = TestBed.inject(MockStore);
-      mockSelectStockMarket = store.overrideSelector(selectStockMarket, {
-        symbol: 'AAPL',
-        loading: false
-      });
-      fixture = TestBed.createComponent(StockMarketContainerComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
-    }));
+        store = TestBed.inject(MockStore);
+        mockSelectStockMarket = store.overrideSelector(selectStockMarket, {
+          symbol: 'AAPL',
+          loading: false
+        });
+        fixture = TestBed.createComponent(StockMarketContainerComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+      })
+    );
 
     it('should be created', () => {
       expect(component).toBeTruthy();
