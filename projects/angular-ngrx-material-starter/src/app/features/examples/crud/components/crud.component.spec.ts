@@ -1,6 +1,6 @@
 import { RouterTestingModule } from '@angular/router/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { provideMockStore, MockStore } from '@ngrx/store/testing';
 
@@ -14,24 +14,26 @@ describe('CrudComponent', () => {
   let fixture: ComponentFixture<CrudComponent>;
   let store: MockStore;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        SharedModule,
-        NoopAnimationsModule,
-        RouterTestingModule,
-        TranslateModule.forRoot()
-      ],
-      providers: [provideMockStore()],
-      declarations: [CrudComponent]
-    }).compileComponents();
-    store = TestBed.inject(MockStore);
-    store.overrideSelector(selectAllBooks, []);
-    store.overrideSelector(selectSelectedBook, null);
-    fixture = TestBed.createComponent(CrudComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        imports: [
+          SharedModule,
+          NoopAnimationsModule,
+          RouterTestingModule,
+          TranslateModule.forRoot()
+        ],
+        providers: [provideMockStore()],
+        declarations: [CrudComponent]
+      }).compileComponents();
+      store = TestBed.inject(MockStore);
+      store.overrideSelector(selectAllBooks, []);
+      store.overrideSelector(selectSelectedBook, null);
+      fixture = TestBed.createComponent(CrudComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
   it('should create', () => {
     expect(component).toBeTruthy();
   });
