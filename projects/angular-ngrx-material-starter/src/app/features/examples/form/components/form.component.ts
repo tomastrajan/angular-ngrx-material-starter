@@ -41,7 +41,7 @@ export class FormComponent implements OnInit {
     rating: [0, Validators.required]
   });
 
-  formValueChanges$: Observable<Form>;
+  formValueChanges$: Observable<Form> | undefined;
 
   constructor(
     private fb: FormBuilder,

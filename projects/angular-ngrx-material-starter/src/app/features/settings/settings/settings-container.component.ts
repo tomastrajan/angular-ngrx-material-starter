@@ -25,7 +25,7 @@ import { selectSettings } from '../../../core/settings/settings.selectors';
 })
 export class SettingsContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  settings$: Observable<SettingsState>;
+  settings$: Observable<SettingsState> | undefined;
 
   themes = [
     { value: 'DEFAULT-THEME', label: 'blue' },

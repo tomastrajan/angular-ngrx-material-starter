@@ -25,7 +25,7 @@ export class CrudComponent {
   books$: Observable<Book[]> = this.store.pipe(select(selectAllBooks));
   selectedBook$: Observable<Book | undefined> = this.store.pipe(select(selectSelectedBook));
 
-  isEditing: boolean;
+  isEditing = false;
 
   constructor(
     public store: Store<State>,

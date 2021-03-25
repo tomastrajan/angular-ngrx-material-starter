@@ -18,7 +18,7 @@ import { State } from '../../examples.state';
 })
 export class StockMarketContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  stocks$: Observable<StockMarketState>;
+  stocks$: Observable<StockMarketState> | undefined;
 
   constructor(public store: Store<State>) {}
 

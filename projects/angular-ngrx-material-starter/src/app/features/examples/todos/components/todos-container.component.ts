@@ -23,9 +23,9 @@ import { selectTodos, selectRemoveDoneTodosDisabled } from '../todos.selectors';
 })
 export class TodosContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  todos$: Observable<Todo[]>;
-  filter$: Observable<TodosFilter>;
-  removeDoneDisabled$: Observable<boolean>;
+  todos$: Observable<Todo[]> | undefined;
+  filter$: Observable<TodosFilter> | undefined;
+  removeDoneDisabled$: Observable<boolean> | undefined;
   newTodo = '';
 
   constructor(

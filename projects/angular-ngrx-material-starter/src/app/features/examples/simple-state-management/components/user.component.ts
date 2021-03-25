@@ -20,8 +20,8 @@ import { User, UserService } from '../user.service';
 })
 export class UserComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  userForm: FormGroup;
-  users$: Observable<User[]>;
+  userForm: FormGroup | undefined;
+  users$: Observable<User[]> | undefined;
   isEdit$: Observable<{ value: boolean }> | undefined;
 
   constructor(private fb: FormBuilder, private userService: UserService) {}
@@ -47,11 +47,11 @@ export class UserComponent implements OnInit {
   }
 
   editUser(user: User) {
-    this.userForm.patchValue({ ...user });
+    this.userForm?.patchValue({ ...user });
   }
 
   onSubmit(userFormRef: FormGroupDirective) {
-    if (this.userForm.valid) {
+    if (this.userForm?.valid) {
       const data = this.userForm.getRawValue();
       if (data.id && data.id.length) {
         this.userService.updateUser(data);

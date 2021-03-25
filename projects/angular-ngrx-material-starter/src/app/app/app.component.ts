@@ -44,10 +44,10 @@ export class AppComponent implements OnInit {
     { link: 'settings', label: 'anms.menu.settings' }
   ];
 
-  isAuthenticated$: Observable<boolean>;
-  stickyHeader$: Observable<boolean>;
-  language$: Observable<string>;
-  theme$: Observable<string>;
+  isAuthenticated$: Observable<boolean> | undefined;
+  stickyHeader$: Observable<boolean> | undefined;
+  language$: Observable<string> | undefined;
+  theme$: Observable<string> | undefined;
 
   constructor(
     private store: Store,
