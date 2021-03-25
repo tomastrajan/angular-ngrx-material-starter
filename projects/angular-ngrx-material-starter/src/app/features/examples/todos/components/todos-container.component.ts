@@ -14,6 +14,7 @@ import {
 import * as todoActions from '../todos.actions';
 import { Todo, TodosFilter } from '../todos.model';
 import { selectTodos, selectRemoveDoneTodosDisabled } from '../todos.selectors';
+import { State } from '../../examples.state';
 
 @Component({
   selector: 'anms-todos',
@@ -29,7 +30,7 @@ export class TodosContainerComponent implements OnInit {
   newTodo = '';
 
   constructor(
-    public store: Store,
+    public store: Store<State>,
     public snackBar: MatSnackBar,
     public translateService: TranslateService,
     private notificationService: NotificationService

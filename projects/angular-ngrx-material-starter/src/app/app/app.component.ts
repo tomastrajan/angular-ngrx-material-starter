@@ -14,7 +14,8 @@ import {
   selectIsAuthenticated,
   selectSettingsStickyHeader,
   selectSettingsLanguage,
-  selectEffectiveTheme
+  selectEffectiveTheme,
+  AppState
 } from '../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
@@ -50,7 +51,7 @@ export class AppComponent implements OnInit {
   theme$: Observable<string> | undefined;
 
   constructor(
-    private store: Store,
+    private store: Store<AppState>,
     private storageService: LocalStorageService
   ) {}
 
