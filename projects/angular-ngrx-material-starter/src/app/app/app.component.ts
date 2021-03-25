@@ -1,5 +1,6 @@
 import browser from 'browser-detect';
 import { Component, OnInit } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -81,7 +82,7 @@ export class AppComponent implements OnInit {
     this.store.dispatch(authLogout());
   }
 
-  onLanguageSelect({ value: language }) {
-    this.store.dispatch(actionSettingsChangeLanguage({ language }));
+  onLanguageSelect(event: MatSelectChange) {
+    this.store.dispatch(actionSettingsChangeLanguage({ language: event.value }));
   }
 }

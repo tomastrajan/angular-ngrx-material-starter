@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -54,25 +55,25 @@ export class SettingsContainerComponent implements OnInit {
     this.store.dispatch(actionSettingsChangeLanguage({ language: change.value }));
   }
 
-  onThemeSelect({ value: theme }) {
-    this.store.dispatch(actionSettingsChangeTheme({ theme }));
+  onThemeSelect(event: MatSelectChange) {
+    this.store.dispatch(actionSettingsChangeTheme({ theme: event.value }));
   }
 
-  onAutoNightModeToggle({ checked: autoNightMode }) {
-    this.store.dispatch(actionSettingsChangeAutoNightMode({ autoNightMode }));
+  onAutoNightModeToggle(event: MatSlideToggleChange) {
+    this.store.dispatch(actionSettingsChangeAutoNightMode({ autoNightMode: event.checked }));
   }
 
-  onStickyHeaderToggle({ checked: stickyHeader }) {
-    this.store.dispatch(actionSettingsChangeStickyHeader({ stickyHeader }));
+  onStickyHeaderToggle(event: MatSlideToggleChange) {
+    this.store.dispatch(actionSettingsChangeStickyHeader({ stickyHeader: event.checked }));
   }
 
-  onPageAnimationsToggle({ checked: pageAnimations }) {
-    this.store.dispatch(actionSettingsChangeAnimationsPage({ pageAnimations }));
+  onPageAnimationsToggle(event: MatSlideToggleChange) {
+    this.store.dispatch(actionSettingsChangeAnimationsPage({ pageAnimations: event.checked }));
   }
 
-  onElementsAnimationsToggle({ checked: elementsAnimations }) {
+  onElementsAnimationsToggle(event: MatSlideToggleChange) {
     this.store.dispatch(
-      actionSettingsChangeAnimationsElements({ elementsAnimations })
+      actionSettingsChangeAnimationsElements({ elementsAnimations: event.checked })
     );
   }
 }
