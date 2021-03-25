@@ -13,13 +13,14 @@ import {
 import { StockMarketEffects, STOCK_MARKET_KEY } from './stock-market.effects';
 import { Stock } from './stock-market.model';
 import { StockMarketService } from './stock-market.service';
+import { RunHelpers } from 'rxjs/internal/testing/TestScheduler';
 
 const symbol = 'TSLA';
 
 describe('StockMarketEffects', () => {
   let localStorage: jasmine.SpyObj<LocalStorageService>;
   let stockMarket: jasmine.SpyObj<StockMarketService>;
-  let scheduler;
+  let scheduler: TestScheduler;
 
   beforeEach(() => {
     localStorage = jasmine.createSpyObj('localStorageService', ['setItem']);
@@ -30,7 +31,7 @@ describe('StockMarketEffects', () => {
   });
 
   it('should emit ActionStockMarketRetrieveSuccess on success', (done) => {
-    scheduler.run((helpers) => {
+    scheduler.run((helpers: RunHelpers) => {
       const { cold, expectObservable } = helpers;
       const retrieveAction1 = actionStockMarketRetrieve({
         symbol
@@ -88,7 +89,7 @@ describe('StockMarketEffects', () => {
   });
 
   it('should emit ActionStockMarketRetrieveError on error', () => {
-    scheduler.run((helpers) => {
+    scheduler.run((helpers: RunHelpers) => {
       const { cold, expectObservable } = helpers;
       const retrieveAction = actionStockMarketRetrieve({
         symbol

@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { select, Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, of as observableOf } from 'rxjs';
 
 import {
   ROUTE_ANIMATIONS_ELEMENTS,
@@ -26,7 +26,7 @@ export class TodosContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   todos$: Observable<Todo[]> | undefined;
   filter$: Observable<TodosFilter> | undefined;
-  removeDoneDisabled$: Observable<boolean> | undefined;
+  removeDoneDisabled$: Observable<boolean> = observableOf(false);
   newTodo = '';
 
   constructor(
@@ -48,8 +48,8 @@ export class TodosContainerComponent implements OnInit {
     return this.newTodo.length < 4;
   }
 
-  onNewTodoChange(newTodo: string) {
-    this.newTodo = newTodo;
+  onNewTodoChange(event: any) {
+    this.newTodo = event.target.value;
   }
 
   onNewTodoClear() {

@@ -18,7 +18,7 @@ import { SharedModule } from '../../shared.module';
   `
 })
 class HostComponent {
-  newValue: string;
+  newValue = '';
   onKeyEvent(eventData: any) {}
 }
 

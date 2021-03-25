@@ -49,8 +49,8 @@ describe('StockMarketReducer', () => {
       const state = stockMarketReducer(originalState, action);
 
       expect(state.loading).toBeTruthy();
-      expect(state.stock).toBeNull();
-      expect(state.error).toBeNull();
+      expect(state.stock).toBeUndefined();
+      expect(state.error).toBeUndefined();
       expect(state.symbol).toBe(action.symbol);
     });
   });
@@ -63,7 +63,7 @@ describe('StockMarketReducer', () => {
 
       expect(state.symbol).toBe(state.symbol);
       expect(state.loading).toBeFalsy();
-      expect(state.stock).toBeNull();
+      expect(state.stock).toBeUndefined();
       expect(state.error).toBe(error);
     });
   });
@@ -85,7 +85,7 @@ describe('StockMarketReducer', () => {
 
       expect(state.loading).toBeFalsy();
       expect(state.stock).toBe(stock);
-      expect(state.error).toBeNull();
+      expect(state.error).toBeUndefined();
       expect(state.symbol).toBe(state.symbol);
     });
   });

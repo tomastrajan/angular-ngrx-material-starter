@@ -20,7 +20,7 @@ import { User, UserService } from '../user.service';
 })
 export class UserComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  userForm: FormGroup | undefined;
+  userForm: FormGroup = new FormGroup({});
   users$: Observable<User[]> | undefined;
   isEdit$: Observable<{ value: boolean }> | undefined;
 

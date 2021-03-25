@@ -28,7 +28,7 @@ describe('FormEffects', () => {
       const effect = new FormEffects(actions, localStorageService);
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.persistForm.dispatch).toEqual(false);
+      expect(metadata.persistForm?.dispatch).toEqual(false);
     });
 
     it('should call setItem on LocalStorageService for UPDATE action', () => {
