@@ -54,7 +54,7 @@ export class AppComponent implements OnInit {
   ) {}
 
   private static isIEorEdgeOrSafari() {
-    return ['ie', 'edge', 'safari'].includes(browser().name);
+    return ['ie', 'edge', 'safari'].includes(browser().name || '');
   }
 
   ngOnInit(): void {

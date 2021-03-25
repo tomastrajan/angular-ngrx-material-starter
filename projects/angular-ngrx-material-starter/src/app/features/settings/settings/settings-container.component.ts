@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -49,8 +50,8 @@ export class SettingsContainerComponent implements OnInit {
     this.settings$ = this.store.pipe(select(selectSettings));
   }
 
-  onLanguageSelect({ value: language }) {
-    this.store.dispatch(actionSettingsChangeLanguage({ language }));
+  onLanguageSelect(change: MatSelectChange) {
+    this.store.dispatch(actionSettingsChangeLanguage({ language: change.value }));
   }
 
   onThemeSelect({ value: theme }) {

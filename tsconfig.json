@@ -9,6 +9,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
+    "strictNullChecks": true,
     "module": "esnext",
     "target": "es2015",
     "typeRoots": ["node_modules/@types"],

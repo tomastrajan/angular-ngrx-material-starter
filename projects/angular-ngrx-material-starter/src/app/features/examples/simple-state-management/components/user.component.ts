@@ -22,7 +22,7 @@ export class UserComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
   userForm: FormGroup;
   users$: Observable<User[]>;
-  isEdit$: Observable<{ value: boolean }>;
+  isEdit$: Observable<{ value: boolean }> | undefined;
 
   constructor(private fb: FormBuilder, private userService: UserService) {}
 
@@ -36,7 +36,7 @@ export class UserComponent implements OnInit {
       surname: ['', [Validators.required, Validators.minLength(5)]]
     });
 
-    this.isEdit$ = this.userForm.get('id').valueChanges.pipe(
+    this.isEdit$ = this.userForm.get('id')?.valueChanges.pipe(
       startWith(''),
       map((id) => ({ value: (id || '').length > 0 }))
     );

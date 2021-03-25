@@ -78,7 +78,7 @@
         </mat-toolbar>
       </div>
 
-      <div class="content" [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig.data && o.activatedRoute.routeConfig.data.title">
+      <div class="content" [@routeAnimations]="o.isActivated && o.activatedRoute.routeConfig?.data?.title">
         <router-outlet #o="outlet"></router-outlet>
       </div>
 

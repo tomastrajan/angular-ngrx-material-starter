@@ -16,20 +16,20 @@ const reducer = createReducer(
   on(actionStockMarketRetrieve, (state, { symbol }) => ({
     ...state,
     loading: true,
-    stock: null,
-    error: null,
+    stock: undefined,
+    error: undefined,
     symbol
   })),
   on(actionStockMarketRetrieveSuccess, (state, { stock }) => ({
     ...state,
     loading: false,
     stock,
-    error: null
+    error: undefined
   })),
   on(actionStockMarketRetrieveError, (state, { error }) => ({
     ...state,
     loading: false,
-    stock: null,
+    stock: undefined,
     error
   }))
 );
