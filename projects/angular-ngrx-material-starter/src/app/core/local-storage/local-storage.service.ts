@@ -28,7 +28,9 @@ export class LocalStorageService {
         let currentStateRef = state;
         stateKeys.forEach((key, index) => {
           if (index === stateKeys.length - 1) {
-            currentStateRef[key] = JSON.parse(localStorage.getItem(storageKey) || '{}');
+            currentStateRef[key] = JSON.parse(
+              localStorage.getItem(storageKey) || '{}'
+            );
             return;
           }
           currentStateRef[key] = currentStateRef[key] || {};

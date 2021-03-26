@@ -25,7 +25,8 @@ export const selectTodos = createSelector(
     if (filter === 'ALL') {
       return items;
     } else {
-      const predicate = filter === 'DONE' ? (t: Todo) => t.done : (t: Todo) => !t.done;
+      const predicate =
+        filter === 'DONE' ? (t: Todo) => t.done : (t: Todo) => !t.done;
       return items.filter(predicate);
     }
   }

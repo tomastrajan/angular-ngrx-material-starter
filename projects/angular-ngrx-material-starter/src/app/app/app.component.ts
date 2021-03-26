@@ -84,6 +84,8 @@ export class AppComponent implements OnInit {
   }
 
   onLanguageSelect(event: MatSelectChange) {
-    this.store.dispatch(actionSettingsChangeLanguage({ language: event.value }));
+    this.store.dispatch(
+      actionSettingsChangeLanguage({ language: event.value })
+    );
   }
 }

@@ -52,7 +52,9 @@ export class SettingsContainerComponent implements OnInit {
   }
 
   onLanguageSelect(change: MatSelectChange) {
-    this.store.dispatch(actionSettingsChangeLanguage({ language: change.value }));
+    this.store.dispatch(
+      actionSettingsChangeLanguage({ language: change.value })
+    );
   }
 
   onThemeSelect(event: MatSelectChange) {
@@ -60,20 +62,28 @@ export class SettingsContainerComponent implements OnInit {
   }
 
   onAutoNightModeToggle(event: MatSlideToggleChange) {
-    this.store.dispatch(actionSettingsChangeAutoNightMode({ autoNightMode: event.checked }));
+    this.store.dispatch(
+      actionSettingsChangeAutoNightMode({ autoNightMode: event.checked })
+    );
   }
 
   onStickyHeaderToggle(event: MatSlideToggleChange) {
-    this.store.dispatch(actionSettingsChangeStickyHeader({ stickyHeader: event.checked }));
+    this.store.dispatch(
+      actionSettingsChangeStickyHeader({ stickyHeader: event.checked })
+    );
   }
 
   onPageAnimationsToggle(event: MatSlideToggleChange) {
-    this.store.dispatch(actionSettingsChangeAnimationsPage({ pageAnimations: event.checked }));
+    this.store.dispatch(
+      actionSettingsChangeAnimationsPage({ pageAnimations: event.checked })
+    );
   }
 
   onElementsAnimationsToggle(event: MatSlideToggleChange) {
     this.store.dispatch(
-      actionSettingsChangeAnimationsElements({ elementsAnimations: event.checked })
+      actionSettingsChangeAnimationsElements({
+        elementsAnimations: event.checked
+      })
     );
   }
 }
