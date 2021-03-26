@@ -198,9 +198,12 @@ Get started by checking out list of open [issues](https://github.com/tomastrajan
     <td align="center"><a href="https://github.com/Zaky7"><img src="https://avatars2.githubusercontent.com/u/16975648?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zakir</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=Zaky7" title="Code">💻</a> <a href="#security-Zaky7" title="Security">🛡️</a></td>
     <td align="center"><a href="https://github.com/SiddharthSh"><img src="https://avatars0.githubusercontent.com/u/22426668?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Siddharth</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=SiddharthSh" title="Code">💻</a> <a href="#tool-SiddharthSh" title="Tools">🔧</a> <a href="#plugin-SiddharthSh" title="Plugin/utility libraries">🔌</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://www.aleggeup.com/"><img src="https://avatars.githubusercontent.com/u/1103920?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Stephen Legge</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=slegge" title="Code">💻</a> <a href="#userTesting-slegge" title="User Testing">📓</a></td>
+  </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->

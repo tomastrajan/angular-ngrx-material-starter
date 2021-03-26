@@ -426,6 +426,16 @@
         "tool",
         "plugin"
       ]
+    },
+    {
+      "login": "slegge",
+      "name": "Stephen Legge",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1103920?v=4",
+      "profile": "https://www.aleggeup.com/",
+      "contributions": [
+        "code",
+        "userTesting"
+      ]
     }
   ],
   "commitConvention": "none"
