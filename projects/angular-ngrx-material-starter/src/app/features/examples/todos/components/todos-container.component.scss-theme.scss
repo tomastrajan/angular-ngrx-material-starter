@@ -1,20 +1,20 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 
 @mixin anms-todos-container-component-theme($theme) {
   $accent: map-get($theme, accent);
 
   .todos-filter-menu-overlay {
     .active {
-      color: mat-color($accent, default-contrast);
-      background-color: mat-color($accent);
+      color: mat.get-color-from-palette($accent, default-contrast);
+      background-color: mat.get-color-from-palette($accent);
 
       .fa-icon {
-        color: mat-color($accent, default-contrast);
+        color: mat.get-color-from-palette($accent, default-contrast);
       }
 
       &:hover {
-        color: mat-color($accent, default-contrast);
-        background-color: mat-color($accent);
+        color: mat.get-color-from-palette($accent, default-contrast);
+        background-color: mat.get-color-from-palette($accent);
       }
     }
   }
@@ -25,8 +25,8 @@
 
       button {
         border-radius: 2px;
-        background-color: mat-color($accent);
-        color: mat-color($accent, default-contrast);
+        background-color: mat.get-color-from-palette($accent);
+        color: mat.get-color-from-palette($accent, default-contrast);
       }
     }
   }

@@ -1,8 +1,10 @@
-$anms-light-primary: mat-palette($mat-grey, 200, 500, 300);
-$anms-light-accent: mat-palette($mat-brown, 200);
-$anms-light-warn: mat-palette($mat-deep-orange, 200);
+@use '~@angular/material' as mat;
 
-$anms-light-theme: mat-light-theme(
+$anms-light-primary: mat.define-palette(mat.$grey-palette, 200, 500, 300);
+$anms-light-accent: mat.define-palette(mat.$brown-palette, 200);
+$anms-light-warn: mat.define-palette(mat.$deep-orange-palette, 200);
+
+$anms-light-theme: mat.define-light-theme(
   $anms-light-primary,
   $anms-light-accent,
   $anms-light-warn
