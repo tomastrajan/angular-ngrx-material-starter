@@ -31,19 +31,14 @@ if (!environment.production) {
   }
 }
 
-export const selectAuthState = createFeatureSelector<AppState, AuthState>(
-  'auth'
-);
+export const selectAuthState =
+  createFeatureSelector<AppState, AuthState>('auth');
 
-export const selectSettingsState = createFeatureSelector<
-  AppState,
-  SettingsState
->('settings');
+export const selectSettingsState =
+  createFeatureSelector<AppState, SettingsState>('settings');
 
-export const selectRouterState = createFeatureSelector<
-  AppState,
-  RouterReducerState<RouterStateUrl>
->('router');
+export const selectRouterState =
+  createFeatureSelector<AppState, RouterReducerState<RouterStateUrl>>('router');
 
 export interface AppState {
   auth: AuthState;

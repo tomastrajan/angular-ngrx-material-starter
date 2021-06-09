@@ -1,4 +1,4 @@
-# Angular 10, NgRx and Angular Material Starter
+# Angular 12, NgRx and Angular Material Starter
 
 by [@tomastrajan](https://twitter.com/tomastrajan)
 
@@ -40,8 +40,9 @@ npm start
 - `npm start` - starts a dev server and opens browser with running app
 - `npm run start:prod` - runs full prod build and serves prod bundle
 - `npm run test` - runs lint and tests
+- `npm run e2e` - runs end-to-end tests
 - `npm run watch` - runs tests in watch mode
-- `npm run prettier` - runs prettier to format whole code base (`.ts` and `.scss`)
+- `npm run format:write` - runs prettier to format whole code base (`.ts` and `.scss`)
 - `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application)
 
 ![analzye](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/analyze.png)
@@ -126,7 +127,7 @@ Articles with content that explains various approaches used to build this starte
 - Angular
 - ngrx (or try [ngx-model](https://github.com/tomastrajan/ngx-model) if you prefer less boilerplate)
 - Angular Material
-- Bootstrap 4 (only reset, utils and grids)
+- Bootstrap 5 (only reset, utils and grids)
 
 ## Troubleshooting
 

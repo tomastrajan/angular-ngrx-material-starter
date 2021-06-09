@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 
 @mixin anms-examples-component-theme($theme) {
   $primary: map-get($theme, primary);
@@ -6,7 +6,7 @@
 
   anms-examples {
     .nav-responsive {
-      border-bottom: 1px solid mat-color($primary);
+      border-bottom: 1px solid mat.get-color-from-palette($primary);
 
       mat-select {
         line-height: 48px;
@@ -18,8 +18,8 @@
 
   .nav-responsive-overlay {
     .active {
-      color: mat-color($accent, default-contrast);
-      background-color: mat-color($accent);
+      color: mat.get-color-from-palette($accent, default-contrast);
+      background-color: mat.get-color-from-palette($accent);
     }
   }
 }

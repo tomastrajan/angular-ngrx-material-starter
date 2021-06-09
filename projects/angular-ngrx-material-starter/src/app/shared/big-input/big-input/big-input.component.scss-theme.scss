@@ -1,4 +1,4 @@
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 
 @mixin anms-big-input-component-theme($theme) {
   $primary: map-get($theme, primary);
@@ -9,14 +9,14 @@
   anms-big-input {
     .big-input {
       input {
-        color: mat-color($foreground, text);
-        background-color: mat-color($background, card);
+        color: mat.get-color-from-palette($foreground, text);
+        background-color: mat.get-color-from-palette($background, card);
       }
 
       &.has-focus {
-        box-shadow: 0 0 15px 2px rgba(mat-color($accent), 0.4),
-          0 0 15px 2px rgba(mat-color($accent), 0.4),
-          0 0 15px 2px rgba(mat-color($accent), 0.4);
+        box-shadow: 0 0 15px 2px rgba(mat.get-color-from-palette($accent), 0.4),
+          0 0 15px 2px rgba(mat.get-color-from-palette($accent), 0.4),
+          0 0 15px 2px rgba(mat.get-color-from-palette($accent), 0.4);
       }
     }
   }

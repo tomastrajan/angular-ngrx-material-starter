@@ -54,9 +54,8 @@ describe('StockMarketContainerComponent', () => {
           declarations: [StockMarketContainerComponent]
         }).compileComponents();
 
-        const stockMarketService = TestBed.inject<StockMarketService>(
-          StockMarketService
-        );
+        const stockMarketService =
+          TestBed.inject<StockMarketService>(StockMarketService);
         retrieveStockSpy = spyOn(
           stockMarketService,
           'retrieveStock'
