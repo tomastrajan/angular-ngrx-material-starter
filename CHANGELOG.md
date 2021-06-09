@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.0.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.0.0...v12.0.1) (2021-06-09)
+
+### Bug Fixes
+
+- set correct, relative, src paths for assets ([f547e74](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/f547e742f2ed24a5304ac5987514c49ae2b43bc5))
+
 ## [12.0.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v10.1.2...v12.0.0) (2021-06-09)
 
 ### Features
