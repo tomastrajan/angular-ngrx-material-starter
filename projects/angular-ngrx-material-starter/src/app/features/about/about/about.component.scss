@@ -64,7 +64,9 @@ h2 {
     left: 0;
     bottom: 0;
     right: 0;
-    background: url('../../../../assets/intro.jpg') no-repeat center top;
+    background-image: url('../../../../assets/intro.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
     background-size: cover;
     opacity: 0.7;
     content: '';
