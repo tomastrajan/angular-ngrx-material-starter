@@ -199,9 +199,22 @@ Get started by checking out list of open [issues](https://github.com/tomastrajan
     <td align="center"><a href="https://github.com/Zaky7"><img src="https://avatars2.githubusercontent.com/u/16975648?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zakir</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=Zaky7" title="Code">💻</a> <a href="#security-Zaky7" title="Security">🛡️</a></td>
     <td align="center"><a href="https://github.com/SiddharthSh"><img src="https://avatars0.githubusercontent.com/u/22426668?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Siddharth</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=SiddharthSh" title="Code">💻</a> <a href="#tool-SiddharthSh" title="Tools">🔧</a> <a href="#plugin-SiddharthSh" title="Plugin/utility libraries">🔌</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/tino-tg"><img src="https://avatars.githubusercontent.com/u/21139323?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tino Götz</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=tino-tg" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/DinoSourcesRex"><img src="https://avatars.githubusercontent.com/u/4295028?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dino</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=DinoSourcesRex" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/KingMario"><img src="https://avatars.githubusercontent.com/u/3956876?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Changyu Geng</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=KingMario" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/omaralharthy"><img src="https://avatars.githubusercontent.com/u/72017091?v=4?s=100" width="100px;" alt=""/><br /><sub><b>omaralharthy</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=omaralharthy" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/mcanoglu"><img src="https://avatars.githubusercontent.com/u/38083161?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mcanoglu</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=mcanoglu" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/danymarques"><img src="https://avatars.githubusercontent.com/u/15036654?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dany Marques</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=danymarques" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/allabouttech0803"><img src="https://avatars.githubusercontent.com/u/34211469?v=4?s=100" width="100px;" alt=""/><br /><sub><b>universaltutor5</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=allabouttech0803" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/dvargas46"><img src="https://avatars.githubusercontent.com/u/10914883?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dan Vargas</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=dvargas46" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/milantenk"><img src="https://avatars.githubusercontent.com/u/4102195?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Milán Tenk</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=milantenk" title="Code">💻</a></td>
+  </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
