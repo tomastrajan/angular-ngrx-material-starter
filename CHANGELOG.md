@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [12.0.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.0.1...v12.0.2) (2021-06-10)
+
+### Bug Fixes
+
+- set base href with trailing slash for production build ([8799fbc](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/8799fbc822bc8bd688c079c24e822191ac8b862c))
+
 ### [12.0.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.0.0...v12.0.1) (2021-06-09)
 
 ### Bug Fixes
