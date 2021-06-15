@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.1.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.0.2...v12.1.0) (2021-06-15)
+
+### Features
+
+- remove hash location opt in ([750a1cf](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/750a1cff85af69d97ad0499f448edfffaa9ad742))
+
 ### [12.0.2](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.0.1...v12.0.2) (2021-06-10)
 
 ### Bug Fixes
