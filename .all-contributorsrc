@@ -507,6 +507,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "dimitrileite",
+      "name": "Dimitri de Jesus",
+      "avatar_url": "https://avatars.githubusercontent.com/u/23637961?v=4",
+      "profile": "https://github.com/dimitrileite",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "commitConvention": "none"

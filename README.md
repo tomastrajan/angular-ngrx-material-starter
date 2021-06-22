@@ -211,6 +211,7 @@ Get started by checking out list of open [issues](https://github.com/tomastrajan
   <tr>
     <td align="center"><a href="https://github.com/dvargas46"><img src="https://avatars.githubusercontent.com/u/10914883?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dan Vargas</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=dvargas46" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/milantenk"><img src="https://avatars.githubusercontent.com/u/4102195?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Milán Tenk</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=milantenk" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/dimitrileite"><img src="https://avatars.githubusercontent.com/u/23637961?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dimitri de Jesus</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=dimitrileite" title="Code">💻</a></td>
   </tr>
 </table>
 
