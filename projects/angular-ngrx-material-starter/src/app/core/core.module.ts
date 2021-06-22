@@ -14,12 +14,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import {
-  FaIconLibrary,
-  FontAwesomeModule
-} from '@fortawesome/angular-fontawesome';
 
 import { MaterialModule } from './material/material.module';
+import { FortawesomeModule } from './../core/fortawesome/fortawesome.module';
 
 import { FormsModule } from '@angular/forms';
 
@@ -53,21 +50,6 @@ import {
   selectEffectiveTheme,
   selectSettingsStickyHeader
 } from './settings/settings.selectors';
-import {
-  faCog,
-  faBars,
-  faRocket,
-  faPowerOff,
-  faUserCircle,
-  faPlayCircle
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faGithub,
-  faMediumM,
-  faTwitter,
-  faInstagram,
-  faYoutube
-} from '@fortawesome/free-brands-svg-icons';
 
 export {
   TitleService,
@@ -121,7 +103,7 @@ export function httpLoaderFactory(http: HttpClient) {
       }),
 
     // 3rd party
-    FontAwesomeModule,
+    FortawesomeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -142,34 +124,20 @@ export function httpLoaderFactory(http: HttpClient) {
 
     // material
     MaterialModule,
-
-    // 3rd party
-    FontAwesomeModule,
-    TranslateModule
+  
+    // 3rd party    
+    TranslateModule,
+    FortawesomeModule,
   ]
 })
 export class CoreModule {
   constructor(
     @Optional()
     @SkipSelf()
-    parentModule: CoreModule,
-    faIconLibrary: FaIconLibrary
+    parentModule: CoreModule   
   ) {
     if (parentModule) {
       throw new Error('CoreModule is already loaded. Import only in AppModule');
-    }
-    faIconLibrary.addIcons(
-      faCog,
-      faBars,
-      faRocket,
-      faPowerOff,
-      faUserCircle,
-      faPlayCircle,
-      faGithub,
-      faMediumM,
-      faTwitter,
-      faInstagram,
-      faYoutube
-    );
+    }   
   }
 }
