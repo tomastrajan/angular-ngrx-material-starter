@@ -40,6 +40,19 @@ export function httpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  declarations: [
+    ExamplesComponent,
+    TodosContainerComponent,
+    StockMarketContainerComponent,
+    ParentComponent,
+    ChildComponent,
+    AuthenticatedComponent,
+    CrudComponent,
+    FormComponent,
+    NotificationsComponent,
+    UserComponent,
+    ElementsComponent
+  ],
   imports: [
     LazyElementsModule,
     SharedModule,
@@ -60,19 +73,6 @@ export function httpLoaderFactory(http: HttpClient) {
       BooksEffects,
       FormEffects
     ])
-  ],
-  declarations: [
-    ExamplesComponent,
-    TodosContainerComponent,
-    StockMarketContainerComponent,
-    ParentComponent,
-    ChildComponent,
-    AuthenticatedComponent,
-    CrudComponent,
-    FormComponent,
-    NotificationsComponent,
-    UserComponent,
-    ElementsComponent
   ],
   providers: [StockMarketService, UserService]
 })

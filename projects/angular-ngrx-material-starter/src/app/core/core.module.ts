@@ -79,6 +79,7 @@ export function httpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
+  declarations: [],
   imports: [
     // angular
     CommonModule,
@@ -99,8 +100,8 @@ export function httpLoaderFactory(http: HttpClient) {
     environment.production
       ? []
       : StoreDevtoolsModule.instrument({
-        name: 'Angular NgRx Material Starter'
-      }),
+          name: 'Angular NgRx Material Starter'
+        }),
 
     // 3rd party
     FortawesomeModule,
@@ -112,32 +113,31 @@ export function httpLoaderFactory(http: HttpClient) {
       }
     })
   ],
-  declarations: [],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
-    { provide: ErrorHandler, useClass: AppErrorHandler },
-    { provide: RouterStateSerializer, useClass: CustomSerializer }
-  ],
   exports: [
     // angular
     FormsModule,
 
     // material
     MaterialModule,
-  
-    // 3rd party    
+
+    // 3rd party
     TranslateModule,
-    FortawesomeModule,
+    FortawesomeModule
+  ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+    { provide: ErrorHandler, useClass: AppErrorHandler },
+    { provide: RouterStateSerializer, useClass: CustomSerializer }
   ]
 })
 export class CoreModule {
   constructor(
     @Optional()
     @SkipSelf()
-    parentModule: CoreModule   
+    parentModule: CoreModule
   ) {
     if (parentModule) {
       throw new Error('CoreModule is already loaded. Import only in AppModule');
-    }   
+    }
   }
 }

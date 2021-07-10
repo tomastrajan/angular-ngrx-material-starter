@@ -11,18 +11,18 @@ import { BigInputActionComponent } from './big-input/big-input-action/big-input-
 import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
 
 @NgModule({
+  declarations: [
+    BigInputComponent,
+    BigInputActionComponent,
+    RtlSupportDirective
+  ],
   imports: [
     CommonModule,
     FormsModule,
 
     MaterialModule,
     FortawesomeModule,
-    TranslateModule,
-  ],
-  declarations: [
-    BigInputComponent,
-    BigInputActionComponent,
-    RtlSupportDirective
+    TranslateModule
   ],
   exports: [
     CommonModule,
@@ -39,5 +39,5 @@ import { RtlSupportDirective } from './rtl-support/rtl-support.directive';
   ]
 })
 export class SharedModule {
-  constructor() { }
+  constructor() {}
 }
