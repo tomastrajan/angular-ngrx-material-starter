@@ -5,7 +5,6 @@
     </div>
   </div>
   <ng-container *ngIf="formValueChanges$ | async as updatedForm">
-    {{update(updatedForm)}}
   </ng-container>
   <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="row justify-content-center">

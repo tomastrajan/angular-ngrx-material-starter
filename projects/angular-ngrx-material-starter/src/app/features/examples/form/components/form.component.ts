@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
-import { filter, debounceTime, take } from 'rxjs/operators';
+import { filter, take, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 
@@ -52,8 +52,8 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     this.formValueChanges$ = this.form.valueChanges.pipe(
-      debounceTime(500),
-      filter((form: Form) => form.autosave)
+      filter((form: Form) => form.autosave),
+      tap((updatedForm) => this.update(updatedForm))
     );
     this.store
       .pipe(select(selectFormState), take(1))
