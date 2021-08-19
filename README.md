@@ -1,4 +1,4 @@
-# Angular 10, NgRx and Angular Material Starter
+# Angular 12, NgRx and Angular Material Starter
 
 by [@tomastrajan](https://twitter.com/tomastrajan)
 
@@ -40,8 +40,9 @@ npm start
 - `npm start` - starts a dev server and opens browser with running app
 - `npm run start:prod` - runs full prod build and serves prod bundle
 - `npm run test` - runs lint and tests
+- `npm run e2e` - runs end-to-end tests
 - `npm run watch` - runs tests in watch mode
-- `npm run prettier` - runs prettier to format whole code base (`.ts` and `.scss`)
+- `npm run format:write` - runs prettier to format whole code base (`.ts` and `.scss`)
 - `npm run analyze` - runs full prod build and `webpack-bundle-analyzer` to visualize how much code is shipped (dependencies & application)
 
 ![analzye](https://raw.githubusercontent.com/tomastrajan/angular-ngrx-material-starter/master/meta-assets/analyze.png)
@@ -57,7 +58,7 @@ When using this starter project to build your own app you might consider some of
 - delete pre-existing `CHANGELOG.md` (you will generate your own with future releases of your features)
 - delete `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `BUILT_WITH.md` files as they are relevant only if project is open sourced on Github
 - edit the title and Open Graph metadata properties in `index.html`
-- remove or adjust links in the [footer](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/src/app/app.component.html#L79)
+- remove or adjust links in the [footer](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/projects/angular-ngrx-material-starter/src/app/app/app.component.html#L85)
 - replace logo in `/assets` folder ( currently 128 x 128 pixel `png` file )
 - adjust colors in `/themes/default-theme.scss`
 - create a pull request in the [original repository](https://github.com/tomastrajan/angular-ngrx-material-starter/) to update `BUILT_WITH.md` [file](https://github.com/tomastrajan/angular-ngrx-material-starter/blob/master/BUILT_WITH.md) with a link and short description of your project
@@ -126,7 +127,7 @@ Articles with content that explains various approaches used to build this starte
 - Angular
 - ngrx (or try [ngx-model](https://github.com/tomastrajan/ngx-model) if you prefer less boilerplate)
 - Angular Material
-- Bootstrap 4 (only reset, utils and grids)
+- Bootstrap 5 (only reset, utils and grids)
 
 ## Troubleshooting
 
@@ -200,6 +201,17 @@ Get started by checking out list of open [issues](https://github.com/tomastrajan
   </tr>
   <tr>
     <td align="center"><a href="https://www.aleggeup.com/"><img src="https://avatars.githubusercontent.com/u/1103920?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Stephen Legge</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=slegge" title="Code">💻</a> <a href="#userTesting-slegge" title="User Testing">📓</a></td>
+    <td align="center"><a href="https://github.com/tino-tg"><img src="https://avatars.githubusercontent.com/u/21139323?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tino Götz</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=tino-tg" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/DinoSourcesRex"><img src="https://avatars.githubusercontent.com/u/4295028?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dino</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=DinoSourcesRex" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/KingMario"><img src="https://avatars.githubusercontent.com/u/3956876?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Changyu Geng</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=KingMario" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/omaralharthy"><img src="https://avatars.githubusercontent.com/u/72017091?v=4?s=100" width="100px;" alt=""/><br /><sub><b>omaralharthy</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=omaralharthy" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/mcanoglu"><img src="https://avatars.githubusercontent.com/u/38083161?v=4?s=100" width="100px;" alt=""/><br /><sub><b>mcanoglu</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=mcanoglu" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/danymarques"><img src="https://avatars.githubusercontent.com/u/15036654?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dany Marques</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=danymarques" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/allabouttech0803"><img src="https://avatars.githubusercontent.com/u/34211469?v=4?s=100" width="100px;" alt=""/><br /><sub><b>universaltutor5</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=allabouttech0803" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/dvargas46"><img src="https://avatars.githubusercontent.com/u/10914883?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dan Vargas</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=dvargas46" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/milantenk"><img src="https://avatars.githubusercontent.com/u/4102195?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Milán Tenk</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=milantenk" title="Code">💻</a></td>
   </tr>
 </table>
 

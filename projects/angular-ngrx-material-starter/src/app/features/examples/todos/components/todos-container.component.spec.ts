@@ -173,7 +173,8 @@ describe('TodosComponent', () => {
     fixture.detectChanges();
 
     const removeDoneTodosButton = await getRemoveDoneTodosButton();
-    const removeDoneTodosButtonIsDisabled = await removeDoneTodosButton.isDisabled();
+    const removeDoneTodosButtonIsDisabled =
+      await removeDoneTodosButton.isDisabled();
 
     expect(removeDoneTodosButtonIsDisabled).toBe(true);
   });

@@ -436,6 +436,87 @@
         "code",
         "userTesting"
       ]
+    },
+    {
+      "login": "tino-tg",
+      "name": "Tino Götz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21139323?v=4",
+      "profile": "https://github.com/tino-tg",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "DinoSourcesRex",
+      "name": "Dino",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4295028?v=4",
+      "profile": "https://github.com/DinoSourcesRex",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "KingMario",
+      "name": "Changyu Geng",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3956876?v=4",
+      "profile": "https://github.com/KingMario",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "omaralharthy",
+      "name": "omaralharthy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/72017091?v=4",
+      "profile": "https://github.com/omaralharthy",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "mcanoglu",
+      "name": "mcanoglu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/38083161?v=4",
+      "profile": "https://github.com/mcanoglu",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "danymarques",
+      "name": "Dany Marques",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15036654?v=4",
+      "profile": "https://github.com/danymarques",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "allabouttech0803",
+      "name": "universaltutor5",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34211469?v=4",
+      "profile": "https://github.com/allabouttech0803",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dvargas46",
+      "name": "Dan Vargas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10914883?v=4",
+      "profile": "https://github.com/dvargas46",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "milantenk",
+      "name": "Milán Tenk",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4102195?v=4",
+      "profile": "https://github.com/milantenk",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "commitConvention": "none"

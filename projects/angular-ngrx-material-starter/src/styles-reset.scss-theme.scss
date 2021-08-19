@@ -1,4 +1,4 @@
-@import '.~@angular/material/theming';
+@use '~@angular/material' as mat;
 
 @mixin anms-styles-reset-theme($theme) {
   $primary: map-get($theme, primary);
@@ -6,24 +6,24 @@
   $foreground: map-get($theme, foreground);
 
   a {
-    color: mat-color($foreground, text);
+    color: mat.get-color-from-palette($foreground, text);
 
     &:hover {
-      color: mat-color($accent);
+      color: mat.get-color-from-palette($accent);
     }
   }
 
   code {
-    color: mat-color($accent, lighter-contrast);
-    background-color: mat-color($accent, lighter);
+    color: mat.get-color-from-palette($accent, lighter-contrast);
+    background-color: mat.get-color-from-palette($accent, lighter);
   }
 
   p {
     a {
-      color: mat-color($accent);
+      color: mat.get-color-from-palette($accent);
 
       &:hover {
-        color: mat-color($accent, darker);
+        color: mat.get-color-from-palette($accent, darker);
       }
     }
   }

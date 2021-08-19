@@ -1,5 +1,7 @@
-$anms-primary: mat-palette($mat-indigo, 800, 300, 900);
-$anms-accent: mat-palette($mat-light-blue);
-$anms-warn: mat-palette($mat-pink, 600);
+@use '~@angular/material' as mat;
 
-$anms-theme: mat-light-theme($anms-primary, $anms-accent, $anms-warn);
+$anms-primary: mat.define-palette(mat.$indigo-palette, 800, 300, 900);
+$anms-accent: mat.define-palette(mat.$light-blue-palette);
+$anms-warn: mat.define-palette(mat.$pink-palette, 600);
+
+$anms-theme: mat.define-light-theme($anms-primary, $anms-accent, $anms-warn);
