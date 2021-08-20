@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="offset-md-2 col-md-8 entry">
-      <anms-big-input rtl [placeholder]="'anms.examples.todos.input' | translate" [value]="newTodo" (keyup)="onNewTodoChange($event.target.value)"
+      <anms-big-input rtl [placeholder]="'anms.examples.todos.input' | translate" [value]="newTodo" (keyup)="onNewTodoChange($event)"
         (keyup.enter)="!isAddTodoDisabled && onAddTodo()" (keyup.escape)="onNewTodoClear()">
-        <anms-big-input-action fontSet="fas" fontIcon="fa-plus" faIcon="plus" color="accent"
+        <anms-big-input-action fontSet="fas" fontIcon="plus" faIcon="plus" color="accent"
           (action)="onAddTodo()" [disabled]="isAddTodoDisabled" [matTooltip]="'anms.examples.todos.tooltip.add' | translate"
           matTooltipPosition="before">
         </anms-big-input-action>
-        <anms-big-input-action fontSet="fas" fontIcon="fa-trash" faIcon="trash" color="warn"
-          (action)="onRemoveDoneTodos()" [disabled]="removeDoneDisabled$ | async"
+        <anms-big-input-action fontSet="fas" fontIcon="trash" faIcon="trash" color="warn"
+          (action)="onRemoveDoneTodos()" [disabled]="(removeDoneDisabled$ | async) || false"
           [matTooltip]="'anms.examples.todos.tooltip.remove' | translate" matTooltipPosition="after">
         </anms-big-input-action>
       </anms-big-input>

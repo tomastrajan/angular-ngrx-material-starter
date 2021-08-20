@@ -13,6 +13,7 @@ import {
 import { actionFormReset, actionFormUpdate } from '../form.actions';
 import { selectFormState } from '../form.selectors';
 import { Form } from '../form.model';
+import { State } from '../../examples.state';
 
 @Component({
   selector: 'anms-form',
@@ -41,11 +42,11 @@ export class FormComponent implements OnInit {
     rating: [0, Validators.required]
   });
 
-  formValueChanges$: Observable<Form>;
+  formValueChanges$: Observable<Form> | undefined;
 
   constructor(
     private fb: FormBuilder,
-    private store: Store,
+    private store: Store<State>,
     private translate: TranslateService,
     private notificationService: NotificationService
   ) {}

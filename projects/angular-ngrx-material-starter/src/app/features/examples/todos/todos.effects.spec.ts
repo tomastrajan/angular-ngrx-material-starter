@@ -30,7 +30,7 @@ describe('TodosEffects', () => {
       const effect = new TodosEffects(actions$, store, localStorage);
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.persistTodos.dispatch).toEqual(false);
+      expect(metadata.persistTodos?.dispatch).toEqual(false);
     });
 
     it('should call setItem on LocalStorageService for any action', () => {

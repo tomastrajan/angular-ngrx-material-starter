@@ -62,10 +62,10 @@ describe('BigInputActionComponent', () => {
 
   it('should display icon if fontSet and fontIcon properties are set', () => {
     const template =
-      '<anms-big-input-action fontSet="fas" fontIcon="fa-trash"></anms-big-input-action>';
+      '<anms-big-input-action fontSet="fas" fontIcon="trash"></anms-big-input-action>';
     fixture = createHostComponent(template);
     expect(getIcon()).toBeTruthy();
-    expect(getIcon().nativeElement.classList.contains('fa-trash')).toBeTruthy();
+    expect(getIcon().nativeElement.classList.contains('trash')).toBeTruthy();
     expect(getIcon().nativeElement.classList.contains('fas')).toBeTruthy();
   });
 

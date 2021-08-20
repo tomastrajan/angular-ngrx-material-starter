@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
+import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -23,7 +25,7 @@ import { selectSettings } from '../../../core/settings/settings.selectors';
 })
 export class SettingsContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  settings$: Observable<SettingsState>;
+  settings$: Observable<SettingsState> | undefined;
 
   themes = [
     { value: 'DEFAULT-THEME', label: 'blue' },
@@ -49,29 +51,39 @@ export class SettingsContainerComponent implements OnInit {
     this.settings$ = this.store.pipe(select(selectSettings));
   }
 
-  onLanguageSelect({ value: language }) {
-    this.store.dispatch(actionSettingsChangeLanguage({ language }));
-  }
-
-  onThemeSelect({ value: theme }) {
-    this.store.dispatch(actionSettingsChangeTheme({ theme }));
-  }
-
-  onAutoNightModeToggle({ checked: autoNightMode }) {
-    this.store.dispatch(actionSettingsChangeAutoNightMode({ autoNightMode }));
-  }
-
-  onStickyHeaderToggle({ checked: stickyHeader }) {
-    this.store.dispatch(actionSettingsChangeStickyHeader({ stickyHeader }));
-  }
-
-  onPageAnimationsToggle({ checked: pageAnimations }) {
-    this.store.dispatch(actionSettingsChangeAnimationsPage({ pageAnimations }));
-  }
-
-  onElementsAnimationsToggle({ checked: elementsAnimations }) {
+  onLanguageSelect(change: MatSelectChange) {
     this.store.dispatch(
-      actionSettingsChangeAnimationsElements({ elementsAnimations })
+      actionSettingsChangeLanguage({ language: change.value })
+    );
+  }
+
+  onThemeSelect(event: MatSelectChange) {
+    this.store.dispatch(actionSettingsChangeTheme({ theme: event.value }));
+  }
+
+  onAutoNightModeToggle(event: MatSlideToggleChange) {
+    this.store.dispatch(
+      actionSettingsChangeAutoNightMode({ autoNightMode: event.checked })
+    );
+  }
+
+  onStickyHeaderToggle(event: MatSlideToggleChange) {
+    this.store.dispatch(
+      actionSettingsChangeStickyHeader({ stickyHeader: event.checked })
+    );
+  }
+
+  onPageAnimationsToggle(event: MatSlideToggleChange) {
+    this.store.dispatch(
+      actionSettingsChangeAnimationsPage({ pageAnimations: event.checked })
+    );
+  }
+
+  onElementsAnimationsToggle(event: MatSlideToggleChange) {
+    this.store.dispatch(
+      actionSettingsChangeAnimationsElements({
+        elementsAnimations: event.checked
+      })
     );
   }
 }

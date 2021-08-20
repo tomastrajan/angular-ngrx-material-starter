@@ -1,5 +1,6 @@
 import browser from 'browser-detect';
 import { Component, OnInit } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
@@ -13,7 +14,8 @@ import {
   selectIsAuthenticated,
   selectSettingsStickyHeader,
   selectSettingsLanguage,
-  selectEffectiveTheme
+  selectEffectiveTheme,
+  AppState
 } from '../core/core.module';
 import {
   actionSettingsChangeAnimationsPageDisabled,
@@ -43,18 +45,18 @@ export class AppComponent implements OnInit {
     { link: 'settings', label: 'anms.menu.settings' }
   ];
 
-  isAuthenticated$: Observable<boolean>;
-  stickyHeader$: Observable<boolean>;
-  language$: Observable<string>;
-  theme$: Observable<string>;
+  isAuthenticated$: Observable<boolean> | undefined;
+  stickyHeader$: Observable<boolean> | undefined;
+  language$: Observable<string> | undefined;
+  theme$: Observable<string> | undefined;
 
   constructor(
-    private store: Store,
+    private store: Store<AppState>,
     private storageService: LocalStorageService
   ) {}
 
   private static isIEorEdgeOrSafari() {
-    return ['ie', 'edge', 'safari'].includes(browser().name);
+    return ['ie', 'edge', 'safari'].includes(browser().name || '');
   }
 
   ngOnInit(): void {
@@ -81,7 +83,9 @@ export class AppComponent implements OnInit {
     this.store.dispatch(authLogout());
   }
 
-  onLanguageSelect({ value: language }) {
-    this.store.dispatch(actionSettingsChangeLanguage({ language }));
+  onLanguageSelect(event: MatSelectChange) {
+    this.store.dispatch(
+      actionSettingsChangeLanguage({ language: event.value })
+    );
   }
 }

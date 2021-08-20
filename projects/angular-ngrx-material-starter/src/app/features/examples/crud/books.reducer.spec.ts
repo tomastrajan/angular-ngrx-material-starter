@@ -35,7 +35,7 @@ describe('BookReducer', () => {
     const state = bookReducer(TEST_INITIAL_STATE, action);
 
     expect(state.ids.length).toEqual(2);
-    expect(state.entities['1234'].title).toEqual('test');
+    expect(state.entities['1234']?.title).toEqual('test');
   });
 
   it('should update a book', () => {
