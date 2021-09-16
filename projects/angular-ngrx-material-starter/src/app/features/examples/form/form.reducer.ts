@@ -8,7 +8,10 @@ export const initialState: FormState = {
 
 const reducer = createReducer(
   initialState,
-  on(actionFormUpdate, (state, { form }) => ({ ...state, form })),
+  on(actionFormUpdate, (state, { form }) => ({
+    ...state,
+    form: { ...form, password: '*'.repeat(form.password.length) }
+  })),
   on(actionFormReset, () => initialState)
 );
 
