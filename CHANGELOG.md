@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.3.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.2.0...v12.3.0) (2021-09-16)
+
+### Features
+
+- **workspace:** update to Angular 12.2.6 ([b9a22ae](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/b9a22ae93fc2797cfbb488a802a357ef616edf68))
+
+### Bug Fixes
+
+- **form:** replace pass in storage stop duplicate requests from form state, closes [#527](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/527), closes [#558](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/558) ([9109595](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/9109595d46a928e20da38ba1cdf4d5c7619b6ee1))
+- **workspace:** re-generate package-lock.json ([45fbfd7](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/45fbfd7ef463de70b83118b45fa5e19a264f5826))
+
 ## [12.2.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.1.0...v12.2.0) (2021-08-23)
 
 ### Features
