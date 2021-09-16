@@ -29,7 +29,7 @@ describe('AuthEffects', () => {
       const effect = new AuthEffects(actions, localStorageService, router);
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.login.dispatch).toEqual(false);
+      expect(metadata.login?.dispatch).toEqual(false);
     });
 
     it('should call setItem on LocalStorageService', () => {
@@ -55,7 +55,7 @@ describe('AuthEffects', () => {
       const effect = new AuthEffects(actions, localStorageService, router);
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.logout.dispatch).toEqual(false);
+      expect(metadata.logout?.dispatch).toEqual(false);
     });
 
     it('should call setItem on LocalStorageService and navigate to about', () => {

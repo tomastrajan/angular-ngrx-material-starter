@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.2.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.1.0...v12.2.0) (2021-08-23)
+
+### Features
+
+- **settings:** add noImplicitAny to compiler options ([c14b760](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c14b760cb1b77246d09231b5b9e126238755d2d6)), closes [#536](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/536)
+- **settings:** add recommended strict settings to compiler options ([6480960](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/6480960c50f44bdd93207f9839f70df34ba0ab75)), closes [#536](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/536)
+- **settings:** add strictFunctionTypes to compiler options ([c72a6c6](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c72a6c63defe006b48dafc75b08be823462bd49d)), closes [#536](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/536)
+- **settings:** add strictNullChecks to compiler options ([cba4d52](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/cba4d52ea39e60f9cf100b2ab170283aab85af28)), closes [#536](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/536)
+- **settings:** add strictPropertyInitialization to compiler options ([3c27481](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/3c274813b4545be4e6cac8e94d4266e23b334859)), closes [#536](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/536)
+
+### Bug Fixes
+
+- **#556:** fix link in README ([8aeb3af](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/8aeb3aff3a479c2c8eb061019146531039d9984e))
+
 ## [12.1.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.0.2...v12.1.0) (2021-06-15)
 
 ### Features

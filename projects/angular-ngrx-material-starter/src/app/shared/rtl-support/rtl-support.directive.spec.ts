@@ -21,7 +21,7 @@ describe('RtlSupportDirective', () => {
   let fixture: ComponentFixture<TestComponent>;
   let des: DebugElement[]; // the three elements w/ the directive
   let bareH2: DebugElement; // the <h2> w/o the directive
-  let languageSubject;
+  let languageSubject: BehaviorSubject<{ lang: string }>;
 
   beforeEach(() => {
     languageSubject = new BehaviorSubject({ lang: 'he' });

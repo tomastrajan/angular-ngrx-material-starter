@@ -39,10 +39,10 @@
             "
             formControlName="username"
           />
-          <mat-error *ngIf="userForm.get('username').hasError('minlength')">
-            {{'anms.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm.get('username').errors.minlength.requiredLength} }}
+          <mat-error *ngIf="userForm?.get('username')?.hasError('minlength')">
+            {{'anms.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm?.get('username')?.errors?.minlength.requiredLength} }}
           </mat-error>
-          <mat-error *ngIf="userForm.get('username').hasError('required')">
+          <mat-error *ngIf="userForm?.get('username')?.hasError('required')">
             {{'anms.examples.simple-state-management.validator.required' | translate}}
           </mat-error>
         </mat-form-field>
@@ -54,10 +54,10 @@
             "
             formControlName="name"
           />
-          <mat-error *ngIf="userForm.get('name').hasError('minlength')">
-            {{'anms.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm.get('name').errors.minlength.requiredLength} }}
+          <mat-error *ngIf="userForm?.get('name')?.hasError('minlength')">
+            {{'anms.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm?.get('name')?.errors?.minlength.requiredLength} }}
           </mat-error>
-          <mat-error *ngIf="userForm.get('name').hasError('required')">
+          <mat-error *ngIf="userForm?.get('name')?.hasError('required')">
             {{'anms.examples.simple-state-management.validator.required' | translate}}
           </mat-error>
         </mat-form-field>
@@ -69,10 +69,10 @@
             "
             formControlName="surname"
           />
-          <mat-error *ngIf="userForm.get('surname').hasError('minlength')">
-            {{'anms.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm.get('surname').errors.minlength.requiredLength} }}
+          <mat-error *ngIf="userForm?.get('surname')?.hasError('minlength')">
+            {{'anms.examples.simple-state-management.validator.minlength' | translate:{minlength: userForm?.get('surname')?.errors?.minlength.requiredLength} }}
           </mat-error>
-          <mat-error *ngIf="userForm.get('surname').hasError('required')">
+          <mat-error *ngIf="userForm?.get('surname')?.hasError('required')">
             {{'anms.examples.simple-state-management.validator.required' | translate}}
           </mat-error>
         </mat-form-field>

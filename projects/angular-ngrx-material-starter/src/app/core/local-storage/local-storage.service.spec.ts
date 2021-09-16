@@ -28,7 +28,7 @@ describe('LocalStorageService', () => {
     service.setItem('TEST', 'item');
     expect(service.getItem('TEST')).toBe('item');
     service.removeItem('TEST');
-    expect(service.getItem('TEST')).toBe(null);
+    expect(service.getItem('TEST')).toEqual({});
   });
 
   it('should load initial state', () => {

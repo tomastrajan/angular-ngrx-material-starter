@@ -50,7 +50,7 @@ describe('SettingsEffects', () => {
         titleService
       );
       const metadata = getEffectsMetadata(effect);
-      expect(metadata.setTranslateServiceLanguage.dispatch).toEqual(false);
+      expect(metadata.setTranslateServiceLanguage?.dispatch).toEqual(false);
     });
   });
 
@@ -66,7 +66,7 @@ describe('SettingsEffects', () => {
       );
       const metadata = getEffectsMetadata(effect);
 
-      expect(metadata.setTitle.dispatch).toEqual(false);
+      expect(metadata.setTitle?.dispatch).toEqual(false);
     });
 
     it('should setTitle', () => {

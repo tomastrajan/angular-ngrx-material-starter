@@ -17,7 +17,7 @@ import { State } from '../examples.state';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExamplesComponent implements OnInit {
-  isAuthenticated$: Observable<boolean>;
+  isAuthenticated$: Observable<boolean> | undefined;
 
   examples = [
     { link: 'todos', label: 'anms.examples.menu.todos' },

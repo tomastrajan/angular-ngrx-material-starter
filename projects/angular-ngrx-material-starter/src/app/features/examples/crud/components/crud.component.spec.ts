@@ -28,7 +28,7 @@ describe('CrudComponent', () => {
       }).compileComponents();
       store = TestBed.inject(MockStore);
       store.overrideSelector(selectAllBooks, []);
-      store.overrideSelector(selectSelectedBook, null);
+      store.overrideSelector(selectSelectedBook, undefined);
       fixture = TestBed.createComponent(CrudComponent);
       component = fixture.componentInstance;
       fixture.detectChanges();

@@ -44,7 +44,7 @@ describe('BooksEffects', () => {
       const effects = new BooksEffects(actions, store, localStorage);
       const metadata = getEffectsMetadata(effects);
 
-      expect(metadata.persistBooks.dispatch).toEqual(false);
+      expect(metadata.persistBooks?.dispatch).toEqual(false);
     });
 
     it('should call setItem on LocalStorageService for delete one action', () => {

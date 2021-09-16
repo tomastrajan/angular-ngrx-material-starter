@@ -1,6 +1,7 @@
 import { createSelector } from '@ngrx/store';
 
 import { ExamplesState, selectExamples } from '../examples.state';
+import { Todo } from './todos.model';
 
 export const selectTodosState = createSelector(
   selectExamples,
@@ -24,7 +25,8 @@ export const selectTodos = createSelector(
     if (filter === 'ALL') {
       return items;
     } else {
-      const predicate = filter === 'DONE' ? (t) => t.done : (t) => !t.done;
+      const predicate =
+        filter === 'DONE' ? (t: Todo) => t.done : (t: Todo) => !t.done;
       return items.filter(predicate);
     }
   }

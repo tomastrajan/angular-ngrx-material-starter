@@ -18,7 +18,7 @@ import { State } from '../../examples.state';
 })
 export class StockMarketContainerComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  stocks$: Observable<StockMarketState>;
+  stocks$: Observable<StockMarketState> | undefined;
 
   constructor(public store: Store<State>) {}
 
@@ -26,10 +26,14 @@ export class StockMarketContainerComponent implements OnInit {
     this.stocks$ = this.store.pipe(select(selectStockMarket));
     this.stocks$
       .pipe(take(1))
-      .subscribe((stocks) => this.onSymbolChange(stocks.symbol));
+      .subscribe((stocks) => this.onSymbolValue(stocks.symbol));
   }
 
-  onSymbolChange(symbol: string) {
+  onSymbolValue(symbol: string) {
     this.store.dispatch(actionStockMarketRetrieve({ symbol }));
+  }
+
+  onSymbolChange(event: any) {
+    this.onSymbolValue(event.target.value);
   }
 }
