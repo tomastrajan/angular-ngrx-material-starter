@@ -69,9 +69,9 @@ export class AppComponent implements OnInit {
       );
     }
 
-    this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
-    this.stickyHeader$ = this.store.pipe(select(selectSettingsStickyHeader));
-    this.language$ = this.store.pipe(select(selectSettingsLanguage));
+    this.isAuthenticated$ = this.store.select(selectIsAuthenticated);
+    this.stickyHeader$ = this.store.select(selectSettingsStickyHeader);
+    this.language$ = this.store.select(selectSettingsLanguage);
     this.theme$ = this.store.pipe(select(selectEffectiveTheme));
   }
 
