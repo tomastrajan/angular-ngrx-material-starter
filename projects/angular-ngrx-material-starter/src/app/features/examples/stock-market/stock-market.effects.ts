@@ -23,12 +23,12 @@ export class StockMarketEffects {
           ofType(actionStockMarketRetrieve),
           tap((action) =>
             this.localStorageService.setItem(STOCK_MARKET_KEY, {
-              symbol: action.symbol
+              symbol: action.payload.symbol
             })
           ),
           debounceTime(debounce),
           switchMap((action) =>
-            this.service.retrieveStock(action.symbol).pipe(
+            this.service.retrieveStock(action.payload.symbol).pipe(
               map((stock) => actionStockMarketRetrieveSuccess({ stock })),
               catchError((error) =>
                 of(actionStockMarketRetrieveError({ error }))

@@ -51,7 +51,7 @@ describe('StockMarketReducer', () => {
       expect(state.loading).toBeTruthy();
       expect(state.stock).toBeUndefined();
       expect(state.error).toBeUndefined();
-      expect(state.symbol).toBe(action.symbol);
+      expect(state.symbol).toBe(action.payload.symbol);
     });
   });
 

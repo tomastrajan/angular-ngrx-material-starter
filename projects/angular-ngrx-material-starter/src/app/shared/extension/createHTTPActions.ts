@@ -5,19 +5,19 @@ import { TypedAction } from '@ngrx/store/src/models';
 export function createHTTPActions<
   RequestPayload = void,
   ResponsePayload = void,
-  ErrorPayload = HttpErrorResponse
+  ErrorPayload = any | HttpErrorResponse
 >(
   actionType: string
 ): [
   ActionCreator<
     string,
-    (props?: RequestPayload) => {
-      payload?: RequestPayload;
+    (props: RequestPayload) => {
+      payload: RequestPayload;
     } & TypedAction<string>
   >,
   ActionCreator<
     string,
-    (props?: ResponsePayload) => {
+    (props: ResponsePayload) => {
       payload?: ResponsePayload;
     } & TypedAction<string>
   >,
@@ -29,7 +29,9 @@ export function createHTTPActions<
   >
 ] {
   return [
-    createAction(actionType, (payload?: RequestPayload) => ({ payload })),
+    createAction(actionType, (payload: RequestPayload) => ({
+      payload: payload
+    })),
     createAction(`${actionType} Success`, (payload?: ResponsePayload) => ({
       payload
     })),
