@@ -212,6 +212,7 @@ Get started by checking out list of open [issues](https://github.com/tomastrajan
     <td align="center"><a href="https://github.com/allabouttech0803"><img src="https://avatars.githubusercontent.com/u/34211469?v=4?s=100" width="100px;" alt=""/><br /><sub><b>universaltutor5</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=allabouttech0803" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/dvargas46"><img src="https://avatars.githubusercontent.com/u/10914883?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dan Vargas</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=dvargas46" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/milantenk"><img src="https://avatars.githubusercontent.com/u/4102195?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Milán Tenk</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=milantenk" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/shady-abdelhamid"><img src="https://avatars.githubusercontent.com/u/8029319?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shady</b></sub></a><br /><a href="https://github.com/tomastrajan/angular-ngrx-material-starter/commits?author=shady-abdelhamid" title="Code">💻</a> <a href="#translation-shady-abdelhamid" title="Translation">🌍</a></td>
   </tr>
 </table>
 

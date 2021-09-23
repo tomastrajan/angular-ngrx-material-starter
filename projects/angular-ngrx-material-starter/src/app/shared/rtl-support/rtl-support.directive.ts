@@ -10,17 +10,21 @@ export class RtlSupportDirective implements OnInit, OnDestroy {
   private subscription: Subscription | undefined;
   constructor(private el: ElementRef, public translate: TranslateService) {
     el.nativeElement.style.textAlign =
-      translate.currentLang === 'he' ? 'right' : 'left';
+      translate.currentLang === 'he' || translate.currentLang === 'ar'
+        ? 'right'
+        : 'left';
     el.nativeElement.style.direction =
-      translate.currentLang === 'he' ? 'rtl' : 'ltr';
+      translate.currentLang === 'he' || translate.currentLang === 'ar'
+        ? 'rtl'
+        : 'ltr';
   }
   ngOnInit() {
     this.subscription = this.translate.onLangChange.subscribe(
       (event: LangChangeEvent) => {
         this.el.nativeElement.style.textAlign =
-          event.lang === 'he' ? 'right' : 'left';
+          event.lang === 'he' || event.lang === 'ar' ? 'right' : 'left';
         this.el.nativeElement.style.direction =
-          event.lang === 'he' ? 'rtl' : 'ltr';
+          event.lang === 'he' || event.lang === 'ar' ? 'rtl' : 'ltr';
       }
     );
   }
