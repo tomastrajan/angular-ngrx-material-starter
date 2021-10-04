@@ -517,6 +517,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "shady-abdelhamid",
+      "name": "Shady",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8029319?v=4",
+      "profile": "https://github.com/shady-abdelhamid",
+      "contributions": [
+        "code",
+        "translation"
+      ]
     }
   ],
   "commitConvention": "none"
