@@ -1,10 +1,10 @@
 <div class="container">
-  <div class="row">
+  <div class="row" rtl>
     <div class="col-sm-12"><h1>{{ 'anms.settings.title' | translate }}</h1></div>
   </div>
   <br>
   <ng-container *ngIf="settings$ | async as settings">
-    <div class="row">
+    <div class="row" rtl>
       <div class="col-md-6 group" [ngClass]="routeAnimationsElements">
         <h2>{{ 'anms.settings.general.title' | translate }}</h2>
         <div class="icon-form-field">
@@ -38,7 +38,7 @@
          </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row"  rtl>
       <div class="col-md-6 group" [ngClass]="routeAnimationsElements">
         <h2>{{ 'anms.settings.themes.title' | translate }}</h2>
         <div class="icon-form-field">
