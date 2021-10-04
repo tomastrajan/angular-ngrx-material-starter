@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [12.4.0](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.3.1...v12.4.0) (2021-10-04)
+
+### Features
+
+- add arabic translation ([c767fe1](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/c767fe15471a9cfe73bf4301edaca4014e9376bd)), closes [#562](https://github.com/tomastrajan/angular-ngrx-material-starter/issues/562)
+- **i18n:** improve hebrew translations ([56d21df](https://github.com/tomastrajan/angular-ngrx-material-starter/commit/56d21df7bdf25871a2d2567000ec7a5ec9ad83b7))
+
 ### [12.3.1](https://github.com/tomastrajan/angular-ngrx-material-starter/compare/v12.3.0...v12.3.1) (2021-09-16)
 
 ### Bug Fixes
