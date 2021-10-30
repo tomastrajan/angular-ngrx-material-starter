@@ -13,24 +13,24 @@ export const initialState: StockMarketState = {
 
 const reducer = createReducer(
   initialState,
-  on(actionStockMarketRetrieve, (state, { symbol }) => ({
+  on(actionStockMarketRetrieve, (state, { payload }) => ({
     ...state,
     loading: true,
     stock: undefined,
     error: undefined,
-    symbol
+    symbol: payload.symbol
   })),
-  on(actionStockMarketRetrieveSuccess, (state, { stock }) => ({
+  on(actionStockMarketRetrieveSuccess, (state, { payload }) => ({
     ...state,
     loading: false,
-    stock,
+    stock: payload?.stock,
     error: undefined
   })),
-  on(actionStockMarketRetrieveError, (state, { error }) => ({
+  on(actionStockMarketRetrieveError, (state, { payload }) => ({
     ...state,
     loading: false,
     stock: undefined,
-    error
+    error: payload?.error
   }))
 );
 

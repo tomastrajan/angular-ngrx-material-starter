@@ -4,13 +4,18 @@
     "es6": true,
     "node": true
   },
-  "extends": ["prettier", "prettier/@typescript-eslint"],
+  "extends": [
+    "prettier",
+    "prettier/@typescript-eslint",
+    "plugin:ngrx/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "tsconfig.json",
     "sourceType": "module"
   },
   "plugins": [
+    "ngrx",
     "eslint-plugin-import",
     "@angular-eslint/eslint-plugin",
     "@typescript-eslint",

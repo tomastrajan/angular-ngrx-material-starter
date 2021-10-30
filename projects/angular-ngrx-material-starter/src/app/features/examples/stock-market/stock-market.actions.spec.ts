@@ -12,7 +12,7 @@ describe('Stock Market Actions', () => {
   it('should create StockMarketRetrieve action', () => {
     const action = actionStockMarketRetrieve({ symbol });
     expect(action.type).toEqual(actionStockMarketRetrieve.type);
-    expect(action.symbol).toEqual(symbol);
+    expect(action.payload.symbol).toEqual(symbol);
   });
 
   it('should create StockMarketRetrieveSuccess action', () => {
@@ -28,7 +28,7 @@ describe('Stock Market Actions', () => {
     };
     const action = actionStockMarketRetrieveSuccess({ stock });
     expect(action.type).toEqual(actionStockMarketRetrieveSuccess.type);
-    expect(action.stock).toEqual(
+    expect(action.payload?.stock).toEqual(
       jasmine.objectContaining({
         ...stock
       })
@@ -40,6 +40,6 @@ describe('Stock Market Actions', () => {
     const action = actionStockMarketRetrieveError({ error: error });
 
     expect(action.type).toEqual(actionStockMarketRetrieveError.type);
-    expect(action.error).toEqual(error);
+    expect(action.payload.error).toEqual(error);
   });
 });

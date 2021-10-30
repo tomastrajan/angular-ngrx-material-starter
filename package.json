@@ -87,6 +87,7 @@
     "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-ngrx": "1.39.0",
     "express": "^4.16.4",
     "husky": "^4.3.0",
     "jasmine-core": "~3.6.0",
