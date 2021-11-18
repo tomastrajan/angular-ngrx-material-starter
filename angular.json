@@ -35,6 +35,14 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -91,10 +99,14 @@
             "browserTarget": "angular-ngrx-material-starter:build"
           },
           "configurations": {
+            "development": {
+              "browserTarget": "angular-ngrx-material-starter:build:development"
+            },
             "production": {
               "browserTarget": "angular-ngrx-material-starter:build:production"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
