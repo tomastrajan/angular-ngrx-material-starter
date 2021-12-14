@@ -11,9 +11,12 @@ else
 
   echo Deploy to GitHub Pages - Start
 
-  # go to the directory which contains build artifacts and create a *new* Git repo
+  # go to the directory which contains build artifacts and make a copy of index.html and name it 404.html
   # directory may be different based on your particular build process
   cd dist/angular-ngrx-material-starter
+  cp index.html 404.html
+
+  # Initialize a new git repo in the build artifacts folder
   git init
 
   # inside this git repo we'll pretend to be a new user
