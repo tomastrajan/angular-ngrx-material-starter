@@ -43,7 +43,8 @@ export class SettingsContainerComponent implements OnInit {
     { value: 'pt-br', label: 'Português' },
     { value: 'zh-cn', label: '简体中文' },
     { value: 'he', label: 'עברית' },
-    { value: 'ar', label: 'اللغة العربية' }
+    { value: 'ar', label: 'اللغة العربي,ة' },
+    { value: 'el', label: 'Ελληνικά' }
   ];
 
   constructor(private store: Store<State>) {}
