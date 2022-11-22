@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 import { Router } from '@angular/router';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -31,7 +31,7 @@ export class CrudComponent {
 
   constructor(
     public store: Store<State>,
-    public fb: FormBuilder,
+    public fb: UntypedFormBuilder,
     private router: Router
   ) {}
 

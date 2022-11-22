@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action, select, Store } from '@ngrx/store';
-import { Actions, Effect, ofType, createEffect } from '@ngrx/effects';
+import { Actions, ofType, createEffect } from '@ngrx/effects';
 import { tap, withLatestFrom } from 'rxjs/operators';
 
 import { LocalStorageService } from '../../../core/core.module';

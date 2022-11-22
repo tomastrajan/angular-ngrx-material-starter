@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
-  FormBuilder,
-  FormGroup,
+  UntypedFormBuilder,
+  UntypedFormGroup,
   FormGroupDirective,
   Validators
 } from '@angular/forms';
@@ -20,11 +20,14 @@ import { User, UserService } from '../user.service';
 })
 export class UserComponent implements OnInit {
   routeAnimationsElements = ROUTE_ANIMATIONS_ELEMENTS;
-  userForm: FormGroup = new FormGroup({});
+  userForm: UntypedFormGroup = new UntypedFormGroup({});
   users$: Observable<User[]> | undefined;
   isEdit$: Observable<{ value: boolean }> | undefined;
 
-  constructor(private fb: FormBuilder, private userService: UserService) {}
+  constructor(
+    private fb: UntypedFormBuilder,
+    private userService: UserService
+  ) {}
 
   ngOnInit() {
     this.users$ = this.userService.users$;

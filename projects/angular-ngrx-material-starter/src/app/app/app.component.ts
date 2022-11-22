@@ -1,6 +1,6 @@
 import browser from 'browser-detect';
 import { Component, OnInit } from '@angular/core';
-import { MatSelectChange } from '@angular/material/select';
+import { MatLegacySelectChange as MatSelectChange } from '@angular/material/legacy-select';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 

@@ -1,7 +1,7 @@
 import { selectTodosFilter } from './../todos.selectors';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 import { select, Store } from '@ngrx/store';
 import { take } from 'rxjs/operators';
 import { Observable, of as observableOf } from 'rxjs';

@@ -1,4 +1,4 @@
-@use '~@angular/material' as mat;
+@use '@angular/material' as mat;
 
 @mixin anms-todos-container-component-theme($theme) {
   $accent: map-get($theme, accent);

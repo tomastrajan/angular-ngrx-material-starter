@@ -1,4 +1,4 @@
-@use '~@angular/material' as mat;
+@use '@angular/material' as mat;
 
 @mixin anms-stock-market-container-component-theme($theme) {
   $warn: map-get($theme, warn);

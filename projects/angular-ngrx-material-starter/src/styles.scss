@@ -1,14 +1,23 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '~@angular/material' as mat;
+@use '@angular/material' as mat;
 
 @import 'styles-variables';
 
-@import '~bootstrap/scss/bootstrap-reboot';
-@import '~bootstrap/scss/bootstrap-grid';
+@import 'bootstrap/scss/bootstrap-reboot';
+@import 'bootstrap/scss/bootstrap-grid';
 @import 'styles-reset';
 
-@include mat.core();
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
+@include mat.all-legacy-component-typographies();
+@include mat.legacy-core();
 
 @import './themes/default-theme';
 @import './themes/light-theme';
@@ -40,21 +49,21 @@
 }
 
 .default-theme {
-  @include mat.all-component-themes($anms-theme);
+  @include mat.all-legacy-component-themes($anms-theme);
   @include custom-components-theme($anms-theme);
 }
 
 .light-theme {
-  @include mat.all-component-themes($anms-light-theme);
+  @include mat.all-legacy-component-themes($anms-light-theme);
   @include custom-components-theme($anms-light-theme);
 }
 
 .black-theme {
-  @include mat.all-component-themes($anms-black-theme);
+  @include mat.all-legacy-component-themes($anms-black-theme);
   @include custom-components-theme($anms-black-theme);
 }
 
 .nature-theme {
-  @include mat.all-component-themes($anms-nature-theme);
+  @include mat.all-legacy-component-themes($anms-nature-theme);
   @include custom-components-theme($anms-nature-theme);
 }
